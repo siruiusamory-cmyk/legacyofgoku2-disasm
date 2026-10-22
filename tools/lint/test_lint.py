@@ -112,6 +112,13 @@ C_COMMENTED_DUPLICATE = ("/* the header\n"
 
 CALL = "call tools\\incbin.bat baserom.gba 0x158 0x143f2\n"
 
+NAMES = "address,name\n0x08000276,Unit_DoIt\n"
+LEDGER = ("address,old,new,evidence_class,evidence\n"
+          "0x08000276,sub_08000276,Unit_DoIt,device-register,IE (0x04000200) bit 1\n")
+ENTRIES = {0x08000276}
+README_FUNCTIONS = "1 of the 2 functions still carry the address form\n"
+BASELINE = "1\n"
+
 
 def refused(text, name, check):
     scratch = tempfile.mkdtemp(prefix="lint-test-")
@@ -286,6 +293,84 @@ def test_an_incbin_call_naming_a_slice_the_source_incbins_is_not_caught():
     assert not lints.stale_call_findings(CALL, {(0x158, 0x143f2 - 0x158)})
 
 
+def test_a_name_keyed_on_an_address_the_split_does_not_prove_is_caught():
+    findings, _names = lints.naming_symbol_findings(
+        "address,name\n0x08000276,Unit_DoIt\n0x08000278,Unit_DoThat\n", LEDGER, ENTRIES)
+    assert [(found, detail) for found, detail in findings
+            if "0x08000278 is not a code entry" in detail]
+
+
+def test_a_name_outside_module_verb_is_caught():
+    findings, _names = lints.naming_symbol_findings(
+        "address,name\n0x08000276,unit_doit\n",
+        LEDGER.replace("Unit_DoIt", "unit_doit"), ENTRIES)
+    assert [(found, detail) for found, detail in findings if "is not Module_Verb" in detail]
+
+
+def test_a_repeated_name_is_caught():
+    table = ("address,name\n0x08000276,Unit_DoIt\n0x08000278,Unit_DoIt\n")
+    findings, _names = lints.naming_symbol_findings(table, LEDGER, ENTRIES | {0x08000278})
+    assert [(found, detail) for found, detail in findings if "repeats the name" in detail]
+
+
+def test_a_name_without_a_ledger_row_is_caught():
+    findings, _names = lints.naming_symbol_findings(NAMES, None, ENTRIES)
+    assert [(found, detail) for found, detail in findings if "carries no ledger row" in detail]
+
+
+def test_a_ledger_row_that_disagrees_with_the_table_is_caught():
+    findings, _names = lints.naming_symbol_findings(
+        NAMES, LEDGER.replace(",Unit_DoIt,", ",Unit_DoThat,"), ENTRIES)
+    assert [(found, detail) for found, detail in findings
+            if "is not the name table's name" in detail]
+
+
+def test_a_ledger_row_without_an_evidence_cell_is_caught():
+    findings, _names = lints.naming_symbol_findings(
+        NAMES, "address,old,new,evidence_class,evidence\n"
+               "0x08000276,sub_08000276,Unit_DoIt,device-register,\n", ENTRIES)
+    assert [(found, detail) for found, detail in findings
+            if "needs an evidence class and an evidence cell" in detail]
+
+
+def test_a_table_that_matches_the_ledger_and_the_entries_is_not_caught():
+    findings, names = lints.naming_symbol_findings(NAMES, LEDGER, ENTRIES)
+    assert findings == []
+    assert names == {0x08000276: "Unit_DoIt"}
+
+
+def test_an_address_named_count_above_the_baseline_is_caught():
+    findings = lints.naming_ratchet_findings({0x08000276, 0x08000278}, {}, "1\n")
+    assert [detail for _found, detail in findings if "above the baseline 1" in detail]
+
+
+def test_an_address_named_count_below_an_unlowered_baseline_is_caught():
+    findings = lints.naming_ratchet_findings({0x08000276}, {0x08000276: "Unit_DoIt"}, "2\n")
+    assert [detail for _found, detail in findings if "must lower" in detail]
+
+
+def test_an_address_named_count_matching_the_baseline_is_not_caught():
+    assert lints.naming_ratchet_findings({0x08000276, 0x08000278},
+                                         {0x08000276: "Unit_DoIt"}, "1\n") == []
+
+
+def test_a_baseline_that_carries_no_count_is_caught():
+    assert lints.naming_ratchet_findings({0x08000276}, {}, None)
+
+
+def test_readme_function_figures_that_match_the_tree_are_not_caught():
+    assert lints.readme_naming_findings(README_FUNCTIONS, 1, 2) == []
+
+
+def test_the_function_figure_is_held_in_both_directions():
+    assert lints.readme_naming_findings(README_FUNCTIONS.replace("1 of", "0 of"), 0, 2) == []
+    assert lints.readme_naming_findings(README_FUNCTIONS, 0, 2)
+
+
+def test_a_readme_without_the_function_figure_is_caught():
+    assert lints.readme_naming_findings(MEASURED_PROGRESS, 1, 2)
+
+
 def test_the_repository_has_no_lint_finding():
     assert lints.run() == []
 
@@ -370,4 +455,18 @@ if __name__ == "__main__":
     test_a_block_comment_marker_inside_a_string_hides_nothing()
     test_an_inline_block_comment_leaves_the_code_on_both_sides()
     test_a_char_literal_holding_a_slash_is_not_a_comment()
+    test_a_name_keyed_on_an_address_the_split_does_not_prove_is_caught()
+    test_a_name_outside_module_verb_is_caught()
+    test_a_repeated_name_is_caught()
+    test_a_name_without_a_ledger_row_is_caught()
+    test_a_ledger_row_that_disagrees_with_the_table_is_caught()
+    test_a_ledger_row_without_an_evidence_cell_is_caught()
+    test_a_table_that_matches_the_ledger_and_the_entries_is_not_caught()
+    test_an_address_named_count_above_the_baseline_is_caught()
+    test_an_address_named_count_below_an_unlowered_baseline_is_caught()
+    test_an_address_named_count_matching_the_baseline_is_not_caught()
+    test_a_baseline_that_carries_no_count_is_caught()
+    test_readme_function_figures_that_match_the_tree_are_not_caught()
+    test_the_function_figure_is_held_in_both_directions()
+    test_a_readme_without_the_function_figure_is_caught()
     print("PASS test_lint")

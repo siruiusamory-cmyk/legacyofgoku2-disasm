@@ -3,7 +3,6 @@ from __future__ import annotations
 import argparse
 import hashlib
 import os
-import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -13,15 +12,14 @@ sys.path.insert(0, os.path.join(ROOT, "tools", "recomp"))
 
 import code_split
 import export_inputs
+import name_table
 
 ROM = os.path.join(ROOT, "baserom.gba")
 SHA1 = os.path.join(ROOT, "baserom.sha1")
-REMAINDER = os.path.join(ROOT, "asm", "remainder.s")
 OUT = os.path.join(ROOT, "build", "code")
 ROM_BASE = code_split.ROM_BASE
 START = 0x100
 END = 0x800000
-CARRIED = re.compile(r"gen_([0-9a-f]+)_([0-9a-f]+)\.bin")
 CLASS_TAGS = {"proven code": "proven", "filtered pointer-entry code": "filtered",
               "table-held code": "table", "gap-fill code": "gap"}
 REGISTERS = ("r0", "r1", "r2", "r3", "r4", "r5", "r6", "r7",
@@ -45,7 +43,9 @@ def label(address):
     return "|loc_%08X|" % address
 
 
-def function_label(address):
+def function_label(address, index=None):
+    if index and address in index:
+        return "|%s|" % index[address]
     return "|sub_%08X|" % address
 
 
@@ -399,24 +399,6 @@ def decode(rom, address, mode):
     return text[0], text[1], text[2]
 
 
-def carried_runs(path=REMAINDER):
-    runs = []
-    if not os.path.exists(path):
-        return runs
-    for line in open(path, encoding="utf-8", errors="replace"):
-        found = CARRIED.search(line)
-        if found:
-            runs.append((int(found.group(1), 16), int(found.group(2), 16)))
-    return sorted(runs)
-
-
-def covered(runs, start, stop):
-    for begin, end in runs:
-        if begin < stop and start < end:
-            return True
-    return False
-
-
 def data_text(rom, begin, end):
     lines = []
     position = begin
@@ -436,9 +418,10 @@ def data_text(rom, begin, end):
 
 
 def fragments(rom):
+    index = name_table.load_names()
     measured = code_split.measure(rom)
     entries = set(address for address, _mode in export_inputs.entries_of(measured))
-    runs = carried_runs()
+    runs = name_table.runs()
     kept_bytes = {}
     kept_rows = []
     raw = []
@@ -451,7 +434,7 @@ def fragments(rom):
             raw.append((ROM_BASE + start, START - start, "already carried before the remainder"))
         if stop > END:
             raw.append((ROM_BASE + END, stop - END, "past the end of the image"))
-        if covered(runs, begin, end):
+        if name_table.covered(runs, begin, end):
             raw.append((ROM_BASE + begin, end - begin, "inside a carried container"))
             continue
         text_mode = "thumb" if mode == code_split.MODE_THUMB else "arm"
@@ -477,7 +460,7 @@ def fragments(rom):
             raw.append((ROM_BASE + start, stop - start, "outside the remainder"))
             continue
         begin, end = max(start, START), min(stop, END)
-        if covered(runs, begin, end):
+        if name_table.covered(runs, begin, end):
             raw.append((ROM_BASE + begin, end - begin, "inside a carried container"))
             continue
         pools.append((ROM_BASE + begin, ROM_BASE + end))
@@ -492,7 +475,7 @@ def fragments(rom):
         for position, operation, operands in lines:
             if position == begin or position in targets or position in entries:
                 if position in entries:
-                    text.append(function_label(position))
+                    text.append(function_label(position, index))
                 text.append(label(position))
             text.append("\t%s\t%s" % (operation, operands))
         files["code_%08x.s" % begin] = "\n".join(text) + "\n"

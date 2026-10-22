@@ -12,6 +12,7 @@ sys.path.insert(0, os.path.join(ROOT, "tools"))
 sys.path.insert(0, HERE)
 
 import emit_code
+import name_table
 import testkit
 
 _CACHE = {}
@@ -90,6 +91,29 @@ def test_the_emitted_text_reassembles_to_the_image(tmp_path):
         if image[offset:offset + end - begin] != rom[begin - emit_code.ROM_BASE:end - emit_code.ROM_BASE]:
             wrong.append(begin)
     assert wrong == []
+
+
+def test_a_name_in_the_table_is_emitted_for_its_entry():
+    measured, _rom = result()
+    text = "".join(measured["files"].values())
+    names = name_table.names()
+    assert names
+    assert [name for name in names.values() if "|%s|" % name not in text] == []
+
+
+def test_an_entry_outside_the_table_keeps_its_address_name():
+    measured, _rom = result()
+    text = "".join(measured["files"].values())
+    names = name_table.names()
+    starts = set()
+    for begin, _end, _mode, _tag, lines in measured["kept"]:
+        starts.add(begin)
+        starts.update(position for position, _op, _operands in lines)
+    unnamed = [address for address in name_table.emitted()
+               if address not in names and address in starts]
+    assert unnamed
+    assert ["|sub_%08X|" % address for address in unnamed
+            if "|sub_%08X|" % address not in text] == []
 
 
 def test_write_then_check_agrees(tmp_path):

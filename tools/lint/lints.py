@@ -33,7 +33,8 @@ SIZE_LIMIT = 1024 * 1024
 ASSETS = "assets/"
 
 CHECKS = ("P-148-repo-module-path", "P-159-bare-interpreter", "P-167-pool-guard",
-          "NAMING-function-name", "NAMING-c-status", "ROM-tracked-image", "README-numbers",
+          "NAMING-function-name", "NAMING-c-status", "NAMING-symbol",
+          "NAMING-address-ratchet", "ROM-tracked-image", "README-numbers",
           "TEST-silent-return", "P-518-stale-incbin-call", "DUP-block")
 STALE_CALL = re.compile(r"incbin\.bat\s+baserom\.gba\s+0x([0-9a-fA-F]+)\s+0x([0-9a-fA-F]+)")
 TEST_FILE = re.compile(r"^test_[^/\\]*\.py$")
@@ -48,6 +49,7 @@ README_SPLIT = re.compile(r"proven\s+code\s+([\d,]+)\s+B,\s+filtered\s+pointer-e
                           r"([\d,]+)\s+B,\s+literal\s+pool\s+([\d,]+)\s+B,\s+overlay\s+"
                           r"([\d,]+)\s+B,\s+unclassified\s+([\d,]+)\s+B")
 README_COMMAND = re.compile(r"python tools\\gate\\gate\.py")
+README_FUNCTIONS = re.compile(r"([\d,]+)\s+of\s+the\s+([\d,]+)\s+functions")
 BATCH = (".cmd", ".bat")
 SOURCES = (".py", ".cmd", ".bat")
 
@@ -293,7 +295,135 @@ def readme_findings():
         totals = code_split.read_totals()
     except (OSError, ValueError) as error:
         return findings + [("README-numbers", "docs/research/CODE_SPLIT.md: %s" % error)]
-    return findings + readme_split_findings(text, totals)
+    module = naming_module()
+    addresses = set(module.emitted())
+    named = naming_counts(module.read(module.TABLE), addresses)
+    return (findings + readme_split_findings(text, totals)
+            + readme_naming_findings(text, len(addresses) - len(named), len(addresses)))
+
+
+def naming_module():
+    sys.path.insert(0, os.path.join(ROOT, "tools", "code"))
+    import name_table
+    return name_table
+
+
+def naming_site(module, path):
+    return os.path.relpath(path, ROOT).replace("\\", "/")
+
+
+def naming_symbol_findings(table_text, ledger_text, addresses):
+    module = naming_module()
+    table = naming_site(module, module.TABLE)
+    ledger = naming_site(module, module.LEDGER)
+    findings = []
+    names = {}
+    rows_at = {}
+    for number, cells in module.table_rows(table_text):
+        site = "%s:%d" % (table, number)
+        if len(cells) != 2:
+            findings.append(("NAMING-symbol",
+                             "%s: one address and one name expected, found %d cell(s)"
+                             % (site, len(cells))))
+            continue
+        address_text, name = cells
+        if module.ADDRESS.match(address_text) is None:
+            findings.append(("NAMING-symbol",
+                             "%s: %s is not 0x and eight lowercase hex digits"
+                             % (site, address_text)))
+            continue
+        if int(address_text, 16) not in addresses:
+            findings.append(("NAMING-symbol",
+                             "%s: %s is not a code entry the split proves" % (site, address_text)))
+        if FUNCTION_NAME.match(name) is None:
+            findings.append(("NAMING-symbol", "%s: %s is not Module_Verb" % (site, name)))
+        if name in rows_at:
+            findings.append(("NAMING-symbol",
+                             "%s: %s repeats the name at line %d" % (site, name, rows_at[name])))
+            continue
+        rows_at[name] = number
+        names[int(address_text, 16)] = name
+    recorded = set()
+    for number, cells in module.ledger_rows(ledger_text):
+        site = "%s:%d" % (ledger, number)
+        if len(cells) != 5:
+            findings.append(("NAMING-symbol",
+                             "%s: address,old,new,evidence_class,evidence expected, found %d cell(s)"
+                             % (site, len(cells))))
+            continue
+        address_text, _old, new, evidence_class, evidence = cells
+        if module.ADDRESS.match(address_text) is None:
+            findings.append(("NAMING-symbol",
+                             "%s: %s is not 0x and eight lowercase hex digits"
+                             % (site, address_text)))
+            continue
+        if not evidence_class or not evidence:
+            findings.append(("NAMING-symbol",
+                             "%s: the row needs an evidence class and an evidence cell" % site))
+        if names.get(int(address_text, 16)) != new:
+            findings.append(("NAMING-symbol",
+                             "%s: %s is not the name table's name for %s"
+                             % (site, new, address_text)))
+        recorded.add(int(address_text, 16))
+    for address in sorted(names):
+        if address not in recorded:
+            findings.append(("NAMING-symbol",
+                             "%s:%d: 0x%08x carries no ledger row"
+                             % (table, rows_at[names[address]], address)))
+    return findings, names
+
+
+def naming_ratchet_findings(addresses, names, baseline_text):
+    module = naming_module()
+    site = "%s:1" % naming_site(module, module.BASELINE)
+    live = len([address for address in addresses if address not in names])
+    baseline = None
+    if baseline_text is not None:
+        found = re.search(r"\d+", baseline_text)
+        baseline = int(found.group(0)) if found else None
+    if baseline is None:
+        return [("NAMING-address-ratchet",
+                 "%s: one count of address-named functions expected" % site)]
+    if live > baseline:
+        return [("NAMING-address-ratchet",
+                 "%s: %d address-named functions, above the baseline %d" % (site, live, baseline))]
+    if live < baseline:
+        return [("NAMING-address-ratchet",
+                 "%s: %d address-named functions, below the baseline %d, which this tree must "
+                 "lower" % (site, live, baseline))]
+    return []
+
+
+def naming_counts(table_text, addresses):
+    module = naming_module()
+    names = {}
+    for _number, cells in module.table_rows(table_text):
+        if len(cells) == 2 and module.ADDRESS.match(cells[0]):
+            names[int(cells[0], 16)] = cells[1]
+    return dict((address, name) for address, name in names.items() if address in addresses)
+
+
+def naming_tree_findings():
+    module = naming_module()
+    addresses = set(module.emitted())
+    table_text = module.read(module.TABLE)
+    findings, names = naming_symbol_findings(table_text, module.read(module.LEDGER), addresses)
+    return findings + naming_ratchet_findings(addresses, naming_counts(table_text, addresses),
+                                              module.read(module.BASELINE))
+
+
+def readme_naming_findings(text, address_named, functions):
+    found = README_FUNCTIONS.findall(text)
+    if len(found) != 1:
+        return [("README-numbers",
+                 "README.md: one '<a> of the <b> functions' figure expected, found %d"
+                 % len(found))]
+    measured = [uncomma(cell) for cell in found[0]]
+    if measured != [address_named, functions]:
+        return [("README-numbers",
+                 "README.md: %s of the %s functions is not the tree's %d of %d"
+                 % (found[0][0], found[0][1], address_named, functions))]
+    return []
 
 
 def stale_call_findings(text, named):
@@ -527,6 +657,7 @@ def run(files=None):
         findings += silent_return_findings(name, text)
     if whole_tree:
         findings += c_source_findings()
+        findings += naming_tree_findings()
         findings += tracked_rom_findings()
         findings += readme_findings()
         findings += stale_call_tree_findings()
