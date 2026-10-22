@@ -1,6 +1,8 @@
 address,name
 0x080003ea,Blend_ShowBg0
 0x08000c9a,Blend_SplitAlpha
+0x08006274,Display_ClearControlBit
+0x08006298,Display_SetControlBit
 0x080068b8,List_Append
 0x08009be4,Palette_LoadObject
 0x0800da68,Palette_Save
@@ -9,6 +11,7 @@ address,name
 0x0801eefc,Input_ReadKeys
 0x0801f508,Tilemap_FillRect
 0x0801f54c,Dma3_Fill
+0x0801f566,Oam_LoadAll
 0x08020af4,Sound_InitMixer
 0x08020b8c,Sound_StopDriver
 0x08020bac,Sound_StopChannels
@@ -16,6 +19,7 @@ address,name
 0x08020bd0,Sound_StartTimer
 0x08020d26,Irq_InstallHandler
 0x0802135c,Boot_SoftReset
+0x08021388,Boot_StopUntilKey
 0x08021526,Dma3_StartCopy
 0x08021980,Irq_EnableDmaBit
 0x08021a08,Irq_DisableDmaBit

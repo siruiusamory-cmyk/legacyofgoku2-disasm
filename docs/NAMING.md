@@ -50,6 +50,18 @@ names the class it is:
 A name says what the function does, never who called it, never why the change was made, and never a
 number that the evidence cell does not also carry.
 
+## Where a quoted effect has to lie
+
+Every quoted effect has to sit inside the named function's own body as
+`docs/research/FUNCTION_BOUNDS.csv` defines it: the start, plus every block reachable from it
+inside its own code run, up to the next function start. A register write in a later block of that
+function is the function's effect. A write past another function's start belongs to that function
+and not to this one.
+
+`tools/research/device_access.py --ledger` re-reads every ledger row this way and fails a row whose
+evidence quotes an address the body neither accesses, nor loads as a literal, nor calls, nor writes
+as a stored value. A failing row is demoted, never repaired by narrowing the quote.
+
 ## The ledger
 
 `docs/NAMING_LEDGER.csv` has one row per promotion: `address,old,new,evidence_class,evidence`. The

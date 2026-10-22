@@ -1,6 +1,8 @@
 address,old,new,evidence_class,evidence
 0x080003ea,sub_080003EA,Blend_ShowBg0,device-register,"writes 0x85F to BLDCNT (0x04000050) through the literal base 0x04000040, so alpha blend with BG0..OBJ as first target and BG0 as second, then 0x00 to (0x04000052) and 0x10 to (0x04000053), the second target at full weight"
 0x08000c9a,sub_08000C9A,Blend_SplitAlpha,device-register,"halves r1 into BLDALPHA (0x04000052) and writes 0x10 minus that into (0x04000053), so the two weights sum to 16"
+0x08006274,sub_08006274,Display_ClearControlBit,device-register,"clears bit r1 of the 16-bit word at +0x62 with BIC and, while the word at +0x68 is zero, stores that word to DISPCNT (0x04000000); no other effect"
+0x08006298,sub_08006298,Display_SetControlBit,device-register,"sets bit r1 of the 16-bit word at +0x62 with ORR and, while the word at +0x68 is zero, stores that word to DISPCNT (0x04000000); no other effect"
 0x080068b8,sub_080068B8,List_Append,callee-role,"increments the count at +0x4 and stores r1 at 4+4*count, with no other effect"
 0x08009be4,sub_08009BE4,Palette_LoadObject,device-register,"DMA3 SAD (0x040000D4)=0x081DA6C8, DAD (0x040000D8)=0x05000200, count (0x040000DC)=0x100 and CNT_H (0x040000DE)=0x8000, 32-bit and enabled, over the object palette"
 0x0800da68,sub_0800DA68,Palette_Save,device-register,"stores the literal 0x080240B4 at +0x0 and runs two DMA3 transfers of count 0x100 with CNT_H 0x8000, SAD 0x05000000 to +0x4 and SAD 0x05000200 to +0x204, copying both palettes out"
@@ -9,6 +11,7 @@ address,old,new,evidence_class,evidence
 0x0801eefc,sub_0801EEFC,Input_ReadKeys,device-register,"reads KEYINPUT (0x04000130) through the 0x04000120 literal, then EOR, MVN and AND build pressed and released masks stored at +0x14 and +0x16"
 0x0801f508,sub_0801F508,Tilemap_FillRect,callee-role,writes r2 as halfwords from (y0*0x20 + x0)*2 + base across every row between the x bounds at +0x0 and +0x8
 0x0801f54c,sub_0801F54C,Dma3_Fill,device-register,"DMA3 SAD (0x040000D4)=0x03003914, DAD (0x040000D8)=r0, count (0x040000DC)=0x100 and CNT_H (0x040000DE)=0x8500, 32-bit with the source held fixed, so one word is repeated to r0"
+0x0801f566,sub_0801F566,Oam_LoadAll,device-register,"DMA3 SAD (0x040000D4)=r0, DAD (0x040000D8)=0x07000000, count (0x040000DC)=0x100 and CNT_H (0x040000DE)=0x8400, the whole 1 KiB of OAM in one 32-bit transfer"
 0x08020af4,sub_08020AF4,Sound_InitMixer,device-register,"writes SOUND4CNT_H (0x04000080)=0, SOUNDCNT_H (0x04000082)=0x9A0E and SOUNDCNT_L (0x04000084)=0x80, and its pool carries 0x040000A0, 0x040000A4 (FIFO A and B) and 0x04000200 (IE)"
 0x08020b8c,sub_08020B8C,Sound_StopDriver,device-register,"after calling 0x08020D40 it writes 0 to TM0CNT_H (0x04000102), DMA1CNT_H (0x040000C6), DMA2CNT_H (0x040000D2) and SOUNDCNT_L (0x04000084)"
 0x08020bac,sub_08020BAC,Sound_StopChannels,device-register,"writes 0 to TM0CNT_H (0x04000102), DMA1CNT_H (0x040000C6) and DMA2CNT_H (0x040000D2)"
@@ -16,6 +19,7 @@ address,old,new,evidence_class,evidence
 0x08020bd0,sub_08020BD0,Sound_StartTimer,device-register,"writes 0x80 to TM0CNT_H (0x04000102), the enable bit with prescaler 1"
 0x08020d26,sub_08020D26,Irq_InstallHandler,structural-role,"writes 0x03000824 to 0x03007FFC, the interrupt vector the split traces, then IE=0x2000, IME=1 and DISPSTAT (0x04000004)=0x18"
 0x0802135c,sub_0802135C,Boot_SoftReset,bios-call,"IME=0, DISPCNT (0x04000000)=0x80, the six BG scroll registers 0x04000010..0x0400001A zeroed, then SWI 0x00 (SoftReset)"
+0x08021388,sub_08021388,Boot_StopUntilKey,device-register,"DISPCNT (0x04000000)=0x80 to force blank, thirty calls of 0x08020D40, then IE (0x04000200)=0x3000, KEYCNT (0x04000132)=0xC304 and SWI 0x3 (Stop), the keypad interrupt that ends the stop"
 0x08021526,sub_08021526,Dma3_StartCopy,device-register,"DMA3 SAD (0x040000D4)=r1, DAD (0x040000D8)=the word at 0x03003898 plus r2, count (0x040000DC)=r3>>2 and CNT_H (0x040000DE)=0x8400, 32-bit and enabled"
 0x08021980,sub_08021980,Irq_EnableDmaBit,device-register,"IME saved to 0x030038AC and cleared, then IF (0x04000202) and IE (0x04000200) set to 8<<n with n from the byte at 0x030038A0, then IME=1"
 0x08021a08,sub_08021A08,Irq_DisableDmaBit,device-register,"IME (0x04000208)=0, then IE (0x04000200) cleared of 8<<n with n from the byte at 0x030038A0"
