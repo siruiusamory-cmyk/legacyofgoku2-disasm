@@ -686,6 +686,79 @@ CASES_FOUR = [
 ]
 
 
+CASES_FIVE = [
+    {"address": 0x0801EFF4, "name": "Heap_Link", "registers": {0: 0x02000100},
+     "memory": [(0x030022B4, 4, 0x02000010)], "return": 0x02000100,
+     "writes": [(0x02000108, 2, 4), (0x0200001A, 2, 0x40), (0x0200010A, 2, 0),
+                (0x030022B4, 4, 0x02000100)], "calls": []},
+    {"address": 0x0801EFF4, "name": "Heap_Link", "registers": {0: 0x02000100},
+     "memory": [(0x030022B4, 4, 0)], "return": 0x02000100,
+     "writes": [(0x02000108, 2, 0), (0x0200010A, 2, 0),
+                (0x030022B4, 4, 0x02000100)], "calls": []},
+    {"address": 0x080019F6, "name": "Entry_IsEnabled",
+     "registers": {0: 0x02000000, 1: 2}, "memory": [(0x020002C9, 1, 0x01)],
+     "return": 1, "calls": []},
+    {"address": 0x080019F6, "name": "Entry_IsEnabled",
+     "registers": {0: 0x02000000, 1: 2}, "memory": [(0x020002C9, 1, 0)],
+     "return": 0, "calls": []},
+    {"address": 0x08003E00, "name": "Entry_CountFlags", "registers": {0: 0x02000100},
+     "memory": [(0x02000120, 4, 1), (0x0200013C, 4, 0), (0x02000158, 4, 3),
+                (0x02000174, 4, 2), (0x02000190, 4, 5), (0x020001AC, 4, 4)],
+     "return": 3, "calls": []},
+    {"address": 0x08003E00, "name": "Entry_CountFlags", "registers": {0: 0x02000100},
+     "memory": [(0x02000120, 4, 1), (0x0200013C, 4, 1), (0x02000158, 4, 1),
+                (0x02000174, 4, 1), (0x02000190, 4, 1), (0x020001AC, 4, 1)],
+     "return": 6, "calls": []},
+    {"address": 0x08027FEC, "name": "Rect_Intersect",
+     "registers": {0: 0x02000000, 1: 0x02000100, 2: 0x02000200},
+     "memory": [(0x02000100, 4, 10), (0x02000104, 4, 20),
+                (0x02000108, 4, 100), (0x0200010C, 4, 200),
+                (0x02000200, 4, 15), (0x02000204, 4, 5),
+                (0x02000208, 4, 90), (0x0200020C, 4, 250)],
+     "writes": [(0x02000000, 4, 15), (0x02000004, 4, 20),
+                (0x02000008, 4, 90), (0x0200000C, 4, 200)], "calls": []},
+    {"address": 0x08027FEC, "name": "Rect_Intersect",
+     "registers": {0: 0x02000000, 1: 0x02000100, 2: 0x02000200},
+     "memory": [(0x02000100, 4, 10), (0x02000104, 4, 20),
+                (0x02000108, 4, 100), (0x0200010C, 4, 200),
+                (0x02000200, 4, -5), (0x02000204, 4, -6),
+                (0x02000208, 4, 40), (0x0200020C, 4, 50)],
+     "writes": [(0x02000000, 4, 10), (0x02000004, 4, 20),
+                (0x02000008, 4, 40), (0x0200000C, 4, 50)], "calls": []},
+    {"address": 0x08003E42, "name": "Bitmap_TestCell",
+     "registers": {0: 0x02000100, 1: 10}, "memory": [(0x020001B5, 1, 4)],
+     "return": 1, "calls": []},
+    {"address": 0x08003E42, "name": "Bitmap_TestCell",
+     "registers": {0: 0x02000100, 1: 10}, "memory": [(0x020001B5, 1, 0)],
+     "return": 0, "calls": []},
+    {"address": 0x080095B4, "name": "Bitmap_LoadCell", "registers": {0: 0x02001000},
+     "memory": [(0x02001000, 4, 1), (0x02001004, 4, 10)],
+     "stubs": {0x08003E42: {0: 1}}, "writes": [(0x02001004, 4, 1)],
+     "calls": [(0x080095C2, 0x08003E42)]},
+    {"address": 0x080095B4, "name": "Bitmap_LoadCell", "registers": {0: 0x02001000},
+     "memory": [(0x02001000, 4, 1), (0x02001004, 4, 10)],
+     "stubs": {0x08003E42: {0: 0}}, "writes": [(0x02001004, 4, 0)],
+     "calls": [(0x080095C2, 0x08003E42)]},
+    {"address": 0x080095CA, "name": "Bitmap_LoadCellInverted", "registers": {0: 0x02001000},
+     "memory": [(0x02001000, 4, 1), (0x02001004, 4, 10)],
+     "stubs": {0x08003E42: {0: 1}}, "writes": [(0x02001004, 4, 0)],
+     "calls": [(0x080095D8, 0x08003E42)]},
+    {"address": 0x080095CA, "name": "Bitmap_LoadCellInverted", "registers": {0: 0x02001000},
+     "memory": [(0x02001000, 4, 1), (0x02001004, 4, 10)],
+     "stubs": {0x08003E42: {0: 0}}, "writes": [(0x02001004, 4, 1)],
+     "calls": [(0x080095D8, 0x08003E42)]},
+    {"address": 0x08006078, "name": "Point_StoreScaled",
+     "registers": {0: 0x02000100, 1: 0x02000200},
+     "memory": [(0x02000200, 4, 0x1000), (0x02000204, 4, 0x2000),
+                (0x02000124, 4, 0x100), (0x02000128, 4, 0x200)],
+     "return": 0x02000100,
+     "writes": [(0x02000104, 4, 0x1000), (0x02000108, 4, 0x2000),
+                (0x0200010C, 4, 4), (0x02000110, 4, 8),
+                (0x02000114, 4, 0xF4), (0x02000118, 4, 0xA8),
+                (0x0200011C, 4, 4), (0x02000120, 4, 8)], "calls": []},
+]
+
+
 def check_cases(cases):
     for case in cases:
         assert any(key in case for key in ("return", "writes", "calls", "writes_len",
@@ -726,6 +799,10 @@ def test_the_third_batch_asserts_the_recorded_body_effects():
 
 def test_the_fourth_batch_asserts_the_recorded_body_effects():
     check_cases(CASES_FOUR)
+
+
+def test_the_fifth_batch_asserts_the_recorded_body_effects():
+    check_cases(CASES_FIVE)
 
 
 def run_case(case):

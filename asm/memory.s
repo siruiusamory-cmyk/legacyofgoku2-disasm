@@ -1,5 +1,6 @@
 Dma3_HalfwordSource	EQU	0x03003910
 Dma3_WordSource	EQU	0x03003914
+Dma_RequestPointer	EQU	0x030038A8
 Handler_Current	EQU	0x03000E1C
 Handler_Depth	EQU	0x03000E24
 Handler_Stack	EQU	0x03000E28

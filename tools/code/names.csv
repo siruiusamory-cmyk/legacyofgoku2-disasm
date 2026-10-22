@@ -1,17 +1,21 @@
 address,name
 0x080003ea,Blend_ShowBg0
 0x08000c9a,Blend_SplitAlpha
+0x080019f6,Entry_IsEnabled
 0x08001a26,Entry_RunIfEnabled
 0x08002bf2,Object_SetFields
 0x08002dc8,Object_SetStateTwo
 0x08003c24,Scene_Clear
 0x08003c6e,Counter_StepRandom
+0x08003e00,Entry_CountFlags
+0x08003e42,Bitmap_TestCell
 0x08003f06,Script_TestFlag
 0x08004214,Table_IndexForValue
 0x0800426a,Table_PreviousWord
 0x08004ff8,Sprite_InitFromDefinition
 0x080050c8,Map_LoadLayer
 0x08005d6c,Bitmap_AllCellsSet
+0x08006078,Point_StoreScaled
 0x08006274,Display_ClearControlBit
 0x08006298,Display_SetControlBit
 0x080063e0,Bitmap_FillCells
@@ -33,6 +37,8 @@ address,name
 0x080092e4,Opcode_RunStream
 0x08009324,Sprite_Directory_Lookup
 0x08009370,Sprite_Select
+0x080095b4,Bitmap_LoadCell
+0x080095ca,Bitmap_LoadCellInverted
 0x08009be4,Palette_LoadObject
 0x0800d138,List_NewNode
 0x0800da68,Palette_Save
@@ -44,6 +50,7 @@ address,name
 0x0801ee7e,Blend_StepEva
 0x0801eefc,Input_ReadKeys
 0x0801efbc,Heap_Unlink
+0x0801eff4,Heap_Link
 0x0801f08c,Heap_Alloc
 0x0801f110,Heap_Free
 0x0801f2ce,Handler_Restore
@@ -88,6 +95,7 @@ address,name
 0x08021d28,__call_via_r0
 0x08021d2a,Thunk_BranchR1
 0x08021d2c,Thunk_BranchR2
+0x08021d2e,Thunk_BranchR3
 0x08021d74,__cpp_initialise
 0x08021db4,__16_ll_sshift_r
 0x080220cc,__vecmap1c__FPvT1iPFPv_v
@@ -108,5 +116,6 @@ address,name
 0x080265ac,Counter_AddCapped
 0x0802664c,Palette_New
 0x08027e74,Record_Outranks
+0x08027fec,Rect_Intersect
 0x08028030,Rect_IncludePoint
 0x0802805c,Rect_Overlaps

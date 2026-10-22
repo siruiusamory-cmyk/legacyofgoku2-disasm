@@ -1,2 +1,2 @@
-ram=64
+ram=62
 hardware=0

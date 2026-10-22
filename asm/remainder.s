@@ -56,7 +56,7 @@
 		INCLUDE	..\build\code\pool_08001940.s
 		INCBIN	baserom.gba_0x1944_0x1960.extracted
 		INCLUDE	..\build\code\code_08001960.s
-		INCLUDE	..\build\code\code_080019f6.s
+		INCLUDE	..\build\code\Entry_IsEnabled.s
 		INCLUDE	..\build\code\code_08001a0c.s
 		INCLUDE	..\build\code\Entry_RunIfEnabled.s
 		INCBIN	baserom.gba_0x1a44_0x1a66.extracted
@@ -146,9 +146,9 @@
 		INCLUDE	..\build\code\Counter_StepRandom.s
 		INCLUDE	..\build\code\code_08003ca0.s
 		INCLUDE	..\build\code\code_08003d58.s
-		INCLUDE	..\build\code\code_08003e00.s
+		INCLUDE	..\build\code\Entry_CountFlags.s
 		INCLUDE	..\build\code\code_08003e1e.s
-		INCLUDE	..\build\code\code_08003e42.s
+		INCLUDE	..\build\code\Bitmap_TestCell.s
 		INCLUDE	..\build\code\code_08003e5e.s
 		INCLUDE	..\build\code\code_08003e74.s
 		INCLUDE	..\build\code\code_08003e8a.s
@@ -245,7 +245,7 @@
 		INCLUDE	..\build\code\code_08005fba.s
 		INCBIN	baserom.gba_0x6052_0x6054.extracted
 		INCLUDE	..\build\code\pool_08006054.s
-		INCLUDE	..\build\code\code_08006078.s
+		INCLUDE	..\build\code\Point_StoreScaled.s
 		INCLUDE	..\build\code\code_080060b0.s
 		INCLUDE	..\build\code\code_080060fe.s
 		INCLUDE	..\build\code\code_08006152.s
@@ -411,8 +411,8 @@
 		INCLUDE	..\build\code\code_08009568.s
 		INCLUDE	..\build\code\code_0800957a.s
 		INCLUDE	..\build\code\code_08009592.s
-		INCLUDE	..\build\code\code_080095b4.s
-		INCLUDE	..\build\code\code_080095ca.s
+		INCLUDE	..\build\code\Bitmap_LoadCell.s
+		INCLUDE	..\build\code\Bitmap_LoadCellInverted.s
 		INCLUDE	..\build\code\code_080095e4.s
 		INCLUDE	..\build\code\code_08009608.s
 		INCLUDE	..\build\code\code_08009628.s
@@ -1418,7 +1418,7 @@
 		INCLUDE	..\build\code\pool_0801ef98.s
 		INCLUDE	..\build\code\code_0801efa4.s
 		INCLUDE	..\build\code\Heap_Unlink.s
-		INCLUDE	..\build\code\code_0801eff4.s
+		INCLUDE	..\build\code\Heap_Link.s
 		INCLUDE	..\build\code\code_0801f01c.s
 		INCLUDE	..\build\code\code_0801f03e.s
 		INCLUDE	..\build\code\Heap_Alloc.s
@@ -1633,7 +1633,7 @@
 		INCLUDE	..\build\code\__call_via_r0.s
 		INCLUDE	..\build\code\Thunk_BranchR1.s
 		INCLUDE	..\build\code\Thunk_BranchR2.s
-		INCLUDE	..\build\code\code_08021d2e.s
+		INCLUDE	..\build\code\Thunk_BranchR3.s
 		INCBIN	baserom.gba_0x21d30_0x21d36.extracted
 		INCLUDE	..\build\code\code_08021d36.s
 		INCBIN	baserom.gba_0x21d38_0x21d74.extracted
@@ -1761,7 +1761,7 @@
 		INCBIN	baserom.gba_0x27f24_0x27f40.extracted
 		INCLUDE	..\build\code\code_08027f40.s
 		INCBIN	baserom.gba_0x27fea_0x27fec.extracted
-		INCLUDE	..\build\code\code_08027fec.s
+		INCLUDE	..\build\code\Rect_Intersect.s
 		INCLUDE	..\build\code\code_0802802e.s
 		INCLUDE	..\build\code\Rect_IncludePoint.s
 		INCLUDE	..\build\code\code_0802805a.s
