@@ -6,11 +6,13 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
+sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(ROOT, "tools", "code"))
 sys.path.insert(0, os.path.join(ROOT, "tools", "split"))
 
 import function_bounds
 import name_table
+import readability_audit
 
 ROM = os.path.join(ROOT, "baserom.gba")
 THUMB = function_bounds.THUMB
@@ -86,6 +88,19 @@ def ranked(rom=None, named=None):
     return sorted(rows, key=lambda row: (-row[1], -row[2], row[0]))
 
 
+def ram_ranked(found, named):
+    inside = [value for value in found
+              if readability_audit.RAM[0] <= value < readability_audit.RAM[1]
+              and value not in named]
+    return sorted(((value, found[value]) for value in inside),
+                  key=lambda row: (-row[1], row[0]))
+
+
+def ram_ranking(root=ROOT):
+    return ram_ranked(readability_audit.values(readability_audit.asm_files(root)),
+                      name_table.ram_names())
+
+
 def body(rom, address):
     order = [start for start in starts() if start > address]
     limit = order[0] if order else address + GAP
@@ -99,8 +114,13 @@ def main(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument("--top", type=int, default=0)
     parser.add_argument("--body", default=None)
+    parser.add_argument("--ram", action="store_true")
     parser.add_argument("--rom", default=ROM)
     arguments = parser.parse_args(argv)
+    if arguments.ram:
+        for value, count in ram_ranking()[:arguments.top or None]:
+            print("0x%08X refs=%d" % (value, count))
+        return 0
     rom = image(arguments.rom)
     named = name_table.names()
     if arguments.body:

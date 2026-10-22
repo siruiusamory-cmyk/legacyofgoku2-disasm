@@ -17,9 +17,9 @@ ledger of what still has to fall, not a claim that it already fell.
 
 | class | before | after | rule |
 | --- | --- | --- | --- |
-| asm file organisation | 1,026 files, 125 code files carrying more than one function start, every generated file named `code_<address>.s` | 1,337 files, no file carrying more than one function start, 1,094 code files each named after the one start it opens (54 by name, 1,040 by address), and an index that maps every start to its file | a generated code file is named after the function or module group it carries, and `docs/CODE_INDEX.md` maps every name to its file and address |
+| asm file organisation | 1,026 files, 125 code files carrying more than one function start, every generated file named `code_<address>.s` | 1,337 files, no file carrying more than one function start, 1,094 code files each named after the one start it opens (62 by name, 1,032 by address), and an index that maps every start to its file | a generated code file is named after the function or module group it carries, and `docs/CODE_INDEX.md` maps every name to its file and address |
 | literal hardware-register addresses | 76 occurrences, 18 distinct values | 0 occurrences, 18 symbols | every literal that is a standard register becomes its GBATEK name from the single include `asm/registers.s` |
-| literal RAM and flag addresses | 99 occurrences, 54 distinct values | 82 occurrences, 51 distinct values, 3 named | a RAM address becomes a symbol only where a ledger evidence class proves its role; everything else stays a literal and is counted here |
+| literal RAM and flag addresses | 99 occurrences, 54 distinct values | 79 occurrences, 49 distinct values, 5 named | a RAM address becomes a symbol only where a ledger evidence class proves its role; everything else stays a literal and is counted here |
 | carried data with no name | 3,360 slices, 5,624,200 B | 3,360 slices, 5,624,200 B, 9 record families named in `docs\TABLE_LEDGER.csv` with the reader that decodes each | a table a generator decodes gets a named record family and a tracked page; an undecoded slice stays a slice and is counted |
 | magic constants | 26,887 immediate operands, 373 distinct values | 26,887, 373 | a constant that names a device field, a stride or a sentinel becomes an equate; a plain arithmetic literal stays |
 | newcomer path gaps | 4 of 6 steps documented | 6 of 6 | the six steps below are each run on a fresh clone and each is a documented command |
@@ -53,9 +53,11 @@ the interrupt enable register.
 
 Literal RAM and flag addresses: `DCD Heap_Head` names the free-list head the allocator's behaviour
 test sets; `DCD Dma3_HalfwordSource` and `DCD Dma3_WordSource` are the two words the DMA3 fill
-request builders store their value in and then name as the transfer source; each of the 51 remaining
-distinct values is a global whose role no evidence class has named yet. The value `0x02020202` sits in
-the writable range but is a fill pattern, not an address, and the count keeps it as one of the
+request builders store their value in and then name as the transfer source; `DCD Irq_DmaChannel` and
+`DCD Irq_SavedIme` are the channel byte whose interrupt bit the DMA helpers raise and the word that
+holds the master enable across that window; each of the 49 remaining distinct values is a global whose
+role no evidence class has named yet. The value `0x02020202` sits in the
+writable range but is a fill pattern, not an address, and the count keeps it as one of the
 unnamed literals rather than pretending the range decides the role.
 
 Carried data with no name: `docs\TABLE_LEDGER.csv` names the nine record families a tracked reader

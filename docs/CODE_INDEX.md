@@ -126,7 +126,7 @@ Every row below is one function start in `docs\research\FUNCTION_BOUNDS.csv`.
 | `sub_0800501e` | `0x0800501e` | `code_0800501e.s` |
 | `sub_08005062` | `0x08005062` | `code_08005062.s` |
 | `sub_08005096` | `0x08005096` | `code_08005096.s` |
-| `sub_080050c8` | `0x080050c8` | `code_080050c8.s` |
+| `Map_LoadLayer` | `0x080050c8` | `Map_LoadLayer.s` |
 | `sub_080051c2` | `0x080051c2` | `code_080051c2.s` |
 | `sub_08005240` | `0x08005240` | `code_08005240.s` |
 | `sub_08005272` | `0x08005272` | `code_08005272.s` |
@@ -196,7 +196,7 @@ Every row below is one function start in `docs\research\FUNCTION_BOUNDS.csv`.
 | `sub_08007162` | `0x08007162` | `code_08007162.s` |
 | `sub_08007208` | `0x08007208` | `code_08007208.s` |
 | `sub_08007232` | `0x08007232` | `code_08007232.s` |
-| `sub_080072c4` | `0x080072c4` | `code_080072c4.s` |
+| `TileBank_LoadCharacter` | `0x080072c4` | `TileBank_LoadCharacter.s` |
 | `sub_080072fc` | `0x080072fc` | `code_080072fc.s` |
 | `sub_0800733e` | `0x0800733e` | `code_0800733e.s` |
 | `sub_080073ea` | `0x080073ea` | `code_080073ea.s` |
@@ -242,9 +242,9 @@ Every row below is one function start in `docs\research\FUNCTION_BOUNDS.csv`.
 | `sub_08009128` | `0x08009128` | `code_08009128.s` |
 | `sub_0800926c` | `0x0800926c` | `code_0800926c.s` |
 | `sub_080092da` | `0x080092da` | `code_080092da.s` |
-| `sub_080092e4` | `0x080092e4` | `code_080092e4.s` |
+| `Opcode_RunStream` | `0x080092e4` | `Opcode_RunStream.s` |
 | `sub_0800931c` | `0x0800931c` | `code_0800931c.s` |
-| `sub_08009324` | `0x08009324` | `code_08009324.s` |
+| `Sprite_Directory_Lookup` | `0x08009324` | `Sprite_Directory_Lookup.s` |
 | `sub_08009370` | `0x08009370` | `code_08009370.s` |
 | `sub_08009392` | `0x08009392` | `code_08009392.s` |
 | `sub_080093a4` | `0x080093a4` | `code_080093a4.s` |
@@ -517,7 +517,7 @@ Every row below is one function start in `docs\research\FUNCTION_BOUNDS.csv`.
 | `sub_0800e96a` | `0x0800e96a` | `code_0800e96a.s` |
 | `sub_0800e9e4` | `0x0800e9e4` | `code_0800e9e4.s` |
 | `sub_0800eb20` | `0x0800eb20` | `code_0800eb20.s` |
-| `sub_0800eb4c` | `0x0800eb4c` | `code_0800eb4c.s` |
+| `Map_ReadRoot` | `0x0800eb4c` | `Map_ReadRoot.s` |
 | `sub_0800eb58` | `0x0800eb58` | `code_0800eb58.s` |
 | `sub_0800eb7c` | `0x0800eb7c` | `code_0800eb7c.s` |
 | `sub_0800ebb6` | `0x0800ebb6` | `code_0800ebb6.s` |
@@ -878,8 +878,8 @@ Every row below is one function start in `docs\research\FUNCTION_BOUNDS.csv`.
 | `sub_0801f2f4` | `0x0801f2f4` | `code_0801f2f4.s` |
 | `sub_0801f346` | `0x0801f346` | `code_0801f346.s` |
 | `sub_0801f37e` | `0x0801f37e` | `code_0801f37e.s` |
-| `sub_0801f394` | `0x0801f394` | `code_0801f394.s` |
-| `sub_0801f412` | `0x0801f412` | `code_0801f412.s` |
+| `Container_Decode` | `0x0801f394` | `Container_Decode.s` |
+| `Dma3_CopyChunks` | `0x0801f412` | `Dma3_CopyChunks.s` |
 | `sub_0801f43c` | `0x0801f43c` | `code_0801f43c.s` |
 | `sub_0801f46a` | `0x0801f46a` | `code_0801f46a.s` |
 | `sub_0801f494` | `0x0801f494` | `code_0801f494.s` |
@@ -894,7 +894,7 @@ Every row below is one function start in `docs\research\FUNCTION_BOUNDS.csv`.
 | `sub_0801f618` | `0x0801f618` | `code_0801f618.s` |
 | `sub_0801f636` | `0x0801f636` | `code_0801f636.s` |
 | `sub_0801f6d8` | `0x0801f6d8` | `code_0801f6d8.s` |
-| `sub_0801f702` | `0x0801f702` | `code_0801f702.s` |
+| `Text_DrawString` | `0x0801f702` | `Text_DrawString.s` |
 | `sub_0801f7e2` | `0x0801f7e2` | `code_0801f7e2.s` |
 | `sub_0801f7fc` | `0x0801f7fc` | `code_0801f7fc.s` |
 | `sub_0801f878` | `0x0801f878` | `code_0801f878.s` |
@@ -1109,4 +1109,4 @@ Every row below is one function start in `docs\research\FUNCTION_BOUNDS.csv`.
 | `sub_08547800` | `0x08547800` | `code_08547800.s` |
 | `sub_08598054` | `0x08598054` | `code_08598054.s` |
 
-1094 function starts: 54 carry a name and 1040 carry their address; the address-named ones are read through the rule above, and `docs\NAMING.md` says what promotes a name.
+1094 function starts: 62 carry a name and 1032 carry their address; the address-named ones are read through the rule above, and `docs\NAMING.md` says what promotes a name.

@@ -1,3 +1,5 @@
 Dma3_HalfwordSource	EQU	0x03003910
 Dma3_WordSource	EQU	0x03003914
 Heap_Head	EQU	0x030022B4
+Irq_DmaChannel	EQU	0x030038A0
+Irq_SavedIme	EQU	0x030038AC

@@ -29,6 +29,12 @@ HALF_FILL_SOURCE = 0x03003910
 WORD_FILL_SOURCE = 0x03003914
 HEAD = 0x030022B4
 NODE = 0x02000008
+COPY_CHUNKS = 0x0801F412
+ENABLE_DMA_INTERRUPT = 0x08021980
+DISABLE_DMA_INTERRUPT = 0x08021A08
+DMA_CHANNEL = 0x030038A0
+SAVED_IME = 0x030038AC
+DMA3 = 0x040000D4
 
 
 def image():
@@ -289,3 +295,50 @@ def test_point_load_scaled_writes_the_two_global_words_shifted_into_the_structur
     memory.writes.clear()
     result = run(LOAD_POINT, {0: 0x02000100, 1: 0x03000000}, memory)
     assert writes_between(result, 0x02000100, 0x02000110)[0] == (0x02000100, 4, 0xFFFFFFF8)
+
+def test_dma3_copy_chunks_splits_a_copy_at_four_thousand_ninety_six_bytes_into_requests():
+    memory = thumb_vm.Memory(image())
+    memory.writes.clear()
+    result = run(COPY_CHUNKS, {0: DMA3, 1: 0x06000000, 2: 0x02000000, 3: 0x1800}, memory)
+    assert writes_between(result, DMA3, DMA3 + 0x10) == [
+        (DMA3, 4, 0x02000000), (DMA3 + 4, 4, 0x06000000),
+        (DMA3 + 8, 2, 0x400), (DMA3 + 0xA, 2, 0x8400),
+        (DMA3, 4, 0x02001000), (DMA3 + 4, 4, 0x06001000),
+        (DMA3 + 8, 2, 0x200), (DMA3 + 0xA, 2, 0x8400)]
+
+
+def test_the_dma_interrupt_enable_saves_the_master_enable_and_raises_the_channel_bit():
+    memory = thumb_vm.Memory(image())
+    memory.half(0x04000208, 1)
+    memory.half(0x04000200, 0)
+    memory.half(0x04000202, 0)
+    memory.blob(DMA_CHANNEL, b"\x02")
+    memory.word(0x030038A8, 0x02000100)
+    memory.half(0x02000000, 0x1234)
+    memory.half(0x02000002, 0x5678)
+    memory.half(0x02000004, 0x9ABC)
+    memory.writes.clear()
+    result = run(ENABLE_DMA_INTERRUPT, {0: 0x02000000}, memory)
+    assert result["calls"] == []
+    assert memory.read(SAVED_IME, 2) == 1
+    assert memory.read(0x04000208, 2) == 1
+    assert memory.read(0x04000200, 2) == 0x20
+    assert memory.read(0x04000202, 2) == 0x20
+    assert memory.read(0x030038A2, 2) == 0x1234
+    assert memory.read(0x02000100, 2) == 0x5678
+    assert memory.read(0x02000102, 2) == 0x9ABC
+    assert memory.read(0x030038A8, 4) == 0x02000100
+
+
+def test_the_dma_interrupt_disable_clears_the_channel_bit_and_restores_the_master_enable():
+    memory = thumb_vm.Memory(image())
+    memory.half(SAVED_IME, 1)
+    memory.half(0x04000208, 0)
+    memory.half(0x04000200, 0x20)
+    memory.blob(DMA_CHANNEL, b"\x02")
+    memory.word(0x030038A8, 0x02000100)
+    memory.writes.clear()
+    run(DISABLE_DMA_INTERRUPT, {}, memory)
+    assert memory.read(0x04000200, 2) == 0
+    assert memory.read(0x04000208, 2) == 1
+    assert memory.read(0x02000100, 4) == 0
