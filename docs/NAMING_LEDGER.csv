@@ -1,9 +1,15 @@
 address,old,new,evidence_class,evidence
+0x080003ea,sub_080003EA,Blend_ShowBg0,device-register,"writes 0x85F to BLDCNT (0x04000050) through the literal base 0x04000040, so alpha blend with BG0..OBJ as first target and BG0 as second, then 0x00 to (0x04000052) and 0x10 to (0x04000053), the second target at full weight"
+0x08000c9a,sub_08000C9A,Blend_SplitAlpha,device-register,"halves r1 into BLDALPHA (0x04000052) and writes 0x10 minus that into (0x04000053), so the two weights sum to 16"
 0x080068b8,sub_080068B8,List_Append,callee-role,"increments the count at +0x4 and stores r1 at 4+4*count, with no other effect"
+0x08009be4,sub_08009BE4,Palette_LoadObject,device-register,"DMA3 SAD (0x040000D4)=0x081DA6C8, DAD (0x040000D8)=0x05000200, count (0x040000DC)=0x100 and CNT_H (0x040000DE)=0x8000, 32-bit and enabled, over the object palette"
+0x0800da68,sub_0800DA68,Palette_Save,device-register,"stores the literal 0x080240B4 at +0x0 and runs two DMA3 transfers of count 0x100 with CNT_H 0x8000, SAD 0x05000000 to +0x4 and SAD 0x05000200 to +0x204, copying both palettes out"
 0x0801200e,sub_0801200E,Irq_EnableHBlank,device-register,"IE (0x04000200) read, ORed with 0x2 and written back; BG2PB (0x04000022) and BG2PD (0x04000026) zeroed"
 0x08012030,sub_08012030,Irq_DisableHBlank,device-register,IE (0x04000200) read and bit 1 cleared with BIC 0x2
+0x0801ee7e,sub_0801EE7E,Blend_StepEva,device-register,"increments the word at +0x4 and, while it is at most 0x10, writes it to BLDALPHA (0x04000052) as the first weight"
 0x0801eefc,sub_0801EEFC,Input_ReadKeys,device-register,"reads KEYINPUT (0x04000130) through the 0x04000120 literal, then EOR, MVN and AND build pressed and released masks stored at +0x14 and +0x16"
 0x0801f508,sub_0801F508,Tilemap_FillRect,callee-role,writes r2 as halfwords from (y0*0x20 + x0)*2 + base across every row between the x bounds at +0x0 and +0x8
+0x0801f54c,sub_0801F54C,Dma3_Fill,device-register,"DMA3 SAD (0x040000D4)=0x03003914, DAD (0x040000D8)=r0, count (0x040000DC)=0x100 and CNT_H (0x040000DE)=0x8500, 32-bit with the source held fixed, so one word is repeated to r0"
 0x08020af4,sub_08020AF4,Sound_InitMixer,device-register,"writes SOUND4CNT_H (0x04000080)=0, SOUNDCNT_H (0x04000082)=0x9A0E and SOUNDCNT_L (0x04000084)=0x80, and its pool carries 0x040000A0, 0x040000A4 (FIFO A and B) and 0x04000200 (IE)"
 0x08020b8c,sub_08020B8C,Sound_StopDriver,device-register,"after calling 0x08020D40 it writes 0 to TM0CNT_H (0x04000102), DMA1CNT_H (0x040000C6), DMA2CNT_H (0x040000D2) and SOUNDCNT_L (0x04000084)"
 0x08020bac,sub_08020BAC,Sound_StopChannels,device-register,"writes 0 to TM0CNT_H (0x04000102), DMA1CNT_H (0x040000C6) and DMA2CNT_H (0x040000D2)"
@@ -13,9 +19,25 @@ address,old,new,evidence_class,evidence
 0x08020d6a,sub_08020D6A,Irq_HaltUntilFlag,bios-call,SWI 0x02 (Halt) repeated while the halfword at +0x38 AND r5 is zero
 0x0802135c,sub_0802135C,Boot_SoftReset,bios-call,"IME=0, DISPCNT (0x04000000)=0x80, the six BG scroll registers 0x04000010..0x0400001A zeroed, then SWI 0x00 (SoftReset)"
 0x080213a0,sub_080213A0,Boot_StopUntilKey,bios-call,"IE=0xC304 and KEYCNT (0x04000132) written, then SWI 0x03 (Stop), then a loop calling 0x0801EEFC while the keypad mask is 0"
+0x08021526,sub_08021526,Dma3_StartCopy,device-register,"DMA3 SAD (0x040000D4)=r1, DAD (0x040000D8)=the word at 0x03003898 plus r2, count (0x040000DC)=r3>>2 and CNT_H (0x040000DE)=0x8400, 32-bit and enabled"
 0x08021980,sub_08021980,Irq_EnableDmaBit,device-register,"IME saved to 0x030038AC and cleared, then IF (0x04000202) and IE (0x04000200) set to 8<<n with n from the byte at 0x030038A0, then IME=1"
 0x08021a08,sub_08021A08,Irq_DisableDmaBit,device-register,"IME (0x04000208)=0, then IE (0x04000200) cleared of 8<<n with n from the byte at 0x030038A0"
 0x08021a4c,sub_08021A4C,Dma3_CopyAndWait,device-register,"IME saved and cleared, DMA3 SAD (0x040000D4)=r0, DAD (0x040000D8)=r1, then a 32-bit store to 0x040000DC of count|0x80000000 and a wait while CNT_H bit 15 is set"
+0x08021cf0,sub_08021CF0,_vsprintf,toolchain-library,"c_t__ue.l, member _vsprntf.o, symbol _vsprintf, 56 B matched, 16 B masked, 40 B compared"
+0x08021d28,sub_08021D28,__call_via_r0,toolchain-library,"c_t__se.l, member callvia.o, symbol __call_via_r0, 16 B matched, 0 B masked, 16 B compared"
 0x08021d2a,sub_08021D2A,Thunk_BranchR1,callee-role,the whole body is BX r1
 0x08021d2c,sub_08021D2C,Thunk_BranchR2,callee-role,the whole body is BX r2
+0x08021d74,sub_08021D74,__cpp_initialise,toolchain-library,"c_t__ue.l, member init.o, symbol __cpp_initialise, 44 B matched, 12 B masked, 32 B compared"
+0x08021db4,sub_08021DB4,__16_ll_sshift_r,toolchain-library,"c_t__se.l, member llsshr.o, symbol __16_ll_sshift_r, 44 B matched, 0 B masked, 44 B compared"
+0x080220cc,sub_080220CC,__vecmap1c__FPvT1iPFPv_v,toolchain-library,"c_t__ue.l, member vc1c.o, symbol __vecmap1c__FPvT1iPFPv_v, 36 B matched, 4 B masked, 32 B compared"
+0x080220f0,sub_080220F0,__vecmap2__FPvN21UiPFPvT1_v,toolchain-library,"c_t__ue.l, member vc2.o, symbol __vecmap2__FPvN21UiPFPvT1_v, 40 B matched, 4 B masked, 36 B compared"
+0x08022118,sub_08022118,__vfprintf,toolchain-library,"c_t__ue.l, member __vfpntf.o, symbol __vfprintf, 2348 B matched, 132 B masked, 2216 B compared"
+0x08022a44,sub_08022A44,_sputc,toolchain-library,"c_t__se.l, member _sputc.o, symbol _sputc, 20 B matched, 0 B masked, 20 B compared"
+0x08022b08,sub_08022B08,__16_ll_cmpge,toolchain-library,"c_t__se.l, member llcmpge.o, symbol __16_ll_cmpge, 16 B matched, 0 B masked, 16 B compared"
+0x08022b18,sub_08022B18,__16_ll_cmpu,toolchain-library,"c_t__se.l, member llcmpu.o, symbol __16_ll_cmpu, 16 B matched, 0 B masked, 16 B compared"
+0x08022b28,sub_08022B28,__16_ll_neg,toolchain-library,"c_t__se.l, member llneg.o, symbol __16_ll_neg, 16 B matched, 0 B masked, 16 B compared"
+0x08022b38,sub_08022B38,__16_ll_udiv10,toolchain-library,"c_t__se.l, member lludiv10.o, symbol __16_ll_udiv10, 164 B matched, 0 B masked, 164 B compared"
+0x08022bdc,sub_08022BDC,__16_ll_ushift_r,toolchain-library,"c_t__se.l, member llushr.o, symbol __16_ll_ushift_r, 44 B matched, 0 B masked, 44 B compared"
+0x08022c84,sub_08022C84,__16__rt_udiv10,toolchain-library,"c_t__se.l, member rtudiv10.o, symbol __16__rt_udiv10, 48 B matched, 0 B masked, 48 B compared"
+0x08022cb4,sub_08022CB4,strlen,toolchain-library,"c_t__se.l, member strlen.o, symbol strlen, 76 B matched, 0 B masked, 76 B compared"
 0x080236b4,sub_080236B4,Interwork_EnterArm,callee-role,"the whole body is BX pc, the state switch to ARM"

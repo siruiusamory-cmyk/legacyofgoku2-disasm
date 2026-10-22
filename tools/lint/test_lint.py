@@ -371,7 +371,27 @@ def test_a_readme_without_the_function_figure_is_caught():
     assert lints.readme_naming_findings(MEASURED_PROGRESS, 1, 2)
 
 
+LIB_TABLE = "address,name\n0x08000276,strlen\n"
+LIB_ROW = ("address,old,new,evidence_class,evidence\n"
+           "0x08000276,sub_08000276,strlen,toolchain-library,"
+           "armlib/c_t__un.l member strlen.o symbol strlen 76 B matched\n")
+
+
+def test_a_library_symbol_with_its_row_is_not_caught():
+    findings, names = lints.naming_symbol_findings(LIB_TABLE, LIB_ROW, {0x08000276})
+    assert findings == []
+    assert names == {0x08000276: "strlen"}
+
+
+def test_a_library_symbol_without_its_row_is_caught():
+    findings, _names = lints.naming_symbol_findings(
+        LIB_TABLE, "address,old,new,evidence_class,evidence\n", {0x08000276})
+    assert [detail for _found, detail in findings
+            if "no toolchain-library ledger row names it" in detail]
+
+
 def test_the_repository_has_no_lint_finding():
+
     assert lints.run() == []
 
 

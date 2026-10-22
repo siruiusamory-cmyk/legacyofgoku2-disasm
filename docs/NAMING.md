@@ -1,12 +1,15 @@
 # Naming conventions
 
-Every symbol the build emits carries one of two forms, and which form it carries is a statement
+Every symbol the build emits carries one of three forms, and which form it carries is a statement
 about the evidence for it.
 
 ## Functions
 
 - Known purpose: `Module_Verb` in PascalCase, module first, one verb after it (`Input_ReadKeys`).
   The module names the subsystem the function works in, never the file it happens to sit in.
+- A toolchain library function: the exact exported symbol of the library member whose code the
+  address reproduces, spelled as the librarian exports it (`strlen`, `__16_ll_udiv10`,
+  `__vfprintf`). This form needs a `toolchain-library` ledger row and nothing else admits it.
 - Unknown purpose: `sub_` and the address as eight uppercase hex digits (`sub_0801EEFC`). No name
   is better than a name that claims more than the bytes show.
 - A branch destination inside a function keeps the generator form (`loc_0801F0BC`); a `loc_` symbol
@@ -35,6 +38,14 @@ names the class it is:
   trace installs at the interrupt vector, or a target of the jump table that trace measures.
 - **decoded-format**: the body decodes or writes a structure that a generator under `tools/` already
   decodes, and the two agree on layout.
+- **toolchain-library**: the entry's bytes reproduce a member of the ARM Developer Suite 1.2 runtime
+  and C libraries the game was linked with, so the member's exported symbol is the function's name.
+  The match is byte-exact with only the fields the linker relocated masked: for a PC-relative
+  relocation the three bytes that carry the branch offset are masked and the opcode byte is compared,
+  for a Thumb call the four bytes of the call pair are masked, and for a word relocation the four
+  bytes that hold the address are masked. Every other byte, including a literal-pool word no
+  relocation patches, is compared. `tools/research/library_match.py` applies the rule and its test
+  holds each case.
 
 A name says what the function does, never who called it, never why the change was made, and never a
 number that the evidence cell does not also carry.

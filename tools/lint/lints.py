@@ -317,6 +317,9 @@ def naming_symbol_findings(table_text, ledger_text, addresses):
     table = naming_site(module, module.TABLE)
     ledger = naming_site(module, module.LEDGER)
     findings = []
+    ledger_rows = module.ledger_rows(ledger_text)
+    library = set(cells[2] for _number, cells in ledger_rows
+                  if len(cells) == 5 and cells[3] == "toolchain-library")
     names = {}
     rows_at = {}
     for number, cells in module.table_rows(table_text):
@@ -335,8 +338,10 @@ def naming_symbol_findings(table_text, ledger_text, addresses):
         if int(address_text, 16) not in addresses:
             findings.append(("NAMING-symbol",
                              "%s: %s is not a code entry the split proves" % (site, address_text)))
-        if FUNCTION_NAME.match(name) is None:
-            findings.append(("NAMING-symbol", "%s: %s is not Module_Verb" % (site, name)))
+        if FUNCTION_NAME.match(name) is None and name not in library:
+            findings.append(("NAMING-symbol",
+                             "%s: %s is not Module_Verb and no toolchain-library ledger row "
+                             "names it" % (site, name)))
         if name in rows_at:
             findings.append(("NAMING-symbol",
                              "%s: %s repeats the name at line %d" % (site, name, rows_at[name])))
@@ -344,7 +349,7 @@ def naming_symbol_findings(table_text, ledger_text, addresses):
         rows_at[name] = number
         names[int(address_text, 16)] = name
     recorded = set()
-    for number, cells in module.ledger_rows(ledger_text):
+    for number, cells in ledger_rows:
         site = "%s:%d" % (ledger, number)
         if len(cells) != 5:
             findings.append(("NAMING-symbol",

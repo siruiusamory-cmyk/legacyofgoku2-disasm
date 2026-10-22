@@ -37,9 +37,37 @@ def test_a_body_that_reaches_another_entry_is_not_this_entry():
     assert device_access.unit(lines, {0x08000102}) is None
 
 
+def test_a_call_reports_the_address_it_branches_to():
+    lines = [(0x08000100, "BL", "|loc_08022118|"),
+             (0x08000104, "BX", "lr")]
+    assert device_access.callees(lines) == [0x08022118]
+
+
+def test_a_branch_that_is_not_a_call_reports_no_callee():
+    lines = [(0x08000100, "B", "|loc_08022118|")]
+    assert device_access.callees(lines) == []
+
+
+def test_a_load_through_a_saved_register_reports_it_as_live_in():
+    lines = [(0x08000100, "LDR", "r1, [r4, #0x18]"),
+             (0x08000102, "BX", "lr")]
+    assert device_access.live_in(lines) == ["r4"]
+
+
+def test_a_saved_register_that_the_body_writes_first_is_not_live_in():
+    lines = [(0x08000100, "PUSH", "{r4, lr}"),
+             (0x08000102, "MOV", "r4, r0"),
+             (0x08000104, "POP", "{r4, pc}")]
+    assert device_access.live_in(lines) == []
+
+
 if __name__ == "__main__":
     test_a_literal_register_address_and_a_store_report_the_value_written()
     test_a_shifted_constant_base_is_followed()
     test_a_base_below_the_register_block_reports_nothing()
     test_a_body_that_reaches_another_entry_is_not_this_entry()
+    test_a_call_reports_the_address_it_branches_to()
+    test_a_branch_that_is_not_a_call_reports_no_callee()
+    test_a_load_through_a_saved_register_reports_it_as_live_in()
+    test_a_saved_register_that_the_body_writes_first_is_not_live_in()
     print("PASS test_device_access")
