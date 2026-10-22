@@ -1,0 +1,2 @@
+ram=82
+hardware=0

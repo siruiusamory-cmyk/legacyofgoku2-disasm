@@ -49,3 +49,7 @@ address,name
 0x080265ac,Counter_AddCapped
 0x08028030,Rect_IncludePoint
 0x0802805c,Rect_Overlaps
+0x080063e0,Bitmap_FillCells
+0x08006d70,List_MaxScaled
+0x0800791a,Point_LoadScaled
+0x08027e74,Record_Outranks

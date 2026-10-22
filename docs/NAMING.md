@@ -72,11 +72,28 @@ and not to this one.
 evidence quotes an address the body neither accesses, nor loads as a literal, nor calls, nor writes
 as a stored value. A failing row is demoted, never repaired by narrowing the quote.
 
-## The ledger
+## ## The ledger
 
 `docs/NAMING_LEDGER.csv` has one row per promotion: `address,old,new,evidence_class,evidence`. The
 evidence cell is short and checkable on its own: the register and the constant, the SWI number, the
 callee address, or the split figure. A promotion without a ledger row is a name without evidence.
+
+## Data symbols
+
+A word of writable memory takes a name only when a behaviour test reads or writes it and asserts
+what the function does with it, so the name claims exactly that use. The table is
+`tools/code/ram.csv`, two columns, `address,name`, and `docs/RAM_LEDGER.csv` carries one row per
+promotion in the same five columns as the function ledger. `tools/code/emit_code.py` emits the name
+for a named literal pool word and the plain address for everything else, and `asm/memory.s` holds
+the equates the emitted files assemble against. A data name is `Module_Field` in PascalCase, the
+module naming the structure the word belongs to; every address with no such evidence stays a
+literal and is counted in `docs/READABILITY.md`.
+
+## Hardware symbols
+
+`asm/registers.s` holds the GBATEK name of every hardware register the code touches, and
+`asm/buu.s` includes it before any code. `tools/code/emit_code.py` emits the register name for a
+literal pool word that holds a register address, so no emitted file carries the number.
 
 ## Function boundaries
 

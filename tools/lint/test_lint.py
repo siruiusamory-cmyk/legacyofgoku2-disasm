@@ -546,3 +546,25 @@ if __name__ == "__main__":
     test_the_function_figure_is_held_in_both_directions()
     test_a_readme_without_the_function_figure_is_caught()
     print("PASS test_lint")
+
+def test_a_readability_ratchet_refuses_a_live_count_above_the_baseline():
+    findings = lints.readability_findings("ram=98\nhardware=0\n", {"ram": 99, "hardware": 0})
+    assert [name for name, _detail in findings] == ["READABILITY-ratchet"]
+
+
+def test_a_readability_ratchet_refuses_a_count_below_an_unlowered_baseline():
+    findings = lints.readability_findings("ram=98\nhardware=0\n", {"ram": 97, "hardware": 0})
+    assert [name for name, _detail in findings] == ["READABILITY-ratchet"]
+
+
+def test_a_readability_ratchet_accepts_the_count_it_records():
+    assert lints.readability_findings("ram=98\nhardware=0\n",
+                                      {"ram": 98, "hardware": 0}) == []
+
+
+def test_a_newcomer_path_check_names_the_step_a_document_leaves_out():
+    complete = "extract.cmd\nrebuild.cmd\npython tools\\gate\\gate.py\ndocs/CODE_INDEX.md\n"
+    assert lints.newcomer_path_findings(complete, complete) == []
+    found = complete.replace("docs/CODE_INDEX.md", "")
+    findings = lints.newcomer_path_findings(found, found)
+    assert [name for name, _detail in findings] == ["READABILITY-path"]

@@ -28,7 +28,7 @@ ENCODER_BLOCK_HEADER = 10
 INCLUDED_KIND = 2
 GEN = re.compile(r"build\\jcalg1\\gen_([0-9a-f]+)_([0-9a-f]+)\.bin$")
 GAP = re.compile(r"baserom\.gba_0x([0-9a-f]+)_0x([0-9a-f]+)\.extracted$")
-INCLUDE = re.compile(r"\.\.\\build\\code\\(?:code|pool)_[0-9a-f]+\.s$")
+INCLUDE = re.compile(r"\.\.\\build\\code\\[A-Za-z0-9_]+\.s$")
 INCBIN = re.compile(r"INCBIN\s+(\S+)")
 
 

@@ -31,14 +31,9 @@ def image_bytes(image):
     return image
 
 
-def half(image, address):
+def rom_half(image, address):
     at = address - ROM_BASE
     return image[at] | (image[at + 1] << 8)
-
-
-def word(image, address):
-    at = address - ROM_BASE
-    return int.from_bytes(image[at:at + 4], "little")
 
 
 class Memory:
@@ -192,7 +187,7 @@ def rotate(value, amount):
 
 
 def execute(image, memory, registers, flags, pc):
-    instruction = half(image, pc)
+    instruction = rom_half(image, pc)
     following = pc + 4
     if instruction < 0x1800:
         kind = instruction >> 11
@@ -284,6 +279,8 @@ def execute(image, memory, registers, flags, pc):
         destination = (instruction & 7) | (((instruction >> 7) & 1) << 3)
         source = ((instruction >> 3) & 7) | (((instruction >> 6) & 1) << 3)
         if kind == 3:
+            if source == 15:
+                raise Refused("0x%08X switches to ARM, which this run cannot follow" % pc)
             return registers[source] & ~1, flags, True
         if kind == 0:
             target, state, halt = add(registers, flags, destination,
@@ -405,14 +402,15 @@ def execute(image, memory, registers, flags, pc):
     if instruction < 0xE800:
         return pc + 4 + 2 * sign(instruction & 0x7FF, 11), flags, False
     if instruction >= 0xF000:
-        low = half(image, pc + 2)
+        low = rom_half(image, pc + 2)
         offset = ((instruction & 0x7FF) << 12) | ((low & 0x7FF) << 1)
         return None, flags, sign(offset, 23)
 
     raise Refused("0x%08X holds 0x%04X, which is not a Thumb instruction" % (pc, instruction))
 
 
-def run(image, address, registers=None, memory=None, body=None, budget=0x1000, stubs=None):
+def run_function(image, address, registers=None, memory=None, body=None, budget=0x1000,
+                 stubs=None):
     image = image_bytes(image)
     if body is None:
         body = body_of(image, address)
@@ -436,8 +434,8 @@ def run(image, address, registers=None, memory=None, body=None, budget=0x1000, s
         following = pc + 4
         target, flags, halt = execute(image, memory, state, flags, pc)
         if target is None:
-            call = sign(((half(image, pc) & 0x7FF) << 12) | ((half(image, pc + 2) & 0x7FF) << 1),
-                        23) + following
+            call = sign(((rom_half(image, pc) & 0x7FF) << 12)
+                        | ((rom_half(image, pc + 2) & 0x7FF) << 1), 23) + following
             calls.append((pc, call))
             state[14] = (pc + 2) | 1
             if call in stubs:

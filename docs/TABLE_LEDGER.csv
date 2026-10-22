@@ -1,0 +1,10 @@
+family,reader,evidence_class,page
+Map_Entries,0x08409368,decoded-format,"docs/research/FORMAT_REUSE.md the entry table at file 0x409368 with the stride at +0x2C naming a root pointer array; 327 entries"
+Map_Root,0x0800EB4C,decoded-format,"docs/research/FORMAT_REUSE.md the root reader's ldr r0,[r0,#0x2c] and ldr r0,[r0,#0x3c] shape; 336 roots of 0x50 B"
+Map_Layer,0x08005300,decoded-format,"docs/research/FORMAT_REUSE.md the counts at +0x14 and +0x15 and the container array at +0x18; 1294 records, 5249 chunk pointers"
+Map_RootTable,0x0800EB4C,decoded-format,"docs/research/FORMAT_REUSE.md the count at root+0x24 and the base at root+0x28, 24 B per row; 710 rows"
+TileBank_Table,0x0800510C,decoded-format,"docs/research/FORMAT_REUSE.md the loader that reads the table at 0x084DF574 through root+0x4C at 0x08005148 and decodes the container it names; 32 entries"
+TileBank_Character,0x080072C4,decoded-format,"docs/research/FORMAT_REUSE.md the loader at 0x080072C4 whose length comes from the container's declared size at 0x080072EC and whose stride is one 32-byte tile; 3 instances"
+Sprite_Directory,0x08009324,decoded-format,"docs/research/FORMAT_REUSE.md the resolver at 0x08009324 that reads 0x3B4E74 + 4*id and the slot array at +0x4C; 154 entries"
+Text_Strings,0x0801F702,decoded-format,"docs/research/FORMAT_REUSE.md the draw routine at 0x0801F702 and its 256-entry table at 0x08028724; 124 strings, 15512 B"
+Opcode_Stream,0x080092E4,decoded-format,"docs/research/FORMAT_REUSE.md the interpreter at 0x080092E4 that scales a byte by four and loads from 0x083B5C00; 86 streams, 323 instructions"

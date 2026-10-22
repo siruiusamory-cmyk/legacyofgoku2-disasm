@@ -22,6 +22,13 @@ START = 0x100
 END = 0x800000
 CLASS_TAGS = {"proven code": "proven", "filtered pointer-entry code": "filtered",
               "table-held code": "table", "gap-fill code": "gap"}
+HW_REGISTERS = {0x04000000: "REG_DISPCNT", 0x04000018: "REG_BG2HOFS", 0x0400001C: "REG_BG3HOFS",
+             0x04000040: "REG_WIN0H", 0x04000050: "REG_BLDCNT", 0x04000052: "REG_BLDALPHA",
+             0x04000080: "REG_SOUNDCNT_L", 0x040000A0: "REG_FIFO_A", 0x040000A4: "REG_FIFO_B",
+             0x040000D4: "REG_DMA3SAD", 0x040000D8: "REG_DMA3DAD", 0x040000DC: "REG_DMA3CNT_L",
+             0x040000DE: "REG_DMA3CNT_H", 0x04000100: "REG_TM0CNT_L",
+             0x04000120: "REG_SIODATA32", 0x04000200: "REG_IE", 0x04000204: "REG_WAITCNT",
+             0x04000208: "REG_IME"}
 REGISTERS = ("r0", "r1", "r2", "r3", "r4", "r5", "r6", "r7",
              "r8", "r9", "r10", "r11", "r12", "sp", "lr", "pc")
 CONDITIONS = ("eq", "ne", "cs", "cc", "mi", "pl", "vs", "vc", "hi", "ls", "ge", "lt", "gt", "le")
@@ -399,6 +406,12 @@ def decode(rom, address, mode):
     return text[0], text[1], text[2]
 
 
+def constant_text(value):
+    if value in HW_REGISTERS:
+        return HW_REGISTERS[value]
+    return name_table.ram_names().get(value, "0x%08X" % value)
+
+
 def data_text(rom, begin, end):
     lines = []
     position = begin
@@ -407,7 +420,7 @@ def data_text(rom, begin, end):
             lines.append("\tDCW\t0x%04X" % halfwords(rom, position))
             position += 2
     while position + 4 <= end:
-        lines.append("\tDCD\t0x%08X" % word(rom, position))
+        lines.append("\tDCD\t%s" % constant_text(word(rom, position)))
         position += 4
     while position + 2 <= end:
         lines.append("\tDCW\t0x%04X" % halfwords(rom, position))
@@ -470,27 +483,40 @@ def fragments(rom):
             if operation.startswith("B") and operands.startswith("|loc_"):
                 targets.add(int(operands[5:13], 16))
     files = {}
+    segments = []
     import function_bounds
     starts = function_bounds.describe(measured, rom)["starts"]
     for begin, end, mode, _tag, lines in kept_rows:
-        text = ["\tCODE16" if mode == "thumb" else "\tCODE32"]
+        directive = "\tCODE16" if mode == "thumb" else "\tCODE32"
+        groups = []
         for position, operation, operands in lines:
-            if position == begin or position in targets or position in entries:
+            if not groups or position in starts:
+                groups.append((position, []))
+            start, text = groups[-1]
+            if position == start or position in targets or position in entries:
                 if position in starts:
                     text.append(function_label(position, index))
                 text.append(label(position))
             text.append("\t%s\t%s" % (operation, operands))
-        files["code_%08x.s" % begin] = "\n".join(text) + "\n"
+        for number, (start, text) in enumerate(groups):
+            stop = groups[number + 1][0] if number + 1 < len(groups) else end
+            name = source_name(start, index)
+            files[name] = "\n".join([directive] + text) + "\n"
+            segments.append((start, stop, name))
     for begin, end in pools:
         files["pool_%08x.s" % begin] = "\n".join(data_text(rom, begin, end)) + "\n"
     return {"measured": measured, "files": files, "kept": kept_rows, "pools": pools,
-            "raw": raw, "bytes": kept_bytes, "entries": entries, "targets": targets,
+            "segments": segments, "raw": raw, "bytes": kept_bytes, "entries": entries,
+            "targets": targets,
             "pool_bytes": sum(end - begin for begin, end in pools)}
 
 
-def span_files(result):
-    spans = [(begin, end, "code_%08x.s" % begin)
-             for begin, end, _mode, _tag, _lines in result["kept"]]
+def source_name(begin, index):
+    return "%s.s" % index[begin] if begin in index else "code_%08x.s" % begin
+
+
+def span_files(result, index=None):
+    spans = list(result["segments"])
     spans += [(begin, end, "pool_%08x.s" % begin) for begin, end in result["pools"]]
     return sorted(spans)
 

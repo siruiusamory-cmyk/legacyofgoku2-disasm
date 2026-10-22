@@ -18,6 +18,15 @@ QUEUE = 0x08026528
 INCLUDE_POINT = 0x08028030
 OVERLAPS = 0x0802805C
 ADD_CAPPED = 0x080265AC
+OUTRANKS = 0x08027E74
+LIST = 0x02000000
+MAX_SCALED = 0x08006D70
+LOAD_POINT = 0x0800791A
+FILL_CELLS = 0x080063E0
+HALF_FILL_REQUEST = 0x0801F43C
+WORD_FILL_REQUEST = 0x0801F46A
+HALF_FILL_SOURCE = 0x03003910
+WORD_FILL_SOURCE = 0x03003914
 HEAD = 0x030022B4
 NODE = 0x02000008
 
@@ -28,8 +37,8 @@ def image():
 
 def run(address, registers, memory, stubs=None):
     data = image()
-    return thumb_vm.run(data, address, registers=registers, memory=memory,
-                         body=thumb_vm.body_of(data, address), stubs=stubs)
+    return thumb_vm.run_function(data, address, registers=registers, memory=memory,
+                                 body=thumb_vm.body_of(data, address), stubs=stubs)
 
 
 def heap(size_words):
@@ -175,3 +184,108 @@ def test_counter_add_capped_stores_the_sum_until_the_limit_is_reached():
     capped = run(ADD_CAPPED, {0: 0x02000000, 1: 5}, memory)
     assert memory.read(0x02000000, 2) == 20
     assert capped["written"] == [(0x02000000, 2, 20)]
+
+def test_bitmap_fill_cells_sets_or_clears_one_bit_for_each_eight_pixel_cell():
+    memory = thumb_vm.Memory(image())
+    for index, value in enumerate([8, 16, 40, 40]):
+        memory.word(0x02000100 + 4 * index, value)
+    memory.blob(0x02000200, bytes(0x60))
+    memory.writes.clear()
+    set_cells = run(FILL_CELLS, {0: 0x02000100, 1: 0x02000200, 2: 1}, memory)
+    assert memory.read(0x02000240, 4) == 0x1E
+    assert memory.read(0x02000260, 4) == 0x1E
+    assert memory.read(0x02000280, 4) == 0x1E
+    assert memory.read(0x02000220, 4) == 0
+    written = writes_between(set_cells, 0x02000200, 0x02000300)
+    assert [entry[2] for entry in written] == [2, 6, 0xE, 0x1E] * 3
+    assert [entry[0] for entry in written] == [0x02000240] * 4 + [0x02000260] * 4 \
+        + [0x02000280] * 4
+    memory.blob(0x02000200, b"\xff" * 0x60)
+    memory.writes.clear()
+    run(FILL_CELLS, {0: 0x02000100, 1: 0x02000200, 2: 0}, memory)
+    assert memory.read(0x02000240, 4) == 0xFFFFFFE1
+    for index, value in enumerate([-8, -8, 8, 8]):
+        memory.word(0x02000100 + 4 * index, value)
+    memory.blob(0x02000200, bytes(0x60))
+    memory.writes.clear()
+    run(FILL_CELLS, {0: 0x02000100, 1: 0x02000200, 2: 1}, memory)
+    assert memory.read(0x02000200, 4) == 1
+
+def test_record_outranks_by_a_higher_byte_then_a_lower_word():
+    memory = thumb_vm.Memory(image())
+    memory.word(0x02000100, 0x02000200)
+    memory.word(0x02000110, 0x02000300)
+    memory.blob(0x02000208, b"\x01")
+    memory.blob(0x02000308, b"\x02")
+    assert run(OUTRANKS, {0: 0x02000100, 1: 0x02000110}, memory)["registers"][0] == 0
+    memory.blob(0x02000208, b"\x03")
+    assert run(OUTRANKS, {0: 0x02000100, 1: 0x02000110}, memory)["registers"][0] == 1
+    memory.blob(0x02000208, b"\x02")
+    memory.word(0x02000204, 5)
+    memory.word(0x02000304, 7)
+    assert run(OUTRANKS, {0: 0x02000100, 1: 0x02000110}, memory)["registers"][0] == 1
+    memory.word(0x02000204, 0xFFFFFFF9)
+    assert run(OUTRANKS, {0: 0x02000100, 1: 0x02000110}, memory)["registers"][0] == 1
+    memory.word(0x02000204, 9)
+    assert run(OUTRANKS, {0: 0x02000100, 1: 0x02000110}, memory)["registers"][0] == 0
+    memory.word(0x02000204, 7)
+    assert run(OUTRANKS, {0: 0x02000100, 1: 0x02000110}, memory)["registers"][0] == 0
+
+def test_list_max_scaled_returns_the_largest_halfword_of_the_chain_times_sixty_four():
+    memory = thumb_vm.Memory(image())
+    memory.word(LIST + 4, 0)
+    memory.blob(LIST, b"\x00")
+    memory.half(0x02000698, 3)
+    memory.blob(0x0200069C, b"\x01")
+    memory.half(0x020006A2, 5)
+    memory.blob(0x020006A6, b"\xff")
+    assert run(MAX_SCALED, {0: LIST}, memory)["registers"][0] == 0x140
+    memory.half(0x020006A2, 0xFFFF)
+    assert run(MAX_SCALED, {0: LIST}, memory)["registers"][0] == 0x3FFFC0
+    memory.word(LIST + 4, 0x80)
+    assert run(MAX_SCALED, {0: LIST}, memory)["registers"][0] == 0
+    memory.word(LIST + 4, 0)
+    memory.blob(LIST, b"\xff")
+    assert run(MAX_SCALED, {0: LIST}, memory)["registers"][0] == 0
+
+
+def test_a_halfword_fill_request_stores_the_halfword_it_copies_in_the_dma3_source_word():
+    memory = thumb_vm.Memory(image())
+    memory.writes.clear()
+    result = run(HALF_FILL_REQUEST,
+                 {0: 0x02000100, 1: 0x06001000, 2: 0x89ABCDEF, 3: 0x2000}, memory)
+    assert writes_between(result, HALF_FILL_SOURCE, HALF_FILL_SOURCE + 2) == [
+        (HALF_FILL_SOURCE, 2, 0xCDEF), (HALF_FILL_SOURCE, 2, 0xCDEF)]
+    assert [entry for entry in result["written"] if 0x02000100 <= entry[0] < 0x02000110] == [
+        (0x02000100, 4, HALF_FILL_SOURCE), (0x02000104, 4, 0x06001000),
+        (0x02000108, 2, 0x800), (0x0200010A, 2, 0x8100),
+        (0x02000100, 4, HALF_FILL_SOURCE), (0x02000104, 4, 0x06002000),
+        (0x02000108, 2, 0x800), (0x0200010A, 2, 0x8100)]
+
+
+def test_a_word_fill_request_stores_the_word_it_copies_in_the_dma3_source_word():
+    memory = thumb_vm.Memory(image())
+    memory.writes.clear()
+    result = run(WORD_FILL_REQUEST,
+                 {0: 0x02000100, 1: 0x06001000, 2: 0x89ABCDEF, 3: 0x2000}, memory)
+    assert writes_between(result, WORD_FILL_SOURCE, WORD_FILL_SOURCE + 4) == [
+        (WORD_FILL_SOURCE, 4, 0x89ABCDEF), (WORD_FILL_SOURCE, 4, 0x89ABCDEF)]
+    assert [entry for entry in result["written"] if 0x02000100 <= entry[0] < 0x02000110] == [
+        (0x02000100, 4, WORD_FILL_SOURCE), (0x02000104, 4, 0x06001000),
+        (0x02000108, 2, 0x400), (0x0200010A, 2, 0x8500),
+        (0x02000100, 4, WORD_FILL_SOURCE), (0x02000104, 4, 0x06002000),
+        (0x02000108, 2, 0x400), (0x0200010A, 2, 0x8500)]
+
+
+def test_point_load_scaled_writes_the_two_global_words_shifted_into_the_structure():
+    memory = thumb_vm.Memory(image())
+    memory.word(0x03000158, 0x00002000)
+    memory.word(0x0300015C, 0x00003000)
+    memory.writes.clear()
+    result = run(LOAD_POINT, {0: 0x02000100, 1: 0x03000000}, memory)
+    assert writes_between(result, 0x02000100, 0x02000110) == [
+        (0x02000100, 4, 0x20), (0x02000104, 4, 0x30)]
+    memory.word(0x03000158, 0xFFFFF800)
+    memory.writes.clear()
+    result = run(LOAD_POINT, {0: 0x02000100, 1: 0x03000000}, memory)
+    assert writes_between(result, 0x02000100, 0x02000110)[0] == (0x02000100, 4, 0xFFFFFFF8)

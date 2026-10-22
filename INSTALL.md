@@ -44,3 +44,7 @@ present; the ROM-gated tests skip while it is absent, which is what CI runs.
 
 The build is byte sensitive: `asm/` carries the transcribed halfwords, so a change there moves the
 digest. The gate is the only proof that a change kept the image equal.
+
+Which file carries a function, and how a change to one is proven, is the path in
+[README.md](README.md#reading-and-changing-a-function). [docs/READABILITY.md](docs/READABILITY.md)
+measures what a reader still meets in this tree and which counts a commit may not raise.

@@ -7,7 +7,9 @@ import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 TABLE = os.path.join(ROOT, "tools", "code", "names.csv")
+RAM = os.path.join(ROOT, "tools", "code", "ram.csv")
 LEDGER = os.path.join(ROOT, "docs", "NAMING_LEDGER.csv")
+RAM_LEDGER = os.path.join(ROOT, "docs", "RAM_LEDGER.csv")
 BASELINE = os.path.join(ROOT, "docs", "NAMING_BASELINE.txt")
 EXPORT = os.path.join(ROOT, "docs", "research", "RECOMP_INPUTS.toml")
 BOUNDS = os.path.join(ROOT, "docs", "research", "FUNCTION_BOUNDS.csv")
@@ -134,3 +136,14 @@ def starts(text=None):
 
 def load_names():
     return names()
+
+
+def ram_names(text=None):
+    if text is None:
+        text = read(RAM)
+    index = {}
+    for _number, cells in csv_rows(text, TABLE_HEADER):
+        if len(cells) != 2 or not ADDRESS.match(cells[0]):
+            continue
+        index[int(cells[0], 16)] = cells[1]
+    return index

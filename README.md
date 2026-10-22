@@ -34,10 +34,11 @@ It builds one ROM:
 ## What this is not
 
 This is not a decompilation. All of the game's code is still assembly, and the build compiles no C.
-Nearly every symbol is still named by its address: 1,044 of the 1,094 functions the split classifies carry
+Nearly every symbol is still named by its address: 1,040 of the 1,094 functions the split classifies carry
 the `sub_` form, and the blocks inside a function carry the `loc_` form (`loc_0801F0BC`). Naming one
 takes evidence, never a guess; [docs/NAMING.md](docs/NAMING.md) says which evidence promotes a name
-and which bytes make a function start. No part of the code is claimed to match the original
+and which bytes make a function start, and [docs/CODE_INDEX.md](docs/CODE_INDEX.md) says which file
+carries it. No part of the code is claimed to match the original
 compiler's C output.
 
 The progress figure below measures how much of the ROM the build produces from tracked source. It
@@ -70,13 +71,30 @@ python tools\gate\gate.py
 The gate rebuilds from scratch and prints `DIGEST MATCH` and `GATE PASS` when the output equals the
 retail ROM.
 
+## Reading and changing a function
+
+1. Find the function in [docs/CODE_INDEX.md](docs/CODE_INDEX.md). Every function start has a row
+   there and a file of its own: a named function is `build\code\<name>.s`, an address-named one is
+   `build\code\code_<address>.s`, and the blocks inside a function are `loc_<address>` labels in
+   that same file.
+2. Read the file. It is generated at build time, so read it after `rebuild.cmd` has run.
+3. The instructions come from the retail image through `tools/code/emit_code.py`, so changing what a
+   function does means changing the generator or the transcription it emits; `docs/NAMING.md` says
+   what the tree does and does not claim about the code.
+4. To give a function a name, add a ledger row and the test or evidence that row cites, as
+   `docs/NAMING.md` says. The build then emits the name and the index carries it.
+5. Any change to the emitted text, the layout or the names has one proof: `rebuild.cmd` followed by
+   `python tools\gate\gate.py`, which must still print `DIGEST MATCH` and `GATE PASS`.
+6. `check.cmd` runs the source checks and the link check, which is what a commit has to pass
+   locally; [docs/READABILITY.md](docs/READABILITY.md) lists what the tree still has to improve.
+
 ## Repository layout
 
 | Path | Contents |
 | --- | --- |
 | `asm/` | the assembly the image is built from |
 | `tools/` | extraction, the generators, the gate, the source checks and the research scripts |
-| `docs/` | how source is counted, the format record and the research notes |
+| `docs/` | how source is counted, the readability ledger, the format record and the research notes |
 | `assets/` | inputs the build writes from your ROM; never tracked |
 | `build/` | the objects, the generated source and the image; never tracked |
 | `work/` | build logs and research output; never tracked |

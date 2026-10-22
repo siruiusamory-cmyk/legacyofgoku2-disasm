@@ -67,7 +67,9 @@ def test_the_emitted_text_reassembles_to_the_image(tmp_path):
     spans = emit_code.span_files(measured)
     for name, text in measured["files"].items():
         (tmp_path / name).write_text(text, encoding="utf-8", newline="\n")
-    lines = ["\tAREA\tRemainder, CODE, READONLY"]
+    lines = ["\tINCLUDE\t%s" % os.path.join(ROOT, "asm", name).replace("\\", "/")
+             for name in ("registers.s", "memory.s")]
+    lines.append("\tAREA\tRemainder, CODE, READONLY")
     position = emit_code.ROM_BASE + emit_code.START
     for begin, end, name in spans:
         if begin > position:
@@ -92,6 +94,16 @@ def test_the_emitted_text_reassembles_to_the_image(tmp_path):
         if image[offset:offset + end - begin] != rom[begin - emit_code.ROM_BASE:end - emit_code.ROM_BASE]:
             wrong.append(begin)
     assert wrong == []
+
+
+def test_every_function_start_opens_one_file():
+    measured, rom = result()
+    found = function_bounds.describe(measured["measured"], rom)
+    segments = measured["segments"]
+    assert len(segments) == len(found["starts"])
+    assert [begin for begin, _end, _name in segments if begin not in found["starts"]] == []
+    assert len(measured["files"]) == len(segments) + len(measured["pools"])
+    assert [name for _begin, _end, name in segments if name not in measured["files"]] == []
 
 
 def test_a_name_in_the_table_is_emitted_for_its_entry():

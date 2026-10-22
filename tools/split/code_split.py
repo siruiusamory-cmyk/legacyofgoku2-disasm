@@ -1226,9 +1226,6 @@ def rate(part, whole):
     return ("%s %%" % share(part, whole)) if whole else "-"
 
 
-def per_entry(total, entries):
-    return "%.2f" % (total / entries) if entries else "0.00"
-
 
 def doc_text(measured, null):
     totals = measured["totals"]

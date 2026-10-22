@@ -8,7 +8,7 @@
 		msr		cpsr_c, r0
 		ldr		sp, [pc, #0x5c]
 
-		mov		r0, #0x4000000
+		mov		r0, #REG_DISPCNT
 		ldr		r1, [pc, #0x58]
 		str		r1, [r0, #0x204]
 

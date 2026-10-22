@@ -35,7 +35,8 @@ ASSETS = "assets/"
 CHECKS = ("P-148-repo-module-path", "P-159-bare-interpreter", "P-167-pool-guard",
           "NAMING-function-name", "NAMING-c-status", "NAMING-symbol",
           "NAMING-address-ratchet", "NAMING-behaviour-test", "ROM-tracked-image",
-          "README-numbers", "TEST-silent-return", "P-518-stale-incbin-call", "DUP-block")
+          "README-numbers", "TEST-silent-return", "P-518-stale-incbin-call", "DUP-block",
+          "READABILITY-ratchet", "READABILITY-index", "READABILITY-path")
 STALE_CALL = re.compile(r"incbin\.bat\s+baserom\.gba\s+0x([0-9a-fA-F]+)\s+0x([0-9a-fA-F]+)")
 TEST_FILE = re.compile(r"^test_[^/\\]*\.py$")
 DUP_MINIMUM = 8
@@ -307,6 +308,68 @@ def readme_findings():
     named = naming_counts(module.read(module.TABLE), starts)
     return (findings + readme_split_findings(text, totals)
             + readme_naming_findings(text, len(starts) - len(named), len(starts)))
+
+
+def readability_module():
+    sys.path.insert(0, os.path.join(ROOT, "tools", "code"))
+    sys.path.insert(0, os.path.join(ROOT, "tools", "research"))
+    import readability_audit
+    return readability_audit
+
+
+def readability_findings(baseline_text, live):
+    site = "docs/READABILITY_BASELINE.txt"
+    recorded = dict((key, int(value))
+                    for key, value in re.findall(r"(ram|hardware)=(\d+)", baseline_text or ""))
+    findings = []
+    for key in ("ram", "hardware"):
+        if key not in recorded:
+            findings.append(("READABILITY-ratchet",
+                             "%s: %s=<count> expected" % (site, key)))
+            continue
+        if live[key] > recorded[key]:
+            findings.append(("READABILITY-ratchet",
+                             "%s: %s=%d, above the baseline %d"
+                             % (site, key, live[key], recorded[key])))
+        if live[key] < recorded[key]:
+            findings.append(("READABILITY-ratchet",
+                             "%s: %s=%d, below the baseline %d, which this tree must lower"
+                             % (site, key, live[key], recorded[key])))
+    return findings
+
+
+def newcomer_path_findings(readme, install):
+    tokens = ("extract.cmd", "rebuild.cmd", "python tools\\gate\\gate.py", "docs/CODE_INDEX.md")
+    findings = []
+    for token in tokens:
+        if token not in readme and token not in install:
+            findings.append(("READABILITY-path",
+                             "README.md and INSTALL.md: neither names %s" % token))
+    return findings
+
+
+def readability_index_findings():
+    sys.path.insert(0, os.path.join(ROOT, "tools", "code"))
+    import code_index
+    if code_index.main(["--check"]) == 0:
+        return []
+    return [("READABILITY-index", "docs/CODE_INDEX.md is not what the tree derives")]
+
+
+def readability_tree_findings():
+    image = os.path.join(ROOT, "baserom.gba")
+    if not os.path.exists(image):
+        return []
+    module = readability_module()
+    live = module.counts()
+    findings = readability_findings(read_source("docs/READABILITY_BASELINE.txt"),
+                                    {"ram": live["ram_literals"],
+                                     "hardware": live["hardware_literals"]})
+    readme = read_source("README.md") or ""
+    install = read_source("INSTALL.md") or ""
+    findings += newcomer_path_findings(readme, install)
+    findings += readability_index_findings()
+    return findings
 
 
 def naming_module():
@@ -755,6 +818,7 @@ def run(files=None):
         findings += readme_findings()
         findings += stale_call_tree_findings()
         findings += dup_block_findings()
+        findings += readability_tree_findings()
     else:
         findings += dup_block_findings(files)
     return findings
