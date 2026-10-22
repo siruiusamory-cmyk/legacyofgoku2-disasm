@@ -1,0 +1,10 @@
+baserom.gba
+baserom.gba*
+image.gba
+build/
+work/rebuild.log
+work/snapshot/
+logs/
+__pycache__/
+*.pyc
+.pytest_cache/

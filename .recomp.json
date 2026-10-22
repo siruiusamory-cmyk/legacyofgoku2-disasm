@@ -1,0 +1,12 @@
+{
+  "$schema": "https://recomp.fyi/schema/v1.json",
+  "game": "Dragon Ball Z: The Legacy of Goku II",
+  "system": "GBA",
+  "type": "decomp",
+  "original": { "region": "USA", "sha1": "18e0715dec419f3501c301511530d2edcd590f8b" },
+  "project": "Dragon Ball Z: The Legacy of Goku II disassembly",
+  "status": "in-progress",
+  "toolchain": "ARM Developer Suite 1.2",
+  "approach": "Disassembly rebuilt byte for byte with ADS 1.2; code is not yet decompiled to C, and assets are rebuilt from the user's own ROM",
+  "maintainers": [{ "name": "siruiusamory-cmyk", "link": "https://github.com/siruiusamory-cmyk" }]
+}

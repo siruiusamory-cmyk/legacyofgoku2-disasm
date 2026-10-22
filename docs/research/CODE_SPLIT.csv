@@ -1,0 +1,1028 @@
+start,end,bytes,class
+0x08000000,0x08000004,4,proven code
+0x080000C0,0x08000134,116,proven code
+0x08000134,0x08000158,36,literal pool
+0x08000158,0x080001FE,166,proven code
+0x08000200,0x0800020A,10,literal pool
+0x0800020A,0x0800020C,2,filtered pointer-entry code
+0x0800020C,0x080002F8,236,proven code
+0x080002F8,0x08000302,10,gap-fill code
+0x08000302,0x080003EA,232,filtered pointer-entry code
+0x080003EA,0x080003FA,16,gap-fill code
+0x08000412,0x08000434,34,filtered pointer-entry code
+0x08000434,0x08000462,46,gap-fill code
+0x08000462,0x080004E4,130,filtered pointer-entry code
+0x080004E4,0x08000548,100,literal pool
+0x08000756,0x0800084A,244,proven code
+0x0800084A,0x080008DA,144,gap-fill code
+0x080008DA,0x08000992,184,filtered pointer-entry code
+0x0800099C,0x080009A0,4,literal pool
+0x080009B0,0x080009D6,38,literal pool
+0x080009D6,0x08000AFE,296,filtered pointer-entry code
+0x08000B30,0x08000B3C,12,literal pool
+0x08000C18,0x08000C9A,130,proven code
+0x08000C9A,0x08000CA8,14,gap-fill code
+0x08000CD4,0x08000CD8,4,literal pool
+0x08000CEC,0x08000CF0,4,filtered pointer-entry code
+0x08000CF0,0x08000D96,166,gap-fill code
+0x08000D96,0x08000E22,140,filtered pointer-entry code
+0x08000E24,0x08000EB8,148,filtered pointer-entry code
+0x08000EB8,0x08000FA4,236,proven code
+0x08000FA8,0x08000FE4,60,literal pool
+0x08000FE4,0x08001068,132,proven code
+0x08001068,0x080010BC,84,gap-fill code
+0x080010BC,0x0800118C,208,filtered pointer-entry code
+0x0800118C,0x08001250,196,gap-fill code
+0x08001250,0x0800127C,44,literal pool
+0x080013FC,0x08001462,102,filtered pointer-entry code
+0x08001462,0x08001476,20,gap-fill code
+0x080016B4,0x080016B8,4,literal pool
+0x08001722,0x080017F6,212,filtered pointer-entry code
+0x08001940,0x08001944,4,literal pool
+0x08001960,0x08001A44,228,proven code
+0x08001A66,0x08001B0E,168,proven code
+0x08001B2C,0x08001B40,20,literal pool
+0x08001BC2,0x08001CBA,248,filtered pointer-entry code
+0x08001CBA,0x08001CC6,12,gap-fill code
+0x08001D88,0x08001DBC,52,literal pool
+0x08001DC8,0x08001E3C,116,proven code
+0x08001E3C,0x08001E4A,14,gap-fill code
+0x08001E4A,0x08001EC0,118,proven code
+0x08001EC0,0x08001EF6,54,gap-fill code
+0x08001EF8,0x08001F04,12,literal pool
+0x08001F04,0x08001F54,80,proven code
+0x08002188,0x08002190,8,literal pool
+0x08002244,0x080022FA,182,proven code
+0x080022FA,0x0800233E,68,gap-fill code
+0x08002402,0x080024F8,246,filtered pointer-entry code
+0x080024F8,0x08002524,44,literal pool
+0x08002528,0x08002544,28,literal pool
+0x08002902,0x08002928,38,filtered pointer-entry code
+0x08002928,0x08002962,58,gap-fill code
+0x08002B4C,0x08002B50,4,literal pool
+0x08002BF2,0x08002CB8,198,proven code
+0x08002D48,0x08002D4C,4,literal pool
+0x08002D54,0x08002D5C,8,literal pool
+0x08002D5C,0x08002D7E,34,proven code
+0x08002D7E,0x08002DB6,56,gap-fill code
+0x08002DB6,0x08002DDA,36,proven code
+0x08002DDA,0x08002E28,78,gap-fill code
+0x08002ED4,0x08002EE0,12,literal pool
+0x08002FF8,0x0800313C,324,proven code
+0x0800313C,0x08003216,218,gap-fill code
+0x0800321C,0x08003220,4,literal pool
+0x08003228,0x08003258,48,literal pool
+0x080032AA,0x080032AE,4,filtered pointer-entry code
+0x080032AE,0x080032C0,18,gap-fill code
+0x08003370,0x08003372,2,gap-fill code
+0x080033AC,0x08003404,88,gap-fill code
+0x08003404,0x08003422,30,filtered pointer-entry code
+0x08003422,0x08003426,4,gap-fill code
+0x08003460,0x08003464,4,literal pool
+0x08003470,0x08003478,8,literal pool
+0x08003480,0x0800350A,138,proven code
+0x0800350A,0x08003520,22,gap-fill code
+0x08003520,0x0800376A,586,proven code
+0x0800376C,0x0800379C,48,literal pool
+0x0800379C,0x08003AFE,866,proven code
+0x08003AFE,0x08003B36,56,gap-fill code
+0x08003B36,0x08003B38,2,literal pool
+0x08003B38,0x08003B72,58,gap-fill code
+0x08003C24,0x08003E1E,506,proven code
+0x08003E1E,0x08003E42,36,gap-fill code
+0x08003E42,0x08003E8A,72,proven code
+0x08003E8A,0x08003EA0,22,gap-fill code
+0x08003EA0,0x08003ED4,52,literal pool
+0x08003ED4,0x08003F90,188,proven code
+0x08003F9C,0x08003FEC,80,proven code
+0x08004038,0x0800409E,102,filtered pointer-entry code
+0x0800409E,0x0800414A,172,proven code
+0x0800414C,0x0800415C,16,literal pool
+0x0800415C,0x0800420A,174,proven code
+0x0800420C,0x08004214,8,literal pool
+0x08004214,0x08004284,112,proven code
+0x08004284,0x080042BC,56,gap-fill code
+0x080042BC,0x080042EA,46,proven code
+0x080042EA,0x080043E8,254,gap-fill code
+0x080045E4,0x080045FC,24,literal pool
+0x08004A10,0x08004A14,4,filtered pointer-entry code
+0x08004A14,0x08004A1A,6,gap-fill code
+0x08004A1A,0x08004AEA,208,filtered pointer-entry code
+0x08004B62,0x08004C62,256,filtered pointer-entry code
+0x08004C68,0x08004CA0,56,literal pool
+0x08004CA0,0x08004CAC,12,filtered pointer-entry code
+0x08004CC8,0x08004E80,440,filtered pointer-entry code
+0x08004E80,0x08004EA8,40,literal pool
+0x08004FCC,0x08004FE6,26,filtered pointer-entry code
+0x08004FE8,0x08004FEC,4,literal pool
+0x08004FF8,0x08005014,28,proven code
+0x08005014,0x0800501E,10,gap-fill code
+0x0800501E,0x08005062,68,proven code
+0x08005062,0x08005096,52,gap-fill code
+0x08005096,0x08005214,382,proven code
+0x08005214,0x08005224,16,literal pool
+0x08005240,0x0800532E,238,proven code
+0x0800532E,0x080053BE,144,gap-fill code
+0x080053BE,0x080054A4,230,filtered pointer-entry code
+0x080054A4,0x0800557E,218,gap-fill code
+0x08005580,0x080055A4,36,literal pool
+0x080056A0,0x080056AE,14,filtered pointer-entry code
+0x080056AE,0x08005724,118,gap-fill code
+0x08005724,0x08005804,224,proven code
+0x08005804,0x08005806,2,gap-fill code
+0x08005806,0x080058AE,168,filtered pointer-entry code
+0x080058AE,0x080058C8,26,gap-fill code
+0x08005926,0x08005928,2,gap-fill code
+0x080059F8,0x080059FA,2,gap-fill code
+0x08005A84,0x08005AAA,38,gap-fill code
+0x08005AAC,0x08005ABC,16,literal pool
+0x08005ADC,0x08005AE0,4,literal pool
+0x08005B18,0x08005B30,24,literal pool
+0x08005B38,0x08005B44,12,literal pool
+0x08005B50,0x08005BF4,164,gap-fill code
+0x08005D48,0x08005D58,16,literal pool
+0x08005D6C,0x08006052,742,proven code
+0x08006054,0x08006078,36,literal pool
+0x08006078,0x08006250,472,proven code
+0x08006250,0x08006264,20,gap-fill code
+0x08006264,0x08006454,496,proven code
+0x08006454,0x08006460,12,gap-fill code
+0x08006460,0x0800651E,190,proven code
+0x0800651E,0x08006534,22,gap-fill code
+0x08006534,0x0800678C,600,proven code
+0x080067A4,0x080067A8,4,literal pool
+0x080067AC,0x08006A1E,626,proven code
+0x08006A20,0x08006A38,24,literal pool
+0x08006AA6,0x08006D54,686,proven code
+0x08006D54,0x08006D70,28,gap-fill code
+0x08006D70,0x08006FE0,624,proven code
+0x08006FE0,0x0800700E,46,gap-fill code
+0x0800700E,0x08007162,340,proven code
+0x08007162,0x080071AC,74,gap-fill code
+0x080071AC,0x080071B8,12,literal pool
+0x08007208,0x08007232,42,filtered pointer-entry code
+0x08007232,0x08007298,102,gap-fill code
+0x080072C4,0x080072FC,56,proven code
+0x080072FC,0x08007318,28,gap-fill code
+0x0800733E,0x080073B8,122,proven code
+0x080073EA,0x08007450,102,proven code
+0x08007450,0x08007470,32,literal pool
+0x08007490,0x0800749A,10,filtered pointer-entry code
+0x0800749A,0x080074A2,8,gap-fill code
+0x080074A2,0x080074B0,14,filtered pointer-entry code
+0x080074B0,0x080074D4,36,gap-fill code
+0x08007514,0x0800751C,8,literal pool
+0x080075A8,0x08007688,224,proven code
+0x08007688,0x080076AC,36,gap-fill code
+0x080076BC,0x0800772A,110,proven code
+0x0800772A,0x0800775A,48,gap-fill code
+0x08007824,0x0800783C,24,literal pool
+0x0800786A,0x080078A2,56,proven code
+0x080078E4,0x08007A26,322,proven code
+0x08007A26,0x08007A84,94,gap-fill code
+0x08007B08,0x08007C68,352,proven code
+0x08007C68,0x08007C70,8,literal pool
+0x08007C70,0x08007CB6,70,proven code
+0x08007D14,0x08007D20,12,literal pool
+0x080086A2,0x08008742,160,proven code
+0x08008742,0x08008766,36,gap-fill code
+0x08008864,0x08008870,12,literal pool
+0x0800887C,0x08008884,8,literal pool
+0x080088E0,0x0800891C,60,proven code
+0x0800891C,0x0800892E,18,gap-fill code
+0x08008952,0x08008A1A,200,filtered pointer-entry code
+0x08008A20,0x08008AF6,214,filtered pointer-entry code
+0x08008AF8,0x08008B08,16,literal pool
+0x08008B14,0x08008B5C,72,proven code
+0x08008B5C,0x08008B88,44,gap-fill code
+0x08008C26,0x08008E6C,582,filtered pointer-entry code
+0x08008E6C,0x08008EFA,142,gap-fill code
+0x08008F1C,0x08008F20,4,literal pool
+0x08008F5A,0x08008F8E,52,filtered pointer-entry code
+0x08008F8E,0x08008FA4,22,gap-fill code
+0x08008FC6,0x08009000,58,filtered pointer-entry code
+0x08009000,0x0800900E,14,gap-fill code
+0x08009062,0x080090FE,156,filtered pointer-entry code
+0x080090FE,0x0800910A,12,gap-fill code
+0x0800910A,0x08009128,30,filtered pointer-entry code
+0x08009128,0x08009130,8,gap-fill code
+0x0800921C,0x08009220,4,literal pool
+0x0800926C,0x080092DA,110,filtered pointer-entry code
+0x080092DA,0x080092E4,10,gap-fill code
+0x080092E4,0x0800931C,56,proven code
+0x0800931C,0x08009324,8,gap-fill code
+0x08009324,0x08009392,110,proven code
+0x08009392,0x0800957A,488,table-held code
+0x0800957A,0x08009592,24,filtered pointer-entry code
+0x08009592,0x080095B4,34,gap-fill code
+0x080095B4,0x080096AA,246,filtered pointer-entry code
+0x080096AA,0x08009740,150,table-held code
+0x08009740,0x08009834,244,filtered pointer-entry code
+0x08009834,0x08009840,12,literal pool
+0x08009840,0x08009852,18,table-held code
+0x08009852,0x08009AFC,682,filtered pointer-entry code
+0x08009AFC,0x08009B1C,32,gap-fill code
+0x08009B1C,0x08009BE4,200,filtered pointer-entry code
+0x08009BE4,0x08009BF8,20,table-held code
+0x08009BF8,0x08009CBA,194,filtered pointer-entry code
+0x08009CBA,0x08009CC4,10,table-held code
+0x08009CC4,0x08009DF0,300,filtered pointer-entry code
+0x08009DF0,0x08009E30,64,literal pool
+0x08009E30,0x0800A0CE,670,filtered pointer-entry code
+0x0800A0CE,0x0800A158,138,gap-fill code
+0x0800A158,0x0800A40E,694,filtered pointer-entry code
+0x0800A40E,0x0800A438,42,gap-fill code
+0x0800A438,0x0800A5A6,366,filtered pointer-entry code
+0x0800A5A6,0x0800A5B2,12,table-held code
+0x0800A5B2,0x0800A680,206,filtered pointer-entry code
+0x0800A680,0x0800A70C,140,proven code
+0x0800A70C,0x0800A784,120,gap-fill code
+0x0800A784,0x0800A9B6,562,filtered pointer-entry code
+0x0800A9B6,0x0800A9FE,72,table-held code
+0x0800A9FE,0x0800AA10,18,gap-fill code
+0x0800AA10,0x0800AAAE,158,table-held code
+0x0800AAAE,0x0800AC9A,492,filtered pointer-entry code
+0x0800AC9A,0x0800ACAC,18,gap-fill code
+0x0800ACAC,0x0800AD7A,206,filtered pointer-entry code
+0x0800AD7A,0x0800ADF2,120,table-held code
+0x0800ADF2,0x0800AEB8,198,filtered pointer-entry code
+0x0800AEB8,0x0800AEF0,56,table-held code
+0x0800AEF0,0x0800AF3A,74,filtered pointer-entry code
+0x0800AF3A,0x0800AF44,10,gap-fill code
+0x0800AF44,0x0800AF72,46,filtered pointer-entry code
+0x0800AF72,0x0800AFA0,46,table-held code
+0x0800AFA0,0x0800AFC2,34,filtered pointer-entry code
+0x0800AFC2,0x0800AFD4,18,table-held code
+0x0800AFD4,0x0800B042,110,filtered pointer-entry code
+0x0800B042,0x0800B05E,28,gap-fill code
+0x0800B090,0x0800B140,176,filtered pointer-entry code
+0x0800B140,0x0800B19C,92,gap-fill code
+0x0800B19C,0x0800B274,216,proven code
+0x0800B282,0x0800B2DA,88,proven code
+0x0800B2DA,0x0800B304,42,gap-fill code
+0x0800B304,0x0800B406,258,proven code
+0x0800B408,0x0800B428,32,literal pool
+0x0800B428,0x0800B4AE,134,filtered pointer-entry code
+0x0800B4AE,0x0800B520,114,proven code
+0x0800B520,0x0800B5B0,144,gap-fill code
+0x0800B5B0,0x0800B5C0,16,literal pool
+0x0800B5C0,0x0800B632,114,proven code
+0x0800B710,0x0800B734,36,filtered pointer-entry code
+0x0800B734,0x0800B75C,40,gap-fill code
+0x0800B7B4,0x0800B7BC,8,literal pool
+0x0800B7E6,0x0800B8A6,192,proven code
+0x0800B8A6,0x0800B8B6,16,filtered pointer-entry code
+0x0800B8B6,0x0800B9D6,288,proven code
+0x0800B9D6,0x0800BA70,154,filtered pointer-entry code
+0x0800BA70,0x0800BA84,20,literal pool
+0x0800BA84,0x0800BAB4,48,filtered pointer-entry code
+0x0800BAB4,0x0800BBEE,314,proven code
+0x0800BD90,0x0800BDAC,28,literal pool
+0x0800BDCC,0x0800BE10,68,proven code
+0x0800BE10,0x0800BE14,4,literal pool
+0x0800BF08,0x0800BFC0,184,proven code
+0x0800BFC0,0x0800C06E,174,gap-fill code
+0x0800C07E,0x0800C082,4,gap-fill code
+0x0800C09A,0x0800C0F8,94,gap-fill code
+0x0800C0F8,0x0800C166,110,proven code
+0x0800C166,0x0800C1AC,70,gap-fill code
+0x0800C232,0x0800C264,50,filtered pointer-entry code
+0x0800C264,0x0800C26C,8,literal pool
+0x0800C2C2,0x0800C2F2,48,filtered pointer-entry code
+0x0800C2F4,0x0800C2F8,4,literal pool
+0x0800C2F8,0x0800C578,640,proven code
+0x0800C578,0x0800C584,12,gap-fill code
+0x0800C584,0x0800C800,636,proven code
+0x0800C800,0x0800C810,16,literal pool
+0x0800C8D8,0x0800C9C4,236,proven code
+0x0800CAD8,0x0800CAF8,32,literal pool
+0x0800CB0E,0x0800CB3C,46,filtered pointer-entry code
+0x0800CB3C,0x0800CB42,6,gap-fill code
+0x0800CB50,0x0800CB80,48,proven code
+0x0800CB80,0x0800CCE6,358,gap-fill code
+0x0800CD56,0x0800CD92,60,proven code
+0x0800CDC8,0x0800CDD0,8,literal pool
+0x0800CDD4,0x0800CDD8,4,literal pool
+0x0800CFDC,0x0800D04C,112,filtered pointer-entry code
+0x0800D054,0x0800D058,4,literal pool
+0x0800D05C,0x0800D060,4,literal pool
+0x0800D060,0x0800D0E0,128,filtered pointer-entry code
+0x0800D0FC,0x0800D128,44,filtered pointer-entry code
+0x0800D128,0x0800D138,16,literal pool
+0x0800D138,0x0800D156,30,proven code
+0x0800D156,0x0800D1AC,86,gap-fill code
+0x0800D1AC,0x0800D28C,224,proven code
+0x0800D28C,0x0800D2C8,60,gap-fill code
+0x0800D2C8,0x0800D484,444,filtered pointer-entry code
+0x0800D484,0x0800D490,12,literal pool
+0x0800D496,0x0800D584,238,filtered pointer-entry code
+0x0800D584,0x0800D5B8,52,proven code
+0x0800D5B8,0x0800D5FE,70,gap-fill code
+0x0800D5FE,0x0800D658,90,filtered pointer-entry code
+0x0800D658,0x0800D668,16,gap-fill code
+0x0800D668,0x0800D6A6,62,proven code
+0x0800D6C8,0x0800D6CC,4,literal pool
+0x0800D6D4,0x0800D6D8,4,literal pool
+0x0800D6DE,0x0800D722,68,proven code
+0x0800D724,0x0800D72C,8,literal pool
+0x0800D764,0x0800D768,4,table-held code
+0x0800D768,0x0800D7A0,56,gap-fill code
+0x0800D7E0,0x0800D80A,42,proven code
+0x0800D80C,0x0800D810,4,literal pool
+0x0800D838,0x0800D83C,4,table-held code
+0x0800D83C,0x0800D86E,50,gap-fill code
+0x0800D87E,0x0800D882,4,table-held code
+0x0800D882,0x0800D888,6,gap-fill code
+0x0800D888,0x0800D88E,6,table-held code
+0x0800D88E,0x0800D894,6,gap-fill code
+0x0800D894,0x0800D89C,8,literal pool
+0x0800D8AE,0x0800D8B2,4,proven code
+0x0800D8B2,0x0800D8EA,56,gap-fill code
+0x0800D8EA,0x0800D900,22,filtered pointer-entry code
+0x0800D900,0x0800D93C,60,gap-fill code
+0x0800D9C2,0x0800D9F0,46,filtered pointer-entry code
+0x0800D9F0,0x0800D9F8,8,literal pool
+0x0800DA68,0x0800DA96,46,proven code
+0x0800DA96,0x0800DB18,130,gap-fill code
+0x0800DC9C,0x0800DCA8,12,literal pool
+0x0800DCA8,0x0800DD38,144,proven code
+0x0800DD38,0x0800DD7C,68,gap-fill code
+0x0800DD7C,0x0800DD80,4,literal pool
+0x0800DD80,0x0800DDA6,38,proven code
+0x0800DDA6,0x0800DE16,112,gap-fill code
+0x0800DE18,0x0800DE20,8,literal pool
+0x0800DE20,0x0800DE48,40,proven code
+0x0800DE48,0x0800DE6E,38,gap-fill code
+0x0800DE88,0x0800DE94,12,literal pool
+0x0800DED0,0x0800DF02,50,proven code
+0x0800DF02,0x0800DF10,14,gap-fill code
+0x0800DF10,0x0800DF1C,12,filtered pointer-entry code
+0x0800DF1C,0x0800DF4E,50,proven code
+0x0800DF4E,0x0800DF54,6,gap-fill code
+0x0800DF54,0x0800DF60,12,literal pool
+0x0800DF98,0x0800DFEC,84,proven code
+0x0800E032,0x0800E0B2,128,proven code
+0x0800E0B2,0x0800E0F8,70,gap-fill code
+0x0800E280,0x0800E33A,186,proven code
+0x0800E33A,0x0800E39C,98,gap-fill code
+0x0800E39C,0x0800E3EE,82,proven code
+0x0800E3EE,0x0800E41C,46,gap-fill code
+0x0800E41C,0x0800E484,104,proven code
+0x0800E4D2,0x0800E54C,122,proven code
+0x0800E54C,0x0800E582,54,gap-fill code
+0x0800E77E,0x0800E796,24,filtered pointer-entry code
+0x0800E796,0x0800E7B4,30,gap-fill code
+0x0800E966,0x0800E96A,4,filtered pointer-entry code
+0x0800E96A,0x0800E9E4,122,gap-fill code
+0x0800E9E4,0x0800EA3A,86,filtered pointer-entry code
+0x0800EB0C,0x0800EB20,20,literal pool
+0x0800EB20,0x0800EBD8,184,proven code
+0x0800EBD8,0x0800EBDE,6,gap-fill code
+0x0800EBDE,0x0800EC08,42,filtered pointer-entry code
+0x0800EC08,0x0800EC82,122,proven code
+0x0800EC82,0x0800ECC6,68,gap-fill code
+0x0800EDE6,0x0800EE12,44,filtered pointer-entry code
+0x0800EE12,0x0800EE16,4,gap-fill code
+0x0800EE88,0x0800EEA8,32,literal pool
+0x0800EEA8,0x0800F008,352,proven code
+0x0800F034,0x0800F060,44,proven code
+0x0800F060,0x0800F0CA,106,gap-fill code
+0x0800F10C,0x0800F128,28,literal pool
+0x0800F1AE,0x0800F2B6,264,proven code
+0x0800F2F0,0x0800F2F2,2,filtered pointer-entry code
+0x0800F2F2,0x0800F2F4,2,gap-fill code
+0x0800F2F4,0x0800F34A,86,filtered pointer-entry code
+0x0800F3DC,0x0800F3EE,18,literal pool
+0x0800F3EE,0x0800F6C6,728,filtered pointer-entry code
+0x0800F6C8,0x0800F6E8,32,literal pool
+0x0800F6E8,0x0800F774,140,filtered pointer-entry code
+0x0800F774,0x0800F790,28,literal pool
+0x0800F7CC,0x0800F832,102,proven code
+0x0800F832,0x0800F8B6,132,gap-fill code
+0x0800F8B6,0x0800F98A,212,proven code
+0x0800F98C,0x0800F9A0,20,literal pool
+0x0800F9A0,0x0800F9A2,2,table-held code
+0x0800F9A2,0x0800FA12,112,filtered pointer-entry code
+0x0800FA12,0x0800FA1C,10,gap-fill code
+0x0800FA1C,0x0800FA62,70,proven code
+0x0800FA64,0x0800FA6C,8,literal pool
+0x0800FA6C,0x0800FACE,98,proven code
+0x0800FACE,0x0800FAF8,42,gap-fill code
+0x0800FAF8,0x0800FB5A,98,filtered pointer-entry code
+0x0800FB5A,0x0800FB66,12,gap-fill code
+0x0800FB68,0x0800FB74,12,literal pool
+0x0800FB74,0x0800FBAC,56,proven code
+0x0800FBFA,0x0800FC2C,50,filtered pointer-entry code
+0x0800FC2C,0x0800FC3C,16,gap-fill code
+0x0800FC3C,0x0800FC44,8,literal pool
+0x0800FC48,0x0800FC50,8,literal pool
+0x0800FC84,0x0800FD3E,186,proven code
+0x0800FDF8,0x0800FE0C,20,filtered pointer-entry code
+0x0800FE0C,0x0800FE1C,16,gap-fill code
+0x0800FE1C,0x0800FF7E,354,proven code
+0x0800FF80,0x0800FF90,16,literal pool
+0x0800FF94,0x0800FFA0,12,literal pool
+0x0800FFC0,0x0800FFC2,2,table-held code
+0x0800FFC2,0x0800FFE6,36,gap-fill code
+0x0800FFE6,0x08010032,76,filtered pointer-entry code
+0x08010032,0x08010098,102,gap-fill code
+0x08010098,0x080100E4,76,filtered pointer-entry code
+0x080100E4,0x080100EE,10,gap-fill code
+0x080100EE,0x08010118,42,filtered pointer-entry code
+0x08010120,0x08010124,4,literal pool
+0x08010124,0x080101F6,210,proven code
+0x08010208,0x0801020E,6,filtered pointer-entry code
+0x0801020E,0x0801021C,14,gap-fill code
+0x080102A2,0x080102E0,62,proven code
+0x080102E0,0x080102EC,12,literal pool
+0x080102F0,0x08010300,16,literal pool
+0x08010304,0x080103E0,220,proven code
+0x080103E0,0x080103F0,16,gap-fill code
+0x08010466,0x08010470,10,filtered pointer-entry code
+0x08010470,0x08010480,16,gap-fill code
+0x08010494,0x080104A0,12,literal pool
+0x080104A8,0x080104AA,2,literal pool
+0x080104AA,0x080104C0,22,filtered pointer-entry code
+0x080104C0,0x0801052C,108,proven code
+0x080105E8,0x08010628,64,filtered pointer-entry code
+0x08010628,0x0801066A,66,gap-fill code
+0x08010678,0x08010684,12,literal pool
+0x08010690,0x08010698,8,literal pool
+0x0801069A,0x080106EE,84,filtered pointer-entry code
+0x080106EE,0x08010722,52,gap-fill code
+0x0801072C,0x08010730,4,literal pool
+0x080107EA,0x080107EC,2,filtered pointer-entry code
+0x080107EC,0x080107FE,18,gap-fill code
+0x080107FE,0x08010818,26,filtered pointer-entry code
+0x08010818,0x08010834,28,gap-fill code
+0x08010860,0x0801087A,26,filtered pointer-entry code
+0x0801087A,0x08010884,10,table-held code
+0x08010884,0x0801088A,6,gap-fill code
+0x08010894,0x08010898,4,literal pool
+0x08010898,0x080108CE,54,proven code
+0x080108CE,0x0801090A,60,gap-fill code
+0x08010944,0x0801094C,8,literal pool
+0x0801094C,0x08010976,42,proven code
+0x08010976,0x080109A6,48,gap-fill code
+0x080109A8,0x080109AC,4,literal pool
+0x08010AC6,0x08010AE8,34,filtered pointer-entry code
+0x08010AE8,0x08010AEC,4,literal pool
+0x08010B60,0x08010BCE,110,proven code
+0x08010BCE,0x08010C0C,62,gap-fill code
+0x08010C0C,0x08010F02,758,filtered pointer-entry code
+0x08010F10,0x08010F60,80,literal pool
+0x08010F60,0x0801106A,266,filtered pointer-entry code
+0x0801106A,0x0801109E,52,gap-fill code
+0x0801127C,0x080112B0,52,literal pool
+0x080112D2,0x080112D4,2,filtered pointer-entry code
+0x080112D4,0x080112F6,34,gap-fill code
+0x080112F6,0x08011304,14,filtered pointer-entry code
+0x0801138C,0x0801139C,16,literal pool
+0x080113A0,0x080115BE,542,proven code
+0x08011728,0x0801174C,36,literal pool
+0x0801177C,0x080117C2,70,proven code
+0x080117C2,0x080117E0,30,gap-fill code
+0x08011802,0x08011896,148,proven code
+0x0801193E,0x08011960,34,proven code
+0x08011960,0x080119B6,86,gap-fill code
+0x080119B8,0x080119CC,20,literal pool
+0x08011DF0,0x08011E3C,76,filtered pointer-entry code
+0x08011E3C,0x08011EA6,106,gap-fill code
+0x08011FA6,0x08012030,138,proven code
+0x08012030,0x0801204E,30,gap-fill code
+0x08012074,0x08012078,4,literal pool
+0x080120C8,0x0801236E,678,filtered pointer-entry code
+0x08012370,0x08012374,4,literal pool
+0x08012378,0x08012394,28,literal pool
+0x08012394,0x080123E0,76,filtered pointer-entry code
+0x080123E0,0x08012520,320,gap-fill code
+0x080125C0,0x08012676,182,filtered pointer-entry code
+0x08012678,0x08012684,12,literal pool
+0x0801268C,0x08012694,8,literal pool
+0x08012704,0x0801270E,10,filtered pointer-entry code
+0x0801270E,0x08012712,4,gap-fill code
+0x08012714,0x08012726,18,filtered pointer-entry code
+0x08012726,0x0801272C,6,gap-fill code
+0x0801272C,0x0801278A,94,filtered pointer-entry code
+0x0801278A,0x08012804,122,proven code
+0x08012804,0x08012810,12,gap-fill code
+0x08012810,0x08012832,34,filtered pointer-entry code
+0x08012832,0x08012840,14,gap-fill code
+0x08012840,0x08012848,8,filtered pointer-entry code
+0x08012848,0x0801285C,20,literal pool
+0x080129B8,0x08012A04,76,proven code
+0x08012A04,0x08012A28,36,gap-fill code
+0x08012A60,0x08012A68,8,literal pool
+0x08012A68,0x08012AD2,106,proven code
+0x08012AD2,0x08012AFE,44,gap-fill code
+0x08012B24,0x08012B38,20,literal pool
+0x08012B38,0x08012BC4,140,proven code
+0x08012C80,0x08012C94,20,literal pool
+0x08012C94,0x08012CEE,90,proven code
+0x08012CEE,0x08012DE4,246,gap-fill code
+0x08012EA4,0x08012EDC,56,proven code
+0x08012EDC,0x08012EF8,28,gap-fill code
+0x08012F20,0x08012F30,16,literal pool
+0x08012F34,0x08012F3C,8,literal pool
+0x08012F40,0x08012F98,88,proven code
+0x08012FCA,0x0801300A,64,proven code
+0x0801300C,0x08013034,40,filtered pointer-entry code
+0x08013034,0x0801304A,22,gap-fill code
+0x080130A8,0x080130BC,20,literal pool
+0x080130BC,0x08013112,86,proven code
+0x08013112,0x0801313E,44,gap-fill code
+0x08013140,0x08013158,24,literal pool
+0x0801315C,0x08013178,28,filtered pointer-entry code
+0x08013178,0x08013190,24,gap-fill code
+0x08013190,0x080131AC,28,filtered pointer-entry code
+0x080131AC,0x080131C4,24,gap-fill code
+0x080131C4,0x080131E0,28,filtered pointer-entry code
+0x080131E0,0x080131F8,24,gap-fill code
+0x080131F8,0x08013214,28,filtered pointer-entry code
+0x08013214,0x0801322C,24,gap-fill code
+0x0801322C,0x08013248,28,filtered pointer-entry code
+0x08013248,0x08013260,24,gap-fill code
+0x08013260,0x080133D8,376,filtered pointer-entry code
+0x080133D8,0x080133F0,24,literal pool
+0x080133F0,0x0801340C,28,filtered pointer-entry code
+0x0801340C,0x08013424,24,gap-fill code
+0x08013424,0x08013440,28,filtered pointer-entry code
+0x08013440,0x08013458,24,gap-fill code
+0x08013458,0x08013474,28,filtered pointer-entry code
+0x08013474,0x0801348C,24,gap-fill code
+0x0801348C,0x080134A8,28,filtered pointer-entry code
+0x080134A8,0x080134C0,24,gap-fill code
+0x080134C0,0x0801356E,174,filtered pointer-entry code
+0x08013570,0x08013578,8,literal pool
+0x080135E0,0x08013656,118,proven code
+0x080137AC,0x080137B8,12,literal pool
+0x08013828,0x08013892,106,proven code
+0x08013892,0x0801396E,220,gap-fill code
+0x080139A8,0x080139BC,20,literal pool
+0x080139BC,0x08013A1E,98,proven code
+0x08013B9C,0x08013BA4,8,literal pool
+0x08013BC0,0x08013C7E,190,proven code
+0x08013C7E,0x08013C8E,16,gap-fill code
+0x08013E28,0x08013E34,12,literal pool
+0x08013E48,0x08013EA0,88,proven code
+0x08014004,0x08014038,52,filtered pointer-entry code
+0x0801413C,0x08014144,8,literal pool
+0x080143A8,0x08014438,144,proven code
+0x08014556,0x0801477C,550,proven code
+0x0801477C,0x0801479C,32,literal pool
+0x080147A0,0x080147A4,4,literal pool
+0x080147B4,0x080147C4,16,literal pool
+0x080147C4,0x08014858,148,proven code
+0x08014AD8,0x08014C1C,324,filtered pointer-entry code
+0x08014C1C,0x08014C2C,16,literal pool
+0x08014C2C,0x08014CB6,138,filtered pointer-entry code
+0x08014CB6,0x08014D44,142,proven code
+0x08014D50,0x08014D58,8,literal pool
+0x08014F44,0x08014F80,60,filtered pointer-entry code
+0x08014F80,0x08014F88,8,gap-fill code
+0x08014FF0,0x08014FF4,4,literal pool
+0x0801503A,0x08015062,40,filtered pointer-entry code
+0x08015062,0x08015076,20,gap-fill code
+0x08015314,0x08015318,4,literal pool
+0x08015CFC,0x08015D4C,80,filtered pointer-entry code
+0x08015D4E,0x08015ED8,394,filtered pointer-entry code
+0x08015EDC,0x08015EE0,4,literal pool
+0x080164BC,0x080164CC,16,filtered pointer-entry code
+0x08016688,0x080166A2,26,filtered pointer-entry code
+0x080166A2,0x0801684C,426,gap-fill code
+0x0801698C,0x08016998,12,literal pool
+0x080169A0,0x080169B8,24,literal pool
+0x08016AB4,0x08016B12,94,proven code
+0x08016B96,0x08016BD4,62,proven code
+0x08016C24,0x08016C3C,24,literal pool
+0x08016C48,0x08016CAA,98,proven code
+0x08016CAA,0x08016CE4,58,gap-fill code
+0x08016D28,0x08016D40,24,literal pool
+0x08016D40,0x08016DA2,98,proven code
+0x08016E70,0x08016E84,20,literal pool
+0x08016E8C,0x08016EBE,50,proven code
+0x08016EBE,0x08016EFA,60,gap-fill code
+0x08016FBC,0x08016FC8,12,literal pool
+0x080174A4,0x0801773C,664,proven code
+0x0801773C,0x0801775E,34,gap-fill code
+0x0801775E,0x08017794,54,literal pool
+0x080177CE,0x08017802,52,proven code
+0x0801797E,0x080179B4,54,filtered pointer-entry code
+0x080179F4,0x08017A10,28,filtered pointer-entry code
+0x08017A10,0x08017A4A,58,gap-fill code
+0x08017A4C,0x08017A50,4,literal pool
+0x08017A50,0x08017A9E,78,proven code
+0x08017B1E,0x08017BFA,220,gap-fill code
+0x08017BFE,0x08017E34,566,gap-fill code
+0x08017E34,0x08017E48,20,literal pool
+0x08017E4C,0x08017E50,4,literal pool
+0x08017E54,0x08017E68,20,literal pool
+0x08017E68,0x08017E88,32,gap-fill code
+0x08018010,0x08018038,40,filtered pointer-entry code
+0x08018038,0x08018082,74,gap-fill code
+0x08018082,0x08018126,164,filtered pointer-entry code
+0x08018128,0x0801812C,4,literal pool
+0x08018140,0x08018154,20,literal pool
+0x08018398,0x080184AE,278,proven code
+0x08018504,0x0801853C,56,literal pool
+0x08018540,0x08018580,64,proven code
+0x08018580,0x080185E6,102,gap-fill code
+0x080187C4,0x080187D0,12,literal pool
+0x080187F0,0x08018870,128,proven code
+0x08018870,0x080188C6,86,gap-fill code
+0x080188C6,0x080188D2,12,filtered pointer-entry code
+0x080188D2,0x080188F8,38,gap-fill code
+0x080188F8,0x080189B8,192,filtered pointer-entry code
+0x080189B8,0x08018A10,88,gap-fill code
+0x08018A10,0x08018A38,40,literal pool
+0x08018C00,0x08018C40,64,filtered pointer-entry code
+0x08018C40,0x08018C72,50,gap-fill code
+0x08018E54,0x08018E60,12,literal pool
+0x08018EFC,0x08018F4E,82,proven code
+0x08018F94,0x08018FA0,12,literal pool
+0x08018FD4,0x08019010,60,proven code
+0x08019088,0x0801909E,22,filtered pointer-entry code
+0x0801909E,0x080190C2,36,gap-fill code
+0x080190C4,0x080190C8,4,literal pool
+0x080190CC,0x080190D4,8,literal pool
+0x08019102,0x0801912C,42,proven code
+0x0801912C,0x0801915C,48,gap-fill code
+0x080191CA,0x080191EC,34,filtered pointer-entry code
+0x080191EC,0x080191F0,4,literal pool
+0x08019B30,0x08019C46,278,proven code
+0x08019C48,0x08019C50,8,literal pool
+0x08019C50,0x08019CA2,82,proven code
+0x08019CAA,0x08019D34,138,filtered pointer-entry code
+0x08019D34,0x08019D5A,38,gap-fill code
+0x08019D5C,0x08019D70,20,literal pool
+0x08019D70,0x08019DC2,82,proven code
+0x08019E74,0x08019E80,12,literal pool
+0x08019F5C,0x08019F9A,62,proven code
+0x08019F9A,0x08019FB0,22,gap-fill code
+0x08019FC4,0x08019FD0,12,literal pool
+0x0801A2F8,0x0801A326,46,proven code
+0x0801A326,0x0801A33E,24,gap-fill code
+0x0801A340,0x0801A344,4,literal pool
+0x0801A378,0x0801A39C,36,proven code
+0x0801A39C,0x0801A416,122,gap-fill code
+0x0801A4D0,0x0801A4E8,24,literal pool
+0x0801A6B2,0x0801A6D8,38,filtered pointer-entry code
+0x0801A6DC,0x0801A6E0,4,literal pool
+0x0801A6E0,0x0801A706,38,filtered pointer-entry code
+0x0801A71C,0x0801A746,42,filtered pointer-entry code
+0x0801A746,0x0801A74C,6,gap-fill code
+0x0801A74C,0x0801A7D2,134,proven code
+0x0801A7D2,0x0801A7DE,12,gap-fill code
+0x0801A7DE,0x0801A7F4,22,filtered pointer-entry code
+0x0801A7F4,0x0801A804,16,literal pool
+0x0801A804,0x0801A824,32,filtered pointer-entry code
+0x0801A82C,0x0801A840,20,filtered pointer-entry code
+0x0801A840,0x0801A8B0,112,gap-fill code
+0x0801A8BC,0x0801A8C0,4,literal pool
+0x0801A946,0x0801A95C,22,filtered pointer-entry code
+0x0801A95C,0x0801A964,8,literal pool
+0x0801A9CC,0x0801AAD4,264,proven code
+0x0801AAD4,0x0801AB08,52,gap-fill code
+0x0801AB4C,0x0801AB50,4,literal pool
+0x0801AB64,0x0801AB7A,22,filtered pointer-entry code
+0x0801AB7A,0x0801ABA0,38,table-held code
+0x0801ABA0,0x0801AC16,118,gap-fill code
+0x0801ACB6,0x0801ACCC,22,filtered pointer-entry code
+0x0801ACCC,0x0801ACD4,8,literal pool
+0x0801ACD4,0x0801AD2E,90,filtered pointer-entry code
+0x0801AD30,0x0801AD34,4,literal pool
+0x0801AEF2,0x0801AF96,164,filtered pointer-entry code
+0x0801AF96,0x0801B15E,456,gap-fill code
+0x0801B15E,0x0801B174,22,filtered pointer-entry code
+0x0801B174,0x0801B332,446,gap-fill code
+0x0801B332,0x0801B348,22,filtered pointer-entry code
+0x0801B348,0x0801B4F2,426,gap-fill code
+0x0801B4F2,0x0801B508,22,filtered pointer-entry code
+0x0801B508,0x0801B510,8,gap-fill code
+0x0801B510,0x0801B538,40,table-held code
+0x0801B538,0x0801B572,58,gap-fill code
+0x0801B63E,0x0801B6E2,164,filtered pointer-entry code
+0x0801B6E4,0x0801B6EC,8,literal pool
+0x0801B722,0x0801B756,52,proven code
+0x0801B756,0x0801B780,42,gap-fill code
+0x0801B860,0x0801B8AC,76,filtered pointer-entry code
+0x0801B8AC,0x0801B8C0,20,gap-fill code
+0x0801B990,0x0801B9A2,18,filtered pointer-entry code
+0x0801B9A4,0x0801B9A8,4,literal pool
+0x0801B9C0,0x0801B9C4,4,literal pool
+0x0801BA46,0x0801BA8C,70,filtered pointer-entry code
+0x0801BA8C,0x0801BAA2,22,gap-fill code
+0x0801BB14,0x0801BB18,4,literal pool
+0x0801BBAC,0x0801BBC2,22,filtered pointer-entry code
+0x0801BBC2,0x0801BBDA,24,gap-fill code
+0x0801BCAC,0x0801BCCE,34,filtered pointer-entry code
+0x0801BCCE,0x0801BCEC,30,gap-fill code
+0x0801BD04,0x0801BD08,4,literal pool
+0x0801BD1A,0x0801BD26,12,filtered pointer-entry code
+0x0801BD26,0x0801BE78,338,gap-fill code
+0x0801BE8A,0x0801BEA0,22,filtered pointer-entry code
+0x0801BEA0,0x0801BEB8,24,literal pool
+0x0801C05A,0x0801C07C,34,filtered pointer-entry code
+0x0801C07C,0x0801C088,12,gap-fill code
+0x0801C09C,0x0801C0A0,4,literal pool
+0x0801C0DA,0x0801C110,54,filtered pointer-entry code
+0x0801C110,0x0801C12E,30,gap-fill code
+0x0801C140,0x0801C144,4,filtered pointer-entry code
+0x0801C144,0x0801C218,212,gap-fill code
+0x0801C218,0x0801C2C2,170,filtered pointer-entry code
+0x0801C2C2,0x0801C430,366,gap-fill code
+0x0801C430,0x0801C446,22,filtered pointer-entry code
+0x0801C446,0x0801C46A,36,gap-fill code
+0x0801C484,0x0801C488,4,literal pool
+0x0801C488,0x0801C4AE,38,filtered pointer-entry code
+0x0801C4AE,0x0801C4B0,2,gap-fill code
+0x0801C4B0,0x0801C4FA,74,proven code
+0x0801C4FA,0x0801C550,86,gap-fill code
+0x0801C560,0x0801C57C,28,literal pool
+0x0801C5A8,0x0801C5CA,34,filtered pointer-entry code
+0x0801C5CA,0x0801C6DE,276,gap-fill code
+0x0801C7F2,0x0801C80E,28,filtered pointer-entry code
+0x0801C810,0x0801C818,8,literal pool
+0x0801C828,0x0801C82C,4,literal pool
+0x0801C95E,0x0801C974,22,filtered pointer-entry code
+0x0801C984,0x0801C988,4,literal pool
+0x0801CA84,0x0801CADC,88,filtered pointer-entry code
+0x0801CADC,0x0801CAEC,16,literal pool
+0x0801CB10,0x0801CB24,20,proven code
+0x0801CB24,0x0801CB42,30,gap-fill code
+0x0801D020,0x0801D096,118,filtered pointer-entry code
+0x0801D098,0x0801D0BA,34,filtered pointer-entry code
+0x0801D0BA,0x0801D220,358,gap-fill code
+0x0801D220,0x0801D238,24,literal pool
+0x0801D254,0x0801D270,28,filtered pointer-entry code
+0x0801D27C,0x0801D280,4,literal pool
+0x0801D310,0x0801D326,22,filtered pointer-entry code
+0x0801D326,0x0801D336,16,gap-fill code
+0x0801D344,0x0801D348,4,literal pool
+0x0801D378,0x0801D3A4,44,proven code
+0x0801D3A4,0x0801D496,242,gap-fill code
+0x0801D538,0x0801D578,64,literal pool
+0x0801D748,0x0801D780,56,filtered pointer-entry code
+0x0801D780,0x0801D7DC,92,gap-fill code
+0x0801D848,0x0801D84C,4,literal pool
+0x0801D84C,0x0801D88A,62,proven code
+0x0801D8FE,0x0801D91C,30,filtered pointer-entry code
+0x0801D91C,0x0801D9CC,176,gap-fill code
+0x0801D9CC,0x0801D9D0,4,literal pool
+0x0801E144,0x0801E15E,26,filtered pointer-entry code
+0x0801E15E,0x0801E1C2,100,gap-fill code
+0x0801E210,0x0801E214,4,literal pool
+0x0801E220,0x0801E224,4,literal pool
+0x0801E224,0x0801E2D2,174,proven code
+0x0801E4F0,0x0801E500,16,literal pool
+0x0801E5C0,0x0801E5D6,22,filtered pointer-entry code
+0x0801E5D6,0x0801E66A,148,gap-fill code
+0x0801E6F8,0x0801E700,8,literal pool
+0x0801E77A,0x0801E794,26,filtered pointer-entry code
+0x0801E794,0x0801E81E,138,gap-fill code
+0x0801E8AC,0x0801E8B4,8,literal pool
+0x0801E8CE,0x0801E8D2,4,filtered pointer-entry code
+0x0801E8D2,0x0801E8EA,24,gap-fill code
+0x0801E8EA,0x0801E9C4,218,filtered pointer-entry code
+0x0801EA58,0x0801EA7A,34,filtered pointer-entry code
+0x0801EA7A,0x0801EA8A,16,gap-fill code
+0x0801EC34,0x0801EC38,4,literal pool
+0x0801ED3C,0x0801ED76,58,proven code
+0x0801ED76,0x0801ED96,32,gap-fill code
+0x0801EDC4,0x0801EDDC,24,literal pool
+0x0801EDE0,0x0801EDFA,26,proven code
+0x0801EDFA,0x0801EE64,106,gap-fill code
+0x0801EE64,0x0801EE7E,26,filtered pointer-entry code
+0x0801EE7E,0x0801EEB2,52,gap-fill code
+0x0801EED0,0x0801EEFC,44,literal pool
+0x0801EEFC,0x0801EF64,104,proven code
+0x0801EF64,0x0801EF96,50,gap-fill code
+0x0801EF98,0x0801EFA4,12,literal pool
+0x0801EFA4,0x0801F01C,120,proven code
+0x0801F01C,0x0801F03E,34,gap-fill code
+0x0801F03E,0x0801F1E6,424,proven code
+0x0801F1E6,0x0801F1EA,4,gap-fill code
+0x0801F1EA,0x0801F204,26,filtered pointer-entry code
+0x0801F204,0x0801F214,16,literal pool
+0x0801F248,0x0801F37E,310,proven code
+0x0801F37E,0x0801F386,8,gap-fill code
+0x0801F386,0x0801F394,14,literal pool
+0x0801F394,0x0801F3BA,38,proven code
+0x0801F412,0x0801F43C,42,proven code
+0x0801F43C,0x0801F46A,46,gap-fill code
+0x0801F46A,0x0801F494,42,proven code
+0x0801F494,0x0801F4B0,28,gap-fill code
+0x0801F4C4,0x0801F57E,186,proven code
+0x0801F57E,0x0801F58C,14,gap-fill code
+0x0801F58C,0x0801F5C0,52,proven code
+0x0801F5C0,0x0801F5E6,38,gap-fill code
+0x0801F60A,0x0801F618,14,proven code
+0x0801F618,0x0801F636,30,gap-fill code
+0x0801F636,0x0801F876,576,proven code
+0x0801F878,0x0801F974,252,proven code
+0x0801F974,0x0801F984,16,literal pool
+0x0801F9CC,0x0801F9D4,8,literal pool
+0x0801F9D6,0x0801FABA,228,proven code
+0x0801FAF0,0x0801FB12,34,proven code
+0x0801FB50,0x0801FB7C,44,proven code
+0x0801FBAC,0x0801FBD4,40,proven code
+0x0801FC0C,0x0801FC4E,66,proven code
+0x0801FC8C,0x0801FC9C,16,literal pool
+0x0801FC9C,0x0801FCCC,48,proven code
+0x0801FCF8,0x0801FD10,24,filtered pointer-entry code
+0x0801FD10,0x0801FE1A,266,proven code
+0x0801FE1A,0x0801FE20,6,gap-fill code
+0x0801FE20,0x0801FEB0,144,proven code
+0x0801FEB0,0x0801FEE8,56,filtered pointer-entry code
+0x0801FEE8,0x0801FF44,92,proven code
+0x0801FF44,0x0801FFC8,132,filtered pointer-entry code
+0x0801FFC8,0x0801FFE6,30,gap-fill code
+0x0801FFE6,0x08020056,112,filtered pointer-entry code
+0x08020056,0x08020074,30,gap-fill code
+0x08020074,0x080200E4,112,filtered pointer-entry code
+0x080200E4,0x080200F8,20,literal pool
+0x080200F8,0x080201F8,256,filtered pointer-entry code
+0x080201F8,0x08020240,72,proven code
+0x08020240,0x0802028C,76,filtered pointer-entry code
+0x0802028C,0x0802028E,2,gap-fill code
+0x08020290,0x08020382,242,filtered pointer-entry code
+0x08020382,0x080203A8,38,gap-fill code
+0x080203A8,0x080204A4,252,filtered pointer-entry code
+0x080204A4,0x080204A6,2,gap-fill code
+0x080204A8,0x080204D2,42,filtered pointer-entry code
+0x080204D2,0x080204D4,2,gap-fill code
+0x080204D4,0x08020530,92,filtered pointer-entry code
+0x08020530,0x08020532,2,gap-fill code
+0x08020534,0x0802054C,24,filtered pointer-entry code
+0x0802054C,0x08020566,26,table-held code
+0x08020566,0x08020578,18,gap-fill code
+0x08020578,0x080205DE,102,filtered pointer-entry code
+0x080205DE,0x080205E0,2,gap-fill code
+0x080205E2,0x080205FE,28,filtered pointer-entry code
+0x080205FE,0x08020600,2,gap-fill code
+0x08020602,0x080206CA,200,filtered pointer-entry code
+0x080206CC,0x080206F8,44,literal pool
+0x080206F8,0x080207C0,200,filtered pointer-entry code
+0x080207C0,0x08020804,68,proven code
+0x08020804,0x08020820,28,filtered pointer-entry code
+0x08020820,0x08020980,352,proven code
+0x08020980,0x08020994,20,literal pool
+0x080209B8,0x08020A96,222,proven code
+0x08020A96,0x08020AC8,50,gap-fill code
+0x08020AC8,0x08020AF0,40,proven code
+0x08020AF0,0x08020AF4,4,gap-fill code
+0x08020AF4,0x08020CDA,486,proven code
+0x08020CDC,0x08020D24,72,literal pool
+0x08020D24,0x08020D26,2,table-held code
+0x08020D26,0x08020D70,74,proven code
+0x08020D80,0x08020D90,16,literal pool
+0x08020D90,0x08020E5C,204,filtered pointer-entry code
+0x08020E5C,0x08020EC2,102,proven code
+0x08020EC2,0x0802113C,634,filtered pointer-entry code
+0x0802113C,0x08021140,4,gap-fill code
+0x08021140,0x080212F2,434,proven code
+0x080212F2,0x0802130A,24,gap-fill code
+0x0802130A,0x08021356,76,proven code
+0x08021356,0x0802135C,6,gap-fill code
+0x0802135C,0x08021386,42,proven code
+0x08021388,0x080213C0,56,proven code
+0x080213EC,0x080213FC,16,literal pool
+0x080213FC,0x08021446,74,proven code
+0x08021446,0x08021454,14,gap-fill code
+0x08021454,0x08021594,320,proven code
+0x08021594,0x080215A8,20,gap-fill code
+0x080215A8,0x080215BE,22,proven code
+0x080215BE,0x080215E8,42,gap-fill code
+0x080215E8,0x08021642,90,proven code
+0x08021642,0x08021658,22,gap-fill code
+0x0802166E,0x08021792,292,proven code
+0x08021792,0x080217CA,56,gap-fill code
+0x0802186C,0x08021872,6,literal pool
+0x08021872,0x080218DC,106,filtered pointer-entry code
+0x080218DC,0x080218E0,4,gap-fill code
+0x080218E0,0x080218F2,18,proven code
+0x080218F4,0x080218FC,8,literal pool
+0x080218FC,0x08021908,12,proven code
+0x08021908,0x08021910,8,literal pool
+0x08021910,0x0802191C,12,proven code
+0x0802191C,0x08021940,36,gap-fill code
+0x08021940,0x08021948,8,literal pool
+0x08021948,0x0802196A,34,proven code
+0x0802196C,0x0802197C,16,literal pool
+0x0802197C,0x080219EA,110,proven code
+0x080219EA,0x08021A08,30,gap-fill code
+0x08021A08,0x08021A36,46,proven code
+0x08021A38,0x08021A4C,20,literal pool
+0x08021A4C,0x08021AAA,94,proven code
+0x08021AAC,0x08021ACC,32,literal pool
+0x08021ACC,0x08021AE4,24,proven code
+0x08021AE4,0x08021AEC,8,literal pool
+0x08021AEC,0x08021B76,138,proven code
+0x08021B76,0x08021B7C,6,gap-fill code
+0x08021B7C,0x08021B94,24,proven code
+0x08021B94,0x08021B9C,8,literal pool
+0x08021B9C,0x08021BDC,64,proven code
+0x08021BDC,0x08021BE0,4,literal pool
+0x08021BE0,0x08021C48,104,proven code
+0x08021C48,0x08021C58,16,gap-fill code
+0x08021C58,0x08021C72,26,proven code
+0x08021C74,0x08021C7C,8,literal pool
+0x08021C7C,0x08021CAE,50,proven code
+0x08021CAE,0x08021CB0,2,gap-fill code
+0x08021CB0,0x08021CEE,62,proven code
+0x08021CEE,0x08021CF0,2,gap-fill code
+0x08021CF0,0x08021D20,48,proven code
+0x08021D20,0x08021D28,8,literal pool
+0x08021D28,0x08021D30,8,proven code
+0x08021D36,0x08021D38,2,proven code
+0x08021D74,0x08021D96,34,proven code
+0x08021D98,0x08021DA0,8,literal pool
+0x08021DA0,0x08021DA2,2,proven code
+0x08021DB4,0x08021DB6,2,proven code
+0x08021DB6,0x08021DBC,6,gap-fill code
+0x08021DF0,0x08021DF2,2,proven code
+0x08021DF2,0x08021DF8,6,gap-fill code
+0x08021EA8,0x08021EAA,2,proven code
+0x08021F18,0x08021F1A,2,proven code
+0x08021F1A,0x08021F20,6,gap-fill code
+0x08021F30,0x08021F32,2,proven code
+0x08021F32,0x08021F38,6,gap-fill code
+0x0802201C,0x08022024,8,filtered pointer-entry code
+0x08022098,0x0802209C,4,filtered pointer-entry code
+0x080220CC,0x080220EE,34,proven code
+0x080220F0,0x0802286A,1914,proven code
+0x080228B8,0x08022A42,394,proven code
+0x08022A42,0x08022A44,2,gap-fill code
+0x08022A44,0x08022A52,14,proven code
+0x08022A52,0x08022A56,4,gap-fill code
+0x08022B08,0x08022B0A,2,proven code
+0x08022B18,0x08022B1A,2,proven code
+0x08022B28,0x08022B2A,2,proven code
+0x08022B2A,0x08022B30,6,gap-fill code
+0x08022B38,0x08022B3A,2,proven code
+0x08022BDC,0x08022BDE,2,proven code
+0x08022BDE,0x08022BE4,6,gap-fill code
+0x08022C84,0x08022C86,2,proven code
+0x08022C86,0x08022C8C,6,gap-fill code
+0x08022CB4,0x08022CFA,70,proven code
+0x08022CFC,0x08022D00,4,literal pool
+0x08023012,0x0802301C,10,gap-fill code
+0x08023044,0x08023048,4,literal pool
+0x0802308A,0x080230AE,36,gap-fill code
+0x080230B0,0x080230B4,4,literal pool
+0x0802310E,0x08023110,2,gap-fill code
+0x080233EA,0x080233EE,4,table-held code
+0x080233EE,0x08023404,22,gap-fill code
+0x08023404,0x0802340C,8,literal pool
+0x0802369C,0x080236A4,8,proven code
+0x080236A4,0x080236A8,4,literal pool
+0x080236A8,0x080236AA,2,proven code
+0x080236B4,0x080236B6,2,proven code
+0x080236CC,0x080236CE,2,proven code
+0x080236F0,0x080236F2,2,proven code
+0x08026414,0x08026456,66,proven code
+0x08026456,0x0802645C,6,gap-fill code
+0x0802645C,0x08026472,22,proven code
+0x08026472,0x0802647C,10,gap-fill code
+0x08026528,0x0802654E,38,proven code
+0x0802654E,0x08026556,8,gap-fill code
+0x080265AC,0x080265C2,22,proven code
+0x080265C2,0x080265DC,26,gap-fill code
+0x080265E8,0x080265FE,22,filtered pointer-entry code
+0x080265FE,0x08026604,6,gap-fill code
+0x08026604,0x0802661A,22,filtered pointer-entry code
+0x0802661C,0x08026620,4,literal pool
+0x08026620,0x08026646,38,proven code
+0x08026646,0x0802664C,6,gap-fill code
+0x0802664C,0x0802667E,50,proven code
+0x08026680,0x08026688,8,literal pool
+0x08026688,0x08026696,14,filtered pointer-entry code
+0x08026696,0x08026698,2,gap-fill code
+0x08026698,0x080266B8,32,filtered pointer-entry code
+0x080266B8,0x080266C8,16,gap-fill code
+0x080266C8,0x080266CC,4,literal pool
+0x0802687C,0x08026880,4,literal pool
+0x08027A40,0x08027A56,22,gap-fill code
+0x08027A64,0x08027A92,46,gap-fill code
+0x08027A94,0x08027AA4,16,literal pool
+0x08027E74,0x08027EBC,72,proven code
+0x08027EBC,0x08027EF8,60,gap-fill code
+0x08027EF8,0x08027EFA,2,proven code
+0x08027EFA,0x08027F00,6,gap-fill code
+0x08027F1C,0x08027F1E,2,proven code
+0x08027F1E,0x08027F24,6,gap-fill code
+0x08027F40,0x08027FEA,170,proven code
+0x08027FEC,0x0802802E,66,proven code
+0x0802802E,0x08028030,2,gap-fill code
+0x08028030,0x0802805A,42,proven code
+0x0802805A,0x0802805C,2,gap-fill code
+0x0802805C,0x08028084,40,proven code
+0x08028230,0x08028232,2,proven code
+0x0802829C,0x0802829E,2,proven code
+0x080285D4,0x080285D6,2,proven code
+0x0828BC62,0x0828BC72,16,filtered pointer-entry code
+0x0828C45A,0x0828C47C,34,filtered pointer-entry code
+0x08547800,0x08547806,6,table-held code
+0x08547AC4,0x08547AC8,4,literal pool
+0x08598054,0x08598056,2,table-held code
+0x087FD6BC,0x087FE538,3708,IWRAM overlay
