@@ -55,7 +55,7 @@ Every row below is one function start in `docs\research\FUNCTION_BOUNDS.csv`.
 | `sub_08001cba` | `0x08001cba` | `code_08001cba.s` |
 | `sub_08001dc8` | `0x08001dc8` | `code_08001dc8.s` |
 | `sub_08001dda` | `0x08001dda` | `code_08001dda.s` |
-| `sub_08001dea` | `0x08001dea` | `code_08001dea.s` |
+| `Record_ReadByte` | `0x08001dea` | `Record_ReadByte.s` |
 | `sub_08001e06` | `0x08001e06` | `code_08001e06.s` |
 | `sub_08001e3c` | `0x08001e3c` | `code_08001e3c.s` |
 | `sub_08001e4a` | `0x08001e4a` | `code_08001e4a.s` |
@@ -68,9 +68,9 @@ Every row below is one function start in `docs\research\FUNCTION_BOUNDS.csv`.
 | `sub_08002928` | `0x08002928` | `code_08002928.s` |
 | `Object_SetFields` | `0x08002bf2` | `Object_SetFields.s` |
 | `sub_08002bfe` | `0x08002bfe` | `code_08002bfe.s` |
-| `sub_08002d5c` | `0x08002d5c` | `code_08002d5c.s` |
+| `Object_InitFromTable` | `0x08002d5c` | `Object_InitFromTable.s` |
 | `sub_08002d7e` | `0x08002d7e` | `code_08002d7e.s` |
-| `sub_08002db6` | `0x08002db6` | `code_08002db6.s` |
+| `Object_ClearState` | `0x08002db6` | `Object_ClearState.s` |
 | `Object_SetStateTwo` | `0x08002dc8` | `Object_SetStateTwo.s` |
 | `sub_08002dda` | `0x08002dda` | `code_08002dda.s` |
 | `sub_08002ff8` | `0x08002ff8` | `code_08002ff8.s` |
@@ -123,7 +123,7 @@ Every row below is one function start in `docs\research\FUNCTION_BOUNDS.csv`.
 | `sub_08004fcc` | `0x08004fcc` | `code_08004fcc.s` |
 | `Sprite_InitFromDefinition` | `0x08004ff8` | `Sprite_InitFromDefinition.s` |
 | `sub_08005014` | `0x08005014` | `code_08005014.s` |
-| `sub_0800501e` | `0x0800501e` | `code_0800501e.s` |
+| `Sprite_LoadTiles` | `0x0800501e` | `Sprite_LoadTiles.s` |
 | `sub_08005062` | `0x08005062` | `code_08005062.s` |
 | `sub_08005096` | `0x08005096` | `code_08005096.s` |
 | `Map_LoadLayer` | `0x080050c8` | `Map_LoadLayer.s` |
@@ -168,13 +168,13 @@ Every row below is one function start in `docs\research\FUNCTION_BOUNDS.csv`.
 | `sub_08006460` | `0x08006460` | `code_08006460.s` |
 | `sub_0800649c` | `0x0800649c` | `code_0800649c.s` |
 | `sub_0800651e` | `0x0800651e` | `code_0800651e.s` |
-| `sub_08006534` | `0x08006534` | `code_08006534.s` |
-| `sub_0800656a` | `0x0800656a` | `code_0800656a.s` |
+| `Table_LinkNode` | `0x08006534` | `Table_LinkNode.s` |
+| `Table_FreeNode` | `0x0800656a` | `Table_FreeNode.s` |
 | `sub_0800659e` | `0x0800659e` | `code_0800659e.s` |
 | `Table_UnlinkNode` | `0x08006618` | `Table_UnlinkNode.s` |
 | `sub_08006664` | `0x08006664` | `code_08006664.s` |
-| `sub_080067ac` | `0x080067ac` | `code_080067ac.s` |
-| `sub_080068a6` | `0x080068a6` | `code_080068a6.s` |
+| `Table_TakeNode` | `0x080067ac` | `Table_TakeNode.s` |
+| `Sprite_LoadNode` | `0x080068a6` | `Sprite_LoadNode.s` |
 | `List_Append` | `0x080068b8` | `List_Append.s` |
 | `List_RemoveValue` | `0x080068ca` | `List_RemoveValue.s` |
 | `sub_08006942` | `0x08006942` | `code_08006942.s` |
@@ -406,8 +406,8 @@ Every row below is one function start in `docs\research\FUNCTION_BOUNDS.csv`.
 | `sub_0800b474` | `0x0800b474` | `code_0800b474.s` |
 | `sub_0800b484` | `0x0800b484` | `code_0800b484.s` |
 | `sub_0800b494` | `0x0800b494` | `code_0800b494.s` |
-| `sub_0800b4ae` | `0x0800b4ae` | `code_0800b4ae.s` |
-| `sub_0800b4fc` | `0x0800b4fc` | `code_0800b4fc.s` |
+| `Object_Register` | `0x0800b4ae` | `Object_Register.s` |
+| `Object_Unregister` | `0x0800b4fc` | `Object_Unregister.s` |
 | `sub_0800b520` | `0x0800b520` | `code_0800b520.s` |
 | `sub_0800b5c0` | `0x0800b5c0` | `code_0800b5c0.s` |
 | `sub_0800b710` | `0x0800b710` | `code_0800b710.s` |
@@ -502,13 +502,13 @@ Every row below is one function start in `docs\research\FUNCTION_BOUNDS.csv`.
 | `sub_0800e0ac` | `0x0800e0ac` | `code_0800e0ac.s` |
 | `sub_0800e0b2` | `0x0800e0b2` | `code_0800e0b2.s` |
 | `sub_0800e280` | `0x0800e280` | `code_0800e280.s` |
-| `sub_0800e310` | `0x0800e310` | `code_0800e310.s` |
+| `Bitmap_FillObjectCells` | `0x0800e310` | `Bitmap_FillObjectCells.s` |
 | `sub_0800e33a` | `0x0800e33a` | `code_0800e33a.s` |
 | `sub_0800e39c` | `0x0800e39c` | `code_0800e39c.s` |
 | `sub_0800e3ee` | `0x0800e3ee` | `code_0800e3ee.s` |
-| `sub_0800e41c` | `0x0800e41c` | `code_0800e41c.s` |
+| `Bitmap_FillRectCells` | `0x0800e41c` | `Bitmap_FillRectCells.s` |
 | `sub_0800e438` | `0x0800e438` | `code_0800e438.s` |
-| `sub_0800e45e` | `0x0800e45e` | `code_0800e45e.s` |
+| `Bitmap_RectIsBlocked` | `0x0800e45e` | `Bitmap_RectIsBlocked.s` |
 | `sub_0800e4d2` | `0x0800e4d2` | `code_0800e4d2.s` |
 | `sub_0800e54c` | `0x0800e54c` | `code_0800e54c.s` |
 | `sub_0800e77e` | `0x0800e77e` | `code_0800e77e.s` |
@@ -702,7 +702,7 @@ Every row below is one function start in `docs\research\FUNCTION_BOUNDS.csv`.
 | `sub_080166a2` | `0x080166a2` | `code_080166a2.s` |
 | `sub_08016ab4` | `0x08016ab4` | `code_08016ab4.s` |
 | `sub_08016b96` | `0x08016b96` | `code_08016b96.s` |
-| `sub_08016c48` | `0x08016c48` | `code_08016c48.s` |
+| `Sprite_LoadFrameTiles` | `0x08016c48` | `Sprite_LoadFrameTiles.s` |
 | `sub_08016caa` | `0x08016caa` | `code_08016caa.s` |
 | `sub_08016d40` | `0x08016d40` | `code_08016d40.s` |
 | `sub_08016e8c` | `0x08016e8c` | `code_08016e8c.s` |
@@ -739,7 +739,7 @@ Every row below is one function start in `docs\research\FUNCTION_BOUNDS.csv`.
 | `sub_08019102` | `0x08019102` | `code_08019102.s` |
 | `sub_0801912c` | `0x0801912c` | `code_0801912c.s` |
 | `sub_080191ca` | `0x080191ca` | `code_080191ca.s` |
-| `sub_08019b30` | `0x08019b30` | `code_08019b30.s` |
+| `Scene_New` | `0x08019b30` | `Scene_New.s` |
 | `sub_08019b48` | `0x08019b48` | `code_08019b48.s` |
 | `sub_08019b70` | `0x08019b70` | `code_08019b70.s` |
 | `sub_08019c50` | `0x08019c50` | `code_08019c50.s` |
@@ -863,7 +863,7 @@ Every row below is one function start in `docs\research\FUNCTION_BOUNDS.csv`.
 | `Input_ReadKeys` | `0x0801eefc` | `Input_ReadKeys.s` |
 | `sub_0801ef56` | `0x0801ef56` | `code_0801ef56.s` |
 | `sub_0801ef64` | `0x0801ef64` | `code_0801ef64.s` |
-| `sub_0801efa4` | `0x0801efa4` | `code_0801efa4.s` |
+| `Heap_Init` | `0x0801efa4` | `Heap_Init.s` |
 | `Heap_Unlink` | `0x0801efbc` | `Heap_Unlink.s` |
 | `Heap_Link` | `0x0801eff4` | `Heap_Link.s` |
 | `sub_0801f01c` | `0x0801f01c` | `code_0801f01c.s` |
@@ -990,7 +990,7 @@ Every row below is one function start in `docs\research\FUNCTION_BOUNDS.csv`.
 | `sub_08021454` | `0x08021454` | `code_08021454.s` |
 | `sub_080214c4` | `0x080214c4` | `code_080214c4.s` |
 | `Dma3_StartCopy` | `0x08021526` | `Dma3_StartCopy.s` |
-| `sub_0802153e` | `0x0802153e` | `code_0802153e.s` |
+| `Checksum_Accumulate` | `0x0802153e` | `Checksum_Accumulate.s` |
 | `sub_08021594` | `0x08021594` | `code_08021594.s` |
 | `sub_080215a8` | `0x080215a8` | `code_080215a8.s` |
 | `sub_080215be` | `0x080215be` | `code_080215be.s` |
@@ -1109,4 +1109,4 @@ Every row below is one function start in `docs\research\FUNCTION_BOUNDS.csv`.
 | `sub_08547800` | `0x08547800` | `code_08547800.s` |
 | `sub_08598054` | `0x08598054` | `code_08598054.s` |
 
-1094 function starts: 120 carry a name and 974 carry their address; the address-named ones are read through the rule above, and `docs\NAMING.md` says what promotes a name.
+1094 function starts: 137 carry a name and 957 carry their address; the address-named ones are read through the rule above, and `docs\NAMING.md` says what promotes a name.

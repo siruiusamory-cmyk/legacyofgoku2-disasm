@@ -74,7 +74,7 @@
 		INCBIN	baserom.gba_0x1dbc_0x1dc8.extracted
 		INCLUDE	..\build\code\code_08001dc8.s
 		INCLUDE	..\build\code\code_08001dda.s
-		INCLUDE	..\build\code\code_08001dea.s
+		INCLUDE	..\build\code\Record_ReadByte.s
 		INCLUDE	..\build\code\code_08001e06.s
 		INCLUDE	..\build\code\code_08001e3c.s
 		INCLUDE	..\build\code\code_08001e4a.s
@@ -104,9 +104,9 @@
 		INCLUDE	..\build\code\pool_08002d48.s
 		INCBIN	baserom.gba_0x2d4c_0x2d54.extracted
 		INCLUDE	..\build\code\pool_08002d54.s
-		INCLUDE	..\build\code\code_08002d5c.s
+		INCLUDE	..\build\code\Object_InitFromTable.s
 		INCLUDE	..\build\code\code_08002d7e.s
-		INCLUDE	..\build\code\code_08002db6.s
+		INCLUDE	..\build\code\Object_ClearState.s
 		INCLUDE	..\build\code\Object_SetStateTwo.s
 		INCLUDE	..\build\code\code_08002dda.s
 		INCBIN	baserom.gba_0x2e28_0x2ed4.extracted
@@ -197,7 +197,7 @@
 		INCBIN	baserom.gba_0x4fec_0x4ff8.extracted
 		INCLUDE	..\build\code\Sprite_InitFromDefinition.s
 		INCLUDE	..\build\code\code_08005014.s
-		INCLUDE	..\build\code\code_0800501e.s
+		INCLUDE	..\build\code\Sprite_LoadTiles.s
 		INCLUDE	..\build\code\code_08005062.s
 		INCLUDE	..\build\code\code_08005096.s
 		INCLUDE	..\build\code\Map_LoadLayer.s
@@ -264,16 +264,16 @@
 		INCLUDE	..\build\code\code_08006460.s
 		INCLUDE	..\build\code\code_0800649c.s
 		INCLUDE	..\build\code\code_0800651e.s
-		INCLUDE	..\build\code\code_08006534.s
-		INCLUDE	..\build\code\code_0800656a.s
+		INCLUDE	..\build\code\Table_LinkNode.s
+		INCLUDE	..\build\code\Table_FreeNode.s
 		INCLUDE	..\build\code\code_0800659e.s
 		INCLUDE	..\build\code\Table_UnlinkNode.s
 		INCLUDE	..\build\code\code_08006664.s
 		INCBIN	baserom.gba_0x678c_0x67a4.extracted
 		INCLUDE	..\build\code\pool_080067a4.s
 		INCBIN	baserom.gba_0x67a8_0x67ac.extracted
-		INCLUDE	..\build\code\code_080067ac.s
-		INCLUDE	..\build\code\code_080068a6.s
+		INCLUDE	..\build\code\Table_TakeNode.s
+		INCLUDE	..\build\code\Sprite_LoadNode.s
 		INCLUDE	..\build\code\List_Append.s
 		INCLUDE	..\build\code\List_RemoveValue.s
 		INCLUDE	..\build\code\code_08006942.s
@@ -553,8 +553,8 @@
 		INCLUDE	..\build\code\code_0800b474.s
 		INCLUDE	..\build\code\code_0800b484.s
 		INCLUDE	..\build\code\code_0800b494.s
-		INCLUDE	..\build\code\code_0800b4ae.s
-		INCLUDE	..\build\code\code_0800b4fc.s
+		INCLUDE	..\build\code\Object_Register.s
+		INCLUDE	..\build\code\Object_Unregister.s
 		INCLUDE	..\build\code\code_0800b520.s
 		INCLUDE	..\build\code\pool_0800b5b0.s
 		INCLUDE	..\build\code\code_0800b5c0.s
@@ -717,13 +717,13 @@
 		INCLUDE	..\build\code\code_0800e0b2.s
 		INCBIN	baserom.gba_0xe0f8_0xe280.extracted
 		INCLUDE	..\build\code\code_0800e280.s
-		INCLUDE	..\build\code\code_0800e310.s
+		INCLUDE	..\build\code\Bitmap_FillObjectCells.s
 		INCLUDE	..\build\code\code_0800e33a.s
 		INCLUDE	..\build\code\code_0800e39c.s
 		INCLUDE	..\build\code\code_0800e3ee.s
-		INCLUDE	..\build\code\code_0800e41c.s
+		INCLUDE	..\build\code\Bitmap_FillRectCells.s
 		INCLUDE	..\build\code\code_0800e438.s
-		INCLUDE	..\build\code\code_0800e45e.s
+		INCLUDE	..\build\code\Bitmap_RectIsBlocked.s
 		INCBIN	baserom.gba_0xe484_0xe4d2.extracted
 		INCLUDE	..\build\code\code_0800e4d2.s
 		INCLUDE	..\build\code\code_0800e54c.s
@@ -1087,7 +1087,7 @@
 		INCBIN	baserom.gba_0x16bd4_0x16c24.extracted
 		INCLUDE	..\build\code\pool_08016c24.s
 		INCBIN	baserom.gba_0x16c3c_0x16c48.extracted
-		INCLUDE	..\build\code\code_08016c48.s
+		INCLUDE	..\build\code\Sprite_LoadFrameTiles.s
 		INCLUDE	..\build\code\code_08016caa.s
 		INCBIN	baserom.gba_0x16ce4_0x16d28.extracted
 		INCLUDE	..\build\code\pool_08016d28.s
@@ -1174,7 +1174,7 @@
 		INCLUDE	..\build\code\code_080191ca.s
 		INCLUDE	..\build\code\pool_080191ec.s
 		INCBIN	baserom.gba_0x191f0_0x19b30.extracted
-		INCLUDE	..\build\code\code_08019b30.s
+		INCLUDE	..\build\code\Scene_New.s
 		INCLUDE	..\build\code\code_08019b48.s
 		INCLUDE	..\build\code\code_08019b70.s
 		INCBIN	baserom.gba_0x19c46_0x19c48.extracted
@@ -1416,7 +1416,7 @@
 		INCLUDE	..\build\code\code_0801ef64.s
 		INCBIN	baserom.gba_0x1ef96_0x1ef98.extracted
 		INCLUDE	..\build\code\pool_0801ef98.s
-		INCLUDE	..\build\code\code_0801efa4.s
+		INCLUDE	..\build\code\Heap_Init.s
 		INCLUDE	..\build\code\Heap_Unlink.s
 		INCLUDE	..\build\code\Heap_Link.s
 		INCLUDE	..\build\code\code_0801f01c.s
@@ -1578,7 +1578,7 @@
 		INCLUDE	..\build\code\code_08021454.s
 		INCLUDE	..\build\code\code_080214c4.s
 		INCLUDE	..\build\code\Dma3_StartCopy.s
-		INCLUDE	..\build\code\code_0802153e.s
+		INCLUDE	..\build\code\Checksum_Accumulate.s
 		INCLUDE	..\build\code\code_08021594.s
 		INCLUDE	..\build\code\code_080215a8.s
 		INCLUDE	..\build\code\code_080215be.s
