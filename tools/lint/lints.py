@@ -34,8 +34,8 @@ ASSETS = "assets/"
 
 CHECKS = ("P-148-repo-module-path", "P-159-bare-interpreter", "P-167-pool-guard",
           "NAMING-function-name", "NAMING-c-status", "NAMING-symbol",
-          "NAMING-address-ratchet", "ROM-tracked-image", "README-numbers",
-          "TEST-silent-return", "P-518-stale-incbin-call", "DUP-block")
+          "NAMING-address-ratchet", "NAMING-behaviour-test", "ROM-tracked-image",
+          "README-numbers", "TEST-silent-return", "P-518-stale-incbin-call", "DUP-block")
 STALE_CALL = re.compile(r"incbin\.bat\s+baserom\.gba\s+0x([0-9a-fA-F]+)\s+0x([0-9a-fA-F]+)")
 TEST_FILE = re.compile(r"^test_[^/\\]*\.py$")
 DUP_MINIMUM = 8
@@ -50,6 +50,9 @@ README_SPLIT = re.compile(r"proven\s+code\s+([\d,]+)\s+B,\s+filtered\s+pointer-e
                           r"([\d,]+)\s+B,\s+unclassified\s+([\d,]+)\s+B")
 README_COMMAND = re.compile(r"python tools\\gate\\gate\.py")
 README_FUNCTIONS = re.compile(r"([\d,]+)\s+of\s+the\s+([\d,]+)\s+functions")
+BEHAVIOUR_CLASS = "behaviour-test"
+BEHAVIOUR_CITATION = re.compile(r"(tools/[A-Za-z0-9_/]+\.py)::([A-Za-z_][A-Za-z0-9_]*)")
+BEHAVIOUR_GUARD = "LG2_BEHAVIOUR_TEST"
 BATCH = (".cmd", ".bat")
 SOURCES = (".py", ".cmd", ".bat")
 
@@ -407,6 +410,63 @@ def naming_ratchet_findings(addresses, names, baseline_text):
     return []
 
 
+def cited_test_problem(path, name):
+    text = read_source(path)
+    if text is None:
+        return "%s cannot be read" % path
+    if re.search(r"(?m)^def %s\(" % re.escape(name), text) is None:
+        return "%s does not define %s" % (path, name)
+    return None
+
+
+def run_cited_test(path, name):
+    if os.environ.get(BEHAVIOUR_GUARD) == "1":
+        return 0, "skipped: a nested lint run does not run a cited test"
+    argv = [sys.executable, "-m", "pytest", "-q", "%s::%s" % (path, name)]
+    environment = dict(os.environ)
+    environment[BEHAVIOUR_GUARD] = "1"
+    proc = subprocess.run(argv, cwd=ROOT, capture_output=True, env=environment)
+    lines = [line for line in proc.stdout.decode("utf-8", "replace").splitlines() if line.strip()]
+    return proc.returncode, lines[-1] if lines else ""
+
+
+def behaviour_test_findings(ledger_text, tracked=None, run_test=None):
+    module = naming_module()
+    site = naming_site(module, module.LEDGER)
+    if run_test is None:
+        run_test = run_cited_test
+    findings = []
+    for number, cells in module.ledger_rows(ledger_text):
+        if len(cells) != 5 or cells[3] != BEHAVIOUR_CLASS:
+            continue
+        place = "%s:%d" % (site, number)
+        found = BEHAVIOUR_CITATION.findall(cells[4])
+        if len(found) != 1:
+            findings.append(("NAMING-behaviour-test",
+                             "%s: one tools/...py::test_name citation expected, found %d"
+                             % (place, len(found))))
+            continue
+        path, name = found[0]
+        if tracked is None:
+            tracked = tracked_files()
+            if tracked is None:
+                return [("lint-enumeration",
+                         "git ls-files failed, the behaviour test check cannot see the tree")]
+        if path not in tracked:
+            findings.append(("NAMING-behaviour-test",
+                             "%s: %s is not tracked" % (place, path)))
+            continue
+        problem = cited_test_problem(path, name)
+        if problem is not None:
+            findings.append(("NAMING-behaviour-test", "%s: %s" % (place, problem)))
+            continue
+        code, output = run_test(path, name)
+        if code != 0:
+            findings.append(("NAMING-behaviour-test",
+                             "%s: %s::%s exits %d: %s" % (place, path, name, code, output)))
+    return findings
+
+
 def naming_counts(table_text, addresses):
     module = naming_module()
     names = {}
@@ -441,7 +501,8 @@ def naming_tree_findings():
                                           starts)
     return (findings + found
             + naming_ratchet_findings(starts, naming_counts(table_text, starts),
-                                      module.read(module.BASELINE)))
+                                      module.read(module.BASELINE))
+            + behaviour_test_findings(module.read(module.LEDGER)))
 
 
 def readme_naming_findings(text, address_named, functions):

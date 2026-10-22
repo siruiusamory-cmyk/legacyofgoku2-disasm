@@ -4,14 +4,17 @@ address,name
 0x08006274,Display_ClearControlBit
 0x08006298,Display_SetControlBit
 0x080068b8,List_Append
+0x0800793a,Rect_FromFields
 0x08009be4,Palette_LoadObject
 0x0800da68,Palette_Save
 0x08012030,Irq_DisableHBlank
 0x0801ee7e,Blend_StepEva
 0x0801eefc,Input_ReadKeys
+0x0801f08c,Heap_Alloc
 0x0801f508,Tilemap_FillRect
 0x0801f54c,Dma3_Fill
 0x0801f566,Oam_LoadAll
+0x0801fc9c,Slot_Claim
 0x08020af4,Sound_InitMixer
 0x08020b8c,Sound_StopDriver
 0x08020bac,Sound_StopChannels
@@ -42,3 +45,7 @@ address,name
 0x08022c84,__16__rt_udiv10
 0x08022cb4,strlen
 0x080236b4,Interwork_EnterArm
+0x08026528,Queue_Remove
+0x080265ac,Counter_AddCapped
+0x08028030,Rect_IncludePoint
+0x0802805c,Rect_Overlaps

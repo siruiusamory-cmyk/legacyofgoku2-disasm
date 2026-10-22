@@ -384,6 +384,50 @@ def test_a_readme_without_the_function_figure_is_caught():
 
 
 LIB_TABLE = "address,name\n0x08000276,strlen\n"
+BEHAVIOUR_HEADER = "address,old,new,evidence_class,evidence\n"
+BEHAVIOUR_CITED = ("tools/code/test_thumb_vm.py::"
+                   "test_an_added_register_pair_is_stored_and_the_result_returned")
+BEHAVIOUR_ROW = (BEHAVIOUR_HEADER + "0x08000276,sub_08000276,Unit_DoIt,behaviour-test,"
+                 "\"" + BEHAVIOUR_CITED + ", a crafted pair is added and stored\"\n")
+
+
+def test_a_behaviour_test_row_without_a_citation_is_caught():
+    findings = lints.behaviour_test_findings(
+        BEHAVIOUR_HEADER + "0x08000276,sub_08000276,Unit_DoIt,behaviour-test,"
+                           "the pair is added and stored\n",
+        tracked={"tools/code/test_thumb_vm.py"}, run_test=lambda path, name: (0, "1 passed"))
+    assert [detail for _found, detail in findings
+            if "one tools/...py::test_name citation expected" in detail]
+
+
+def test_a_behaviour_test_row_citing_an_untracked_test_file_is_caught():
+    findings = lints.behaviour_test_findings(
+        BEHAVIOUR_ROW.replace("tools/code/test_thumb_vm.py", "tools/code/test_gone.py"),
+        tracked={"tools/code/test_thumb_vm.py"}, run_test=lambda path, name: (0, "1 passed"))
+    assert [detail for _found, detail in findings if "is not tracked" in detail]
+
+
+def test_a_behaviour_test_row_citing_a_test_the_file_does_not_define_is_caught():
+    findings = lints.behaviour_test_findings(
+        BEHAVIOUR_ROW.replace("test_an_added_register_pair_is_stored_and_the_result_returned",
+                              "test_the_pair_is_stored"),
+        tracked={"tools/code/test_thumb_vm.py"}, run_test=lambda path, name: (0, "1 passed"))
+    assert [detail for _found, detail in findings if "does not define" in detail]
+
+
+def test_a_behaviour_test_row_citing_a_failing_test_is_caught():
+    findings = lints.behaviour_test_findings(
+        BEHAVIOUR_ROW, tracked={"tools/code/test_thumb_vm.py"},
+        run_test=lambda path, name: (1, "1 failed in 0.10s"))
+    assert [detail for _found, detail in findings if "exits 1" in detail]
+
+
+def test_a_behaviour_test_row_citing_a_passing_test_is_not_caught():
+    assert lints.behaviour_test_findings(
+        BEHAVIOUR_ROW, tracked={"tools/code/test_thumb_vm.py"},
+        run_test=lambda path, name: (0, "1 passed in 0.10s")) == []
+
+
 LIB_ROW = ("address,old,new,evidence_class,evidence\n"
            "0x08000276,sub_08000276,strlen,toolchain-library,"
            "armlib/c_t__un.l member strlen.o symbol strlen 76 B matched\n")

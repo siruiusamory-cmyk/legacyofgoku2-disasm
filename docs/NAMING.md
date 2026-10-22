@@ -46,6 +46,16 @@ names the class it is:
   bytes that hold the address are masked. Every other byte, including a literal-pool word no
   relocation patches, is compared. `tools/research/library_match.py` applies the rule and its test
   holds each case.
+- **behaviour-test**: a tracked test runs the function from a private copy of the image on the
+  registers and memory it crafts, and asserts the registers it returns, the memory it writes and the
+  calls it makes, so the name claims only what that test asserts. `tools/code/thumb_vm.py` is the
+  harness: it stops at the function's return, refuses a step past its budget and a run outside the
+  function's body in `docs/research/FUNCTION_BOUNDS.csv` except through a recorded call, and stubs
+  that call unless the test supplies its return values. The row's evidence cell cites the test as
+  `tools/...py::test_name`; `NAMING-behaviour-test` in `tools/lint/lints.py` refuses a row whose
+  citation is absent, repeats, names an untracked file, names a test its file does not define, or
+  whose test does not pass. A test that needs the image skips when `baserom.gba` is absent, as every
+  other ROM-gated test does.
 
 A name says what the function does, never who called it, never why the change was made, and never a
 number that the evidence cell does not also carry.
