@@ -32,6 +32,13 @@ def test_a_literal_register_address_and_a_store_report_the_value_written():
     assert found == [(0x04000102, "STRH", 0x80)]
 
 
+def test_a_pair_mode_reports_the_base_pointer_and_the_field_offset():
+    lines = [(0x08000100, "LDR", "r0, [pc, #0x0]"),
+             (0x08000102, "LDR", "r1, [r0, #0x8]")]
+    found = device_access.touches("thumb", lines, lambda address: 0x03000E1C, pairs=True)
+    assert found == [(0x03000E1C, 0x8, "LDR")]
+
+
 def test_a_shifted_constant_base_is_followed():
     lines = [(0x08000100, "MOV", "r1, #0x1"),
              (0x08000102, "LSL", "r1, r1, #0x1A"),

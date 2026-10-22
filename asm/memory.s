@@ -1,5 +1,9 @@
 Dma3_HalfwordSource	EQU	0x03003910
 Dma3_WordSource	EQU	0x03003914
+Handler_Current	EQU	0x03000E1C
+Handler_Depth	EQU	0x03000E24
+Handler_Stack	EQU	0x03000E28
 Heap_Head	EQU	0x030022B4
 Irq_DmaChannel	EQU	0x030038A0
 Irq_SavedIme	EQU	0x030038AC
+Sprite_CurrentDirectory	EQU	0x03001FA8

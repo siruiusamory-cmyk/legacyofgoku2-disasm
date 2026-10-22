@@ -42,7 +42,7 @@ def pool_at(position, mode, offset):
     return ((position + 4) & ~3) + offset if mode == "thumb" else position + 8 + offset
 
 
-def touches(mode, lines, word):
+def touches(mode, lines, word, pairs=False):
     registers = [None] * 16
     found = []
     for position, operation, operands in lines:
@@ -71,8 +71,11 @@ def touches(mode, lines, word):
             offset = int(indirect.group(3), 16) if indirect.group(3) else 0
             address = registers[base]
             if isinstance(address, int) and address >= 0x03000000:
-                found.append((address + offset, operation,
-                              registers[destination] if operation in STORES else None))
+                if pairs:
+                    found.append((address, offset, operation))
+                else:
+                    found.append((address + offset, operation,
+                                  registers[destination] if operation in STORES else None))
             if operation in LOADS:
                 registers[destination] = None
             continue

@@ -58,7 +58,7 @@
 		INCLUDE	..\build\code\code_08001960.s
 		INCLUDE	..\build\code\code_080019f6.s
 		INCLUDE	..\build\code\code_08001a0c.s
-		INCLUDE	..\build\code\code_08001a26.s
+		INCLUDE	..\build\code\Entry_RunIfEnabled.s
 		INCBIN	baserom.gba_0x1a44_0x1a66.extracted
 		INCLUDE	..\build\code\code_08001a66.s
 		INCLUDE	..\build\code\code_08001a8a.s
@@ -98,7 +98,7 @@
 		INCBIN	baserom.gba_0x2962_0x2b4c.extracted
 		INCLUDE	..\build\code\pool_08002b4c.s
 		INCBIN	baserom.gba_0x2b50_0x2bf2.extracted
-		INCLUDE	..\build\code\code_08002bf2.s
+		INCLUDE	..\build\code\Object_SetFields.s
 		INCLUDE	..\build\code\code_08002bfe.s
 		INCBIN	baserom.gba_0x2cb8_0x2d48.extracted
 		INCLUDE	..\build\code\pool_08002d48.s
@@ -142,7 +142,7 @@
 		INCLUDE	..\build\code\pool_08003b36.s
 		INCLUDE	..\build\code\code_08003b38.s
 		INCBIN	baserom.gba_0x3b72_0x3c24.extracted
-		INCLUDE	..\build\code\code_08003c24.s
+		INCLUDE	..\build\code\Scene_Clear.s
 		INCLUDE	..\build\code\code_08003c6e.s
 		INCLUDE	..\build\code\code_08003ca0.s
 		INCLUDE	..\build\code\code_08003d58.s
@@ -154,7 +154,7 @@
 		INCLUDE	..\build\code\code_08003e8a.s
 		INCLUDE	..\build\code\pool_08003ea0.s
 		INCLUDE	..\build\code\code_08003ed4.s
-		INCLUDE	..\build\code\code_08003f06.s
+		INCLUDE	..\build\code\Script_TestFlag.s
 		INCBIN	baserom.gba_0x3f90_0x3f9c.extracted
 		INCLUDE	..\build\code\code_08003f9c.s
 		INCBIN	baserom.gba_0x3fec_0x4038.extracted
@@ -168,10 +168,10 @@
 		INCLUDE	..\build\code\code_080041a6.s
 		INCBIN	baserom.gba_0x420a_0x420c.extracted
 		INCLUDE	..\build\code\pool_0800420c.s
-		INCLUDE	..\build\code\code_08004214.s
+		INCLUDE	..\build\code\Table_IndexForValue.s
 		INCLUDE	..\build\code\code_08004230.s
 		INCLUDE	..\build\code\code_0800425a.s
-		INCLUDE	..\build\code\code_0800426a.s
+		INCLUDE	..\build\code\Table_PreviousWord.s
 		INCLUDE	..\build\code\code_08004276.s
 		INCLUDE	..\build\code\code_08004284.s
 		INCLUDE	..\build\code\code_080042bc.s
@@ -195,7 +195,7 @@
 		INCBIN	baserom.gba_0x4fe6_0x4fe8.extracted
 		INCLUDE	..\build\code\pool_08004fe8.s
 		INCBIN	baserom.gba_0x4fec_0x4ff8.extracted
-		INCLUDE	..\build\code\code_08004ff8.s
+		INCLUDE	..\build\code\Sprite_InitFromDefinition.s
 		INCLUDE	..\build\code\code_08005014.s
 		INCLUDE	..\build\code\code_0800501e.s
 		INCLUDE	..\build\code\code_08005062.s
@@ -239,7 +239,7 @@
 		INCBIN	baserom.gba_0x5bf4_0x5d48.extracted
 		INCLUDE	..\build\code\pool_08005d48.s
 		INCBIN	baserom.gba_0x5d58_0x5d6c.extracted
-		INCLUDE	..\build\code\code_08005d6c.s
+		INCLUDE	..\build\code\Bitmap_AllCellsSet.s
 		INCLUDE	..\build\code\code_08005dd4.s
 		INCLUDE	..\build\code\code_08005f1a.s
 		INCLUDE	..\build\code\code_08005fba.s
@@ -275,7 +275,7 @@
 		INCLUDE	..\build\code\code_080067ac.s
 		INCLUDE	..\build\code\code_080068a6.s
 		INCLUDE	..\build\code\List_Append.s
-		INCLUDE	..\build\code\code_080068ca.s
+		INCLUDE	..\build\code\List_RemoveValue.s
 		INCLUDE	..\build\code\code_08006942.s
 		INCLUDE	..\build\code\code_080069a4.s
 		INCBIN	baserom.gba_0x6a1e_0x6a20.extracted
@@ -286,8 +286,8 @@
 		INCLUDE	..\build\code\code_08006c24.s
 		INCLUDE	..\build\code\code_08006d54.s
 		INCLUDE	..\build\code\List_MaxScaled.s
-		INCLUDE	..\build\code\code_08006da6.s
-		INCLUDE	..\build\code\code_08006e0a.s
+		INCLUDE	..\build\code\List_Dispatch.s
+		INCLUDE	..\build\code\List_FirstMatch.s
 		INCLUDE	..\build\code\code_08006e64.s
 		INCLUDE	..\build\code\code_08006ed0.s
 		INCLUDE	..\build\code\code_08006f4a.s
@@ -318,12 +318,12 @@
 		INCBIN	baserom.gba_0x751c_0x75a8.extracted
 		INCLUDE	..\build\code\code_080075a8.s
 		INCLUDE	..\build\code\code_080075f8.s
-		INCLUDE	..\build\code\code_0800763c.s
+		INCLUDE	..\build\code\Object_SwitchState.s
 		INCLUDE	..\build\code\code_08007662.s
 		INCLUDE	..\build\code\code_08007688.s
 		INCBIN	baserom.gba_0x76ac_0x76bc.extracted
 		INCLUDE	..\build\code\code_080076bc.s
-		INCLUDE	..\build\code\code_080076ee.s
+		INCLUDE	..\build\code\Table_RemapBytes.s
 		INCLUDE	..\build\code\code_0800772a.s
 		INCBIN	baserom.gba_0x775a_0x7824.extracted
 		INCLUDE	..\build\code\pool_08007824.s
@@ -334,7 +334,7 @@
 		INCLUDE	..\build\code\Point_LoadScaled.s
 		INCLUDE	..\build\code\Rect_FromFields.s
 		INCLUDE	..\build\code\code_08007974.s
-		INCLUDE	..\build\code\code_080079b8.s
+		INCLUDE	..\build\code\Rect_FromDefinition.s
 		INCLUDE	..\build\code\code_08007a26.s
 		INCBIN	baserom.gba_0x7a84_0x7b08.extracted
 		INCLUDE	..\build\code\code_08007b08.s
@@ -386,7 +386,7 @@
 		INCLUDE	..\build\code\Opcode_RunStream.s
 		INCLUDE	..\build\code\code_0800931c.s
 		INCLUDE	..\build\code\Sprite_Directory_Lookup.s
-		INCLUDE	..\build\code\code_08009370.s
+		INCLUDE	..\build\code\Sprite_Select.s
 		INCLUDE	..\build\code\code_08009392.s
 		INCLUDE	..\build\code\code_080093a4.s
 		INCLUDE	..\build\code\code_080093b6.s
@@ -711,7 +711,7 @@
 		INCBIN	baserom.gba_0xdfec_0xe032.extracted
 		INCLUDE	..\build\code\code_0800e032.s
 		INCLUDE	..\build\code\code_0800e038.s
-		INCLUDE	..\build\code\code_0800e04c.s
+		INCLUDE	..\build\code\Queue_Append.s
 		INCLUDE	..\build\code\code_0800e078.s
 		INCLUDE	..\build\code\code_0800e0ac.s
 		INCLUDE	..\build\code\code_0800e0b2.s
@@ -1027,7 +1027,7 @@
 		INCLUDE	..\build\code\pool_08013b9c.s
 		INCBIN	baserom.gba_0x13ba4_0x13bc0.extracted
 		INCLUDE	..\build\code\code_08013bc0.s
-		INCLUDE	..\build\code\code_08013bf4.s
+		INCLUDE	..\build\code\Rect_FromCentre.s
 		INCLUDE	..\build\code\code_08013c22.s
 		INCLUDE	..\build\code\code_08013c7e.s
 		INCBIN	baserom.gba_0x13c8e_0x13e28.extracted
@@ -1422,23 +1422,23 @@
 		INCLUDE	..\build\code\code_0801f01c.s
 		INCLUDE	..\build\code\code_0801f03e.s
 		INCLUDE	..\build\code\Heap_Alloc.s
-		INCLUDE	..\build\code\code_0801f110.s
+		INCLUDE	..\build\code\Heap_Free.s
 		INCLUDE	..\build\code\code_0801f1e6.s
 		INCLUDE	..\build\code\code_0801f1ea.s
 		INCLUDE	..\build\code\pool_0801f204.s
 		INCBIN	baserom.gba_0x1f214_0x1f248.extracted
 		INCLUDE	..\build\code\code_0801f248.s
 		INCLUDE	..\build\code\code_0801f294.s
-		INCLUDE	..\build\code\code_0801f2ce.s
-		INCLUDE	..\build\code\code_0801f2f4.s
+		INCLUDE	..\build\code\Handler_Restore.s
+		INCLUDE	..\build\code\Handler_RunScoped.s
 		INCLUDE	..\build\code\code_0801f346.s
 		INCLUDE	..\build\code\code_0801f37e.s
 		INCLUDE	..\build\code\pool_0801f386.s
 		INCLUDE	..\build\code\Container_Decode.s
 		INCBIN	baserom.gba_0x1f3ba_0x1f412.extracted
 		INCLUDE	..\build\code\Dma3_CopyChunks.s
-		INCLUDE	..\build\code\code_0801f43c.s
-		INCLUDE	..\build\code\code_0801f46a.s
+		INCLUDE	..\build\code\Dma3_HalfwordFill.s
+		INCLUDE	..\build\code\Dma3_WordFill.s
 		INCLUDE	..\build\code\code_0801f494.s
 		INCBIN	baserom.gba_0x1f4b0_0x1f4c4.extracted
 		INCLUDE	..\build\code\code_0801f4c4.s
@@ -1451,11 +1451,11 @@
 		INCBIN	baserom.gba_0x1f5e6_0x1f60a.extracted
 		INCLUDE	..\build\code\code_0801f60a.s
 		INCLUDE	..\build\code\code_0801f618.s
-		INCLUDE	..\build\code\code_0801f636.s
+		INCLUDE	..\build\code\Text_DrawLine.s
 		INCLUDE	..\build\code\code_0801f6d8.s
 		INCLUDE	..\build\code\Text_DrawString.s
 		INCLUDE	..\build\code\code_0801f7e2.s
-		INCLUDE	..\build\code\code_0801f7fc.s
+		INCLUDE	..\build\code\Text_MeasureLine.s
 		INCBIN	baserom.gba_0x1f876_0x1f878.extracted
 		INCLUDE	..\build\code\code_0801f878.s
 		INCLUDE	..\build\code\pool_0801f974.s
@@ -1481,15 +1481,15 @@
 		INCLUDE	..\build\code\code_0801fd10.s
 		INCLUDE	..\build\code\code_0801fd22.s
 		INCLUDE	..\build\code\code_0801fd38.s
-		INCLUDE	..\build\code\code_0801fd56.s
+		INCLUDE	..\build\code\Slot_InitFields.s
 		INCLUDE	..\build\code\code_0801fd78.s
 		INCLUDE	..\build\code\code_0801fdd0.s
 		INCLUDE	..\build\code\code_0801fe1a.s
 		INCLUDE	..\build\code\code_0801fe20.s
 		INCLUDE	..\build\code\code_0801feb0.s
 		INCLUDE	..\build\code\code_0801fec6.s
-		INCLUDE	..\build\code\code_0801fee8.s
-		INCLUDE	..\build\code\code_0801ff16.s
+		INCLUDE	..\build\code\Fade_Decrease.s
+		INCLUDE	..\build\code\Fade_Increase.s
 		INCLUDE	..\build\code\code_0801ff44.s
 		INCLUDE	..\build\code\code_0801ffc8.s
 		INCLUDE	..\build\code\code_0801ffe6.s
@@ -1537,7 +1537,7 @@
 		INCLUDE	..\build\code\code_08020a22.s
 		INCLUDE	..\build\code\code_08020a4c.s
 		INCLUDE	..\build\code\code_08020a96.s
-		INCLUDE	..\build\code\code_08020ac8.s
+		INCLUDE	..\build\code\Slot_InitFieldsWide.s
 		INCLUDE	..\build\code\code_08020af0.s
 		INCLUDE	..\build\code\Sound_InitMixer.s
 		INCLUDE	..\build\code\Sound_StopDriver.s
@@ -1553,14 +1553,14 @@
 		INCBIN	baserom.gba_0x20d70_0x20d80.extracted
 		INCLUDE	..\build\code\pool_08020d80.s
 		INCLUDE	..\build\code\code_08020d90.s
-		INCLUDE	..\build\code\code_08020e5c.s
-		INCLUDE	..\build\code\code_08020eaa.s
+		INCLUDE	..\build\code\Surface_New.s
+		INCLUDE	..\build\code\Surface_Free.s
 		INCLUDE	..\build\code\code_08020ec2.s
 		INCLUDE	..\build\code\code_08020fdc.s
 		INCLUDE	..\build\code\code_0802113c.s
 		INCLUDE	..\build\code\code_08021140.s
 		INCLUDE	..\build\code\code_08021188.s
-		INCLUDE	..\build\code\code_080211c8.s
+		INCLUDE	..\build\code\Bitmap_BlitRows.s
 		INCLUDE	..\build\code\code_08021202.s
 		INCLUDE	..\build\code\code_080212f2.s
 		INCLUDE	..\build\code\code_0802130a.s
@@ -1571,9 +1571,9 @@
 		INCLUDE	..\build\code\Boot_StopUntilKey.s
 		INCBIN	baserom.gba_0x213c0_0x213ec.extracted
 		INCLUDE	..\build\code\pool_080213ec.s
-		INCLUDE	..\build\code\code_080213fc.s
-		INCLUDE	..\build\code\code_0802141c.s
-		INCLUDE	..\build\code\code_0802142e.s
+		INCLUDE	..\build\code\Random_Next.s
+		INCLUDE	..\build\code\Random_Scale.s
+		INCLUDE	..\build\code\Random_Below.s
 		INCLUDE	..\build\code\code_08021446.s
 		INCLUDE	..\build\code\code_08021454.s
 		INCLUDE	..\build\code\code_080214c4.s
@@ -1714,7 +1714,7 @@
 		INCBIN	baserom.gba_0x236ce_0x236f0.extracted
 		INCLUDE	..\build\code\code_080236f0.s
 		INCBIN	baserom.gba_0x236f2_0x26414.extracted
-		INCLUDE	..\build\code\code_08026414.s
+		INCLUDE	..\build\code\Rect_Midpoint.s
 		INCLUDE	..\build\code\code_08026440.s
 		INCLUDE	..\build\code\code_08026456.s
 		INCLUDE	..\build\code\code_0802645c.s
@@ -1733,7 +1733,7 @@
 		INCLUDE	..\build\code\pool_0802661c.s
 		INCLUDE	..\build\code\code_08026620.s
 		INCLUDE	..\build\code\code_08026646.s
-		INCLUDE	..\build\code\code_0802664c.s
+		INCLUDE	..\build\code\Palette_New.s
 		INCBIN	baserom.gba_0x2667e_0x26680.extracted
 		INCLUDE	..\build\code\pool_08026680.s
 		INCLUDE	..\build\code\code_08026688.s

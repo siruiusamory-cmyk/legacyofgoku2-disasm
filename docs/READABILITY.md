@@ -17,14 +17,14 @@ ledger of what still has to fall, not a claim that it already fell.
 
 | class | before | after | rule |
 | --- | --- | --- | --- |
-| asm file organisation | 1,026 files, 125 code files carrying more than one function start, every generated file named `code_<address>.s` | 1,337 files, no file carrying more than one function start, 1,094 code files each named after the one start it opens (62 by name, 1,032 by address), and an index that maps every start to its file | a generated code file is named after the function or module group it carries, and `docs/CODE_INDEX.md` maps every name to its file and address |
+| asm file organisation | 1,026 files, 125 code files carrying more than one function start, every generated file named `code_<address>.s` | 1,337 files, no file carrying more than one function start, 1,094 code files each named after the one start it opens (98 by name, 996 by address), and an index that maps every start to its file | a generated code file is named after the function or module group it carries, and `docs/CODE_INDEX.md` maps every name to its file and address |
 | literal hardware-register addresses | 76 occurrences, 18 distinct values | 0 occurrences, 18 symbols | every literal that is a standard register becomes its GBATEK name from the single include `asm/registers.s` |
-| literal RAM and flag addresses | 99 occurrences, 54 distinct values | 79 occurrences, 49 distinct values, 5 named | a RAM address becomes a symbol only where a ledger evidence class proves its role; everything else stays a literal and is counted here |
+| literal RAM and flag addresses | 99 occurrences, 54 distinct values | 64 occurrences, 47 distinct values, 9 named | a RAM address becomes a symbol only where a ledger evidence class proves its role; everything else stays a literal and is counted here |
 | carried data with no name | 3,360 slices, 5,624,200 B | 3,360 slices, 5,624,200 B, 9 record families named in `docs\TABLE_LEDGER.csv` with the reader that decodes each | a table a generator decodes gets a named record family and a tracked page; an undecoded slice stays a slice and is counted |
 | magic constants | 26,887 immediate operands, 373 distinct values | 26,887, 373 | a constant that names a device field, a stride or a sentinel becomes an equate; a plain arithmetic literal stays |
 | newcomer path gaps | 4 of 6 steps documented | 6 of 6 | the six steps below are each run on a fresh clone and each is a documented command |
 | tool code | 53 files, 3 definitions nothing refers to, 0 duplicated blocks of 8 lines or more | 53, 3, 0 | a definition nothing calls is deleted, a helper that repeats another is merged, and a name says what the function returns |
-| test naming | 25 files, 260 tests, 0 named by address | 25, 260, 0 | a test name states the behaviour its assertions prove; a test that names only an address names nothing |
+| test naming | 25 files, 260 tests, 0 named by address | 27, 286, 0 | a test name states the behaviour its assertions prove; a test that names only an address names nothing |
 
 The six steps of the newcomer path:
 

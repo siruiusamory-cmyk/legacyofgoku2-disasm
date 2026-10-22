@@ -342,3 +342,291 @@ def test_the_dma_interrupt_disable_clears_the_channel_bit_and_restores_the_maste
     assert memory.read(0x04000200, 2) == 0
     assert memory.read(0x04000208, 2) == 1
     assert memory.read(0x02000100, 4) == 0
+
+
+CASES = [
+    {"address": 0x0801F2F4, "name": "Handler_RunScoped", "registers": {0: 0x02000100},
+     "memory": [(0x03000E1C, 4, 0xAAAAAAAA), (0x03000E24, 4, 0),
+                (0x02000100, 4, 0x02000200)],
+     "return": 0x02000100,
+     "writes": [(0x03000E24, 4, 1), (0x03000E28, 4, 0xAAAAAAAA),
+                (0x03000E1C, 4, 0x030022B8), (0x03000E1C, 4, 0x02000100),
+                (0x03000E1C, 4, 0x030022B8), (0x03000E24, 4, 0),
+                (0x03000E1C, 4, 0xAAAAAAAA)],
+     "calls": [(0x0801F314, 0x08021D2A), (0x0801F31A, 0x0801F294),
+               (0x0801F330, 0x08021D2A)]},
+    {"address": 0x08009370, "name": "Sprite_Select", "registers": {0: 7},
+     "stubs": {0x08009324: {0: 0x1234}, 0x08006E0A: {0: 1}},
+     "calls": [(0x08009380, 0x08009324), (0x0800938C, 0x08006E0A)]},
+    {"address": 0x08009370, "name": "Sprite_Select", "registers": {0: 0},
+     "memory": [(0x03001FA8, 4, 0x02000500)], "return": 0x02000500, "calls": []},
+    {"address": 0x08020E5C, "name": "Surface_New", "registers": {0: 0x02000100, 1: 8, 2: 6},
+     "stubs": {0x0801F58C: {}, 0x0801F08C: {0: 0x02000200}},
+     "return": 0x02000100,
+     "writes": [(0x0200012C, 4, 8), (0x02000130, 4, 6), (0x02000134, 4, 0x30),
+                (0x02000124, 4, 0x02000200), (0x02000120, 4, 0x08020D91),
+                (0x02000129, 1, 0)],
+     "calls": [(0x08020E8A, 0x0801F58C), (0x08020E98, 0x0801F08C)]},
+    {"address": 0x0802141C, "name": "Random_Scale", "registers": {0: 0x100},
+     "stubs": {0x080213FC: {0: 0x8000}}, "return": 0x80,
+     "calls": [(0x08021420, 0x080213FC)]},
+    {"address": 0x0801F110, "name": "Heap_Free", "registers": {0: 0x02000008},
+     "memory": [(0x02000000, 2, 0), (0x02000004, 2, 0)],
+     "writes": [(0x02000006, 1, 0), (0x030022B4, 4, 0x02000000),
+                (0x02000008, 2, 0), (0x0200000A, 2, 0)], "calls": []},
+    {"address": 0x0801F636, "name": "Text_DrawLine",
+     "registers": {0: 0x02000000, 1: 0x02000200},
+     "memory": [(0x02000000, 1, 0), (0x02000001, 1, 6), (0x02000004, 4, 0x100),
+                (0x02000008, 4, 0x40), (0x0200000C, 4, 0x02000100),
+                (0x02000200, b"AB\x00"), (0x02000182, 2, 1), (0x02000184, 2, 1),
+                (0x02000102, 2, 5)],
+     "return": 0, "writes": [(0x02000004, 4, 0x10C)],
+     "calls": [(0x0801F6B8, 0x08021D2E), (0x0801F6B8, 0x08021D2E)]},
+    {"address": 0x0800E04C, "name": "Queue_Append",
+     "registers": {0: 0x02000100, 1: 0x02000200, 2: 0x02000000},
+     "memory": [(0x02000100, 4, 1), (0x02000150, 4, 0x02000300), (0x02000304, 4, 0)],
+     "return": 1, "writes": [(0x02000304, 4, 0x02000200)], "calls": []},
+    {"address": 0x080068CA, "name": "List_RemoveValue",
+     "registers": {0: 0x02000000, 1: 0x02000200},
+     "memory": [(0x02000004, 4, 2), (0x02000008, 4, 0x1111),
+                (0x0200000C, 4, 0x02000200), (0x0200040C, 4, 0),
+                (0x02000200, 4, 0x02000210)],
+     "return": 0x02000200, "writes": [(0x02000010, 4, 0x03001F20)],
+     "calls": [(0x080068F6, 0x08026528), (0x0800693C, 0x08021D2A)]},
+    {"address": 0x08006DA6, "name": "List_Dispatch",
+     "registers": {0: 0x02000000, 1: 0x11, 2: 6},
+     "memory": [(0x02000004, 4, 1), (0x02000008, 4, 0x02000300),
+                (0x02000300, 4, 0x02000400), (0x0200040C, 4, 0)],
+     "stubs": {0x08021D2E: {0: 0}},
+     "return": 0, "writes": [], "calls": [(0x08006DD0, 0x08021D2E)]},
+    {"address": 0x08020EAA, "name": "Surface_Free", "registers": {0: 0x02000100, 1: 1},
+     "memory": [(0x02000124, 4, 0x02000200)],
+     "calls": [(0x08020EB2, 0x0801F110), (0x08020EBC, 0x0801F110)]},
+    {"address": 0x080079B8, "name": "Rect_FromDefinition",
+     "registers": {0: 0x02000000, 1: 0x02000100},
+     "memory": [(0x02000110, 1, 0), (0x02000148, 4, 0x02000300),
+                (0x02000258, 4, 0x1000), (0x0200025C, 4, 0x2000),
+                (0x0200030C, 4, 0x10), (0x02000310, 4, 0x20),
+                (0x02000314, 4, 0x30), (0x02000318, 4, 0x40)],
+     "writes": [(0x02000000, 4, 0x20), (0x02000004, 4, 0x40),
+                (0x02000008, 4, 0x40), (0x0200000C, 4, 0x60)], "calls": []},
+    {"address": 0x08004FF8, "name": "Sprite_InitFromDefinition",
+     "registers": {0: 0x02000100, 1: 0x02000200},
+     "memory": [(0x02000204, 4, 0x1234), (0x02000208, 4, 0xAAAA),
+                (0x0200020C, 4, 0xBBBB)],
+     "return": 0x02000100,
+     "writes": [(0x02000100, 4, 0x08025FE0), (0x02000108, 4, 0xBBBB),
+                (0x02000104, 4, 0xAAAA), (0x0200010C, 4, 0x1234)],
+     "calls": [(0x0800500A, 0x08021D28)]},
+    {"address": 0x0800763C, "name": "Object_SwitchState",
+     "registers": {0: 0x02000100, 1: 0x02000200},
+     "memory": [(0x02000118, 4, 0x02000300), (0x02000300, 4, 0x02000310),
+                (0x02000200, 4, 0x02000320)],
+     "writes": [(0x02000118, 4, 0x02000200)],
+     "calls": [(0x0800764C, 0x08021D2C), (0x0800765C, 0x08021D2C)]},
+    {"address": 0x08006E0A, "name": "List_FirstMatch", "registers": {0: 0x02000000, 1: 5, 2: 6},
+     "memory": [(0x02000004, 4, 1), (0x02000008, 4, 0x02000300),
+                (0x02000300, 4, 0x02000310), (0x0200040C, 4, 0)],
+     "stubs": {0x08021D2E: {0: 1}}, "return": 1,
+     "calls": [(0x08006E2E, 0x08021D2E)]},
+    {"address": 0x08006E0A, "name": "List_FirstMatch", "registers": {0: 0x02000000, 1: 5, 2: 6},
+     "memory": [(0x02000004, 4, 0), (0x0200040C, 4, 0)],
+     "stubs": {0x08021D2E: {0: 0}}, "return": 0, "calls": []},
+    {"address": 0x08005D6C, "name": "Bitmap_AllCellsSet",
+     "registers": {0: 0x02000000, 1: 0x02000100},
+     "memory": [(0x02000000, 4, 0), (0x02000004, 4, 0), (0x02000008, 4, 8),
+                (0x0200000C, 4, 8), (0x02000100, 4, 1)],
+     "return": 1, "calls": []},
+    {"address": 0x08005D6C, "name": "Bitmap_AllCellsSet",
+     "registers": {0: 0x02000000, 1: 0x02000100},
+     "memory": [(0x02000000, 4, 0), (0x02000004, 4, 0), (0x02000008, 4, 8),
+                (0x0200000C, 4, 8), (0x02000100, 4, 0)],
+     "return": 0, "calls": []},
+]
+
+
+CASES_TWO = [
+    {"address": 0x0801F2CE, "name": "Handler_Restore", "registers": {0: 0x02000100},
+     "memory": [(0x03000E1C, 4, 0x02000300), (0x02000300, 4, 0x02000400),
+                (0x02000100, 4, 0x02000200)],
+     "return": 0x02000100,
+     "writes": [(0x03000E1C, 4, 0x030022B8), (0x03000E1C, 4, 0x02000100)],
+     "calls": [(0x0801F2E0, 0x08021D2A), (0x0801F2EC, 0x08021D2A)]},
+    {"address": 0x0801FEE8, "name": "Fade_Decrease", "registers": {0: 0x02000000},
+     "memory": [(0x02000048, 1, 10), (0x0200004B, 1, 3)],
+     "writes": [(0x02000048, 1, 7), (0x02000012, 1, 7), (0x02000010, 1, 0x10)],
+     "calls": []},
+    {"address": 0x0801FEE8, "name": "Fade_Decrease", "registers": {0: 0x02000000},
+     "memory": [(0x02000048, 1, 2), (0x0200004B, 1, 5), (0x0200004A, 1, 0xFF)],
+     "writes": [(0x02000048, 1, 0xFD), (0x02000048, 1, 0), (0x0200004A, 1, 0xFC),
+                (0x02000012, 1, 0), (0x02000010, 1, 0x10)], "calls": []},
+    {"address": 0x0801FF16, "name": "Fade_Increase", "registers": {0: 0x02000000},
+     "memory": [(0x02000048, 1, 0x3C), (0x0200004B, 1, 1)],
+     "writes": [(0x02000048, 1, 0x3D), (0x02000012, 1, 0x3D), (0x02000010, 1, 0x10)],
+     "calls": []},
+    {"address": 0x0801FF16, "name": "Fade_Increase", "registers": {0: 0x02000000},
+     "memory": [(0x02000048, 1, 0x3C), (0x0200004B, 1, 5), (0x0200004A, 1, 0xFF)],
+     "writes": [(0x02000048, 1, 0x41), (0x02000048, 1, 0x40), (0x0200004A, 1, 0xFC),
+                (0x02000012, 1, 0x40), (0x02000010, 1, 0x10)], "calls": []},
+    {"address": 0x0802142E, "name": "Random_Below", "registers": {0: 6},
+     "stubs": {0x080213FC: {0: 5}}, "return": 1,
+     "calls": [(0x08021432, 0x080213FC)]},
+    {"address": 0x0802142E, "name": "Random_Below", "registers": {0: 5},
+     "stubs": {0x080213FC: {0: 5}}, "return": 0,
+     "calls": [(0x08021432, 0x080213FC)]},
+    {"address": 0x080213FC, "name": "Random_Next", "registers": {},
+     "memory": [(0x03003890, 4, 0), (0x03003894, 4, 0)],
+     "return": 0xFDD257F3,
+     "writes": [(0x03003894, 4, 0x04F9647E), (0x03003890, 4, 0x02CBBC71)],
+     "calls": []},
+    {"address": 0x08026414, "name": "Rect_Midpoint",
+     "registers": {0: 0x02000000, 1: 0x02000100},
+     "memory": [(0x02000100, 4, 10), (0x02000104, 4, 20), (0x02000108, 4, 30),
+                (0x0200010C, 4, 40)],
+     "writes": [(0x02000004, 4, 0x1E), (0x02000000, 4, 0x14)], "calls": []},
+    {"address": 0x0802664C, "name": "Palette_New", "registers": {0: 0x02000100, 1: 7},
+     "stubs": {0x0800DA68: {}}, "return": 0x02000100,
+     "writes": [(0x02000100, 4, 0x08024F94), (0x02000504, 4, 0),
+                (0x02000508, 4, 7)],
+     "calls": [(0x08026666, 0x0800DA68)]},
+    {"address": 0x08002BF2, "name": "Object_SetFields",
+     "registers": {0: 0x02000100, 1: 1, 2: 2, 3: 3},
+     "memory": [(0x03007F00, 4, 0x4444)], "return": 0x02000114,
+     "writes": [(0x02000104, 4, 1), (0x02000108, 4, 2), (0x0200010C, 4, 3),
+                (0x02000110, 4, 0x4444)], "calls": []},
+    {"address": 0x08001A26, "name": "Entry_RunIfEnabled",
+     "registers": {0: 0x02000000, 1: 1},
+     "memory": [(0x02000165, 1, 2)], "return": 0, "calls": []},
+    {"address": 0x08001A26, "name": "Entry_RunIfEnabled",
+     "registers": {0: 0x02000000, 1: 1},
+     "memory": [(0x02000165, 1, 3)], "stubs": {0x08003E00: {0: 9}}, "return": 9,
+     "calls": [(0x08001A3E, 0x08003E00)]},
+    {"address": 0x08004214, "name": "Table_IndexForValue",
+     "registers": {0: 0x02000100}, "memory": [(0x02000110, 4, 0x15E6B71)],
+     "return": 0x32, "calls": []},
+    {"address": 0x08004214, "name": "Table_IndexForValue",
+     "registers": {0: 0x02000100}, "memory": [(0x02000110, 4, 0)],
+     "return": 1, "calls": []},
+    {"address": 0x080076EE, "name": "Table_RemapBytes",
+     "registers": {0: 0x02000000, 1: 0x02000200},
+     "memory": [(0x0200002C, 4, 0x02000300), (0x02000200, bytes(range(256))),
+                (0x02000300, bytes(255 - index for index in range(256)))],
+     "writes_head": [(0x02000028, 4, 0x02000200), (0x02000024, 4, 0x02000050)],
+     "writes_len": 259,
+     "writes_tail": [(0x0200014F, 1, 0), (0x02000020, 4, 0)],
+     "calls": []},
+    {"address": 0x08003F06, "name": "Script_TestFlag", "registers": {0: 0x00010008},
+     "memory": [(0x03000F45, 1, 1)], "return": 1, "calls": []},
+    {"address": 0x08003F06, "name": "Script_TestFlag", "registers": {0: 0x00020008},
+     "memory": [(0x03000F45, 1, 1)], "return": 0, "calls": []},
+    {"address": 0x08003F06, "name": "Script_TestFlag", "registers": {0: 0x00030008},
+     "memory": [(0x03000F45, 1, 1)], "return": 1,
+     "writes": [(0x03000F45, 1, 0)], "calls": []},
+    {"address": 0x08003F06, "name": "Script_TestFlag", "registers": {0: 0},
+     "return": 1, "calls": []},
+]
+
+
+CASES_THREE = [
+    {"address": 0x0800426A, "name": "Table_PreviousWord", "registers": {0: 2},
+     "return": 0x32, "calls": []},
+    {"address": 0x0800426A, "name": "Table_PreviousWord", "registers": {0: 3},
+     "return": 0x96, "calls": []},
+    {"address": 0x0801FD56, "name": "Slot_InitFields", "registers": {0: 0x02000000, 1: 0x5A},
+     "writes_len": 32,
+     "writes_head": [(0x02000034, 1, 0x5A), (0x02000010, 1, 0x10)],
+     "writes_tail": [(0x020003F4, 1, 0x5A), (0x020003D0, 1, 0x10)],
+     "reads": [(0x02000034, 1, 0x5A), (0x020003F4, 1, 0x5A)], "calls": []},
+    {"address": 0x08020AC8, "name": "Slot_InitFieldsWide",
+     "registers": {0: 0x02000000, 1: 0x5A},
+     "writes_len": 30,
+     "writes_head": [(0x0200004C, 1, 0x5A), (0x02000028, 1, 0x10)],
+     "writes_tail": [(0x0200058C, 1, 0x5A), (0x02000568, 1, 0x10)],
+     "reads": [(0x0200004C, 1, 0x5A), (0x0200058C, 1, 0x5A)], "calls": []},
+    {"address": 0x08013BF4, "name": "Rect_FromCentre", "registers": {0: 0x02000000},
+     "memory": [(0x02000018, 4, 0x02000200), (0x02000200, bytes([1, 2, 3, 4])),
+                (0x02000020, 4, 0x800), (0x02000024, 4, 0x1000)],
+     "writes": [(0x02000028, 4, 7), (0x0200002C, 4, 0xE), (0x02000034, 4, 0x12),
+                (0x02000030, 4, 0xA), (0x02000004, 4, 0x12)], "calls": []},
+    {"address": 0x080211C8, "name": "Bitmap_BlitRows",
+     "registers": {0: 0x02000000, 1: 0x02000300, 2: 0x02000200},
+     "memory": [(0x0200002C, 4, 4), (0x02000024, 4, 0x02000100),
+                (0x02000200, 4, 0), (0x02000204, 4, 0), (0x02000208, 4, 3),
+                (0x0200020C, 4, 2), (0x02000300, b"ABCDEF")],
+     "writes": [(0x02000100, 1, 0x41), (0x02000101, 1, 0x42), (0x02000102, 1, 0x43),
+                (0x02000104, 1, 0x44), (0x02000105, 1, 0x45), (0x02000106, 1, 0x46)],
+     "calls": []},
+    {"address": 0x0801F7FC, "name": "Text_MeasureLine",
+     "registers": {0: 0x02000000, 1: 0x02000200, 2: 100, 3: 0x02000300},
+     "memory": [(0x0200000C, 4, 0x02000100), (0x02000200, b"AA\x00"),
+                (0x02000182, 2, 1), (0x02000184, 2, 1), (0x02000102, 2, 5)],
+     "reads": [(0x02000300, 4, 0x02000200), (0x02000304, 4, 0x02000202),
+               (0x02000308, 4, 12), (0x0200030C, 4, 1)], "calls": []},
+    {"address": 0x08003C24, "name": "Scene_Clear", "registers": {0: 0x02000000},
+     "low": 0x02000000, "high": 0x04000100, "skip": (0x03007000, 0x03008000),
+     "writes": [(0x02000001, 1, 0), (0x02000008, 4, 0), (0x02000000, 1, 3),
+                (0x040000D4, 4, 0x081D9548), (0x040000D8, 4, 0x0200000C),
+                (0x040000DC, 2, 0x2A), (0x040000DE, 2, 0x8400),
+                (0x03003910, 2, 0), (0x040000D4, 4, 0x03003910),
+                (0x040000D8, 4, 0x020000B4), (0x040000DC, 2, 0x19),
+                (0x040000DE, 2, 0x8100),
+                (0x03003910, 2, 0), (0x040000D4, 4, 0x03003910),
+                (0x040000D8, 4, 0x0200012B), (0x040000DC, 2, 0x19),
+                (0x040000DE, 2, 0x8100)], "calls": []},
+]
+
+
+def check_cases(cases):
+    for case in cases:
+        assert any(key in case for key in ("return", "writes", "calls", "writes_len",
+                                          "reads")), case["name"]
+        result = run_case(case)
+        low, high = case.get("low", 0x02000000), case.get("high", 0x03007000)
+        skip = case.get("skip")
+        written = [entry for entry in writes_between(result, low, high)
+                   if skip is None or not skip[0] <= entry[0] < skip[1]]
+        if "return" in case:
+            assert result["registers"][0] == case["return"], case["name"]
+        if "writes" in case:
+            assert written == case["writes"], case["name"]
+        if "writes_len" in case:
+            assert len(written) == case["writes_len"], case["name"]
+        if "writes_head" in case:
+            assert written[:len(case["writes_head"])] == case["writes_head"], case["name"]
+        if "writes_tail" in case:
+            assert written[-len(case["writes_tail"]):] == case["writes_tail"], case["name"]
+        if "reads" in case:
+            for address, size, value in case["reads"]:
+                assert result["memory"].read(address, size) == value, (case["name"], address)
+        if "calls" in case:
+            assert result["calls"] == case["calls"], case["name"]
+
+
+def test_the_first_batch_asserts_the_recorded_body_effects():
+    check_cases(CASES)
+
+
+def test_the_second_batch_asserts_the_recorded_body_effects():
+    check_cases(CASES_TWO)
+
+
+def test_the_third_batch_asserts_the_recorded_body_effects():
+    check_cases(CASES_THREE)
+
+
+def run_case(case):
+    data = image()
+    memory = thumb_vm.Memory(data)
+    for seed in case.get("memory", []):
+        if len(seed) == 2:
+            memory.blob(seed[0], seed[1])
+        else:
+            memory.write(seed[0], seed[1], seed[2])
+    memory.writes.clear()
+    result = thumb_vm.run_function(data, case["address"], registers=case.get("registers"),
+                                   memory=memory, body=thumb_vm.body_of(data, case["address"]),
+                                   stubs=case.get("stubs"))
+    result["memory"] = memory
+    return result
+
+
