@@ -56,10 +56,34 @@ number that the evidence cell does not also carry.
 evidence cell is short and checkable on its own: the register and the constant, the SWI number, the
 callee address, or the split figure. A promotion without a ledger row is a name without evidence.
 
+## Function boundaries
+
+The split proves code at 2,402 addresses, and only some of them start a function; the rest are blocks
+inside one. `tools/code/function_bounds.py` classifies every emitted entry from the bytes, and
+`docs/research/FUNCTION_BOUNDS.csv` carries one row per entry: `address,role,evidence`. An entry is a
+function start when at least one limb holds:
+
+- **call**: an instruction in the emitted code reaches it with `bl`;
+- **vector**: it is the reset vector's target, the interrupt handler's target, or a word of a proved
+  dispatch table;
+- **prologue**: its first instruction saves `lr` (`push {..., lr}` in Thumb, `stmfd sp!, {..., lr}`
+  in ARM);
+- **block**: it opens a code run the split proves, at a byte the split does not call code.
+
+Every other entry is an interior fragment, and its evidence cell names the start whose code contains
+it (`0x0800b35c,fragment,0x0800b33e`). A limb is proof of a start and is never withdrawn; the census
+counts the one case where it is qualified, an entry whose only proof is a call or a table word and
+which lies inside another proved body, as `contained` and leaves it a fragment.
+
+`tools/code/emit_code.py` labels a function start with its name or `sub_` form and every fragment
+with `loc_`, so a function is one contiguous labelled block and the build fails on a boundary file
+that disagrees with the image. A fragment is not a place a name may attach.
+
 ## The address-named count
 
-`docs/NAMING_BASELINE.txt` holds the number of emitted functions that still carry the address form.
-`README.md` carries the same figure as a sentence. The `NAMING-address-ratchet` check in
-`tools/lint/lints.py` refuses a tree whose live count is above the baseline, and refuses one whose
-count is below it while the baseline still says the old number: the figure only falls, and it is
-exact at every commit.
+`docs/NAMING_BASELINE.txt` holds the number of functions that still carry the address form, not the
+number of emitted entries: the fragments carry `loc_` and are not counted. `README.md` carries the
+same figure as a sentence. The `NAMING-address-ratchet` check in `tools/lint/lints.py` refuses a tree
+whose live count is above the baseline, and refuses one whose count is below it while the baseline
+still says the old number: the figure only falls, and it is exact at every commit. `NAMING-symbol`
+refuses a name on an interior fragment and refuses a boundary file that does not cover the entries.

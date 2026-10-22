@@ -470,11 +470,13 @@ def fragments(rom):
             if operation.startswith("B") and operands.startswith("|loc_"):
                 targets.add(int(operands[5:13], 16))
     files = {}
+    import function_bounds
+    starts = function_bounds.describe(measured, rom)["starts"]
     for begin, end, mode, _tag, lines in kept_rows:
         text = ["\tCODE16" if mode == "thumb" else "\tCODE32"]
         for position, operation, operands in lines:
             if position == begin or position in targets or position in entries:
-                if position in entries:
+                if position in starts:
                     text.append(function_label(position, index))
                 text.append(label(position))
             text.append("\t%s\t%s" % (operation, operands))

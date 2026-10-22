@@ -4,7 +4,6 @@ address,old,new,evidence_class,evidence
 0x080068b8,sub_080068B8,List_Append,callee-role,"increments the count at +0x4 and stores r1 at 4+4*count, with no other effect"
 0x08009be4,sub_08009BE4,Palette_LoadObject,device-register,"DMA3 SAD (0x040000D4)=0x081DA6C8, DAD (0x040000D8)=0x05000200, count (0x040000DC)=0x100 and CNT_H (0x040000DE)=0x8000, 32-bit and enabled, over the object palette"
 0x0800da68,sub_0800DA68,Palette_Save,device-register,"stores the literal 0x080240B4 at +0x0 and runs two DMA3 transfers of count 0x100 with CNT_H 0x8000, SAD 0x05000000 to +0x4 and SAD 0x05000200 to +0x204, copying both palettes out"
-0x0801200e,sub_0801200E,Irq_EnableHBlank,device-register,"IE (0x04000200) read, ORed with 0x2 and written back; BG2PB (0x04000022) and BG2PD (0x04000026) zeroed"
 0x08012030,sub_08012030,Irq_DisableHBlank,device-register,IE (0x04000200) read and bit 1 cleared with BIC 0x2
 0x0801ee7e,sub_0801EE7E,Blend_StepEva,device-register,"increments the word at +0x4 and, while it is at most 0x10, writes it to BLDALPHA (0x04000052) as the first weight"
 0x0801eefc,sub_0801EEFC,Input_ReadKeys,device-register,"reads KEYINPUT (0x04000130) through the 0x04000120 literal, then EOR, MVN and AND build pressed and released masks stored at +0x14 and +0x16"
@@ -16,9 +15,7 @@ address,old,new,evidence_class,evidence
 0x08020bba,sub_08020BBA,Sound_StopTimer,device-register,after calling 0x08020D40 it writes 0 to TM0CNT_H (0x04000102)
 0x08020bd0,sub_08020BD0,Sound_StartTimer,device-register,"writes 0x80 to TM0CNT_H (0x04000102), the enable bit with prescaler 1"
 0x08020d26,sub_08020D26,Irq_InstallHandler,structural-role,"writes 0x03000824 to 0x03007FFC, the interrupt vector the split traces, then IE=0x2000, IME=1 and DISPSTAT (0x04000004)=0x18"
-0x08020d6a,sub_08020D6A,Irq_HaltUntilFlag,bios-call,SWI 0x02 (Halt) repeated while the halfword at +0x38 AND r5 is zero
 0x0802135c,sub_0802135C,Boot_SoftReset,bios-call,"IME=0, DISPCNT (0x04000000)=0x80, the six BG scroll registers 0x04000010..0x0400001A zeroed, then SWI 0x00 (SoftReset)"
-0x080213a0,sub_080213A0,Boot_StopUntilKey,bios-call,"IE=0xC304 and KEYCNT (0x04000132) written, then SWI 0x03 (Stop), then a loop calling 0x0801EEFC while the keypad mask is 0"
 0x08021526,sub_08021526,Dma3_StartCopy,device-register,"DMA3 SAD (0x040000D4)=r1, DAD (0x040000D8)=the word at 0x03003898 plus r2, count (0x040000DC)=r3>>2 and CNT_H (0x040000DE)=0x8400, 32-bit and enabled"
 0x08021980,sub_08021980,Irq_EnableDmaBit,device-register,"IME saved to 0x030038AC and cleared, then IF (0x04000202) and IE (0x04000200) set to 8<<n with n from the byte at 0x030038A0, then IME=1"
 0x08021a08,sub_08021A08,Irq_DisableDmaBit,device-register,"IME (0x04000208)=0, then IE (0x04000200) cleared of 8<<n with n from the byte at 0x030038A0"

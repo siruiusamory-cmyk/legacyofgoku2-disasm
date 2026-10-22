@@ -10,6 +10,7 @@ TABLE = os.path.join(ROOT, "tools", "code", "names.csv")
 LEDGER = os.path.join(ROOT, "docs", "NAMING_LEDGER.csv")
 BASELINE = os.path.join(ROOT, "docs", "NAMING_BASELINE.txt")
 EXPORT = os.path.join(ROOT, "docs", "research", "RECOMP_INPUTS.toml")
+BOUNDS = os.path.join(ROOT, "docs", "research", "FUNCTION_BOUNDS.csv")
 REMAINDER = os.path.join(ROOT, "asm", "remainder.s")
 CARRIED = re.compile(r"gen_([0-9a-f]+)_([0-9a-f]+)\.bin")
 ROM_BASE = 0x08000000
@@ -108,6 +109,27 @@ def baseline(text=None):
         return None
     match = re.search(r"(\d+)", text)
     return int(match.group(1)) if match else None
+
+
+def bounds(text=None):
+    if text is None:
+        text = read(BOUNDS)
+    if text is None:
+        return None
+    found = []
+    reader = csv.reader(io.StringIO(text))
+    for number, cells in enumerate(reader, 1):
+        if len(cells) != 3 or number == 1:
+            continue
+        found.append([cell.strip() for cell in cells])
+    return found
+
+
+def starts(text=None):
+    rows = bounds(text)
+    if rows is None:
+        return None
+    return [int(cells[0], 16) for cells in rows if cells[1] == "start"]
 
 
 def load_names():

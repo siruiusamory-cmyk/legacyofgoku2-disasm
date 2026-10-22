@@ -296,10 +296,14 @@ def readme_findings():
     except (OSError, ValueError) as error:
         return findings + [("README-numbers", "docs/research/CODE_SPLIT.md: %s" % error)]
     module = naming_module()
-    addresses = set(module.emitted())
-    named = naming_counts(module.read(module.TABLE), addresses)
+    starts = module.starts()
+    if starts is None:
+        return findings + [("README-numbers", "%s: the function boundaries are absent"
+                            % naming_site(module, module.BOUNDS))]
+    starts = set(starts)
+    named = naming_counts(module.read(module.TABLE), starts)
     return (findings + readme_split_findings(text, totals)
-            + readme_naming_findings(text, len(addresses) - len(named), len(addresses)))
+            + readme_naming_findings(text, len(starts) - len(named), len(starts)))
 
 
 def naming_module():
@@ -312,7 +316,7 @@ def naming_site(module, path):
     return os.path.relpath(path, ROOT).replace("\\", "/")
 
 
-def naming_symbol_findings(table_text, ledger_text, addresses):
+def naming_symbol_findings(table_text, ledger_text, addresses, starts=None):
     module = naming_module()
     table = naming_site(module, module.TABLE)
     ledger = naming_site(module, module.LEDGER)
@@ -338,6 +342,10 @@ def naming_symbol_findings(table_text, ledger_text, addresses):
         if int(address_text, 16) not in addresses:
             findings.append(("NAMING-symbol",
                              "%s: %s is not a code entry the split proves" % (site, address_text)))
+        if starts is not None and int(address_text, 16) not in starts:
+            findings.append(("NAMING-symbol",
+                             "%s: %s is an interior fragment, not a function start"
+                             % (site, address_text)))
         if FUNCTION_NAME.match(name) is None and name not in library:
             findings.append(("NAMING-symbol",
                              "%s: %s is not Module_Verb and no toolchain-library ledger row "
@@ -411,10 +419,25 @@ def naming_counts(table_text, addresses):
 def naming_tree_findings():
     module = naming_module()
     addresses = set(module.emitted())
+    rows = module.bounds()
+    site = naming_site(module, module.BOUNDS)
+    if rows is None:
+        return [("NAMING-symbol", "%s: the function boundaries are absent" % site)]
+    census = set(int(cells[0], 16) for cells in rows)
+    starts = set(int(cells[0], 16) for cells in rows if cells[1] == "start")
     table_text = module.read(module.TABLE)
-    findings, names = naming_symbol_findings(table_text, module.read(module.LEDGER), addresses)
-    return findings + naming_ratchet_findings(addresses, naming_counts(table_text, addresses),
-                                              module.read(module.BASELINE))
+    findings = []
+    missing = sorted(addresses - census)
+    extra = sorted(census - addresses)
+    if missing or extra:
+        findings.append(("NAMING-symbol",
+                         "%s: %d emitted entry(s) and %d row(s) disagree with the census"
+                         % (site, len(missing), len(extra))))
+    found, names = naming_symbol_findings(table_text, module.read(module.LEDGER), addresses,
+                                          starts)
+    return (findings + found
+            + naming_ratchet_findings(starts, naming_counts(table_text, starts),
+                                      module.read(module.BASELINE)))
 
 
 def readme_naming_findings(text, address_named, functions):

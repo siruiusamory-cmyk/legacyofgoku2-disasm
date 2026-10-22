@@ -339,6 +339,18 @@ def test_a_table_that_matches_the_ledger_and_the_entries_is_not_caught():
     assert names == {0x08000276: "Unit_DoIt"}
 
 
+def test_a_name_on_an_interior_fragment_is_caught():
+    findings, _names = lints.naming_symbol_findings(NAMES, LEDGER, ENTRIES, set())
+    assert [(found, detail) for found, detail in findings
+            if "is an interior fragment, not a function start" in detail]
+
+
+def test_a_name_on_a_function_start_is_not_caught():
+    findings, names = lints.naming_symbol_findings(NAMES, LEDGER, ENTRIES, {0x08000276})
+    assert findings == []
+    assert names == {0x08000276: "Unit_DoIt"}
+
+
 def test_an_address_named_count_above_the_baseline_is_caught():
     findings = lints.naming_ratchet_findings({0x08000276, 0x08000278}, {}, "1\n")
     assert [detail for _found, detail in findings if "above the baseline 1" in detail]

@@ -4,7 +4,6 @@ address,name
 0x080068b8,List_Append
 0x08009be4,Palette_LoadObject
 0x0800da68,Palette_Save
-0x0801200e,Irq_EnableHBlank
 0x08012030,Irq_DisableHBlank
 0x0801ee7e,Blend_StepEva
 0x0801eefc,Input_ReadKeys
@@ -16,9 +15,7 @@ address,name
 0x08020bba,Sound_StopTimer
 0x08020bd0,Sound_StartTimer
 0x08020d26,Irq_InstallHandler
-0x08020d6a,Irq_HaltUntilFlag
 0x0802135c,Boot_SoftReset
-0x080213a0,Boot_StopUntilKey
 0x08021526,Dma3_StartCopy
 0x08021980,Irq_EnableDmaBit
 0x08021a08,Irq_DisableDmaBit

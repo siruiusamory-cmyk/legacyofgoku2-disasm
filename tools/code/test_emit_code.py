@@ -12,6 +12,7 @@ sys.path.insert(0, os.path.join(ROOT, "tools"))
 sys.path.insert(0, HERE)
 
 import emit_code
+import function_bounds
 import name_table
 import testkit
 
@@ -102,18 +103,24 @@ def test_a_name_in_the_table_is_emitted_for_its_entry():
 
 
 def test_an_entry_outside_the_table_keeps_its_address_name():
-    measured, _rom = result()
+    measured, rom = result()
     text = "".join(measured["files"].values())
     names = name_table.names()
-    starts = set()
+    positions = set()
     for begin, _end, _mode, _tag, lines in measured["kept"]:
-        starts.add(begin)
-        starts.update(position for position, _op, _operands in lines)
-    unnamed = [address for address in name_table.emitted()
-               if address not in names and address in starts]
+        positions.add(begin)
+        positions.update(position for position, _op, _operands in lines)
+    found = function_bounds.describe(measured["measured"], rom)
+    unnamed = [address for address in found["starts"] if address not in names]
     assert unnamed
     assert ["|sub_%08X|" % address for address in unnamed
             if "|sub_%08X|" % address not in text] == []
+    fragments = [address for address in found["fragments"] if address in positions]
+    assert fragments
+    assert ["|sub_%08X|" % address for address in fragments
+            if "|sub_%08X|" % address in text] == []
+    assert ["|loc_%08X|" % address for address in fragments
+            if "|loc_%08X|" % address not in text] == []
 
 
 def test_write_then_check_agrees(tmp_path):
