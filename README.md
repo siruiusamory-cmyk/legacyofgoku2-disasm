@@ -34,7 +34,7 @@ It builds one ROM:
 ## What this is not
 
 This is not a decompilation. All of the game's code is still assembly, and the build compiles no C.
-Nearly every symbol is still named by its address: 1,005 of the 1,048 functions the build emits carry
+Nearly every symbol is still named by its address: 1,051 of the 1,094 functions the split classifies carry
 the `sub_` form, and the blocks inside a function carry the `loc_` form (`loc_0801F0BC`). Naming one
 takes evidence, never a guess; [docs/NAMING.md](docs/NAMING.md) says which evidence promotes a name
 and which bytes make a function start. No part of the code is claimed to match the original

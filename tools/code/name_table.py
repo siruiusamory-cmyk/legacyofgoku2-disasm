@@ -129,7 +129,7 @@ def starts(text=None):
     rows = bounds(text)
     if rows is None:
         return None
-    return [int(cells[0], 16) for cells in rows if cells[1] == "start"]
+    return [int(cells[0], 16) for cells in rows if cells[1] in ("start", "unreferenced")]
 
 
 def load_names():

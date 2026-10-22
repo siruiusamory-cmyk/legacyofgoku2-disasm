@@ -424,15 +424,19 @@ def naming_tree_findings():
     if rows is None:
         return [("NAMING-symbol", "%s: the function boundaries are absent" % site)]
     census = set(int(cells[0], 16) for cells in rows)
-    starts = set(int(cells[0], 16) for cells in rows if cells[1] == "start")
+    starts = set(int(cells[0], 16) for cells in rows if cells[1] in ("start", "unreferenced"))
     table_text = module.read(module.TABLE)
     findings = []
     missing = sorted(addresses - census)
-    extra = sorted(census - addresses)
-    if missing or extra:
+    invented = sorted(address for address in census - addresses if address not in starts)
+    if missing:
         findings.append(("NAMING-symbol",
-                         "%s: %d emitted entry(s) and %d row(s) disagree with the census"
-                         % (site, len(missing), len(extra))))
+                         "%s: %d emitted entry(s) the census does not classify"
+                         % (site, len(missing))))
+    if invented:
+        findings.append(("NAMING-symbol",
+                         "%s: %d census row(s) the export does not name and no rule starts"
+                         % (site, len(invented))))
     found, names = naming_symbol_findings(table_text, module.read(module.LEDGER), addresses,
                                           starts)
     return (findings + found

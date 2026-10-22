@@ -495,6 +495,20 @@ def span_files(result):
     return sorted(spans)
 
 
+def spans(measured, runs=None):
+    if runs is None:
+        runs = name_table.runs()
+    found = []
+    for start, stop, _name, _mode in measured["function_rows"]:
+        if stop <= START or start >= END:
+            continue
+        begin, end = max(start, START), min(stop, END)
+        if name_table.covered(runs, begin, end):
+            continue
+        found.append(ROM_BASE + begin)
+    return sorted(found)
+
+
 def describe(result):
     lines = []
     for tag in ("proven", "filtered", "table", "gap"):

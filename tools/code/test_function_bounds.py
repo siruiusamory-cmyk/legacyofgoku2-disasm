@@ -26,12 +26,18 @@ def put_word(data, address, value):
     struct.pack_into("<I", data, address - BASE, value & 0xFFFFFFFF)
 
 
-def classify(data, entries, rows, modes=None, calls=(), table=(), vectors=()):
+def classify(data, entries, rows, modes=None, calls=(), table=(), vectors=(), spans=()):
     return function_bounds.classify(bytes(data), entries, modes or {},
                                     [(BASE + start, BASE + stop) for start, stop in rows],
                                     set(BASE + value for value in calls),
                                     set(BASE + value for value in table),
-                                    set(BASE + value for value in vectors))
+                                    set(BASE + value for value in vectors),
+                                    spans=set(BASE + value for value in spans))
+
+
+def row_of(found, address):
+    return [line for line in function_bounds.rows_text(found).splitlines()
+            if line.startswith("0x%08x," % address)][0]
 
 
 def test_a_push_that_saves_lr_is_the_prologue_limb():
@@ -109,6 +115,35 @@ def test_a_body_stops_at_the_end_of_its_run():
     assert BASE + 0xF0 in found["starts"]
 
 
+def test_a_transcribed_span_start_that_no_rule_reaches_is_unreferenced():
+    data = image()
+    put_half(data, BASE + 0x110, 0x2001)
+    put_half(data, BASE + 0x112, 0xBD00)
+    found = classify(data, [], [(0x110, 0x114)], spans=[0x110])
+    assert found["starts"][BASE + 0x110] == ["block"]
+    assert row_of(found, BASE + 0x110) == "0x08000110,unreferenced,block"
+
+
+def test_a_transcribed_span_start_that_saves_lr_is_a_referenced_start():
+    data = image()
+    put_half(data, BASE + 0x120, 0xB510)
+    put_half(data, BASE + 0x122, 0xBD10)
+    found = classify(data, [], [(0x120, 0x124)], spans=[0x120])
+    assert row_of(found, BASE + 0x120) == "0x08000120,start,prologue+block"
+
+
+def test_an_unreferenced_span_start_does_not_swallow_an_evidence_start():
+    data = image()
+    put_half(data, BASE + 0x20, 0x2001)
+    put_half(data, BASE + 0x22, 0x2002)
+    put_half(data, BASE + 0x24, 0x2003)
+    put_half(data, BASE + 0x26, 0xBD00)
+    found = classify(data, [BASE + 0x24], [(0x20, 0x28)], spans=[0x20], calls=[0x24])
+    assert found["contained"] == 0
+    assert found["starts"][BASE + 0x24] == ["call"]
+    assert BASE + 0x24 not in found["fragments"]
+
+
 def test_the_tracked_bounds_file_is_what_the_image_gives():
     root = os.path.dirname(os.path.dirname(HERE))
     rom = os.path.join(root, "baserom.gba")
@@ -117,6 +152,20 @@ def test_the_tracked_bounds_file_is_what_the_image_gives():
     found = function_bounds.census(open(rom, "rb").read())
     with open(function_bounds.BOUNDS, encoding="utf-8") as handle:
         assert handle.read() == function_bounds.rows_text(found)
+
+
+def test_every_transcribed_code_span_start_is_classified():
+    root = os.path.dirname(os.path.dirname(HERE))
+    rom = os.path.join(root, "baserom.gba")
+    if not os.path.exists(rom):
+        pytest.skip("the retail image is absent, so the census cannot be re-derived")
+    import emit_code
+    data = open(rom, "rb").read()
+    found = function_bounds.census(data)
+    spans = [begin for begin, _end, name in emit_code.span_files(emit_code.fragments(data))
+             if name.startswith("code_")]
+    assert spans
+    assert [begin for begin in spans if begin not in found["starts"]] == []
 
 
 if __name__ == "__main__":

@@ -20,8 +20,13 @@ BOUNDS = os.path.join(ROOT, "docs", "research", "FUNCTION_BOUNDS.csv")
 HEADER = "address,role,evidence"
 THUMB = 1
 LIMBS = ("call", "vector", "table", "prologue", "block")
+REFERRING = ("call", "vector", "table", "prologue")
 TERMINATORS = ("B", "BX", "SWI", "UDF")
 PC_WRITERS = ("MOV", "ADD", "SUB", "LDR", "LDM", "LDMFD", "LDMIA", "POP")
+
+
+def unreferenced(limbs):
+    return not any(limb in REFERRING for limb in limbs)
 
 
 def writes_pc(operation, operands):
@@ -89,7 +94,9 @@ def call_targets(rom, rows, modes):
     return found
 
 
-def classify(rom, entries, modes, rows, calls, table, vectors):
+def classify(rom, entries, modes, rows, calls, table, vectors, spans=()):
+    spans = set(spans)
+    entries = sorted(set(entries) | spans)
     limits = {}
     for begin, end in rows:
         limits[begin] = end
@@ -112,11 +119,11 @@ def classify(rom, entries, modes, rows, calls, table, vectors):
             limbs.append("prologue")
         if address in limits:
             limbs.append("block")
-        if not limbs:
+        if not limbs and address not in spans:
             continue
         inside = body(rom, address, modes.get(address, THUMB),
                       limits.get(address, address + 0x400))
-        if not inside:
+        if not inside and address not in spans:
             continue
         limbs_of[address] = limbs
         bodies[address] = inside
@@ -125,8 +132,9 @@ def classify(rom, entries, modes, rows, calls, table, vectors):
     for address in sorted(entries):
         if address not in limbs_of:
             continue
-        if "block" not in limbs_of[address] and "prologue" not in limbs_of[address]:
-            if any(address in starts[start] for start in starts):
+        if address not in spans and "prologue" not in limbs_of[address]:
+            if any(address in starts[start] for start in starts
+                   if not unreferenced(limbs_of[start])):
                 contained += 1
                 continue
         starts[address] = bodies[address]
@@ -137,9 +145,11 @@ def classify(rom, entries, modes, rows, calls, table, vectors):
         row = row_of.get(address, address)
         earlier = [start for start in starts if row_of.get(start) == row and start < address]
         fragments[address] = max(earlier) if earlier else None
-    return {"starts": dict((address, limbs_of[address]) for address in starts),
+    return {"entries": entries,
+            "starts": dict((address, limbs_of[address]) for address in starts),
             "fragments": fragments,
-            "bodies": dict((address, max(starts[address])) for address in starts),
+            "bodies": dict((address, max(starts[address])) for address in starts
+                           if starts[address]),
             "contained": contained}
 
 
@@ -163,8 +173,8 @@ def describe(measured, rom):
     handler = measured["irq"]["handler"]
     if isinstance(handler, dict) and isinstance(handler.get("rom"), int):
         vectors.add(handler["rom"])
-    found = classify(rom, entries, modes, rows, calls, table, vectors)
-    found["entries"] = entries
+    found = classify(rom, entries, modes, rows, calls, table, vectors,
+                     spans=emit_code.spans(measured))
     found["modes"] = modes
     return found
 
@@ -182,14 +192,21 @@ def counts(found):
     return {"entries": len(found["entries"]), "starts": len(found["starts"]),
             "fragments": len(found["fragments"]), "covered": covered,
             "orphans": len(found["fragments"]) - covered, "by_limb": by_limb,
+            "unreferenced": len([address for address in found["starts"]
+                                 if unreferenced(found["starts"][address])]),
             "contained": found["contained"]}
+
+
+def role_of(found, address):
+    return "unreferenced" if unreferenced(found["starts"][address]) else "start"
 
 
 def rows_text(found):
     lines = [HEADER]
     for address in found["entries"]:
         if address in found["starts"]:
-            lines.append("0x%08x,start,%s" % (address, "+".join(found["starts"][address])))
+            lines.append("0x%08x,%s,%s" % (address, role_of(found, address),
+                                           "+".join(found["starts"][address])))
         else:
             parent = found["fragments"][address]
             lines.append("0x%08x,fragment,%s"
@@ -216,17 +233,18 @@ def main(argv=None):
         if arguments.fragments and address in found["starts"]:
             continue
         if address in found["starts"]:
-            print("0x%08x start    %-24s %s" % (address, "+".join(found["starts"][address]),
-                                                names.get(address, "-")))
+            print("0x%08x %-12s %-24s %s" % (address, role_of(found, address),
+                                             "+".join(found["starts"][address]) or "-",
+                                             names.get(address, "-")))
         else:
             parent = found["fragments"][address]
-            print("0x%08x fragment %-24s %s"
+            print("0x%08x fragment     %-24s %s"
                   % (address, "none" if parent is None else "in 0x%08x" % parent,
                      names.get(address, "-")))
     tally = counts(found)
-    print("entries=%d starts=%d fragments=%d covered=%d orphans=%d contained=%d"
+    print("entries=%d starts=%d fragments=%d covered=%d orphans=%d contained=%d unreferenced=%d"
           % (tally["entries"], tally["starts"], tally["fragments"], tally["covered"],
-             tally["orphans"], tally["contained"]))
+             tally["orphans"], tally["contained"], tally["unreferenced"]))
     print("by_limb " + " ".join("%s=%d" % (limb, tally["by_limb"].get(limb, 0)) for limb in LIMBS))
     text = rows_text(found)
     if arguments.write:

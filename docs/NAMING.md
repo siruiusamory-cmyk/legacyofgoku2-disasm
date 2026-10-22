@@ -70,10 +70,11 @@ callee address, or the split figure. A promotion without a ledger row is a name 
 
 ## Function boundaries
 
-The split proves code at 2,402 addresses, and only some of them start a function; the rest are blocks
-inside one. `tools/code/function_bounds.py` classifies every emitted entry from the bytes, and
-`docs/research/FUNCTION_BOUNDS.csv` carries one row per entry: `address,role,evidence`. An entry is a
-function start when at least one limb holds:
+The census carries every emitted entry and every transcribed code-span start, the beginning of a
+`code_*.s` slice the build assembles, so a span the split proves but no export names still takes its
+place in the population. `tools/code/function_bounds.py` classifies each of them from the bytes, and
+`docs/research/FUNCTION_BOUNDS.csv` carries one row per address: `address,role,evidence`. The split
+proves code at 2,447 addresses. A `start` carries at least one limb:
 
 - **call**: an instruction in the emitted code reaches it with `bl`;
 - **vector**: it is the reset vector's target, the interrupt handler's target, or a word of a proved
@@ -82,10 +83,15 @@ function start when at least one limb holds:
   in ARM);
 - **block**: it opens a code run the split proves, at a byte the split does not call code.
 
-Every other entry is an interior fragment, and its evidence cell names the start whose code contains
-it (`0x0800b35c,fragment,0x0800b33e`). A limb is proof of a start and is never withdrawn; the census
-counts the one case where it is qualified, an entry whose only proof is a call or a table word and
-which lies inside another proved body, as `contained` and leaves it a fragment.
+A start that no call, vector, table or prologue rule reaches, and that the split reaches only through
+transcription, is carried with role `unreferenced` rather than dropped, so a name on it obeys the same
+rules as a name on a start. Every other address is an interior fragment, and its evidence cell names
+the start whose code contains it (`0x0800b35c,fragment,0x0800b33e`). A limb is proof of a start and is
+never withdrawn; the census counts the one case where it is qualified, an entry whose only proof is a
+call or a table word and which lies inside another proved body, as `contained` and leaves it a
+fragment. Only a body a call, vector, table or prologue limb opens contains another entry: an
+`unreferenced` start never takes an evidence start into itself, and a transcribed span start is never
+an interior fragment.
 
 `tools/code/emit_code.py` labels a function start with its name or `sub_` form and every fragment
 with `loc_`, so a function is one contiguous labelled block and the build fails on a boundary file
