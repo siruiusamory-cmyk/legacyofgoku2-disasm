@@ -26,7 +26,7 @@ ENDS_HEADER = "address,mode,origin,end,reason"
 FLAG_HEADER = "address,kind,limb,flags,entry,reason"
 THUMB = 1
 ARM = 2
-LIMBS = ("call", "vector", "table", "prologue", "block")
+LIMBS = ("call", "vector", "table", "prologue", "block", "entry")
 REFERRING = ("call", "vector", "table", "prologue")
 TERMINATORS = ("B", "BX", "SWI", "UDF")
 PC_WRITERS = ("MOV", "ADD", "SUB", "LDR", "LDM", "LDMFD", "LDMIA", "POP")
@@ -48,7 +48,9 @@ def writes_pc(operation, operands):
     if operation not in PC_WRITERS:
         return False
     fields = [field.strip() for field in operands.replace("{", "").replace("}", "").split(",")]
-    return "pc" in fields
+    if operation in ("LDM", "LDMFD", "LDMIA", "POP"):
+        return "pc" in fields
+    return bool(fields) and fields[0] == "pc"
 
 
 def ends_body(operation, operands):
@@ -61,6 +63,11 @@ def prologue(rom, address, mode):
         return half is not None and (half & 0xF800) == 0xB000 and bool(half & 0x0100)
     instruction = code_split.word(rom, address)
     return (instruction & 0xFFFF0000) == 0xE92D0000 and bool(instruction & 0x4000)
+
+
+def first_size(rom, address, mode):
+    decoded = emit_code.decode(rom, address, "thumb" if mode == THUMB else "arm")
+    return decoded[2] if decoded is not None else 0
 
 
 def walk_body(rom, address, mode, limit):
@@ -261,11 +268,16 @@ def ends_rows(found):
     seen = set()
     for address in sorted(found["starts"]):
         target = found["corrected"].get(address, address)
+        mode = found["modes"].get(address, THUMB)
+        if target != address:
+            end, reason = found["ends"][address]
+            if end > address:
+                rows.append((address, mode, "census", end, reason))
         if target in seen:
             continue
         seen.add(target)
         end, reason = found["ends"][target]
-        rows.append((target, found["modes"].get(address, THUMB), "census", end, reason))
+        rows.append((target, mode, "census", end, reason))
     for address, mode, origin, end, reason in found["runtime"]:
         rows.append((address, mode, origin, end, reason))
     return sorted(rows)
@@ -298,7 +310,8 @@ def call_targets(rom, rows, modes):
     return found
 
 
-def classify(rom, entries, modes, rows, calls, table, vectors, spans=(), pools=()):
+def classify(rom, entries, modes, rows, calls, table, vectors, spans=(), pools=(),
+             edges=(), covered=()):
     spans = set(spans)
     pools = sorted(set(pools))
     entries = sorted(set(entries) | spans)
@@ -345,26 +358,84 @@ def classify(rom, entries, modes, rows, calls, table, vectors, spans=(), pools=(
                 contained += 1
                 continue
         starts[address] = bodies[address]
-    edges = sorted(starts)
-    ends = {}
-    for address in edges:
-        next_start = [edge for edge in edges if edge > address]
-        pool = [edge for edge in pools if edge > address]
-        edge = edge_of(address, next_start[0] if next_start else None,
-                       pool[0] if pool else None)
-        extent, closed = walked[address]
-        ends[address] = ending_of(extent, closed, edge,
-                                  next_start[0] if next_start else None)
-    corrected = {}
-    for address in edges:
-        entry = closest(rom, address, modes.get(address, THUMB))
-        if entry is None:
-            continue
-        corrected[address] = entry
-        if entry not in ends:
-            extent, closed = walk_body(rom, entry, modes.get(address, THUMB),
-                                       limit_of(rows, entry))[1:]
-            ends[entry] = ending_of(extent, closed, None, None)
+
+    def foreign(address):
+        mode = modes.get(address, THUMB)
+        return any(modes.get(start, mode) != mode and start <= address < walked[start][0]
+                   for start in starts if start != address)
+
+    sizes = {}
+
+    def absorbed(address):
+        mode = modes.get(address, THUMB)
+        return any(start < address < start + sizes[start]
+                   and modes.get(start, THUMB) == mode
+                   for start in starts if start != address)
+
+    def corrections():
+        found = {}
+        for address in sorted(starts):
+            entry = closest(rom, address, modes.get(address, THUMB))
+            if entry is not None:
+                found[address] = entry
+        return found
+
+    def rows_from(start_set, corrected):
+        carried = dict((target, modes.get(source, THUMB))
+                       for source, target in corrected.items())
+        keys = set(start_set) | set(carried)
+        for address in sorted(keys):
+            if address in walked:
+                continue
+            inside, extent, closed = walk_body(rom, address,
+                                               carried.get(address, modes.get(address, THUMB)),
+                                               limit_of(rows, address))
+            bodies[address] = inside
+            walked[address] = (extent, closed)
+        bounds = sorted(keys | set(edges))
+        found = {}
+        for address in sorted(keys):
+            following = next((bound for bound in bounds if bound > address), None)
+            pool = [edge for edge in pools if edge > address]
+            edge = edge_of(address, following, pool[0] if pool else None)
+            extent, closed = walked[address]
+            found[address] = ending_of(extent, closed, edge, following)
+        return found
+
+    def uncovered(found):
+        place = list(covered) + [(begin, end, modes.get(begin, THUMB))
+                                 for begin, (end, _reason) in found.items()]
+        return [address for address in entries
+                if address not in starts and not foreign(address)
+                and not any(begin <= address < end and mode == modes.get(address, THUMB)
+                            for begin, end, mode in place)]
+
+    while True:
+        changed = False
+        for address in [start for start in starts if foreign(start)]:
+            del starts[address]
+            changed = True
+        sizes.update((start, first_size(rom, start, modes.get(start, THUMB)))
+                     for start in starts)
+        for address in [start for start in starts if absorbed(start)]:
+            del starts[address]
+            changed = True
+        corrected = corrections()
+        ends = rows_from(starts, corrected)
+        for address in uncovered(ends):
+            if address in bodies:
+                continue
+            inside, extent, closed = walk_body(rom, address, modes.get(address, THUMB),
+                                              limits.get(address, address + 0x400))
+            bodies[address] = inside
+            walked[address] = (extent, closed)
+            if not inside:
+                continue
+            limbs_of[address] = ["entry"]
+            starts[address] = inside
+            changed = True
+        if not changed:
+            break
     fragments = {}
     for address in entries:
         if address in starts:
@@ -396,18 +467,23 @@ def runtime_rows(measured):
     return found
 
 
-def folded(rom, measured):
+def folded(rom, measured, starts=()):
     source, dest, size, _declared = measured["overlay"]
     found = []
     rows = runtime_rows(measured)
     for region in ("runtime", "runtime-iwram"):
         inside = sorted(row for row in rows if row[2] == region)
+        limit = source + size if region == "runtime-iwram" else len(rom) + code_split.ROM_BASE
         for number, (address, mode, origin, image) in enumerate(inside):
-            limit = source + size if origin == "runtime-iwram" else len(rom) + code_split.ROM_BASE
             shift = image - address
-            next_start = inside[number + 1][0] + shift if number + 1 < len(inside) else None
+            following = inside[number + 1][0] + shift if number + 1 < len(inside) else None
+            if region == "runtime":
+                later = [start for start in starts if start > image]
+                if later:
+                    nearest = min(later)
+                    following = nearest if following is None else min(following, nearest)
             extent, closed = walk_body(rom, image, mode, limit)[1:]
-            image_end, reason = ending_of(extent, closed, next_start, next_start)
+            image_end, reason = ending_of(extent, closed, following, following)
             found.append((address, mode, origin, image_end - shift if image_end else 0, reason))
     return found
 
@@ -416,7 +492,7 @@ def describe(measured, rom):
     base = code_split.ROM_BASE
     pairs = export_inputs.entries_of(measured)
     modes = dict((address, mode) for address, mode in pairs)
-    entries = name_table.emitted([address for address, _mode in pairs], name_table.runs())
+    entries = [address for address, _mode in pairs]
     rows = [(base + start, base + stop) for start, stop, _name, _mode in measured["function_rows"]]
     calls = call_targets(rom, rows, modes)
     calls.update(address for address, _mode in measured["calls"])
@@ -432,11 +508,19 @@ def describe(measured, rom):
     handler = measured["irq"]["handler"]
     if isinstance(handler, dict) and isinstance(handler.get("rom"), int):
         vectors.add(handler["rom"])
+    runtime = folded(rom, measured)
     found = classify(rom, entries, modes, rows, calls, table, vectors,
                      spans=emit_code.spans(measured),
-                     pools=[base + start for start, _stop in measured["pool"]])
+                     pools=[base + start for start, _stop in measured["pool"]],
+                     edges=[address for address, _mode, origin, _end, _reason
+                            in runtime if origin == "runtime"],
+                     covered=[(address, end, mode) for address, mode, origin, end, _reason
+                              in runtime if origin == "runtime"])
     found["rows"] = rows
-    found["runtime"] = folded(rom, measured)
+    found["runtime"] = folded(rom, measured, found["starts"])
+    found["entries"] = sorted(set(name_table.emitted([address for address, _mode in pairs],
+                                                     name_table.runs()))
+                              | set(found["starts"]))
     return found
 
 

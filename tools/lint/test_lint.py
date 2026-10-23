@@ -758,3 +758,92 @@ def test_a_newcomer_path_check_names_the_step_a_document_leaves_out():
     found = complete.replace("docs/CODE_INDEX.md", "")
     findings = lints.newcomer_path_findings(found, found)
     assert [name for name, _detail in findings] == ["READABILITY-path"]
+
+
+def test_a_census_row_the_export_does_not_carry_is_caught():
+    ends = "address,mode,origin,end,reason\n0x08000100,thumb,census,0x08000104,-\n"
+    findings = lints.recomp_census_findings("", ends)
+    assert [name for name, _detail in findings] == ["RECOMP-census"]
+    assert "1 census row(s) have no code row" in findings[0][1]
+
+
+def test_an_export_row_with_a_different_extent_is_caught():
+    ends = "address,mode,origin,end,reason\n0x08000100,thumb,census,0x08000104,-\n"
+    export = ('[[code]]\naddr = 0x08000100\nmode = "thumb"\nsize = 8\n'
+              'origin = "census"\n\n')
+    findings = lints.recomp_census_findings(export, ends)
+    assert "0x08000100 carries thumb and 8 B" in findings[0][1]
+
+
+def test_an_export_row_without_a_mode_is_caught():
+    ends = "address,mode,origin,end,reason\n0x08000200,arm,census,0x08000204,-\n"
+    export = ('[[code]]\naddr = 0x08000200\nmode = "arm"\nsize = 4\n'
+              'origin = "census"\n\n'
+              '[[code]]\naddr = 0x08000100\nmode = ""\nsize = 4\n'
+              'origin = "census"\n\n')
+    findings = lints.recomp_census_findings(export, ends)
+    assert [name for name, _detail in findings] == ["RECOMP-census"]
+    assert "carry a mode outside arm, thumb" in findings[0][1]
+
+
+def test_a_census_row_with_no_end_is_reported_and_not_fatal():
+    ends = ("address,mode,origin,end,reason\n"
+            "0x08000100,thumb,census,0x08000104,-\n"
+            "0x08000200,thumb,census,-,no-body\n")
+    export = ('[[code]]\naddr = 0x08000200\nmode = "thumb"\nsize = 4\n'
+              'origin = "census"\n\n')
+    findings = lints.recomp_census_findings(export, ends)
+    assert any("1 census row(s) have no end" in detail and "0x08000200" in detail
+               for _name, detail in findings)
+
+
+def test_a_duplicate_export_address_is_caught():
+    ends = "address,mode,origin,end,reason\n0x08000100,thumb,census,0x08000104,-\n"
+    export = ('[[code]]\naddr = 0x08000100\nmode = "thumb"\nsize = 4\n'
+              'origin = "census"\n\n') * 2
+    findings = lints.recomp_census_findings(export, ends)
+    assert [name for name, _detail in findings] == ["RECOMP-census"]
+    assert "1 code row(s) repeat an address" in findings[0][1]
+    assert "0x08000100" in findings[0][1]
+
+
+def test_an_export_row_the_census_does_not_name_is_caught():
+    ends = "address,mode,origin,end,reason\n0x08000100,thumb,census,0x08000104,-\n"
+    export = ('[[code]]\naddr = 0x08000100\nmode = "thumb"\nsize = 4\n'
+              'origin = "census"\n\n'
+              '[[code]]\naddr = 0x08000200\nmode = "thumb"\nsize = 4\n'
+              'origin = "census"\n\n')
+    findings = lints.recomp_census_findings(export, ends)
+    assert [name for name, _detail in findings] == ["RECOMP-census"]
+    assert "1 code row(s) are absent from" in findings[0][1]
+    assert "0x08000200" in findings[0][1]
+
+
+def test_export_rows_matching_the_census_are_not_caught():
+    ends = ("address,mode,origin,end,reason\n"
+            "0x03000348,arm,runtime-iwram,0x03000358,next-start\n"
+            "0x08000100,thumb,census,0x08000104,-\n")
+    export = ('[[code]]\naddr = 0x03000348\nmode = "arm"\nsize = 16\n'
+              'origin = "runtime-iwram"\n\n'
+              '[[code]]\naddr = 0x08000100\nmode = "thumb"\nsize = 4\n'
+              'origin = "census"\n\n')
+    assert lints.recomp_census_findings(export, ends) == []
+
+
+def test_an_export_row_whose_origin_differs_is_caught():
+    ends = "address,mode,origin,end,reason\n0x08000100,thumb,census,0x08000104,-\n"
+    export = ('[[code]]\naddr = 0x08000100\nmode = "thumb"\nsize = 4\n'
+              'origin = "runtime"\n\n')
+    findings = lints.recomp_census_findings(export, ends)
+    assert [name for name, _detail in findings] == ["RECOMP-census"]
+    assert "0x08000100 carries origin runtime" in findings[0][1]
+
+
+def test_an_uppercase_export_address_parses_the_same_in_both_callers():
+    sys.path.insert(0, os.path.join(os.path.dirname(HERE), "recomp"))
+    import export_inputs
+    ends = "address,mode,origin,end,reason\n0x0800010A,thumb,census,0x0800010E,-\n"
+    export = ('[[code]]\naddr = 0x0800010A\nmode = "thumb"\nsize = 4\n'
+              'origin = "census"\n\n')
+    assert lints.recomp_census_findings(export, ends) == []
+    assert export_inputs.audit(export, [(0x0800010A, 4, "thumb", "census")]) == ([], [])

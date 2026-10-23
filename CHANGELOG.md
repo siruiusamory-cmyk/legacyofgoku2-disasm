@@ -7,6 +7,11 @@ All notable changes to this project are documented here. The format follows
 
 ### Changed
 
+- The recompilation input `docs/research/RECOMP_INPUTS.toml` carries one `[[code]]` row per
+  closed row of `docs/research/FUNCTION_ENDS.csv`, with its start, end, mode and origin. Its
+  `--check` reports a census row with no code row and a code row with no mode, and the
+  `RECOMP-census` check holds the tracked export to the same record.
+
 - The project is named a disassembly, not a decompilation: `README.md` states what the tree is,
   what it is not, and that its progress figure measures source-built bytes, not C.
 

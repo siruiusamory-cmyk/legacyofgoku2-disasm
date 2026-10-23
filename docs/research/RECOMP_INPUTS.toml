@@ -1,6 +1,6 @@
 [counts]
-functions = 811
-code_bytes = 81628
+functions = 1416
+code_bytes = 82602
 entries = 2460
 jump_tables = 1
 code_copies = 1
@@ -26,4870 +26,8500 @@ table = 0x03000e3c
 table_entries = 14
 
 [[code]]
+addr = 0x03000348
+mode = "arm"
+size = 16
+origin = "runtime-iwram"
+
+[[code]]
+addr = 0x03000358
+mode = "arm"
+size = 8
+origin = "runtime-iwram"
+
+[[code]]
+addr = 0x03000360
+mode = "arm"
+size = 4
+origin = "runtime-iwram"
+
+[[code]]
+addr = 0x03000364
+mode = "arm"
+size = 4
+origin = "runtime-iwram"
+
+[[code]]
+addr = 0x03000368
+mode = "arm"
+size = 4
+origin = "runtime-iwram"
+
+[[code]]
+addr = 0x0300036c
+mode = "arm"
+size = 4
+origin = "runtime-iwram"
+
+[[code]]
+addr = 0x03000370
+mode = "arm"
+size = 8
+origin = "runtime-iwram"
+
+[[code]]
+addr = 0x03000378
+mode = "arm"
+size = 4
+origin = "runtime-iwram"
+
+[[code]]
+addr = 0x0300037c
+mode = "arm"
+size = 16
+origin = "runtime-iwram"
+
+[[code]]
+addr = 0x0300038c
+mode = "arm"
+size = 8
+origin = "runtime-iwram"
+
+[[code]]
+addr = 0x03000394
+mode = "arm"
+size = 4
+origin = "runtime-iwram"
+
+[[code]]
+addr = 0x03000398
+mode = "arm"
+size = 4
+origin = "runtime-iwram"
+
+[[code]]
+addr = 0x0300039c
+mode = "arm"
+size = 4
+origin = "runtime-iwram"
+
+[[code]]
+addr = 0x030003a0
+mode = "arm"
+size = 4
+origin = "runtime-iwram"
+
+[[code]]
+addr = 0x030003a4
+mode = "arm"
+size = 12
+origin = "runtime-iwram"
+
+[[code]]
+addr = 0x030003b0
+mode = "arm"
+size = 4
+origin = "runtime-iwram"
+
+[[code]]
+addr = 0x030003b4
+mode = "arm"
+size = 4
+origin = "runtime-iwram"
+
+[[code]]
+addr = 0x030003b8
+mode = "arm"
+size = 28
+origin = "runtime-iwram"
+
+[[code]]
 addr = 0x08000000
 mode = "arm"
 size = 4
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x080000c0
 mode = "arm"
 size = 116
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08000158
 mode = "thumb"
-size = 166
-origin = "proven"
+size = 4
+origin = "census"
+
+[[code]]
+addr = 0x0800015c
+mode = "thumb"
+size = 162
+origin = "census"
 
 [[code]]
 addr = 0x0800020a
 mode = "thumb"
 size = 2
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0800020c
 mode = "thumb"
-size = 236
-origin = "proven"
+size = 106
+origin = "census"
+
+[[code]]
+addr = 0x08000276
+mode = "thumb"
+size = 130
+origin = "census"
 
 [[code]]
 addr = 0x080002f8
 mode = "thumb"
 size = 10
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08000302
 mode = "thumb"
 size = 232
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x080003ea
 mode = "thumb"
 size = 16
-origin = "gap"
+origin = "census"
+
+[[code]]
+addr = 0x080003fa
+mode = "thumb"
+size = 22
+origin = "runtime"
+
+[[code]]
+addr = 0x08000410
+mode = "thumb"
+size = 2
+origin = "runtime"
 
 [[code]]
 addr = 0x08000412
 mode = "thumb"
 size = 34
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08000434
 mode = "thumb"
 size = 46
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08000462
 mode = "thumb"
 size = 130
-origin = "filtered"
+origin = "census"
+
+[[code]]
+addr = 0x08000548
+mode = "thumb"
+size = 22
+origin = "runtime"
+
+[[code]]
+addr = 0x0800055e
+mode = "thumb"
+size = 26
+origin = "runtime"
+
+[[code]]
+addr = 0x08000578
+mode = "thumb"
+size = 4
+origin = "runtime"
+
+[[code]]
+addr = 0x0800057c
+mode = "thumb"
+size = 4
+origin = "runtime"
+
+[[code]]
+addr = 0x080005a4
+mode = "thumb"
+size = 38
+origin = "runtime"
+
+[[code]]
+addr = 0x080005ca
+mode = "thumb"
+size = 6
+origin = "runtime"
+
+[[code]]
+addr = 0x080005d0
+mode = "thumb"
+size = 40
+origin = "runtime"
+
+[[code]]
+addr = 0x080005f8
+mode = "thumb"
+size = 2
+origin = "runtime"
+
+[[code]]
+addr = 0x080005fa
+mode = "thumb"
+size = 14
+origin = "runtime"
+
+[[code]]
+addr = 0x08000608
+mode = "thumb"
+size = 8
+origin = "runtime"
+
+[[code]]
+addr = 0x08000610
+mode = "thumb"
+size = 10
+origin = "runtime"
 
 [[code]]
 addr = 0x08000756
 mode = "thumb"
 size = 244
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800084a
 mode = "thumb"
 size = 144
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080008da
 mode = "thumb"
 size = 184
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x080009d6
 mode = "thumb"
 size = 296
-origin = "filtered"
+origin = "census"
+
+[[code]]
+addr = 0x08000b3c
+mode = "thumb"
+size = 36
+origin = "runtime"
+
+[[code]]
+addr = 0x08000b60
+mode = "thumb"
+size = 8
+origin = "runtime"
+
+[[code]]
+addr = 0x08000b68
+mode = "thumb"
+size = 10
+origin = "runtime"
+
+[[code]]
+addr = 0x08000b72
+mode = "thumb"
+size = 22
+origin = "runtime"
+
+[[code]]
+addr = 0x08000b88
+mode = "thumb"
+size = 22
+origin = "runtime"
+
+[[code]]
+addr = 0x08000b9e
+mode = "thumb"
+size = 20
+origin = "runtime"
+
+[[code]]
+addr = 0x08000bb2
+mode = "thumb"
+size = 18
+origin = "runtime"
+
+[[code]]
+addr = 0x08000bc4
+mode = "thumb"
+size = 28
+origin = "runtime"
+
+[[code]]
+addr = 0x08000be0
+mode = "thumb"
+size = 4
+origin = "runtime"
+
+[[code]]
+addr = 0x08000be4
+mode = "thumb"
+size = 30
+origin = "runtime"
+
+[[code]]
+addr = 0x08000c02
+mode = "thumb"
+size = 10
+origin = "runtime"
+
+[[code]]
+addr = 0x08000c0c
+mode = "thumb"
+size = 10
+origin = "runtime"
+
+[[code]]
+addr = 0x08000c16
+mode = "thumb"
+size = 2
+origin = "runtime"
 
 [[code]]
 addr = 0x08000c18
 mode = "thumb"
 size = 130
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08000c9a
 mode = "thumb"
 size = 14
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08000cec
 mode = "thumb"
 size = 4
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08000cf0
 mode = "thumb"
 size = 166
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08000d96
 mode = "thumb"
 size = 140
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08000e24
 mode = "thumb"
 size = 148
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08000eb8
 mode = "thumb"
 size = 236
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08000fe4
 mode = "thumb"
 size = 132
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08001068
 mode = "thumb"
 size = 84
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080010bc
 mode = "thumb"
 size = 208
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0800118c
 mode = "thumb"
 size = 196
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080013fc
 mode = "thumb"
 size = 102
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08001462
 mode = "thumb"
 size = 20
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08001722
 mode = "thumb"
 size = 212
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08001960
 mode = "thumb"
-size = 228
-origin = "proven"
+size = 116
+origin = "census"
+
+[[code]]
+addr = 0x080019d4
+mode = "thumb"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x080019d6
+mode = "thumb"
+size = 22
+origin = "census"
+
+[[code]]
+addr = 0x080019ec
+mode = "thumb"
+size = 10
+origin = "census"
+
+[[code]]
+addr = 0x080019f6
+mode = "thumb"
+size = 22
+origin = "census"
+
+[[code]]
+addr = 0x08001a0c
+mode = "thumb"
+size = 26
+origin = "census"
+
+[[code]]
+addr = 0x08001a26
+mode = "thumb"
+size = 30
+origin = "census"
 
 [[code]]
 addr = 0x08001a66
 mode = "thumb"
-size = 168
-origin = "proven"
+size = 36
+origin = "census"
+
+[[code]]
+addr = 0x08001a8a
+mode = "thumb"
+size = 46
+origin = "census"
+
+[[code]]
+addr = 0x08001ab8
+mode = "thumb"
+size = 42
+origin = "census"
+
+[[code]]
+addr = 0x08001ae2
+mode = "thumb"
+size = 44
+origin = "census"
 
 [[code]]
 addr = 0x08001bc2
 mode = "thumb"
 size = 248
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08001cba
 mode = "thumb"
 size = 12
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08001dc8
 mode = "thumb"
-size = 116
-origin = "proven"
+size = 18
+origin = "census"
+
+[[code]]
+addr = 0x08001dda
+mode = "thumb"
+size = 16
+origin = "census"
+
+[[code]]
+addr = 0x08001dea
+mode = "thumb"
+size = 28
+origin = "census"
+
+[[code]]
+addr = 0x08001e06
+mode = "thumb"
+size = 54
+origin = "census"
 
 [[code]]
 addr = 0x08001e3c
 mode = "thumb"
 size = 14
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08001e4a
 mode = "thumb"
 size = 118
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08001ec0
 mode = "thumb"
 size = 54
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08001f04
 mode = "thumb"
 size = 80
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08002244
 mode = "thumb"
 size = 182
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x080022fa
 mode = "thumb"
 size = 68
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08002402
 mode = "thumb"
 size = 246
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08002902
 mode = "thumb"
 size = 38
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08002928
 mode = "thumb"
-size = 58
-origin = "gap"
+size = 4
+origin = "census"
+
+[[code]]
+addr = 0x0800292c
+mode = "thumb"
+size = 54
+origin = "census"
 
 [[code]]
 addr = 0x08002bf2
 mode = "thumb"
-size = 198
-origin = "proven"
+size = 12
+origin = "census"
+
+[[code]]
+addr = 0x08002bfe
+mode = "thumb"
+size = 186
+origin = "census"
 
 [[code]]
 addr = 0x08002d5c
 mode = "thumb"
 size = 34
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08002d7e
 mode = "thumb"
 size = 56
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08002db6
 mode = "thumb"
-size = 36
-origin = "proven"
+size = 18
+origin = "census"
+
+[[code]]
+addr = 0x08002dc8
+mode = "thumb"
+size = 18
+origin = "census"
 
 [[code]]
 addr = 0x08002dda
 mode = "thumb"
 size = 78
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08002ff8
 mode = "thumb"
 size = 324
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800313c
 mode = "thumb"
 size = 218
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080032aa
 mode = "thumb"
 size = 4
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x080032ae
 mode = "thumb"
 size = 18
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08003370
 mode = "thumb"
 size = 2
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080033ac
 mode = "thumb"
 size = 88
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08003404
 mode = "thumb"
 size = 30
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08003422
 mode = "thumb"
 size = 4
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08003480
 mode = "thumb"
 size = 138
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800350a
 mode = "thumb"
 size = 22
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08003520
 mode = "thumb"
-size = 586
-origin = "proven"
+size = 356
+origin = "census"
+
+[[code]]
+addr = 0x08003684
+mode = "thumb"
+size = 4
+origin = "census"
+
+[[code]]
+addr = 0x08003688
+mode = "thumb"
+size = 156
+origin = "census"
+
+[[code]]
+addr = 0x08003724
+mode = "thumb"
+size = 8
+origin = "census"
+
+[[code]]
+addr = 0x0800372c
+mode = "thumb"
+size = 40
+origin = "census"
+
+[[code]]
+addr = 0x08003754
+mode = "thumb"
+size = 22
+origin = "census"
 
 [[code]]
 addr = 0x0800379c
 mode = "thumb"
 size = 866
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08003afe
 mode = "thumb"
 size = 56
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08003b38
 mode = "thumb"
 size = 58
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08003c24
 mode = "thumb"
-size = 506
-origin = "proven"
+size = 74
+origin = "census"
+
+[[code]]
+addr = 0x08003c6e
+mode = "thumb"
+size = 50
+origin = "census"
+
+[[code]]
+addr = 0x08003ca0
+mode = "thumb"
+size = 184
+origin = "census"
+
+[[code]]
+addr = 0x08003d58
+mode = "thumb"
+size = 168
+origin = "census"
+
+[[code]]
+addr = 0x08003e00
+mode = "thumb"
+size = 30
+origin = "census"
 
 [[code]]
 addr = 0x08003e1e
 mode = "thumb"
 size = 36
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08003e42
 mode = "thumb"
-size = 72
-origin = "proven"
+size = 28
+origin = "census"
+
+[[code]]
+addr = 0x08003e5e
+mode = "thumb"
+size = 22
+origin = "census"
+
+[[code]]
+addr = 0x08003e74
+mode = "thumb"
+size = 22
+origin = "census"
 
 [[code]]
 addr = 0x08003e8a
 mode = "thumb"
 size = 22
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08003ed4
 mode = "thumb"
-size = 188
-origin = "proven"
+size = 50
+origin = "census"
+
+[[code]]
+addr = 0x08003f06
+mode = "thumb"
+size = 138
+origin = "census"
 
 [[code]]
 addr = 0x08003f9c
 mode = "thumb"
 size = 80
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08004038
 mode = "thumb"
 size = 102
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0800409e
 mode = "thumb"
-size = 172
-origin = "proven"
+size = 12
+origin = "census"
+
+[[code]]
+addr = 0x080040aa
+mode = "thumb"
+size = 68
+origin = "census"
+
+[[code]]
+addr = 0x080040ee
+mode = "thumb"
+size = 92
+origin = "census"
 
 [[code]]
 addr = 0x0800415c
 mode = "thumb"
-size = 174
-origin = "proven"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x0800415e
+mode = "thumb"
+size = 72
+origin = "census"
+
+[[code]]
+addr = 0x080041a6
+mode = "thumb"
+size = 100
+origin = "census"
 
 [[code]]
 addr = 0x08004214
 mode = "thumb"
-size = 112
-origin = "proven"
+size = 28
+origin = "census"
+
+[[code]]
+addr = 0x08004230
+mode = "thumb"
+size = 42
+origin = "census"
+
+[[code]]
+addr = 0x0800425a
+mode = "thumb"
+size = 16
+origin = "census"
+
+[[code]]
+addr = 0x0800426a
+mode = "thumb"
+size = 12
+origin = "census"
+
+[[code]]
+addr = 0x08004276
+mode = "thumb"
+size = 14
+origin = "census"
 
 [[code]]
 addr = 0x08004284
 mode = "thumb"
 size = 56
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080042bc
 mode = "thumb"
 size = 46
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x080042ea
 mode = "thumb"
 size = 254
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08004a10
 mode = "thumb"
 size = 4
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08004a14
 mode = "thumb"
 size = 6
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08004a1a
 mode = "thumb"
 size = 208
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08004b62
 mode = "thumb"
-size = 256
-origin = "filtered"
+size = 244
+origin = "census"
+
+[[code]]
+addr = 0x08004c56
+mode = "thumb"
+size = 10
+origin = "census"
+
+[[code]]
+addr = 0x08004c60
+mode = "thumb"
+size = 2
+origin = "census"
 
 [[code]]
 addr = 0x08004ca0
 mode = "thumb"
 size = 12
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08004cc8
 mode = "thumb"
 size = 440
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08004fcc
 mode = "thumb"
 size = 26
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08004ff8
 mode = "thumb"
 size = 28
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08005014
 mode = "thumb"
 size = 10
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800501e
 mode = "thumb"
 size = 68
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08005062
 mode = "thumb"
 size = 52
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08005096
 mode = "thumb"
-size = 382
-origin = "proven"
+size = 50
+origin = "census"
+
+[[code]]
+addr = 0x080050c8
+mode = "thumb"
+size = 250
+origin = "census"
+
+[[code]]
+addr = 0x080051c2
+mode = "thumb"
+size = 82
+origin = "census"
 
 [[code]]
 addr = 0x08005240
 mode = "thumb"
-size = 238
-origin = "proven"
+size = 50
+origin = "census"
+
+[[code]]
+addr = 0x08005272
+mode = "thumb"
+size = 32
+origin = "census"
+
+[[code]]
+addr = 0x08005292
+mode = "thumb"
+size = 46
+origin = "census"
+
+[[code]]
+addr = 0x080052c0
+mode = "thumb"
+size = 110
+origin = "census"
 
 [[code]]
 addr = 0x0800532e
 mode = "thumb"
 size = 144
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080053be
 mode = "thumb"
 size = 230
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x080054a4
 mode = "thumb"
 size = 218
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080056a0
 mode = "thumb"
-size = 14
-origin = "filtered"
+size = 4
+origin = "census"
+
+[[code]]
+addr = 0x080056a4
+mode = "thumb"
+size = 10
+origin = "census"
 
 [[code]]
 addr = 0x080056ae
 mode = "thumb"
-size = 118
-origin = "gap"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x080056b0
+mode = "thumb"
+size = 116
+origin = "census"
 
 [[code]]
 addr = 0x08005724
 mode = "thumb"
 size = 224
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08005804
 mode = "thumb"
 size = 2
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08005806
 mode = "thumb"
 size = 168
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x080058ae
 mode = "thumb"
 size = 26
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08005926
 mode = "thumb"
 size = 2
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080059f8
 mode = "thumb"
 size = 2
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08005a84
 mode = "thumb"
 size = 38
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08005b50
 mode = "thumb"
 size = 164
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08005d6c
 mode = "thumb"
-size = 742
-origin = "proven"
+size = 104
+origin = "census"
+
+[[code]]
+addr = 0x08005dd4
+mode = "thumb"
+size = 326
+origin = "census"
+
+[[code]]
+addr = 0x08005f1a
+mode = "thumb"
+size = 160
+origin = "census"
+
+[[code]]
+addr = 0x08005fba
+mode = "thumb"
+size = 152
+origin = "census"
 
 [[code]]
 addr = 0x08006078
 mode = "thumb"
-size = 472
-origin = "proven"
+size = 56
+origin = "census"
+
+[[code]]
+addr = 0x080060b0
+mode = "thumb"
+size = 78
+origin = "census"
+
+[[code]]
+addr = 0x080060fe
+mode = "thumb"
+size = 84
+origin = "census"
+
+[[code]]
+addr = 0x08006152
+mode = "thumb"
+size = 254
+origin = "census"
 
 [[code]]
 addr = 0x08006250
 mode = "thumb"
 size = 20
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08006264
 mode = "thumb"
-size = 496
-origin = "proven"
+size = 16
+origin = "census"
+
+[[code]]
+addr = 0x08006274
+mode = "thumb"
+size = 36
+origin = "census"
+
+[[code]]
+addr = 0x08006298
+mode = "thumb"
+size = 40
+origin = "census"
+
+[[code]]
+addr = 0x080062c0
+mode = "thumb"
+size = 40
+origin = "census"
+
+[[code]]
+addr = 0x080062e8
+mode = "thumb"
+size = 98
+origin = "census"
+
+[[code]]
+addr = 0x0800634a
+mode = "thumb"
+size = 28
+origin = "census"
+
+[[code]]
+addr = 0x08006366
+mode = "thumb"
+size = 38
+origin = "census"
+
+[[code]]
+addr = 0x0800638c
+mode = "thumb"
+size = 42
+origin = "census"
+
+[[code]]
+addr = 0x080063b6
+mode = "thumb"
+size = 42
+origin = "census"
+
+[[code]]
+addr = 0x080063e0
+mode = "thumb"
+size = 116
+origin = "census"
 
 [[code]]
 addr = 0x08006454
 mode = "thumb"
 size = 12
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08006460
 mode = "thumb"
-size = 190
-origin = "proven"
+size = 60
+origin = "census"
+
+[[code]]
+addr = 0x0800649c
+mode = "thumb"
+size = 130
+origin = "census"
 
 [[code]]
 addr = 0x0800651e
 mode = "thumb"
 size = 22
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08006534
 mode = "thumb"
-size = 600
-origin = "proven"
+size = 54
+origin = "census"
+
+[[code]]
+addr = 0x0800656a
+mode = "thumb"
+size = 52
+origin = "census"
+
+[[code]]
+addr = 0x0800659e
+mode = "thumb"
+size = 122
+origin = "census"
+
+[[code]]
+addr = 0x08006618
+mode = "thumb"
+size = 76
+origin = "census"
+
+[[code]]
+addr = 0x08006664
+mode = "thumb"
+size = 296
+origin = "census"
 
 [[code]]
 addr = 0x080067ac
 mode = "thumb"
-size = 626
-origin = "proven"
+size = 250
+origin = "census"
+
+[[code]]
+addr = 0x080068a6
+mode = "thumb"
+size = 18
+origin = "census"
+
+[[code]]
+addr = 0x080068b8
+mode = "thumb"
+size = 18
+origin = "census"
+
+[[code]]
+addr = 0x080068ca
+mode = "thumb"
+size = 120
+origin = "census"
+
+[[code]]
+addr = 0x08006942
+mode = "thumb"
+size = 98
+origin = "census"
+
+[[code]]
+addr = 0x080069a4
+mode = "thumb"
+size = 122
+origin = "census"
 
 [[code]]
 addr = 0x08006aa6
 mode = "thumb"
-size = 686
-origin = "proven"
+size = 50
+origin = "census"
+
+[[code]]
+addr = 0x08006ad8
+mode = "thumb"
+size = 332
+origin = "census"
+
+[[code]]
+addr = 0x08006c24
+mode = "thumb"
+size = 304
+origin = "census"
 
 [[code]]
 addr = 0x08006d54
 mode = "thumb"
 size = 28
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08006d70
 mode = "thumb"
-size = 624
-origin = "proven"
+size = 54
+origin = "census"
+
+[[code]]
+addr = 0x08006da6
+mode = "thumb"
+size = 100
+origin = "census"
+
+[[code]]
+addr = 0x08006e0a
+mode = "thumb"
+size = 90
+origin = "census"
+
+[[code]]
+addr = 0x08006e64
+mode = "thumb"
+size = 108
+origin = "census"
+
+[[code]]
+addr = 0x08006ed0
+mode = "thumb"
+size = 122
+origin = "census"
+
+[[code]]
+addr = 0x08006f4a
+mode = "thumb"
+size = 90
+origin = "census"
+
+[[code]]
+addr = 0x08006fa4
+mode = "thumb"
+size = 60
+origin = "census"
 
 [[code]]
 addr = 0x08006fe0
 mode = "thumb"
 size = 46
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800700e
 mode = "thumb"
-size = 340
-origin = "proven"
+size = 288
+origin = "census"
+
+[[code]]
+addr = 0x0800712e
+mode = "thumb"
+size = 52
+origin = "census"
 
 [[code]]
 addr = 0x08007162
 mode = "thumb"
 size = 74
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08007208
 mode = "thumb"
 size = 42
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08007232
 mode = "thumb"
 size = 102
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080072c4
 mode = "thumb"
 size = 56
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x080072fc
 mode = "thumb"
 size = 28
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800733e
 mode = "thumb"
 size = 122
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x080073ea
 mode = "thumb"
 size = 102
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08007490
 mode = "thumb"
 size = 10
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0800749a
 mode = "thumb"
 size = 8
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080074a2
 mode = "thumb"
 size = 14
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x080074b0
 mode = "thumb"
 size = 36
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080075a8
 mode = "thumb"
-size = 224
-origin = "proven"
+size = 80
+origin = "census"
+
+[[code]]
+addr = 0x080075f8
+mode = "thumb"
+size = 68
+origin = "census"
+
+[[code]]
+addr = 0x0800763c
+mode = "thumb"
+size = 38
+origin = "census"
+
+[[code]]
+addr = 0x08007662
+mode = "thumb"
+size = 38
+origin = "census"
 
 [[code]]
 addr = 0x08007688
 mode = "thumb"
 size = 36
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080076bc
 mode = "thumb"
-size = 110
-origin = "proven"
+size = 50
+origin = "census"
+
+[[code]]
+addr = 0x080076ee
+mode = "thumb"
+size = 60
+origin = "census"
 
 [[code]]
 addr = 0x0800772a
 mode = "thumb"
 size = 48
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800786a
 mode = "thumb"
 size = 56
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x080078e4
 mode = "thumb"
-size = 322
-origin = "proven"
+size = 54
+origin = "census"
+
+[[code]]
+addr = 0x0800791a
+mode = "thumb"
+size = 32
+origin = "census"
+
+[[code]]
+addr = 0x0800793a
+mode = "thumb"
+size = 58
+origin = "census"
+
+[[code]]
+addr = 0x08007974
+mode = "thumb"
+size = 68
+origin = "census"
+
+[[code]]
+addr = 0x080079b8
+mode = "thumb"
+size = 110
+origin = "census"
 
 [[code]]
 addr = 0x08007a26
 mode = "thumb"
 size = 94
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08007b08
 mode = "thumb"
 size = 352
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08007c70
 mode = "thumb"
 size = 70
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x080086a2
 mode = "thumb"
-size = 160
-origin = "proven"
+size = 4
+origin = "census"
+
+[[code]]
+addr = 0x080086a6
+mode = "thumb"
+size = 46
+origin = "census"
+
+[[code]]
+addr = 0x080086d4
+mode = "thumb"
+size = 110
+origin = "census"
 
 [[code]]
 addr = 0x08008742
 mode = "thumb"
 size = 36
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080088e0
 mode = "thumb"
 size = 60
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800891c
 mode = "thumb"
-size = 18
-origin = "gap"
+size = 6
+origin = "census"
+
+[[code]]
+addr = 0x08008922
+mode = "thumb"
+size = 12
+origin = "census"
 
 [[code]]
 addr = 0x08008952
 mode = "thumb"
 size = 200
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08008a20
 mode = "thumb"
-size = 214
-origin = "filtered"
+size = 108
+origin = "census"
 
 [[code]]
 addr = 0x08008b14
 mode = "thumb"
 size = 72
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08008b5c
 mode = "thumb"
 size = 44
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08008c26
 mode = "thumb"
 size = 582
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08008e6c
 mode = "thumb"
 size = 142
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08008f44
 mode = "thumb"
 size = 22
-origin = "table"
+origin = "census"
 
 [[code]]
 addr = 0x08008f5a
 mode = "thumb"
 size = 52
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08008f8e
 mode = "thumb"
-size = 56
-origin = "table"
+size = 22
+origin = "census"
+
+[[code]]
+addr = 0x08008fa4
+mode = "thumb"
+size = 34
+origin = "census"
 
 [[code]]
 addr = 0x08008fc6
 mode = "thumb"
-size = 58
-origin = "filtered"
+size = 32
+origin = "census"
+
+[[code]]
+addr = 0x08008fe6
+mode = "thumb"
+size = 26
+origin = "census"
 
 [[code]]
 addr = 0x08009000
 mode = "thumb"
-size = 98
-origin = "table"
+size = 14
+origin = "census"
+
+[[code]]
+addr = 0x0800900e
+mode = "thumb"
+size = 20
+origin = "census"
+
+[[code]]
+addr = 0x08009022
+mode = "thumb"
+size = 20
+origin = "census"
+
+[[code]]
+addr = 0x08009036
+mode = "thumb"
+size = 20
+origin = "census"
+
+[[code]]
+addr = 0x0800904a
+mode = "thumb"
+size = 24
+origin = "census"
 
 [[code]]
 addr = 0x08009062
 mode = "thumb"
-size = 156
-origin = "filtered"
+size = 26
+origin = "census"
+
+[[code]]
+addr = 0x0800907c
+mode = "thumb"
+size = 26
+origin = "census"
+
+[[code]]
+addr = 0x08009096
+mode = "thumb"
+size = 26
+origin = "census"
+
+[[code]]
+addr = 0x080090b0
+mode = "thumb"
+size = 26
+origin = "census"
+
+[[code]]
+addr = 0x080090ca
+mode = "thumb"
+size = 26
+origin = "census"
+
+[[code]]
+addr = 0x080090e4
+mode = "thumb"
+size = 26
+origin = "census"
 
 [[code]]
 addr = 0x080090fe
 mode = "thumb"
 size = 12
-origin = "table"
+origin = "census"
 
 [[code]]
 addr = 0x0800910a
 mode = "thumb"
 size = 30
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08009128
 mode = "thumb"
-size = 244
-origin = "table"
+size = 8
+origin = "census"
+
+[[code]]
+addr = 0x08009130
+mode = "thumb"
+size = 48
+origin = "census"
+
+[[code]]
+addr = 0x08009160
+mode = "thumb"
+size = 48
+origin = "census"
+
+[[code]]
+addr = 0x08009190
+mode = "thumb"
+size = 44
+origin = "census"
+
+[[code]]
+addr = 0x080091bc
+mode = "thumb"
+size = 48
+origin = "census"
+
+[[code]]
+addr = 0x080091ec
+mode = "thumb"
+size = 48
+origin = "census"
 
 [[code]]
 addr = 0x0800921c
 mode = "thumb"
 size = 8
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08009224
 mode = "thumb"
-size = 72
-origin = "table"
+size = 44
+origin = "census"
+
+[[code]]
+addr = 0x08009250
+mode = "thumb"
+size = 28
+origin = "census"
 
 [[code]]
 addr = 0x0800926c
 mode = "thumb"
-size = 110
-origin = "filtered"
+size = 46
+origin = "census"
+
+[[code]]
+addr = 0x0800929a
+mode = "thumb"
+size = 64
+origin = "census"
 
 [[code]]
 addr = 0x080092da
 mode = "thumb"
 size = 10
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080092e4
 mode = "thumb"
 size = 56
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800931c
 mode = "thumb"
 size = 8
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08009324
 mode = "thumb"
-size = 110
-origin = "proven"
+size = 76
+origin = "census"
+
+[[code]]
+addr = 0x08009370
+mode = "thumb"
+size = 34
+origin = "census"
 
 [[code]]
 addr = 0x08009392
 mode = "thumb"
-size = 488
-origin = "table"
+size = 18
+origin = "census"
+
+[[code]]
+addr = 0x080093a4
+mode = "thumb"
+size = 18
+origin = "census"
+
+[[code]]
+addr = 0x080093b6
+mode = "thumb"
+size = 18
+origin = "census"
+
+[[code]]
+addr = 0x080093c8
+mode = "thumb"
+size = 18
+origin = "census"
+
+[[code]]
+addr = 0x080093da
+mode = "thumb"
+size = 20
+origin = "census"
+
+[[code]]
+addr = 0x080093ee
+mode = "thumb"
+size = 20
+origin = "census"
+
+[[code]]
+addr = 0x08009402
+mode = "thumb"
+size = 20
+origin = "census"
+
+[[code]]
+addr = 0x08009416
+mode = "thumb"
+size = 20
+origin = "census"
+
+[[code]]
+addr = 0x0800942a
+mode = "thumb"
+size = 20
+origin = "census"
+
+[[code]]
+addr = 0x0800943e
+mode = "thumb"
+size = 20
+origin = "census"
+
+[[code]]
+addr = 0x08009452
+mode = "thumb"
+size = 20
+origin = "census"
+
+[[code]]
+addr = 0x08009466
+mode = "thumb"
+size = 18
+origin = "census"
+
+[[code]]
+addr = 0x08009478
+mode = "thumb"
+size = 18
+origin = "census"
+
+[[code]]
+addr = 0x0800948a
+mode = "thumb"
+size = 18
+origin = "census"
+
+[[code]]
+addr = 0x0800949c
+mode = "thumb"
+size = 20
+origin = "census"
+
+[[code]]
+addr = 0x080094b0
+mode = "thumb"
+size = 28
+origin = "census"
+
+[[code]]
+addr = 0x080094cc
+mode = "thumb"
+size = 28
+origin = "census"
+
+[[code]]
+addr = 0x080094e8
+mode = "thumb"
+size = 32
+origin = "census"
+
+[[code]]
+addr = 0x08009508
+mode = "thumb"
+size = 32
+origin = "census"
+
+[[code]]
+addr = 0x08009528
+mode = "thumb"
+size = 32
+origin = "census"
+
+[[code]]
+addr = 0x08009548
+mode = "thumb"
+size = 32
+origin = "census"
+
+[[code]]
+addr = 0x08009568
+mode = "thumb"
+size = 18
+origin = "census"
 
 [[code]]
 addr = 0x0800957a
 mode = "thumb"
 size = 24
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08009592
 mode = "thumb"
 size = 34
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080095b4
 mode = "thumb"
-size = 246
-origin = "filtered"
+size = 22
+origin = "census"
+
+[[code]]
+addr = 0x080095ca
+mode = "thumb"
+size = 26
+origin = "census"
+
+[[code]]
+addr = 0x080095e4
+mode = "thumb"
+size = 36
+origin = "census"
+
+[[code]]
+addr = 0x08009608
+mode = "thumb"
+size = 32
+origin = "census"
+
+[[code]]
+addr = 0x08009628
+mode = "thumb"
+size = 48
+origin = "census"
+
+[[code]]
+addr = 0x08009658
+mode = "thumb"
+size = 24
+origin = "census"
+
+[[code]]
+addr = 0x08009670
+mode = "thumb"
+size = 24
+origin = "census"
+
+[[code]]
+addr = 0x08009688
+mode = "thumb"
+size = 34
+origin = "census"
 
 [[code]]
 addr = 0x080096aa
 mode = "thumb"
-size = 150
-origin = "table"
+size = 32
+origin = "census"
+
+[[code]]
+addr = 0x080096ca
+mode = "thumb"
+size = 30
+origin = "census"
+
+[[code]]
+addr = 0x080096e8
+mode = "thumb"
+size = 40
+origin = "census"
+
+[[code]]
+addr = 0x08009710
+mode = "thumb"
+size = 24
+origin = "census"
+
+[[code]]
+addr = 0x08009728
+mode = "thumb"
+size = 24
+origin = "census"
 
 [[code]]
 addr = 0x08009740
 mode = "thumb"
-size = 244
-origin = "filtered"
+size = 30
+origin = "census"
+
+[[code]]
+addr = 0x0800975e
+mode = "thumb"
+size = 28
+origin = "census"
+
+[[code]]
+addr = 0x0800977a
+mode = "thumb"
+size = 58
+origin = "census"
+
+[[code]]
+addr = 0x080097b4
+mode = "thumb"
+size = 96
+origin = "census"
+
+[[code]]
+addr = 0x08009814
+mode = "thumb"
+size = 32
+origin = "census"
 
 [[code]]
 addr = 0x08009840
 mode = "thumb"
-size = 18
-origin = "table"
+size = 10
+origin = "census"
+
+[[code]]
+addr = 0x0800984a
+mode = "thumb"
+size = 8
+origin = "census"
 
 [[code]]
 addr = 0x08009852
 mode = "thumb"
-size = 682
-origin = "filtered"
+size = 160
+origin = "census"
+
+[[code]]
+addr = 0x080098f2
+mode = "thumb"
+size = 160
+origin = "census"
+
+[[code]]
+addr = 0x08009992
+mode = "thumb"
+size = 64
+origin = "census"
+
+[[code]]
+addr = 0x080099d2
+mode = "thumb"
+size = 182
+origin = "census"
+
+[[code]]
+addr = 0x08009a88
+mode = "thumb"
+size = 116
+origin = "census"
 
 [[code]]
 addr = 0x08009afc
 mode = "thumb"
 size = 32
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08009b1c
 mode = "thumb"
-size = 200
-origin = "filtered"
+size = 26
+origin = "census"
+
+[[code]]
+addr = 0x08009b36
+mode = "thumb"
+size = 40
+origin = "census"
+
+[[code]]
+addr = 0x08009b5e
+mode = "thumb"
+size = 54
+origin = "census"
+
+[[code]]
+addr = 0x08009b94
+mode = "thumb"
+size = 40
+origin = "census"
+
+[[code]]
+addr = 0x08009bbc
+mode = "thumb"
+size = 40
+origin = "census"
 
 [[code]]
 addr = 0x08009be4
 mode = "thumb"
 size = 20
-origin = "table"
+origin = "census"
 
 [[code]]
 addr = 0x08009bf8
 mode = "thumb"
-size = 194
-origin = "filtered"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x08009bfa
+mode = "thumb"
+size = 40
+origin = "census"
+
+[[code]]
+addr = 0x08009c22
+mode = "thumb"
+size = 50
+origin = "census"
+
+[[code]]
+addr = 0x08009c54
+mode = "thumb"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x08009c56
+mode = "thumb"
+size = 28
+origin = "census"
+
+[[code]]
+addr = 0x08009c72
+mode = "thumb"
+size = 8
+origin = "census"
+
+[[code]]
+addr = 0x08009c7a
+mode = "thumb"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x08009c7c
+mode = "thumb"
+size = 14
+origin = "census"
+
+[[code]]
+addr = 0x08009c8a
+mode = "thumb"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x08009c8c
+mode = "thumb"
+size = 46
+origin = "census"
 
 [[code]]
 addr = 0x08009cba
 mode = "thumb"
 size = 10
-origin = "table"
+origin = "census"
 
 [[code]]
 addr = 0x08009cc4
 mode = "thumb"
-size = 300
-origin = "filtered"
+size = 60
+origin = "census"
+
+[[code]]
+addr = 0x08009d00
+mode = "thumb"
+size = 74
+origin = "census"
+
+[[code]]
+addr = 0x08009d4a
+mode = "thumb"
+size = 74
+origin = "census"
+
+[[code]]
+addr = 0x08009d94
+mode = "thumb"
+size = 92
+origin = "census"
 
 [[code]]
 addr = 0x08009e30
 mode = "thumb"
-size = 670
-origin = "filtered"
+size = 80
+origin = "census"
+
+[[code]]
+addr = 0x08009e80
+mode = "thumb"
+size = 58
+origin = "census"
+
+[[code]]
+addr = 0x08009eba
+mode = "thumb"
+size = 66
+origin = "census"
+
+[[code]]
+addr = 0x08009efc
+mode = "thumb"
+size = 64
+origin = "census"
+
+[[code]]
+addr = 0x08009f3c
+mode = "thumb"
+size = 64
+origin = "census"
+
+[[code]]
+addr = 0x08009f7c
+mode = "thumb"
+size = 72
+origin = "census"
+
+[[code]]
+addr = 0x08009fc4
+mode = "thumb"
+size = 64
+origin = "census"
+
+[[code]]
+addr = 0x0800a004
+mode = "thumb"
+size = 64
+origin = "census"
+
+[[code]]
+addr = 0x0800a044
+mode = "thumb"
+size = 64
+origin = "census"
+
+[[code]]
+addr = 0x0800a084
+mode = "thumb"
+size = 22
+origin = "census"
+
+[[code]]
+addr = 0x0800a09a
+mode = "thumb"
+size = 52
+origin = "census"
 
 [[code]]
 addr = 0x0800a0ce
 mode = "thumb"
 size = 138
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800a158
 mode = "thumb"
-size = 694
-origin = "filtered"
+size = 92
+origin = "census"
+
+[[code]]
+addr = 0x0800a1b4
+mode = "thumb"
+size = 92
+origin = "census"
+
+[[code]]
+addr = 0x0800a210
+mode = "thumb"
+size = 102
+origin = "census"
+
+[[code]]
+addr = 0x0800a276
+mode = "thumb"
+size = 76
+origin = "census"
+
+[[code]]
+addr = 0x0800a2c2
+mode = "thumb"
+size = 132
+origin = "census"
+
+[[code]]
+addr = 0x0800a346
+mode = "thumb"
+size = 92
+origin = "census"
+
+[[code]]
+addr = 0x0800a3a2
+mode = "thumb"
+size = 70
+origin = "census"
+
+[[code]]
+addr = 0x0800a3e8
+mode = "thumb"
+size = 38
+origin = "census"
 
 [[code]]
 addr = 0x0800a40e
 mode = "thumb"
 size = 42
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800a438
 mode = "thumb"
-size = 366
-origin = "filtered"
+size = 22
+origin = "census"
+
+[[code]]
+addr = 0x0800a44e
+mode = "thumb"
+size = 76
+origin = "census"
+
+[[code]]
+addr = 0x0800a49a
+mode = "thumb"
+size = 64
+origin = "census"
+
+[[code]]
+addr = 0x0800a4da
+mode = "thumb"
+size = 76
+origin = "census"
+
+[[code]]
+addr = 0x0800a526
+mode = "thumb"
+size = 76
+origin = "census"
+
+[[code]]
+addr = 0x0800a572
+mode = "thumb"
+size = 52
+origin = "census"
 
 [[code]]
 addr = 0x0800a5a6
 mode = "thumb"
-size = 12
-origin = "table"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x0800a5a8
+mode = "thumb"
+size = 10
+origin = "census"
 
 [[code]]
 addr = 0x0800a5b2
 mode = "thumb"
-size = 206
-origin = "filtered"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x0800a5b4
+mode = "thumb"
+size = 10
+origin = "census"
+
+[[code]]
+addr = 0x0800a5be
+mode = "thumb"
+size = 78
+origin = "census"
+
+[[code]]
+addr = 0x0800a60c
+mode = "thumb"
+size = 22
+origin = "census"
+
+[[code]]
+addr = 0x0800a622
+mode = "thumb"
+size = 22
+origin = "census"
+
+[[code]]
+addr = 0x0800a638
+mode = "thumb"
+size = 36
+origin = "census"
+
+[[code]]
+addr = 0x0800a65c
+mode = "thumb"
+size = 36
+origin = "census"
 
 [[code]]
 addr = 0x0800a680
 mode = "thumb"
 size = 140
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800a70c
 mode = "thumb"
 size = 120
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800a784
 mode = "thumb"
-size = 562
-origin = "filtered"
+size = 16
+origin = "census"
+
+[[code]]
+addr = 0x0800a794
+mode = "thumb"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x0800a796
+mode = "thumb"
+size = 10
+origin = "census"
+
+[[code]]
+addr = 0x0800a7a0
+mode = "thumb"
+size = 88
+origin = "census"
+
+[[code]]
+addr = 0x0800a7f8
+mode = "thumb"
+size = 88
+origin = "census"
+
+[[code]]
+addr = 0x0800a850
+mode = "thumb"
+size = 78
+origin = "census"
+
+[[code]]
+addr = 0x0800a89e
+mode = "thumb"
+size = 78
+origin = "census"
+
+[[code]]
+addr = 0x0800a8ec
+mode = "thumb"
+size = 172
+origin = "census"
+
+[[code]]
+addr = 0x0800a998
+mode = "thumb"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x0800a99a
+mode = "thumb"
+size = 28
+origin = "census"
 
 [[code]]
 addr = 0x0800a9b6
 mode = "thumb"
-size = 72
-origin = "table"
+size = 36
+origin = "census"
+
+[[code]]
+addr = 0x0800a9da
+mode = "thumb"
+size = 36
+origin = "census"
 
 [[code]]
 addr = 0x0800a9fe
 mode = "thumb"
 size = 18
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800aa10
 mode = "thumb"
-size = 158
-origin = "table"
+size = 36
+origin = "census"
+
+[[code]]
+addr = 0x0800aa34
+mode = "thumb"
+size = 36
+origin = "census"
+
+[[code]]
+addr = 0x0800aa58
+mode = "thumb"
+size = 36
+origin = "census"
+
+[[code]]
+addr = 0x0800aa7c
+mode = "thumb"
+size = 50
+origin = "census"
 
 [[code]]
 addr = 0x0800aaae
 mode = "thumb"
-size = 492
-origin = "filtered"
+size = 24
+origin = "census"
+
+[[code]]
+addr = 0x0800aac6
+mode = "thumb"
+size = 84
+origin = "census"
+
+[[code]]
+addr = 0x0800ab1a
+mode = "thumb"
+size = 42
+origin = "census"
+
+[[code]]
+addr = 0x0800ab44
+mode = "thumb"
+size = 62
+origin = "census"
+
+[[code]]
+addr = 0x0800ab82
+mode = "thumb"
+size = 34
+origin = "census"
+
+[[code]]
+addr = 0x0800aba4
+mode = "thumb"
+size = 50
+origin = "census"
+
+[[code]]
+addr = 0x0800abd6
+mode = "thumb"
+size = 42
+origin = "census"
+
+[[code]]
+addr = 0x0800ac00
+mode = "thumb"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x0800ac02
+mode = "thumb"
+size = 8
+origin = "census"
+
+[[code]]
+addr = 0x0800ac0a
+mode = "thumb"
+size = 6
+origin = "census"
+
+[[code]]
+addr = 0x0800ac10
+mode = "thumb"
+size = 76
+origin = "census"
+
+[[code]]
+addr = 0x0800ac5c
+mode = "thumb"
+size = 62
+origin = "census"
 
 [[code]]
 addr = 0x0800ac9a
 mode = "thumb"
 size = 18
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800acac
 mode = "thumb"
-size = 206
-origin = "filtered"
+size = 62
+origin = "census"
+
+[[code]]
+addr = 0x0800acea
+mode = "thumb"
+size = 84
+origin = "census"
+
+[[code]]
+addr = 0x0800ad3e
+mode = "thumb"
+size = 60
+origin = "census"
 
 [[code]]
 addr = 0x0800ad7a
 mode = "thumb"
-size = 120
-origin = "table"
+size = 30
+origin = "census"
+
+[[code]]
+addr = 0x0800ad98
+mode = "thumb"
+size = 30
+origin = "census"
+
+[[code]]
+addr = 0x0800adb6
+mode = "thumb"
+size = 30
+origin = "census"
+
+[[code]]
+addr = 0x0800add4
+mode = "thumb"
+size = 30
+origin = "census"
 
 [[code]]
 addr = 0x0800adf2
 mode = "thumb"
-size = 198
-origin = "filtered"
+size = 64
+origin = "census"
+
+[[code]]
+addr = 0x0800ae32
+mode = "thumb"
+size = 68
+origin = "census"
+
+[[code]]
+addr = 0x0800ae76
+mode = "thumb"
+size = 66
+origin = "census"
 
 [[code]]
 addr = 0x0800aeb8
 mode = "thumb"
-size = 56
-origin = "table"
+size = 16
+origin = "census"
+
+[[code]]
+addr = 0x0800aec8
+mode = "thumb"
+size = 16
+origin = "census"
+
+[[code]]
+addr = 0x0800aed8
+mode = "thumb"
+size = 12
+origin = "census"
+
+[[code]]
+addr = 0x0800aee4
+mode = "thumb"
+size = 12
+origin = "census"
 
 [[code]]
 addr = 0x0800aef0
 mode = "thumb"
 size = 74
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0800af3a
 mode = "thumb"
 size = 10
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800af44
 mode = "thumb"
 size = 46
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0800af72
 mode = "thumb"
 size = 46
-origin = "table"
+origin = "census"
 
 [[code]]
 addr = 0x0800afa0
 mode = "thumb"
 size = 34
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0800afc2
 mode = "thumb"
 size = 18
-origin = "table"
+origin = "census"
 
 [[code]]
 addr = 0x0800afd4
 mode = "thumb"
-size = 110
-origin = "filtered"
+size = 20
+origin = "census"
+
+[[code]]
+addr = 0x0800afe8
+mode = "thumb"
+size = 8
+origin = "census"
+
+[[code]]
+addr = 0x0800aff0
+mode = "thumb"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x0800aff2
+mode = "thumb"
+size = 26
+origin = "census"
+
+[[code]]
+addr = 0x0800b00c
+mode = "thumb"
+size = 54
+origin = "census"
 
 [[code]]
 addr = 0x0800b042
 mode = "thumb"
 size = 22
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800b058
 mode = "thumb"
-size = 56
-origin = "table"
+size = 6
+origin = "census"
+
+[[code]]
+addr = 0x0800b05e
+mode = "thumb"
+size = 6
+origin = "census"
+
+[[code]]
+addr = 0x0800b064
+mode = "thumb"
+size = 6
+origin = "census"
+
+[[code]]
+addr = 0x0800b06a
+mode = "thumb"
+size = 6
+origin = "census"
+
+[[code]]
+addr = 0x0800b070
+mode = "thumb"
+size = 8
+origin = "census"
+
+[[code]]
+addr = 0x0800b078
+mode = "thumb"
+size = 8
+origin = "census"
+
+[[code]]
+addr = 0x0800b080
+mode = "thumb"
+size = 8
+origin = "census"
+
+[[code]]
+addr = 0x0800b088
+mode = "thumb"
+size = 8
+origin = "census"
 
 [[code]]
 addr = 0x0800b090
 mode = "thumb"
-size = 176
-origin = "filtered"
+size = 16
+origin = "census"
+
+[[code]]
+addr = 0x0800b0a0
+mode = "thumb"
+size = 42
+origin = "census"
+
+[[code]]
+addr = 0x0800b0ca
+mode = "thumb"
+size = 34
+origin = "census"
+
+[[code]]
+addr = 0x0800b0ec
+mode = "thumb"
+size = 46
+origin = "census"
+
+[[code]]
+addr = 0x0800b11a
+mode = "thumb"
+size = 38
+origin = "census"
 
 [[code]]
 addr = 0x0800b140
 mode = "thumb"
 size = 92
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800b19c
 mode = "thumb"
-size = 216
-origin = "proven"
+size = 70
+origin = "census"
+
+[[code]]
+addr = 0x0800b1e2
+mode = "thumb"
+size = 160
+origin = "census"
 
 [[code]]
 addr = 0x0800b282
 mode = "thumb"
 size = 88
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800b2da
 mode = "thumb"
 size = 42
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800b304
 mode = "thumb"
-size = 258
-origin = "proven"
+size = 58
+origin = "census"
+
+[[code]]
+addr = 0x0800b33e
+mode = "thumb"
+size = 88
+origin = "census"
+
+[[code]]
+addr = 0x0800b396
+mode = "thumb"
+size = 112
+origin = "census"
 
 [[code]]
 addr = 0x0800b428
 mode = "thumb"
-size = 134
-origin = "filtered"
+size = 16
+origin = "census"
+
+[[code]]
+addr = 0x0800b438
+mode = "thumb"
+size = 44
+origin = "census"
+
+[[code]]
+addr = 0x0800b464
+mode = "thumb"
+size = 16
+origin = "census"
+
+[[code]]
+addr = 0x0800b474
+mode = "thumb"
+size = 16
+origin = "census"
+
+[[code]]
+addr = 0x0800b484
+mode = "thumb"
+size = 16
+origin = "census"
+
+[[code]]
+addr = 0x0800b494
+mode = "thumb"
+size = 26
+origin = "census"
 
 [[code]]
 addr = 0x0800b4ae
 mode = "thumb"
-size = 114
-origin = "proven"
+size = 78
+origin = "census"
+
+[[code]]
+addr = 0x0800b4fc
+mode = "thumb"
+size = 36
+origin = "census"
 
 [[code]]
 addr = 0x0800b520
 mode = "thumb"
 size = 144
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800b5c0
 mode = "thumb"
 size = 114
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800b710
 mode = "thumb"
 size = 36
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0800b734
 mode = "thumb"
 size = 40
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800b7e6
 mode = "thumb"
-size = 192
-origin = "proven"
+size = 104
+origin = "census"
+
+[[code]]
+addr = 0x0800b84e
+mode = "thumb"
+size = 88
+origin = "census"
 
 [[code]]
 addr = 0x0800b8a6
 mode = "thumb"
 size = 16
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0800b8b6
 mode = "thumb"
 size = 288
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800b9d6
 mode = "thumb"
 size = 154
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0800ba84
 mode = "thumb"
 size = 48
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0800bab4
 mode = "thumb"
 size = 314
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800bdcc
 mode = "thumb"
 size = 68
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800bf08
 mode = "thumb"
-size = 184
-origin = "proven"
+size = 58
+origin = "census"
+
+[[code]]
+addr = 0x0800bf42
+mode = "thumb"
+size = 44
+origin = "census"
+
+[[code]]
+addr = 0x0800bf6e
+mode = "thumb"
+size = 82
+origin = "census"
 
 [[code]]
 addr = 0x0800bfc0
 mode = "thumb"
 size = 174
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800c07e
 mode = "thumb"
 size = 4
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800c09a
 mode = "thumb"
 size = 94
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800c0f8
 mode = "thumb"
 size = 110
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800c166
 mode = "thumb"
 size = 70
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800c232
 mode = "thumb"
 size = 50
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0800c2c2
 mode = "thumb"
 size = 48
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0800c2f8
 mode = "thumb"
-size = 640
-origin = "proven"
+size = 102
+origin = "census"
+
+[[code]]
+addr = 0x0800c35e
+mode = "thumb"
+size = 50
+origin = "census"
+
+[[code]]
+addr = 0x0800c390
+mode = "thumb"
+size = 488
+origin = "census"
 
 [[code]]
 addr = 0x0800c578
 mode = "thumb"
 size = 12
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800c584
 mode = "thumb"
-size = 636
-origin = "proven"
+size = 224
+origin = "census"
+
+[[code]]
+addr = 0x0800c664
+mode = "thumb"
+size = 180
+origin = "census"
+
+[[code]]
+addr = 0x0800c718
+mode = "thumb"
+size = 34
+origin = "census"
+
+[[code]]
+addr = 0x0800c73a
+mode = "thumb"
+size = 34
+origin = "census"
+
+[[code]]
+addr = 0x0800c75c
+mode = "thumb"
+size = 82
+origin = "census"
+
+[[code]]
+addr = 0x0800c7ae
+mode = "thumb"
+size = 24
+origin = "census"
+
+[[code]]
+addr = 0x0800c7c6
+mode = "thumb"
+size = 58
+origin = "census"
 
 [[code]]
 addr = 0x0800c8d8
 mode = "thumb"
-size = 236
-origin = "proven"
+size = 160
+origin = "census"
+
+[[code]]
+addr = 0x0800c978
+mode = "thumb"
+size = 76
+origin = "census"
 
 [[code]]
 addr = 0x0800cb0e
 mode = "thumb"
 size = 46
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0800cb3c
 mode = "thumb"
 size = 6
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800cb50
 mode = "thumb"
 size = 48
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800cb80
 mode = "thumb"
 size = 358
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800cd56
 mode = "thumb"
 size = 60
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800cfdc
 mode = "thumb"
-size = 112
-origin = "filtered"
+size = 50
+origin = "census"
+
+[[code]]
+addr = 0x0800d00e
+mode = "thumb"
+size = 62
+origin = "census"
 
 [[code]]
 addr = 0x0800d060
 mode = "thumb"
-size = 128
-origin = "filtered"
+size = 50
+origin = "census"
+
+[[code]]
+addr = 0x0800d092
+mode = "thumb"
+size = 28
+origin = "census"
+
+[[code]]
+addr = 0x0800d0ae
+mode = "thumb"
+size = 50
+origin = "census"
 
 [[code]]
 addr = 0x0800d0fc
 mode = "thumb"
 size = 44
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0800d138
 mode = "thumb"
 size = 30
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800d156
 mode = "thumb"
 size = 86
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800d1ac
 mode = "thumb"
 size = 224
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800d28c
 mode = "thumb"
 size = 60
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800d2c8
 mode = "thumb"
 size = 444
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0800d496
 mode = "thumb"
 size = 238
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0800d584
 mode = "thumb"
 size = 52
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800d5b8
 mode = "thumb"
 size = 70
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800d5fe
 mode = "thumb"
-size = 90
-origin = "filtered"
+size = 38
+origin = "census"
+
+[[code]]
+addr = 0x0800d624
+mode = "thumb"
+size = 52
+origin = "census"
 
 [[code]]
 addr = 0x0800d658
 mode = "thumb"
 size = 16
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800d668
 mode = "thumb"
 size = 62
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800d6de
 mode = "thumb"
 size = 68
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800d764
 mode = "thumb"
 size = 4
-origin = "table"
+origin = "census"
 
 [[code]]
 addr = 0x0800d768
 mode = "thumb"
-size = 56
-origin = "gap"
+size = 8
+origin = "census"
+
+[[code]]
+addr = 0x0800d770
+mode = "thumb"
+size = 48
+origin = "census"
 
 [[code]]
 addr = 0x0800d7e0
 mode = "thumb"
 size = 42
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800d838
 mode = "thumb"
 size = 4
-origin = "table"
+origin = "census"
 
 [[code]]
 addr = 0x0800d83c
 mode = "thumb"
-size = 50
-origin = "gap"
+size = 8
+origin = "census"
+
+[[code]]
+addr = 0x0800d844
+mode = "thumb"
+size = 42
+origin = "census"
 
 [[code]]
 addr = 0x0800d87e
 mode = "thumb"
 size = 4
-origin = "table"
+origin = "census"
 
 [[code]]
 addr = 0x0800d882
 mode = "thumb"
 size = 6
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800d888
 mode = "thumb"
 size = 6
-origin = "table"
+origin = "census"
 
 [[code]]
 addr = 0x0800d88e
 mode = "thumb"
 size = 6
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800d8ae
 mode = "thumb"
 size = 4
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800d8b2
 mode = "thumb"
-size = 56
-origin = "gap"
+size = 8
+origin = "census"
+
+[[code]]
+addr = 0x0800d8ba
+mode = "thumb"
+size = 48
+origin = "census"
 
 [[code]]
 addr = 0x0800d8ea
 mode = "thumb"
 size = 22
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0800d900
 mode = "thumb"
-size = 60
-origin = "gap"
+size = 8
+origin = "census"
+
+[[code]]
+addr = 0x0800d908
+mode = "thumb"
+size = 52
+origin = "census"
 
 [[code]]
 addr = 0x0800d9c2
 mode = "thumb"
 size = 46
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0800da68
 mode = "thumb"
 size = 46
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800da96
 mode = "thumb"
 size = 130
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800dca8
 mode = "thumb"
 size = 144
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800dd38
 mode = "thumb"
 size = 68
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800dd80
 mode = "thumb"
 size = 38
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800dda6
 mode = "thumb"
 size = 112
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800de20
 mode = "thumb"
 size = 40
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800de48
 mode = "thumb"
 size = 38
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800ded0
 mode = "thumb"
 size = 50
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800df02
 mode = "thumb"
 size = 14
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800df10
 mode = "thumb"
 size = 12
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0800df1c
 mode = "thumb"
 size = 50
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800df4e
 mode = "thumb"
 size = 6
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800df98
 mode = "thumb"
 size = 84
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800e032
 mode = "thumb"
-size = 128
-origin = "proven"
+size = 6
+origin = "census"
+
+[[code]]
+addr = 0x0800e038
+mode = "thumb"
+size = 20
+origin = "census"
+
+[[code]]
+addr = 0x0800e04c
+mode = "thumb"
+size = 44
+origin = "census"
+
+[[code]]
+addr = 0x0800e078
+mode = "thumb"
+size = 52
+origin = "census"
+
+[[code]]
+addr = 0x0800e0ac
+mode = "thumb"
+size = 6
+origin = "census"
 
 [[code]]
 addr = 0x0800e0b2
 mode = "thumb"
-size = 70
-origin = "gap"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x0800e0b4
+mode = "thumb"
+size = 68
+origin = "census"
 
 [[code]]
 addr = 0x0800e280
 mode = "thumb"
-size = 186
-origin = "proven"
+size = 144
+origin = "census"
+
+[[code]]
+addr = 0x0800e310
+mode = "thumb"
+size = 42
+origin = "census"
 
 [[code]]
 addr = 0x0800e33a
 mode = "thumb"
 size = 98
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800e39c
 mode = "thumb"
 size = 82
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800e3ee
 mode = "thumb"
-size = 46
-origin = "gap"
+size = 6
+origin = "census"
+
+[[code]]
+addr = 0x0800e3f4
+mode = "thumb"
+size = 40
+origin = "census"
 
 [[code]]
 addr = 0x0800e41c
 mode = "thumb"
-size = 104
-origin = "proven"
+size = 28
+origin = "census"
+
+[[code]]
+addr = 0x0800e438
+mode = "thumb"
+size = 8
+origin = "census"
+
+[[code]]
+addr = 0x0800e440
+mode = "thumb"
+size = 30
+origin = "census"
+
+[[code]]
+addr = 0x0800e45e
+mode = "thumb"
+size = 4
+origin = "census"
+
+[[code]]
+addr = 0x0800e462
+mode = "thumb"
+size = 34
+origin = "census"
 
 [[code]]
 addr = 0x0800e4d2
 mode = "thumb"
-size = 122
-origin = "proven"
+size = 4
+origin = "census"
+
+[[code]]
+addr = 0x0800e4d6
+mode = "thumb"
+size = 118
+origin = "census"
 
 [[code]]
 addr = 0x0800e54c
 mode = "thumb"
 size = 54
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800e77e
 mode = "thumb"
 size = 24
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0800e796
 mode = "thumb"
 size = 30
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800e966
 mode = "thumb"
 size = 4
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0800e96a
 mode = "thumb"
 size = 122
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800e9e4
 mode = "thumb"
 size = 86
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0800eb20
 mode = "thumb"
-size = 184
-origin = "proven"
+size = 44
+origin = "census"
+
+[[code]]
+addr = 0x0800eb4c
+mode = "thumb"
+size = 12
+origin = "census"
+
+[[code]]
+addr = 0x0800eb58
+mode = "thumb"
+size = 36
+origin = "census"
+
+[[code]]
+addr = 0x0800eb7c
+mode = "thumb"
+size = 58
+origin = "census"
+
+[[code]]
+addr = 0x0800ebb6
+mode = "thumb"
+size = 34
+origin = "census"
 
 [[code]]
 addr = 0x0800ebd8
 mode = "thumb"
 size = 6
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800ebde
 mode = "thumb"
 size = 42
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0800ec08
 mode = "thumb"
 size = 122
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800ec82
 mode = "thumb"
 size = 68
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800ede6
 mode = "thumb"
 size = 44
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0800ee12
 mode = "thumb"
 size = 4
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800eea8
 mode = "thumb"
 size = 352
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800f034
 mode = "thumb"
 size = 44
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800f060
 mode = "thumb"
 size = 106
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800f1ae
 mode = "thumb"
 size = 264
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800f2f0
 mode = "thumb"
 size = 2
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0800f2f2
 mode = "thumb"
 size = 2
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800f2f4
 mode = "thumb"
 size = 86
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0800f3ee
 mode = "thumb"
-size = 728
-origin = "filtered"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x0800f3f0
+mode = "thumb"
+size = 80
+origin = "census"
+
+[[code]]
+addr = 0x0800f440
+mode = "thumb"
+size = 26
+origin = "census"
+
+[[code]]
+addr = 0x0800f45a
+mode = "thumb"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x0800f45c
+mode = "thumb"
+size = 102
+origin = "census"
+
+[[code]]
+addr = 0x0800f4c2
+mode = "thumb"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x0800f4c4
+mode = "thumb"
+size = 102
+origin = "census"
+
+[[code]]
+addr = 0x0800f52a
+mode = "thumb"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x0800f52c
+mode = "thumb"
+size = 102
+origin = "census"
+
+[[code]]
+addr = 0x0800f592
+mode = "thumb"
+size = 166
+origin = "census"
+
+[[code]]
+addr = 0x0800f638
+mode = "thumb"
+size = 142
+origin = "census"
 
 [[code]]
 addr = 0x0800f6e8
 mode = "thumb"
-size = 140
-origin = "filtered"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x0800f6ea
+mode = "thumb"
+size = 66
+origin = "census"
+
+[[code]]
+addr = 0x0800f72c
+mode = "thumb"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x0800f72e
+mode = "thumb"
+size = 14
+origin = "census"
+
+[[code]]
+addr = 0x0800f73c
+mode = "thumb"
+size = 56
+origin = "census"
 
 [[code]]
 addr = 0x0800f7cc
 mode = "thumb"
-size = 102
-origin = "proven"
+size = 64
+origin = "census"
+
+[[code]]
+addr = 0x0800f80c
+mode = "thumb"
+size = 38
+origin = "census"
 
 [[code]]
 addr = 0x0800f832
 mode = "thumb"
 size = 132
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800f8b6
 mode = "thumb"
-size = 212
-origin = "proven"
+size = 90
+origin = "census"
+
+[[code]]
+addr = 0x0800f910
+mode = "thumb"
+size = 122
+origin = "census"
 
 [[code]]
 addr = 0x0800f9a0
 mode = "thumb"
 size = 2
-origin = "table"
+origin = "census"
 
 [[code]]
 addr = 0x0800f9a2
 mode = "thumb"
-size = 112
-origin = "filtered"
+size = 36
+origin = "census"
+
+[[code]]
+addr = 0x0800f9c6
+mode = "thumb"
+size = 76
+origin = "census"
 
 [[code]]
 addr = 0x0800fa12
 mode = "thumb"
 size = 10
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800fa1c
 mode = "thumb"
 size = 70
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800fa6c
 mode = "thumb"
 size = 98
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800face
 mode = "thumb"
 size = 42
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800faf8
 mode = "thumb"
 size = 98
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0800fb5a
 mode = "thumb"
-size = 12
-origin = "gap"
+size = 4
+origin = "census"
 
 [[code]]
 addr = 0x0800fb74
 mode = "thumb"
 size = 56
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0800fbfa
 mode = "thumb"
 size = 50
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0800fc2c
 mode = "thumb"
 size = 16
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800fc84
 mode = "thumb"
-size = 186
-origin = "proven"
+size = 72
+origin = "census"
+
+[[code]]
+addr = 0x0800fccc
+mode = "thumb"
+size = 114
+origin = "census"
 
 [[code]]
 addr = 0x0800fdf8
 mode = "thumb"
 size = 20
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0800fe0c
 mode = "thumb"
 size = 16
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800fe1c
 mode = "thumb"
-size = 354
-origin = "proven"
+size = 18
+origin = "census"
+
+[[code]]
+addr = 0x0800fe2e
+mode = "thumb"
+size = 336
+origin = "census"
 
 [[code]]
 addr = 0x0800ffc0
 mode = "thumb"
 size = 2
-origin = "table"
+origin = "census"
 
 [[code]]
 addr = 0x0800ffc2
 mode = "thumb"
 size = 36
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0800ffe6
 mode = "thumb"
 size = 76
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08010032
 mode = "thumb"
 size = 102
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08010098
 mode = "thumb"
-size = 76
-origin = "filtered"
+size = 38
+origin = "census"
+
+[[code]]
+addr = 0x080100be
+mode = "thumb"
+size = 38
+origin = "census"
 
 [[code]]
 addr = 0x080100e4
 mode = "thumb"
 size = 10
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080100ee
 mode = "thumb"
-size = 42
-origin = "filtered"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x080100f0
+mode = "thumb"
+size = 40
+origin = "census"
 
 [[code]]
 addr = 0x08010124
 mode = "thumb"
-size = 210
-origin = "proven"
+size = 112
+origin = "census"
+
+[[code]]
+addr = 0x08010194
+mode = "thumb"
+size = 98
+origin = "census"
 
 [[code]]
 addr = 0x08010208
 mode = "thumb"
 size = 6
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801020e
 mode = "thumb"
 size = 14
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080102a2
 mode = "thumb"
 size = 62
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08010304
 mode = "thumb"
-size = 220
-origin = "proven"
+size = 136
+origin = "census"
+
+[[code]]
+addr = 0x0801038c
+mode = "thumb"
+size = 84
+origin = "census"
 
 [[code]]
 addr = 0x080103e0
 mode = "thumb"
 size = 16
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08010466
 mode = "thumb"
 size = 10
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08010470
 mode = "thumb"
 size = 16
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080104aa
 mode = "thumb"
 size = 22
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x080104c0
 mode = "thumb"
 size = 108
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x080105e8
 mode = "thumb"
 size = 64
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08010628
 mode = "thumb"
 size = 66
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801069a
 mode = "thumb"
-size = 84
-origin = "filtered"
+size = 24
+origin = "census"
+
+[[code]]
+addr = 0x080106b2
+mode = "thumb"
+size = 60
+origin = "census"
 
 [[code]]
 addr = 0x080106ee
 mode = "thumb"
-size = 52
-origin = "gap"
+size = 10
+origin = "census"
+
+[[code]]
+addr = 0x080106f8
+mode = "thumb"
+size = 42
+origin = "census"
 
 [[code]]
 addr = 0x080107ea
 mode = "thumb"
 size = 2
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x080107ec
 mode = "thumb"
 size = 18
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080107fe
 mode = "thumb"
 size = 26
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08010818
 mode = "thumb"
 size = 28
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08010860
 mode = "thumb"
 size = 26
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801087a
 mode = "thumb"
-size = 22
-origin = "table"
+size = 4
+origin = "census"
+
+[[code]]
+addr = 0x0801087e
+mode = "thumb"
+size = 6
+origin = "census"
+
+[[code]]
+addr = 0x08010884
+mode = "thumb"
+size = 6
+origin = "census"
+
+[[code]]
+addr = 0x0801088a
+mode = "thumb"
+size = 6
+origin = "census"
 
 [[code]]
 addr = 0x08010890
 mode = "thumb"
 size = 8
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08010898
 mode = "thumb"
 size = 54
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x080108ce
 mode = "thumb"
 size = 60
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801094c
 mode = "thumb"
 size = 42
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08010976
 mode = "thumb"
 size = 48
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08010ac6
 mode = "thumb"
 size = 34
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08010b60
 mode = "thumb"
-size = 110
-origin = "proven"
+size = 58
+origin = "census"
+
+[[code]]
+addr = 0x08010b9a
+mode = "thumb"
+size = 52
+origin = "census"
 
 [[code]]
 addr = 0x08010bce
 mode = "thumb"
 size = 62
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08010c0c
 mode = "thumb"
 size = 758
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08010f60
 mode = "thumb"
 size = 266
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801106a
 mode = "thumb"
 size = 52
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080112d2
 mode = "thumb"
 size = 2
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x080112d4
 mode = "thumb"
 size = 34
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080112f6
 mode = "thumb"
 size = 14
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x080113a0
 mode = "thumb"
-size = 542
-origin = "proven"
+size = 446
+origin = "census"
+
+[[code]]
+addr = 0x0801155e
+mode = "thumb"
+size = 96
+origin = "census"
 
 [[code]]
 addr = 0x0801177c
 mode = "thumb"
 size = 70
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x080117c2
 mode = "thumb"
 size = 30
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08011802
 mode = "thumb"
 size = 148
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0801193e
 mode = "thumb"
 size = 34
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08011960
 mode = "thumb"
 size = 86
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08011df0
 mode = "thumb"
-size = 76
-origin = "filtered"
+size = 44
+origin = "census"
+
+[[code]]
+addr = 0x08011e1c
+mode = "thumb"
+size = 32
+origin = "census"
 
 [[code]]
 addr = 0x08011e3c
 mode = "thumb"
-size = 106
-origin = "gap"
+size = 8
+origin = "census"
+
+[[code]]
+addr = 0x08011e44
+mode = "thumb"
+size = 98
+origin = "census"
 
 [[code]]
 addr = 0x08011f88
 mode = "thumb"
 size = 30
-origin = "table"
+origin = "census"
 
 [[code]]
 addr = 0x08011fa6
 mode = "thumb"
 size = 138
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08012030
 mode = "thumb"
 size = 30
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080120c8
 mode = "thumb"
 size = 678
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08012394
 mode = "thumb"
 size = 76
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x080123e0
 mode = "thumb"
 size = 320
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080125c0
 mode = "thumb"
 size = 182
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08012704
 mode = "thumb"
 size = 10
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801270e
 mode = "thumb"
 size = 4
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08012714
 mode = "thumb"
 size = 18
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08012726
 mode = "thumb"
 size = 6
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801272c
 mode = "thumb"
 size = 94
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801278a
 mode = "thumb"
 size = 122
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08012804
 mode = "thumb"
 size = 12
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08012810
 mode = "thumb"
 size = 34
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08012832
 mode = "thumb"
 size = 14
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08012840
 mode = "thumb"
 size = 8
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x080129b8
 mode = "thumb"
 size = 76
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08012a04
 mode = "thumb"
 size = 36
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08012a68
 mode = "thumb"
 size = 106
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08012ad2
 mode = "thumb"
 size = 44
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08012b38
 mode = "thumb"
 size = 140
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08012c94
 mode = "thumb"
 size = 90
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08012cee
 mode = "thumb"
 size = 246
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08012ea4
 mode = "thumb"
 size = 56
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08012edc
 mode = "thumb"
 size = 28
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08012f40
 mode = "thumb"
 size = 88
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08012fca
 mode = "thumb"
 size = 64
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0801300c
 mode = "thumb"
 size = 40
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08013034
 mode = "thumb"
 size = 22
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080130bc
 mode = "thumb"
 size = 86
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08013112
 mode = "thumb"
 size = 44
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801315c
 mode = "thumb"
 size = 28
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08013178
 mode = "thumb"
 size = 24
-origin = "table"
+origin = "census"
 
 [[code]]
 addr = 0x08013190
 mode = "thumb"
 size = 28
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x080131ac
 mode = "thumb"
 size = 24
-origin = "table"
+origin = "census"
 
 [[code]]
 addr = 0x080131c4
 mode = "thumb"
 size = 28
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x080131e0
 mode = "thumb"
 size = 24
-origin = "table"
+origin = "census"
 
 [[code]]
 addr = 0x080131f8
 mode = "thumb"
 size = 28
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08013214
 mode = "thumb"
 size = 24
-origin = "table"
+origin = "census"
 
 [[code]]
 addr = 0x0801322c
 mode = "thumb"
 size = 28
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08013248
 mode = "thumb"
 size = 24
-origin = "table"
+origin = "census"
 
 [[code]]
 addr = 0x08013260
 mode = "thumb"
-size = 376
-origin = "filtered"
+size = 28
+origin = "census"
+
+[[code]]
+addr = 0x0801327c
+mode = "thumb"
+size = 118
+origin = "census"
+
+[[code]]
+addr = 0x080132f2
+mode = "thumb"
+size = 28
+origin = "census"
+
+[[code]]
+addr = 0x0801330e
+mode = "thumb"
+size = 202
+origin = "census"
 
 [[code]]
 addr = 0x080133f0
 mode = "thumb"
 size = 28
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801340c
 mode = "thumb"
 size = 24
-origin = "table"
+origin = "census"
 
 [[code]]
 addr = 0x08013424
 mode = "thumb"
 size = 28
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08013440
 mode = "thumb"
 size = 24
-origin = "table"
+origin = "census"
 
 [[code]]
 addr = 0x08013458
 mode = "thumb"
 size = 28
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08013474
 mode = "thumb"
 size = 24
-origin = "table"
+origin = "census"
 
 [[code]]
 addr = 0x0801348c
 mode = "thumb"
 size = 28
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x080134a8
 mode = "thumb"
 size = 24
-origin = "table"
+origin = "census"
 
 [[code]]
 addr = 0x080134c0
 mode = "thumb"
-size = 174
-origin = "filtered"
+size = 50
+origin = "census"
+
+[[code]]
+addr = 0x080134f2
+mode = "thumb"
+size = 74
+origin = "census"
+
+[[code]]
+addr = 0x0801353c
+mode = "thumb"
+size = 50
+origin = "census"
 
 [[code]]
 addr = 0x080135e0
 mode = "thumb"
 size = 118
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08013828
 mode = "thumb"
 size = 106
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08013892
 mode = "thumb"
 size = 220
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080139bc
 mode = "thumb"
 size = 98
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08013bc0
 mode = "thumb"
-size = 190
-origin = "proven"
+size = 52
+origin = "census"
+
+[[code]]
+addr = 0x08013bf4
+mode = "thumb"
+size = 46
+origin = "census"
+
+[[code]]
+addr = 0x08013c22
+mode = "thumb"
+size = 92
+origin = "census"
 
 [[code]]
 addr = 0x08013c7e
 mode = "thumb"
 size = 16
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08013e48
 mode = "thumb"
 size = 88
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08014004
 mode = "thumb"
-size = 52
-origin = "filtered"
+size = 4
+origin = "census"
+
+[[code]]
+addr = 0x08014008
+mode = "thumb"
+size = 48
+origin = "census"
 
 [[code]]
 addr = 0x080143a8
 mode = "thumb"
 size = 144
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08014556
 mode = "thumb"
 size = 550
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x080147c4
 mode = "thumb"
 size = 148
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08014ad8
 mode = "thumb"
 size = 324
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08014c2c
 mode = "thumb"
 size = 138
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08014cb6
 mode = "thumb"
 size = 142
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08014f44
 mode = "thumb"
 size = 60
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08014f80
 mode = "thumb"
 size = 8
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801503a
 mode = "thumb"
 size = 40
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08015062
 mode = "thumb"
 size = 20
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08015cfc
 mode = "thumb"
 size = 80
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08015d4e
 mode = "thumb"
 size = 394
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x080164bc
 mode = "thumb"
 size = 16
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08016688
 mode = "thumb"
 size = 26
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x080166a2
 mode = "thumb"
 size = 426
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08016ab4
 mode = "thumb"
 size = 94
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08016b96
 mode = "thumb"
 size = 62
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08016c48
 mode = "thumb"
 size = 98
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08016caa
 mode = "thumb"
 size = 58
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08016d40
 mode = "thumb"
 size = 98
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08016e8c
 mode = "thumb"
 size = 50
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08016ebe
 mode = "thumb"
 size = 60
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080174a4
 mode = "thumb"
-size = 664
-origin = "proven"
+size = 70
+origin = "census"
+
+[[code]]
+addr = 0x080174ea
+mode = "thumb"
+size = 594
+origin = "census"
 
 [[code]]
 addr = 0x0801773c
 mode = "thumb"
 size = 34
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080177ce
 mode = "thumb"
 size = 52
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0801797e
 mode = "thumb"
 size = 54
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x080179f4
 mode = "thumb"
 size = 28
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08017a10
 mode = "thumb"
 size = 58
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08017a50
 mode = "thumb"
 size = 78
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08017b1e
 mode = "thumb"
 size = 220
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08017bfe
 mode = "thumb"
 size = 566
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08017e68
 mode = "thumb"
 size = 32
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08018010
 mode = "thumb"
 size = 40
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08018038
 mode = "thumb"
 size = 74
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08018082
 mode = "thumb"
 size = 164
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08018398
 mode = "thumb"
 size = 278
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08018540
 mode = "thumb"
 size = 64
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08018580
 mode = "thumb"
 size = 102
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080187f0
 mode = "thumb"
 size = 128
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08018870
 mode = "thumb"
 size = 86
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080188c6
 mode = "thumb"
 size = 12
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x080188d2
 mode = "thumb"
 size = 38
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080188f8
 mode = "thumb"
 size = 192
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x080189b8
 mode = "thumb"
 size = 88
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08018c00
 mode = "thumb"
 size = 64
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08018c40
 mode = "thumb"
 size = 50
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08018efc
 mode = "thumb"
 size = 82
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08018fd4
 mode = "thumb"
 size = 60
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08019088
 mode = "thumb"
 size = 22
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801909e
 mode = "thumb"
 size = 36
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08019102
 mode = "thumb"
 size = 42
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0801912c
 mode = "thumb"
-size = 48
-origin = "gap"
+size = 8
+origin = "census"
+
+[[code]]
+addr = 0x08019134
+mode = "thumb"
+size = 40
+origin = "census"
 
 [[code]]
 addr = 0x080191ca
 mode = "thumb"
 size = 34
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08019b30
 mode = "thumb"
-size = 278
-origin = "proven"
+size = 24
+origin = "census"
+
+[[code]]
+addr = 0x08019b48
+mode = "thumb"
+size = 40
+origin = "census"
+
+[[code]]
+addr = 0x08019b70
+mode = "thumb"
+size = 214
+origin = "census"
 
 [[code]]
 addr = 0x08019c50
 mode = "thumb"
 size = 82
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08019caa
 mode = "thumb"
 size = 138
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08019d34
 mode = "thumb"
 size = 38
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08019d70
 mode = "thumb"
 size = 82
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08019f5c
 mode = "thumb"
 size = 62
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08019f9a
 mode = "thumb"
 size = 22
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801a2f8
 mode = "thumb"
 size = 46
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0801a326
 mode = "thumb"
 size = 24
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801a378
 mode = "thumb"
 size = 36
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0801a39c
 mode = "thumb"
 size = 122
-origin = "gap"
+origin = "census"
+
+[[code]]
+addr = 0x0801a416
+mode = "thumb"
+size = 32
+origin = "runtime"
+
+[[code]]
+addr = 0x0801a436
+mode = "thumb"
+size = 2
+origin = "runtime"
+
+[[code]]
+addr = 0x0801a438
+mode = "thumb"
+size = 36
+origin = "runtime"
+
+[[code]]
+addr = 0x0801a45c
+mode = "thumb"
+size = 2
+origin = "runtime"
+
+[[code]]
+addr = 0x0801a45e
+mode = "thumb"
+size = 18
+origin = "runtime"
+
+[[code]]
+addr = 0x0801a470
+mode = "thumb"
+size = 6
+origin = "runtime"
+
+[[code]]
+addr = 0x0801a476
+mode = "thumb"
+size = 36
+origin = "runtime"
+
+[[code]]
+addr = 0x0801a49a
+mode = "thumb"
+size = 12
+origin = "runtime"
+
+[[code]]
+addr = 0x0801a4a6
+mode = "thumb"
+size = 2
+origin = "runtime"
+
+[[code]]
+addr = 0x0801a4a8
+mode = "thumb"
+size = 2
+origin = "runtime"
+
+[[code]]
+addr = 0x0801a4aa
+mode = "thumb"
+size = 2
+origin = "runtime"
+
+[[code]]
+addr = 0x0801a4ac
+mode = "thumb"
+size = 2
+origin = "runtime"
+
+[[code]]
+addr = 0x0801a4ae
+mode = "thumb"
+size = 2
+origin = "runtime"
+
+[[code]]
+addr = 0x0801a4b0
+mode = "thumb"
+size = 2
+origin = "runtime"
+
+[[code]]
+addr = 0x0801a4b2
+mode = "thumb"
+size = 2
+origin = "runtime"
+
+[[code]]
+addr = 0x0801a4b4
+mode = "thumb"
+size = 2
+origin = "runtime"
+
+[[code]]
+addr = 0x0801a4b6
+mode = "thumb"
+size = 2
+origin = "runtime"
+
+[[code]]
+addr = 0x0801a4b8
+mode = "thumb"
+size = 2
+origin = "runtime"
+
+[[code]]
+addr = 0x0801a4ba
+mode = "thumb"
+size = 2
+origin = "runtime"
+
+[[code]]
+addr = 0x0801a4bc
+mode = "thumb"
+size = 2
+origin = "runtime"
+
+[[code]]
+addr = 0x0801a4be
+mode = "thumb"
+size = 2
+origin = "runtime"
+
+[[code]]
+addr = 0x0801a4c0
+mode = "thumb"
+size = 2
+origin = "runtime"
+
+[[code]]
+addr = 0x0801a4c2
+mode = "thumb"
+size = 2
+origin = "runtime"
+
+[[code]]
+addr = 0x0801a4c4
+mode = "thumb"
+size = 6
+origin = "runtime"
+
+[[code]]
+addr = 0x0801a4ca
+mode = "thumb"
+size = 4
+origin = "runtime"
 
 [[code]]
 addr = 0x0801a6b2
 mode = "thumb"
 size = 38
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801a6e0
 mode = "thumb"
 size = 38
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801a71c
 mode = "thumb"
-size = 42
-origin = "filtered"
+size = 22
+origin = "census"
+
+[[code]]
+addr = 0x0801a732
+mode = "thumb"
+size = 20
+origin = "census"
 
 [[code]]
 addr = 0x0801a746
 mode = "thumb"
 size = 6
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801a74c
 mode = "thumb"
 size = 134
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0801a7d2
 mode = "thumb"
 size = 12
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801a7de
 mode = "thumb"
 size = 22
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801a804
 mode = "thumb"
 size = 32
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801a824
 mode = "thumb"
-size = 8
-origin = "table"
+size = 4
+origin = "census"
+
+[[code]]
+addr = 0x0801a828
+mode = "thumb"
+size = 4
+origin = "census"
 
 [[code]]
 addr = 0x0801a82c
 mode = "thumb"
 size = 20
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801a840
 mode = "thumb"
-size = 112
-origin = "gap"
+size = 4
+origin = "census"
+
+[[code]]
+addr = 0x0801a844
+mode = "thumb"
+size = 108
+origin = "census"
 
 [[code]]
 addr = 0x0801a946
 mode = "thumb"
 size = 22
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801a9a4
 mode = "thumb"
-size = 34
-origin = "table"
+size = 4
+origin = "census"
+
+[[code]]
+addr = 0x0801a9a8
+mode = "thumb"
+size = 4
+origin = "census"
+
+[[code]]
+addr = 0x0801a9ac
+mode = "thumb"
+size = 12
+origin = "census"
+
+[[code]]
+addr = 0x0801a9b8
+mode = "thumb"
+size = 4
+origin = "census"
+
+[[code]]
+addr = 0x0801a9bc
+mode = "thumb"
+size = 10
+origin = "census"
 
 [[code]]
 addr = 0x0801a9c6
 mode = "thumb"
 size = 6
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801a9cc
 mode = "thumb"
-size = 316
-origin = "proven"
+size = 46
+origin = "census"
+
+[[code]]
+addr = 0x0801a9fa
+mode = "thumb"
+size = 76
+origin = "census"
+
+[[code]]
+addr = 0x0801aa46
+mode = "thumb"
+size = 82
+origin = "census"
+
+[[code]]
+addr = 0x0801aa98
+mode = "thumb"
+size = 60
+origin = "census"
+
+[[code]]
+addr = 0x0801aad4
+mode = "thumb"
+size = 52
+origin = "census"
 
 [[code]]
 addr = 0x0801ab08
 mode = "thumb"
 size = 34
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801ab64
 mode = "thumb"
 size = 22
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801ab7a
 mode = "thumb"
-size = 38
-origin = "table"
+size = 20
+origin = "census"
+
+[[code]]
+addr = 0x0801ab8e
+mode = "thumb"
+size = 18
+origin = "census"
 
 [[code]]
 addr = 0x0801aba0
 mode = "thumb"
-size = 118
-origin = "gap"
+size = 4
+origin = "census"
+
+[[code]]
+addr = 0x0801aba4
+mode = "thumb"
+size = 114
+origin = "census"
 
 [[code]]
 addr = 0x0801acb6
 mode = "thumb"
 size = 22
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801acd4
 mode = "thumb"
 size = 90
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801aef2
 mode = "thumb"
-size = 164
-origin = "filtered"
+size = 56
+origin = "census"
+
+[[code]]
+addr = 0x0801af2a
+mode = "thumb"
+size = 108
+origin = "census"
 
 [[code]]
 addr = 0x0801af96
 mode = "thumb"
-size = 456
-origin = "gap"
+size = 10
+origin = "census"
+
+[[code]]
+addr = 0x0801afa0
+mode = "thumb"
+size = 446
+origin = "census"
 
 [[code]]
 addr = 0x0801b15e
 mode = "thumb"
 size = 22
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801b174
 mode = "thumb"
-size = 446
-origin = "gap"
+size = 8
+origin = "census"
+
+[[code]]
+addr = 0x0801b17c
+mode = "thumb"
+size = 438
+origin = "census"
 
 [[code]]
 addr = 0x0801b332
 mode = "thumb"
 size = 22
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801b348
 mode = "thumb"
-size = 426
-origin = "gap"
+size = 8
+origin = "census"
+
+[[code]]
+addr = 0x0801b350
+mode = "thumb"
+size = 418
+origin = "census"
 
 [[code]]
 addr = 0x0801b4f2
 mode = "thumb"
 size = 22
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801b508
 mode = "thumb"
 size = 8
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801b510
 mode = "thumb"
-size = 40
-origin = "table"
+size = 20
+origin = "census"
+
+[[code]]
+addr = 0x0801b524
+mode = "thumb"
+size = 20
+origin = "census"
 
 [[code]]
 addr = 0x0801b538
 mode = "thumb"
-size = 58
-origin = "gap"
+size = 4
+origin = "census"
+
+[[code]]
+addr = 0x0801b53c
+mode = "thumb"
+size = 54
+origin = "census"
 
 [[code]]
 addr = 0x0801b63e
 mode = "thumb"
-size = 164
-origin = "filtered"
+size = 74
+origin = "census"
+
+[[code]]
+addr = 0x0801b688
+mode = "thumb"
+size = 52
+origin = "census"
+
+[[code]]
+addr = 0x0801b6bc
+mode = "thumb"
+size = 38
+origin = "census"
 
 [[code]]
 addr = 0x0801b722
 mode = "thumb"
 size = 52
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0801b756
 mode = "thumb"
 size = 42
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801b860
 mode = "thumb"
-size = 76
-origin = "filtered"
+size = 38
+origin = "census"
+
+[[code]]
+addr = 0x0801b886
+mode = "thumb"
+size = 38
+origin = "census"
 
 [[code]]
 addr = 0x0801b8ac
 mode = "thumb"
 size = 20
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801b990
 mode = "thumb"
 size = 18
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801ba46
 mode = "thumb"
-size = 70
-origin = "filtered"
+size = 34
+origin = "census"
+
+[[code]]
+addr = 0x0801ba68
+mode = "thumb"
+size = 36
+origin = "census"
 
 [[code]]
 addr = 0x0801ba8c
 mode = "thumb"
 size = 22
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801bb88
 mode = "thumb"
-size = 8
-origin = "table"
+size = 4
+origin = "census"
+
+[[code]]
+addr = 0x0801bb8c
+mode = "thumb"
+size = 4
+origin = "census"
 
 [[code]]
 addr = 0x0801bb90
 mode = "thumb"
 size = 28
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801bbac
 mode = "thumb"
 size = 22
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801bbc2
 mode = "thumb"
 size = 24
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801bca8
 mode = "thumb"
 size = 4
-origin = "table"
+origin = "census"
 
 [[code]]
 addr = 0x0801bcac
 mode = "thumb"
 size = 34
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801bcce
 mode = "thumb"
-size = 30
-origin = "gap"
+size = 10
+origin = "census"
+
+[[code]]
+addr = 0x0801bcd8
+mode = "thumb"
+size = 20
+origin = "census"
 
 [[code]]
 addr = 0x0801bcf0
 mode = "thumb"
-size = 20
-origin = "table"
+size = 6
+origin = "census"
+
+[[code]]
+addr = 0x0801bcf6
+mode = "thumb"
+size = 14
+origin = "census"
 
 [[code]]
 addr = 0x0801bd04
 mode = "thumb"
-size = 14
-origin = "gap"
+size = 4
+origin = "census"
+
+[[code]]
+addr = 0x0801bd08
+mode = "thumb"
+size = 10
+origin = "census"
 
 [[code]]
 addr = 0x0801bd16
 mode = "thumb"
 size = 4
-origin = "table"
+origin = "census"
 
 [[code]]
 addr = 0x0801bd1a
 mode = "thumb"
 size = 12
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801bd26
 mode = "thumb"
-size = 338
-origin = "gap"
+size = 6
+origin = "census"
+
+[[code]]
+addr = 0x0801bd2c
+mode = "thumb"
+size = 332
+origin = "census"
 
 [[code]]
 addr = 0x0801be8a
 mode = "thumb"
 size = 22
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801c05a
 mode = "thumb"
 size = 34
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801c07c
 mode = "thumb"
 size = 8
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801c084
 mode = "thumb"
-size = 24
-origin = "table"
+size = 4
+origin = "census"
+
+[[code]]
+addr = 0x0801c088
+mode = "thumb"
+size = 20
+origin = "census"
 
 [[code]]
 addr = 0x0801c09c
 mode = "thumb"
-size = 58
-origin = "gap"
+size = 4
+origin = "census"
+
+[[code]]
+addr = 0x0801c0a0
+mode = "thumb"
+size = 54
+origin = "census"
 
 [[code]]
 addr = 0x0801c0d6
 mode = "thumb"
 size = 4
-origin = "table"
+origin = "census"
 
 [[code]]
 addr = 0x0801c0da
 mode = "thumb"
 size = 54
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801c110
 mode = "thumb"
 size = 30
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801c140
 mode = "thumb"
 size = 4
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801c144
 mode = "thumb"
 size = 212
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801c218
 mode = "thumb"
-size = 170
-origin = "filtered"
+size = 148
+origin = "census"
+
+[[code]]
+addr = 0x0801c2ac
+mode = "thumb"
+size = 22
+origin = "census"
 
 [[code]]
 addr = 0x0801c2c2
 mode = "thumb"
 size = 366
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801c430
 mode = "thumb"
 size = 22
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801c446
 mode = "thumb"
 size = 10
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801c450
 mode = "thumb"
-size = 52
-origin = "table"
+size = 4
+origin = "census"
+
+[[code]]
+addr = 0x0801c454
+mode = "thumb"
+size = 22
+origin = "census"
+
+[[code]]
+addr = 0x0801c46a
+mode = "thumb"
+size = 4
+origin = "census"
+
+[[code]]
+addr = 0x0801c46e
+mode = "thumb"
+size = 22
+origin = "census"
 
 [[code]]
 addr = 0x0801c484
 mode = "thumb"
 size = 4
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801c488
 mode = "thumb"
 size = 38
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801c4ae
 mode = "thumb"
 size = 2
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801c4b0
 mode = "thumb"
 size = 74
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0801c4fa
 mode = "thumb"
 size = 86
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801c5a2
 mode = "thumb"
 size = 6
-origin = "table"
+origin = "census"
 
 [[code]]
 addr = 0x0801c5a8
 mode = "thumb"
 size = 34
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801c5ca
 mode = "thumb"
 size = 276
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801c7f2
 mode = "thumb"
 size = 28
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801c95e
 mode = "thumb"
 size = 22
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801ca84
 mode = "thumb"
-size = 88
-origin = "filtered"
+size = 22
+origin = "census"
+
+[[code]]
+addr = 0x0801ca9a
+mode = "thumb"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x0801ca9c
+mode = "thumb"
+size = 32
+origin = "census"
+
+[[code]]
+addr = 0x0801cabc
+mode = "thumb"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x0801cabe
+mode = "thumb"
+size = 30
+origin = "census"
 
 [[code]]
 addr = 0x0801cb10
 mode = "thumb"
 size = 20
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0801cb24
 mode = "thumb"
 size = 30
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801d020
 mode = "thumb"
 size = 118
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801d098
 mode = "thumb"
 size = 34
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801d0ba
 mode = "thumb"
 size = 358
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801d254
 mode = "thumb"
 size = 28
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801d310
 mode = "thumb"
 size = 22
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801d326
 mode = "thumb"
-size = 16
-origin = "gap"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x0801d328
+mode = "thumb"
+size = 14
+origin = "census"
 
 [[code]]
 addr = 0x0801d378
 mode = "thumb"
 size = 44
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0801d3a4
 mode = "thumb"
 size = 242
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801d748
 mode = "thumb"
 size = 56
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801d780
 mode = "thumb"
-size = 92
-origin = "gap"
+size = 8
+origin = "census"
+
+[[code]]
+addr = 0x0801d788
+mode = "thumb"
+size = 84
+origin = "census"
 
 [[code]]
 addr = 0x0801d84c
 mode = "thumb"
 size = 62
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0801d8fe
 mode = "thumb"
 size = 30
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801d91c
 mode = "thumb"
 size = 176
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801e144
 mode = "thumb"
 size = 26
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801e15e
 mode = "thumb"
 size = 100
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801e224
 mode = "thumb"
-size = 174
-origin = "proven"
+size = 124
+origin = "census"
+
+[[code]]
+addr = 0x0801e2a0
+mode = "thumb"
+size = 50
+origin = "census"
 
 [[code]]
 addr = 0x0801e5c0
 mode = "thumb"
 size = 22
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801e5d6
 mode = "thumb"
 size = 148
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801e77a
 mode = "thumb"
 size = 26
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801e794
 mode = "thumb"
 size = 138
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801e8ce
 mode = "thumb"
 size = 4
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801e8d2
 mode = "thumb"
 size = 24
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801e8ea
 mode = "thumb"
 size = 218
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801ea58
 mode = "thumb"
 size = 34
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801ea7a
 mode = "thumb"
 size = 16
-origin = "gap"
+origin = "census"
+
+[[code]]
+addr = 0x0801ecf8
+mode = "thumb"
+size = 20
+origin = "runtime"
+
+[[code]]
+addr = 0x0801ed0c
+mode = "thumb"
+size = 24
+origin = "runtime"
+
+[[code]]
+addr = 0x0801ed24
+mode = "thumb"
+size = 10
+origin = "runtime"
+
+[[code]]
+addr = 0x0801ed2e
+mode = "thumb"
+size = 10
+origin = "runtime"
+
+[[code]]
+addr = 0x0801ed38
+mode = "thumb"
+size = 4
+origin = "runtime"
 
 [[code]]
 addr = 0x0801ed3c
 mode = "thumb"
 size = 58
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0801ed76
 mode = "thumb"
 size = 32
-origin = "gap"
+origin = "census"
+
+[[code]]
+addr = 0x0801ed96
+mode = "thumb"
+size = 8
+origin = "runtime"
+
+[[code]]
+addr = 0x0801ed9e
+mode = "thumb"
+size = 16
+origin = "runtime"
+
+[[code]]
+addr = 0x0801edae
+mode = "thumb"
+size = 4
+origin = "runtime"
 
 [[code]]
 addr = 0x0801ede0
 mode = "thumb"
 size = 26
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0801edfa
 mode = "thumb"
 size = 106
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801ee64
 mode = "thumb"
 size = 26
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801ee7e
 mode = "thumb"
 size = 52
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801eefc
 mode = "thumb"
-size = 104
-origin = "proven"
+size = 90
+origin = "census"
+
+[[code]]
+addr = 0x0801ef56
+mode = "thumb"
+size = 14
+origin = "census"
 
 [[code]]
 addr = 0x0801ef64
 mode = "thumb"
 size = 50
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801efa4
 mode = "thumb"
-size = 120
-origin = "proven"
+size = 24
+origin = "census"
+
+[[code]]
+addr = 0x0801efbc
+mode = "thumb"
+size = 56
+origin = "census"
+
+[[code]]
+addr = 0x0801eff4
+mode = "thumb"
+size = 40
+origin = "census"
 
 [[code]]
 addr = 0x0801f01c
 mode = "thumb"
 size = 34
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801f03e
 mode = "thumb"
-size = 424
-origin = "proven"
+size = 78
+origin = "census"
+
+[[code]]
+addr = 0x0801f08c
+mode = "thumb"
+size = 132
+origin = "census"
+
+[[code]]
+addr = 0x0801f110
+mode = "thumb"
+size = 214
+origin = "census"
 
 [[code]]
 addr = 0x0801f1e6
 mode = "thumb"
 size = 4
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801f1ea
 mode = "thumb"
 size = 26
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801f230
 mode = "thumb"
-size = 24
-origin = "table"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x0801f232
+mode = "thumb"
+size = 22
+origin = "census"
 
 [[code]]
 addr = 0x0801f248
 mode = "thumb"
-size = 310
-origin = "proven"
+size = 76
+origin = "census"
+
+[[code]]
+addr = 0x0801f294
+mode = "thumb"
+size = 58
+origin = "census"
+
+[[code]]
+addr = 0x0801f2ce
+mode = "thumb"
+size = 38
+origin = "census"
+
+[[code]]
+addr = 0x0801f2f4
+mode = "thumb"
+size = 82
+origin = "census"
+
+[[code]]
+addr = 0x0801f346
+mode = "thumb"
+size = 56
+origin = "census"
 
 [[code]]
 addr = 0x0801f37e
 mode = "thumb"
 size = 8
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801f394
 mode = "thumb"
-size = 38
-origin = "proven"
+size = 4
+origin = "census"
+
+[[code]]
+addr = 0x0801f398
+mode = "thumb"
+size = 34
+origin = "census"
 
 [[code]]
 addr = 0x0801f412
 mode = "thumb"
 size = 42
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0801f43c
 mode = "thumb"
 size = 46
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801f46a
 mode = "thumb"
 size = 42
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0801f494
 mode = "thumb"
 size = 28
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801f4c4
 mode = "thumb"
-size = 186
-origin = "proven"
+size = 68
+origin = "census"
+
+[[code]]
+addr = 0x0801f508
+mode = "thumb"
+size = 68
+origin = "census"
+
+[[code]]
+addr = 0x0801f54c
+mode = "thumb"
+size = 26
+origin = "census"
+
+[[code]]
+addr = 0x0801f566
+mode = "thumb"
+size = 24
+origin = "census"
 
 [[code]]
 addr = 0x0801f57e
 mode = "thumb"
 size = 14
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801f58c
 mode = "thumb"
 size = 52
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0801f5c0
 mode = "thumb"
 size = 38
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801f60a
 mode = "thumb"
 size = 14
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0801f618
 mode = "thumb"
 size = 30
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801f636
 mode = "thumb"
-size = 576
-origin = "proven"
+size = 162
+origin = "census"
+
+[[code]]
+addr = 0x0801f6d8
+mode = "thumb"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x0801f6da
+mode = "thumb"
+size = 40
+origin = "census"
+
+[[code]]
+addr = 0x0801f702
+mode = "thumb"
+size = 224
+origin = "census"
+
+[[code]]
+addr = 0x0801f7e2
+mode = "thumb"
+size = 26
+origin = "census"
+
+[[code]]
+addr = 0x0801f7fc
+mode = "thumb"
+size = 122
+origin = "census"
 
 [[code]]
 addr = 0x0801f878
 mode = "thumb"
 size = 252
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0801f9d4
 mode = "thumb"
 size = 2
-origin = "table"
+origin = "census"
 
 [[code]]
 addr = 0x0801f9d6
 mode = "thumb"
-size = 228
-origin = "proven"
+size = 156
+origin = "census"
+
+[[code]]
+addr = 0x0801fa72
+mode = "thumb"
+size = 126
+origin = "census"
 
 [[code]]
 addr = 0x0801faf0
 mode = "thumb"
 size = 34
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0801fb50
 mode = "thumb"
-size = 44
-origin = "proven"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x0801fb52
+mode = "thumb"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x0801fb54
+mode = "thumb"
+size = 30
+origin = "census"
+
+[[code]]
+addr = 0x0801fb72
+mode = "thumb"
+size = 10
+origin = "census"
 
 [[code]]
 addr = 0x0801fbac
 mode = "thumb"
 size = 40
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0801fc0c
 mode = "thumb"
-size = 66
-origin = "proven"
+size = 22
+origin = "census"
+
+[[code]]
+addr = 0x0801fc22
+mode = "thumb"
+size = 44
+origin = "census"
 
 [[code]]
 addr = 0x0801fc9c
 mode = "thumb"
 size = 48
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0801fcf8
 mode = "thumb"
 size = 24
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801fd10
 mode = "thumb"
-size = 266
-origin = "proven"
+size = 18
+origin = "census"
+
+[[code]]
+addr = 0x0801fd22
+mode = "thumb"
+size = 22
+origin = "census"
+
+[[code]]
+addr = 0x0801fd38
+mode = "thumb"
+size = 30
+origin = "census"
+
+[[code]]
+addr = 0x0801fd56
+mode = "thumb"
+size = 34
+origin = "census"
+
+[[code]]
+addr = 0x0801fd78
+mode = "thumb"
+size = 88
+origin = "census"
+
+[[code]]
+addr = 0x0801fdd0
+mode = "thumb"
+size = 74
+origin = "census"
 
 [[code]]
 addr = 0x0801fe1a
 mode = "thumb"
 size = 6
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0801fe20
 mode = "thumb"
 size = 144
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0801feb0
 mode = "thumb"
-size = 56
-origin = "filtered"
+size = 22
+origin = "census"
+
+[[code]]
+addr = 0x0801fec6
+mode = "thumb"
+size = 34
+origin = "census"
 
 [[code]]
 addr = 0x0801fee8
 mode = "thumb"
-size = 92
-origin = "proven"
+size = 46
+origin = "census"
+
+[[code]]
+addr = 0x0801ff16
+mode = "thumb"
+size = 46
+origin = "census"
 
 [[code]]
 addr = 0x0801ff44
 mode = "thumb"
 size = 132
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0801ffc8
 mode = "thumb"
 size = 30
-origin = "table"
+origin = "census"
 
 [[code]]
 addr = 0x0801ffe6
 mode = "thumb"
 size = 112
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08020056
 mode = "thumb"
 size = 30
-origin = "table"
+origin = "census"
 
 [[code]]
 addr = 0x08020074
 mode = "thumb"
 size = 112
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x080200f8
 mode = "thumb"
-size = 256
-origin = "filtered"
+size = 74
+origin = "census"
+
+[[code]]
+addr = 0x08020142
+mode = "thumb"
+size = 66
+origin = "census"
+
+[[code]]
+addr = 0x08020184
+mode = "thumb"
+size = 116
+origin = "census"
 
 [[code]]
 addr = 0x080201f8
 mode = "thumb"
 size = 72
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08020240
 mode = "thumb"
 size = 76
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x0802028c
 mode = "thumb"
 size = 2
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08020290
 mode = "thumb"
-size = 242
-origin = "filtered"
+size = 42
+origin = "census"
+
+[[code]]
+addr = 0x080202ba
+mode = "thumb"
+size = 42
+origin = "census"
+
+[[code]]
+addr = 0x080202e4
+mode = "thumb"
+size = 158
+origin = "census"
 
 [[code]]
 addr = 0x08020382
 mode = "thumb"
 size = 38
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080203a8
 mode = "thumb"
 size = 252
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x080204a4
 mode = "thumb"
 size = 2
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080204a8
 mode = "thumb"
 size = 42
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x080204d2
 mode = "thumb"
 size = 2
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080204d4
 mode = "thumb"
-size = 92
-origin = "filtered"
+size = 44
+origin = "census"
+
+[[code]]
+addr = 0x08020500
+mode = "thumb"
+size = 48
+origin = "census"
 
 [[code]]
 addr = 0x08020530
 mode = "thumb"
 size = 2
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08020534
 mode = "thumb"
-size = 24
-origin = "filtered"
+size = 4
+origin = "census"
+
+[[code]]
+addr = 0x08020538
+mode = "thumb"
+size = 20
+origin = "census"
 
 [[code]]
 addr = 0x0802054c
 mode = "thumb"
 size = 26
-origin = "table"
+origin = "census"
 
 [[code]]
 addr = 0x08020566
 mode = "thumb"
 size = 18
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08020578
 mode = "thumb"
-size = 102
-origin = "filtered"
+size = 30
+origin = "census"
+
+[[code]]
+addr = 0x08020596
+mode = "thumb"
+size = 72
+origin = "census"
 
 [[code]]
 addr = 0x080205de
 mode = "thumb"
 size = 2
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080205e2
 mode = "thumb"
 size = 28
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x080205fe
 mode = "thumb"
 size = 2
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08020602
 mode = "thumb"
-size = 200
-origin = "filtered"
+size = 4
+origin = "census"
+
+[[code]]
+addr = 0x08020606
+mode = "thumb"
+size = 96
+origin = "census"
+
+[[code]]
+addr = 0x08020666
+mode = "thumb"
+size = 4
+origin = "census"
+
+[[code]]
+addr = 0x0802066a
+mode = "thumb"
+size = 96
+origin = "census"
 
 [[code]]
 addr = 0x080206f8
 mode = "thumb"
-size = 200
-origin = "filtered"
+size = 4
+origin = "census"
+
+[[code]]
+addr = 0x080206fc
+mode = "thumb"
+size = 96
+origin = "census"
+
+[[code]]
+addr = 0x0802075c
+mode = "thumb"
+size = 4
+origin = "census"
+
+[[code]]
+addr = 0x08020760
+mode = "thumb"
+size = 96
+origin = "census"
 
 [[code]]
 addr = 0x080207c0
 mode = "thumb"
-size = 68
-origin = "proven"
+size = 4
+origin = "census"
+
+[[code]]
+addr = 0x080207c4
+mode = "thumb"
+size = 64
+origin = "census"
 
 [[code]]
 addr = 0x08020804
 mode = "thumb"
 size = 28
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08020820
 mode = "thumb"
-size = 352
-origin = "proven"
+size = 236
+origin = "census"
+
+[[code]]
+addr = 0x0802090c
+mode = "thumb"
+size = 116
+origin = "census"
 
 [[code]]
 addr = 0x080209b8
 mode = "thumb"
-size = 222
-origin = "proven"
+size = 106
+origin = "census"
+
+[[code]]
+addr = 0x08020a22
+mode = "thumb"
+size = 42
+origin = "census"
+
+[[code]]
+addr = 0x08020a4c
+mode = "thumb"
+size = 74
+origin = "census"
 
 [[code]]
 addr = 0x08020a96
 mode = "thumb"
 size = 50
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08020ac8
 mode = "thumb"
 size = 40
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08020af0
 mode = "thumb"
 size = 4
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08020af4
 mode = "thumb"
-size = 486
-origin = "proven"
+size = 152
+origin = "census"
+
+[[code]]
+addr = 0x08020b8c
+mode = "thumb"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x08020b8e
+mode = "thumb"
+size = 30
+origin = "census"
+
+[[code]]
+addr = 0x08020bac
+mode = "thumb"
+size = 14
+origin = "census"
+
+[[code]]
+addr = 0x08020bba
+mode = "thumb"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x08020bbc
+mode = "thumb"
+size = 20
+origin = "census"
+
+[[code]]
+addr = 0x08020bd0
+mode = "thumb"
+size = 8
+origin = "census"
+
+[[code]]
+addr = 0x08020bd8
+mode = "thumb"
+size = 258
+origin = "census"
 
 [[code]]
 addr = 0x08020d24
 mode = "thumb"
 size = 2
-origin = "table"
+origin = "census"
 
 [[code]]
 addr = 0x08020d26
 mode = "thumb"
-size = 74
-origin = "proven"
+size = 26
+origin = "census"
+
+[[code]]
+addr = 0x08020d40
+mode = "thumb"
+size = 48
+origin = "census"
 
 [[code]]
 addr = 0x08020d90
 mode = "thumb"
 size = 204
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08020e5c
 mode = "thumb"
-size = 102
-origin = "proven"
+size = 78
+origin = "census"
+
+[[code]]
+addr = 0x08020eaa
+mode = "thumb"
+size = 24
+origin = "census"
 
 [[code]]
 addr = 0x08020ec2
 mode = "thumb"
-size = 634
-origin = "filtered"
+size = 282
+origin = "census"
+
+[[code]]
+addr = 0x08020fdc
+mode = "thumb"
+size = 352
+origin = "census"
 
 [[code]]
 addr = 0x0802113c
 mode = "thumb"
 size = 4
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08021140
 mode = "thumb"
-size = 434
-origin = "proven"
+size = 72
+origin = "census"
+
+[[code]]
+addr = 0x08021188
+mode = "thumb"
+size = 64
+origin = "census"
+
+[[code]]
+addr = 0x080211c8
+mode = "thumb"
+size = 58
+origin = "census"
+
+[[code]]
+addr = 0x08021202
+mode = "thumb"
+size = 240
+origin = "census"
 
 [[code]]
 addr = 0x080212f2
 mode = "thumb"
 size = 24
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0802130a
 mode = "thumb"
-size = 76
-origin = "proven"
+size = 58
+origin = "census"
+
+[[code]]
+addr = 0x08021344
+mode = "thumb"
+size = 18
+origin = "census"
 
 [[code]]
 addr = 0x08021356
 mode = "thumb"
 size = 6
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0802135c
 mode = "thumb"
-size = 42
-origin = "proven"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x0802135e
+mode = "thumb"
+size = 40
+origin = "census"
 
 [[code]]
 addr = 0x08021388
 mode = "thumb"
 size = 56
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x080213fc
 mode = "thumb"
-size = 74
-origin = "proven"
+size = 32
+origin = "census"
+
+[[code]]
+addr = 0x0802141c
+mode = "thumb"
+size = 18
+origin = "census"
+
+[[code]]
+addr = 0x0802142e
+mode = "thumb"
+size = 24
+origin = "census"
 
 [[code]]
 addr = 0x08021446
 mode = "thumb"
 size = 14
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08021454
 mode = "thumb"
-size = 320
-origin = "proven"
+size = 112
+origin = "census"
+
+[[code]]
+addr = 0x080214c4
+mode = "thumb"
+size = 98
+origin = "census"
+
+[[code]]
+addr = 0x08021526
+mode = "thumb"
+size = 24
+origin = "census"
+
+[[code]]
+addr = 0x0802153e
+mode = "thumb"
+size = 86
+origin = "census"
 
 [[code]]
 addr = 0x08021594
 mode = "thumb"
 size = 20
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080215a8
 mode = "thumb"
 size = 22
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x080215be
 mode = "thumb"
 size = 42
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080215e8
 mode = "thumb"
 size = 90
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08021642
 mode = "thumb"
 size = 22
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0802166e
 mode = "thumb"
 size = 292
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08021792
 mode = "thumb"
 size = 56
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08021872
 mode = "thumb"
-size = 106
-origin = "filtered"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x08021874
+mode = "thumb"
+size = 104
+origin = "census"
 
 [[code]]
 addr = 0x080218dc
 mode = "thumb"
 size = 4
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080218e0
 mode = "thumb"
 size = 18
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x080218fc
 mode = "thumb"
 size = 12
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08021910
 mode = "thumb"
 size = 12
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0802191c
 mode = "thumb"
 size = 36
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08021948
 mode = "thumb"
 size = 34
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0802197c
 mode = "thumb"
-size = 110
-origin = "proven"
+size = 4
+origin = "census"
+
+[[code]]
+addr = 0x08021980
+mode = "thumb"
+size = 106
+origin = "census"
 
 [[code]]
 addr = 0x080219ea
 mode = "thumb"
 size = 30
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08021a08
 mode = "thumb"
 size = 46
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08021a4c
 mode = "thumb"
 size = 94
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08021acc
 mode = "thumb"
 size = 24
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08021aec
 mode = "thumb"
 size = 138
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08021b76
 mode = "thumb"
 size = 6
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08021b7c
 mode = "thumb"
 size = 24
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08021b9c
 mode = "thumb"
 size = 64
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08021be0
 mode = "thumb"
 size = 104
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08021c48
 mode = "thumb"
 size = 16
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08021c58
 mode = "thumb"
 size = 26
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08021c7c
 mode = "thumb"
 size = 50
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08021cae
 mode = "thumb"
 size = 2
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08021cb0
 mode = "thumb"
 size = 62
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08021cee
 mode = "thumb"
 size = 2
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08021cf0
 mode = "thumb"
 size = 48
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08021d28
 mode = "thumb"
-size = 8
-origin = "proven"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x08021d2a
+mode = "thumb"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x08021d2c
+mode = "thumb"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x08021d2e
+mode = "thumb"
+size = 2
+origin = "census"
 
 [[code]]
 addr = 0x08021d36
 mode = "thumb"
 size = 2
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08021d74
 mode = "thumb"
 size = 34
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08021da0
 mode = "thumb"
 size = 2
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08021db4
 mode = "thumb"
 size = 2
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08021db6
 mode = "thumb"
 size = 6
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08021df0
 mode = "thumb"
 size = 2
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08021df2
 mode = "thumb"
 size = 6
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08021ea8
 mode = "thumb"
 size = 2
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08021f18
 mode = "thumb"
 size = 2
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08021f1a
 mode = "thumb"
 size = 6
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08021f30
 mode = "thumb"
 size = 2
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08021f32
 mode = "thumb"
 size = 6
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0802201c
 mode = "thumb"
 size = 8
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08022098
 mode = "thumb"
 size = 4
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x080220cc
 mode = "thumb"
 size = 34
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x080220f0
 mode = "thumb"
-size = 1914
-origin = "proven"
+size = 40
+origin = "census"
+
+[[code]]
+addr = 0x08022118
+mode = "thumb"
+size = 1024
+origin = "census"
+
+[[code]]
+addr = 0x08022522
+mode = "thumb"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x08022524
+mode = "thumb"
+size = 20
+origin = "census"
+
+[[code]]
+addr = 0x08022538
+mode = "thumb"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x0802253a
+mode = "thumb"
+size = 8
+origin = "census"
+
+[[code]]
+addr = 0x08022542
+mode = "thumb"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x08022544
+mode = "thumb"
+size = 22
+origin = "census"
+
+[[code]]
+addr = 0x0802255a
+mode = "thumb"
+size = 6
+origin = "census"
+
+[[code]]
+addr = 0x08022560
+mode = "thumb"
+size = 14
+origin = "census"
+
+[[code]]
+addr = 0x0802256e
+mode = "thumb"
+size = 12
+origin = "census"
+
+[[code]]
+addr = 0x0802257a
+mode = "thumb"
+size = 8
+origin = "census"
+
+[[code]]
+addr = 0x08022582
+mode = "thumb"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x08022584
+mode = "thumb"
+size = 14
+origin = "census"
+
+[[code]]
+addr = 0x08022592
+mode = "thumb"
+size = 22
+origin = "census"
+
+[[code]]
+addr = 0x080225a8
+mode = "thumb"
+size = 6
+origin = "census"
+
+[[code]]
+addr = 0x080225ae
+mode = "thumb"
+size = 14
+origin = "census"
+
+[[code]]
+addr = 0x080225bc
+mode = "thumb"
+size = 12
+origin = "census"
+
+[[code]]
+addr = 0x080225c8
+mode = "thumb"
+size = 16
+origin = "census"
+
+[[code]]
+addr = 0x080225d8
+mode = "thumb"
+size = 42
+origin = "census"
+
+[[code]]
+addr = 0x08022602
+mode = "thumb"
+size = 14
+origin = "census"
+
+[[code]]
+addr = 0x08022610
+mode = "thumb"
+size = 8
+origin = "census"
+
+[[code]]
+addr = 0x08022618
+mode = "thumb"
+size = 8
+origin = "census"
+
+[[code]]
+addr = 0x08022620
+mode = "thumb"
+size = 6
+origin = "census"
+
+[[code]]
+addr = 0x08022626
+mode = "thumb"
+size = 4
+origin = "census"
+
+[[code]]
+addr = 0x0802262a
+mode = "thumb"
+size = 8
+origin = "census"
+
+[[code]]
+addr = 0x08022632
+mode = "thumb"
+size = 8
+origin = "census"
+
+[[code]]
+addr = 0x0802263a
+mode = "thumb"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x0802263c
+mode = "thumb"
+size = 12
+origin = "census"
+
+[[code]]
+addr = 0x08022648
+mode = "thumb"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x0802264a
+mode = "thumb"
+size = 14
+origin = "census"
+
+[[code]]
+addr = 0x08022658
+mode = "thumb"
+size = 22
+origin = "census"
+
+[[code]]
+addr = 0x0802266e
+mode = "thumb"
+size = 24
+origin = "census"
+
+[[code]]
+addr = 0x08022686
+mode = "thumb"
+size = 10
+origin = "census"
+
+[[code]]
+addr = 0x08022690
+mode = "thumb"
+size = 16
+origin = "census"
+
+[[code]]
+addr = 0x080226a0
+mode = "thumb"
+size = 8
+origin = "census"
+
+[[code]]
+addr = 0x080226a8
+mode = "thumb"
+size = 4
+origin = "census"
+
+[[code]]
+addr = 0x080226ac
+mode = "thumb"
+size = 524
+origin = "census"
 
 [[code]]
 addr = 0x080228b8
 mode = "thumb"
-size = 394
-origin = "proven"
+size = 28
+origin = "census"
+
+[[code]]
+addr = 0x080228d4
+mode = "thumb"
+size = 12
+origin = "census"
+
+[[code]]
+addr = 0x080228e0
+mode = "thumb"
+size = 42
+origin = "census"
+
+[[code]]
+addr = 0x0802290a
+mode = "thumb"
+size = 20
+origin = "census"
+
+[[code]]
+addr = 0x0802291e
+mode = "thumb"
+size = 12
+origin = "census"
+
+[[code]]
+addr = 0x0802292a
+mode = "thumb"
+size = 22
+origin = "census"
+
+[[code]]
+addr = 0x08022940
+mode = "thumb"
+size = 16
+origin = "census"
+
+[[code]]
+addr = 0x08022950
+mode = "thumb"
+size = 14
+origin = "census"
+
+[[code]]
+addr = 0x0802295e
+mode = "thumb"
+size = 20
+origin = "census"
+
+[[code]]
+addr = 0x08022972
+mode = "thumb"
+size = 14
+origin = "census"
+
+[[code]]
+addr = 0x08022980
+mode = "thumb"
+size = 24
+origin = "census"
+
+[[code]]
+addr = 0x08022998
+mode = "thumb"
+size = 8
+origin = "census"
+
+[[code]]
+addr = 0x080229a0
+mode = "thumb"
+size = 22
+origin = "census"
+
+[[code]]
+addr = 0x080229b6
+mode = "thumb"
+size = 22
+origin = "census"
+
+[[code]]
+addr = 0x080229cc
+mode = "thumb"
+size = 10
+origin = "census"
+
+[[code]]
+addr = 0x080229d6
+mode = "thumb"
+size = 12
+origin = "census"
+
+[[code]]
+addr = 0x080229e2
+mode = "thumb"
+size = 8
+origin = "census"
+
+[[code]]
+addr = 0x080229ea
+mode = "thumb"
+size = 20
+origin = "census"
+
+[[code]]
+addr = 0x080229fe
+mode = "thumb"
+size = 10
+origin = "census"
+
+[[code]]
+addr = 0x08022a08
+mode = "thumb"
+size = 20
+origin = "census"
+
+[[code]]
+addr = 0x08022a1c
+mode = "thumb"
+size = 12
+origin = "census"
+
+[[code]]
+addr = 0x08022a28
+mode = "thumb"
+size = 16
+origin = "census"
+
+[[code]]
+addr = 0x08022a38
+mode = "thumb"
+size = 10
+origin = "census"
 
 [[code]]
 addr = 0x08022a42
 mode = "thumb"
 size = 2
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08022a44
 mode = "thumb"
 size = 14
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08022a52
 mode = "thumb"
 size = 4
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08022b08
 mode = "thumb"
 size = 2
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08022b18
 mode = "thumb"
 size = 2
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08022b28
 mode = "thumb"
 size = 2
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08022b2a
 mode = "thumb"
 size = 6
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08022b38
 mode = "thumb"
 size = 2
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08022bdc
 mode = "thumb"
 size = 2
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08022bde
 mode = "thumb"
 size = 6
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08022c84
 mode = "thumb"
 size = 2
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08022c86
 mode = "thumb"
 size = 6
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08022cb4
 mode = "thumb"
 size = 70
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08023012
 mode = "thumb"
 size = 10
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0802308a
 mode = "thumb"
 size = 36
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0802310e
 mode = "thumb"
 size = 2
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080233ea
 mode = "thumb"
 size = 4
-origin = "table"
+origin = "census"
 
 [[code]]
 addr = 0x080233ee
 mode = "thumb"
 size = 22
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0802369c
 mode = "arm"
 size = 8
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x080236a8
 mode = "thumb"
 size = 2
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x080236b4
 mode = "thumb"
 size = 2
-origin = "proven"
+origin = "census"
+
+[[code]]
+addr = 0x080236b8
+mode = "arm"
+size = 4
+origin = "runtime"
 
 [[code]]
 addr = 0x080236cc
 mode = "thumb"
 size = 2
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x080236f0
 mode = "thumb"
 size = 2
-origin = "proven"
+origin = "census"
+
+[[code]]
+addr = 0x080263c0
+mode = "thumb"
+size = 18
+origin = "runtime"
+
+[[code]]
+addr = 0x080263d2
+mode = "thumb"
+size = 2
+origin = "runtime"
+
+[[code]]
+addr = 0x080263d8
+mode = "thumb"
+size = 2
+origin = "runtime"
 
 [[code]]
 addr = 0x08026414
 mode = "thumb"
-size = 66
-origin = "proven"
+size = 44
+origin = "census"
+
+[[code]]
+addr = 0x08026440
+mode = "thumb"
+size = 22
+origin = "census"
 
 [[code]]
 addr = 0x08026456
 mode = "thumb"
 size = 6
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0802645c
 mode = "thumb"
 size = 22
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08026472
 mode = "thumb"
 size = 10
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08026528
 mode = "thumb"
 size = 38
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0802654e
 mode = "thumb"
 size = 8
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080265ac
 mode = "thumb"
 size = 22
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x080265c2
 mode = "thumb"
-size = 26
-origin = "gap"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x080265c4
+mode = "thumb"
+size = 24
+origin = "census"
 
 [[code]]
 addr = 0x080265dc
 mode = "thumb"
 size = 10
-origin = "table"
+origin = "census"
 
 [[code]]
 addr = 0x080265e6
 mode = "thumb"
 size = 2
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x080265e8
 mode = "thumb"
 size = 22
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x080265fe
 mode = "thumb"
 size = 6
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08026604
 mode = "thumb"
 size = 22
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08026620
 mode = "thumb"
 size = 38
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08026646
 mode = "thumb"
 size = 6
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0802664c
 mode = "thumb"
 size = 50
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08026688
 mode = "thumb"
 size = 14
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x08026696
 mode = "thumb"
 size = 2
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08026698
 mode = "thumb"
 size = 32
-origin = "filtered"
+origin = "census"
 
 [[code]]
 addr = 0x080266b8
 mode = "thumb"
-size = 16
-origin = "gap"
+size = 2
+origin = "census"
+
+[[code]]
+addr = 0x080266ba
+mode = "thumb"
+size = 14
+origin = "census"
+
+[[code]]
+addr = 0x080266e0
+mode = "thumb"
+size = 14
+origin = "runtime"
+
+[[code]]
+addr = 0x080266ee
+mode = "thumb"
+size = 14
+origin = "runtime"
+
+[[code]]
+addr = 0x080266fc
+mode = "thumb"
+size = 2
+origin = "runtime"
+
+[[code]]
+addr = 0x080268f0
+mode = "thumb"
+size = 14
+origin = "runtime"
+
+[[code]]
+addr = 0x080268fe
+mode = "thumb"
+size = 2
+origin = "runtime"
+
+[[code]]
+addr = 0x08026e0c
+mode = "thumb"
+size = 14
+origin = "runtime"
+
+[[code]]
+addr = 0x08026e1a
+mode = "thumb"
+size = 10
+origin = "runtime"
+
+[[code]]
+addr = 0x08026e24
+mode = "thumb"
+size = 10
+origin = "runtime"
+
+[[code]]
+addr = 0x08026e2e
+mode = "thumb"
+size = 14
+origin = "runtime"
+
+[[code]]
+addr = 0x08026e3c
+mode = "thumb"
+size = 2
+origin = "runtime"
+
+[[code]]
+addr = 0x08026f34
+mode = "thumb"
+size = 14
+origin = "runtime"
+
+[[code]]
+addr = 0x08026f42
+mode = "thumb"
+size = 2
+origin = "runtime"
 
 [[code]]
 addr = 0x08027a40
 mode = "thumb"
 size = 22
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08027a64
 mode = "thumb"
-size = 46
-origin = "gap"
+size = 4
+origin = "census"
+
+[[code]]
+addr = 0x08027a68
+mode = "thumb"
+size = 42
+origin = "census"
 
 [[code]]
 addr = 0x08027e74
 mode = "thumb"
-size = 72
-origin = "proven"
+size = 40
+origin = "census"
+
+[[code]]
+addr = 0x08027e9c
+mode = "thumb"
+size = 32
+origin = "census"
 
 [[code]]
 addr = 0x08027ebc
 mode = "thumb"
 size = 60
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08027ef8
 mode = "thumb"
 size = 2
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08027efa
 mode = "thumb"
 size = 6
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08027f1c
 mode = "thumb"
 size = 2
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08027f1e
 mode = "thumb"
 size = 6
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08027f40
 mode = "thumb"
 size = 170
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08027fec
 mode = "thumb"
 size = 66
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0802802e
 mode = "thumb"
 size = 2
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x08028030
 mode = "thumb"
 size = 42
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0802805a
 mode = "thumb"
 size = 2
-origin = "gap"
+origin = "census"
 
 [[code]]
 addr = 0x0802805c
 mode = "thumb"
 size = 40
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x08028230
 mode = "thumb"
 size = 2
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0802829c
 mode = "thumb"
 size = 2
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x080285d4
 mode = "thumb"
 size = 2
-origin = "proven"
+origin = "census"
 
 [[code]]
 addr = 0x0828bc62
 mode = "thumb"
-size = 16
-origin = "filtered"
+size = 2
+origin = "census"
 
 [[code]]
-addr = 0x0828c45a
+addr = 0x0828c464
 mode = "thumb"
-size = 34
-origin = "filtered"
+size = 24
+origin = "census"
 
 [[code]]
 addr = 0x08547800
 mode = "thumb"
 size = 6
-origin = "table"
+origin = "census"
 
 [[code]]
 addr = 0x08598054
 mode = "thumb"
 size = 2
-origin = "table"
+origin = "census"
 
 [[entry]]
 addr = 0x08000000

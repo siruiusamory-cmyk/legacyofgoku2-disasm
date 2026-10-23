@@ -78,8 +78,10 @@ def test_the_export_counts_are_the_extents_it_carries():
     entries = blocks(text, "entry")
     copies = blocks(text, "code_copy")
     tables = blocks(text, "jump_table")
-    assert counts["functions"] == len(code)
+    rows = export_inputs.bounds_rows()
+    assert counts["functions"] == len(code) == len(rows)
     assert counts["code_bytes"] == sum(int(row["size"]) for row in code)
+    assert counts["code_bytes"] == sum(row[1] for row in rows)
     assert counts["entries"] == len(entries)
     assert counts["code_copies"] == len(copies) == 1
     assert counts["jump_tables"] == len(tables)
@@ -87,25 +89,29 @@ def test_the_export_counts_are_the_extents_it_carries():
                          "source_start": "0x087fd6bc", "size": "0xe7c"}
     assert tables[0]["base"] == "0x0800b274"
     assert tables[0]["entries"] == "14"
-    assert {row["origin"] for row in code} == set(export_inputs.CLASS_TAGS.values())
+    assert {row["origin"] for row in code} == {row[3] for row in rows}
     assert {row["mode"] for row in code} == {"thumb", "arm"}
     assert [row["addr"] for row in entries] == sorted(row["addr"] for row in entries)
-    import code_split
-    totals = code_split.read_totals()
-    assert counts["code_bytes"] == (totals["proven code"]
-                                    + totals["filtered pointer-entry code"]
-                                    + totals["table-held code"]
-                                    + totals["gap-fill code"])
 
 
-def test_every_code_class_is_exported_with_its_own_tag():
-    if not os.path.exists(export_inputs.ROM):
-        pytest.skip("baserom.gba is absent, so this check cannot run")
-    code = blocks(export_inputs.render(), "code")
-    import code_split
-    totals = code_split.read_totals()
-    for name, tag in export_inputs.CLASS_TAGS.items():
-        assert sum(int(row["size"]) for row in code if row["origin"] == tag) == totals[name]
+def test_the_tracked_export_carries_every_census_row_with_its_extent():
+    text = open(export_inputs.OUT, encoding="ascii", newline="").read()
+    rows = export_inputs.bounds_rows()
+    code = [(int(match.group(1), 16), int(match.group(3)), match.group(2))
+            for match in export_inputs.CODE_ROW.finditer(text)]
+    assert rows
+    assert sorted(code) == sorted((start, size, mode) for start, size, mode, _origin
+                                  in rows)
+    assert export_inputs.audit(text, rows) == ([], [])
+
+
+def test_a_census_row_with_no_code_row_is_reported():
+    rows = [(0x08000100, 4, "thumb", "census")]
+    uncovered, modeless = export_inputs.audit("", rows)
+    assert uncovered == rows
+    assert modeless == []
+    assert export_inputs.audit('[[code]]\naddr = 0x08000100\nmode = ""\nsize = 4\n'
+                               'origin = "census"\n', rows) == ([], [""])
 
 
 def test_the_export_places_the_interrupt_handler_inside_the_code_copy():
@@ -128,6 +134,17 @@ def test_the_export_places_the_interrupt_handler_inside_the_code_copy():
     assert fields["vector"] == "0x03007ffc"
     assert fields["handler"] == "0x03000824"
     assert start <= int(fields["handler"], 16) < start + int(copy["size"], 16)
+
+
+def test_a_census_row_with_no_end_is_skipped(tmp_path):
+    where = tmp_path / "docs" / "research"
+    where.mkdir(parents=True)
+    (where / "FUNCTION_ENDS.csv").write_text(
+        "address,mode,origin,end,reason\n"
+        "0x08000100,thumb,census,0x08000104,-\n"
+        "0x08000200,thumb,census,-,no-body\n", encoding="ascii")
+    assert export_inputs.bounds_rows(str(tmp_path)) == [
+        (0x08000100, 4, "thumb", "census")]
 
 
 if __name__ == "__main__":

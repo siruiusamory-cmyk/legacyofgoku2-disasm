@@ -38,10 +38,12 @@ CHECKS = ("P-148-repo-module-path", "P-159-bare-interpreter", "P-167-pool-guard"
           "NAMING-address-ratchet", "NAMING-behaviour-test", "ROM-tracked-image",
           "README-numbers", "TEST-silent-return", "P-518-stale-incbin-call", "DUP-block",
           "READABILITY-ratchet", "READABILITY-index", "READABILITY-path",
-          "BOUNDS-entry-allow")
+          "BOUNDS-entry-allow", "RECOMP-census")
 ENTRY_ALLOW = "docs/research/FUNCTION_ENTRY_ALLOW.csv"
 FUNCTION_ENDS = "docs/research/FUNCTION_ENDS.csv"
 FUNCTION_BOUNDS = "docs/research/FUNCTION_BOUNDS.csv"
+RECOMP = "docs/research/RECOMP_INPUTS.toml"
+CODE_MODES = ("arm", "thumb")
 ENTRY_FLAGS = ("data", "undecodable", "clobber")
 ENTRY_REASONS = ("prefix", "row-start")
 ADDRESS_HEX = re.compile(r"^0x[0-9A-Fa-f]{8}$")
@@ -641,6 +643,76 @@ def bounds_allow_findings():
                                 read_source(ENTRY_ALLOW) or "")
 
 
+def recomp_census_findings(export_text, ends_text):
+    sys.path.insert(0, os.path.join(ROOT, "tools", "recomp"))
+    import export_inputs
+    found = [(int(match.group(1), 16), match.group(2), int(match.group(3)), match.group(4))
+             for match in export_inputs.CODE_ROW.finditer(export_text or "")]
+    code = {}
+    twice = []
+    for address, mode, size, origin in found:
+        if address in code:
+            twice.append(address)
+        code[address] = (mode, size, origin)
+    rows = list(csv.DictReader(io.StringIO(ends_text or "")))
+    opened = [row for row in rows if row["end"] == "-"]
+    closed = [row for row in rows if row["end"] != "-"]
+    starts = set(int(row["address"], 16) for row in closed)
+    missing = [row for row in closed if int(row["address"], 16) not in code]
+    extra = sorted(address for address, (mode, _size, _origin) in code.items()
+                   if mode in CODE_MODES and address not in starts)
+    wrong = [(int(row["address"], 16), row["mode"],
+              int(row["end"], 16) - int(row["address"], 16), code[int(row["address"], 16)])
+             for row in closed
+             if int(row["address"], 16) in code
+             and code[int(row["address"], 16)][:2]
+             != (row["mode"], int(row["end"], 16) - int(row["address"], 16))]
+    origins = [(int(row["address"], 16), code[int(row["address"], 16)][2], row["origin"])
+               for row in closed
+               if int(row["address"], 16) in code
+               and code[int(row["address"], 16)][2] != row["origin"]]
+    modeless = sorted(address for address, (mode, _size, _origin) in code.items()
+                      if mode not in CODE_MODES)
+    findings = []
+    if opened:
+        findings.append(("RECOMP-census",
+                         "%s: %d census row(s) have no end, the first 0x%08X"
+                         % (RECOMP, len(opened), int(opened[0]["address"], 16))))
+    if missing:
+        findings.append(("RECOMP-census",
+                         "%s: %d census row(s) have no code row, the first 0x%08X"
+                         % (RECOMP, len(missing), int(missing[0]["address"], 16))))
+    if wrong:
+        address, mode, size, (carried, carried_size, _origin) = wrong[0]
+        findings.append(("RECOMP-census",
+                         "%s: 0x%08X carries %s and %d B, and %s reads %s and %d B"
+                         % (RECOMP, address, carried, carried_size, FUNCTION_ENDS,
+                            mode, size)))
+    if origins:
+        address, carried, read = origins[0]
+        findings.append(("RECOMP-census",
+                         "%s: 0x%08X carries origin %s, and %s reads %s"
+                         % (RECOMP, address, carried, FUNCTION_ENDS, read)))
+    if twice:
+        findings.append(("RECOMP-census",
+                         "%s: %d code row(s) repeat an address, the first 0x%08X"
+                         % (RECOMP, len(twice), twice[0])))
+    if extra:
+        findings.append(("RECOMP-census",
+                         "%s: %d code row(s) are absent from %s, the first 0x%08X"
+                         % (RECOMP, len(extra), FUNCTION_ENDS, extra[0])))
+    if modeless:
+        findings.append(("RECOMP-census",
+                         "%s: %d code row(s) carry a mode outside %s, the first 0x%08X"
+                         % (RECOMP, len(modeless), ", ".join(CODE_MODES), modeless[0])))
+    return findings
+
+
+def recomp_tree_findings():
+    return recomp_census_findings(read_source(RECOMP) or "",
+                                  read_source(FUNCTION_ENDS) or "")
+
+
 def naming_tree_findings():
     module = naming_module()
     addresses = set(module.emitted())
@@ -917,6 +989,7 @@ def run(files=None):
         findings += c_source_findings()
         findings += naming_tree_findings()
         findings += bounds_allow_findings()
+        findings += recomp_tree_findings()
         findings += tracked_rom_findings()
         findings += readme_findings()
         findings += stale_call_tree_findings()

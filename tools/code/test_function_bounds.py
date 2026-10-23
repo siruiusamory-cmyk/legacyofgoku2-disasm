@@ -70,7 +70,7 @@ def test_an_arm_stmfd_that_saves_lr_is_the_prologue_limb():
 def test_an_entry_with_no_limb_inside_a_proved_body_is_a_fragment():
     data = image()
     put_half(data, BASE + 0x60, 0x2001)
-    put_half(data, BASE + 0x62, 0xBD00)
+    put_half(data, BASE + 0x62, 0x2002)
     put_half(data, BASE + 0x64, 0x2003)
     put_half(data, BASE + 0x66, 0xBD00)
     found = classify(data, [BASE + 0x60, BASE + 0x64], [(0x60, 0x68)])
@@ -166,10 +166,25 @@ def test_a_start_that_opens_no_function_is_corrected_to_its_prologue():
     found = classify(data, [BASE + 0x100], [(0x100, 0x106)], calls=[0x100])
     assert found["corrected"] == {BASE + 0x100: BASE + 0x102}
     assert function_bounds.ends_rows(found) == [
+        (BASE + 0x100, function_bounds.THUMB, "census", BASE + 0x102, "next-start"),
         (BASE + 0x102, function_bounds.THUMB, "census", BASE + 0x106, "-")]
     assert function_bounds.flags_text(function_bounds.flag_rows(
         bytes(data), found)) == ("address,kind,limb,flags,entry,reason\n"
                                  "0x08000100,start,call+block,data,0x08000102,prefix\n")
+
+
+def test_a_corrected_arm_start_is_walked_as_arm():
+    data = image()
+    put_word(data, BASE + 0x140, 0xE1A00000)
+    put_word(data, BASE + 0x144, 0xE80D4010)
+    put_word(data, BASE + 0x148, 0xE12FFF1E)
+    found = classify(data, [BASE + 0x140], [(0x140, 0x14C)], {BASE + 0x140: 2},
+                     calls=[0x140])
+    assert found["corrected"] == {BASE + 0x140: BASE + 0x144}
+    assert found["ends"][BASE + 0x144] == (BASE + 0x14C, "-")
+    assert [row for row in function_bounds.ends_rows(found)
+            if row[0] == BASE + 0x144] == [(BASE + 0x144, function_bounds.ARM, "census",
+                                            BASE + 0x14C, "-")]
 
 
 def test_a_start_that_opens_its_own_function_is_no_flag():
@@ -264,7 +279,98 @@ def test_every_transcribed_code_span_start_is_classified():
     spans = [begin for begin, _end, name in emit_code.span_files(emit_code.fragments(data))
              if name.startswith("code_")]
     assert spans
-    assert [begin for begin in spans if begin not in found["starts"]] == []
+    missing = [begin for begin in spans if begin not in found["starts"]]
+    assert missing == [0x08000100]
+    owners = [(address, mode) for address, mode, _origin, end, _reason
+              in function_bounds.ends_rows(found)
+              if address <= 0x08000100 < end]
+    assert owners == [(0x080000C0, function_bounds.ARM)]
+
+
+def test_a_pc_operand_that_is_not_the_destination_does_not_end_a_body():
+    assert function_bounds.writes_pc("ADD", "r0, pc, #0x380") is False
+    assert function_bounds.writes_pc("ADD", "pc, r0, #0x4") is True
+    assert function_bounds.writes_pc("MOV", "r2, pc") is False
+    assert function_bounds.writes_pc("POP", "{r4, pc}") is True
+    assert function_bounds.writes_pc("LDMIA", "r0!, {r1, pc}") is True
+    data = image()
+    put_half(data, BASE + 0x140, 0xA001)
+    put_half(data, BASE + 0x142, 0x2002)
+    put_half(data, BASE + 0x144, 0xBD00)
+    found = classify(data, [BASE + 0x140], [(0x140, 0x146)], calls=[0x140])
+    assert function_bounds.ends_rows(found) == [
+        (BASE + 0x140, function_bounds.THUMB, "census", BASE + 0x146, "-")]
+
+
+def test_an_entry_the_rows_never_cover_is_a_start_of_its_own_mode():
+    data = image()
+    put_half(data, BASE + 0x1E0, 0x2001)
+    put_half(data, BASE + 0x1E2, 0xBD00)
+    found = classify(data, [BASE + 0x1E0], [])
+    assert found["starts"][BASE + 0x1E0] == ["entry"]
+    assert function_bounds.ends_rows(found) == [
+        (BASE + 0x1E0, function_bounds.THUMB, "census", BASE + 0x1E4, "-")]
+
+
+def test_a_start_inside_the_body_of_the_other_mode_is_no_row():
+    data = image()
+    put_word(data, BASE + 0x40, 0xE1A00000)
+    put_word(data, BASE + 0x44, 0xE1A00000)
+    found = classify(data, [BASE + 0x40, BASE + 0x44], [(0x40, 0x48)],
+                     {BASE + 0x40: 2, BASE + 0x44: 1}, spans=[0x44])
+    assert BASE + 0x44 not in found["starts"]
+    assert found["fragments"][BASE + 0x44] == BASE + 0x40
+    assert function_bounds.ends_rows(found) == [
+        (BASE + 0x40, function_bounds.ARM, "census", BASE + 0x48, "no-return")]
+
+
+def test_a_start_inside_a_32_bit_first_instruction_is_absorbed():
+    data = image()
+    put_half(data, BASE + 0x160, 0xF000)
+    put_half(data, BASE + 0x162, 0xF800)
+    put_half(data, BASE + 0x164, 0xBD00)
+    found = classify(data, [BASE + 0x160, BASE + 0x162], [], calls=[0x160])
+    assert sorted(found["starts"]) == [BASE + 0x160]
+    assert function_bounds.ends_rows(found) == [
+        (BASE + 0x160, function_bounds.THUMB, "census", BASE + 0x166, "-")]
+
+
+def test_a_start_after_a_16_bit_first_instruction_is_no_fragment():
+    data = image()
+    put_half(data, BASE + 0x160, 0x2001)
+    put_half(data, BASE + 0x162, 0x2002)
+    put_half(data, BASE + 0x164, 0xBD00)
+    found = classify(data, [BASE + 0x160, BASE + 0x162], [])
+    assert sorted(found["starts"]) == [BASE + 0x160, BASE + 0x162]
+    assert function_bounds.ends_rows(found) == [
+        (BASE + 0x160, function_bounds.THUMB, "census", BASE + 0x162, "next-start"),
+        (BASE + 0x162, function_bounds.THUMB, "census", BASE + 0x166, "-")]
+
+
+def test_a_row_start_bounds_the_row_before_a_corrected_entry():
+    data = image()
+    put_half(data, BASE + 0x180, 0x2001)
+    put_half(data, BASE + 0x182, 0x2002)
+    put_half(data, BASE + 0x184, 0xB510)
+    put_half(data, BASE + 0x186, 0xBD10)
+    found = classify(data, [BASE + 0x180], [(0x180, 0x188)], calls=[0x180])
+    assert found["corrected"] == {BASE + 0x180: BASE + 0x184}
+    assert function_bounds.ends_rows(found) == [
+        (BASE + 0x180, function_bounds.THUMB, "census", BASE + 0x184, "next-start"),
+        (BASE + 0x184, function_bounds.THUMB, "census", BASE + 0x188, "-")]
+
+
+def test_a_runtime_row_is_bounded_by_the_nearest_later_start(tmp_path, monkeypatch):
+    path = tmp_path / "runtime.csv"
+    path.write_text("region,address,mode\nrom,0x08000170,thumb\n", encoding="ascii")
+    monkeypatch.setattr(function_bounds, "RUNTIME", str(path))
+    data = image(0x400)
+    for offset in range(0x170, 0x1C0, 2):
+        put_half(data, BASE + offset, 0x2001)
+    put_half(data, BASE + 0x1C0, 0xBD00)
+    starts = {BASE + 0x200: ["call"], BASE + 0x180: ["call"]}
+    assert function_bounds.folded(bytes(data), {"overlay": (0, 0, 0, 0)}, starts) == [
+        (BASE + 0x170, function_bounds.THUMB, "runtime", BASE + 0x180, "next-start")]
 
 
 if __name__ == "__main__":

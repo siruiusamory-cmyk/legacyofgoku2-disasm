@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import argparse
+import csv
 import hashlib
 import os
+import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -14,9 +16,11 @@ import code_split
 ROM = os.path.join(ROOT, "baserom.gba")
 SHA1 = os.path.join(ROOT, "baserom.sha1")
 OUT = os.path.join(ROOT, "docs", "research", "RECOMP_INPUTS.toml")
+BOUNDS = os.path.join("docs", "research", "FUNCTION_ENDS.csv")
+MODES = ("arm", "thumb")
+CODE_ROW = re.compile(r'\[\[code\]\]\naddr = 0x([0-9a-fA-F]{8})\nmode = "([^"]*)"\n'
+                      r'size = (\d+)\norigin = "([^"]*)"')
 MODE_NAMES = {code_split.MODE_THUMB: "thumb", code_split.MODE_ARM: "arm"}
-CLASS_TAGS = {"proven code": "proven", "filtered pointer-entry code": "filtered",
-              "table-held code": "table", "gap-fill code": "gap"}
 
 
 def identity(path=ROM, sha1_path=SHA1):
@@ -44,19 +48,49 @@ def entries_of(measured):
     return sorted(found | set(measured["extra"]))
 
 
+def bounds_rows(root=ROOT):
+    path = os.path.join(root, *BOUNDS.split("/"))
+    rows = []
+    with open(path, newline="", encoding="utf-8") as handle:
+        for row in csv.DictReader(handle):
+            if row["end"] == "-":
+                continue
+            start, end = int(row["address"], 16), int(row["end"], 16)
+            if row["mode"] not in MODES:
+                raise SystemExit("%s: 0x%08X carries mode %s, not one of %s"
+                                 % (BOUNDS, start, row["mode"] or "none", ", ".join(MODES)))
+            if end <= start:
+                raise SystemExit("%s: 0x%08X ends at 0x%08X, which is not after it"
+                                 % (BOUNDS, start, end))
+            if not (code_split.ROM_BASE <= start
+                    and end <= code_split.ROM_BASE + code_split.ROM_SIZE
+                    or 0x03000000 <= start and end <= 0x03008000):
+                raise SystemExit("%s: 0x%08X..0x%08X is neither in the image nor in IWRAM"
+                                 % (BOUNDS, start, end))
+            rows.append((start, end - start, row["mode"], row["origin"]))
+    return rows
+
+
+def audit(text, rows):
+    found = {int(match.group(1), 16): match.group(2) for match in CODE_ROW.finditer(text)}
+    uncovered = [row for row in rows if row[0] not in found]
+    modeless = [mode for mode in found.values() if mode not in MODES]
+    return uncovered, modeless
+
+
 def render(root=ROOT, rom=ROM):
     if not os.path.exists(rom):
         raise SystemExit("no image at %s, so the export cannot be derived" % rom)
     data = open(rom, "rb").read()
     sha1, md5 = identity(rom, os.path.join(root, "baserom.sha1"))
     measured = code_split.measure(data)
-    rows = measured["function_rows"]
+    functions = bounds_rows(root)
     entries = entries_of(measured)
     source, dest, size, _declared = measured["overlay"]
     lines = [
         "[counts]",
-        "functions = %d" % len(rows),
-        "code_bytes = %d" % sum(stop - start for start, stop, _name, _mode in rows),
+        "functions = %d" % len(functions),
+        "code_bytes = %d" % sum(row[1] for row in functions),
         "entries = %d" % len(entries),
         "jump_tables = %d" % len(measured["tables"]),
         "code_copies = 1",
@@ -87,13 +121,13 @@ def render(root=ROOT, rom=ROM):
             lines += ["table = 0x%08x" % irq["handler"]["table"]["at"],
                       "table_entries = %d" % len(irq["handler"]["table"]["entries"])]
         lines += [""]
-    for start, stop, name, mode in rows:
+    for start, size, mode, origin in functions:
         lines += [
             "[[code]]",
-            "addr = 0x%08x" % (code_split.ROM_BASE + start),
-            'mode = "%s"' % MODE_NAMES[mode],
-            "size = %d" % (stop - start),
-            'origin = "%s"' % CLASS_TAGS[name],
+            "addr = 0x%08x" % start,
+            'mode = "%s"' % mode,
+            "size = %d" % size,
+            'origin = "%s"' % origin,
             "",
         ]
     for address, mode in entries:
@@ -124,14 +158,26 @@ def main(argv=None):
     text = render()
     for line in text.splitlines()[1:6]:
         print(line)
+    tracked = None
     if args.check:
         if not os.path.exists(OUT):
             raise SystemExit("%s is absent, so there is no export to check"
                              % os.path.relpath(OUT, ROOT))
         with open(OUT, encoding="ascii", newline="") as handle:
-            if handle.read() != text:
-                raise SystemExit("%s is not the export this tree derives"
-                                 % os.path.relpath(OUT, ROOT))
+            tracked = handle.read()
+    uncovered, modeless = audit(text if tracked is None else tracked, bounds_rows())
+    print("uncovered = %d" % len(uncovered))
+    print("modeless = %d" % len(modeless))
+    if uncovered:
+        raise SystemExit("%d census row(s) have no code row, the first 0x%08X"
+                         % (len(uncovered), uncovered[0][0]))
+    if modeless:
+        raise SystemExit("%d code row(s) carry a mode outside %s"
+                         % (len(modeless), ", ".join(MODES)))
+    if args.check:
+        if tracked != text:
+            raise SystemExit("%s is not the export this tree derives"
+                             % os.path.relpath(OUT, ROOT))
         print("CHECK: the export matches the tree")
         return 0
     if args.write:
