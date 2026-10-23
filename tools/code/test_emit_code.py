@@ -126,8 +126,10 @@ def test_every_function_start_opens_one_file():
     measured, rom = result()
     found = function_bounds.describe(measured["measured"], rom)
     segments = measured["segments"]
+    begins = [begin for begin, _end, _name in segments]
     starts = set(name_table.emitted(found["starts"])) | {emit_code.ROM_BASE + emit_code.START}
-    assert set(begin for begin, _end, _name in segments) == starts
+    assert len(begins) == len(set(begins))
+    assert set(begins) == starts
     assert len(measured["files"]) == len(segments) + len(measured["pools"])
     assert [name for _begin, _end, name in segments if name not in measured["files"]] == []
 

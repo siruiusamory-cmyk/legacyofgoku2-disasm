@@ -19,3 +19,4 @@ jobs:
       - run: python tools/check_links.py
       - run: python tools/lint/lints.py
       - run: python -m pytest -q tools/test_check_links.py
+      - run: python -m pytest -q tools/gate/test_gate.py
