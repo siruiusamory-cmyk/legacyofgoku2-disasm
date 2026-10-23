@@ -125,6 +125,17 @@ def test_a_long_branch_is_a_pair_and_a_lone_halfword_is_refused():
     assert code_split.thumb_length(low, 0x08000100) is None
 
 
+def test_the_thumb_size_helper_reads_a_pair_and_refuses_a_truncated_one():
+    pair = memoryview(bytearray([0x00, 0xF0, 0x00, 0xF8])).cast("H")
+    assert code_split.thumb_size(pair, 0, 2) == 4
+    assert code_split.thumb_size(pair, 1, 2) is None
+    assert code_split.thumb_size(pair, 2, 2) is None
+    broken = memoryview(bytearray([0x00, 0xF0, 0x00, 0x00])).cast("H")
+    assert code_split.thumb_size(broken, 0, 2) is None
+    lone = memoryview(bytearray([0x00, 0xF0])).cast("H")
+    assert code_split.thumb_size(lone, 0, 1) is None
+
+
 def test_the_probe_reports_a_return_and_its_branch_count():
     plain = bytearray(0x200)
     struct.pack_into("<H", plain, 0x100, 0x4770)

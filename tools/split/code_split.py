@@ -3,6 +3,7 @@ from __future__ import annotations
 import csv
 import io
 import os
+import re
 import struct
 import sys
 
@@ -48,14 +49,50 @@ RUN_THRESHOLDS = (1, 8, 32, 128)
 THUMB_UNDEFINED = ((0x4780, 0x47FF), (0xB100, 0xB3FF), (0xB600, 0xBBFF), (0xBE00, 0xBFFF),
                    (0xDE00, 0xDEFF), (0xE800, 0xEFFF))
 THUNK_HEAD = ((0x4778, 0x46C0), 0xE51FF004)
+_UNDEFINED = bytes(
+    1 if any(low <= half <= high for low, high in THUMB_UNDEFINED) else 0
+    for half in range(0x10000))
+_NAMES = tuple(CLASS_NAMES.get(value) for value in range(256))
+_HALVES = {}
+_WORDS = {}
+
+
+def halves_of(rom):
+    found = _HALVES.get(id(rom))
+    if found is not None and found[0] is rom:
+        return found[1]
+    view = memoryview(rom)[:len(rom) - len(rom) % 2].cast("H")
+    if len(_HALVES) > 3:
+        _HALVES.clear()
+    _HALVES[id(rom)] = (rom, view)
+    return view
+
+
+def words_of(rom):
+    found = _WORDS.get(id(rom))
+    if found is not None and found[0] is rom:
+        return found[1]
+    view = memoryview(rom)[:len(rom) - len(rom) % 4].cast("I")
+    if len(_WORDS) > 3:
+        _WORDS.clear()
+    _WORDS[id(rom)] = (rom, view)
+    return view
 
 
 def hw(rom, addr):
-    return struct.unpack_from("<H", rom, addr - ROM_BASE)[0]
+    view = halves_of(rom)
+    offset = addr - ROM_BASE
+    if offset & 1:
+        return struct.unpack_from("<H", rom, offset)[0]
+    return view[offset >> 1]
 
 
 def word(rom, addr):
-    return struct.unpack_from("<I", rom, addr - ROM_BASE)[0]
+    view = words_of(rom)
+    offset = addr - ROM_BASE
+    if offset & 3:
+        return struct.unpack_from("<I", rom, offset)[0]
+    return view[offset >> 2]
 
 
 def in_image(rom, addr):
@@ -66,18 +103,30 @@ def has_word(rom, addr):
     return ROM_BASE <= addr and addr + 4 <= ROM_BASE + len(rom)
 
 
+def thumb_size(view, index, count):
+    if index + 1 > count:
+        return None
+    half = view[index]
+    if half >= 0xF000:
+        if half >= 0xF800 or index + 2 > count:
+            return None
+        return 4 if view[index + 1] >= 0xF800 else None
+    return None if _UNDEFINED[half] else 2
+
+
 def thumb_length(rom, addr):
+    view = halves_of(rom)
+    offset = addr - ROM_BASE
+    if not offset & 1:
+        return thumb_size(view, offset >> 1, len(view))
     if addr + 2 > ROM_BASE + len(rom):
         return None
-    half = hw(rom, addr)
+    half = struct.unpack_from("<H", rom, offset)[0]
     if half >= 0xF000:
         if half >= 0xF800 or addr + 4 > ROM_BASE + len(rom):
             return None
-        return 4 if hw(rom, addr + 2) >= 0xF800 else None
-    for low, high in THUMB_UNDEFINED:
-        if low <= half <= high:
-            return None
-    return 2
+        return 4 if struct.unpack_from("<H", rom, offset + 2)[0] >= 0xF800 else None
+    return None if _UNDEFINED[half] else 2
 
 
 def arm_branch_target(addr, instruction):
@@ -130,11 +179,13 @@ def code_ranges(classes):
 
 
 def thumb_step(rom, addr, classes, modes, value, last):
-    size = thumb_length(rom, addr)
+    view = halves_of(rom)
+    index = (addr - ROM_BASE) >> 1
+    size = thumb_size(view, index, len(view))
     if size is None:
         return addr, True, [], None, 0, None, []
     mark(classes, modes, addr, size, value, MODE_THUMB)
-    half = hw(rom, addr)
+    half = view[index]
     if size == 4:
         target = thumb_call_target(rom, addr)
         calls = [(target, MODE_THUMB)] if in_image(rom, target) else []
@@ -265,23 +316,27 @@ def probe(rom, entry):
     seen = set()
     returned = False
     branches = 0
+    view = halves_of(rom)
+    count = len(view)
     while queue:
         addr = queue.pop()
         if addr in seen:
             continue
         seen.add(addr)
+        index = (addr - ROM_BASE) >> 1
         steps = 0
         while steps < STEP_LIMIT:
             steps += 1
-            size = thumb_length(rom, addr)
+            size = thumb_size(view, index, count)
             if size is None:
                 return False, False, 0
-            half = hw(rom, addr)
+            half = view[index]
             if size == 4:
                 target = thumb_call_target(rom, addr)
                 if in_image(rom, target):
                     queue.append(target)
                 addr += 4
+                index += 2
                 continue
             if (half & 0xFF80) == 0x4700:
                 if half == 0x4770:
@@ -306,8 +361,10 @@ def probe(rom, entry):
                 if in_image(rom, target):
                     queue.append(target)
                 addr += 2
+                index += 1
                 continue
             addr += 2
+            index += 1
         else:
             return False, False, 0
     return True, returned, branches
@@ -316,8 +373,9 @@ def probe(rom, entry):
 def thumb_entries(rom):
     targets = set()
     words = 0
-    for (value,) in struct.iter_unpack("<I", rom):
-        if value & 1 and in_image(rom, value):
+    end = ROM_BASE + len(rom)
+    for value in words_of(rom):
+        if value & 1 and ROM_BASE <= value < end:
             words += 1
             targets.add(value & ~1)
     return targets, words
@@ -361,14 +419,16 @@ def overlay_copy(rom):
 
 def overlay_thunks(rom, dest, size):
     out = []
-    for addr in range(ROM_BASE, ROM_BASE + len(rom) - 12, 4):
-        if (hw(rom, addr), hw(rom, addr + 2)) != THUNK_HEAD[0]:
+    halves = halves_of(rom)
+    words = words_of(rom)
+    for index in range(0, len(words) - 3):
+        if (halves[2 * index], halves[2 * index + 1]) != THUNK_HEAD[0]:
             continue
-        if word(rom, addr + 4) != THUNK_HEAD[1]:
+        if words[index + 1] != THUNK_HEAD[1]:
             continue
-        target = word(rom, addr + 8)
+        target = words[index + 2]
         if dest <= target < dest + size:
-            out.append((addr, target))
+            out.append((ROM_BASE + 4 * index, target))
     return out
 
 
@@ -446,21 +506,26 @@ def register_branches(rom, classes, modes, ranges):
 
 def repeated_code_pointers(rom):
     counts = {}
-    for (value,) in struct.iter_unpack("<I", rom):
-        if value & 1 and ROM_BASE <= (value & ~1) < ROM_BASE + len(rom):
+    end = ROM_BASE + len(rom)
+    for value in words_of(rom):
+        if value & 1 and ROM_BASE <= (value & ~1) < end:
             counts[value] = counts.get(value, 0) + 1
     return {value for value, count in counts.items() if count >= FACTORY_REPEATS}
 
 
 def linear_end(rom, entry):
+    view = halves_of(rom)
+    count = len(view)
+    index = (entry - ROM_BASE) >> 1
     addr = entry
     for _step in range(PROLOGUE_CAP):
-        size = thumb_length(rom, addr)
+        size = thumb_size(view, index, count)
         if size is None:
             return None
-        half = hw(rom, addr)
+        half = view[index]
         if size == 4:
             addr += 4
+            index += 2
             continue
         if (half & 0xFF00) == 0xBD00 or (half & 0xFF87) == 0x4700:
             return addr + size
@@ -468,6 +533,7 @@ def linear_end(rom, entry):
                 or (half & 0xFF80) == 0x4700):
             return None
         addr += size
+        index += 1
     return None
 
 
@@ -486,21 +552,38 @@ def decodable_runs(rom, classes):
     counts = {threshold: 0 for threshold in RUN_THRESHOLDS}
     offset = 0
     total = len(rom)
+    view = halves_of(rom)
+    count = len(view)
     while offset < total:
         if classes[offset] != UNCLASSIFIED:
             offset += 2
             continue
         start = offset
         while offset < total and classes[offset] == UNCLASSIFIED:
-            if thumb_length(rom, ROM_BASE + offset) is None:
+            index = offset >> 1
+            if index + 1 > count:
+                break
+            half = view[index]
+            if half >= 0xF000:
+                if half >= 0xF800 or index + 2 > count or view[index + 1] < 0xF800:
+                    break
+            elif _UNDEFINED[half]:
                 break
             offset += 2
         length = offset - start
         for threshold in RUN_THRESHOLDS:
             if length >= 2 * threshold:
                 counts[threshold] += length
-        while (offset < total and classes[offset] == UNCLASSIFIED
-               and thumb_length(rom, ROM_BASE + offset) is None):
+        while offset < total and classes[offset] == UNCLASSIFIED:
+            index = offset >> 1
+            if index + 1 > count:
+                break
+            half = view[index]
+            if half >= 0xF000:
+                if half < 0xF800 and index + 2 <= count and view[index + 1] >= 0xF800:
+                    break
+            elif not _UNDEFINED[half]:
+                break
             offset += 2
     return counts
 
@@ -773,16 +856,26 @@ def irq_handler(rom, overlay, install):
 
 
 
+_RUN_PATTERNS = {}
+
+
 def class_runs(classes, value):
-    data = bytes(classes)
+    marker = bytes([value])
+    if classes.count(marker) > 1 << 20:
+        pattern = _RUN_PATTERNS.get(value)
+        if pattern is None:
+            pattern = re.compile(re.escape(marker) + b"+")
+            _RUN_PATTERNS[value] = pattern
+        return [(match.start(), match.end()) for match in pattern.finditer(classes)]
     out = []
     pos = 0
-    while pos < len(data):
-        start = data.find(bytes([value]), pos)
+    total = len(classes)
+    while pos < total:
+        start = classes.find(marker, pos)
         if start < 0:
             break
         stop = start
-        while stop < len(data) and data[stop] == value:
+        while stop < total and classes[stop] == value:
             stop += 1
         out.append((start, stop))
         pos = stop
@@ -791,27 +884,30 @@ def class_runs(classes, value):
 
 def mode_runs(classes, modes, values):
     out = []
-    pos = 0
-    total = len(classes)
-    while pos < total:
-        name = CLASS_NAMES.get(classes[pos])
-        if name not in values:
-            pos += 1
+    for value in range(256):
+        name = _NAMES[value]
+        if name is None or name not in values:
             continue
-        start = pos
-        mode = modes[pos]
-        while pos < total and CLASS_NAMES.get(classes[pos]) == name and modes[pos] == mode:
-            pos += 1
-        out.append((start, pos, name, mode))
+        for start, stop in class_runs(classes, value):
+            pos = start
+            while pos < stop:
+                mode = modes[pos]
+                end = pos + 1
+                while end < stop and modes[end] == mode:
+                    end += 1
+                out.append((pos, end, name, mode))
+                pos = end
+    out.sort()
     return out
 
 
 def pointer_runs(rom):
     runs = []
     current = []
-    for (value,) in struct.iter_unpack("<I", rom):
+    end = ROM_BASE + len(rom)
+    for value in words_of(rom):
         target = value & ~1
-        if value & 1 and in_image(rom, target):
+        if value & 1 and ROM_BASE <= target < end:
             current.append(target)
         elif current:
             if len(current) > 1:
@@ -1145,11 +1241,12 @@ def census(rom, want_overlay):
                     continue
                 added += hold(entry, TABLE, shape)
         anchors = []
+        halves = halves_of(rom)
         for begin, stop in code_ranges(classes):
             for index in range(begin, stop, 2):
                 if classes[index] not in anchor_classes:
                     continue
-                half = hw(rom, ROM_BASE + index)
+                half = halves[index >> 1]
                 if (half & 0xFF00) == 0xBD00 or (half & 0xFF87) == 0x4700:
                     anchors.append(ROM_BASE + index + 2)
         for candidate_address in anchors:
@@ -1166,7 +1263,7 @@ def census(rom, want_overlay):
         for index in range(0, len(rom), 2):
             if classes[index] != UNCLASSIFIED:
                 continue
-            if not 0xB500 <= hw(rom, ROM_BASE + index) <= 0xB5FF:
+            if not 0xB500 <= halves[index >> 1] <= 0xB5FF:
                 continue
             sweep_candidates += 1
             entry = (ROM_BASE + index, MODE_THUMB)
@@ -1231,9 +1328,11 @@ def census(rom, want_overlay):
         raise SystemExit("the class totals %d are not the image size %d"
                          % (sum(totals.values()), len(rom)))
     accepted_set = set(accepted)
-    accepted_words = sum(1 for (value,) in struct.iter_unpack("<I", rom)
-                         if value & 1 and in_image(rom, value)
-                         and (value & ~1) in {address for address, _mode in accepted_set})
+    accepted_addresses = {address for address, _mode in accepted_set}
+    end = ROM_BASE + len(rom)
+    accepted_words = sum(1 for value in words_of(rom)
+                         if value & 1 and ROM_BASE <= value < end
+                         and (value & ~1) in accepted_addresses)
     uncalled = [entry for entry in accepted_order if entry not in calls]
     leaves = [entry for entry in accepted_order
               if channels[entry] in ("call", "function pointer table")
