@@ -483,6 +483,102 @@ def test_a_behaviour_test_row_citing_a_passing_test_is_not_caught():
         run_test=lambda path, name: (0, "1 passed in 0.10s")) == []
 
 
+class Completed:
+    def __init__(self, text, code):
+        self.stdout = text.encode("utf-8")
+        self.returncode = code
+
+
+class Launcher:
+    def __init__(self, answers):
+        self.answers = list(answers)
+        self.calls = []
+
+    def __call__(self, argv, **_options):
+        self.calls.append(argv)
+        text, code = self.answers.pop(0)
+        return Completed(text, code)
+
+
+CITED_ONE = "tools/code/test_thumb_vm.py::test_one"
+CITED_TWO = "tools/code/test_thumb_vm.py::test_two"
+BATCH_BOTH_PASS = "%s PASSED [ 50%%]\n%s PASSED [100%%]\n\n2 passed in 0.40s\n" % (CITED_ONE,
+                                                                                   CITED_TWO)
+BATCH_ONE_FAILS = "%s PASSED [ 50%%]\n%s FAILED [100%%]\n\n1 failed, 1 passed in 0.40s\n" % (
+    CITED_ONE, CITED_TWO)
+
+
+def test_one_invocation_carries_every_cited_test():
+    launcher = Launcher([(BATCH_BOTH_PASS, 0)])
+    results = lints.run_cited_tests([("tools/code/test_thumb_vm.py", "test_one"),
+                                     ("tools/code/test_thumb_vm.py", "test_two")], launcher)
+    assert len(launcher.calls) == 1
+    assert launcher.calls[0][5:] == [CITED_ONE, CITED_TWO]
+    assert results == {("tools/code/test_thumb_vm.py", "test_one"): (0, ""),
+                       ("tools/code/test_thumb_vm.py", "test_two"): (0, "")}
+
+
+def test_a_cited_test_repeated_in_the_batch_reaches_it_once():
+    launcher = Launcher([("%s PASSED [100%%]\n\n1 passed in 0.20s\n" % CITED_ONE, 0)])
+    lints.run_cited_tests([("tools/code/test_thumb_vm.py", "test_one")] * 2, launcher)
+    assert launcher.calls[0][5:] == [CITED_ONE]
+
+
+def test_a_failing_cited_test_keeps_the_output_of_its_own_run():
+    launcher = Launcher([(BATCH_ONE_FAILS, 1), ("1 failed in 0.10s", 1)])
+    results = lints.run_cited_tests([("tools/code/test_thumb_vm.py", "test_one"),
+                                     ("tools/code/test_thumb_vm.py", "test_two")], launcher)
+    assert len(launcher.calls) == 2
+    assert launcher.calls[1][-1] == CITED_TWO
+    assert results[("tools/code/test_thumb_vm.py", "test_one")] == (0, "")
+    assert results[("tools/code/test_thumb_vm.py", "test_two")] == (1, "1 failed in 0.10s")
+
+
+def test_a_batch_failure_that_passes_alone_counts_as_passing():
+    launcher = Launcher([(BATCH_ONE_FAILS, 1), ("1 passed in 0.10s", 0)])
+    results = lints.run_cited_tests([("tools/code/test_thumb_vm.py", "test_one"),
+                                     ("tools/code/test_thumb_vm.py", "test_two")], launcher)
+    assert len(launcher.calls) == 2
+    assert launcher.calls[1][-1] == CITED_TWO
+    assert results[("tools/code/test_thumb_vm.py", "test_two")] == (0, "1 passed in 0.10s")
+
+
+def test_a_cited_test_the_batch_does_not_report_runs_alone():
+    launcher = Launcher([("%s PASSED [100%%]\n\n1 passed in 0.20s\n" % CITED_ONE, 0),
+                         ("1 passed in 0.05s", 0)])
+    results = lints.run_cited_tests([("tools/code/test_thumb_vm.py", "test_one"),
+                                     ("tools/code/test_thumb_vm.py", "test_two")], launcher)
+    assert len(launcher.calls) == 2
+    assert launcher.calls[1][-1] == CITED_TWO
+    assert results[("tools/code/test_thumb_vm.py", "test_two")] == (0, "1 passed in 0.05s")
+
+
+def test_a_cited_test_that_cannot_be_collected_is_a_finding():
+    launcher = Launcher([("ERROR tools/code/test_thumb_vm.py\n\n1 error in 0.30s\n", 2),
+                         ("1 error in 0.10s", 2)])
+    results = lints.run_cited_tests([("tools/code/test_thumb_vm.py", "test_one")], launcher)
+    assert results[("tools/code/test_thumb_vm.py", "test_one")] == (2, "1 error in 0.10s")
+
+
+def test_a_collection_error_in_the_batch_reaches_the_findings(monkeypatch):
+    launcher = Launcher([("ERROR tools/code/test_thumb_vm.py\n\n1 error in 0.30s\n", 2),
+                         ("1 error in 0.10s", 2)])
+    monkeypatch.setattr(lints.subprocess, "run", launcher)
+    findings = lints.behaviour_test_findings(BEHAVIOUR_ROW,
+                                             tracked={"tools/code/test_thumb_vm.py"})
+    assert [kind for kind, _detail in findings] == ["NAMING-behaviour-test"]
+    assert findings[0][1].endswith(BEHAVIOUR_CITED + " exits 2: 1 error in 0.10s")
+
+
+def test_a_nested_batch_run_launches_no_cited_test(monkeypatch):
+    monkeypatch.setenv(lints.BEHAVIOUR_GUARD, "1")
+    launcher = Launcher([])
+    results = lints.run_cited_tests([("tools/code/test_thumb_vm.py", "test_one")], launcher)
+    assert launcher.calls == []
+    assert results == {("tools/code/test_thumb_vm.py", "test_one"):
+                       (0, "skipped: a nested lint run does not run a cited test")}
+
+
 LIB_ROW = ("address,old,new,evidence_class,evidence\n"
            "0x08000276,sub_08000276,strlen,toolchain-library,"
            "armlib/c_t__un.l member strlen.o symbol strlen 76 B matched\n")

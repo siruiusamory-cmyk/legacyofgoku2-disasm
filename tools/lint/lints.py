@@ -62,6 +62,8 @@ README_FUNCTIONS = re.compile(r"([\d,]+)\s+of\s+the\s+([\d,]+)\s+functions")
 BEHAVIOUR_CLASS = "behaviour-test"
 BEHAVIOUR_CITATION = re.compile(r"(tools/[A-Za-z0-9_/]+\.py)::([A-Za-z_][A-Za-z0-9_]*)")
 BEHAVIOUR_GUARD = "LG2_BEHAVIOUR_TEST"
+CITED_PASSED = ("PASSED", "SKIPPED", "XFAIL", "XPASS")
+CITED_RESULT = re.compile(r"^(\S+?\.py)::(\S+?)\s+(PASSED|FAILED|ERROR|SKIPPED|XFAIL|XPASS)\b")
 BATCH = (".cmd", ".bat")
 SOURCES = (".py", ".cmd", ".bat")
 
@@ -490,52 +492,82 @@ def cited_test_problem(path, name):
     return None
 
 
-def run_cited_test(path, name):
+def run_cited_test(path, name, launch=None):
     if os.environ.get(BEHAVIOUR_GUARD) == "1":
         return 0, "skipped: a nested lint run does not run a cited test"
     argv = [sys.executable, "-m", "pytest", "-q", "%s::%s" % (path, name)]
     environment = dict(os.environ)
     environment[BEHAVIOUR_GUARD] = "1"
-    proc = subprocess.run(argv, cwd=ROOT, capture_output=True, env=environment)
+    proc = (launch or subprocess.run)(argv, cwd=ROOT, capture_output=True, env=environment)
     lines = [line for line in proc.stdout.decode("utf-8", "replace").splitlines() if line.strip()]
     return proc.returncode, lines[-1] if lines else ""
+
+
+def cited_test_results(text):
+    results = {}
+    for line in text.splitlines():
+        match = CITED_RESULT.match(line)
+        if match:
+            results[(match.group(1), match.group(2))] = match.group(3)
+    return results
+
+
+def run_cited_tests(pairs, launch=None):
+    if os.environ.get(BEHAVIOUR_GUARD) == "1":
+        return dict((pair, run_cited_test(*pair)) for pair in pairs)
+    environment = dict(os.environ)
+    environment[BEHAVIOUR_GUARD] = "1"
+    argv = [sys.executable, "-m", "pytest", "-v", "--tb=no"]
+    argv += ["%s::%s" % pair for pair in dict.fromkeys(pairs)]
+    proc = (launch or subprocess.run)(argv, cwd=ROOT, capture_output=True, env=environment)
+    status = cited_test_results(proc.stdout.decode("utf-8", "replace"))
+    return dict((pair, (0, "") if status.get(pair, "") in CITED_PASSED
+                 else run_cited_test(pair[0], pair[1], launch)) for pair in pairs)
 
 
 def behaviour_test_findings(ledger_text, tracked=None, run_test=None):
     module = naming_module()
     site = naming_site(module, module.LEDGER)
-    if run_test is None:
-        run_test = run_cited_test
-    findings = []
+    found = []
+    pending = []
     for number, cells in module.ledger_rows(ledger_text):
         if len(cells) != 5 or cells[3] != BEHAVIOUR_CLASS:
             continue
         place = "%s:%d" % (site, number)
-        found = BEHAVIOUR_CITATION.findall(cells[4])
-        if len(found) != 1:
-            findings.append(("NAMING-behaviour-test",
-                             "%s: one tools/...py::test_name citation expected, found %d"
-                             % (place, len(found))))
+        citations = BEHAVIOUR_CITATION.findall(cells[4])
+        if len(citations) != 1:
+            found.append((number, ("NAMING-behaviour-test",
+                                   "%s: one tools/...py::test_name citation expected, found %d"
+                                   % (place, len(citations)))))
             continue
-        path, name = found[0]
+        path, name = citations[0]
         if tracked is None:
             tracked = tracked_files()
             if tracked is None:
                 return [("lint-enumeration",
                          "git ls-files failed, the behaviour test check cannot see the tree")]
         if path not in tracked:
-            findings.append(("NAMING-behaviour-test",
-                             "%s: %s is not tracked" % (place, path)))
+            found.append((number, ("NAMING-behaviour-test",
+                                   "%s: %s is not tracked" % (place, path))))
             continue
         problem = cited_test_problem(path, name)
         if problem is not None:
-            findings.append(("NAMING-behaviour-test", "%s: %s" % (place, problem)))
+            found.append((number, ("NAMING-behaviour-test", "%s: %s" % (place, problem))))
             continue
-        code, output = run_test(path, name)
-        if code != 0:
-            findings.append(("NAMING-behaviour-test",
-                             "%s: %s::%s exits %d: %s" % (place, path, name, code, output)))
-    return findings
+        pending.append((number, place, path, name))
+    if pending:
+        pairs = [(path, name) for _number, _place, path, name in pending]
+        if run_test is None:
+            results = run_cited_tests(pairs)
+        else:
+            results = dict((pair, run_test(*pair)) for pair in pairs)
+        for number, place, path, name in pending:
+            code, output = results[(path, name)]
+            if code != 0:
+                found.append((number, ("NAMING-behaviour-test",
+                                       "%s: %s::%s exits %d: %s"
+                                       % (place, path, name, code, output))))
+    return [finding for _number, finding in sorted(found)]
 
 
 def naming_counts(table_text, addresses):
