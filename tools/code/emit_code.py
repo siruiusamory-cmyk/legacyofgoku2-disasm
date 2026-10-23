@@ -23,6 +23,7 @@ END = 0x800000
 CLASS_TAGS = {"proven code": "proven", "filtered pointer-entry code": "filtered",
               "table-held code": "table", "gap-fill code": "gap"}
 HW_REGISTERS = {0x04000000: "REG_DISPCNT", 0x04000018: "REG_BG2HOFS", 0x0400001C: "REG_BG3HOFS",
+             0x04000020: "REG_BG2PA",
              0x04000040: "REG_WIN0H", 0x04000050: "REG_BLDCNT", 0x04000052: "REG_BLDALPHA",
              0x04000080: "REG_SOUNDCNT_L", 0x040000A0: "REG_FIFO_A", 0x040000A4: "REG_FIFO_B",
              0x040000D4: "REG_DMA3SAD", 0x040000D8: "REG_DMA3DAD", 0x040000DC: "REG_DMA3CNT_L",

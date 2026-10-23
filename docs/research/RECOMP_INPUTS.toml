@@ -1,7 +1,7 @@
 [counts]
-functions = 787
-code_bytes = 80762
-entries = 2408
+functions = 811
+code_bytes = 81628
+entries = 2460
 jump_tables = 1
 code_copies = 1
 
@@ -896,6 +896,12 @@ size = 142
 origin = "gap"
 
 [[code]]
+addr = 0x08008f44
+mode = "thumb"
+size = 22
+origin = "table"
+
+[[code]]
 addr = 0x08008f5a
 mode = "thumb"
 size = 52
@@ -904,8 +910,8 @@ origin = "filtered"
 [[code]]
 addr = 0x08008f8e
 mode = "thumb"
-size = 22
-origin = "gap"
+size = 56
+origin = "table"
 
 [[code]]
 addr = 0x08008fc6
@@ -916,8 +922,8 @@ origin = "filtered"
 [[code]]
 addr = 0x08009000
 mode = "thumb"
-size = 14
-origin = "gap"
+size = 98
+origin = "table"
 
 [[code]]
 addr = 0x08009062
@@ -929,7 +935,7 @@ origin = "filtered"
 addr = 0x080090fe
 mode = "thumb"
 size = 12
-origin = "gap"
+origin = "table"
 
 [[code]]
 addr = 0x0800910a
@@ -940,8 +946,20 @@ origin = "filtered"
 [[code]]
 addr = 0x08009128
 mode = "thumb"
+size = 244
+origin = "table"
+
+[[code]]
+addr = 0x0800921c
+mode = "thumb"
 size = 8
 origin = "gap"
+
+[[code]]
+addr = 0x08009224
+mode = "thumb"
+size = 72
+origin = "table"
 
 [[code]]
 addr = 0x0800926c
@@ -1216,8 +1234,14 @@ origin = "filtered"
 [[code]]
 addr = 0x0800b042
 mode = "thumb"
-size = 28
+size = 22
 origin = "gap"
+
+[[code]]
+addr = 0x0800b058
+mode = "thumb"
+size = 56
+origin = "table"
 
 [[code]]
 addr = 0x0800b090
@@ -2140,13 +2164,13 @@ origin = "filtered"
 [[code]]
 addr = 0x0801087a
 mode = "thumb"
-size = 10
+size = 22
 origin = "table"
 
 [[code]]
-addr = 0x08010884
+addr = 0x08010890
 mode = "thumb"
-size = 6
+size = 8
 origin = "gap"
 
 [[code]]
@@ -2274,6 +2298,12 @@ addr = 0x08011e3c
 mode = "thumb"
 size = 106
 origin = "gap"
+
+[[code]]
+addr = 0x08011f88
+mode = "thumb"
+size = 30
+origin = "table"
 
 [[code]]
 addr = 0x08011fa6
@@ -2471,7 +2501,7 @@ origin = "filtered"
 addr = 0x08013178
 mode = "thumb"
 size = 24
-origin = "gap"
+origin = "table"
 
 [[code]]
 addr = 0x08013190
@@ -2483,7 +2513,7 @@ origin = "filtered"
 addr = 0x080131ac
 mode = "thumb"
 size = 24
-origin = "gap"
+origin = "table"
 
 [[code]]
 addr = 0x080131c4
@@ -2495,7 +2525,7 @@ origin = "filtered"
 addr = 0x080131e0
 mode = "thumb"
 size = 24
-origin = "gap"
+origin = "table"
 
 [[code]]
 addr = 0x080131f8
@@ -2507,7 +2537,7 @@ origin = "filtered"
 addr = 0x08013214
 mode = "thumb"
 size = 24
-origin = "gap"
+origin = "table"
 
 [[code]]
 addr = 0x0801322c
@@ -2519,7 +2549,7 @@ origin = "filtered"
 addr = 0x08013248
 mode = "thumb"
 size = 24
-origin = "gap"
+origin = "table"
 
 [[code]]
 addr = 0x08013260
@@ -2537,7 +2567,7 @@ origin = "filtered"
 addr = 0x0801340c
 mode = "thumb"
 size = 24
-origin = "gap"
+origin = "table"
 
 [[code]]
 addr = 0x08013424
@@ -2549,7 +2579,7 @@ origin = "filtered"
 addr = 0x08013440
 mode = "thumb"
 size = 24
-origin = "gap"
+origin = "table"
 
 [[code]]
 addr = 0x08013458
@@ -2561,7 +2591,7 @@ origin = "filtered"
 addr = 0x08013474
 mode = "thumb"
 size = 24
-origin = "gap"
+origin = "table"
 
 [[code]]
 addr = 0x0801348c
@@ -2573,7 +2603,7 @@ origin = "filtered"
 addr = 0x080134a8
 mode = "thumb"
 size = 24
-origin = "gap"
+origin = "table"
 
 [[code]]
 addr = 0x080134c0
@@ -3062,6 +3092,12 @@ size = 32
 origin = "filtered"
 
 [[code]]
+addr = 0x0801a824
+mode = "thumb"
+size = 8
+origin = "table"
+
+[[code]]
 addr = 0x0801a82c
 mode = "thumb"
 size = 20
@@ -3080,15 +3116,27 @@ size = 22
 origin = "filtered"
 
 [[code]]
+addr = 0x0801a9a4
+mode = "thumb"
+size = 34
+origin = "table"
+
+[[code]]
+addr = 0x0801a9c6
+mode = "thumb"
+size = 6
+origin = "gap"
+
+[[code]]
 addr = 0x0801a9cc
 mode = "thumb"
-size = 264
+size = 316
 origin = "proven"
 
 [[code]]
-addr = 0x0801aad4
+addr = 0x0801ab08
 mode = "thumb"
-size = 52
+size = 34
 origin = "gap"
 
 [[code]]
@@ -3230,6 +3278,18 @@ size = 22
 origin = "gap"
 
 [[code]]
+addr = 0x0801bb88
+mode = "thumb"
+size = 8
+origin = "table"
+
+[[code]]
+addr = 0x0801bb90
+mode = "thumb"
+size = 28
+origin = "gap"
+
+[[code]]
 addr = 0x0801bbac
 mode = "thumb"
 size = 22
@@ -3242,6 +3302,12 @@ size = 24
 origin = "gap"
 
 [[code]]
+addr = 0x0801bca8
+mode = "thumb"
+size = 4
+origin = "table"
+
+[[code]]
 addr = 0x0801bcac
 mode = "thumb"
 size = 34
@@ -3252,6 +3318,24 @@ addr = 0x0801bcce
 mode = "thumb"
 size = 30
 origin = "gap"
+
+[[code]]
+addr = 0x0801bcf0
+mode = "thumb"
+size = 20
+origin = "table"
+
+[[code]]
+addr = 0x0801bd04
+mode = "thumb"
+size = 14
+origin = "gap"
+
+[[code]]
+addr = 0x0801bd16
+mode = "thumb"
+size = 4
+origin = "table"
 
 [[code]]
 addr = 0x0801bd1a
@@ -3280,8 +3364,26 @@ origin = "filtered"
 [[code]]
 addr = 0x0801c07c
 mode = "thumb"
-size = 12
+size = 8
 origin = "gap"
+
+[[code]]
+addr = 0x0801c084
+mode = "thumb"
+size = 24
+origin = "table"
+
+[[code]]
+addr = 0x0801c09c
+mode = "thumb"
+size = 58
+origin = "gap"
+
+[[code]]
+addr = 0x0801c0d6
+mode = "thumb"
+size = 4
+origin = "table"
 
 [[code]]
 addr = 0x0801c0da
@@ -3328,7 +3430,19 @@ origin = "filtered"
 [[code]]
 addr = 0x0801c446
 mode = "thumb"
-size = 36
+size = 10
+origin = "gap"
+
+[[code]]
+addr = 0x0801c450
+mode = "thumb"
+size = 52
+origin = "table"
+
+[[code]]
+addr = 0x0801c484
+mode = "thumb"
+size = 4
 origin = "gap"
 
 [[code]]
@@ -3354,6 +3468,12 @@ addr = 0x0801c4fa
 mode = "thumb"
 size = 86
 origin = "gap"
+
+[[code]]
+addr = 0x0801c5a2
+mode = "thumb"
+size = 6
+origin = "table"
 
 [[code]]
 addr = 0x0801c5a8
@@ -3626,6 +3746,12 @@ size = 26
 origin = "filtered"
 
 [[code]]
+addr = 0x0801f230
+mode = "thumb"
+size = 24
+origin = "table"
+
+[[code]]
 addr = 0x0801f248
 mode = "thumb"
 size = 310
@@ -3716,6 +3842,12 @@ size = 252
 origin = "proven"
 
 [[code]]
+addr = 0x0801f9d4
+mode = "thumb"
+size = 2
+origin = "table"
+
+[[code]]
 addr = 0x0801f9d6
 mode = "thumb"
 size = 228
@@ -3797,7 +3929,7 @@ origin = "filtered"
 addr = 0x0801ffc8
 mode = "thumb"
 size = 30
-origin = "gap"
+origin = "table"
 
 [[code]]
 addr = 0x0801ffe6
@@ -3809,7 +3941,7 @@ origin = "filtered"
 addr = 0x08020056
 mode = "thumb"
 size = 30
-origin = "gap"
+origin = "table"
 
 [[code]]
 addr = 0x08020074
@@ -4559,6 +4691,18 @@ origin = "proven"
 addr = 0x080265c2
 mode = "thumb"
 size = 26
+origin = "gap"
+
+[[code]]
+addr = 0x080265dc
+mode = "thumb"
+size = 10
+origin = "table"
+
+[[code]]
+addr = 0x080265e6
+mode = "thumb"
+size = 2
 origin = "gap"
 
 [[code]]
@@ -7132,11 +7276,19 @@ addr = 0x08008e6c
 mode = "thumb"
 
 [[entry]]
+addr = 0x08008f44
+mode = "thumb"
+
+[[entry]]
 addr = 0x08008f5a
 mode = "thumb"
 
 [[entry]]
 addr = 0x08008f8e
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008fa4
 mode = "thumb"
 
 [[entry]]
@@ -7149,6 +7301,22 @@ mode = "thumb"
 
 [[entry]]
 addr = 0x08009000
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800900e
+mode = "thumb"
+
+[[entry]]
+addr = 0x08009022
+mode = "thumb"
+
+[[entry]]
+addr = 0x08009036
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800904a
 mode = "thumb"
 
 [[entry]]
@@ -7185,6 +7353,38 @@ mode = "thumb"
 
 [[entry]]
 addr = 0x08009128
+mode = "thumb"
+
+[[entry]]
+addr = 0x08009130
+mode = "thumb"
+
+[[entry]]
+addr = 0x08009160
+mode = "thumb"
+
+[[entry]]
+addr = 0x08009190
+mode = "thumb"
+
+[[entry]]
+addr = 0x080091bc
+mode = "thumb"
+
+[[entry]]
+addr = 0x080091ec
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800921c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08009224
+mode = "thumb"
+
+[[entry]]
+addr = 0x08009250
 mode = "thumb"
 
 [[entry]]
@@ -7885,6 +8085,38 @@ mode = "thumb"
 
 [[entry]]
 addr = 0x0800b042
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800b058
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800b05e
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800b064
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800b06a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800b070
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800b078
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800b080
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800b088
 mode = "thumb"
 
 [[entry]]
@@ -9768,6 +10000,14 @@ addr = 0x08010884
 mode = "thumb"
 
 [[entry]]
+addr = 0x0801088a
+mode = "thumb"
+
+[[entry]]
+addr = 0x08010890
+mode = "thumb"
+
+[[entry]]
 addr = 0x08010898
 mode = "thumb"
 
@@ -9933,6 +10173,10 @@ mode = "thumb"
 
 [[entry]]
 addr = 0x08011e3c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08011f88
 mode = "thumb"
 
 [[entry]]
@@ -11020,6 +11264,14 @@ addr = 0x0801a804
 mode = "thumb"
 
 [[entry]]
+addr = 0x0801a824
+mode = "thumb"
+
+[[entry]]
+addr = 0x0801a828
+mode = "thumb"
+
+[[entry]]
 addr = 0x0801a82c
 mode = "thumb"
 
@@ -11029,6 +11281,22 @@ mode = "thumb"
 
 [[entry]]
 addr = 0x0801a946
+mode = "thumb"
+
+[[entry]]
+addr = 0x0801a9a4
+mode = "thumb"
+
+[[entry]]
+addr = 0x0801a9a8
+mode = "thumb"
+
+[[entry]]
+addr = 0x0801a9b8
+mode = "thumb"
+
+[[entry]]
+addr = 0x0801a9c6
 mode = "thumb"
 
 [[entry]]
@@ -11073,6 +11341,10 @@ mode = "thumb"
 
 [[entry]]
 addr = 0x0801aad4
+mode = "thumb"
+
+[[entry]]
+addr = 0x0801ab08
 mode = "thumb"
 
 [[entry]]
@@ -11204,6 +11476,18 @@ addr = 0x0801ba8c
 mode = "thumb"
 
 [[entry]]
+addr = 0x0801bb88
+mode = "thumb"
+
+[[entry]]
+addr = 0x0801bb8c
+mode = "thumb"
+
+[[entry]]
+addr = 0x0801bb90
+mode = "thumb"
+
+[[entry]]
 addr = 0x0801bbac
 mode = "thumb"
 
@@ -11212,11 +11496,31 @@ addr = 0x0801bbc2
 mode = "thumb"
 
 [[entry]]
+addr = 0x0801bca8
+mode = "thumb"
+
+[[entry]]
 addr = 0x0801bcac
 mode = "thumb"
 
 [[entry]]
 addr = 0x0801bcce
+mode = "thumb"
+
+[[entry]]
+addr = 0x0801bcf0
+mode = "thumb"
+
+[[entry]]
+addr = 0x0801bcf6
+mode = "thumb"
+
+[[entry]]
+addr = 0x0801bd04
+mode = "thumb"
+
+[[entry]]
+addr = 0x0801bd16
 mode = "thumb"
 
 [[entry]]
@@ -11237,6 +11541,22 @@ mode = "thumb"
 
 [[entry]]
 addr = 0x0801c07c
+mode = "thumb"
+
+[[entry]]
+addr = 0x0801c084
+mode = "thumb"
+
+[[entry]]
+addr = 0x0801c088
+mode = "thumb"
+
+[[entry]]
+addr = 0x0801c09c
+mode = "thumb"
+
+[[entry]]
+addr = 0x0801c0d6
 mode = "thumb"
 
 [[entry]]
@@ -11276,6 +11596,18 @@ addr = 0x0801c446
 mode = "thumb"
 
 [[entry]]
+addr = 0x0801c450
+mode = "thumb"
+
+[[entry]]
+addr = 0x0801c46a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0801c484
+mode = "thumb"
+
+[[entry]]
 addr = 0x0801c488
 mode = "thumb"
 
@@ -11293,6 +11625,10 @@ mode = "thumb"
 
 [[entry]]
 addr = 0x0801c4fa
+mode = "thumb"
+
+[[entry]]
+addr = 0x0801c5a2
 mode = "thumb"
 
 [[entry]]
@@ -11672,6 +12008,10 @@ addr = 0x0801f1ea
 mode = "thumb"
 
 [[entry]]
+addr = 0x0801f230
+mode = "thumb"
+
+[[entry]]
 addr = 0x0801f248
 mode = "thumb"
 
@@ -12033,6 +12373,10 @@ mode = "thumb"
 
 [[entry]]
 addr = 0x0801f972
+mode = "thumb"
+
+[[entry]]
+addr = 0x0801f9d4
 mode = "thumb"
 
 [[entry]]
@@ -14153,6 +14497,14 @@ mode = "thumb"
 
 [[entry]]
 addr = 0x080265c2
+mode = "thumb"
+
+[[entry]]
+addr = 0x080265dc
+mode = "thumb"
+
+[[entry]]
+addr = 0x080265e6
 mode = "thumb"
 
 [[entry]]

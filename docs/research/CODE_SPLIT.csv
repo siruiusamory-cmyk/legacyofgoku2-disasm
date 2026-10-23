@@ -198,15 +198,17 @@ start,end,bytes,class
 0x08008C26,0x08008E6C,582,filtered pointer-entry code
 0x08008E6C,0x08008EFA,142,gap-fill code
 0x08008F1C,0x08008F20,4,literal pool
+0x08008F44,0x08008F5A,22,table-held code
 0x08008F5A,0x08008F8E,52,filtered pointer-entry code
-0x08008F8E,0x08008FA4,22,gap-fill code
+0x08008F8E,0x08008FC6,56,table-held code
 0x08008FC6,0x08009000,58,filtered pointer-entry code
-0x08009000,0x0800900E,14,gap-fill code
+0x08009000,0x08009062,98,table-held code
 0x08009062,0x080090FE,156,filtered pointer-entry code
-0x080090FE,0x0800910A,12,gap-fill code
+0x080090FE,0x0800910A,12,table-held code
 0x0800910A,0x08009128,30,filtered pointer-entry code
-0x08009128,0x08009130,8,gap-fill code
-0x0800921C,0x08009220,4,literal pool
+0x08009128,0x0800921C,244,table-held code
+0x0800921C,0x08009224,8,gap-fill code
+0x08009224,0x0800926C,72,table-held code
 0x0800926C,0x080092DA,110,filtered pointer-entry code
 0x080092DA,0x080092E4,10,gap-fill code
 0x080092E4,0x0800931C,56,proven code
@@ -254,7 +256,8 @@ start,end,bytes,class
 0x0800AFA0,0x0800AFC2,34,filtered pointer-entry code
 0x0800AFC2,0x0800AFD4,18,table-held code
 0x0800AFD4,0x0800B042,110,filtered pointer-entry code
-0x0800B042,0x0800B05E,28,gap-fill code
+0x0800B042,0x0800B058,22,gap-fill code
+0x0800B058,0x0800B090,56,table-held code
 0x0800B090,0x0800B140,176,filtered pointer-entry code
 0x0800B140,0x0800B19C,92,gap-fill code
 0x0800B19C,0x0800B274,216,proven code
@@ -456,9 +459,8 @@ start,end,bytes,class
 0x080107FE,0x08010818,26,filtered pointer-entry code
 0x08010818,0x08010834,28,gap-fill code
 0x08010860,0x0801087A,26,filtered pointer-entry code
-0x0801087A,0x08010884,10,table-held code
-0x08010884,0x0801088A,6,gap-fill code
-0x08010894,0x08010898,4,literal pool
+0x0801087A,0x08010890,22,table-held code
+0x08010890,0x08010898,8,gap-fill code
 0x08010898,0x080108CE,54,proven code
 0x080108CE,0x0801090A,60,gap-fill code
 0x08010944,0x0801094C,8,literal pool
@@ -488,12 +490,12 @@ start,end,bytes,class
 0x080119B8,0x080119CC,20,literal pool
 0x08011DF0,0x08011E3C,76,filtered pointer-entry code
 0x08011E3C,0x08011EA6,106,gap-fill code
+0x08011F88,0x08011FA6,30,table-held code
 0x08011FA6,0x08012030,138,proven code
 0x08012030,0x0801204E,30,gap-fill code
 0x08012074,0x08012078,4,literal pool
 0x080120C8,0x0801236E,678,filtered pointer-entry code
-0x08012370,0x08012374,4,literal pool
-0x08012378,0x08012394,28,literal pool
+0x08012370,0x08012394,36,literal pool
 0x08012394,0x080123E0,76,filtered pointer-entry code
 0x080123E0,0x08012520,320,gap-fill code
 0x080125C0,0x08012676,182,filtered pointer-entry code
@@ -533,25 +535,25 @@ start,end,bytes,class
 0x08013112,0x0801313E,44,gap-fill code
 0x08013140,0x08013158,24,literal pool
 0x0801315C,0x08013178,28,filtered pointer-entry code
-0x08013178,0x08013190,24,gap-fill code
+0x08013178,0x08013190,24,table-held code
 0x08013190,0x080131AC,28,filtered pointer-entry code
-0x080131AC,0x080131C4,24,gap-fill code
+0x080131AC,0x080131C4,24,table-held code
 0x080131C4,0x080131E0,28,filtered pointer-entry code
-0x080131E0,0x080131F8,24,gap-fill code
+0x080131E0,0x080131F8,24,table-held code
 0x080131F8,0x08013214,28,filtered pointer-entry code
-0x08013214,0x0801322C,24,gap-fill code
+0x08013214,0x0801322C,24,table-held code
 0x0801322C,0x08013248,28,filtered pointer-entry code
-0x08013248,0x08013260,24,gap-fill code
+0x08013248,0x08013260,24,table-held code
 0x08013260,0x080133D8,376,filtered pointer-entry code
 0x080133D8,0x080133F0,24,literal pool
 0x080133F0,0x0801340C,28,filtered pointer-entry code
-0x0801340C,0x08013424,24,gap-fill code
+0x0801340C,0x08013424,24,table-held code
 0x08013424,0x08013440,28,filtered pointer-entry code
-0x08013440,0x08013458,24,gap-fill code
+0x08013440,0x08013458,24,table-held code
 0x08013458,0x08013474,28,filtered pointer-entry code
-0x08013474,0x0801348C,24,gap-fill code
+0x08013474,0x0801348C,24,table-held code
 0x0801348C,0x080134A8,28,filtered pointer-entry code
-0x080134A8,0x080134C0,24,gap-fill code
+0x080134A8,0x080134C0,24,table-held code
 0x080134C0,0x0801356E,174,filtered pointer-entry code
 0x08013570,0x08013578,8,literal pool
 0x080135E0,0x08013656,118,proven code
@@ -676,13 +678,16 @@ start,end,bytes,class
 0x0801A7DE,0x0801A7F4,22,filtered pointer-entry code
 0x0801A7F4,0x0801A804,16,literal pool
 0x0801A804,0x0801A824,32,filtered pointer-entry code
+0x0801A824,0x0801A82C,8,table-held code
 0x0801A82C,0x0801A840,20,filtered pointer-entry code
 0x0801A840,0x0801A8B0,112,gap-fill code
 0x0801A8BC,0x0801A8C0,4,literal pool
 0x0801A946,0x0801A95C,22,filtered pointer-entry code
 0x0801A95C,0x0801A964,8,literal pool
-0x0801A9CC,0x0801AAD4,264,proven code
-0x0801AAD4,0x0801AB08,52,gap-fill code
+0x0801A9A4,0x0801A9C6,34,table-held code
+0x0801A9C6,0x0801A9CC,6,gap-fill code
+0x0801A9CC,0x0801AB08,316,proven code
+0x0801AB08,0x0801AB2A,34,gap-fill code
 0x0801AB4C,0x0801AB50,4,literal pool
 0x0801AB64,0x0801AB7A,22,filtered pointer-entry code
 0x0801AB7A,0x0801ABA0,38,table-held code
@@ -713,18 +718,25 @@ start,end,bytes,class
 0x0801BA46,0x0801BA8C,70,filtered pointer-entry code
 0x0801BA8C,0x0801BAA2,22,gap-fill code
 0x0801BB14,0x0801BB18,4,literal pool
+0x0801BB88,0x0801BB90,8,table-held code
+0x0801BB90,0x0801BBAC,28,gap-fill code
 0x0801BBAC,0x0801BBC2,22,filtered pointer-entry code
 0x0801BBC2,0x0801BBDA,24,gap-fill code
+0x0801BCA8,0x0801BCAC,4,table-held code
 0x0801BCAC,0x0801BCCE,34,filtered pointer-entry code
 0x0801BCCE,0x0801BCEC,30,gap-fill code
-0x0801BD04,0x0801BD08,4,literal pool
+0x0801BCF0,0x0801BD04,20,table-held code
+0x0801BD04,0x0801BD12,14,gap-fill code
+0x0801BD16,0x0801BD1A,4,table-held code
 0x0801BD1A,0x0801BD26,12,filtered pointer-entry code
 0x0801BD26,0x0801BE78,338,gap-fill code
 0x0801BE8A,0x0801BEA0,22,filtered pointer-entry code
 0x0801BEA0,0x0801BEB8,24,literal pool
 0x0801C05A,0x0801C07C,34,filtered pointer-entry code
-0x0801C07C,0x0801C088,12,gap-fill code
-0x0801C09C,0x0801C0A0,4,literal pool
+0x0801C07C,0x0801C084,8,gap-fill code
+0x0801C084,0x0801C09C,24,table-held code
+0x0801C09C,0x0801C0D6,58,gap-fill code
+0x0801C0D6,0x0801C0DA,4,table-held code
 0x0801C0DA,0x0801C110,54,filtered pointer-entry code
 0x0801C110,0x0801C12E,30,gap-fill code
 0x0801C140,0x0801C144,4,filtered pointer-entry code
@@ -732,13 +744,15 @@ start,end,bytes,class
 0x0801C218,0x0801C2C2,170,filtered pointer-entry code
 0x0801C2C2,0x0801C430,366,gap-fill code
 0x0801C430,0x0801C446,22,filtered pointer-entry code
-0x0801C446,0x0801C46A,36,gap-fill code
-0x0801C484,0x0801C488,4,literal pool
+0x0801C446,0x0801C450,10,gap-fill code
+0x0801C450,0x0801C484,52,table-held code
+0x0801C484,0x0801C488,4,gap-fill code
 0x0801C488,0x0801C4AE,38,filtered pointer-entry code
 0x0801C4AE,0x0801C4B0,2,gap-fill code
 0x0801C4B0,0x0801C4FA,74,proven code
 0x0801C4FA,0x0801C550,86,gap-fill code
 0x0801C560,0x0801C57C,28,literal pool
+0x0801C5A2,0x0801C5A8,6,table-held code
 0x0801C5A8,0x0801C5CA,34,filtered pointer-entry code
 0x0801C5CA,0x0801C6DE,276,gap-fill code
 0x0801C7F2,0x0801C80E,28,filtered pointer-entry code
@@ -804,6 +818,7 @@ start,end,bytes,class
 0x0801F1E6,0x0801F1EA,4,gap-fill code
 0x0801F1EA,0x0801F204,26,filtered pointer-entry code
 0x0801F204,0x0801F214,16,literal pool
+0x0801F230,0x0801F248,24,table-held code
 0x0801F248,0x0801F37E,310,proven code
 0x0801F37E,0x0801F386,8,gap-fill code
 0x0801F386,0x0801F394,14,literal pool
@@ -822,6 +837,7 @@ start,end,bytes,class
 0x0801F878,0x0801F974,252,proven code
 0x0801F974,0x0801F984,16,literal pool
 0x0801F9CC,0x0801F9D4,8,literal pool
+0x0801F9D4,0x0801F9D6,2,table-held code
 0x0801F9D6,0x0801FABA,228,proven code
 0x0801FAF0,0x0801FB12,34,proven code
 0x0801FB50,0x0801FB7C,44,proven code
@@ -836,9 +852,9 @@ start,end,bytes,class
 0x0801FEB0,0x0801FEE8,56,filtered pointer-entry code
 0x0801FEE8,0x0801FF44,92,proven code
 0x0801FF44,0x0801FFC8,132,filtered pointer-entry code
-0x0801FFC8,0x0801FFE6,30,gap-fill code
+0x0801FFC8,0x0801FFE6,30,table-held code
 0x0801FFE6,0x08020056,112,filtered pointer-entry code
-0x08020056,0x08020074,30,gap-fill code
+0x08020056,0x08020074,30,table-held code
 0x08020074,0x080200E4,112,filtered pointer-entry code
 0x080200E4,0x080200F8,20,literal pool
 0x080200F8,0x080201F8,256,filtered pointer-entry code
@@ -988,6 +1004,8 @@ start,end,bytes,class
 0x0802654E,0x08026556,8,gap-fill code
 0x080265AC,0x080265C2,22,proven code
 0x080265C2,0x080265DC,26,gap-fill code
+0x080265DC,0x080265E6,10,table-held code
+0x080265E6,0x080265E8,2,gap-fill code
 0x080265E8,0x080265FE,22,filtered pointer-entry code
 0x080265FE,0x08026604,6,gap-fill code
 0x08026604,0x0802661A,22,filtered pointer-entry code

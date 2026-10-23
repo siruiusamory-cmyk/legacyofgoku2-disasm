@@ -12,6 +12,16 @@ All notable changes to this project are documented here. The format follows
 
 ### Added
 
+- `tools/split/code_split.py` reads four data channels the entry census never looked at for an
+  entry: a run of two or more consecutive odd words that holds no proven entry, a table the walked
+  code names with a literal load, an odd word in a literal pool a walked load reaches, and an odd
+  word the startup copy carries into IWRAM. Each carries its own permuted-image null, and the
+  table-held class grows by the bytes they reach.
+
+- `tools/research/unproven_remainder.py` splits the bytes of the address-taken walk bound that no
+  proven function bounds, into the data formats, the padding, the code-shaped runs and what is left,
+  and writes `docs/research/UNPROVEN_REMAINDER.csv`.
+
 - `docs/research/FUNCTION_ENDS.csv` gives every census start an end, from a walk to its return or
   to the next start, and folds the runtime-only entries into the same bounds.
   `docs/research/FUNCTION_ENTRY_ALLOW.csv` records the starts that open no function, corrected to

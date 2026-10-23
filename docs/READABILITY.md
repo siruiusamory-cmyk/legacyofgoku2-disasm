@@ -17,14 +17,14 @@ ledger of what still has to fall, not a claim that it already fell.
 
 | class | before | after | rule |
 | --- | --- | --- | --- |
-| asm file organisation | 1,026 files, 125 code files carrying more than one function start, every generated file named `code_<address>.s` | 1,337 files, no file carrying more than one function start, 1,094 code files each named after the one start it opens (195 by name, 899 by address), and an index that maps every start to its file | a generated code file is named after the function or module group it carries, and `docs/CODE_INDEX.md` maps every name to its file and address |
-| literal hardware-register addresses | 76 occurrences, 18 distinct values | 0 occurrences, 18 symbols | every literal that is a standard register becomes its GBATEK name from the single include `asm/registers.s` |
-| literal RAM and flag addresses | 99 occurrences, 54 distinct values | 58 occurrences, 45 distinct values, 12 named | a RAM address becomes a symbol only where a ledger evidence class proves its role; everything else stays a literal and is counted here |
-| carried data with no name | 3,360 slices, 5,624,200 B | 3,360 slices, 5,624,200 B, 9 record families named in `docs\TABLE_LEDGER.csv` with the reader that decodes each | a table a generator decodes gets a named record family and a tracked page; an undecoded slice stays a slice and is counted |
-| magic constants | 26,887 immediate operands, 373 distinct values | 26,887, 373 | a constant that names a device field, a stride or a sentinel becomes an equate; a plain arithmetic literal stays |
+| asm file organisation | 1,026 files, 125 code files carrying more than one function start, every generated file named `code_<address>.s` | 1,383 files, no file carrying more than one function start, 1,146 code files each named after the one start it opens (195 by name, 951 by address), and an index that maps every start to its file | a generated code file is named after the function or module group it carries, and `docs/CODE_INDEX.md` maps every name to its file and address |
+| literal hardware-register addresses | 76 occurrences, 18 distinct values | 0 occurrences, 19 symbols | every literal that is a standard register becomes its GBATEK name from the single include `asm/registers.s` |
+| literal RAM and flag addresses | 99 occurrences, 54 distinct values | 55 occurrences, 42 distinct values, 12 named | a RAM address becomes a symbol only where a ledger evidence class proves its role; everything else stays a literal and is counted here |
+| carried data with no name | 3,360 slices, 5,624,200 B | 3,347 slices, 5,623,350 B, 9 record families named in `docs\TABLE_LEDGER.csv` with the reader that decodes each | a table a generator decodes gets a named record family and a tracked page; an undecoded slice stays a slice and is counted |
+| magic constants | 26,887 immediate operands, 373 distinct values | 27,156, 372 | a constant that names a device field, a stride or a sentinel becomes an equate; a plain arithmetic literal stays |
 | newcomer path gaps | 4 of 6 steps documented | 6 of 6 | the six steps below are each run on a fresh clone and each is a documented command |
 | tool code | 53 files, 3 definitions nothing refers to, 0 duplicated blocks of 8 lines or more | 53, 3, 0 | a definition nothing calls is deleted, a helper that repeats another is merged, and a name says what the function returns |
-| test naming | 25 files, 260 tests, 0 named by address | 27, 286, 0 | a test name states the behaviour its assertions prove; a test that names only an address names nothing |
+| test naming | 25 files, 260 tests, 0 named by address | 28, 318, 0 | a test name states the behaviour its assertions prove; a test that names only an address names nothing |
 
 The six steps of the newcomer path:
 
@@ -43,7 +43,7 @@ gap this document and the index close.
 
 Asm file organisation: `build\code\Blend_ShowBg0.s` carries the function it is named after and no
 other start; `build\code\Display_SetControlBit.s` holds its own start and the two block labels inside
-it; `asm\remainder.s` carries 1,333 `INCLUDE` lines and 6,271 `INCBIN` lines, so a reader looking for
+it; `asm\remainder.s` carries 1,379 `INCLUDE` lines and 6,258 `INCBIN` lines, so a reader looking for
 a function starts from `docs\CODE_INDEX.md` instead.
 
 Literal hardware-register addresses: `DCD REG_DMA3SAD` in the pool at `pool_080004e4.s` is the DMA3
@@ -55,7 +55,7 @@ Literal RAM and flag addresses: `DCD Heap_Head` names the free-list head the all
 test sets; `DCD Dma3_HalfwordSource` and `DCD Dma3_WordSource` are the two words the DMA3 fill
 request builders store their value in and then name as the transfer source; `DCD Irq_DmaChannel` and
 `DCD Irq_SavedIme` are the channel byte whose interrupt bit the DMA helpers raise and the word that
-holds the master enable across that window; each of the 45 remaining distinct values is a global whose
+holds the master enable across that window; each of the 42 remaining distinct values is a global whose
 role no evidence class has named yet. The value `0x02020202` sits in the
 writable range but is a fill pattern, not an address, and the count keeps it as one of the
 unnamed literals rather than pretending the range decides the role.

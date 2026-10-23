@@ -39,6 +39,8 @@ STRENGTH = {PROVEN: 0, TABLE: 1, FILTERED: 2, GAPFILL: 3, POOL: 5,
             OVERLAY_CLASS: 6, UNCLASSIFIED: 9}
 FILTER_BRANCHES = 1
 FACTORY_REPEATS = 4
+TABLE_CAP = 64
+TABLE_SHAPES = ("run", "record", "slot", "runfree", "load", "pool", "overlay")
 PROLOGUE_CAP = 64
 LOOKBACK = 0x40
 CHANNEL_ROUNDS = 8
@@ -828,6 +830,53 @@ def table_targets(runs, proven):
     return out
 
 
+def table_at(rom, base, cap=TABLE_CAP):
+    found = []
+    at = base
+    while len(found) < cap and has_word(rom, at):
+        value = word(rom, at)
+        if not value & 1 or not in_image(rom, value & ~1):
+            break
+        found.append(value & ~1)
+        at += 4
+    return found
+
+
+def named_tables(rom, classes, modes):
+    bases = set()
+    for begin, stop in code_ranges(classes):
+        addr = ROM_BASE + begin
+        while addr < ROM_BASE + stop:
+            if modes[addr - ROM_BASE] == MODE_THUMB:
+                half = hw(rom, addr)
+                if 0x4800 <= half <= 0x4FFF:
+                    pool = ((addr + 4) & ~3) + (half & 0xFF) * 4
+                    if has_word(rom, pool):
+                        bases.add(word(rom, pool))
+                addr += 2
+                continue
+            if addr % 4 == 0 and has_word(rom, addr):
+                instruction = word(rom, addr)
+                if ((instruction & 0x0F7F0000) == 0x051F0000
+                        and ((instruction >> 12) & 0x0F) not in (14, 15)):
+                    pool = literal_target(rom, addr)
+                    if has_word(rom, pool):
+                        bases.add(word(rom, pool))
+            addr += 4
+    return bases
+
+
+def pointer_words(rom, addresses):
+    found = set()
+    for address in addresses:
+        if address % 4 or not has_word(rom, address):
+            continue
+        value = word(rom, address)
+        if value & 1 and in_image(rom, value & ~1):
+            found.add(value & ~1)
+    return found
+
+
 def thumb_dests(half):
     if half < 0x0800:
         return 1 << (half & 0x07)
@@ -1025,7 +1074,8 @@ def census(rom, want_overlay):
 
     factories = repeated_code_pointers(rom)
     extra = {}
-    held = {"register": [], "run": [], "record": [], "slot": [], "gap": [], "prologue": []}
+    held = {"register": [], "run": [], "record": [], "slot": [], "gap": [], "prologue": [],
+            "runfree": [], "load": [], "pool": [], "overlay": []}
     swept = set()
     swept_runs = []
     register_sites = {"sites": 0, "bounded": 0, "entries": []}
@@ -1049,12 +1099,28 @@ def census(rom, want_overlay):
 
     def table_words(proven):
         run = set(table_targets(runs, proven))
+        runfree = set()
+        for group in runs:
+            if not any(target in proven for target in group):
+                runfree.update(group)
         slot = set()
         if irq is not None and irq["handler"] is not None and irq["handler"]["table"] is not None:
             slot = {value & ~1 for value in irq["handler"]["table"]["distinct"] if value & 1}
         slot -= run
         record = {value & ~1 for value in factories} - run - slot
-        return {"run": sorted(run), "record": sorted(record), "slot": sorted(slot)}
+        load = set()
+        for base in named_tables(rom, classes, modes):
+            if base % 4 == 0 and in_image(rom, base):
+                load.update(table_at(rom, base))
+        pool = pointer_words(rom, pools)
+        overlay_words = set()
+        if overlay is not None:
+            source, _dest, size, _declared = overlay
+            overlay_words = pointer_words(rom, [source + offset for offset in range(0, size, 4)])
+        return {"run": sorted(run), "record": sorted(record - run),
+                "slot": sorted(slot), "runfree": sorted(runfree - run),
+                "load": sorted(load - run - slot - record), "pool": sorted(pool),
+                "overlay": sorted(overlay_words)}
 
     anchor_classes = (PROVEN, FILTERED, TABLE)
     for channel_round in range(CHANNEL_ROUNDS):
@@ -1072,7 +1138,7 @@ def census(rom, want_overlay):
             extra[entry] = TABLE
             held["run"].append(entry)
             walk(rom, [entry], classes, modes, TABLE)
-        for shape in ("run", "record", "slot"):
+        for shape in TABLE_SHAPES:
             for target in words[shape]:
                 entry = (target, MODE_THUMB)
                 if entry in accepted or entry in extra:
@@ -1118,10 +1184,12 @@ def census(rom, want_overlay):
             first = {"register_sites": register_sites["sites"],
                      "register_bounded": register_sites["bounded"],
                      "table_run": len(words["run"]), "table_record": len(words["record"]),
-                     "table_slot": len(words["slot"]), "gap_anchors": len(anchors),
+                     "table_slot": len(words["slot"]), "table_runfree": len(words["runfree"]),
+                     "table_load": len(words["load"]), "table_pool": len(words["pool"]),
+                     "table_overlay": len(words["overlay"]), "gap_anchors": len(anchors),
                      "prologue_candidates": sweep_candidates}
         channel_rounds.append({"round": channel_round, "register": len(held["register"]),
-                               "table": sum(len(held[key]) for key in ("run", "record", "slot")),
+                               "table": sum(len(held[key]) for key in TABLE_SHAPES),
                                "gap": len(held["gap"]), "prologue": len(held["prologue"]),
                                "proven": classes.count(PROVEN),
                                "table_bytes": classes.count(TABLE),
@@ -1243,8 +1311,9 @@ def doc_text(measured, null):
     held = measured["held"]
     null_held = null["held"]
     sites = measured["register_branches"]
-    table_total = sum(len(held[key]) for key in ("run", "record", "slot"))
-    table_null = sum(len(null_held[key]) for key in ("run", "record", "slot"))
+    table_total = sum(len(held[key]) for key in TABLE_SHAPES)
+    table_null = sum(len(null_held[key]) for key in TABLE_SHAPES)
+    table_candidates = sum(first.get("table_" + shape, 0) for shape in TABLE_SHAPES)
     lines = [
         "# Code and data split",
         "",
@@ -1366,7 +1435,7 @@ def doc_text(measured, null):
            format(len(null_held["register"]), ","),
            rate(len(null_held["register"]), len(held["register"]))),
         "| function-pointer tables and record words | %s | %s | %s | %s | %s %% |"
-        % (format(first["table_run"] + first["table_record"] + first["table_slot"], ","),
+        % (format(table_candidates, ","),
            format(table_total, ","), format(totals["table-held code"], ","),
            format(table_null, ","), share(table_null, table_total)),
         "| the Thumb prologue sweep, measured, not counted as code | %s | %s | %s | %s | %s %% |"
@@ -1414,24 +1483,41 @@ def doc_text(measured, null):
         "",
         "### Function-pointer tables and record words",
         "",
-        "Three shapes name a code address from data: a run of two or more consecutive 4-aligned odd",
-        "words naming the image, when the run holds at least one proven entry; a word that occurs at",
-        "least %d times at 4-aligned sites as an odd in-image address, which is the shape of a"
+        "Seven shapes name a code address from data. Three seed on code the census already holds: a",
+        "run of two or more consecutive 4-aligned odd words naming the image, when the run holds at",
+        "least one proven entry; a word that occurs at least %d times at 4-aligned sites as an odd"
         % FACTORY_REPEATS,
-        "factory word repeated in every record of a family; and a pointer table the walked code names",
-        "with a literal load, which is the interrupt dispatcher's slot table. Every word of those",
-        "shapes is accepted when its own paths reach a return, and the bytes they reach are the",
-        "table-held class. The run shape names %s words and accepts %s, the slot shape names"
+        "in-image address, which is the shape of a factory word repeated in every record of a",
+        "family; and a pointer table the walked code names with a literal load, which is the",
+        "interrupt dispatcher's slot table. Four read a data word the census never looks at for an",
+        "entry: a run of two or more consecutive odd words that holds no proven entry, a run the",
+        "walked code names with a literal load and reads as a table, an odd word in a literal pool a",
+        "walked load reaches, and an odd word the startup copy carries into IWRAM. Every word of",
+        "those shapes is accepted when its own paths reach a return, and the bytes they reach are",
+        "the table-held class. The proven-seeded run shape names %s words and accepts %s, the slot"
         % (format(first["table_run"], ","), format(len(held["run"]), ",")),
-        "%s and accepts %s, and the record shape names %s and accepts %s. The permuted image accepts"
+        "shape names %s and accepts %s, and the record shape names %s and accepts %s. The permuted"
         % (format(first["table_slot"], ","), format(len(held["slot"]), ","),
            format(first["table_record"], ","), format(len(held["record"]), ",")),
-        "%s: %s from the run shape, %s from the slot shape and %s from the record shape. The run"
-        % (format(table_null, ","), format(len(null_held["run"]), ","),
-           format(len(null_held["slot"]), ","), format(len(null_held["record"]), ",")),
-        "shape cannot fire there because it needs a proven entry to seed it,",
+        "image accepts %s of the slots and record words, 0 of the proven-seeded runs."
+        % format(len(null_held["slot"]) + len(null_held["record"]), ","),
+        "The run shape cannot fire there because it needs a proven entry to seed it,",
         "and the slot shape cannot fire because the permuted image walks no interrupt install.",
         "Those two nulls are not exercisable and are reported as such rather than as zero.",
+        "",
+        "The four shapes that seed on data alone carry their own null. An unseeded run names %s"
+        % format(first["table_runfree"], ","),
+        "words and accepts %s, and the permuted image accepts %s."
+        % (format(len(held["runfree"]), ","), format(len(null_held["runfree"]), ",")),
+        "A table the walked code reads names %s words and accepts %s against %s there."
+        % (format(first["table_load"], ","), format(len(held["load"]), ","),
+           format(len(null_held["load"]), ",")),
+        "A literal pool names %s words and accepts %s against %s."
+        % (format(first["table_pool"], ","), format(len(held["pool"]), ","),
+           format(len(null_held["pool"]), ",")),
+        "The startup copy carries %s words and accepts %s against %s."
+        % (format(first["table_overlay"], ","), format(len(held["overlay"]), ","),
+           format(len(null_held["overlay"]), ",")),
         "",
         "The map layer factory word 0x080056A1 is the repeated shape at its largest: 1,294 records",
         "carry it, and its target 0x080056A0 is already accepted by the pointer filter, so the",
@@ -1814,9 +1900,8 @@ def main(argv=None):
     print("channels: register %d of %d, table %d of %d, prologue %d of %d (%d B measured), "
           "gap %d of %d"
           % (len(measured["held"]["register"]), measured["channel_first"]["register_sites"],
-             sum(len(measured["held"][key]) for key in ("run", "record", "slot")),
-             (measured["channel_first"]["table_run"] + measured["channel_first"]["table_record"]
-              + measured["channel_first"]["table_slot"]),
+             sum(len(measured["held"][key]) for key in TABLE_SHAPES),
+             sum(measured["channel_first"]["table_" + shape] for shape in TABLE_SHAPES),
              len(measured["held"]["prologue"]), measured["channel_first"]["prologue_candidates"],
              measured["prologue_bytes"],
              len(measured["held"]["gap"]), measured["channel_first"]["gap_anchors"]))

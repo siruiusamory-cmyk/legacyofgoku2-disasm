@@ -421,7 +421,7 @@ def describe(measured, rom):
     calls = call_targets(rom, rows, modes)
     calls.update(address for address, _mode in measured["calls"])
     table = set()
-    for key in ("run", "record", "slot"):
+    for key in code_split.TABLE_SHAPES:
         for item in measured["held"][key]:
             table.add(item[0] if isinstance(item, tuple) else item)
     for item in measured["tables"]:

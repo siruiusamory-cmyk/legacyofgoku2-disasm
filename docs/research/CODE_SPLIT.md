@@ -21,14 +21,14 @@ can follow to code. Its channels:
 |---|---|---|
 | the whole image's address-taken odd words | 16,396 | 5,227 |
 | the accepted entries' odd words | 9,870 | 522 |
-| the descent's roots and every target it follows | - | 1,624 |
+| the descent's roots and every target it follows | - | 1,625 |
 
 The proved descent starts at the two roots above and follows every `bl` target, every
 conditional and unconditional branch target, the address a `bx` register holds when the
 instruction before it loads that register from the literal pool, the address an ARM `ldr
 pc,[pc,#imm]` loads, and every return address an ARM `ldr lr,[pc,#imm]` loads. It also
-walks the target of every call the table-held and gap-fill entries make. The 1,624
-targets it proves are Thumb 1,623 and ARM 1.
+walks the target of every call the table-held and gap-fill entries make. The 1,625
+targets it proves are Thumb 1,624 and ARM 1.
 
 ## Call closure
 
@@ -85,12 +85,12 @@ is not below its accept rate emits no entry and no byte.
 
 | channel | candidates | accepted | bytes | null | null rate |
 |---|---|---|---|---|---|
-| the descent from the two roots | 2 roots | 1,624 | 38,032 | 6 | 0.3695 % |
+| the descent from the two roots | 2 roots | 1,625 | 38,084 | 6 | 0.3692 % |
 | the pointer filter | 16,396 words | 522 | 24,652 | 19 | 3.6398 % |
 | register-loaded code addresses | 40 | 0 | 0 | 0 | - |
-| function-pointer tables and record words | 376 | 65 | 1,318 | 1 | 1.5385 % |
-| the Thumb prologue sweep, measured, not counted as code | 7,438 | 825 | 26,598 | 1,184 | 143.5152 % |
-| the gap fill | 859 | 271 | 16,760 | 6 | 2.2140 % |
+| function-pointer tables and record words | 1,093 | 124 | 2,396 | 3 | 2.4194 % |
+| the Thumb prologue sweep, measured, not counted as code | 7,421 | 808 | 26,062 | 1,184 | 146.5347 % |
+| the gap fill | 919 | 263 | 16,496 | 7 | 2.6616 % |
 
 A channel's `null rate` is the share of its accepted entries the permuted image also
 accepts, which is the false-entry rate it carries; a channel whose accepted count is 0 has
@@ -98,10 +98,10 @@ no rate and prints `-`. The channel rounds:
 
 | round | register | table-held | gap-fill | prologue-sweep | proven bytes | table bytes | gap bytes | swept bytes |
 |---|---|---|---|---|---|---|---|---|
-| 0 | 0 | 65 | 258 | 825 | 37,822 | 1,318 | 15,214 | 26,598 |
-| 1 | 0 | 65 | 270 | 825 | 38,032 | 1,318 | 16,700 | 26,598 |
-| 2 | 0 | 65 | 271 | 825 | 38,032 | 1,318 | 16,760 | 26,598 |
-| 3 | 0 | 65 | 271 | 825 | 38,032 | 1,318 | 16,760 | 26,598 |
+| 0 | 0 | 124 | 250 | 808 | 37,874 | 2,396 | 14,950 | 26,062 |
+| 1 | 0 | 124 | 262 | 808 | 38,084 | 2,396 | 16,436 | 26,062 |
+| 2 | 0 | 124 | 263 | 808 | 38,084 | 2,396 | 16,496 | 26,062 |
+| 3 | 0 | 124 | 263 | 808 | 38,084 | 2,396 | 16,496 | 26,062 |
 
 ### Register-loaded code addresses
 
@@ -118,18 +118,28 @@ record rather than through a literal; the table-held channel is what names those
 
 ### Function-pointer tables and record words
 
-Three shapes name a code address from data: a run of two or more consecutive 4-aligned odd
-words naming the image, when the run holds at least one proven entry; a word that occurs at
-least 4 times at 4-aligned sites as an odd in-image address, which is the shape of a
-factory word repeated in every record of a family; and a pointer table the walked code names
-with a literal load, which is the interrupt dispatcher's slot table. Every word of those
-shapes is accepted when its own paths reach a return, and the bytes they reach are the
-table-held class. The run shape names 181 words and accepts 54, the slot shape names
-1 and accepts 1, and the record shape names 194 and accepts 10. The permuted image accepts
-1: 0 from the run shape, 0 from the slot shape and 1 from the record shape. The run
-shape cannot fire there because it needs a proven entry to seed it,
+Seven shapes name a code address from data. Three seed on code the census already holds: a
+run of two or more consecutive 4-aligned odd words naming the image, when the run holds at
+least one proven entry; a word that occurs at least 4 times at 4-aligned sites as an odd
+in-image address, which is the shape of a factory word repeated in every record of a
+family; and a pointer table the walked code names with a literal load, which is the
+interrupt dispatcher's slot table. Four read a data word the census never looks at for an
+entry: a run of two or more consecutive odd words that holds no proven entry, a run the
+walked code names with a literal load and reads as a table, an odd word in a literal pool a
+walked load reaches, and an odd word the startup copy carries into IWRAM. Every word of
+those shapes is accepted when its own paths reach a return, and the bytes they reach are
+the table-held class. The proven-seeded run shape names 181 words and accepts 54, the slot
+shape names 1 and accepts 1, and the record shape names 194 and accepts 10. The permuted
+image accepts 1 of the slots and record words, 0 of the proven-seeded runs.
+The run shape cannot fire there because it needs a proven entry to seed it,
 and the slot shape cannot fire because the permuted image walks no interrupt install.
 Those two nulls are not exercisable and are reported as such rather than as zero.
+
+The four shapes that seed on data alone carry their own null. An unseeded run names 665
+words and accepts 54, and the permuted image accepts 2.
+A table the walked code reads names 25 words and accepts 0 against 0 there.
+A literal pool names 25 words and accepts 5 against 0.
+The startup copy carries 2 words and accepts 0 against 0.
 
 The map layer factory word 0x080056A1 is the repeated shape at its largest: 1,294 records
 carry it, and its target 0x080056A0 is already accepted by the pointer filter, so the
@@ -143,10 +153,10 @@ compiler opens a function. The sweep takes each one in unclassified space and de
 forward, linearly, until the run returns through `pop {..., pc}` or `bx lr`; a run that
 meets a halfword outside the ARMv4T encoding, an unconditional branch, a register branch or
 a write to `pc` before it returns is refused, and so is a run longer than 64 instructions.
-It accepts 825 of 7,438 candidates and measures the decoded run, not the branch closure. Its
-null rate is 143.5152 %, so the sweep is at chance on this image: most of what it accepts is
+It accepts 808 of 7,421 candidates and measures the decoded run, not the branch closure. Its
+null rate is 146.5347 %, so the sweep is at chance on this image: most of what it accepts is
 packed payload that decodes as Thumb at the same rate, and a `push` halfword is 1 in 256 of
-any data. It is reported only as a measured channel: its entries and the 26,598 B it would
+any data. It is reported only as a measured channel: its entries and the 26,062 B it would
 mark stay in the unclassified class, and its calls prove nothing, because a caller found
 this way is no evidence that the callee is code.
 
@@ -157,21 +167,21 @@ reach a return, it is the start of code the descent never reached. The fill take
 return inside the proven, filtered and table-held classes, tries the halfword after it,
 accepts the ones that walk to a return, and repeats until a round adds nothing; a return
 inside gap-fill code is not an anchor, so the channel cannot seed itself, and the sweep
-emits nothing for it to seed on. The first round takes 859 returns, 271 gaps are accepted, and
-the permuted image accepts 6, a null rate of 2.2140 %.
+emits nothing for it to seed on. The first round takes 919 returns, 263 gaps are accepted, and
+the permuted image accepts 7, a null rate of 2.6616 %.
 
 ## Classes
 
 | class | extents | bytes | share |
 |---|---|---|---|
-| proven code | 260 | 38,032 | 0.4534 % |
+| proven code | 260 | 38,084 | 0.4540 % |
 | filtered pointer-entry code | 218 | 24,652 | 0.2939 % |
-| table-held code | 26 | 1,318 | 0.0157 % |
-| gap-fill code | 283 | 16,760 | 0.1998 % |
-| literal pool | 239 | 3,760 | 0.0448 % |
+| table-held code | 58 | 2,396 | 0.0286 % |
+| gap-fill code | 275 | 16,496 | 0.1966 % |
+| literal pool | 233 | 3,744 | 0.0446 % |
 | IWRAM overlay | 1 | 3,708 | 0.0442 % |
-| unclassified | 451 | 8,300,378 | 98.9482 % |
-| total | 1,478 | 8,388,608 | 100.0000 % |
+| unclassified | 438 | 8,299,528 | 98.9381 % |
+| total | 1,483 | 8,388,608 | 100.0000 % |
 
 The rows in the CSV are the union runs of each class, not one row per entry, so
 a run is a maximal stretch of one class. A byte keeps the strongest class that claims it:
@@ -182,7 +192,7 @@ filtered class. The prologue sweep owns no row: its bytes stay unclassified.
 
 ## Literal pools
 
-A literal pool word is a 4-aligned word inside the image that a walked `ldr rd,[pc,#imm]` reaches. Consecutive words form one extent. The walk named 1,207 pool words in 339 extents; 1,068 bytes inside a walked code extent were named by a load and stay code, because code outranks the pool class.
+A literal pool word is a 4-aligned word inside the image that a walked `ldr rd,[pc,#imm]` reaches. Consecutive words form one extent. The walk named 1,219 pool words in 344 extents; 1,132 bytes inside a walked code extent were named by a load and stay code, because code outranks the pool class.
 
 ## IWRAM overlay
 
@@ -278,12 +288,12 @@ does not separate code from the packed payload that fills this image.
 
 | run length (halfwords) | image bytes | permuted bytes | permuted share |
 |---|---|---|---|
-| 1 | 7,449,454 | 7,523,138 | 100.9891 % |
-| 8 | 6,252,942 | 6,319,420 | 101.0631 % |
-| 32 | 2,876,374 | 2,915,550 | 101.3620 % |
+| 1 | 7,448,654 | 7,523,092 | 100.9993 % |
+| 8 | 6,252,258 | 6,319,374 | 101.0735 % |
+| 32 | 2,876,296 | 2,915,462 | 101.3617 % |
 | 128 | 578,280 | 591,660 | 102.3138 % |
 
-The bound is 7,449,454 B of the 8,300,378 B unclassified class.
+The bound is 7,448,654 B of the 8,299,528 B unclassified class.
 
 ## Null
 
@@ -298,16 +308,16 @@ is not, so the null counts what each channel finds without code.
 | accepted entries | 522 | 19 | 3.6398 % |
 | accepted entries that no call names | 512 | 19 | 3.7109 % |
 | branchless accepted entries | 55 | 0 | 0.0000 % |
-| proven code bytes | 38,032 | 316 | 0.8309 % |
+| proven code bytes | 38,084 | 316 | 0.8297 % |
 | filtered code bytes | 24,652 | 868 | 3.5210 % |
-| table-held code bytes | 1,318 | 0 | 0.0000 % |
-| gap-fill code bytes | 16,760 | 114 | 0.6802 % |
-| literal pool bytes | 3,760 | 60 | 1.5957 % |
-| the prologue sweep's measured bytes | 26,598 | 9,478 | 35.6343 % |
+| table-held code bytes | 2,396 | 34 | 1.4190 % |
+| gap-fill code bytes | 16,496 | 126 | 0.7638 % |
+| literal pool bytes | 3,744 | 60 | 1.6026 % |
+| the prologue sweep's measured bytes | 26,062 | 9,478 | 36.3671 % |
 
 The permuted share of the accepted-entry channel is the false-entry rate the acceptance
 rule carries, and the permuted shares of the walked bytes state what each channel finds
 without code. A path that enters data is still counted, so every code class is an upper
-bound; the null is the control, not a correction. The prologue sweep's own entry rate is 143.5152
+bound; the null is the control, not a correction. The prologue sweep's own entry rate is 146.5347
 %%, above 100 %%, which is why its measured bytes stay out of the classes: a channel that
 finds more on the permuted image than on the image has no power at all.

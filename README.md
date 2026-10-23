@@ -34,7 +34,7 @@ It builds one ROM:
 ## What this is not
 
 This is not a decompilation. All of the game's code is still assembly, and the build compiles no C.
-Nearly every symbol is still named by its address: 899 of the 1,094 functions the split classifies carry
+Nearly every symbol is still named by its address: 951 of the 1,146 functions the split classifies carry
 the `sub_` form, and the blocks inside a function carry the `loc_` form (`loc_0801F0BC`). Naming one
 takes evidence, never a guess; [docs/NAMING.md](docs/NAMING.md) says which evidence promotes a name
 and which bytes make a function start, and [docs/CODE_INDEX.md](docs/CODE_INDEX.md) says which file
@@ -46,16 +46,16 @@ does not measure how much of the code has been turned into C.
 
 ## Progress
 
-32.9543 % of the ROM (2,764,408 of 8,388,608 bytes) builds from tracked source: transcribed
+32.9644 % of the ROM (2,765,258 of 8,388,608 bytes) builds from tracked source: transcribed
 instructions, emitted code and literal pools, and container bodies re-encoded from your own ROM.
 The rest is still copied into the build as slices of the original image. `python tools\gate\gate.py`
 prints the split, and [docs/DEFINITION_OF_DONE.md](docs/DEFINITION_OF_DONE.md) says what counts as
 source.
 
 The code and data split, measured by `python tools\split\code_split.py --check` and recorded in
-[docs/research/CODE_SPLIT.md](docs/research/CODE_SPLIT.md), is proven code 38,032 B, filtered
-pointer-entry code 24,652 B, literal pool 3,760 B, overlay 3,708 B, unclassified 8,300,378 B, plus
-the two classes the reaching channels name: table-held 1,318 B and gap-fill 16,760 B.
+[docs/research/CODE_SPLIT.md](docs/research/CODE_SPLIT.md), is proven code 38,084 B, filtered
+pointer-entry code 24,652 B, literal pool 3,744 B, overlay 3,708 B, unclassified 8,299,528 B, plus
+the two classes the reaching channels name: table-held 2,396 B and gap-fill 16,496 B.
 
 ## Building
 

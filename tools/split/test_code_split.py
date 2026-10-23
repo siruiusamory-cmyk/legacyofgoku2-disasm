@@ -252,11 +252,35 @@ def test_a_repeated_record_word_names_a_code_address_the_filter_does_not():
 
 def test_a_record_word_below_the_repeat_threshold_names_nothing():
     rom = bytearray(image())
-    for offset in (0x1C0, 0x1C4, 0x1C8):
+    for offset in (0x1C0, 0x1C8, 0x1D0):
         struct.pack_into("<I", rom, offset, 0x08000301)
     rom[0x300:0x304] = struct.pack("<HH", 0x2000, 0x4770)
     measured = code_split.measure(bytes(rom))
     assert (0x08000300, code_split.MODE_THUMB) not in measured["extra"]
+
+
+def test_a_run_of_two_words_names_a_branchless_entry_that_no_call_proves():
+    rom = bytearray(image())
+    for offset in (0x300, 0x320):
+        rom[offset:offset + 4] = struct.pack("<HH", 0x2000, 0x4770)
+    struct.pack_into("<II", rom, 0x180, 0x08000301, 0x08000321)
+    measured = code_split.measure(bytes(rom))
+    assert measured["held"]["runfree"] == [(0x08000300, code_split.MODE_THUMB),
+                                           (0x08000320, code_split.MODE_THUMB)]
+    assert measured["classes"][0x300:0x304] == bytes([code_split.TABLE]) * 4
+
+
+def test_pointer_words_reads_only_a_four_aligned_odd_in_image_word():
+    rom = bytearray(0x1000)
+    struct.pack_into("<IIII", rom, 0x100, 0x08000301, 0x08000300, 0x00000301, 0x08002001)
+    assert code_split.pointer_words(bytes(rom), [0x08000100, 0x08000104, 0x08000108,
+                                                 0x0800010A, 0x0800010C]) == {0x08000300}
+
+
+def test_table_at_stops_at_the_first_word_that_is_not_a_pointer():
+    rom = bytearray(0x1000)
+    struct.pack_into("<III", rom, 0x100, 0x08000301, 0x08000101, 0)
+    assert code_split.table_at(bytes(rom), 0x08000100) == [0x08000300, 0x08000100]
 
 
 def test_a_register_that_still_holds_a_pool_word_is_proved_from_a_longer_window():
