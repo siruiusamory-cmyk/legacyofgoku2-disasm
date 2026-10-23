@@ -351,6 +351,61 @@ def test_a_name_on_a_function_start_is_not_caught():
     assert names == {0x08000276: "Unit_DoIt"}
 
 
+CENSUS = ("address,role,evidence\n"
+          "0x08000276,start,call+prologue\n"
+          "0x0800027a,fragment,0x08000276\n")
+ENDS = ("address,mode,origin,end,reason\n"
+        "0x08000276,thumb,census,0x08000280,-\n"
+        "0x0800027a,thumb,census,0x08000280,-\n")
+ALLOW = ("address,kind,limb,flags,entry,reason\n"
+         "0x08000276,start,call+prologue,data,0x0800027a,prefix\n")
+
+
+def test_an_allow_list_that_names_a_real_entry_is_not_caught():
+    assert lints.entry_allow_findings(CENSUS, ENDS, ALLOW) == []
+
+
+def test_an_absent_allow_list_is_caught():
+    assert [detail for _found, detail in lints.entry_allow_findings(CENSUS, ENDS, "")
+            if "carries no entry allow-list" in detail]
+
+
+def test_an_allow_row_the_census_does_not_start_is_caught():
+    findings = lints.entry_allow_findings(CENSUS, ENDS,
+                                          ALLOW.replace("0x08000276,start,call+prologue",
+                                                        "0x0800027a,fragment,"))
+    assert [detail for _found, detail in findings if "carries kind fragment" in detail]
+
+
+def test_an_allow_row_without_a_flag_is_caught():
+    findings = lints.entry_allow_findings(CENSUS, ENDS, ALLOW.replace(",data,", ",,"))
+    assert [detail for _found, detail in findings if "only data, undecodable, clobber" in detail]
+
+
+def test_an_allow_row_with_an_unknown_reason_is_caught():
+    findings = lints.entry_allow_findings(CENSUS, ENDS, ALLOW.replace(",prefix", ",guess"))
+    assert [detail for _found, detail in findings if "only prefix, row-start" in detail]
+
+
+def test_a_prefix_whose_entry_is_not_after_it_is_caught():
+    findings = lints.entry_allow_findings(CENSUS, ENDS, ALLOW.replace("0x0800027a,prefix",
+                                                                     "0x08000276,prefix"))
+    assert [detail for _found, detail in findings if "not an address after it" in detail]
+
+
+def test_a_prefix_whose_entry_carries_no_end_is_caught():
+    findings = lints.entry_allow_findings(CENSUS, ENDS.replace("0x0800027a,thumb,census,"
+                                                             "0x08000280,-",
+                                                             "0x0800027a,thumb,census,-,-"),
+                                          ALLOW)
+    assert [detail for _found, detail in findings if "carries no end there" in detail]
+
+
+def test_a_row_start_that_names_an_entry_is_caught():
+    findings = lints.entry_allow_findings(CENSUS, ENDS, ALLOW.replace(",prefix", ",row-start"))
+    assert [detail for _found, detail in findings if "with no prologue to name" in detail]
+
+
 def test_an_address_named_count_above_the_baseline_is_caught():
     findings = lints.naming_ratchet_findings({0x08000276, 0x08000278}, {}, "1\n")
     assert [detail for _found, detail in findings if "above the baseline 1" in detail]

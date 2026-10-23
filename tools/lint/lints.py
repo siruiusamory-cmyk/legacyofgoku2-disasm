@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import ast
+import csv
 import io
 import os
 import re
@@ -36,7 +37,14 @@ CHECKS = ("P-148-repo-module-path", "P-159-bare-interpreter", "P-167-pool-guard"
           "NAMING-function-name", "NAMING-c-status", "NAMING-symbol",
           "NAMING-address-ratchet", "NAMING-behaviour-test", "ROM-tracked-image",
           "README-numbers", "TEST-silent-return", "P-518-stale-incbin-call", "DUP-block",
-          "READABILITY-ratchet", "READABILITY-index", "READABILITY-path")
+          "READABILITY-ratchet", "READABILITY-index", "READABILITY-path",
+          "BOUNDS-entry-allow")
+ENTRY_ALLOW = "docs/research/FUNCTION_ENTRY_ALLOW.csv"
+FUNCTION_ENDS = "docs/research/FUNCTION_ENDS.csv"
+FUNCTION_BOUNDS = "docs/research/FUNCTION_BOUNDS.csv"
+ENTRY_FLAGS = ("data", "undecodable", "clobber")
+ENTRY_REASONS = ("prefix", "row-start")
+ADDRESS_HEX = re.compile(r"^0x[0-9A-Fa-f]{8}$")
 STALE_CALL = re.compile(r"incbin\.bat\s+baserom\.gba\s+0x([0-9a-fA-F]+)\s+0x([0-9a-fA-F]+)")
 TEST_FILE = re.compile(r"^test_[^/\\]*\.py$")
 DUP_MINIMUM = 8
@@ -539,6 +547,65 @@ def naming_counts(table_text, addresses):
     return dict((address, name) for address, name in names.items() if address in addresses)
 
 
+def entry_allow_findings(census_text, ends_text, allow_text):
+    if not (allow_text or "").strip():
+        return [("BOUNDS-entry-allow", "%s: the tree carries no entry allow-list, so a flagged "
+                 "start has no reason recorded" % ENTRY_ALLOW)]
+    starts = {}
+    for row in csv.DictReader(io.StringIO(census_text or "")):
+        if row.get("role") in ("start", "unreferenced"):
+            starts[int(row["address"], 16)] = (row["role"], row.get("evidence") or "")
+    ends = {}
+    for row in csv.DictReader(io.StringIO(ends_text or "")):
+        ends[int(row["address"], 16)] = (row["end"], row["reason"])
+    findings = []
+    seen = set()
+    for row in csv.DictReader(io.StringIO(allow_text)):
+        address = int(row["address"], 16)
+        if address in seen:
+            findings.append(("BOUNDS-entry-allow", "%s: 0x%08X is carried twice"
+                             % (ENTRY_ALLOW, address)))
+        seen.add(address)
+        if starts.get(address) != (row["kind"], row["limb"]):
+            findings.append(("BOUNDS-entry-allow",
+                             "%s: 0x%08X carries kind %s and limb %s, and %s reads %s and %s"
+                             % (ENTRY_ALLOW, address, row["kind"], row["limb"], FUNCTION_BOUNDS,
+                                starts.get(address, ("-", "-"))[0],
+                                starts.get(address, ("-", "-"))[1])))
+        if not row["flags"] or any(flag not in ENTRY_FLAGS for flag in row["flags"].split("+")):
+            findings.append(("BOUNDS-entry-allow", "%s: 0x%08X carries flags %s, and only %s name"
+                             " a byte-level test" % (ENTRY_ALLOW, address, row["flags"],
+                                                     ", ".join(ENTRY_FLAGS))))
+        if row["reason"] not in ENTRY_REASONS:
+            findings.append(("BOUNDS-entry-allow",
+                             "%s: 0x%08X is kept with reason %s, and only %s name one"
+                             % (ENTRY_ALLOW, address, row["reason"] or "none",
+                                ", ".join(ENTRY_REASONS))))
+            continue
+        entry = row["entry"]
+        if row["reason"] == "row-start":
+            if entry != "-":
+                findings.append(("BOUNDS-entry-allow",
+                                 "%s: 0x%08X carries entry %s with no prologue to name"
+                                 % (ENTRY_ALLOW, address, entry)))
+            continue
+        if not ADDRESS_HEX.match(entry or "") or int(entry, 16) <= address:
+            findings.append(("BOUNDS-entry-allow",
+                             "%s: 0x%08X is kept as a prefix and carries entry %s, which is "
+                             "not an address after it" % (ENTRY_ALLOW, address, entry or "-")))
+        elif ends.get(int(entry, 16), ("-",))[0] == "-":
+            findings.append(("BOUNDS-entry-allow",
+                             "%s: 0x%08X is corrected to %s, and %s carries no end there"
+                             % (ENTRY_ALLOW, address, entry, FUNCTION_ENDS)))
+    return findings
+
+
+def bounds_allow_findings():
+    return entry_allow_findings(read_source(FUNCTION_BOUNDS) or "",
+                                read_source(FUNCTION_ENDS) or "",
+                                read_source(ENTRY_ALLOW) or "")
+
+
 def naming_tree_findings():
     module = naming_module()
     addresses = set(module.emitted())
@@ -814,6 +881,7 @@ def run(files=None):
     if whole_tree:
         findings += c_source_findings()
         findings += naming_tree_findings()
+        findings += bounds_allow_findings()
         findings += tracked_rom_findings()
         findings += readme_findings()
         findings += stale_call_tree_findings()

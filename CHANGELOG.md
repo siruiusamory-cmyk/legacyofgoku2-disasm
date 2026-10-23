@@ -12,6 +12,12 @@ All notable changes to this project are documented here. The format follows
 
 ### Added
 
+- `docs/research/FUNCTION_ENDS.csv` gives every census start an end, from a walk to its return or
+  to the next start, and folds the runtime-only entries into the same bounds.
+  `docs/research/FUNCTION_ENTRY_ALLOW.csv` records the starts that open no function, corrected to
+  the prologue they lead into, and the `BOUNDS-entry-allow` check holds every flagged start to that
+  record.
+
 - `tools/check_links.py` follows an HTML `src` or `href` in markdown as well as a markdown link,
   and `check.cmd` runs the link check, the source checks and the link check's test.
 

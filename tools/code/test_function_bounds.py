@@ -26,13 +26,15 @@ def put_word(data, address, value):
     struct.pack_into("<I", data, address - BASE, value & 0xFFFFFFFF)
 
 
-def classify(data, entries, rows, modes=None, calls=(), table=(), vectors=(), spans=()):
+def classify(data, entries, rows, modes=None, calls=(), table=(), vectors=(), spans=(),
+             pools=()):
     return function_bounds.classify(bytes(data), entries, modes or {},
                                     [(BASE + start, BASE + stop) for start, stop in rows],
                                     set(BASE + value for value in calls),
                                     set(BASE + value for value in table),
                                     set(BASE + value for value in vectors),
-                                    spans=set(BASE + value for value in spans))
+                                    spans=set(BASE + value for value in spans),
+                                    pools=[BASE + value for value in pools])
 
 
 def row_of(found, address):
@@ -124,6 +126,61 @@ def test_a_transcribed_span_start_that_no_rule_reaches_is_unreferenced():
     assert row_of(found, BASE + 0x110) == "0x08000110,unreferenced,block"
 
 
+def test_an_end_is_the_byte_after_the_return():
+    data = image()
+    put_half(data, BASE + 0x10, 0x2001)
+    put_half(data, BASE + 0x12, 0xBD00)
+    found = classify(data, [BASE + 0x10], [(0x10, 0x14)], calls=[0x10])
+    assert found["ends"][BASE + 0x10] == (BASE + 0x14, "-")
+    assert [row for row in function_bounds.ends_rows(found)
+            if row[0] == BASE + 0x10] == [(BASE + 0x10, function_bounds.THUMB,
+                                           "census", BASE + 0x14, "-")]
+
+
+def test_the_next_start_bounds_an_end():
+    data = image()
+    for offset, half in ((0x10, 0x2001), (0x12, 0x2002), (0x14, 0x2003), (0x16, 0x2004)):
+        put_half(data, BASE + offset, half)
+    put_half(data, BASE + 0x18, 0xB510)
+    put_half(data, BASE + 0x1A, 0xBD10)
+    found = classify(data, [BASE + 0x10, BASE + 0x18], [(0x10, 0x1C)],
+                     calls=[0x10, 0x18])
+    assert found["ends"][BASE + 0x10] == (BASE + 0x18, "next-start")
+    assert found["ends"][BASE + 0x18] == (BASE + 0x1C, "-")
+
+
+def test_a_literal_pool_bounds_an_end():
+    data = image()
+    for offset, half in ((0x30, 0x2001), (0x32, 0x2002), (0x34, 0x2003),
+                         (0x36, 0x2004), (0x38, 0xBD00)):
+        put_half(data, BASE + offset, half)
+    found = classify(data, [BASE + 0x30], [(0x30, 0x3C)], calls=[0x30], pools=[0x34])
+    assert found["ends"][BASE + 0x30] == (BASE + 0x34, "pool")
+
+
+def test_a_start_that_opens_no_function_is_corrected_to_its_prologue():
+    data = image()
+    put_half(data, BASE + 0x100, 0x2001)
+    put_half(data, BASE + 0x102, 0xB510)
+    put_half(data, BASE + 0x104, 0xBD10)
+    found = classify(data, [BASE + 0x100], [(0x100, 0x106)], calls=[0x100])
+    assert found["corrected"] == {BASE + 0x100: BASE + 0x102}
+    assert function_bounds.ends_rows(found) == [
+        (BASE + 0x102, function_bounds.THUMB, "census", BASE + 0x106, "-")]
+    assert function_bounds.flags_text(function_bounds.flag_rows(
+        bytes(data), found)) == ("address,kind,limb,flags,entry,reason\n"
+                                 "0x08000100,start,call+block,data,0x08000102,prefix\n")
+
+
+def test_a_start_that_opens_its_own_function_is_no_flag():
+    data = image()
+    put_half(data, BASE + 0x120, 0xB510)
+    put_half(data, BASE + 0x122, 0xBD10)
+    found = classify(data, [BASE + 0x120], [(0x120, 0x124)], calls=[0x120])
+    assert found["corrected"] == {}
+    assert function_bounds.flag_rows(bytes(data), found) == []
+
+
 def test_a_transcribed_span_start_that_saves_lr_is_a_referenced_start():
     data = image()
     put_half(data, BASE + 0x120, 0xB510)
@@ -152,6 +209,48 @@ def test_the_tracked_bounds_file_is_what_the_image_gives():
     found = function_bounds.census(open(rom, "rb").read())
     with open(function_bounds.BOUNDS, encoding="utf-8") as handle:
         assert handle.read() == function_bounds.rows_text(found)
+
+
+def test_the_tracked_ends_and_allow_files_are_what_the_image_gives():
+    root = os.path.dirname(os.path.dirname(HERE))
+    rom = os.path.join(root, "baserom.gba")
+    if not os.path.exists(rom):
+        pytest.skip("the retail image is absent, so the bounds cannot be re-derived")
+    data = open(rom, "rb").read()
+    found = function_bounds.census(data)
+    with open(function_bounds.ENDS, encoding="utf-8") as handle:
+        assert handle.read() == function_bounds.ends_text(found)
+    with open(function_bounds.ALLOW, encoding="utf-8") as handle:
+        assert handle.read() == function_bounds.flags_text(
+            function_bounds.flag_rows(data, found))
+
+
+def test_every_census_start_or_its_corrected_entry_carries_an_end():
+    root = os.path.dirname(os.path.dirname(HERE))
+    rom = os.path.join(root, "baserom.gba")
+    if not os.path.exists(rom):
+        pytest.skip("the retail image is absent, so the bounds cannot be re-derived")
+    found = function_bounds.census(open(rom, "rb").read())
+    rows = dict((row[0], row) for row in function_bounds.ends_rows(found))
+    missing = [address for address in found["starts"]
+               if found["corrected"].get(address, address) not in rows]
+    assert missing == []
+    assert [row for row in rows.values() if not row[3]] == []
+
+
+def test_every_flagged_start_names_a_real_entry():
+    root = os.path.dirname(os.path.dirname(HERE))
+    rom = os.path.join(root, "baserom.gba")
+    if not os.path.exists(rom):
+        pytest.skip("the retail image is absent, so the flags cannot be re-derived")
+    data = open(rom, "rb").read()
+    found = function_bounds.census(data)
+    rows = function_bounds.flag_rows(data, found)
+    assert rows
+    assert [row for row in rows
+            if row[4] is not None and row[4] != found["corrected"].get(row[0])] == []
+    assert [row for row in rows if row[4] is not None and row[4] <= row[0]] == []
+    assert [row for row in rows if (row[4] is None) != ("data" not in row[3].split("+"))] == []
 
 
 def test_every_transcribed_code_span_start_is_classified():
