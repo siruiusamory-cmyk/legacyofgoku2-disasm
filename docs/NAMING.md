@@ -132,3 +132,33 @@ same figure as a sentence. The `NAMING-address-ratchet` check in `tools/lint/lin
 whose live count is above the baseline, and refuses one whose count is below it while the baseline
 still says the old number: the figure only falls, and it is exact at every commit. `NAMING-symbol`
 refuses a name on an interior fragment and refuses a boundary file that does not cover the entries.
+
+## The population with three or more callers
+
+`tools/research/callers.py` ranks every census start that carries no name, and its `callers` column
+counts the distinct starts whose own bounds hold a `bl` to the target. Ninety-six starts are reached
+from three or more distinct callers. Eighty carry a name; the sixteen below carry a measured
+refusal, and a refusal is a result, not a gap: no name may claim more than its evidence.
+
+The measurement is a seeded run of `tools/code/thumb_vm.py` on a zeroed `0x40`-byte workspace at
+`0x02000000`, with `r0` at that base and `r1`..`r7` at `0x40`-byte steps, or the harness's own
+refusal text where a run cannot start.
+
+| address | callers | class | measured refusal |
+| --- | --- | --- | --- |
+| `0x0801FE20` | 13 | seed-not-separating | the run takes the 16-step exit path and writes nothing the seeded state decides |
+| `0x080236A8` | 9 | arm-switch | `0x080236A8 switches to ARM, which this run cannot follow`; the literal the body loads is `0x03000000`, inside the block the boot copy installs, and no census start or library member names that address |
+| `0x08006664` | 8 | seed-not-separating | two seeded paths disagree on what the record's byte at +0 records, so the effects do not separate a merge from a link |
+| `0x080236CC` | 7 | arm-switch | `0x080236CC switches to ARM, which this run cannot follow`; the literal is `0x03000480`, and the same unnamed block holds it |
+| `0x08006C24` | 6 | effect-without-a-module | the run pins four DMA3 copies, a `0x159`-word fill and the 138-cell grid walk, and every name those writes support is a module claim |
+| `0x080135E0` | 5 | effect-without-a-module | the run pins the vtable `0x080245C0`, the `0x1120` node halfword and the position and extent words the parameter record fills |
+| `0x08020D40` | 5 | bios-call | `0x08020D6E is a BIOS call, which this run cannot make`; the swap is the body's last instruction, and the countdown it stores is scaled from VCOUNT at `0x04000006` |
+| `0x080078E4` | 4 | image-pointer | `0x00000003+1 is outside the image and the writable space`: the pointer it copies bytes from is the callee's return word |
+| `0x0800B1E2` | 4 | tail-branch | `the run left the body at 0x0800B282 from 0x0800B264` |
+| `0x08002244` | 3 | effect-without-a-module | the run pins the vtable `0x08023A60`, three zeroed spans and eight vtable stores in two sub-objects |
+| `0x08002FF8` | 3 | image-pointer | `0x00000000+1 is outside the image and the writable space`: the word read at `0x081D9094` is used as a pointer |
+| `0x080086A2` | 3 | image-pointer | `0x00000000+1 is outside the image and the writable space`: the record at `0x083B5268+4` names the word it follows |
+| `0x0800E4D2` | 3 | image-pointer | `0x00000000+1 is outside the image and the writable space`: the table at `0x0840DAF4` names the word it follows |
+| `0x0800FC84` | 3 | image-pointer | `0x00000000+1 is outside the image and the writable space`: the object's word at +0x14 names the record it copies |
+| `0x08010124` | 3 | tail-branch | `the run left the body at 0x08010170 from 0x0801016E` |
+| `0x080143A8` | 3 | effect-without-a-module | the run pins the vtable `0x08024ACC`, the `0x300` code, the `0x086E29B4` table words and a `0x10`-word DMA3 upload to VRAM |

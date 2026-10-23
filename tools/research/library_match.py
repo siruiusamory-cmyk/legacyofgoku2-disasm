@@ -51,7 +51,7 @@ def fields(relocations):
         if kind in WORD_FIELD:
             masked.update(range(offset, offset + 4))
         elif kind in BRANCH_FIELD:
-            masked.update(range(offset + 1, offset + 4))
+            masked.update(range(offset, offset + 3))
         elif kind in CALL_FIELD:
             masked.update(range(offset, offset + 4))
         elif kind in NARROW_FIELD:

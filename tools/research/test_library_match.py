@@ -21,7 +21,13 @@ def test_an_archive_yields_its_members():
 
 
 def test_a_branch_relocation_masks_the_three_offset_bytes():
-    assert library_match.fields([(0, 1)]) == {1, 2, 3}
+    assert library_match.fields([(0, 1)]) == {0, 1, 2}
+
+
+def test_an_arm_body_behind_an_interworking_prefix_matches_at_the_body():
+    text = b"\x10\x40\x2d\xe9\xfe\xff\xff\xea"
+    rom = b"\x78\x47\x00\x00" + text
+    assert library_match.same(text, rom[4:], library_match.fields([(4, 1)]))
 
 
 def test_a_word_relocation_masks_the_whole_word():

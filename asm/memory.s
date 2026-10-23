@@ -7,5 +7,6 @@ Handler_Stack	EQU	0x03000E28
 Heap_Head	EQU	0x030022B4
 Irq_DmaChannel	EQU	0x030038A0
 Irq_SavedIme	EQU	0x030038AC
+Opcode_OperandPointer	EQU	0x03001FAC
 Scene_Current	EQU	0x03000FF4
 Sprite_CurrentDirectory	EQU	0x03001FA8
