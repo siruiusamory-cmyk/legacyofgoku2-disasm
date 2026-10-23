@@ -3,7 +3,6 @@ from __future__ import annotations
 import argparse
 import csv
 import os
-import struct
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -22,7 +21,6 @@ HEADER = "class,bytes,share"
 BASE = code_split.ROM_BASE
 PAD = 8
 RUN = 8
-FACTORY = 4
 REASONS = (("invalid", "residual: run meets a non-ARMv4T halfword"),
            ("no-return", "residual: run ends without a return"),
            ("inconsistent", "residual: branch target leaves the run"),
@@ -119,32 +117,11 @@ def shaped(rom):
 
 
 def named(rom):
-    return sorted({value & ~1 for (value,) in struct.iter_unpack("<I", rom)
-                   if value & 1 and code_split.in_image(rom, value & ~1)})
+    return sorted(code_split.thumb_entries(rom)[0])
 
 
 def table_words(rom):
-    values = [value for (value,) in struct.iter_unpack("<I", rom)]
-    counts = {}
-    for value in values:
-        if value & 1 and code_split.in_image(rom, value & ~1):
-            counts[value] = counts.get(value, 0) + 1
-    repeated = set(value for value, count in counts.items() if count >= FACTORY)
-    sites = []
-    start = None
-    for index, value in enumerate(values):
-        if value & 1 and code_split.in_image(rom, value & ~1):
-            if start is None:
-                start = index
-        else:
-            if start is not None and index - start > 1:
-                sites.append((start * 4, index * 4))
-            start = None
-        if value in repeated:
-            sites.append((index * 4, index * 4 + 4))
-    if start is not None and len(values) - start > 1:
-        sites.append((start * 4, len(values) * 4))
-    return union(sites)
+    return union(code_split.table_word_sites(rom))
 
 
 def closures(rom, measured):
@@ -277,15 +254,17 @@ def class_mask(rom, measured, remaining):
 def null(rom, mask):
     permuted = code_split.permute(rom)
     census = code_split.measure_null(rom)
-    covered = 0
-    for address in sorted({value & ~1 for (value,) in struct.iter_unpack("<I", permuted)
-                           if value & 1 and code_split.in_image(rom, value & ~1)}):
+    accepted = []
+    for address in named(permuted):
         why, extent = code_split.closure(permuted, address, census["pre"],
                                          census["modes"])
         if why in ("return", "tail"):
-            for index in range(address - BASE, extent - BASE):
-                if 0 <= index < len(mask) and mask[index]:
-                    covered += 1
+            accepted.append((address - BASE, extent - BASE))
+    covered = 0
+    for begin, end in union(accepted):
+        for index in range(max(begin, 0), min(end, len(mask))):
+            if mask[index]:
+                covered += 1
     return covered
 
 

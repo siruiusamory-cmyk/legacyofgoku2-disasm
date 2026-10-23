@@ -28,7 +28,6 @@ OVERLAY_CLASS = 4
 TABLE = 5
 GAPFILL = 6
 CODE_CLASSES = (PROVEN, TABLE, FILTERED, GAPFILL)
-CLOSE_CLASSES = CODE_CLASSES
 MODE_NONE = 0
 MODE_THUMB = 1
 MODE_ARM = 2
@@ -396,11 +395,11 @@ def closure(rom, entry, classes, modes):
             if target not in visited:
                 return "inconsistent", extent
             continue
-        if not (in_image(rom, target) and classes[target - ROM_BASE] in CLOSE_CLASSES):
+        if not (in_image(rom, target) and classes[target - ROM_BASE] in CODE_CLASSES):
             return "inconsistent", extent
     if returned:
         return "return", extent
-    if tail is not None and in_image(rom, tail) and classes[tail - ROM_BASE] in CLOSE_CLASSES:
+    if tail is not None and in_image(rom, tail) and classes[tail - ROM_BASE] in CODE_CLASSES:
         return "tail", extent
     return "no-return", extent
 
@@ -552,12 +551,22 @@ def register_branches(rom, classes, modes, ranges):
     return {"sites": sites, "bounded": bounded, "entries": entries}
 
 
-def repeated_code_pointers(rom):
-    counts = {}
+def named_words(rom):
+    values = views_of(rom)[2]
     end = ROM_BASE + len(rom)
-    for value in views_of(rom)[2]:
+    flags = bytearray(len(values))
+    for index, value in enumerate(values):
         if value & 1 and ROM_BASE <= (value & ~1) < end:
-            counts[value] = counts.get(value, 0) + 1
+            flags[index] = 1
+    return values, flags
+
+
+def repeated_code_pointers(rom):
+    values, flags = named_words(rom)
+    counts = {}
+    for index, hit in enumerate(flags):
+        if hit:
+            counts[values[index]] = counts.get(values[index], 0) + 1
     return {value for value, count in counts.items() if count >= FACTORY_REPEATS}
 
 
@@ -945,13 +954,12 @@ def mode_runs(classes, modes, values):
 
 
 def pointer_runs(rom):
+    values, flags = named_words(rom)
     runs = []
     current = []
-    end = ROM_BASE + len(rom)
-    for value in views_of(rom)[2]:
-        target = value & ~1
-        if value & 1 and ROM_BASE <= target < end:
-            current.append(target)
+    for index, hit in enumerate(flags):
+        if hit:
+            current.append(values[index] & ~1)
         elif current:
             if len(current) > 1:
                 runs.append(current)
@@ -959,6 +967,29 @@ def pointer_runs(rom):
     if len(current) > 1:
         runs.append(current)
     return runs
+
+
+def table_word_sites(rom):
+    values, flags = named_words(rom)
+    counts = {}
+    for index, hit in enumerate(flags):
+        if hit:
+            counts[values[index]] = counts.get(values[index], 0) + 1
+    sites = []
+    begin = None
+    for index, hit in enumerate(flags):
+        if hit:
+            if begin is None:
+                begin = index
+            if counts[values[index]] >= FACTORY_REPEATS:
+                sites.append((index * 4, index * 4 + 4))
+        elif begin is not None:
+            if index - begin > 1:
+                sites.append((begin * 4, index * 4))
+            begin = None
+    if begin is not None and len(flags) - begin > 1:
+        sites.append((begin * 4, len(flags) * 4))
+    return sites
 
 
 def table_targets(runs, proven):
@@ -1591,12 +1622,14 @@ def doc_text(measured, null):
         "",
         "## Channels",
         "",
-        "Six channels are measured. Each one runs over the same census as the descent and is measured",
-        "with the same census over the image with every 64 KiB block reversed by halfword, so its",
-        "`null` column is what the channel finds where there is no code to find. Four of them own a",
-        "class in the table below; the register channel owns none because an address it resolves is",
-        "proved by its caller, and the prologue sweep is measured only, because a channel whose null",
-        "is not below its accept rate emits no entry and no byte.",
+        "Seven channels are measured: the six the table below counts, and the closing run, whose",
+        "accept and null counts are printed under the table channel. Each one runs over the same",
+        "census as the descent and is measured with the same census over the image with every 64 KiB",
+        "block reversed by halfword, so its `null` column is what the channel finds where there is no",
+        "code to find. Four of them own a class in the table below; the register channel owns none",
+        "because an address it resolves is proved by its caller, and the prologue sweep and the",
+        "closing run are measured only, because a channel whose null is not below its accept rate",
+        "emits no entry and no byte.",
         "",
         "| channel | candidates | accepted | bytes | null | null rate |",
         "|---|---|---|---|---|---|",

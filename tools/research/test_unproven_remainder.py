@@ -62,3 +62,27 @@ def test_the_closing_test_reads_the_named_word_and_its_linear_run():
     classes = bytearray(len(rom))
     modes = bytearray(len(rom))
     assert code_split.closure(bytes(rom), 0x08000020, classes, modes)[0] == "return"
+
+
+def test_named_words_are_the_odd_words_that_name_the_image():
+    rom = bytearray(0x100)
+    struct.pack_into("<I", rom, 0x10, 0x08000041)
+    struct.pack_into("<I", rom, 0x20, 0x08000043)
+    struct.pack_into("<I", rom, 0x30, 0x08000040)
+    struct.pack_into("<I", rom, 0x40, 0x03000001)
+    assert ur.named(bytes(rom)) == [0x08000040, 0x08000042]
+
+
+def test_the_null_counts_an_overlapping_closure_once(monkeypatch):
+    rom = bytearray(0x100)
+    struct.pack_into("<I", rom, 0x10, 0x08000041)
+    struct.pack_into("<I", rom, 0x20, 0x08000043)
+    struct.pack_into("<HHH", rom, 0x40, 0x2000, 0x2101, 0x4770)
+    rom = bytes(rom)
+    monkeypatch.setattr(code_split, "permute", lambda image: image)
+    monkeypatch.setattr(code_split, "measure_null",
+                        lambda image: {"pre": bytearray(len(image)),
+                                       "modes": bytearray(len(image))})
+    mask = bytearray(len(rom))
+    mask[0x40:0x48] = b"\x01" * 8
+    assert ur.null(rom, mask) == 6

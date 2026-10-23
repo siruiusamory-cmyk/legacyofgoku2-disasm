@@ -33,14 +33,14 @@ All notable changes to this project are documented here. The format follows
 
 - `tools/research/unproven_remainder.py` splits the bytes of the address-taken walk bound that no
   proven function bounds, into the data formats, the padding, the code a closing run proves, the
-  words a pointer table holds and a residual per reason, and prints the closing run's rate on the
-  census starts, the runtime entries, the named words inside a format and inside padding, and its
-  permuted null. It writes `docs/research/UNPROVEN_REMAINDER.csv`.
+  words a pointer table holds and a residual per reason, and, with `--rates`, prints the closing
+  run's rate on the census starts, the runtime entries, and the named words inside a format and
+  inside padding. It writes `docs/research/UNPROVEN_REMAINDER.csv`.
 
 - `tools/research/unproven_remainder.py` claims the closing run's bytes only when their measured
   null share is under 5 % of the class; at or over the bar the bytes take the residual reason for a
   run below it. It prints the measured null, the class size and the bar on every run. On this image
-  the null is 44 B of 116 B, 37.9310 %, so those bytes sit in that residual and the code row is
+  the null is 30 B of 410 B, 7.3171 %, so those bytes sit in that residual and the code row is
   empty.
 
 - `docs/research/FUNCTION_ENDS.csv` gives every census start an end, from a walk to its return or

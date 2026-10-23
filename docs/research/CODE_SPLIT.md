@@ -83,12 +83,14 @@ image accepts 96, the same shape read over bytes that hold no code.
 
 ## Channels
 
-Six channels are measured. Each one runs over the same census as the descent and is measured
-with the same census over the image with every 64 KiB block reversed by halfword, so its
-`null` column is what the channel finds where there is no code to find. Four of them own a
-class in the table below; the register channel owns none because an address it resolves is
-proved by its caller, and the prologue sweep is measured only, because a channel whose null
-is not below its accept rate emits no entry and no byte.
+Seven channels are measured: the six the table below counts, and the closing run, whose
+accept and null counts are printed under the table channel. Each one runs over the same
+census as the descent and is measured with the same census over the image with every 64 KiB
+block reversed by halfword, so its `null` column is what the channel finds where there is no
+code to find. Four of them own a class in the table below; the register channel owns none
+because an address it resolves is proved by its caller, and the prologue sweep and the
+closing run are measured only, because a channel whose null is not below its accept rate
+emits no entry and no byte.
 
 | channel | candidates | accepted | bytes | null | null rate |
 |---|---|---|---|---|---|

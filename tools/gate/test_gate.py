@@ -210,8 +210,17 @@ def test_main_prints_the_digest_the_counted_split_and_the_verdict(monkeypatch, t
                          hashlib.sha256(bytes(gate.ROM_SIZE)).hexdigest())
     assert rc == 0
     assert [line for line in lines if line.startswith("DIGEST ")] == ["DIGEST MATCH"]
-    assert len([line for line in lines if line.startswith("source=")]) == 1
-    assert len([line for line in lines if line.startswith("raw-data=")]) == 1
+    ranges = gate.incbin_ranges()
+    raw = sum(length for _start, length in ranges)
+    covered = bytearray(gate.ROM_SIZE)
+    for start, length in ranges:
+        covered[start:start + length] = b"\x01" * length
+    source = covered.count(0)
+    assert [line for line in lines if line.startswith("raw-data=")] == [
+        "raw-data=%d (%.4f %%)" % (raw, 100.0 * raw / gate.ROM_SIZE)]
+    assert [line for line in lines if line.startswith("source=")] == [
+        "source=%d of %d (%.4f %%)"
+        % (source, gate.ROM_SIZE, 100.0 * source / gate.ROM_SIZE)]
     accounted = [line for line in lines if line.startswith("accounted=")]
     assert len(accounted) == 1
     parts = re.search(r"raw (\d+) \+ identity (\d+) \+ source (\d+)", accounted[0])
