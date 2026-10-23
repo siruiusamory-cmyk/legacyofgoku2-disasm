@@ -4,6 +4,7 @@ import re
 import shutil
 import subprocess
 import sys
+import time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
@@ -240,6 +241,19 @@ def main():
         print("GATE FAIL: %d lint finding(s)" % len(findings))
         return 1
     print("LINT PASS %s" % ",".join(lints.CHECKS))
+
+    cited = [("tools/code/test_emit_code.py", "test_every_function_start_opens_one_file"),
+             ("tools/code/test_emit_code.py",
+              "test_an_entry_outside_the_table_keeps_its_address_name")]
+    started = time.time()
+    results = lints.run_cited_tests(cited)
+    failed = [(pair, results[pair]) for pair in cited if results[pair][0] != 0]
+    for (path, name), (code, output) in failed:
+        print("GATE FAIL: %s::%s exits %d: %s" % (path, name, code, output))
+    print("BEHAVIOUR %s %d test(s) in %.1fs"
+          % ("FAIL" if failed else "PASS", len(cited), time.time() - started))
+    if failed:
+        return 1
 
     if cold and cold_start() != 0:
         return 1

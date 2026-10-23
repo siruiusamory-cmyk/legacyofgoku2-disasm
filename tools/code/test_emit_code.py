@@ -126,8 +126,8 @@ def test_every_function_start_opens_one_file():
     measured, rom = result()
     found = function_bounds.describe(measured["measured"], rom)
     segments = measured["segments"]
-    assert len(segments) == len(found["starts"])
-    assert [begin for begin, _end, _name in segments if begin not in found["starts"]] == []
+    starts = set(name_table.emitted(found["starts"])) | {emit_code.ROM_BASE + emit_code.START}
+    assert set(begin for begin, _end, _name in segments) == starts
     assert len(measured["files"]) == len(segments) + len(measured["pools"])
     assert [name for _begin, _end, name in segments if name not in measured["files"]] == []
 
@@ -149,7 +149,7 @@ def test_an_entry_outside_the_table_keeps_its_address_name():
         positions.add(begin)
         positions.update(position for position, _op, _operands in lines)
     found = function_bounds.describe(measured["measured"], rom)
-    unnamed = [address for address in found["starts"] if address not in names]
+    unnamed = [address for address in name_table.emitted(found["starts"]) if address not in names]
     assert unnamed
     assert ["|sub_%08X|" % address for address in unnamed
             if "|sub_%08X|" % address not in text] == []
