@@ -9,6 +9,8 @@ import shutil
 import sys
 import tempfile
 
+import pytest
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 
@@ -31,6 +33,11 @@ def made(root, name, content=b"x"):
     with open(path, "wb") as handle:
         handle.write(content)
     return path
+
+
+def require_cmd():
+    if sys.platform != "win32":
+        pytest.skip("cmd.exe is absent, so the build step cannot run")
 
 
 def test_the_source_count_is_the_generated_containers_and_the_slices_are_the_rest():
@@ -118,6 +125,7 @@ def rebuild_with(script, image_created=False):
 
 
 def test_a_failed_tools_lowercase_error_line_reaches_the_gate_summary():
+    require_cmd()
     rc, printed = rebuild_with("@echo off\r\necho Fatal error: L6031U: Could not open scatter "
                                "description file\r\nexit /b 1\r\n")
     assert rc == 1
@@ -125,6 +133,7 @@ def test_a_failed_tools_lowercase_error_line_reaches_the_gate_summary():
 
 
 def test_a_step_reporting_a_nonzero_exit_fails_the_build_it_still_produced():
+    require_cmd()
     rc, printed = rebuild_with("@echo off\r\necho armasm_buu_exit=1\r\necho armlink_exit=0\r\n"
                                "exit /b 0\r\n", image_created=True)
     assert rc == 1
@@ -148,6 +157,7 @@ def test_the_purge_removes_every_object_and_the_image_and_nothing_else():
 
 
 def test_the_cold_start_purges_the_slices_the_encode_cache_and_runs_the_extract_step():
+    require_cmd()
     def check(root):
         made(root, "baserom.gba_0x0_0xc0.extracted")
         made(root, "build/buu.o")

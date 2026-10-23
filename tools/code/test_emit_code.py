@@ -29,7 +29,7 @@ def result():
 
 def toolchain():
     home = os.environ.get("ADS12_HOME") or os.environ.get("ARMHOME")
-    if not home:
+    if not home or sys.platform != "win32":
         pytest.skip("no ADS 1.2 environment is active, so the reassembly check cannot run")
     return tuple(os.path.join(home, "Bin", name)
                  for name in ("armasm.exe", "armlink.exe", "fromelf.exe"))
