@@ -53,46 +53,39 @@ _UNDEFINED = bytes(
     1 if any(low <= half <= high for low, high in THUMB_UNDEFINED) else 0
     for half in range(0x10000))
 _NAMES = tuple(CLASS_NAMES.get(value) for value in range(256))
-_HALVES = {}
-_WORDS = {}
+_SIZE = bytes(0 if half >= 0xF800 or _UNDEFINED[half] else 4 if half >= 0xF000 else 2
+              for half in range(0x10000))
+_VIEWS = {}
 
 
-def halves_of(rom):
-    found = _HALVES.get(id(rom))
+def views_of(rom):
+    found = _VIEWS.get(id(rom))
     if found is not None and found[0] is rom:
-        return found[1]
-    view = memoryview(rom)[:len(rom) - len(rom) % 2].cast("H")
-    if len(_HALVES) > 3:
-        _HALVES.clear()
-    _HALVES[id(rom)] = (rom, view)
-    return view
-
-
-def words_of(rom):
-    found = _WORDS.get(id(rom))
-    if found is not None and found[0] is rom:
-        return found[1]
-    view = memoryview(rom)[:len(rom) - len(rom) % 4].cast("I")
-    if len(_WORDS) > 3:
-        _WORDS.clear()
-    _WORDS[id(rom)] = (rom, view)
-    return view
+        return found
+    if sys.byteorder != "little":
+        raise SystemExit("this tree reads the retail image little-endian, and this host is "
+                         "%s-endian" % sys.byteorder)
+    halves = memoryview(rom)[:len(rom) - len(rom) % 2].cast("H")
+    words = memoryview(rom)[:len(rom) - len(rom) % 4].cast("I")
+    if len(_VIEWS) > 3:
+        _VIEWS.clear()
+    found = (rom, halves, words)
+    _VIEWS[id(rom)] = found
+    return found
 
 
 def hw(rom, addr):
-    view = halves_of(rom)
     offset = addr - ROM_BASE
     if offset & 1:
         return struct.unpack_from("<H", rom, offset)[0]
-    return view[offset >> 1]
+    return views_of(rom)[1][offset >> 1]
 
 
 def word(rom, addr):
-    view = words_of(rom)
     offset = addr - ROM_BASE
     if offset & 3:
         return struct.unpack_from("<I", rom, offset)[0]
-    return view[offset >> 2]
+    return views_of(rom)[2][offset >> 2]
 
 
 def in_image(rom, addr):
@@ -106,18 +99,16 @@ def has_word(rom, addr):
 def thumb_size(view, index, count):
     if index + 1 > count:
         return None
-    half = view[index]
-    if half >= 0xF000:
-        if half >= 0xF800 or index + 2 > count:
-            return None
-        return 4 if view[index + 1] >= 0xF800 else None
-    return None if _UNDEFINED[half] else 2
+    size = _SIZE[view[index]]
+    if size == 4:
+        return 4 if index + 2 <= count and view[index + 1] >= 0xF800 else None
+    return size or None
 
 
 def thumb_length(rom, addr):
-    view = halves_of(rom)
     offset = addr - ROM_BASE
     if not offset & 1:
+        view = views_of(rom)[1]
         return thumb_size(view, offset >> 1, len(view))
     if addr + 2 > ROM_BASE + len(rom):
         return None
@@ -179,7 +170,7 @@ def code_ranges(classes):
 
 
 def thumb_step(rom, addr, classes, modes, value, last):
-    view = halves_of(rom)
+    view = views_of(rom)[1]
     index = (addr - ROM_BASE) >> 1
     size = thumb_size(view, index, len(view))
     if size is None:
@@ -316,7 +307,7 @@ def probe(rom, entry):
     seen = set()
     returned = False
     branches = 0
-    view = halves_of(rom)
+    view = views_of(rom)[1]
     count = len(view)
     while queue:
         addr = queue.pop()
@@ -374,7 +365,7 @@ def thumb_entries(rom):
     targets = set()
     words = 0
     end = ROM_BASE + len(rom)
-    for value in words_of(rom):
+    for value in views_of(rom)[2]:
         if value & 1 and ROM_BASE <= value < end:
             words += 1
             targets.add(value & ~1)
@@ -419,8 +410,9 @@ def overlay_copy(rom):
 
 def overlay_thunks(rom, dest, size):
     out = []
-    halves = halves_of(rom)
-    words = words_of(rom)
+    found = views_of(rom)
+    halves = found[1]
+    words = found[2]
     for index in range(0, len(words) - 3):
         if (halves[2 * index], halves[2 * index + 1]) != THUNK_HEAD[0]:
             continue
@@ -507,14 +499,14 @@ def register_branches(rom, classes, modes, ranges):
 def repeated_code_pointers(rom):
     counts = {}
     end = ROM_BASE + len(rom)
-    for value in words_of(rom):
+    for value in views_of(rom)[2]:
         if value & 1 and ROM_BASE <= (value & ~1) < end:
             counts[value] = counts.get(value, 0) + 1
     return {value for value, count in counts.items() if count >= FACTORY_REPEATS}
 
 
 def linear_end(rom, entry):
-    view = halves_of(rom)
+    view = views_of(rom)[1]
     count = len(view)
     index = (entry - ROM_BASE) >> 1
     addr = entry
@@ -552,8 +544,9 @@ def decodable_runs(rom, classes):
     counts = {threshold: 0 for threshold in RUN_THRESHOLDS}
     offset = 0
     total = len(rom)
-    view = halves_of(rom)
+    view = views_of(rom)[1]
     count = len(view)
+    sizes = _SIZE
     while offset < total:
         if classes[offset] != UNCLASSIFIED:
             offset += 2
@@ -563,11 +556,8 @@ def decodable_runs(rom, classes):
             index = offset >> 1
             if index + 1 > count:
                 break
-            half = view[index]
-            if half >= 0xF000:
-                if half >= 0xF800 or index + 2 > count or view[index + 1] < 0xF800:
-                    break
-            elif _UNDEFINED[half]:
+            size = sizes[view[index]]
+            if not size or (size == 4 and not thumb_size(view, index, count)):
                 break
             offset += 2
         length = offset - start
@@ -578,11 +568,8 @@ def decodable_runs(rom, classes):
             index = offset >> 1
             if index + 1 > count:
                 break
-            half = view[index]
-            if half >= 0xF000:
-                if half < 0xF800 and index + 2 <= count and view[index + 1] >= 0xF800:
-                    break
-            elif not _UNDEFINED[half]:
+            size = sizes[view[index]]
+            if size == 2 or (size == 4 and thumb_size(view, index, count)):
                 break
             offset += 2
     return counts
@@ -905,7 +892,7 @@ def pointer_runs(rom):
     runs = []
     current = []
     end = ROM_BASE + len(rom)
-    for value in words_of(rom):
+    for value in views_of(rom)[2]:
         target = value & ~1
         if value & 1 and ROM_BASE <= target < end:
             current.append(target)
@@ -1241,7 +1228,7 @@ def census(rom, want_overlay):
                     continue
                 added += hold(entry, TABLE, shape)
         anchors = []
-        halves = halves_of(rom)
+        halves = views_of(rom)[1]
         for begin, stop in code_ranges(classes):
             for index in range(begin, stop, 2):
                 if classes[index] not in anchor_classes:
@@ -1330,7 +1317,7 @@ def census(rom, want_overlay):
     accepted_set = set(accepted)
     accepted_addresses = {address for address, _mode in accepted_set}
     end = ROM_BASE + len(rom)
-    accepted_words = sum(1 for value in words_of(rom)
+    accepted_words = sum(1 for value in views_of(rom)[2]
                          if value & 1 and ROM_BASE <= value < end
                          and (value & ~1) in accepted_addresses)
     uncalled = [entry for entry in accepted_order if entry not in calls]

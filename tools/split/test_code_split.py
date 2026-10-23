@@ -125,15 +125,30 @@ def test_a_long_branch_is_a_pair_and_a_lone_halfword_is_refused():
     assert code_split.thumb_length(low, 0x08000100) is None
 
 
-def test_the_thumb_size_helper_reads_a_pair_and_refuses_a_truncated_one():
-    pair = memoryview(bytearray([0x00, 0xF0, 0x00, 0xF8])).cast("H")
-    assert code_split.thumb_size(pair, 0, 2) == 4
-    assert code_split.thumb_size(pair, 1, 2) is None
-    assert code_split.thumb_size(pair, 2, 2) is None
-    broken = memoryview(bytearray([0x00, 0xF0, 0x00, 0x00])).cast("H")
-    assert code_split.thumb_size(broken, 0, 2) is None
-    lone = memoryview(bytearray([0x00, 0xF0])).cast("H")
-    assert code_split.thumb_size(lone, 0, 1) is None
+def test_the_cached_views_read_the_image_little_endian():
+    found = code_split.views_of(bytearray([0x34, 0x12, 0x78, 0x56]))
+    assert found[1][0] == 0x1234
+    assert found[2][0] == 0x56781234
+
+
+def test_a_big_endian_host_is_refused(monkeypatch):
+    monkeypatch.setattr(code_split.sys, "byteorder", "big")
+    with pytest.raises(SystemExit):
+        code_split.views_of(bytearray(8))
+
+
+def test_the_census_of_a_small_image_is_the_rows_and_runs_a_reader_gets():
+    assert code_split.csv_text(code_split.measure(image())) == (
+        "start,end,bytes,class\n"
+        "0x08000000,0x08000004,4,proven code\n"
+        "0x080000C0,0x080000C4,4,proven code\n"
+        "0x08000200,0x08000210,16,IWRAM overlay\n")
+    assert code_split.measure(image())["decodable"] == {1: 1000, 8: 1000, 32: 1000,
+                                                        128: 812}
+    pair = code_split.measure(image(code=struct.pack("<HH", 0xF000, 0xF800)))
+    assert pair["decodable"] == {1: 998, 8: 998, 32: 936, 128: 496}
+    undefined = code_split.measure(image(code=struct.pack("<HH", 0xB100, 0x2000)))
+    assert undefined["decodable"] == {1: 998, 8: 998, 32: 938, 128: 496}
 
 
 def test_the_probe_reports_a_return_and_its_branch_count():
