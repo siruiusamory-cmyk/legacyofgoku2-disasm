@@ -370,11 +370,14 @@ def readability_tree_findings():
     image = os.path.join(ROOT, "baserom.gba")
     if not os.path.exists(image):
         return []
-    module = readability_module()
-    live = module.counts()
-    findings = readability_findings(read_source("docs/READABILITY_BASELINE.txt"),
-                                    {"ram": live["ram_literals"],
-                                     "hardware": live["hardware_literals"]})
+    findings = []
+    code = os.path.join(ROOT, "build", "code")
+    if os.path.exists(code):
+        module = readability_module()
+        live = module.counts()
+        findings = readability_findings(read_source("docs/READABILITY_BASELINE.txt"),
+                                        {"ram": live["ram_literals"],
+                                         "hardware": live["hardware_literals"]})
     readme = read_source("README.md") or ""
     install = read_source("INSTALL.md") or ""
     findings += newcomer_path_findings(readme, install)

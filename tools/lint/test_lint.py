@@ -713,6 +713,45 @@ def test_a_readability_ratchet_accepts_the_count_it_records():
                                       {"ram": 98, "hardware": 0}) == []
 
 
+def readability_scratch(monkeypatch, live, built):
+    root = tempfile.mkdtemp(prefix="lint-test-")
+    open(os.path.join(root, "baserom.gba"), "wb").close()
+    os.makedirs(os.path.join(root, "docs"))
+    with open(os.path.join(root, "docs", "READABILITY_BASELINE.txt"), "w",
+              encoding="utf-8", newline="\n") as handle:
+        handle.write("ram=55\nhardware=0\n")
+    if built:
+        os.makedirs(os.path.join(root, "build", "code"))
+
+    class Module:
+        counts = staticmethod(lambda: {"ram_literals": live, "hardware_literals": 0})
+
+    monkeypatch.setattr(lints, "ROOT", root)
+    monkeypatch.setattr(lints, "readability_module", lambda: Module())
+    return root
+
+
+def test_the_readability_ratchet_runs_only_when_the_code_lane_is_built(monkeypatch):
+    index = []
+    monkeypatch.setattr(lints, "readability_index_findings", lambda: index.append(1) or [])
+    without = readability_scratch(monkeypatch, 99, False)
+    try:
+        found = [name for name, _detail in lints.readability_tree_findings()]
+        assert "READABILITY-ratchet" not in found, found
+        assert "READABILITY-path" in found, found
+        assert index == [1]
+    finally:
+        shutil.rmtree(without, ignore_errors=True)
+    with_code = readability_scratch(monkeypatch, 99, True)
+    try:
+        found = [name for name, _detail in lints.readability_tree_findings()]
+        assert found.count("READABILITY-ratchet") == 1, found
+        assert "READABILITY-path" in found, found
+        assert index == [1, 1]
+    finally:
+        shutil.rmtree(with_code, ignore_errors=True)
+
+
 def test_a_newcomer_path_check_names_the_step_a_document_leaves_out():
     complete = "extract.cmd\nrebuild.cmd\npython tools\\gate\\gate.py\ndocs/CODE_INDEX.md\n"
     assert lints.newcomer_path_findings(complete, complete) == []
