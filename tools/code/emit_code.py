@@ -380,12 +380,12 @@ def arm_block(instruction, suffix):
         return None
     if pre and up:
         mode = "IB"
-    elif pre and not up:
-        mode = "DA"
+    elif pre:
+        mode = "DB"
     elif up:
         mode = "IA"
     else:
-        mode = "DB"
+        mode = "DA"
     return ("LDM" if load else "STM") + suffix + mode, "%s%s, {%s}" % (
         register(source), "!" if write else "", ", ".join(names)), 4
 

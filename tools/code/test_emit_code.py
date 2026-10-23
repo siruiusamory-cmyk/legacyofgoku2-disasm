@@ -47,6 +47,32 @@ def test_a_thumb_encoding_decodes_to_one_text_form():
     assert emit_code.decode(rom, emit_code.ROM_BASE + 10, "thumb") is None
 
 
+def test_an_arm_store_increment_after_names_ia():
+    rom = bytearray(16)
+    rom[0:4] = (0xE8A00006).to_bytes(4, "little")
+    assert emit_code.decode(rom, emit_code.ROM_BASE, "arm") == ("STMIA", "r0!, {r1, r2}", 4)
+
+
+def test_an_arm_store_increment_before_names_ib():
+    rom = bytearray(16)
+    rom[0:4] = (0xE9A00006).to_bytes(4, "little")
+    assert emit_code.decode(rom, emit_code.ROM_BASE, "arm") == ("STMIB", "r0!, {r1, r2}", 4)
+
+
+def test_an_arm_store_decrement_after_names_da():
+    rom = bytearray(16)
+    rom[0:4] = (0xE8200006).to_bytes(4, "little")
+    assert emit_code.decode(rom, emit_code.ROM_BASE, "arm") == ("STMDA", "r0!, {r1, r2}", 4)
+
+
+def test_an_arm_store_decrement_before_names_db_and_saves_lr():
+    rom = bytearray(16)
+    rom[0:4] = (0xE92D4010).to_bytes(4, "little")
+    text = emit_code.decode(rom, emit_code.ROM_BASE, "arm")
+    assert text == ("STMDB", "sp!, {r4, lr}", 4)
+    assert function_bounds.saving(text[0], text[1])
+
+
 def test_every_emitted_row_decodes():
     measured, _rom = result()
     causes = {}

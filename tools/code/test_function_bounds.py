@@ -176,7 +176,7 @@ def test_a_start_that_opens_no_function_is_corrected_to_its_prologue():
 def test_a_corrected_arm_start_is_walked_as_arm():
     data = image()
     put_word(data, BASE + 0x140, 0xE1A00000)
-    put_word(data, BASE + 0x144, 0xE80D4010)
+    put_word(data, BASE + 0x144, 0xE92D4010)
     put_word(data, BASE + 0x148, 0xE12FFF1E)
     found = classify(data, [BASE + 0x140], [(0x140, 0x14C)], {BASE + 0x140: 2},
                      calls=[0x140])
