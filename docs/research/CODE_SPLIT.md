@@ -69,10 +69,17 @@ contains at least one conditional branch or is reached from code: it is a `bl` t
 word of a function-pointer table whose run holds at least one proven entry, or a target of
 a jump-table dispatch inside walked code. The branch is the criterion that keeps data out
 of the branchless channel: a stretch of data can decode as a path that returns, but a
-function body branches unless it is a leaf that something calls. The rule accepts 522 of
+function body branches unless it is a leaf that something calls. That rule accepts 522 of
 the 5,227 entries, 55 of which are branchless: 54 are function-pointer-table words and 1 are
 call targets. 512 of the accepted entries are named by no call, and the permuted image
 passes 19 of them, so the false-entry rate on everything no call proves is 3.7109 %.
+
+The closing run accepts the branchless words that rule refuses. The word's own linear
+decode, not the branch closure, must meet no halfword outside the ARMv4T encoding, must end
+on a return or on a branch into bytes a class already holds, and must reach every branch
+target it makes either as one of its own instruction boundaries or as bytes a class already
+holds. It accepts 90 entries from the 4,637 words no other shape claimed, and the permuted
+image accepts 96, the same shape read over bytes that hold no code.
 
 ## Channels
 
@@ -118,7 +125,7 @@ record rather than through a literal; the table-held channel is what names those
 
 ### Function-pointer tables and record words
 
-Seven shapes name a code address from data. Three seed on code the census already holds: a
+Eight shapes name a code address from data. Three seed on code the census already holds: a
 run of two or more consecutive 4-aligned odd words naming the image, when the run holds at
 least one proven entry; a word that occurs at least 4 times at 4-aligned sites as an odd
 in-image address, which is the shape of a factory word repeated in every record of a
@@ -135,7 +142,12 @@ The run shape cannot fire there because it needs a proven entry to seed it,
 and the slot shape cannot fire because the permuted image walks no interrupt install.
 Those two nulls are not exercisable and are reported as such rather than as zero.
 
-The four shapes that seed on data alone carry their own null. An unseeded run names 665
+The fifth shape reads no table: it is the closing run, the named word that no table holds
+and whose own linear decode ends on a return or on a branch into code. It names 4,637 words
+and accepts 90, and the permuted image accepts 96, a null share of 106.6667 % against the
+5.0000 % bar, so the channel contributes no entry and no byte.
+
+The five shapes that seed on data alone carry their own null. An unseeded run names 665
 words and accepts 54, and the permuted image accepts 2.
 A table the walked code reads names 25 words and accepts 0 against 0 there.
 A literal pool names 25 words and accepts 5 against 0.

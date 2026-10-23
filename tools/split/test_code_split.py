@@ -250,10 +250,53 @@ def test_a_call_from_a_filtered_entry_proves_its_callee():
     assert measured["classes"][0x160:0x164] == bytes([code_split.PROVEN]) * 4
 
 
-def test_a_branchless_entry_that_nothing_calls_is_refused():
+def test_a_branchless_word_named_by_a_pointer_is_proven_when_its_run_closes():
     code = struct.pack("<HH", 0x2000, 0x4770)
     measured = code_split.measure(image(code=code, pointer=0x08000101))
     assert 0x08000100 not in measured["accepted"]
+    assert (0x08000100, code_split.MODE_THUMB) in measured["extra"]
+    assert measured["classes"][0x100:0x104] == bytes([code_split.TABLE]) * 4
+
+
+def test_the_closing_bar_is_the_shared_five_percent():
+    assert code_split.under_closing_bar(4, 100)
+    assert not code_split.under_closing_bar(5, 100)
+
+
+def test_a_closing_channel_at_or_over_its_null_bar_contributes_no_table_bytes():
+    code = struct.pack("<HH", 0x2000, 0x4770)
+    rom = image(code=code, pointer=0x08000101)
+    under = code_split.census(rom, True, 0)
+    assert under["classes"][0x100:0x104] == bytes([code_split.TABLE]) * 4
+    assert under["closing"]["claimed"]
+    gated = code_split.census(rom, True, 1)
+    assert gated["classes"][0x100:0x104] == bytes([code_split.UNCLASSIFIED]) * 4
+    assert (0x08000100, code_split.MODE_THUMB) not in gated["extra"]
+    assert not gated["closing"]["claimed"]
+    assert gated["closing"]["accepted"] == 1
+
+
+def test_the_closing_run_reports_a_return_an_invalid_halfword_and_an_off_boundary_target():
+    rom = bytearray(0x200)
+    struct.pack_into("<HH", rom, 0x100, 0x2000, 0x4770)
+    classes = bytearray(len(rom))
+    modes = bytearray(len(rom))
+    assert code_split.closure(bytes(rom), 0x08000100, classes, modes) == ("return", 0x08000104)
+    struct.pack_into("<HH", rom, 0x100, 0x2000, 0xB100)
+    assert code_split.closure(bytes(rom), 0x08000100, classes, modes)[0] == "invalid"
+    struct.pack_into("<HHH", rom, 0x100, 0xD000, 0xF000, 0xF800)
+    struct.pack_into("<H", rom, 0x106, 0x4770)
+    assert code_split.closure(bytes(rom), 0x08000100, classes, modes)[0] == "inconsistent"
+
+
+def test_the_closing_run_accepts_a_tail_branch_into_proven_code():
+    rom = bytearray(0x200)
+    struct.pack_into("<HH", rom, 0x100, 0xE000, 0x4770)
+    classes = bytearray(len(rom))
+    modes = bytearray(len(rom))
+    assert code_split.closure(bytes(rom), 0x08000100, classes, modes)[0] == "inconsistent"
+    classes[0x104] = code_split.PROVEN
+    assert code_split.closure(bytes(rom), 0x08000100, classes, modes) == ("tail", 0x08000102)
 
 
 def test_a_pointer_table_word_joins_a_run_that_holds_a_proven_entry():
@@ -280,7 +323,7 @@ def test_a_record_word_below_the_repeat_threshold_names_nothing():
     rom = bytearray(image())
     for offset in (0x1C0, 0x1C8, 0x1D0):
         struct.pack_into("<I", rom, offset, 0x08000301)
-    rom[0x300:0x304] = struct.pack("<HH", 0x2000, 0x4770)
+    rom[0x300:0x304] = struct.pack("<HH", 0x2000, 0xB100)
     measured = code_split.measure(bytes(rom))
     assert (0x08000300, code_split.MODE_THUMB) not in measured["extra"]
 

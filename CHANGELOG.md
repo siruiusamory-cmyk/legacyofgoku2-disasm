@@ -23,9 +23,25 @@ All notable changes to this project are documented here. The format follows
   word the startup copy carries into IWRAM. Each carries its own permuted-image null, and the
   table-held class grows by the bytes they reach.
 
+- `tools/split/code_split.py` accepts a word no table names when its own linear run closes: the run
+  meets no halfword outside the ARMv4T encoding, ends on a return or on a branch into bytes a class
+  already holds, and reaches every branch target it makes either as one of its own instruction
+  boundaries or as bytes a class already holds. Its bytes join the table-held class only when the
+  permuted image accepts fewer than 5 % as many words as the image does; on this image the counts
+  are 96 against 90, so the channel contributes no entry and no byte, and
+  `docs/research/CODE_SPLIT.md` prints both counts and the share.
+
 - `tools/research/unproven_remainder.py` splits the bytes of the address-taken walk bound that no
-  proven function bounds, into the data formats, the padding, the code-shaped runs and what is left,
-  and writes `docs/research/UNPROVEN_REMAINDER.csv`.
+  proven function bounds, into the data formats, the padding, the code a closing run proves, the
+  words a pointer table holds and a residual per reason, and prints the closing run's rate on the
+  census starts, the runtime entries, the named words inside a format and inside padding, and its
+  permuted null. It writes `docs/research/UNPROVEN_REMAINDER.csv`.
+
+- `tools/research/unproven_remainder.py` claims the closing run's bytes only when their measured
+  null share is under 5 % of the class; at or over the bar the bytes take the residual reason for a
+  run below it. It prints the measured null, the class size and the bar on every run. On this image
+  the null is 44 B of 116 B, 37.9310 %, so those bytes sit in that residual and the code row is
+  empty.
 
 - `docs/research/FUNCTION_ENDS.csv` gives every census start an end, from a walk to its return or
   to the next start, and folds the runtime-only entries into the same bounds.

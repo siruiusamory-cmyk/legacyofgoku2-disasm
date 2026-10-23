@@ -1,5 +1,12 @@
 class,bytes,share
-data by format,111913,48.8302
-padding,5037,2.1978
-unreached-but-code-shaped,109456,47.7582
-unknown,2782,1.2139
+data by format,110427,49.1167
+padding,5037,2.2404
+code by a closing entry,0,0.0000
+data by table word,3767,1.6755
+residual: run meets a non-ARMv4T halfword,58137,25.8587
+residual: run ends without a return,9578,4.2602
+residual: branch target leaves the run,37470,16.6662
+residual: run passes the step limit,0,0.0000
+residual: closing run below its null bar,410,0.1824
+residual: no naming entry reaches the byte,0,0.0000
+unknown,0,0.0000

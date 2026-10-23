@@ -28,6 +28,7 @@ OVERLAY_CLASS = 4
 TABLE = 5
 GAPFILL = 6
 CODE_CLASSES = (PROVEN, TABLE, FILTERED, GAPFILL)
+CLOSE_CLASSES = CODE_CLASSES
 MODE_NONE = 0
 MODE_THUMB = 1
 MODE_ARM = 2
@@ -45,6 +46,7 @@ TABLE_SHAPES = ("run", "record", "slot", "runfree", "load", "pool", "overlay")
 PROLOGUE_CAP = 64
 LOOKBACK = 0x40
 CHANNEL_ROUNDS = 8
+CLOSING_BAR = 5.0
 RUN_THRESHOLDS = (1, 8, 32, 128)
 THUMB_UNDEFINED = ((0x4780, 0x47FF), (0xB100, 0xB3FF), (0xB600, 0xBBFF), (0xBE00, 0xBFFF),
                    (0xDE00, 0xDEFF), (0xE800, 0xEFFF))
@@ -359,6 +361,60 @@ def probe(rom, entry):
         else:
             return False, False, 0
     return True, returned, branches
+
+
+def closure(rom, entry, classes, modes):
+    position = entry
+    visited = set()
+    targets = set()
+    returned = False
+    tail = None
+    extent = entry
+    steps = 0
+    while steps < STEP_LIMIT:
+        steps += 1
+        if thumb_length(rom, position) is None:
+            return "invalid", extent
+        half = hw(rom, position)
+        visited.add(position)
+        after, ended, new, _pool, _branches, _last, called = thumb_step(
+            rom, position, classes, modes, UNCLASSIFIED, None)
+        extent = max(extent, after)
+        for target, _mode in new + called:
+            targets.add(target)
+        if ended:
+            if half == 0x4770 or half == 0x46F7 or (half & 0xFF00) == 0xBD00:
+                returned = True
+            elif (half & 0xF800) == 0xE000 and new:
+                tail = new[0][0]
+            break
+        position = after
+    else:
+        return "step-limit", extent
+    for target in targets:
+        if entry <= target < extent:
+            if target not in visited:
+                return "inconsistent", extent
+            continue
+        if not (in_image(rom, target) and classes[target - ROM_BASE] in CLOSE_CLASSES):
+            return "inconsistent", extent
+    if returned:
+        return "return", extent
+    if tail is not None and in_image(rom, tail) and classes[tail - ROM_BASE] in CLOSE_CLASSES:
+        return "tail", extent
+    return "no-return", extent
+
+
+def under_closing_bar(counted, claimed):
+    return 100.0 * counted / max(claimed, 1) < CLOSING_BAR
+
+
+def closing_entries(rom, targets, pre, modes, counted):
+    found = [target for target in targets
+             if closure(rom, target, pre, modes)[0] in ("return", "tail")]
+    if counted is None or not under_closing_bar(counted, len(found)):
+        return [], found
+    return found, found
 
 
 def thumb_entries(rom):
@@ -1062,7 +1118,7 @@ def arm_source(rom, site, register):
     return None, None
 
 
-def census(rom, want_overlay):
+def census(rom, want_overlay, null_closing=None):
     classes = bytearray(len(rom))
     modes = bytearray(len(rom))
     proven_spans, pools, proven_entries, calls = walk(
@@ -1158,7 +1214,7 @@ def census(rom, want_overlay):
     factories = repeated_code_pointers(rom)
     extra = {}
     held = {"register": [], "run": [], "record": [], "slot": [], "gap": [], "prologue": [],
-            "runfree": [], "load": [], "pool": [], "overlay": []}
+            "runfree": [], "load": [], "pool": [], "overlay": [], "close": []}
     swept = set()
     swept_runs = []
     register_sites = {"sites": 0, "bounded": 0, "entries": []}
@@ -1281,6 +1337,26 @@ def census(rom, want_overlay):
                                "prologue_bytes": merged_length(swept_runs)})
         if not added:
             break
+    pre = bytes(classes)
+    first["table_close"] = 0
+    close_candidates = []
+    for target in sorted(taken):
+        entry = (target, MODE_THUMB)
+        if entry in accepted or entry in extra:
+            continue
+        first["table_close"] += 1
+        close_candidates.append(target)
+    close_picked, close_found = closing_entries(rom, close_candidates, pre, modes, null_closing)
+    for target in close_picked:
+        entry = (target, MODE_THUMB)
+        extra[entry] = TABLE
+        held["close"].append(entry)
+        walk(rom, [entry], classes, modes, TABLE)
+        walks += 1
+    closing = {"candidates": first["table_close"], "accepted": len(close_found),
+               "null_accepted": null_closing,
+               "claimed": null_closing is not None
+               and under_closing_bar(null_closing, len(close_found))}
     prologue_bytes = merged_length(swept_runs)
     pool_words = sorted(address for address in pools if has_word(rom, address) and not address % 4)
     pool_runs = []
@@ -1328,6 +1404,7 @@ def census(rom, want_overlay):
     for entry in accepted_order:
         counts[channels[entry]] = counts.get(channels[entry], 0) + 1
     return {"size": len(rom), "classes": classes, "modes": modes, "totals": totals,
+            "pre": pre,
             "proven_spans": proven_spans, "filtered_spans": [],
             "proven": class_runs(classes, PROVEN), "filtered": class_runs(classes, FILTERED),
             "table": class_runs(classes, TABLE), "gapfill": class_runs(classes, GAPFILL),
@@ -1348,14 +1425,16 @@ def census(rom, want_overlay):
             "channel_first": first, "held": {key: list(value) for key, value in held.items()},
             "extra": extra, "channel_bytes": {CLASS_NAMES[value]: classes.count(value)
                                              for value in CODE_CLASSES},
-            "prologue_bytes": prologue_bytes,
+            "prologue_bytes": prologue_bytes, "closing": closing,
             "decodable": decodable_runs(rom, classes),
             "function_rows": mode_runs(classes, modes, tuple(CLASS_NAMES[value]
                                                              for value in CODE_CLASSES))}
 
 
-def measure(rom):
-    return census(rom, True)
+def measure(rom, null=None):
+    if null is None:
+        null = census(permute(rom), False)
+    return census(rom, True, null["closing"]["accepted"])
 
 
 def permute(rom):
@@ -1400,6 +1479,10 @@ def doc_text(measured, null):
     table_total = sum(len(held[key]) for key in TABLE_SHAPES)
     table_null = sum(len(null_held[key]) for key in TABLE_SHAPES)
     table_candidates = sum(first.get("table_" + shape, 0) for shape in TABLE_SHAPES)
+    closing = measured["closing"]
+    closing_share = share(closing["null_accepted"] or 0, closing["accepted"])
+    closing_verdict = ("the bytes it reaches are the table-held class" if closing["claimed"]
+                       else "the channel contributes no entry and no byte")
     lines = [
         "# Code and data split",
         "",
@@ -1486,7 +1569,7 @@ def doc_text(measured, null):
         "word of a function-pointer table whose run holds at least one proven entry, or a target of",
         "a jump-table dispatch inside walked code. The branch is the criterion that keeps data out",
         "of the branchless channel: a stretch of data can decode as a path that returns, but a",
-        "function body branches unless it is a leaf that something calls. The rule accepts %s of"
+        "function body branches unless it is a leaf that something calls. That rule accepts %s of"
         % format(accepted, ","),
         "the %s entries, %s of which are branchless: %s are function-pointer-table words and %s are"
         % (format(len(measured["taken"]), ","), format(len(measured["leaves"]), ","),
@@ -1496,6 +1579,15 @@ def doc_text(measured, null):
         % format(uncalled, ","),
         "passes %s of them, so the false-entry rate on everything no call proves is %s %%."
         % (format(len(null["uncalled"]), ","), share(len(null["uncalled"]), uncalled)),
+        "",
+        "The closing run accepts the branchless words that rule refuses. The word's own linear",
+        "decode, not the branch closure, must meet no halfword outside the ARMv4T encoding, must end",
+        "on a return or on a branch into bytes a class already holds, and must reach every branch",
+        "target it makes either as one of its own instruction boundaries or as bytes a class already",
+        "holds. It accepts %s entries from the %s words no other shape claimed, and the permuted"
+        % (format(closing["accepted"], ","), format(first["table_close"], ",")),
+        "image accepts %s, the same shape read over bytes that hold no code."
+        % format(closing["null_accepted"] or 0, ","),
         "",
         "## Channels",
         "",
@@ -1569,7 +1661,7 @@ def doc_text(measured, null):
         "",
         "### Function-pointer tables and record words",
         "",
-        "Seven shapes name a code address from data. Three seed on code the census already holds: a",
+        "Eight shapes name a code address from data. Three seed on code the census already holds: a",
         "run of two or more consecutive 4-aligned odd words naming the image, when the run holds at",
         "least one proven entry; a word that occurs at least %d times at 4-aligned sites as an odd"
         % FACTORY_REPEATS,
@@ -1591,7 +1683,15 @@ def doc_text(measured, null):
         "and the slot shape cannot fire because the permuted image walks no interrupt install.",
         "Those two nulls are not exercisable and are reported as such rather than as zero.",
         "",
-        "The four shapes that seed on data alone carry their own null. An unseeded run names %s"
+        "The fifth shape reads no table: it is the closing run, the named word that no table holds",
+        "and whose own linear decode ends on a return or on a branch into code. It names %s words"
+        % format(first["table_close"], ","),
+        "and accepts %s, and the permuted image accepts %s, a null share of %s %% against the"
+        % (format(closing["accepted"], ","), format(closing["null_accepted"] or 0, ","),
+           closing_share),
+        "%s %% bar, so %s." % ("%.4f" % CLOSING_BAR, closing_verdict),
+        "",
+        "The five shapes that seed on data alone carry their own null. An unseeded run names %s"
         % format(first["table_runfree"], ","),
         "words and accepts %s, and the permuted image accepts %s."
         % (format(len(held["runfree"]), ","), format(len(null_held["runfree"]), ",")),
@@ -1967,8 +2067,8 @@ def main(argv=None):
         print("the split needs the retail image at %s" % ROM)
         return 1
     rom = open(ROM, "rb").read()
-    measured = measure(rom)
     null = measure_null(rom)
+    measured = measure(rom, null)
     doc = doc_text(measured, null)
     table = csv_text(measured)
     totals = measured["totals"]

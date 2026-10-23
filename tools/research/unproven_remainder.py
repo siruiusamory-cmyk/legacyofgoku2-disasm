@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import csv
 import os
+import struct
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -15,12 +16,23 @@ import function_bounds
 
 ROM = os.path.join(ROOT, "baserom.gba")
 CONTAINERS = os.path.join(ROOT, "docs", "research", "CONTAINER_CENSUS.csv")
+RUNTIME = os.path.join(ROOT, "docs", "research", "RUNTIME_LABELS.csv")
 OUT = os.path.join(ROOT, "docs", "research", "UNPROVEN_REMAINDER.csv")
 HEADER = "class,bytes,share"
 BASE = code_split.ROM_BASE
-NAME = "unproven remainder"
 PAD = 8
 RUN = 8
+FACTORY = 4
+REASONS = (("invalid", "residual: run meets a non-ARMv4T halfword"),
+           ("no-return", "residual: run ends without a return"),
+           ("inconsistent", "residual: branch target leaves the run"),
+           ("step-limit", "residual: run passes the step limit"))
+CLOSING_CODE = 3
+BELOW_BAR_CODE = 10
+CLOSING_REASON = "residual: closing run below its null bar"
+CLASSES = ("data by format", "padding", "code by a closing entry", "data by table word") \
+    + tuple(name for _why, name in REASONS) \
+    + (CLOSING_REASON, "residual: no naming entry reaches the byte", "unknown")
 
 
 def union(intervals):
@@ -61,12 +73,12 @@ def bound(rom):
     return union(spans)
 
 
-def proven(rom):
-    found = function_bounds.census(rom)
+def coverage(measured, rom):
+    found = function_bounds.describe(measured, rom)
     edges = [(address - BASE, end - BASE)
              for address, _mode, origin, end, _reason in function_bounds.ends_rows(found)
              if origin == "census" and end]
-    return union(edges)
+    return found, union(edges)
 
 
 def formats(rom, measured):
@@ -93,43 +105,188 @@ def padding(rom):
 
 
 def shaped(rom):
-    data = bytes(rom)
     out = []
     offset = 0
-    while offset < len(data):
+    while offset < len(rom):
         start = offset
-        while offset < len(data) and code_split.thumb_length(data, BASE + offset) is not None:
+        while offset < len(rom) and code_split.thumb_length(rom, BASE + offset) is not None:
             offset += 2
-        length = offset - start
-        if length >= 2 * RUN:
+        if offset - start >= 2 * RUN:
             out.append((start, offset))
-        while offset < len(data) and code_split.thumb_length(data, BASE + offset) is None:
+        while offset < len(rom) and code_split.thumb_length(rom, BASE + offset) is None:
             offset += 2
     return union(out)
 
 
-def classes(rom, remaining, measured):
-    total = sum(end - begin for begin, end in remaining)
-    world = bytearray(len(rom))
+def named(rom):
+    return sorted({value & ~1 for (value,) in struct.iter_unpack("<I", rom)
+                   if value & 1 and code_split.in_image(rom, value & ~1)})
+
+
+def table_words(rom):
+    values = [value for (value,) in struct.iter_unpack("<I", rom)]
+    counts = {}
+    for value in values:
+        if value & 1 and code_split.in_image(rom, value & ~1):
+            counts[value] = counts.get(value, 0) + 1
+    repeated = set(value for value, count in counts.items() if count >= FACTORY)
+    sites = []
+    start = None
+    for index, value in enumerate(values):
+        if value & 1 and code_split.in_image(rom, value & ~1):
+            if start is None:
+                start = index
+        else:
+            if start is not None and index - start > 1:
+                sites.append((start * 4, index * 4))
+            start = None
+        if value in repeated:
+            sites.append((index * 4, index * 4 + 4))
+    if start is not None and len(values) - start > 1:
+        sites.append((start * 4, len(values) * 4))
+    return union(sites)
+
+
+def closures(rom, measured):
+    accepted = []
+    reasons = []
+    for address in named(rom):
+        why = code_split.closure(rom, address, measured["pre"], measured["modes"])[0]
+        spans = spans_of(rom, measured, address)
+        if why in ("return", "tail"):
+            accepted += spans
+        else:
+            reasons += [(why, begin, end) for begin, end in spans]
+    return union(accepted), reasons
+
+
+def spans_of(rom, measured, address):
+    found = code_split.walk(rom, [(address, code_split.MODE_THUMB)], measured["classes"],
+                            measured["modes"], code_split.UNCLASSIFIED)[0]
+    return [(begin - BASE, stop - BASE) for begin, stop, _mode in found if stop > begin]
+
+
+def closing_class(counted, claimed):
+    if code_split.under_closing_bar(counted, claimed):
+        return "code by a closing entry"
+    return CLOSING_REASON
+
+
+def apply_closing_bar(spare, counted, claimed):
+    if closing_class(counted, claimed) != CLOSING_REASON:
+        return
+    for index, value in enumerate(spare):
+        if value == CLOSING_CODE:
+            spare[index] = BELOW_BAR_CODE
+
+
+def mark(rom, measured, remaining):
+    size = len(rom)
+    world = bytearray(size)
     for begin, end in formats(rom, measured):
+        world[begin:end] = b"\x01" * (end - begin)
+    for begin, end in padding(rom):
         for index in range(begin, end):
             if world[index] == 0:
-                world[index] = 1
-    marks = ((2, padding(rom)), (3, shaped(rom)))
-    for value, intervals in marks:
-        for begin, end in intervals:
+                world[index] = 2
+    accepted, reasons = closures(rom, measured)
+    spare = bytearray(size)
+    for begin, end in accepted:
+        for index in range(begin, end):
+            if spare[index] == 0:
+                spare[index] = CLOSING_CODE
+    claimed = sum(1 for begin, end in remaining for index in range(begin, end)
+                  if world[index] == 0 and spare[index] == CLOSING_CODE)
+    counted = null(rom, class_mask(rom, measured, remaining))
+    apply_closing_bar(spare, counted, claimed)
+    for begin, end in table_words(rom):
+        for index in range(begin, end):
+            if spare[index] == 0:
+                spare[index] = 4
+    for number, (why, name) in enumerate(REASONS):
+        for reason, begin, end in reasons:
+            if reason != why:
+                continue
             for index in range(begin, end):
-                if world[index] == 0:
-                    world[index] = value
-    names = {1: "data by format", 2: "padding", 3: "unreached-but-code-shaped", 4: "unknown"}
-    counts = dict((name, 0) for name in names.values())
+                if spare[index] == 0:
+                    spare[index] = 5 + number
+    for begin, end in shaped(rom):
+        for index in range(begin, end):
+            if world[index] == 0 and spare[index] == 0:
+                spare[index] = 9
+    names = {1: CLASSES[0], 2: CLASSES[1], 3: CLASSES[2], 4: CLASSES[3],
+             5: CLASSES[4], 6: CLASSES[5], 7: CLASSES[6], 8: CLASSES[7],
+             9: CLASSES[9], 10: CLASSES[8], 0: CLASSES[10]}
+    counts = dict((name, 0) for name in CLASSES)
+    total = sum(end - begin for begin, end in remaining)
     for begin, end in remaining:
         for index in range(begin, end):
-            counts[names[world[index] or 4]] += 1
-    rows = [(names[key], counts[names[key]]) for key in (1, 2, 3, 4)]
+            counts[names[world[index] or spare[index]]] += 1
     if sum(counts.values()) != total:
         raise SystemExit("the classes do not partition the remainder")
-    return rows, total
+    return ([(name, counts[name]) for name in CLASSES], total,
+            (counted, claimed, closing_class(counted, claimed)))
+
+
+def rates(rom, measured, found):
+    starts = [address for address, _mode, origin, end, _reason
+              in function_bounds.ends_rows(found) if origin == "census" and end]
+    source, dest, _size, _declared = measured["overlay"]
+    runtime = []
+    for row in csv.DictReader(open(RUNTIME, encoding="ascii")):
+        address = int(row["address"], 16)
+        image = source + address - dest if row["region"] == "iwram" else address
+        if row["mode"] == "thumb" and code_split.in_image(rom, image):
+            runtime.append(image)
+    taken, _words = code_split.thumb_entries(rom)
+    known = formats(rom, measured)
+    padding_runs = padding(rom)
+    pools = (("the census starts", starts),
+             ("the runtime entries", runtime),
+             ("the named words inside a format",
+              [address for address in taken if inside(known, address - BASE)]),
+             ("the named words inside padding",
+              [address for address in taken if inside(padding_runs, address - BASE)]))
+    out = []
+    for name, pool in pools:
+        hits = sum(1 for address in pool
+                   if code_split.closure(rom, address, measured["pre"],
+                                         measured["modes"])[0] in ("return", "tail"))
+        out.append((name, hits, len(pool)))
+    return out
+
+
+def inside(intervals, offset):
+    for begin, end in intervals:
+        if begin <= offset < end:
+            return True
+    return False
+
+
+def class_mask(rom, measured, remaining):
+    mask = bytearray(len(rom))
+    for begin, end in shaped(rom):
+        mask[begin:end] = b"\x01" * (end - begin)
+    for begin, end in formats(rom, measured) + padding(rom):
+        mask[begin:end] = b"\x00" * (end - begin)
+    for begin, end in subtract([(0, len(rom))], remaining):
+        mask[begin:end] = b"\x00" * (end - begin)
+    return mask
+
+
+def null(rom, mask):
+    permuted = code_split.permute(rom)
+    census = code_split.measure_null(rom)
+    covered = 0
+    for address in sorted({value & ~1 for (value,) in struct.iter_unpack("<I", permuted)
+                           if value & 1 and code_split.in_image(rom, value & ~1)}):
+        why, extent = code_split.closure(permuted, address, census["pre"],
+                                         census["modes"])
+        if why in ("return", "tail"):
+            for index in range(address - BASE, extent - BASE):
+                if 0 <= index < len(mask) and mask[index]:
+                    covered += 1
+    return covered
 
 
 def text(rows, total):
@@ -139,45 +296,39 @@ def text(rows, total):
     return "\n".join(lines) + "\n"
 
 
-def report(rom):
-    measured = code_split.measure(rom)
-    bound_bytes = bound(rom)
-    coverage = proven(rom)
-    remaining = subtract(bound_bytes, coverage)
-    rows, total = classes(rom, remaining, measured)
-    outside = subtract(coverage, bound_bytes)
-    shaped_null = sum(end - begin for begin, end
-                      in overlap(remaining, shaped(code_split.permute(rom))))
-    return rows, total, bound_bytes, coverage, outside, shaped_null
-
-
-def overlap(left, right):
-    return [(max(begin, other_begin), min(end, other_end))
-            for begin, end in left for other_begin, other_end in right
-            if max(begin, other_begin) < min(end, other_end)]
-
-
 def main(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument("--write", action="store_true")
     parser.add_argument("--check", action="store_true")
+    parser.add_argument("--rates", action="store_true",
+                        help="print the closing test's rate on the known populations")
     arguments = parser.parse_args(argv)
     if not os.path.exists(ROM):
         print("the remainder needs the retail image at %s" % ROM)
         return 1
     rom = open(ROM, "rb").read()
-    rows, total, bound_bytes, coverage, outside, shaped_null = report(rom)
+    measured = code_split.measure(rom)
+    found, proof = coverage(measured, rom)
+    bound_bytes = bound(rom)
+    remaining = subtract(bound_bytes, proof)
+    outside = subtract(proof, bound_bytes)
+    rows, total, closing = mark(rom, measured, remaining)
     print("bound=%d B in %d extents" % (sum(end - begin for begin, end in bound_bytes),
                                         len(bound_bytes)))
-    print("proven=%d B in %d extents" % (sum(end - begin for begin, end in coverage),
-                                         len(coverage)))
+    print("proven=%d B in %d extents" % (sum(end - begin for begin, end in proof),
+                                         len(proof)))
     print("proven outside the bound=%d B in %d extents"
           % (sum(end - begin for begin, end in outside), len(outside)))
     print("remaining=%d B" % total)
     for name, size in rows:
-        print("%-28s %9d B %8.4f %%" % (name, size, 100.0 * size / total))
-    print("shaped null=%d B, %s %% of the shaped class"
-          % (shaped_null, "%.4f" % (100.0 * shaped_null / max(dict(rows)["unreached-but-code-shaped"], 1))))
+        print("%-58s %9d B %8.4f %%" % (name, size, 100.0 * size / total))
+    print("closing null=%d B, %.4f %% of the %d B class, bar %.1f %%: %s"
+          % (closing[0], 100.0 * closing[0] / max(closing[1], 1), closing[1],
+             code_split.CLOSING_BAR, closing[2]))
+    if arguments.rates:
+        for name, hits, size in rates(rom, measured, found):
+            print("closing entry on %-32s %5d / %5d = %s %%"
+                  % (name, hits, size, "%.4f" % (100.0 * hits / max(size, 1))))
     body = text(rows, total)
     if arguments.write:
         with open(OUT, "w", encoding="ascii", newline="\n") as handle:
