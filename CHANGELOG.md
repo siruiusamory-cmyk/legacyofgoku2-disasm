@@ -7,6 +7,14 @@ All notable changes to this project are documented here. The format follows
 
 ### Added
 
+- `tools/maprecords/` holds the map record family as five tracked tables, one record per row with
+  named fields and each pointer written as a record label, and encodes those rows back into
+  `build/maprecords/`. `LAYOUT.md` cites a load site for every named field, `--check` refuses a row
+  whose bytes are not the image's and a field with no citation, and the null permutes the record
+  extents and finds no record. `generate_containers.py` splits the retail slices at the runs the
+  tables emit, so 46,397 B of the family are assembled from source and the gate's raw class falls by
+  the same bytes.
+
 - `tools/research/data_census.py` classes the 3,630,726 B the gate's raw class holds outside every
   accepted container: twelve reader classes that cite the load site in walked code which names the
   family's base, and three `no reader found` classes for a fill run, a run of image addresses and the
@@ -50,6 +58,10 @@ All notable changes to this project are documented here. The format follows
   needs.
 
 ### Fixed
+
+- `tools/research/test_data_census.py` takes the image from the shared `tools/testkit.py` helper, so
+  the five tests that need the retail image skip with the missing path named where the image is
+  absent and CI needs no game copy; the two tests over synthetic inputs still run.
 
 - `tools/compress/generate_containers.py --write` builds `tools/compress/compress.exe` through
   `tools/compress/build.cmd` when it is absent, and fails with one message naming `build.cmd` when

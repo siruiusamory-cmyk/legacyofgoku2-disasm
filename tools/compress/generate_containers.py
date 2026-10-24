@@ -8,12 +8,14 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
 sys.path.insert(0, os.path.join(ROOT, "tools", "code"))
+sys.path.insert(0, os.path.join(ROOT, "tools", "maprecords"))
 sys.path.insert(0, HERE)
 
 import container
 import container_census
 import emit_code
 import jcalg1
+import maprecords
 
 ROM = os.path.join(ROOT, "baserom.gba")
 ASM = os.path.join(ROOT, "asm", "remainder.s")
@@ -26,6 +28,7 @@ MAX_OUTPUT = 0x40000
 ENCODER_BLOCK_HEADER = 10
 INCLUDED_KIND = 2
 GEN = re.compile(r"build\\jcalg1\\gen_([0-9a-f]+)_([0-9a-f]+)\.bin$")
+MAP = re.compile(r"build\\maprecords\\rec_([0-9a-f]+)_([0-9a-f]+)\.bin$")
 GAP = re.compile(r"baserom\.gba_0x([0-9a-f]+)_0x([0-9a-f]+)\.extracted$")
 INCLUDE = re.compile(r"\.\.\\build\\code\\[A-Za-z0-9_]+\.s$")
 INCBIN = re.compile(r"INCBIN\s+(\S+)")
@@ -39,9 +42,10 @@ def run_name(start, end):
     return "build\\jcalg1\\gen_%x_%x.bin" % (start, end)
 
 
-def tokens_of(runs, code=()):
+def tokens_of(runs, code=(), record_runs=()):
     pieces = [(start, end, run_name(start, end)) for start, end in runs]
     pieces += [(start, end, token) for start, end, token in code]
+    pieces += [(start, end, token) for start, end, token in record_runs]
     pieces.sort()
     tokens = []
     cursor = START
@@ -75,7 +79,7 @@ def parsed_asm(text):
     tokens = []
     for match in INCBIN.finditer(text):
         token = match.group(1)
-        found = GEN.search(token)
+        found = GEN.search(token) or MAP.search(token)
         if found:
             start, end = (int(found.group(index), 16) for index in (1, 2))
             if end <= start:
@@ -206,6 +210,10 @@ def build(image):
     runs = 0
     containers = 0
     for start, end, token in tokens:
+        if MAP.search(token):
+            if not os.path.exists(os.path.join(ROOT, token)):
+                raise ValueError("%s is absent" % token)
+            continue
         if GEN.search(token):
             blob, count = run_bytes(image, start, end)
             path = os.path.join(ROOT, token)
@@ -238,7 +246,7 @@ def main(argv=None):
         return 1
     if argv == ["--check"]:
         result = measure(image, False)
-        tokens = tokens_of(result["runs"], code_tokens(image))
+        tokens = tokens_of(result["runs"], code_tokens(image), maprecords.tokens(image))
         if not os.path.exists(ASM):
             print("CONTAINERS FAIL: %s is absent" % os.path.basename(ASM))
             return 1
@@ -252,7 +260,7 @@ def main(argv=None):
         return 0
     if argv == ["--write"]:
         result = measure(image, True)
-        tokens = tokens_of(result["runs"], code_tokens(image))
+        tokens = tokens_of(result["runs"], code_tokens(image), maprecords.tokens(image))
         write_asm(tokens)
         print("wrote %s containers=%d runs=%d moved=%d left=%d %s end-marker-shared=%d "
               "encode misses=%d trusted=%d"
@@ -261,7 +269,7 @@ def main(argv=None):
                  reason_text(result), result["shared"], result["misses"], result["trusted"]))
     else:
         result = measure(image, True)
-        tokens = tokens_of(result["runs"], code_tokens(image))
+        tokens = tokens_of(result["runs"], code_tokens(image), maprecords.tokens(image))
         if not os.path.exists(ASM):
             print("CONTAINERS FAIL: %s is absent" % os.path.basename(ASM))
             return 1

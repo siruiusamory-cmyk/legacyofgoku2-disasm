@@ -47,11 +47,11 @@ does not measure how much of the code has been turned into C.
 
 ## Progress
 
-32.9607 % of the ROM (2,764,948 of 8,388,608 bytes) builds from tracked source: transcribed
-instructions, emitted code and literal pools, and container bodies re-encoded from your own ROM.
-The rest is still copied into the build as slices of the original image. `python tools\gate\gate.py`
-prints the split, and [docs/DEFINITION_OF_DONE.md](docs/DEFINITION_OF_DONE.md) says what counts as
-source.
+33.5138 % of the ROM (2,811,345 of 8,388,608 bytes) builds from tracked source: transcribed
+instructions, emitted code and literal pools, container bodies re-encoded from your own ROM, and the
+map record family re-encoded from the five tracked tables in `tools/maprecords/`. The rest is still
+copied into the build as slices of the original image. `python tools\gate\gate.py` prints the split,
+and [docs/DEFINITION_OF_DONE.md](docs/DEFINITION_OF_DONE.md) says what counts as source.
 
 The code and data split, measured by `python tools\split\code_split.py --check` and recorded in
 [tools/split/CODE_SPLIT.md](tools/split/CODE_SPLIT.md), is proven code 38,084 B, filtered

@@ -93,6 +93,15 @@ first two and the link check's test. A table a check reads sits beside the reade
 | `tilebank/tilebank.py` | the tile bank's decode and encode | `format_reuse.py`, `test_tilebank.py` |
 | `mapcontainer/test_mapcontainer.py`, `text/test_text_storage.py`, `tilebank/test_tilebank.py` | the tests for the three format readers | CI |
 
+## maprecords/
+
+| file | what it does | what runs it |
+| --- | --- | --- |
+| `maprecords/maprecords.py` | reads the five map record kinds into the tracked tables, encodes their rows back into the runs `generate_containers.py` puts in the image, and checks both against the image | `rebuild.cmd`, `generate_containers.py`, `test_maprecords.py` |
+| `maprecords/entry.csv`, `root.csv`, `array.csv`, `layer.csv`, `row.csv` | the five tables, one record per row with named fields and pointers as record labels | `maprecords.py` |
+| `maprecords/LAYOUT.md` | each field's offset, width and load site | `maprecords.py --check` (through its test) |
+| `maprecords/test_maprecords.py` | the tests for the reader and encoder, its null and the field citations | CI |
+
 ## research/
 
 | file | what it does | what runs it |

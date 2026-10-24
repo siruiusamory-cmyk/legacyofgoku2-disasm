@@ -3,9 +3,12 @@ import struct
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(os.path.dirname(HERE))
 sys.path.insert(0, HERE)
+sys.path.insert(0, os.path.dirname(HERE))
 
 import data_census
+import testkit
 
 IMAGE = [None]
 RESULT = [None]
@@ -14,7 +17,8 @@ NULL = [None]
 
 def image():
     if IMAGE[0] is None:
-        IMAGE[0] = data_census.read_rom()
+        IMAGE[0] = testkit.rom_bytes(os.path.join(ROOT, "baserom.gba"),
+                                     digest=data_census.ROM_SHA256)
     return IMAGE[0]
 
 
