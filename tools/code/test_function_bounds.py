@@ -1,6 +1,8 @@
 from __future__ import annotations
 
+import csv
 import os
+import re
 import struct
 import sys
 
@@ -10,6 +12,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 
 import function_bounds
+import code_split
+import emit_code
 
 BASE = 0x08000000
 
@@ -27,7 +31,7 @@ def put_word(data, address, value):
 
 
 def classify(data, entries, rows, modes=None, calls=(), table=(), vectors=(), spans=(),
-             pools=(), kept=()):
+             pools=(), kept=(), fragmented=()):
     return function_bounds.classify(bytes(data), entries, modes or {},
                                     [(BASE + start, BASE + stop) for start, stop in rows],
                                     set(BASE + value for value in calls),
@@ -35,7 +39,8 @@ def classify(data, entries, rows, modes=None, calls=(), table=(), vectors=(), sp
                                     set(BASE + value for value in vectors),
                                     spans=set(BASE + value for value in spans),
                                     pools=[BASE + value for value in pools],
-                                    kept=set(BASE + value for value in kept))
+                                    kept=set(BASE + value for value in kept),
+                                    fragmented=set(BASE + value for value in fragmented))
 
 
 def row_of(found, address):
@@ -400,6 +405,39 @@ def test_the_recorded_evidence_is_what_the_image_gives():
     assert 0x080042EA not in found["starts"]
     assert 0x0800AFF0 in found["starts"]
     assert 0x0800E4D2 in found["starts"]
+
+
+def test_a_cited_branch_lies_inside_the_body_that_holds_it():
+    root = os.path.dirname(os.path.dirname(HERE))
+    rom = os.path.join(root, "baserom.gba")
+    if not os.path.exists(rom):
+        pytest.skip("the retail image is absent, so the evidence cannot be re-derived")
+    data = open(rom, "rb").read()
+    found = function_bounds.census(data)
+    owners = [(start, end) for start, (end, _reason) in found["ends"].items()]
+    wrong = []
+    for cells in csv.reader(open(code_split.EVIDENCE, encoding="ascii")):
+        for token in re.findall(r"branch at 0x([0-9a-fA-F]{8})", " ".join(cells[2:])):
+            address = int(token, 16)
+            decoded = emit_code.decode(data, address, function_bounds.THUMB)
+            inside = [start for start, end in owners if start <= address < end]
+            if not inside or decoded is None or not decoded[0].startswith("B"):
+                wrong.append(address)
+    assert wrong == []
+
+
+def test_a_recorded_fragment_stays_inside_the_body_that_holds_it():
+    data = image()
+    put_half(data, BASE + 0x60, 0x2001)
+    put_half(data, BASE + 0x62, 0x2002)
+    put_half(data, BASE + 0x64, 0x2003)
+    put_half(data, BASE + 0x66, 0xBD00)
+    found = classify(data, [BASE + 0x60, BASE + 0x64], [(0x60, 0x68)], calls=[0x60],
+                     fragmented=[0x64])
+    assert BASE + 0x64 not in found["starts"]
+    assert found["fragments"][BASE + 0x64] == BASE + 0x60
+    assert function_bounds.ends_rows(found) == [
+        (BASE + 0x60, function_bounds.THUMB, "census", BASE + 0x68, "-")]
 
 
 def test_a_runtime_row_is_bounded_by_the_nearest_later_start(tmp_path, monkeypatch):

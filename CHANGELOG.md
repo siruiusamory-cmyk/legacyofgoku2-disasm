@@ -7,6 +7,12 @@ All notable changes to this project are documented here. The format follows
 
 ### Changed
 
+- The technique page at `0x08003684` is one function: a `tools/code/CENSUS_EVIDENCE.csv` entry row keeps
+  it from being corrected to the push that follows its two halfword adds, and two fragment rows retire
+  the two starts the census had opened inside its body, so the emitter writes one file where it wrote
+  three and the disposition of the status page's pool now cites the bytes at `0x08003B34` instead of a
+  branch nothing reaches. `Menu_DrawTechniqueDetail` at `0x08003520` and the input state
+  `Input_State` at `0x0300229C` are named, each with a behaviour case in the fourteenth batch.
 - The emitter reads `tools/code/CENSUS_EVIDENCE.csv` and leaves a recorded data row out of the
   generated code files, so the two runs the census stopped counting as code are carried into the build
   as slices of the image like any other data. The two tests that expect one generated file per function

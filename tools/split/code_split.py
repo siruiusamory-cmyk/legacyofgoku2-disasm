@@ -553,7 +553,7 @@ def register_branches(rom, classes, modes, ranges):
 
 
 def evidence():
-    found = {"data": set(), "entry": set()}
+    found = {"data": set(), "entry": set(), "fragment": set()}
     try:
         text = open(EVIDENCE, encoding="ascii").read()
     except OSError:

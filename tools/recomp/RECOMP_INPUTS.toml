@@ -1,5 +1,5 @@
 [counts]
-functions = 1412
+functions = 1409
 code_bytes = 82292
 entries = 2458
 jump_tables = 1
@@ -748,25 +748,7 @@ origin = "census"
 [[code]]
 addr = 0x08003684
 mode = "thumb"
-size = 4
-origin = "census"
-
-[[code]]
-addr = 0x08003688
-mode = "thumb"
-size = 156
-origin = "census"
-
-[[code]]
-addr = 0x08003724
-mode = "thumb"
-size = 8
-origin = "census"
-
-[[code]]
-addr = 0x0800372c
-mode = "thumb"
-size = 40
+size = 208
 origin = "census"
 
 [[code]]

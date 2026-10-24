@@ -2,7 +2,6 @@ address,kind,limb,flags,entry,reason
 0x08000158,unreferenced,block,data,0x0800015c,prefix
 0x0800020a,unreferenced,block,data,0x0800020c,prefix
 0x08002928,unreferenced,block,data,0x0800292c,prefix
-0x08003684,unreferenced,entry,data,0x08003688,prefix
 0x0800415c,start,call+block,data,0x0800415e,prefix
 0x080056a0,unreferenced,block,data,0x080056a4,prefix
 0x080056ae,unreferenced,block,data+clobber,0x080056b0,prefix

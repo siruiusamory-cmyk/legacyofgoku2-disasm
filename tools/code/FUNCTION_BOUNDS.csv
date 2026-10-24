@@ -165,8 +165,8 @@ address,role,evidence
 0x0800363e,fragment,0x08003520
 0x0800366e,fragment,0x08003520
 0x08003684,unreferenced,entry
-0x08003724,unreferenced,entry
-0x0800372c,unreferenced,entry
+0x08003724,fragment,0x08003684
+0x0800372c,fragment,0x08003684
 0x08003754,unreferenced,entry
 0x0800379c,start,prologue+block
 0x08003832,fragment,0x0800379c

@@ -5,6 +5,7 @@ Handler_Current	EQU	0x03000E1C
 Handler_Depth	EQU	0x03000E24
 Handler_Stack	EQU	0x03000E28
 Heap_Head	EQU	0x030022B4
+Input_State	EQU	0x0300229C
 Irq_DmaChannel	EQU	0x030038A0
 Irq_SavedIme	EQU	0x030038AC
 Opcode_OperandPointer	EQU	0x03001FAC

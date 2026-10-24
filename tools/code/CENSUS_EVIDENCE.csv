@@ -1,5 +1,8 @@
 address,kind,evidence
-0x08003afe,data,the zero halfword before the status page's literal pool; the walk crosses the pool words at 0x08003B00 and 0x08003B0C, which the status page 0x0800379C loads, and the branch at 0x08003B34 enters the body 0x08003B38 begins
+0x08003afe,data,the zero halfword after the status page 0x0800379C returns at 0x08003AFC; the page loads the pool words at 0x08003B00 and 0x08003B0C and the VRAM word 0x0600E000 at 0x08003B34, and the split proves the next code run at 0x08003B38 whose first three words are that pool's last three and whose first instruction is the push at 0x08003B44
+0x08003684,entry,the dispatcher at 0x08003B64 calls it and its body adds 0xFF then 0x55 to r0 before the push at 0x08003688
+0x08003724,fragment,0x08003684 falls into it and its 0x0801F702 call and the branch to 0x08003754 end it
+0x0800372C,fragment,the BEQ at 0x080036FE enters it inside the body of 0x08003684 and it falls through to 0x08003754
 0x080042ea,data,the two data words at 0x080042EC and 0x080042F0 and the translation unit name at 0x080042F4, which the five curve readers 0x08004214..0x08004276 load, followed by the body the walk enters at 0x08004348
 0x0800aff0,entry,the handler word at 0x083B5F54 names 0x0800AFF0; its body adds nothing before the push at 0x0800AFF2, decrements the queue count, takes the active index byte at 0x03000E90 and calls 0x08003D58
 0x0800e4d2,entry,a call target in walked code; its body adds 0x180 to the record pointer before the push at 0x0800E4D6 and runs to 0x0800E54C

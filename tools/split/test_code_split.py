@@ -496,5 +496,12 @@ def test_a_recorded_data_address_is_not_a_held_gap_entry(monkeypatch, tmp_path):
     assert (0x08000106, code_split.MODE_THUMB) in measured["extra"]
 
 
+def test_a_recorded_fragment_is_carried_with_its_kind(monkeypatch, tmp_path):
+    evidence = tmp_path / "CENSUS_EVIDENCE.csv"
+    evidence.write_text("address,kind,evidence\n0x08000106,fragment,0x08000100\n", encoding="ascii")
+    monkeypatch.setattr(code_split, "EVIDENCE", str(evidence))
+    assert code_split.evidence()["fragment"] == {0x08000106}
+
+
 if __name__ == "__main__":
     print("PASS test_code_split")

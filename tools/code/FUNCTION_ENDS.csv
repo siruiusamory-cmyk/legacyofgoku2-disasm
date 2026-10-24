@@ -119,10 +119,7 @@ address,mode,origin,end,reason
 0x08003480,thumb,census,0x0800350a,-
 0x0800350a,thumb,census,0x08003520,-
 0x08003520,thumb,census,0x08003684,-
-0x08003684,thumb,census,0x08003688,next-start
-0x08003688,thumb,census,0x08003724,next-start
-0x08003724,thumb,census,0x0800372c,next-start
-0x0800372c,thumb,census,0x08003754,next-start
+0x08003684,thumb,census,0x08003754,next-start
 0x08003754,thumb,census,0x0800376a,-
 0x0800379c,thumb,census,0x08003afe,-
 0x08003b38,thumb,census,0x08003b72,-

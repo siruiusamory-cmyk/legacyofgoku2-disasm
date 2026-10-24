@@ -12,6 +12,7 @@ address,name
 0x08002d5c,Object_InitFromTable
 0x08002db6,Object_ClearState
 0x08002dc8,Object_SetStateTwo
+0x08003520,Menu_DrawTechniqueDetail
 0x0800379c,Character_DrawStatusPage
 0x08003c24,Scene_Clear
 0x08003c6e,Counter_StepRandom

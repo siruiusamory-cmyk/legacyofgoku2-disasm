@@ -137,10 +137,8 @@
 		INCBIN	baserom.gba_0x3478_0x3480.extracted
 		INCLUDE	..\build\code\code_08003480.s
 		INCLUDE	..\build\code\code_0800350a.s
-		INCLUDE	..\build\code\code_08003520.s
+		INCLUDE	..\build\code\Menu_DrawTechniqueDetail.s
 		INCLUDE	..\build\code\code_08003684.s
-		INCLUDE	..\build\code\code_08003724.s
-		INCLUDE	..\build\code\code_0800372c.s
 		INCLUDE	..\build\code\code_08003754.s
 		INCBIN	baserom.gba_0x376a_0x376c.extracted
 		INCLUDE	..\build\code\pool_0800376c.s

@@ -88,10 +88,8 @@ Every row below is one function start in `tools\code\FUNCTION_BOUNDS.csv`.
 | `sub_08003422` | `0x08003422` | `code_08003422.s` |
 | `sub_08003480` | `0x08003480` | `code_08003480.s` |
 | `sub_0800350a` | `0x0800350a` | `code_0800350a.s` |
-| `sub_08003520` | `0x08003520` | `code_08003520.s` |
+| `Menu_DrawTechniqueDetail` | `0x08003520` | `Menu_DrawTechniqueDetail.s` |
 | `sub_08003684` | `0x08003684` | `code_08003684.s` |
-| `sub_08003724` | `0x08003724` | `code_08003724.s` |
-| `sub_0800372c` | `0x0800372c` | `code_0800372c.s` |
 | `sub_08003754` | `0x08003754` | `code_08003754.s` |
 | `Character_DrawStatusPage` | `0x0800379c` | `Character_DrawStatusPage.s` |
 | `sub_08003b38` | `0x08003b38` | `code_08003b38.s` |
@@ -1267,4 +1265,4 @@ Every row below is one function start in `tools\code\FUNCTION_BOUNDS.csv`.
 | `sub_08547800` | `0x08547800` | `code_08547800.s` |
 | `sub_08598054` | `0x08598054` | `code_08598054.s` |
 
-1251 function starts: 203 carry a name and 1048 carry their address; the address-named ones are read through the rule above, and `docs\NAMING.md` says what promotes a name.
+1249 function starts: 204 carry a name and 1045 carry their address; the address-named ones are read through the rule above, and `docs\NAMING.md` says what promotes a name.

@@ -314,10 +314,11 @@ def call_targets(rom, rows, modes):
 
 
 def classify(rom, entries, modes, rows, calls, table, vectors, spans=(), pools=(),
-             edges=(), covered=(), kept=()):
+             edges=(), covered=(), kept=(), fragmented=()):
     spans = set(spans)
     pools = sorted(set(pools))
     kept = set(kept)
+    fragmented = set(fragmented)
     entries = sorted(set(entries) | spans)
     limits = {}
     for begin, end in rows:
@@ -354,7 +355,7 @@ def classify(rom, entries, modes, rows, calls, table, vectors, spans=(), pools=(
     starts = {}
     contained = 0
     for address in sorted(entries):
-        if address not in limbs_of:
+        if address not in limbs_of or address in fragmented:
             continue
         if address not in spans and "prologue" not in limbs_of[address]:
             if any(address in starts[start] for start in starts
@@ -412,7 +413,7 @@ def classify(rom, entries, modes, rows, calls, table, vectors, spans=(), pools=(
         place = list(covered) + [(begin, end, modes.get(begin, THUMB))
                                  for begin, (end, _reason) in found.items()]
         return [address for address in entries
-                if address not in starts and not foreign(address)
+                if address not in starts and address not in fragmented and not foreign(address)
                 and not any(begin <= address < end and mode == modes.get(address, THUMB)
                             for begin, end, mode in place)]
 
@@ -526,7 +527,7 @@ def describe(measured, rom):
                             in runtime if origin == "runtime"],
                      covered=[(address, end, mode) for address, mode, origin, end, _reason
                               in runtime if origin == "runtime"],
-                     kept=code_split.evidence()["entry"])
+                     kept=evidence["entry"], fragmented=evidence["fragment"])
     found["rows"] = rows
     found["runtime"] = folded(rom, measured, found["starts"])
     found["entries"] = sorted(set(name_table.emitted([address for address, _mode in pairs],
