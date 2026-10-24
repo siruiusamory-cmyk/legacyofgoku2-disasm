@@ -7,6 +7,10 @@ All notable changes to this project are documented here. The format follows
 
 ### Changed
 
+- The emitter reads `tools/code/CENSUS_EVIDENCE.csv` and leaves a recorded data row out of the
+  generated code files, so the two runs the census stopped counting as code are carried into the build
+  as slices of the image like any other data. The two tests that expect one generated file per function
+  start keep that rule without an exemption.
 - The census stops counting two data runs as code (the status page's literal pool and the two words and
   translation-unit name that follow the level-curve readers) and keeps two handlers whole whose body
   starts a few bytes before its prologue, one of them named `Character_AwardXpToActive`. A new

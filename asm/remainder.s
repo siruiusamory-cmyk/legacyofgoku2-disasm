@@ -145,7 +145,7 @@
 		INCBIN	baserom.gba_0x376a_0x376c.extracted
 		INCLUDE	..\build\code\pool_0800376c.s
 		INCLUDE	..\build\code\Character_DrawStatusPage.s
-		INCLUDE	..\build\code\code_08003afe.s
+		INCBIN	baserom.gba_0x3afe_0x3b36.extracted
 		INCLUDE	..\build\code\pool_08003b36.s
 		INCLUDE	..\build\code\code_08003b38.s
 		INCBIN	baserom.gba_0x3b72_0x3c24.extracted
@@ -182,8 +182,7 @@
 		INCLUDE	..\build\code\Character_SetXpForLevel.s
 		INCLUDE	..\build\code\code_08004284.s
 		INCLUDE	..\build\code\code_080042bc.s
-		INCLUDE	..\build\code\code_080042ea.s
-		INCBIN	baserom.gba_0x43e8_0x45e4.extracted
+		INCBIN	baserom.gba_0x42ea_0x45e4.extracted
 		INCLUDE	..\build\code\pool_080045e4.s
 		INCBIN	baserom.gba_0x45fc_0x4a10.extracted
 		INCLUDE	..\build\code\code_08004a10.s

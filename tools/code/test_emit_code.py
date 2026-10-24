@@ -79,7 +79,7 @@ def test_every_emitted_row_decodes():
     for _begin, size, cause in measured["raw"]:
         causes[cause] = causes.get(cause, 0) + size
     assert sorted(causes) == ["already carried before the remainder", "inside a carried container",
-                              "outside the remainder"]
+                              "outside the remainder", "recorded as data"]
     assert measured["bytes"]["proven"] > 0
     assert measured["pool_bytes"] > 0
     assert measured["pools"]
@@ -123,14 +123,11 @@ def test_the_emitted_text_reassembles_to_the_image(tmp_path):
 
 
 def test_every_function_start_opens_one_file():
-    import code_split
-
     measured, rom = result()
     found = function_bounds.describe(measured["measured"], rom)
     segments = measured["segments"]
     begins = [begin for begin, _end, _name in segments]
     starts = set(name_table.emitted(found["starts"])) | {emit_code.ROM_BASE + emit_code.START}
-    starts |= set(address for address in code_split.evidence()["data"] if address in begins)
     assert len(begins) == len(set(begins))
     assert set(begins) == starts
     assert len(measured["files"]) == len(segments) + len(measured["pools"])

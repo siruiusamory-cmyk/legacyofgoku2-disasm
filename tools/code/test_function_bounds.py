@@ -274,7 +274,6 @@ def test_every_transcribed_code_span_start_is_classified():
     rom = os.path.join(root, "baserom.gba")
     if not os.path.exists(rom):
         pytest.skip("the retail image is absent, so the census cannot be re-derived")
-    import code_split
     import emit_code
     data = open(rom, "rb").read()
     found = function_bounds.census(data)
@@ -282,8 +281,7 @@ def test_every_transcribed_code_span_start_is_classified():
              if name.startswith("code_")]
     assert spans
     missing = [begin for begin in spans if begin not in found["starts"]]
-    recorded = sorted(address for address in code_split.evidence()["data"] if address in spans)
-    assert missing == [0x08000100] + recorded
+    assert missing == [0x08000100]
     owners = [(address, mode) for address, mode, _origin, end, _reason
               in function_bounds.ends_rows(found)
               if address <= 0x08000100 < end]

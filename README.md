@@ -46,7 +46,7 @@ does not measure how much of the code has been turned into C.
 
 ## Progress
 
-32.9644 % of the ROM (2,765,258 of 8,388,608 bytes) builds from tracked source: transcribed
+32.9607 % of the ROM (2,764,948 of 8,388,608 bytes) builds from tracked source: transcribed
 instructions, emitted code and literal pools, and container bodies re-encoded from your own ROM.
 The rest is still copied into the build as slices of the original image. `python tools\gate\gate.py`
 prints the split, and [docs/DEFINITION_OF_DONE.md](docs/DEFINITION_OF_DONE.md) says what counts as

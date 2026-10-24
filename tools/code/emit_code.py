@@ -434,6 +434,7 @@ def data_text(rom, begin, end):
 def fragments(rom):
     index = name_table.load_names()
     measured = code_split.measure(rom)
+    recorded = code_split.evidence()["data"]
     entries = set(address for address, _mode in export_inputs.entries_of(measured))
     runs = name_table.runs()
     kept_bytes = {}
@@ -450,6 +451,9 @@ def fragments(rom):
             raw.append((ROM_BASE + END, stop - END, "past the end of the image"))
         if name_table.covered(runs, begin, end):
             raw.append((ROM_BASE + begin, end - begin, "inside a carried container"))
+            continue
+        if ROM_BASE + begin in recorded:
+            raw.append((ROM_BASE + begin, end - begin, "recorded as data"))
             continue
         text_mode = "thumb" if mode == code_split.MODE_THUMB else "arm"
         lines = []
