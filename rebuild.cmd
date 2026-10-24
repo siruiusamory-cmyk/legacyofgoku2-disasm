@@ -21,6 +21,9 @@ echo incbin_header_exit=%ERRORLEVEL%
 echo === map records ===
 python tools\maprecords\maprecords.py --write
 echo map_records_exit=%ERRORLEVEL%
+echo === sprite records ===
+python tools\sprites\sprites.py --write
+echo sprite_records_exit=%ERRORLEVEL%
 echo === compressor ===
 if not exist "%ROOT%\tools\compress\compress.exe" call "%ROOT%\tools\compress\build.cmd"
 if errorlevel 1 exit /b 1

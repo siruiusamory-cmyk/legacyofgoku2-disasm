@@ -102,6 +102,15 @@ first two and the link check's test. A table a check reads sits beside the reade
 | `maprecords/LAYOUT.md` | each field's offset, width and load site | `maprecords.py --check` (through its test) |
 | `maprecords/test_maprecords.py` | the tests for the reader and encoder, its null and the field citations | CI |
 
+## sprites/
+
+| file | what it does | what runs it |
+| --- | --- | --- |
+| `sprites/sprites.py` | reads the sprite directory, definition and piece records into the tracked tables, encodes their rows back into the runs `generate_containers.py` puts in the image, and checks both against the image | `rebuild.cmd`, `generate_containers.py`, `test_sprites.py` |
+| `sprites/directory.csv`, `definition.csv`, `piece.csv` | the three tables, one record per row with named fields and pointers as record labels | `sprites.py` |
+| `sprites/LAYOUT.md` | each field's offset, width and the evidence that fixes it | `sprites.py --check` (through its test) |
+| `sprites/test_sprites.py` | the tests for the reader and encoder, its null and the field citations | CI |
+
 ## research/
 
 | file | what it does | what runs it |

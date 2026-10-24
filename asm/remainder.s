@@ -1926,11 +1926,25 @@
 		INCBIN	build\jcalg1\gen_1d9c14_1d9c78.bin
 		INCBIN	baserom.gba_0x1d9c78_0x1da980.extracted
 		INCBIN	build\jcalg1\gen_1da980_1dad84.bin
-		INCBIN	baserom.gba_0x1dad84_0x1dade4.extracted
+		INCBIN	build\sprites\rec_1dad84_1dad90.bin
+		INCBIN	baserom.gba_0x1dad90_0x1dad9c.extracted
+		INCBIN	build\sprites\rec_1dad9c_1dada8.bin
+		INCBIN	baserom.gba_0x1dada8_0x1dadb4.extracted
+		INCBIN	build\sprites\rec_1dadb4_1dadc0.bin
+		INCBIN	baserom.gba_0x1dadc0_0x1dadcc.extracted
+		INCBIN	build\sprites\rec_1dadcc_1dadd8.bin
+		INCBIN	baserom.gba_0x1dadd8_0x1dade4.extracted
 		INCBIN	build\jcalg1\gen_1dade4_1db134.bin
 		INCBIN	baserom.gba_0x1db134_0x1db2d8.extracted
 		INCBIN	build\jcalg1\gen_1db2d8_1db798.bin
-		INCBIN	baserom.gba_0x1db798_0x1db858.extracted
+		INCBIN	build\sprites\rec_1db798_1db7a4.bin
+		INCBIN	baserom.gba_0x1db7a4_0x1db7c8.extracted
+		INCBIN	build\sprites\rec_1db7c8_1db7d4.bin
+		INCBIN	baserom.gba_0x1db7d4_0x1db7f8.extracted
+		INCBIN	build\sprites\rec_1db7f8_1db804.bin
+		INCBIN	baserom.gba_0x1db804_0x1db828.extracted
+		INCBIN	build\sprites\rec_1db828_1db834.bin
+		INCBIN	baserom.gba_0x1db834_0x1db858.extracted
 		INCBIN	build\jcalg1\gen_1db858_1db92c.bin
 		INCBIN	baserom.gba_0x1db92c_0x1db9fc.extracted
 		INCBIN	build\jcalg1\gen_1db9fc_1dbac0.bin
@@ -1940,15 +1954,32 @@
 		INCBIN	build\jcalg1\gen_1dbe10_1dbf9c.bin
 		INCBIN	baserom.gba_0x1dbf9c_0x1dc17c.extracted
 		INCBIN	build\jcalg1\gen_1dc17c_1dc238.bin
-		INCBIN	baserom.gba_0x1dc238_0x1dc2f8.extracted
+		INCBIN	build\sprites\rec_1dc238_1dc244.bin
+		INCBIN	baserom.gba_0x1dc244_0x1dc268.extracted
+		INCBIN	build\sprites\rec_1dc268_1dc274.bin
+		INCBIN	baserom.gba_0x1dc274_0x1dc298.extracted
+		INCBIN	build\sprites\rec_1dc298_1dc2a4.bin
+		INCBIN	baserom.gba_0x1dc2a4_0x1dc2c8.extracted
+		INCBIN	build\sprites\rec_1dc2c8_1dc2d4.bin
+		INCBIN	baserom.gba_0x1dc2d4_0x1dc2f8.extracted
 		INCBIN	build\jcalg1\gen_1dc2f8_1dc810.bin
 		INCBIN	baserom.gba_0x1dc810_0x1dc8e8.extracted
 		INCBIN	build\jcalg1\gen_1dc8e8_1dcaa8.bin
-		INCBIN	baserom.gba_0x1dcaa8_0x1dce84.extracted
+		INCBIN	baserom.gba_0x1dcaa8_0x1dcdc8.extracted
+		INCBIN	build\sprites\rec_1dcdc8_1dce54.bin
+		INCBIN	baserom.gba_0x1dce54_0x1dce84.extracted
 		INCBIN	build\jcalg1\gen_1dce84_1dcf98.bin
 		INCBIN	baserom.gba_0x1dcf98_0x1dd0b0.extracted
 		INCBIN	build\jcalg1\gen_1dd0b0_1dd2b8.bin
-		INCBIN	baserom.gba_0x1dd2b8_0x1dd414.extracted
+		INCBIN	baserom.gba_0x1dd2b8_0x1dd3b4.extracted
+		INCBIN	build\sprites\rec_1dd3b4_1dd3c0.bin
+		INCBIN	baserom.gba_0x1dd3c0_0x1dd3cc.extracted
+		INCBIN	build\sprites\rec_1dd3cc_1dd3d8.bin
+		INCBIN	baserom.gba_0x1dd3d8_0x1dd3e4.extracted
+		INCBIN	build\sprites\rec_1dd3e4_1dd3f0.bin
+		INCBIN	baserom.gba_0x1dd3f0_0x1dd3fc.extracted
+		INCBIN	build\sprites\rec_1dd3fc_1dd408.bin
+		INCBIN	baserom.gba_0x1dd408_0x1dd414.extracted
 		INCBIN	build\jcalg1\gen_1dd414_1dd524.bin
 		INCBIN	baserom.gba_0x1dd524_0x1dd63c.extracted
 		INCBIN	build\jcalg1\gen_1dd63c_1dd95c.bin
@@ -1956,7 +1987,15 @@
 		INCBIN	build\jcalg1\gen_1dda74_1ddb7c.bin
 		INCBIN	baserom.gba_0x1ddb7c_0x1ddc98.extracted
 		INCBIN	build\jcalg1\gen_1ddc98_1ddf90.bin
-		INCBIN	baserom.gba_0x1ddf90_0x1de150.extracted
+		INCBIN	baserom.gba_0x1ddf90_0x1de090.extracted
+		INCBIN	build\sprites\rec_1de090_1de09c.bin
+		INCBIN	baserom.gba_0x1de09c_0x1de0c0.extracted
+		INCBIN	build\sprites\rec_1de0c0_1de0cc.bin
+		INCBIN	baserom.gba_0x1de0cc_0x1de0f0.extracted
+		INCBIN	build\sprites\rec_1de0f0_1de0fc.bin
+		INCBIN	baserom.gba_0x1de0fc_0x1de120.extracted
+		INCBIN	build\sprites\rec_1de120_1de12c.bin
+		INCBIN	baserom.gba_0x1de12c_0x1de150.extracted
 		INCBIN	build\jcalg1\gen_1de150_1de58c.bin
 		INCBIN	baserom.gba_0x1de58c_0x1de788.extracted
 		INCBIN	build\jcalg1\gen_1de788_1de880.bin
@@ -1982,15 +2021,32 @@
 		INCBIN	build\jcalg1\gen_1e0418_1e050c.bin
 		INCBIN	baserom.gba_0x1e050c_0x1e060c.extracted
 		INCBIN	build\jcalg1\gen_1e060c_1e0704.bin
-		INCBIN	baserom.gba_0x1e0704_0x1e08e0.extracted
+		INCBIN	baserom.gba_0x1e0704_0x1e07c4.extracted
+		INCBIN	build\sprites\rec_1e07c4_1e0830.bin
+		INCBIN	baserom.gba_0x1e0830_0x1e08e0.extracted
 		INCBIN	build\jcalg1\gen_1e08e0_1e09f0.bin
 		INCBIN	baserom.gba_0x1e09f0_0x1e0b00.extracted
 		INCBIN	build\jcalg1\gen_1e0b00_1e0bd0.bin
-		INCBIN	baserom.gba_0x1e0bd0_0x1e0dfc.extracted
+		INCBIN	baserom.gba_0x1e0bd0_0x1e0d9c.extracted
+		INCBIN	build\sprites\rec_1e0d9c_1e0da8.bin
+		INCBIN	baserom.gba_0x1e0da8_0x1e0db4.extracted
+		INCBIN	build\sprites\rec_1e0db4_1e0dc0.bin
+		INCBIN	baserom.gba_0x1e0dc0_0x1e0dcc.extracted
+		INCBIN	build\sprites\rec_1e0dcc_1e0dd8.bin
+		INCBIN	baserom.gba_0x1e0dd8_0x1e0de4.extracted
+		INCBIN	build\sprites\rec_1e0de4_1e0df0.bin
+		INCBIN	baserom.gba_0x1e0df0_0x1e0dfc.extracted
 		INCBIN	build\jcalg1\gen_1e0dfc_1e12d0.bin
 		INCBIN	baserom.gba_0x1e12d0_0x1e161c.extracted
 		INCBIN	build\jcalg1\gen_1e161c_1e18ec.bin
-		INCBIN	baserom.gba_0x1e18ec_0x1e19ac.extracted
+		INCBIN	build\sprites\rec_1e18ec_1e18f8.bin
+		INCBIN	baserom.gba_0x1e18f8_0x1e191c.extracted
+		INCBIN	build\sprites\rec_1e191c_1e1928.bin
+		INCBIN	baserom.gba_0x1e1928_0x1e194c.extracted
+		INCBIN	build\sprites\rec_1e194c_1e1958.bin
+		INCBIN	baserom.gba_0x1e1958_0x1e197c.extracted
+		INCBIN	build\sprites\rec_1e197c_1e1988.bin
+		INCBIN	baserom.gba_0x1e1988_0x1e19ac.extracted
 		INCBIN	build\jcalg1\gen_1e19ac_1e1aac.bin
 		INCBIN	baserom.gba_0x1e1aac_0x1e1cc0.extracted
 		INCBIN	build\jcalg1\gen_1e1cc0_1e1f8c.bin
@@ -2026,21 +2082,52 @@
 		INCBIN	build\jcalg1\gen_1e57e0_1e5c3c.bin
 		INCBIN	baserom.gba_0x1e5c3c_0x1e5cfc.extracted
 		INCBIN	build\jcalg1\gen_1e5cfc_1e669c.bin
-		INCBIN	baserom.gba_0x1e669c_0x1e6878.extracted
+		INCBIN	baserom.gba_0x1e669c_0x1e675c.extracted
+		INCBIN	build\sprites\rec_1e675c_1e67c8.bin
+		INCBIN	baserom.gba_0x1e67c8_0x1e6878.extracted
 		INCBIN	build\jcalg1\gen_1e6878_1e698c.bin
 		INCBIN	baserom.gba_0x1e698c_0x1e6b78.extracted
 		INCBIN	build\jcalg1\gen_1e6b78_1e6d48.bin
-		INCBIN	baserom.gba_0x1e6d48_0x1e6da8.extracted
+		INCBIN	build\sprites\rec_1e6d48_1e6d54.bin
+		INCBIN	baserom.gba_0x1e6d54_0x1e6d60.extracted
+		INCBIN	build\sprites\rec_1e6d60_1e6d6c.bin
+		INCBIN	baserom.gba_0x1e6d6c_0x1e6d78.extracted
+		INCBIN	build\sprites\rec_1e6d78_1e6d84.bin
+		INCBIN	baserom.gba_0x1e6d84_0x1e6d90.extracted
+		INCBIN	build\sprites\rec_1e6d90_1e6d9c.bin
+		INCBIN	baserom.gba_0x1e6d9c_0x1e6da8.extracted
 		INCBIN	build\jcalg1\gen_1e6da8_1e706c.bin
-		INCBIN	baserom.gba_0x1e706c_0x1e7270.extracted
+		INCBIN	baserom.gba_0x1e706c_0x1e7174.extracted
+		INCBIN	build\sprites\rec_1e7174_1e7180.bin
+		INCBIN	baserom.gba_0x1e7180_0x1e71a4.extracted
+		INCBIN	build\sprites\rec_1e71a4_1e71b0.bin
+		INCBIN	baserom.gba_0x1e71b0_0x1e71d4.extracted
+		INCBIN	build\sprites\rec_1e71d4_1e71e0.bin
+		INCBIN	baserom.gba_0x1e71e0_0x1e7204.extracted
+		INCBIN	build\sprites\rec_1e7204_1e7270.bin
 		INCBIN	build\jcalg1\gen_1e7270_1e74b4.bin
-		INCBIN	baserom.gba_0x1e74b4_0x1e7800.extracted
+		INCBIN	baserom.gba_0x1e74b4_0x1e77a0.extracted
+		INCBIN	build\sprites\rec_1e77a0_1e77ac.bin
+		INCBIN	baserom.gba_0x1e77ac_0x1e77b8.extracted
+		INCBIN	build\sprites\rec_1e77b8_1e77c4.bin
+		INCBIN	baserom.gba_0x1e77c4_0x1e77d0.extracted
+		INCBIN	build\sprites\rec_1e77d0_1e77dc.bin
+		INCBIN	baserom.gba_0x1e77dc_0x1e77e8.extracted
+		INCBIN	build\sprites\rec_1e77e8_1e77f4.bin
+		INCBIN	baserom.gba_0x1e77f4_0x1e7800.extracted
 		INCBIN	build\jcalg1\gen_1e7800_1e7914.bin
 		INCBIN	baserom.gba_0x1e7914_0x1e7a30.extracted
 		INCBIN	build\jcalg1\gen_1e7a30_1e7c68.bin
 		INCBIN	baserom.gba_0x1e7c68_0x1e7e5c.extracted
 		INCBIN	build\jcalg1\gen_1e7e5c_1e8448.bin
-		INCBIN	baserom.gba_0x1e8448_0x1e8508.extracted
+		INCBIN	build\sprites\rec_1e8448_1e8454.bin
+		INCBIN	baserom.gba_0x1e8454_0x1e8478.extracted
+		INCBIN	build\sprites\rec_1e8478_1e8484.bin
+		INCBIN	baserom.gba_0x1e8484_0x1e84a8.extracted
+		INCBIN	build\sprites\rec_1e84a8_1e84b4.bin
+		INCBIN	baserom.gba_0x1e84b4_0x1e84d8.extracted
+		INCBIN	build\sprites\rec_1e84d8_1e84e4.bin
+		INCBIN	baserom.gba_0x1e84e4_0x1e8508.extracted
 		INCBIN	build\jcalg1\gen_1e8508_1e8a28.bin
 		INCBIN	baserom.gba_0x1e8a28_0x1e8e38.extracted
 		INCBIN	build\jcalg1\gen_1e8e38_1e8f30.bin
@@ -2088,17 +2175,34 @@
 		INCBIN	build\jcalg1\gen_1edd30_1ede50.bin
 		INCBIN	baserom.gba_0x1ede50_0x1edf7c.extracted
 		INCBIN	build\jcalg1\gen_1edf7c_1ee0a0.bin
-		INCBIN	baserom.gba_0x1ee0a0_0x1ee27c.extracted
+		INCBIN	baserom.gba_0x1ee0a0_0x1ee160.extracted
+		INCBIN	build\sprites\rec_1ee160_1ee1cc.bin
+		INCBIN	baserom.gba_0x1ee1cc_0x1ee27c.extracted
 		INCBIN	build\jcalg1\gen_1ee27c_1ee398.bin
 		INCBIN	baserom.gba_0x1ee398_0x1ee4b8.extracted
 		INCBIN	build\jcalg1\gen_1ee4b8_1ee7b0.bin
-		INCBIN	baserom.gba_0x1ee7b0_0x1ee810.extracted
+		INCBIN	build\sprites\rec_1ee7b0_1ee7bc.bin
+		INCBIN	baserom.gba_0x1ee7bc_0x1ee7c8.extracted
+		INCBIN	build\sprites\rec_1ee7c8_1ee7d4.bin
+		INCBIN	baserom.gba_0x1ee7d4_0x1ee7e0.extracted
+		INCBIN	build\sprites\rec_1ee7e0_1ee7ec.bin
+		INCBIN	baserom.gba_0x1ee7ec_0x1ee7f8.extracted
+		INCBIN	build\sprites\rec_1ee7f8_1ee804.bin
+		INCBIN	baserom.gba_0x1ee804_0x1ee810.extracted
 		INCBIN	build\jcalg1\gen_1ee810_1ee91c.bin
 		INCBIN	baserom.gba_0x1ee91c_0x1eec60.extracted
 		INCBIN	build\jcalg1\gen_1eec60_1eef60.bin
 		INCBIN	baserom.gba_0x1eef60_0x1ef06c.extracted
 		INCBIN	build\jcalg1\gen_1ef06c_1ef274.bin
-		INCBIN	baserom.gba_0x1ef274_0x1ef540.extracted
+		INCBIN	baserom.gba_0x1ef274_0x1ef480.extracted
+		INCBIN	build\sprites\rec_1ef480_1ef48c.bin
+		INCBIN	baserom.gba_0x1ef48c_0x1ef4b0.extracted
+		INCBIN	build\sprites\rec_1ef4b0_1ef4bc.bin
+		INCBIN	baserom.gba_0x1ef4bc_0x1ef4e0.extracted
+		INCBIN	build\sprites\rec_1ef4e0_1ef4ec.bin
+		INCBIN	baserom.gba_0x1ef4ec_0x1ef510.extracted
+		INCBIN	build\sprites\rec_1ef510_1ef51c.bin
+		INCBIN	baserom.gba_0x1ef51c_0x1ef540.extracted
 		INCBIN	build\jcalg1\gen_1ef540_1ef76c.bin
 		INCBIN	baserom.gba_0x1ef76c_0x1efab8.extracted
 		INCBIN	build\jcalg1\gen_1efab8_1effb8.bin
@@ -2136,17 +2240,35 @@
 		INCBIN	build\jcalg1\gen_1f3bf8_1f3cd0.bin
 		INCBIN	baserom.gba_0x1f3cd0_0x1f3dac.extracted
 		INCBIN	build\jcalg1\gen_1f3dac_1f3e84.bin
-		INCBIN	baserom.gba_0x1f3e84_0x1f4424.extracted
+		INCBIN	baserom.gba_0x1f3e84_0x1f4308.extracted
+		INCBIN	build\sprites\rec_1f4308_1f4374.bin
+		INCBIN	baserom.gba_0x1f4374_0x1f4424.extracted
 		INCBIN	build\jcalg1\gen_1f4424_1f4680.bin
 		INCBIN	baserom.gba_0x1f4680_0x1f4794.extracted
 		INCBIN	build\jcalg1\gen_1f4794_1f48a4.bin
-		INCBIN	baserom.gba_0x1f48a4_0x1f4a18.extracted
+		INCBIN	baserom.gba_0x1f48a4_0x1f49b8.extracted
+		INCBIN	build\sprites\rec_1f49b8_1f49c4.bin
+		INCBIN	baserom.gba_0x1f49c4_0x1f49d0.extracted
+		INCBIN	build\sprites\rec_1f49d0_1f49dc.bin
+		INCBIN	baserom.gba_0x1f49dc_0x1f49e8.extracted
+		INCBIN	build\sprites\rec_1f49e8_1f49f4.bin
+		INCBIN	baserom.gba_0x1f49f4_0x1f4a00.extracted
+		INCBIN	build\sprites\rec_1f4a00_1f4a0c.bin
+		INCBIN	baserom.gba_0x1f4a0c_0x1f4a18.extracted
 		INCBIN	build\jcalg1\gen_1f4a18_1f4e90.bin
 		INCBIN	baserom.gba_0x1f4e90_0x1f5090.extracted
 		INCBIN	build\jcalg1\gen_1f5090_1f53a8.bin
 		INCBIN	baserom.gba_0x1f53a8_0x1f54bc.extracted
 		INCBIN	build\jcalg1\gen_1f54bc_1f55d0.bin
-		INCBIN	baserom.gba_0x1f55d0_0x1f579c.extracted
+		INCBIN	baserom.gba_0x1f55d0_0x1f56dc.extracted
+		INCBIN	build\sprites\rec_1f56dc_1f56e8.bin
+		INCBIN	baserom.gba_0x1f56e8_0x1f570c.extracted
+		INCBIN	build\sprites\rec_1f570c_1f5718.bin
+		INCBIN	baserom.gba_0x1f5718_0x1f573c.extracted
+		INCBIN	build\sprites\rec_1f573c_1f5748.bin
+		INCBIN	baserom.gba_0x1f5748_0x1f576c.extracted
+		INCBIN	build\sprites\rec_1f576c_1f5778.bin
+		INCBIN	baserom.gba_0x1f5778_0x1f579c.extracted
 		INCBIN	build\jcalg1\gen_1f579c_1f58c0.bin
 		INCBIN	baserom.gba_0x1f58c0_0x1f59cc.extracted
 		INCBIN	build\jcalg1\gen_1f59cc_1f5ae8.bin
@@ -2184,17 +2306,33 @@
 		INCBIN	build\jcalg1\gen_1f9d20_1fa12c.bin
 		INCBIN	baserom.gba_0x1fa12c_0x1fa204.extracted
 		INCBIN	build\jcalg1\gen_1fa204_1fa5cc.bin
-		INCBIN	baserom.gba_0x1fa5cc_0x1fa9d8.extracted
+		INCBIN	baserom.gba_0x1fa5cc_0x1fa8bc.extracted
+		INCBIN	build\sprites\rec_1fa8bc_1fa928.bin
+		INCBIN	baserom.gba_0x1fa928_0x1fa9d8.extracted
 		INCBIN	build\jcalg1\gen_1fa9d8_1fac5c.bin
 		INCBIN	baserom.gba_0x1fac5c_0x1fad88.extracted
 		INCBIN	build\jcalg1\gen_1fad88_1fafc8.bin
-		INCBIN	baserom.gba_0x1fafc8_0x1fb028.extracted
+		INCBIN	build\sprites\rec_1fafc8_1fafd4.bin
+		INCBIN	baserom.gba_0x1fafd4_0x1fafe0.extracted
+		INCBIN	build\sprites\rec_1fafe0_1fafec.bin
+		INCBIN	baserom.gba_0x1fafec_0x1faff8.extracted
+		INCBIN	build\sprites\rec_1faff8_1fb004.bin
+		INCBIN	baserom.gba_0x1fb004_0x1fb010.extracted
+		INCBIN	build\sprites\rec_1fb010_1fb01c.bin
+		INCBIN	baserom.gba_0x1fb01c_0x1fb028.extracted
 		INCBIN	build\jcalg1\gen_1fb028_1fb144.bin
 		INCBIN	baserom.gba_0x1fb144_0x1fb5e4.extracted
 		INCBIN	build\jcalg1\gen_1fb5e4_1fb6fc.bin
 		INCBIN	baserom.gba_0x1fb6fc_0x1fbca0.extracted
 		INCBIN	build\jcalg1\gen_1fbca0_1fbdbc.bin
-		INCBIN	baserom.gba_0x1fbdbc_0x1fbe7c.extracted
+		INCBIN	build\sprites\rec_1fbdbc_1fbdc8.bin
+		INCBIN	baserom.gba_0x1fbdc8_0x1fbdec.extracted
+		INCBIN	build\sprites\rec_1fbdec_1fbdf8.bin
+		INCBIN	baserom.gba_0x1fbdf8_0x1fbe1c.extracted
+		INCBIN	build\sprites\rec_1fbe1c_1fbe28.bin
+		INCBIN	baserom.gba_0x1fbe28_0x1fbe4c.extracted
+		INCBIN	build\sprites\rec_1fbe4c_1fbe58.bin
+		INCBIN	baserom.gba_0x1fbe58_0x1fbe7c.extracted
 		INCBIN	build\jcalg1\gen_1fbe7c_1fc0b0.bin
 		INCBIN	baserom.gba_0x1fc0b0_0x1fc1d8.extracted
 		INCBIN	build\jcalg1\gen_1fc1d8_1fc434.bin
@@ -2236,29 +2374,68 @@
 		INCBIN	build\jcalg1\gen_201138_20121c.bin
 		INCBIN	baserom.gba_0x20121c_0x201504.extracted
 		INCBIN	build\jcalg1\gen_201504_201850.bin
-		INCBIN	baserom.gba_0x201850_0x201a2c.extracted
+		INCBIN	baserom.gba_0x201850_0x201910.extracted
+		INCBIN	build\sprites\rec_201910_20197c.bin
+		INCBIN	baserom.gba_0x20197c_0x201a2c.extracted
 		INCBIN	build\jcalg1\gen_201a2c_201df0.bin
 		INCBIN	baserom.gba_0x201df0_0x201f1c.extracted
 		INCBIN	build\jcalg1\gen_201f1c_202044.bin
-		INCBIN	baserom.gba_0x202044_0x2020a4.extracted
+		INCBIN	build\sprites\rec_202044_202050.bin
+		INCBIN	baserom.gba_0x202050_0x20205c.extracted
+		INCBIN	build\sprites\rec_20205c_202068.bin
+		INCBIN	baserom.gba_0x202068_0x202074.extracted
+		INCBIN	build\sprites\rec_202074_202080.bin
+		INCBIN	baserom.gba_0x202080_0x20208c.extracted
+		INCBIN	build\sprites\rec_20208c_202098.bin
+		INCBIN	baserom.gba_0x202098_0x2020a4.extracted
 		INCBIN	build\jcalg1\gen_2020a4_202538.bin
-		INCBIN	baserom.gba_0x202538_0x2025c8.extracted
+		INCBIN	build\sprites\rec_202538_202544.bin
+		INCBIN	baserom.gba_0x202544_0x202568.extracted
+		INCBIN	build\sprites\rec_202568_202574.bin
+		INCBIN	baserom.gba_0x202574_0x202598.extracted
+		INCBIN	build\sprites\rec_202598_2025a4.bin
+		INCBIN	baserom.gba_0x2025a4_0x2025c8.extracted
 		INCBIN	build\jcalg1\gen_2025c8_2026a8.bin
 		INCBIN	baserom.gba_0x2026a8_0x202a40.extracted
 		INCBIN	build\jcalg1\gen_202a40_202b24.bin
 		INCBIN	baserom.gba_0x202b24_0x202e0c.extracted
 		INCBIN	build\jcalg1\gen_202e0c_203158.bin
-		INCBIN	baserom.gba_0x203158_0x203334.extracted
+		INCBIN	baserom.gba_0x203158_0x203218.extracted
+		INCBIN	build\sprites\rec_203218_203284.bin
+		INCBIN	baserom.gba_0x203284_0x203334.extracted
 		INCBIN	build\jcalg1\gen_203334_2033f8.bin
 		INCBIN	baserom.gba_0x2033f8_0x2034c0.extracted
 		INCBIN	build\jcalg1\gen_2034c0_2036e4.bin
-		INCBIN	baserom.gba_0x2036e4_0x2037a0.extracted
+		INCBIN	build\sprites\rec_2036e4_2036f0.bin
+		INCBIN	baserom.gba_0x2036f0_0x2036fc.extracted
+		INCBIN	build\sprites\rec_2036fc_203708.bin
+		INCBIN	baserom.gba_0x203708_0x203714.extracted
+		INCBIN	build\sprites\rec_203714_203720.bin
+		INCBIN	baserom.gba_0x203720_0x20372c.extracted
+		INCBIN	build\sprites\rec_20372c_203738.bin
+		INCBIN	baserom.gba_0x203738_0x203744.extracted
+		INCBIN	build\sprites\rec_203744_2037a0.bin
 		INCBIN	build\jcalg1\gen_2037a0_203b54.bin
-		INCBIN	baserom.gba_0x203b54_0x203c98.extracted
+		INCBIN	baserom.gba_0x203b54_0x203c38.extracted
+		INCBIN	build\sprites\rec_203c38_203c44.bin
+		INCBIN	baserom.gba_0x203c44_0x203c50.extracted
+		INCBIN	build\sprites\rec_203c50_203c5c.bin
+		INCBIN	baserom.gba_0x203c5c_0x203c68.extracted
+		INCBIN	build\sprites\rec_203c68_203c74.bin
+		INCBIN	baserom.gba_0x203c74_0x203c80.extracted
+		INCBIN	build\sprites\rec_203c80_203c8c.bin
+		INCBIN	baserom.gba_0x203c8c_0x203c98.extracted
 		INCBIN	build\jcalg1\gen_203c98_2042b0.bin
 		INCBIN	baserom.gba_0x2042b0_0x20438c.extracted
 		INCBIN	build\jcalg1\gen_20438c_2046ec.bin
-		INCBIN	baserom.gba_0x2046ec_0x2047ac.extracted
+		INCBIN	build\sprites\rec_2046ec_2046f8.bin
+		INCBIN	baserom.gba_0x2046f8_0x20471c.extracted
+		INCBIN	build\sprites\rec_20471c_204728.bin
+		INCBIN	baserom.gba_0x204728_0x20474c.extracted
+		INCBIN	build\sprites\rec_20474c_204758.bin
+		INCBIN	baserom.gba_0x204758_0x20477c.extracted
+		INCBIN	build\sprites\rec_20477c_204788.bin
+		INCBIN	baserom.gba_0x204788_0x2047ac.extracted
 		INCBIN	build\jcalg1\gen_2047ac_204b78.bin
 		INCBIN	baserom.gba_0x204b78_0x204c58.extracted
 		INCBIN	build\jcalg1\gen_204c58_204d2c.bin
@@ -2282,25 +2459,57 @@
 		INCBIN	build\jcalg1\gen_2070f8_207424.bin
 		INCBIN	baserom.gba_0x207424_0x20775c.extracted
 		INCBIN	build\jcalg1\gen_20775c_207890.bin
-		INCBIN	baserom.gba_0x207890_0x207e5c.extracted
+		INCBIN	baserom.gba_0x207890_0x207b80.extracted
+		INCBIN	build\sprites\rec_207b80_207bec.bin
+		INCBIN	baserom.gba_0x207bec_0x207e5c.extracted
 		INCBIN	build\jcalg1\gen_207e5c_207f98.bin
-		INCBIN	baserom.gba_0x207f98_0x207ff8.extracted
+		INCBIN	build\sprites\rec_207f98_207fa4.bin
+		INCBIN	baserom.gba_0x207fa4_0x207fb0.extracted
+		INCBIN	build\sprites\rec_207fb0_207fbc.bin
+		INCBIN	baserom.gba_0x207fbc_0x207fc8.extracted
+		INCBIN	build\sprites\rec_207fc8_207fd4.bin
+		INCBIN	baserom.gba_0x207fd4_0x207fe0.extracted
+		INCBIN	build\sprites\rec_207fe0_207fec.bin
+		INCBIN	baserom.gba_0x207fec_0x207ff8.extracted
 		INCBIN	build\jcalg1\gen_207ff8_2080e0.bin
 		INCBIN	baserom.gba_0x2080e0_0x208130.extracted
 		INCBIN	build\jcalg1\gen_208130_208180.bin
 		INCBIN	baserom.gba_0x208180_0x2082bc.extracted
 		INCBIN	build\jcalg1\gen_2082bc_20837c.bin
-		INCBIN	baserom.gba_0x20837c_0x2084a8.extracted
+		INCBIN	build\sprites\rec_20837c_208388.bin
+		INCBIN	baserom.gba_0x208388_0x2083ac.extracted
+		INCBIN	build\sprites\rec_2083ac_2083b8.bin
+		INCBIN	baserom.gba_0x2083b8_0x2083dc.extracted
+		INCBIN	build\sprites\rec_2083dc_2083e8.bin
+		INCBIN	baserom.gba_0x2083e8_0x20840c.extracted
+		INCBIN	build\sprites\rec_20840c_208418.bin
+		INCBIN	baserom.gba_0x208418_0x20843c.extracted
+		INCBIN	build\sprites\rec_20843c_2084a8.bin
 		INCBIN	build\jcalg1\gen_2084a8_208628.bin
 		INCBIN	baserom.gba_0x208628_0x2086dc.extracted
 		INCBIN	build\jcalg1\gen_2086dc_208828.bin
-		INCBIN	baserom.gba_0x208828_0x208888.extracted
+		INCBIN	build\sprites\rec_208828_208834.bin
+		INCBIN	baserom.gba_0x208834_0x208840.extracted
+		INCBIN	build\sprites\rec_208840_20884c.bin
+		INCBIN	baserom.gba_0x20884c_0x208858.extracted
+		INCBIN	build\sprites\rec_208858_208864.bin
+		INCBIN	baserom.gba_0x208864_0x208870.extracted
+		INCBIN	build\sprites\rec_208870_20887c.bin
+		INCBIN	baserom.gba_0x20887c_0x208888.extracted
 		INCBIN	build\jcalg1\gen_208888_20894c.bin
 		INCBIN	baserom.gba_0x20894c_0x208a14.extracted
 		INCBIN	build\jcalg1\gen_208a14_208b9c.bin
 		INCBIN	baserom.gba_0x208b9c_0x208c50.extracted
 		INCBIN	build\jcalg1\gen_208c50_208fc0.bin
-		INCBIN	baserom.gba_0x208fc0_0x2091e0.extracted
+		INCBIN	baserom.gba_0x208fc0_0x209120.extracted
+		INCBIN	build\sprites\rec_209120_20912c.bin
+		INCBIN	baserom.gba_0x20912c_0x209150.extracted
+		INCBIN	build\sprites\rec_209150_20915c.bin
+		INCBIN	baserom.gba_0x20915c_0x209180.extracted
+		INCBIN	build\sprites\rec_209180_20918c.bin
+		INCBIN	baserom.gba_0x20918c_0x2091b0.extracted
+		INCBIN	build\sprites\rec_2091b0_2091bc.bin
+		INCBIN	baserom.gba_0x2091bc_0x2091e0.extracted
 		INCBIN	build\jcalg1\gen_2091e0_2092ac.bin
 		INCBIN	baserom.gba_0x2092ac_0x209380.extracted
 		INCBIN	build\jcalg1\gen_209380_209444.bin
@@ -2310,11 +2519,20 @@
 		INCBIN	build\jcalg1\gen_20967c_209730.bin
 		INCBIN	baserom.gba_0x209730_0x2097e0.extracted
 		INCBIN	build\jcalg1\gen_2097e0_209a9c.bin
-		INCBIN	baserom.gba_0x209a9c_0x209cf8.extracted
+		INCBIN	baserom.gba_0x209a9c_0x209b5c.extracted
+		INCBIN	build\sprites\rec_209b5c_209bc8.bin
+		INCBIN	baserom.gba_0x209bc8_0x209cf8.extracted
 		INCBIN	build\jcalg1\gen_209cf8_20a024.bin
 		INCBIN	baserom.gba_0x20a024_0x20a110.extracted
 		INCBIN	build\jcalg1\gen_20a110_20a1f4.bin
-		INCBIN	baserom.gba_0x20a1f4_0x20a254.extracted
+		INCBIN	build\sprites\rec_20a1f4_20a200.bin
+		INCBIN	baserom.gba_0x20a200_0x20a20c.extracted
+		INCBIN	build\sprites\rec_20a20c_20a218.bin
+		INCBIN	baserom.gba_0x20a218_0x20a224.extracted
+		INCBIN	build\sprites\rec_20a224_20a230.bin
+		INCBIN	baserom.gba_0x20a230_0x20a23c.extracted
+		INCBIN	build\sprites\rec_20a23c_20a248.bin
+		INCBIN	baserom.gba_0x20a248_0x20a254.extracted
 		INCBIN	build\jcalg1\gen_20a254_20a484.bin
 		INCBIN	baserom.gba_0x20a484_0x20a6b8.extracted
 		INCBIN	build\jcalg1\gen_20a6b8_20a984.bin
@@ -2322,15 +2540,33 @@
 		INCBIN	build\jcalg1\gen_20aa80_20ab88.bin
 		INCBIN	baserom.gba_0x20ab88_0x20ac78.extracted
 		INCBIN	build\jcalg1\gen_20ac78_20ad80.bin
-		INCBIN	baserom.gba_0x20ad80_0x20af30.extracted
+		INCBIN	baserom.gba_0x20ad80_0x20ae70.extracted
+		INCBIN	build\sprites\rec_20ae70_20ae7c.bin
+		INCBIN	baserom.gba_0x20ae7c_0x20aea0.extracted
+		INCBIN	build\sprites\rec_20aea0_20aeac.bin
+		INCBIN	baserom.gba_0x20aeac_0x20aed0.extracted
+		INCBIN	build\sprites\rec_20aed0_20aedc.bin
+		INCBIN	baserom.gba_0x20aedc_0x20af00.extracted
+		INCBIN	build\sprites\rec_20af00_20af0c.bin
+		INCBIN	baserom.gba_0x20af0c_0x20af30.extracted
 		INCBIN	build\jcalg1\gen_20af30_20b04c.bin
 		INCBIN	baserom.gba_0x20b04c_0x20b164.extracted
 		INCBIN	build\jcalg1\gen_20b164_20b478.bin
 		INCBIN	baserom.gba_0x20b478_0x20b65c.extracted
 		INCBIN	build\jcalg1\gen_20b65c_20baf0.bin
-		INCBIN	baserom.gba_0x20baf0_0x20bc4c.extracted
+		INCBIN	baserom.gba_0x20baf0_0x20bbb0.extracted
+		INCBIN	build\sprites\rec_20bbb0_20bc1c.bin
+		INCBIN	baserom.gba_0x20bc1c_0x20bc4c.extracted
 		INCBIN	build\jcalg1\gen_20bc4c_20c034.bin
-		INCBIN	baserom.gba_0x20c034_0x20c18c.extracted
+		INCBIN	baserom.gba_0x20c034_0x20c12c.extracted
+		INCBIN	build\sprites\rec_20c12c_20c138.bin
+		INCBIN	baserom.gba_0x20c138_0x20c144.extracted
+		INCBIN	build\sprites\rec_20c144_20c150.bin
+		INCBIN	baserom.gba_0x20c150_0x20c15c.extracted
+		INCBIN	build\sprites\rec_20c15c_20c168.bin
+		INCBIN	baserom.gba_0x20c168_0x20c174.extracted
+		INCBIN	build\sprites\rec_20c174_20c180.bin
+		INCBIN	baserom.gba_0x20c180_0x20c18c.extracted
 		INCBIN	build\jcalg1\gen_20c18c_20c294.bin
 		INCBIN	baserom.gba_0x20c294_0x20c3a0.extracted
 		INCBIN	build\jcalg1\gen_20c3a0_20c4a4.bin
@@ -2338,13 +2574,30 @@
 		INCBIN	build\jcalg1\gen_20c780_20c940.bin
 		INCBIN	baserom.gba_0x20c940_0x20cb40.extracted
 		INCBIN	build\jcalg1\gen_20cb40_20cc44.bin
-		INCBIN	baserom.gba_0x20cc44_0x20ce00.extracted
+		INCBIN	baserom.gba_0x20cc44_0x20cd40.extracted
+		INCBIN	build\sprites\rec_20cd40_20cd4c.bin
+		INCBIN	baserom.gba_0x20cd4c_0x20cd70.extracted
+		INCBIN	build\sprites\rec_20cd70_20cd7c.bin
+		INCBIN	baserom.gba_0x20cd7c_0x20cda0.extracted
+		INCBIN	build\sprites\rec_20cda0_20cdac.bin
+		INCBIN	baserom.gba_0x20cdac_0x20cdd0.extracted
+		INCBIN	build\sprites\rec_20cdd0_20cddc.bin
+		INCBIN	baserom.gba_0x20cddc_0x20ce00.extracted
 		INCBIN	build\jcalg1\gen_20ce00_20d3d0.bin
 		INCBIN	baserom.gba_0x20d3d0_0x20d4ac.extracted
 		INCBIN	build\jcalg1\gen_20d4ac_20d778.bin
-		INCBIN	baserom.gba_0x20d778_0x20dac0.extracted
+		INCBIN	baserom.gba_0x20d778_0x20da24.extracted
+		INCBIN	build\sprites\rec_20da24_20da90.bin
+		INCBIN	baserom.gba_0x20da90_0x20dac0.extracted
 		INCBIN	build\jcalg1\gen_20dac0_20dba8.bin
-		INCBIN	baserom.gba_0x20dba8_0x20dc08.extracted
+		INCBIN	build\sprites\rec_20dba8_20dbb4.bin
+		INCBIN	baserom.gba_0x20dbb4_0x20dbc0.extracted
+		INCBIN	build\sprites\rec_20dbc0_20dbcc.bin
+		INCBIN	baserom.gba_0x20dbcc_0x20dbd8.extracted
+		INCBIN	build\sprites\rec_20dbd8_20dbe4.bin
+		INCBIN	baserom.gba_0x20dbe4_0x20dbf0.extracted
+		INCBIN	build\sprites\rec_20dbf0_20dbfc.bin
+		INCBIN	baserom.gba_0x20dbfc_0x20dc08.extracted
 		INCBIN	build\jcalg1\gen_20dc08_20dc34.bin
 		INCBIN	baserom.gba_0x20dc34_0x20dc64.extracted
 		INCBIN	build\jcalg1\gen_20dc64_20dd1c.bin
@@ -2352,9 +2605,25 @@
 		INCBIN	build\jcalg1\gen_20dd50_20dd7c.bin
 		INCBIN	baserom.gba_0x20dd7c_0x20ddb0.extracted
 		INCBIN	build\jcalg1\gen_20ddb0_20de30.bin
-		INCBIN	baserom.gba_0x20de30_0x20df5c.extracted
+		INCBIN	build\sprites\rec_20de30_20de3c.bin
+		INCBIN	baserom.gba_0x20de3c_0x20de60.extracted
+		INCBIN	build\sprites\rec_20de60_20de6c.bin
+		INCBIN	baserom.gba_0x20de6c_0x20de90.extracted
+		INCBIN	build\sprites\rec_20de90_20de9c.bin
+		INCBIN	baserom.gba_0x20de9c_0x20dec0.extracted
+		INCBIN	build\sprites\rec_20dec0_20decc.bin
+		INCBIN	baserom.gba_0x20decc_0x20def0.extracted
+		INCBIN	build\sprites\rec_20def0_20df5c.bin
 		INCBIN	build\jcalg1\gen_20df5c_20e0ec.bin
-		INCBIN	baserom.gba_0x20e0ec_0x20e1b4.extracted
+		INCBIN	baserom.gba_0x20e0ec_0x20e154.extracted
+		INCBIN	build\sprites\rec_20e154_20e160.bin
+		INCBIN	baserom.gba_0x20e160_0x20e16c.extracted
+		INCBIN	build\sprites\rec_20e16c_20e178.bin
+		INCBIN	baserom.gba_0x20e178_0x20e184.extracted
+		INCBIN	build\sprites\rec_20e184_20e190.bin
+		INCBIN	baserom.gba_0x20e190_0x20e19c.extracted
+		INCBIN	build\sprites\rec_20e19c_20e1a8.bin
+		INCBIN	baserom.gba_0x20e1a8_0x20e1b4.extracted
 		INCBIN	build\jcalg1\gen_20e1b4_20e21c.bin
 		INCBIN	baserom.gba_0x20e21c_0x20e288.extracted
 		INCBIN	build\jcalg1\gen_20e288_20e358.bin
@@ -2364,19 +2633,45 @@
 		INCBIN	build\jcalg1\gen_20e530_20e590.bin
 		INCBIN	baserom.gba_0x20e590_0x20e5ec.extracted
 		INCBIN	build\jcalg1\gen_20e5ec_20e650.bin
-		INCBIN	baserom.gba_0x20e650_0x20e77c.extracted
+		INCBIN	build\sprites\rec_20e650_20e65c.bin
+		INCBIN	baserom.gba_0x20e65c_0x20e680.extracted
+		INCBIN	build\sprites\rec_20e680_20e68c.bin
+		INCBIN	baserom.gba_0x20e68c_0x20e6b0.extracted
+		INCBIN	build\sprites\rec_20e6b0_20e6bc.bin
+		INCBIN	baserom.gba_0x20e6bc_0x20e6e0.extracted
+		INCBIN	build\sprites\rec_20e6e0_20e6ec.bin
+		INCBIN	baserom.gba_0x20e6ec_0x20e710.extracted
+		INCBIN	build\sprites\rec_20e710_20e77c.bin
 		INCBIN	build\jcalg1\gen_20e77c_20ec34.bin
-		INCBIN	baserom.gba_0x20ec34_0x20f178.extracted
+		INCBIN	baserom.gba_0x20ec34_0x20f104.extracted
+		INCBIN	build\sprites\rec_20f104_20f110.bin
+		INCBIN	baserom.gba_0x20f110_0x20f11c.extracted
+		INCBIN	build\sprites\rec_20f11c_20f178.bin
 		INCBIN	build\jcalg1\gen_20f178_20f404.bin
 		INCBIN	baserom.gba_0x20f404_0x20fb14.extracted
 		INCBIN	build\jcalg1\gen_20fb14_20fd28.bin
-		INCBIN	baserom.gba_0x20fd28_0x20fd88.extracted
+		INCBIN	build\sprites\rec_20fd28_20fd34.bin
+		INCBIN	baserom.gba_0x20fd34_0x20fd40.extracted
+		INCBIN	build\sprites\rec_20fd40_20fd4c.bin
+		INCBIN	baserom.gba_0x20fd4c_0x20fd58.extracted
+		INCBIN	build\sprites\rec_20fd58_20fd64.bin
+		INCBIN	baserom.gba_0x20fd64_0x20fd70.extracted
+		INCBIN	build\sprites\rec_20fd70_20fd7c.bin
+		INCBIN	baserom.gba_0x20fd7c_0x20fd88.extracted
 		INCBIN	build\jcalg1\gen_20fd88_210208.bin
 		INCBIN	baserom.gba_0x210208_0x210434.extracted
 		INCBIN	build\jcalg1\gen_210434_210aec.bin
 		INCBIN	baserom.gba_0x210aec_0x211194.extracted
 		INCBIN	build\jcalg1\gen_211194_2113b8.bin
-		INCBIN	baserom.gba_0x2113b8_0x2118f0.extracted
+		INCBIN	baserom.gba_0x2113b8_0x211830.extracted
+		INCBIN	build\sprites\rec_211830_21183c.bin
+		INCBIN	baserom.gba_0x21183c_0x211860.extracted
+		INCBIN	build\sprites\rec_211860_21186c.bin
+		INCBIN	baserom.gba_0x21186c_0x211890.extracted
+		INCBIN	build\sprites\rec_211890_21189c.bin
+		INCBIN	baserom.gba_0x21189c_0x2118c0.extracted
+		INCBIN	build\sprites\rec_2118c0_2118cc.bin
+		INCBIN	baserom.gba_0x2118cc_0x2118f0.extracted
 		INCBIN	build\jcalg1\gen_2118f0_211b5c.bin
 		INCBIN	baserom.gba_0x211b5c_0x211d98.extracted
 		INCBIN	build\jcalg1\gen_211d98_21229c.bin
@@ -2430,15 +2725,31 @@
 		INCBIN	build\jcalg1\gen_220504_220c1c.bin
 		INCBIN	baserom.gba_0x220c1c_0x220e8c.extracted
 		INCBIN	build\jcalg1\gen_220e8c_221910.bin
-		INCBIN	baserom.gba_0x221910_0x221bec.extracted
+		INCBIN	baserom.gba_0x221910_0x221a60.extracted
+		INCBIN	build\sprites\rec_221a60_221acc.bin
+		INCBIN	baserom.gba_0x221acc_0x221bec.extracted
 		INCBIN	build\jcalg1\gen_221bec_222170.bin
 		INCBIN	baserom.gba_0x222170_0x222418.extracted
 		INCBIN	build\jcalg1\gen_222418_2228b8.bin
-		INCBIN	baserom.gba_0x2228b8_0x222918.extracted
+		INCBIN	build\sprites\rec_2228b8_2228c4.bin
+		INCBIN	baserom.gba_0x2228c4_0x2228d0.extracted
+		INCBIN	build\sprites\rec_2228d0_2228dc.bin
+		INCBIN	baserom.gba_0x2228dc_0x2228e8.extracted
+		INCBIN	build\sprites\rec_2228e8_2228f4.bin
+		INCBIN	baserom.gba_0x2228f4_0x222900.extracted
+		INCBIN	build\sprites\rec_222900_22290c.bin
+		INCBIN	baserom.gba_0x22290c_0x222918.extracted
 		INCBIN	build\jcalg1\gen_222918_222bc8.bin
 		INCBIN	baserom.gba_0x222bc8_0x222e3c.extracted
 		INCBIN	build\jcalg1\gen_222e3c_224604.bin
-		INCBIN	baserom.gba_0x224604_0x2246c4.extracted
+		INCBIN	build\sprites\rec_224604_224610.bin
+		INCBIN	baserom.gba_0x224610_0x224634.extracted
+		INCBIN	build\sprites\rec_224634_224640.bin
+		INCBIN	baserom.gba_0x224640_0x224664.extracted
+		INCBIN	build\sprites\rec_224664_224670.bin
+		INCBIN	baserom.gba_0x224670_0x224694.extracted
+		INCBIN	build\sprites\rec_224694_2246a0.bin
+		INCBIN	baserom.gba_0x2246a0_0x2246c4.extracted
 		INCBIN	build\jcalg1\gen_2246c4_224b20.bin
 		INCBIN	baserom.gba_0x224b20_0x224d64.extracted
 		INCBIN	build\jcalg1\gen_224d64_2262b0.bin
@@ -2496,15 +2807,31 @@
 		INCBIN	build\jcalg1\gen_232fb8_233e2c.bin
 		INCBIN	baserom.gba_0x233e2c_0x2340ec.extracted
 		INCBIN	build\jcalg1\gen_2340ec_2345f4.bin
-		INCBIN	baserom.gba_0x2345f4_0x2348d0.extracted
+		INCBIN	baserom.gba_0x2345f4_0x234744.extracted
+		INCBIN	build\sprites\rec_234744_2347b0.bin
+		INCBIN	baserom.gba_0x2347b0_0x2348d0.extracted
 		INCBIN	build\jcalg1\gen_2348d0_235448.bin
-		INCBIN	baserom.gba_0x235448_0x2354a8.extracted
+		INCBIN	build\sprites\rec_235448_235454.bin
+		INCBIN	baserom.gba_0x235454_0x235460.extracted
+		INCBIN	build\sprites\rec_235460_23546c.bin
+		INCBIN	baserom.gba_0x23546c_0x235478.extracted
+		INCBIN	build\sprites\rec_235478_235484.bin
+		INCBIN	baserom.gba_0x235484_0x235490.extracted
+		INCBIN	build\sprites\rec_235490_23549c.bin
+		INCBIN	baserom.gba_0x23549c_0x2354a8.extracted
 		INCBIN	build\jcalg1\gen_2354a8_23573c.bin
 		INCBIN	baserom.gba_0x23573c_0x2359d0.extracted
 		INCBIN	build\jcalg1\gen_2359d0_235f00.bin
 		INCBIN	baserom.gba_0x235f00_0x2364f0.extracted
 		INCBIN	build\jcalg1\gen_2364f0_236fdc.bin
-		INCBIN	baserom.gba_0x236fdc_0x23709c.extracted
+		INCBIN	build\sprites\rec_236fdc_236fe8.bin
+		INCBIN	baserom.gba_0x236fe8_0x23700c.extracted
+		INCBIN	build\sprites\rec_23700c_237018.bin
+		INCBIN	baserom.gba_0x237018_0x23703c.extracted
+		INCBIN	build\sprites\rec_23703c_237048.bin
+		INCBIN	baserom.gba_0x237048_0x23706c.extracted
+		INCBIN	build\sprites\rec_23706c_237078.bin
+		INCBIN	baserom.gba_0x237078_0x23709c.extracted
 		INCBIN	build\jcalg1\gen_23709c_237540.bin
 		INCBIN	baserom.gba_0x237540_0x2377dc.extracted
 		INCBIN	build\jcalg1\gen_2377dc_237c90.bin
@@ -2550,15 +2877,31 @@
 		INCBIN	build\jcalg1\gen_241634_241d80.bin
 		INCBIN	baserom.gba_0x241d80_0x242210.extracted
 		INCBIN	build\jcalg1\gen_242210_242498.bin
-		INCBIN	baserom.gba_0x242498_0x242f38.extracted
+		INCBIN	baserom.gba_0x242498_0x242dbc.extracted
+		INCBIN	build\sprites\rec_242dbc_242e28.bin
+		INCBIN	baserom.gba_0x242e28_0x242f38.extracted
 		INCBIN	build\jcalg1\gen_242f38_243000.bin
 		INCBIN	baserom.gba_0x243000_0x2430cc.extracted
 		INCBIN	build\jcalg1\gen_2430cc_243308.bin
-		INCBIN	baserom.gba_0x243308_0x243368.extracted
+		INCBIN	build\sprites\rec_243308_243314.bin
+		INCBIN	baserom.gba_0x243314_0x243320.extracted
+		INCBIN	build\sprites\rec_243320_24332c.bin
+		INCBIN	baserom.gba_0x24332c_0x243338.extracted
+		INCBIN	build\sprites\rec_243338_243344.bin
+		INCBIN	baserom.gba_0x243344_0x243350.extracted
+		INCBIN	build\sprites\rec_243350_24335c.bin
+		INCBIN	baserom.gba_0x24335c_0x243368.extracted
 		INCBIN	build\jcalg1\gen_243368_243688.bin
 		INCBIN	baserom.gba_0x243688_0x243b98.extracted
 		INCBIN	build\jcalg1\gen_243b98_243c58.bin
-		INCBIN	baserom.gba_0x243c58_0x243d18.extracted
+		INCBIN	build\sprites\rec_243c58_243c64.bin
+		INCBIN	baserom.gba_0x243c64_0x243c88.extracted
+		INCBIN	build\sprites\rec_243c88_243c94.bin
+		INCBIN	baserom.gba_0x243c94_0x243cb8.extracted
+		INCBIN	build\sprites\rec_243cb8_243cc4.bin
+		INCBIN	baserom.gba_0x243cc4_0x243ce8.extracted
+		INCBIN	build\sprites\rec_243ce8_243cf4.bin
+		INCBIN	baserom.gba_0x243cf4_0x243d18.extracted
 		INCBIN	build\jcalg1\gen_243d18_244038.bin
 		INCBIN	baserom.gba_0x244038_0x244548.extracted
 		INCBIN	build\jcalg1\gen_244548_244608.bin
@@ -2576,25 +2919,59 @@
 		INCBIN	build\jcalg1\gen_2463d0_2466f0.bin
 		INCBIN	baserom.gba_0x2466f0_0x246c00.extracted
 		INCBIN	build\jcalg1\gen_246c00_246cc0.bin
-		INCBIN	baserom.gba_0x246cc0_0x246e5c.extracted
+		INCBIN	baserom.gba_0x246cc0_0x246d80.extracted
+		INCBIN	build\sprites\rec_246d80_246dec.bin
+		INCBIN	baserom.gba_0x246dec_0x246e5c.extracted
 		INCBIN	build\jcalg1\gen_246e5c_246f24.bin
 		INCBIN	baserom.gba_0x246f24_0x246ff0.extracted
 		INCBIN	build\jcalg1\gen_246ff0_247158.bin
-		INCBIN	baserom.gba_0x247158_0x24726c.extracted
+		INCBIN	baserom.gba_0x247158_0x24720c.extracted
+		INCBIN	build\sprites\rec_24720c_247218.bin
+		INCBIN	baserom.gba_0x247218_0x247224.extracted
+		INCBIN	build\sprites\rec_247224_247230.bin
+		INCBIN	baserom.gba_0x247230_0x24723c.extracted
+		INCBIN	build\sprites\rec_24723c_247248.bin
+		INCBIN	baserom.gba_0x247248_0x247254.extracted
+		INCBIN	build\sprites\rec_247254_247260.bin
+		INCBIN	baserom.gba_0x247260_0x24726c.extracted
 		INCBIN	build\jcalg1\gen_24726c_2473e0.bin
 		INCBIN	baserom.gba_0x2473e0_0x2474a0.extracted
 		INCBIN	build\jcalg1\gen_2474a0_247ac8.bin
-		INCBIN	baserom.gba_0x247ac8_0x247bf4.extracted
+		INCBIN	build\sprites\rec_247ac8_247ad4.bin
+		INCBIN	baserom.gba_0x247ad4_0x247af8.extracted
+		INCBIN	build\sprites\rec_247af8_247b04.bin
+		INCBIN	baserom.gba_0x247b04_0x247b28.extracted
+		INCBIN	build\sprites\rec_247b28_247b34.bin
+		INCBIN	baserom.gba_0x247b34_0x247b58.extracted
+		INCBIN	build\sprites\rec_247b58_247b64.bin
+		INCBIN	baserom.gba_0x247b64_0x247b88.extracted
+		INCBIN	build\sprites\rec_247b88_247bf4.bin
 		INCBIN	build\jcalg1\gen_247bf4_247d1c.bin
 		INCBIN	baserom.gba_0x247d1c_0x247e44.extracted
 		INCBIN	build\jcalg1\gen_247e44_248030.bin
-		INCBIN	baserom.gba_0x248030_0x24817c.extracted
+		INCBIN	baserom.gba_0x248030_0x24811c.extracted
+		INCBIN	build\sprites\rec_24811c_248128.bin
+		INCBIN	baserom.gba_0x248128_0x248134.extracted
+		INCBIN	build\sprites\rec_248134_248140.bin
+		INCBIN	baserom.gba_0x248140_0x24814c.extracted
+		INCBIN	build\sprites\rec_24814c_248158.bin
+		INCBIN	baserom.gba_0x248158_0x248164.extracted
+		INCBIN	build\sprites\rec_248164_248170.bin
+		INCBIN	baserom.gba_0x248170_0x24817c.extracted
 		INCBIN	build\jcalg1\gen_24817c_2486fc.bin
 		INCBIN	baserom.gba_0x2486fc_0x2488f4.extracted
 		INCBIN	build\jcalg1\gen_2488f4_2489f0.bin
 		INCBIN	baserom.gba_0x2489f0_0x248bd0.extracted
 		INCBIN	build\jcalg1\gen_248bd0_248cb8.bin
-		INCBIN	baserom.gba_0x248cb8_0x248e64.extracted
+		INCBIN	baserom.gba_0x248cb8_0x248da4.extracted
+		INCBIN	build\sprites\rec_248da4_248db0.bin
+		INCBIN	baserom.gba_0x248db0_0x248dd4.extracted
+		INCBIN	build\sprites\rec_248dd4_248de0.bin
+		INCBIN	baserom.gba_0x248de0_0x248e04.extracted
+		INCBIN	build\sprites\rec_248e04_248e10.bin
+		INCBIN	baserom.gba_0x248e10_0x248e34.extracted
+		INCBIN	build\sprites\rec_248e34_248e40.bin
+		INCBIN	baserom.gba_0x248e40_0x248e64.extracted
 		INCBIN	build\jcalg1\gen_248e64_248f90.bin
 		INCBIN	baserom.gba_0x248f90_0x2490bc.extracted
 		INCBIN	build\jcalg1\gen_2490bc_24930c.bin
@@ -2602,17 +2979,34 @@
 		INCBIN	build\jcalg1\gen_249414_2497f4.bin
 		INCBIN	baserom.gba_0x2497f4_0x2499fc.extracted
 		INCBIN	build\jcalg1\gen_2499fc_249afc.bin
-		INCBIN	baserom.gba_0x249afc_0x249c58.extracted
+		INCBIN	baserom.gba_0x249afc_0x249bbc.extracted
+		INCBIN	build\sprites\rec_249bbc_249c28.bin
+		INCBIN	baserom.gba_0x249c28_0x249c58.extracted
 		INCBIN	build\jcalg1\gen_249c58_249f04.bin
 		INCBIN	baserom.gba_0x249f04_0x24a1b4.extracted
 		INCBIN	build\jcalg1\gen_24a1b4_24a674.bin
-		INCBIN	baserom.gba_0x24a674_0x24a904.extracted
+		INCBIN	baserom.gba_0x24a674_0x24a8a4.extracted
+		INCBIN	build\sprites\rec_24a8a4_24a8b0.bin
+		INCBIN	baserom.gba_0x24a8b0_0x24a8bc.extracted
+		INCBIN	build\sprites\rec_24a8bc_24a8c8.bin
+		INCBIN	baserom.gba_0x24a8c8_0x24a8d4.extracted
+		INCBIN	build\sprites\rec_24a8d4_24a8e0.bin
+		INCBIN	baserom.gba_0x24a8e0_0x24a8ec.extracted
+		INCBIN	build\sprites\rec_24a8ec_24a8f8.bin
+		INCBIN	baserom.gba_0x24a8f8_0x24a904.extracted
 		INCBIN	build\jcalg1\gen_24a904_24b030.bin
 		INCBIN	baserom.gba_0x24b030_0x24b2a8.extracted
 		INCBIN	build\jcalg1\gen_24b2a8_24c058.bin
 		INCBIN	baserom.gba_0x24c058_0x24c280.extracted
 		INCBIN	build\jcalg1\gen_24c280_24c4c0.bin
-		INCBIN	baserom.gba_0x24c4c0_0x24c580.extracted
+		INCBIN	build\sprites\rec_24c4c0_24c4cc.bin
+		INCBIN	baserom.gba_0x24c4cc_0x24c4f0.extracted
+		INCBIN	build\sprites\rec_24c4f0_24c4fc.bin
+		INCBIN	baserom.gba_0x24c4fc_0x24c520.extracted
+		INCBIN	build\sprites\rec_24c520_24c52c.bin
+		INCBIN	baserom.gba_0x24c52c_0x24c550.extracted
+		INCBIN	build\sprites\rec_24c550_24c55c.bin
+		INCBIN	baserom.gba_0x24c55c_0x24c580.extracted
 		INCBIN	build\jcalg1\gen_24c580_24ca14.bin
 		INCBIN	baserom.gba_0x24ca14_0x24d2f8.extracted
 		INCBIN	build\jcalg1\gen_24d2f8_24d710.bin
@@ -2656,11 +3050,20 @@
 		INCBIN	build\jcalg1\gen_2557cc_2559d0.bin
 		INCBIN	baserom.gba_0x2559d0_0x255be8.extracted
 		INCBIN	build\jcalg1\gen_255be8_255ff8.bin
-		INCBIN	baserom.gba_0x255ff8_0x256384.extracted
+		INCBIN	baserom.gba_0x255ff8_0x256268.extracted
+		INCBIN	build\sprites\rec_256268_2562d4.bin
+		INCBIN	baserom.gba_0x2562d4_0x256384.extracted
 		INCBIN	build\jcalg1\gen_256384_256658.bin
 		INCBIN	baserom.gba_0x256658_0x25674c.extracted
 		INCBIN	build\jcalg1\gen_25674c_25683c.bin
-		INCBIN	baserom.gba_0x25683c_0x25689c.extracted
+		INCBIN	build\sprites\rec_25683c_256848.bin
+		INCBIN	baserom.gba_0x256848_0x256854.extracted
+		INCBIN	build\sprites\rec_256854_256860.bin
+		INCBIN	baserom.gba_0x256860_0x25686c.extracted
+		INCBIN	build\sprites\rec_25686c_256878.bin
+		INCBIN	baserom.gba_0x256878_0x256884.extracted
+		INCBIN	build\sprites\rec_256884_256890.bin
+		INCBIN	baserom.gba_0x256890_0x25689c.extracted
 		INCBIN	build\jcalg1\gen_25689c_256aac.bin
 		INCBIN	baserom.gba_0x256aac_0x256bbc.extracted
 		INCBIN	build\jcalg1\gen_256bbc_256e64.bin
@@ -2668,19 +3071,51 @@
 		INCBIN	build\jcalg1\gen_257010_2570f4.bin
 		INCBIN	baserom.gba_0x2570f4_0x2571ec.extracted
 		INCBIN	build\jcalg1\gen_2571ec_2573c8.bin
-		INCBIN	baserom.gba_0x2573c8_0x2574f4.extracted
+		INCBIN	build\sprites\rec_2573c8_2573d4.bin
+		INCBIN	baserom.gba_0x2573d4_0x2573f8.extracted
+		INCBIN	build\sprites\rec_2573f8_257404.bin
+		INCBIN	baserom.gba_0x257404_0x257428.extracted
+		INCBIN	build\sprites\rec_257428_257434.bin
+		INCBIN	baserom.gba_0x257434_0x257458.extracted
+		INCBIN	build\sprites\rec_257458_257464.bin
+		INCBIN	baserom.gba_0x257464_0x257488.extracted
+		INCBIN	build\sprites\rec_257488_2574f4.bin
 		INCBIN	build\jcalg1\gen_2574f4_2575dc.bin
 		INCBIN	baserom.gba_0x2575dc_0x257784.extracted
 		INCBIN	build\jcalg1\gen_257784_257844.bin
-		INCBIN	baserom.gba_0x257844_0x257964.extracted
+		INCBIN	baserom.gba_0x257844_0x257904.extracted
+		INCBIN	build\sprites\rec_257904_257910.bin
+		INCBIN	baserom.gba_0x257910_0x25791c.extracted
+		INCBIN	build\sprites\rec_25791c_257928.bin
+		INCBIN	baserom.gba_0x257928_0x257934.extracted
+		INCBIN	build\sprites\rec_257934_257940.bin
+		INCBIN	baserom.gba_0x257940_0x25794c.extracted
+		INCBIN	build\sprites\rec_25794c_257958.bin
+		INCBIN	baserom.gba_0x257958_0x257964.extracted
 		INCBIN	build\jcalg1\gen_257964_257bf4.bin
 		INCBIN	baserom.gba_0x257bf4_0x257d9c.extracted
 		INCBIN	build\jcalg1\gen_257d9c_2582e8.bin
-		INCBIN	baserom.gba_0x2582e8_0x258414.extracted
+		INCBIN	build\sprites\rec_2582e8_2582f4.bin
+		INCBIN	baserom.gba_0x2582f4_0x258318.extracted
+		INCBIN	build\sprites\rec_258318_258324.bin
+		INCBIN	baserom.gba_0x258324_0x258348.extracted
+		INCBIN	build\sprites\rec_258348_258354.bin
+		INCBIN	baserom.gba_0x258354_0x258378.extracted
+		INCBIN	build\sprites\rec_258378_258384.bin
+		INCBIN	baserom.gba_0x258384_0x2583a8.extracted
+		INCBIN	build\sprites\rec_2583a8_258414.bin
 		INCBIN	build\jcalg1\gen_258414_258958.bin
 		INCBIN	baserom.gba_0x258958_0x258e94.extracted
 		INCBIN	build\jcalg1\gen_258e94_2597bc.bin
-		INCBIN	baserom.gba_0x2597bc_0x259ca4.extracted
+		INCBIN	baserom.gba_0x2597bc_0x259c44.extracted
+		INCBIN	build\sprites\rec_259c44_259c50.bin
+		INCBIN	baserom.gba_0x259c50_0x259c5c.extracted
+		INCBIN	build\sprites\rec_259c5c_259c68.bin
+		INCBIN	baserom.gba_0x259c68_0x259c74.extracted
+		INCBIN	build\sprites\rec_259c74_259c80.bin
+		INCBIN	baserom.gba_0x259c80_0x259c8c.extracted
+		INCBIN	build\sprites\rec_259c8c_259c98.bin
+		INCBIN	baserom.gba_0x259c98_0x259ca4.extracted
 		INCBIN	build\jcalg1\gen_259ca4_25a160.bin
 		INCBIN	baserom.gba_0x25a160_0x25a5dc.extracted
 		INCBIN	build\jcalg1\gen_25a5dc_25af00.bin
@@ -2688,7 +3123,14 @@
 		INCBIN	build\jcalg1\gen_25b6dc_25c380.bin
 		INCBIN	baserom.gba_0x25c380_0x25ccd4.extracted
 		INCBIN	build\jcalg1\gen_25ccd4_25d19c.bin
-		INCBIN	baserom.gba_0x25d19c_0x25d25c.extracted
+		INCBIN	build\sprites\rec_25d19c_25d1a8.bin
+		INCBIN	baserom.gba_0x25d1a8_0x25d1cc.extracted
+		INCBIN	build\sprites\rec_25d1cc_25d1d8.bin
+		INCBIN	baserom.gba_0x25d1d8_0x25d1fc.extracted
+		INCBIN	build\sprites\rec_25d1fc_25d208.bin
+		INCBIN	baserom.gba_0x25d208_0x25d22c.extracted
+		INCBIN	build\sprites\rec_25d22c_25d238.bin
+		INCBIN	baserom.gba_0x25d238_0x25d25c.extracted
 		INCBIN	build\jcalg1\gen_25d25c_25d758.bin
 		INCBIN	baserom.gba_0x25d758_0x25dc2c.extracted
 		INCBIN	build\jcalg1\gen_25dc2c_25e674.bin
@@ -2696,7 +3138,14 @@
 		INCBIN	build\jcalg1\gen_25ef6c_25f3f8.bin
 		INCBIN	baserom.gba_0x25f3f8_0x25f89c.extracted
 		INCBIN	build\jcalg1\gen_25f89c_260ac4.bin
-		INCBIN	baserom.gba_0x260ac4_0x260b84.extracted
+		INCBIN	build\sprites\rec_260ac4_260ad0.bin
+		INCBIN	baserom.gba_0x260ad0_0x260af4.extracted
+		INCBIN	build\sprites\rec_260af4_260b00.bin
+		INCBIN	baserom.gba_0x260b00_0x260b24.extracted
+		INCBIN	build\sprites\rec_260b24_260b30.bin
+		INCBIN	baserom.gba_0x260b30_0x260b54.extracted
+		INCBIN	build\sprites\rec_260b54_260b60.bin
+		INCBIN	baserom.gba_0x260b60_0x260b84.extracted
 		INCBIN	build\jcalg1\gen_260b84_2643a0.bin
 		INCBIN	baserom.gba_0x2643a0_0x264460.extracted
 		INCBIN	build\jcalg1\gen_264460_2648d8.bin
@@ -2704,41 +3153,87 @@
 		INCBIN	build\jcalg1\gen_265228_266b3c.bin
 		INCBIN	baserom.gba_0x266b3c_0x267014.extracted
 		INCBIN	build\jcalg1\gen_267014_2674c4.bin
-		INCBIN	baserom.gba_0x2674c4_0x267d28.extracted
+		INCBIN	baserom.gba_0x2674c4_0x267a5c.extracted
+		INCBIN	build\sprites\rec_267a5c_267ae8.bin
+		INCBIN	baserom.gba_0x267ae8_0x267d28.extracted
 		INCBIN	build\jcalg1\gen_267d28_267e7c.bin
 		INCBIN	baserom.gba_0x267e7c_0x267ff8.extracted
 		INCBIN	build\jcalg1\gen_267ff8_2680d8.bin
-		INCBIN	baserom.gba_0x2680d8_0x268138.extracted
+		INCBIN	build\sprites\rec_2680d8_2680e4.bin
+		INCBIN	baserom.gba_0x2680e4_0x2680f0.extracted
+		INCBIN	build\sprites\rec_2680f0_2680fc.bin
+		INCBIN	baserom.gba_0x2680fc_0x268108.extracted
+		INCBIN	build\sprites\rec_268108_268114.bin
+		INCBIN	baserom.gba_0x268114_0x268120.extracted
+		INCBIN	build\sprites\rec_268120_26812c.bin
+		INCBIN	baserom.gba_0x26812c_0x268138.extracted
 		INCBIN	build\jcalg1\gen_268138_26847c.bin
 		INCBIN	baserom.gba_0x26847c_0x268524.extracted
 		INCBIN	build\jcalg1\gen_268524_268664.bin
 		INCBIN	baserom.gba_0x268664_0x268748.extracted
 		INCBIN	build\jcalg1\gen_268748_2689d8.bin
-		INCBIN	baserom.gba_0x2689d8_0x268b04.extracted
+		INCBIN	build\sprites\rec_2689d8_2689e4.bin
+		INCBIN	baserom.gba_0x2689e4_0x268a08.extracted
+		INCBIN	build\sprites\rec_268a08_268a14.bin
+		INCBIN	baserom.gba_0x268a14_0x268a38.extracted
+		INCBIN	build\sprites\rec_268a38_268a44.bin
+		INCBIN	baserom.gba_0x268a44_0x268a68.extracted
+		INCBIN	build\sprites\rec_268a68_268a74.bin
+		INCBIN	baserom.gba_0x268a74_0x268a98.extracted
+		INCBIN	build\sprites\rec_268a98_268b04.bin
 		INCBIN	build\jcalg1\gen_268b04_268c10.bin
 		INCBIN	baserom.gba_0x268c10_0x268d20.extracted
 		INCBIN	build\jcalg1\gen_268d20_268fec.bin
-		INCBIN	baserom.gba_0x268fec_0x26904c.extracted
+		INCBIN	build\sprites\rec_268fec_268ff8.bin
+		INCBIN	baserom.gba_0x268ff8_0x269004.extracted
+		INCBIN	build\sprites\rec_269004_269010.bin
+		INCBIN	baserom.gba_0x269010_0x26901c.extracted
+		INCBIN	build\sprites\rec_26901c_269028.bin
+		INCBIN	baserom.gba_0x269028_0x269034.extracted
+		INCBIN	build\sprites\rec_269034_269040.bin
+		INCBIN	baserom.gba_0x269040_0x26904c.extracted
 		INCBIN	build\jcalg1\gen_26904c_269158.bin
 		INCBIN	baserom.gba_0x269158_0x269380.extracted
 		INCBIN	build\jcalg1\gen_269380_26966c.bin
 		INCBIN	baserom.gba_0x26966c_0x26994c.extracted
 		INCBIN	build\jcalg1\gen_26994c_269a38.bin
-		INCBIN	baserom.gba_0x269a38_0x269d50.extracted
+		INCBIN	baserom.gba_0x269a38_0x269c24.extracted
+		INCBIN	build\sprites\rec_269c24_269c30.bin
+		INCBIN	baserom.gba_0x269c30_0x269c54.extracted
+		INCBIN	build\sprites\rec_269c54_269c60.bin
+		INCBIN	baserom.gba_0x269c60_0x269c84.extracted
+		INCBIN	build\sprites\rec_269c84_269c90.bin
+		INCBIN	baserom.gba_0x269c90_0x269cb4.extracted
+		INCBIN	build\sprites\rec_269cb4_269cc0.bin
+		INCBIN	baserom.gba_0x269cc0_0x269ce4.extracted
+		INCBIN	build\sprites\rec_269ce4_269d50.bin
 		INCBIN	build\jcalg1\gen_269d50_269dec.bin
-		INCBIN	baserom.gba_0x269dec_0x269e04.extracted
+		INCBIN	build\sprites\rec_269dec_269df8.bin
+		INCBIN	baserom.gba_0x269df8_0x269e04.extracted
 		INCBIN	build\jcalg1\gen_269e04_269fa0.bin
-		INCBIN	baserom.gba_0x269fa0_0x26a130.extracted
+		INCBIN	baserom.gba_0x269fa0_0x26a0b4.extracted
+		INCBIN	build\sprites\rec_26a0b4_26a120.bin
+		INCBIN	baserom.gba_0x26a120_0x26a130.extracted
 		INCBIN	build\jcalg1\gen_26a130_26a2b0.bin
-		INCBIN	baserom.gba_0x26a2b0_0x26a2c8.extracted
+		INCBIN	build\sprites\rec_26a2b0_26a2bc.bin
+		INCBIN	baserom.gba_0x26a2bc_0x26a2c8.extracted
 		INCBIN	build\jcalg1\gen_26a2c8_26a44c.bin
 		INCBIN	baserom.gba_0x26a44c_0x26a5dc.extracted
 		INCBIN	build\jcalg1\gen_26a5dc_26a76c.bin
-		INCBIN	baserom.gba_0x26a76c_0x26a970.extracted
+		INCBIN	baserom.gba_0x26a76c_0x26a8e4.extracted
+		INCBIN	build\sprites\rec_26a8e4_26a950.bin
+		INCBIN	baserom.gba_0x26a950_0x26a970.extracted
 		INCBIN	build\jcalg1\gen_26a970_26aaec.bin
 		INCBIN	baserom.gba_0x26aaec_0x26aee8.extracted
 		INCBIN	build\jcalg1\gen_26aee8_26aff8.bin
-		INCBIN	baserom.gba_0x26aff8_0x26b058.extracted
+		INCBIN	build\sprites\rec_26aff8_26b004.bin
+		INCBIN	baserom.gba_0x26b004_0x26b010.extracted
+		INCBIN	build\sprites\rec_26b010_26b01c.bin
+		INCBIN	baserom.gba_0x26b01c_0x26b028.extracted
+		INCBIN	build\sprites\rec_26b028_26b034.bin
+		INCBIN	baserom.gba_0x26b034_0x26b040.extracted
+		INCBIN	build\sprites\rec_26b040_26b04c.bin
+		INCBIN	baserom.gba_0x26b04c_0x26b058.extracted
 		INCBIN	build\jcalg1\gen_26b058_26b1c8.bin
 		INCBIN	baserom.gba_0x26b1c8_0x26b358.extracted
 		INCBIN	build\jcalg1\gen_26b358_26b4c8.bin
@@ -2748,7 +3243,15 @@
 		INCBIN	build\jcalg1\gen_26ba80_26bd04.bin
 		INCBIN	baserom.gba_0x26bd04_0x26be18.extracted
 		INCBIN	build\jcalg1\gen_26be18_26bf30.bin
-		INCBIN	baserom.gba_0x26bf30_0x26c108.extracted
+		INCBIN	baserom.gba_0x26bf30_0x26c048.extracted
+		INCBIN	build\sprites\rec_26c048_26c054.bin
+		INCBIN	baserom.gba_0x26c054_0x26c078.extracted
+		INCBIN	build\sprites\rec_26c078_26c084.bin
+		INCBIN	baserom.gba_0x26c084_0x26c0a8.extracted
+		INCBIN	build\sprites\rec_26c0a8_26c0b4.bin
+		INCBIN	baserom.gba_0x26c0b4_0x26c0d8.extracted
+		INCBIN	build\sprites\rec_26c0d8_26c0e4.bin
+		INCBIN	baserom.gba_0x26c0e4_0x26c108.extracted
 		INCBIN	build\jcalg1\gen_26c108_26c468.bin
 		INCBIN	baserom.gba_0x26c468_0x26c720.extracted
 		INCBIN	build\jcalg1\gen_26c720_26c934.bin
@@ -2770,13 +3273,30 @@
 		INCBIN	build\jcalg1\gen_26e954_26ed0c.bin
 		INCBIN	baserom.gba_0x26ed0c_0x26ee50.extracted
 		INCBIN	build\jcalg1\gen_26ee50_26ef64.bin
-		INCBIN	baserom.gba_0x26ef64_0x26f3f0.extracted
+		INCBIN	baserom.gba_0x26ef64_0x26f024.extracted
+		INCBIN	build\sprites\rec_26f024_26f090.bin
+		INCBIN	baserom.gba_0x26f090_0x26f3f0.extracted
 		INCBIN	build\jcalg1\gen_26f3f0_26f8b8.bin
-		INCBIN	baserom.gba_0x26f8b8_0x26f918.extracted
+		INCBIN	build\sprites\rec_26f8b8_26f8c4.bin
+		INCBIN	baserom.gba_0x26f8c4_0x26f8d0.extracted
+		INCBIN	build\sprites\rec_26f8d0_26f8dc.bin
+		INCBIN	baserom.gba_0x26f8dc_0x26f8e8.extracted
+		INCBIN	build\sprites\rec_26f8e8_26f8f4.bin
+		INCBIN	baserom.gba_0x26f8f4_0x26f900.extracted
+		INCBIN	build\sprites\rec_26f900_26f90c.bin
+		INCBIN	baserom.gba_0x26f90c_0x26f918.extracted
 		INCBIN	build\jcalg1\gen_26f918_26ffb4.bin
 		INCBIN	baserom.gba_0x26ffb4_0x2700b0.extracted
 		INCBIN	build\jcalg1\gen_2700b0_270270.bin
-		INCBIN	baserom.gba_0x270270_0x270504.extracted
+		INCBIN	baserom.gba_0x270270_0x270444.extracted
+		INCBIN	build\sprites\rec_270444_270450.bin
+		INCBIN	baserom.gba_0x270450_0x270474.extracted
+		INCBIN	build\sprites\rec_270474_270480.bin
+		INCBIN	baserom.gba_0x270480_0x2704a4.extracted
+		INCBIN	build\sprites\rec_2704a4_2704b0.bin
+		INCBIN	baserom.gba_0x2704b0_0x2704d4.extracted
+		INCBIN	build\sprites\rec_2704d4_2704e0.bin
+		INCBIN	baserom.gba_0x2704e0_0x270504.extracted
 		INCBIN	build\jcalg1\gen_270504_27070c.bin
 		INCBIN	baserom.gba_0x27070c_0x270810.extracted
 		INCBIN	build\jcalg1\gen_270810_270fa8.bin
@@ -2808,27 +3328,51 @@
 		INCBIN	build\jcalg1\gen_273d88_273edc.bin
 		INCBIN	baserom.gba_0x273edc_0x274044.extracted
 		INCBIN	build\jcalg1\gen_274044_2743d4.bin
-		INCBIN	baserom.gba_0x2743d4_0x2747cc.extracted
+		INCBIN	baserom.gba_0x2743d4_0x2746f0.extracted
+		INCBIN	build\sprites\rec_2746f0_27475c.bin
+		INCBIN	baserom.gba_0x27475c_0x2747cc.extracted
 		INCBIN	build\jcalg1\gen_2747cc_274bd8.bin
-		INCBIN	baserom.gba_0x274bd8_0x274c20.extracted
+		INCBIN	build\sprites\rec_274bd8_274be4.bin
+		INCBIN	baserom.gba_0x274be4_0x274bf0.extracted
+		INCBIN	build\sprites\rec_274bf0_274bfc.bin
+		INCBIN	baserom.gba_0x274bfc_0x274c08.extracted
+		INCBIN	build\sprites\rec_274c08_274c14.bin
+		INCBIN	baserom.gba_0x274c14_0x274c20.extracted
 		INCBIN	build\jcalg1\gen_274c20_275050.bin
-		INCBIN	baserom.gba_0x275050_0x275080.extracted
+		INCBIN	build\sprites\rec_275050_27505c.bin
+		INCBIN	baserom.gba_0x27505c_0x275080.extracted
 		INCBIN	build\jcalg1\gen_275080_275600.bin
 		INCBIN	baserom.gba_0x275600_0x275630.extracted
 		INCBIN	build\jcalg1\gen_275630_27572c.bin
 		INCBIN	baserom.gba_0x27572c_0x275820.extracted
 		INCBIN	build\jcalg1\gen_275820_275924.bin
-		INCBIN	baserom.gba_0x275924_0x2759f4.extracted
+		INCBIN	baserom.gba_0x275924_0x275948.extracted
+		INCBIN	build\sprites\rec_275948_2759b4.bin
+		INCBIN	baserom.gba_0x2759b4_0x2759f4.extracted
 		INCBIN	build\jcalg1\gen_2759f4_275b0c.bin
 		INCBIN	baserom.gba_0x275b0c_0x275d2c.extracted
 		INCBIN	build\jcalg1\gen_275d2c_275f0c.bin
-		INCBIN	baserom.gba_0x275f0c_0x275f6c.extracted
+		INCBIN	build\sprites\rec_275f0c_275f18.bin
+		INCBIN	baserom.gba_0x275f18_0x275f24.extracted
+		INCBIN	build\sprites\rec_275f24_275f30.bin
+		INCBIN	baserom.gba_0x275f30_0x275f3c.extracted
+		INCBIN	build\sprites\rec_275f3c_275f48.bin
+		INCBIN	baserom.gba_0x275f48_0x275f54.extracted
+		INCBIN	build\sprites\rec_275f54_275f60.bin
+		INCBIN	baserom.gba_0x275f60_0x275f6c.extracted
 		INCBIN	build\jcalg1\gen_275f6c_27628c.bin
 		INCBIN	baserom.gba_0x27628c_0x2763a0.extracted
 		INCBIN	build\jcalg1\gen_2763a0_276888.bin
 		INCBIN	baserom.gba_0x276888_0x276a68.extracted
 		INCBIN	build\jcalg1\gen_276a68_276b54.bin
-		INCBIN	baserom.gba_0x276b54_0x276c14.extracted
+		INCBIN	build\sprites\rec_276b54_276b60.bin
+		INCBIN	baserom.gba_0x276b60_0x276b84.extracted
+		INCBIN	build\sprites\rec_276b84_276b90.bin
+		INCBIN	baserom.gba_0x276b90_0x276bb4.extracted
+		INCBIN	build\sprites\rec_276bb4_276bc0.bin
+		INCBIN	baserom.gba_0x276bc0_0x276be4.extracted
+		INCBIN	build\sprites\rec_276be4_276bf0.bin
+		INCBIN	baserom.gba_0x276bf0_0x276c14.extracted
 		INCBIN	build\jcalg1\gen_276c14_277120.bin
 		INCBIN	baserom.gba_0x277120_0x27720c.extracted
 		INCBIN	build\jcalg1\gen_27720c_2773c8.bin
@@ -2844,11 +3388,20 @@
 		INCBIN	build\jcalg1\gen_278c5c_278d60.bin
 		INCBIN	baserom.gba_0x278d60_0x278e68.extracted
 		INCBIN	build\jcalg1\gen_278e68_279084.bin
-		INCBIN	baserom.gba_0x279084_0x279200.extracted
+		INCBIN	baserom.gba_0x279084_0x279144.extracted
+		INCBIN	build\sprites\rec_279144_2791b0.bin
+		INCBIN	baserom.gba_0x2791b0_0x279200.extracted
 		INCBIN	build\jcalg1\gen_279200_2792d0.bin
 		INCBIN	baserom.gba_0x2792d0_0x2793a0.extracted
 		INCBIN	build\jcalg1\gen_2793a0_2795ac.bin
-		INCBIN	baserom.gba_0x2795ac_0x27960c.extracted
+		INCBIN	build\sprites\rec_2795ac_2795b8.bin
+		INCBIN	baserom.gba_0x2795b8_0x2795c4.extracted
+		INCBIN	build\sprites\rec_2795c4_2795d0.bin
+		INCBIN	baserom.gba_0x2795d0_0x2795dc.extracted
+		INCBIN	build\sprites\rec_2795dc_2795e8.bin
+		INCBIN	baserom.gba_0x2795e8_0x2795f4.extracted
+		INCBIN	build\sprites\rec_2795f4_279600.bin
+		INCBIN	baserom.gba_0x279600_0x27960c.extracted
 		INCBIN	build\jcalg1\gen_27960c_2796dc.bin
 		INCBIN	baserom.gba_0x2796dc_0x279890.extracted
 		INCBIN	build\jcalg1\gen_279890_27996c.bin
@@ -2856,7 +3409,15 @@
 		INCBIN	build\jcalg1\gen_279a0c_279cb8.bin
 		INCBIN	baserom.gba_0x279cb8_0x279d78.extracted
 		INCBIN	build\jcalg1\gen_279d78_279e34.bin
-		INCBIN	baserom.gba_0x279e34_0x279fb8.extracted
+		INCBIN	baserom.gba_0x279e34_0x279ef8.extracted
+		INCBIN	build\sprites\rec_279ef8_279f04.bin
+		INCBIN	baserom.gba_0x279f04_0x279f28.extracted
+		INCBIN	build\sprites\rec_279f28_279f34.bin
+		INCBIN	baserom.gba_0x279f34_0x279f58.extracted
+		INCBIN	build\sprites\rec_279f58_279f64.bin
+		INCBIN	baserom.gba_0x279f64_0x279f88.extracted
+		INCBIN	build\sprites\rec_279f88_279f94.bin
+		INCBIN	baserom.gba_0x279f94_0x279fb8.extracted
 		INCBIN	build\jcalg1\gen_279fb8_27a248.bin
 		INCBIN	baserom.gba_0x27a248_0x27a3cc.extracted
 		INCBIN	build\jcalg1\gen_27a3cc_27a480.bin
@@ -2870,15 +3431,32 @@
 		INCBIN	build\jcalg1\gen_27ad84_27aee4.bin
 		INCBIN	baserom.gba_0x27aee4_0x27afa0.extracted
 		INCBIN	build\jcalg1\gen_27afa0_27b058.bin
-		INCBIN	baserom.gba_0x27b058_0x27b334.extracted
+		INCBIN	baserom.gba_0x27b058_0x27b0e8.extracted
+		INCBIN	build\sprites\rec_27b0e8_27b154.bin
+		INCBIN	baserom.gba_0x27b154_0x27b334.extracted
 		INCBIN	build\jcalg1\gen_27b334_27b7a4.bin
-		INCBIN	baserom.gba_0x27b7a4_0x27b804.extracted
+		INCBIN	build\sprites\rec_27b7a4_27b7b0.bin
+		INCBIN	baserom.gba_0x27b7b0_0x27b7bc.extracted
+		INCBIN	build\sprites\rec_27b7bc_27b7c8.bin
+		INCBIN	baserom.gba_0x27b7c8_0x27b7d4.extracted
+		INCBIN	build\sprites\rec_27b7d4_27b7e0.bin
+		INCBIN	baserom.gba_0x27b7e0_0x27b7ec.extracted
+		INCBIN	build\sprites\rec_27b7ec_27b7f8.bin
+		INCBIN	baserom.gba_0x27b7f8_0x27b804.extracted
 		INCBIN	build\jcalg1\gen_27b804_27bbcc.bin
 		INCBIN	baserom.gba_0x27bbcc_0x27bc9c.extracted
 		INCBIN	build\jcalg1\gen_27bc9c_27bd6c.bin
 		INCBIN	baserom.gba_0x27bd6c_0x27be38.extracted
 		INCBIN	build\jcalg1\gen_27be38_27c194.bin
-		INCBIN	baserom.gba_0x27c194_0x27c32c.extracted
+		INCBIN	baserom.gba_0x27c194_0x27c26c.extracted
+		INCBIN	build\sprites\rec_27c26c_27c278.bin
+		INCBIN	baserom.gba_0x27c278_0x27c29c.extracted
+		INCBIN	build\sprites\rec_27c29c_27c2a8.bin
+		INCBIN	baserom.gba_0x27c2a8_0x27c2cc.extracted
+		INCBIN	build\sprites\rec_27c2cc_27c2d8.bin
+		INCBIN	baserom.gba_0x27c2d8_0x27c2fc.extracted
+		INCBIN	build\sprites\rec_27c2fc_27c308.bin
+		INCBIN	baserom.gba_0x27c308_0x27c32c.extracted
 		INCBIN	build\jcalg1\gen_27c32c_27c7a4.bin
 		INCBIN	baserom.gba_0x27c7a4_0x27c880.extracted
 		INCBIN	build\jcalg1\gen_27c880_27cba0.bin
@@ -2966,13 +3544,30 @@
 		INCBIN	build\jcalg1\gen_284df8_284ed0.bin
 		INCBIN	baserom.gba_0x284ed0_0x284fb4.extracted
 		INCBIN	build\jcalg1\gen_284fb4_285174.bin
-		INCBIN	baserom.gba_0x285174_0x2853d0.extracted
+		INCBIN	baserom.gba_0x285174_0x285234.extracted
+		INCBIN	build\sprites\rec_285234_2852a0.bin
+		INCBIN	baserom.gba_0x2852a0_0x2853d0.extracted
 		INCBIN	build\jcalg1\gen_2853d0_285984.bin
-		INCBIN	baserom.gba_0x285984_0x2859e4.extracted
+		INCBIN	build\sprites\rec_285984_285990.bin
+		INCBIN	baserom.gba_0x285990_0x28599c.extracted
+		INCBIN	build\sprites\rec_28599c_2859a8.bin
+		INCBIN	baserom.gba_0x2859a8_0x2859b4.extracted
+		INCBIN	build\sprites\rec_2859b4_2859c0.bin
+		INCBIN	baserom.gba_0x2859c0_0x2859cc.extracted
+		INCBIN	build\sprites\rec_2859cc_2859d8.bin
+		INCBIN	baserom.gba_0x2859d8_0x2859e4.extracted
 		INCBIN	build\jcalg1\gen_2859e4_285e90.bin
 		INCBIN	baserom.gba_0x285e90_0x285fa8.extracted
 		INCBIN	build\jcalg1\gen_285fa8_28652c.bin
-		INCBIN	baserom.gba_0x28652c_0x286800.extracted
+		INCBIN	baserom.gba_0x28652c_0x286740.extracted
+		INCBIN	build\sprites\rec_286740_28674c.bin
+		INCBIN	baserom.gba_0x28674c_0x286770.extracted
+		INCBIN	build\sprites\rec_286770_28677c.bin
+		INCBIN	baserom.gba_0x28677c_0x2867a0.extracted
+		INCBIN	build\sprites\rec_2867a0_2867ac.bin
+		INCBIN	baserom.gba_0x2867ac_0x2867d0.extracted
+		INCBIN	build\sprites\rec_2867d0_2867dc.bin
+		INCBIN	baserom.gba_0x2867dc_0x286800.extracted
 		INCBIN	build\jcalg1\gen_286800_286cc4.bin
 		INCBIN	baserom.gba_0x286cc4_0x286d84.extracted
 		INCBIN	build\jcalg1\gen_286d84_286e8c.bin
@@ -2986,17 +3581,33 @@
 		INCBIN	build\jcalg1\gen_287924_287a50.bin
 		INCBIN	baserom.gba_0x287a50_0x287a80.extracted
 		INCBIN	build\jcalg1\gen_287a80_287ca0.bin
-		INCBIN	baserom.gba_0x287ca0_0x288018.extracted
+		INCBIN	baserom.gba_0x287ca0_0x287efc.extracted
+		INCBIN	build\sprites\rec_287efc_287f68.bin
+		INCBIN	baserom.gba_0x287f68_0x288018.extracted
 		INCBIN	build\jcalg1\gen_288018_288108.bin
 		INCBIN	baserom.gba_0x288108_0x2881fc.extracted
 		INCBIN	build\jcalg1\gen_2881fc_288460.bin
-		INCBIN	baserom.gba_0x288460_0x2884c0.extracted
+		INCBIN	build\sprites\rec_288460_28846c.bin
+		INCBIN	baserom.gba_0x28846c_0x288478.extracted
+		INCBIN	build\sprites\rec_288478_288484.bin
+		INCBIN	baserom.gba_0x288484_0x288490.extracted
+		INCBIN	build\sprites\rec_288490_28849c.bin
+		INCBIN	baserom.gba_0x28849c_0x2884a8.extracted
+		INCBIN	build\sprites\rec_2884a8_2884b4.bin
+		INCBIN	baserom.gba_0x2884b4_0x2884c0.extracted
 		INCBIN	build\jcalg1\gen_2884c0_2885a8.bin
 		INCBIN	baserom.gba_0x2885a8_0x2886a0.extracted
 		INCBIN	build\jcalg1\gen_2886a0_288944.bin
 		INCBIN	baserom.gba_0x288944_0x288adc.extracted
 		INCBIN	build\jcalg1\gen_288adc_288eec.bin
-		INCBIN	baserom.gba_0x288eec_0x288fac.extracted
+		INCBIN	build\sprites\rec_288eec_288ef8.bin
+		INCBIN	baserom.gba_0x288ef8_0x288f1c.extracted
+		INCBIN	build\sprites\rec_288f1c_288f28.bin
+		INCBIN	baserom.gba_0x288f28_0x288f4c.extracted
+		INCBIN	build\sprites\rec_288f4c_288f58.bin
+		INCBIN	baserom.gba_0x288f58_0x288f7c.extracted
+		INCBIN	build\sprites\rec_288f7c_288f88.bin
+		INCBIN	baserom.gba_0x288f88_0x288fac.extracted
 		INCBIN	build\jcalg1\gen_288fac_2891a0.bin
 		INCBIN	baserom.gba_0x2891a0_0x289354.extracted
 		INCBIN	build\jcalg1\gen_289354_2894f0.bin
@@ -3076,9 +3687,18 @@
 		INCBIN	build\jcalg1\gen_28f6fc_28f8f4.bin
 		INCBIN	baserom.gba_0x28f8f4_0x28fae8.extracted
 		INCBIN	build\jcalg1\gen_28fae8_28fd90.bin
-		INCBIN	baserom.gba_0x28fd90_0x2900d4.extracted
+		INCBIN	baserom.gba_0x28fd90_0x28ff38.extracted
+		INCBIN	build\sprites\rec_28ff38_28ffa4.bin
+		INCBIN	baserom.gba_0x28ffa4_0x2900d4.extracted
 		INCBIN	build\jcalg1\gen_2900d4_2904f8.bin
-		INCBIN	baserom.gba_0x2904f8_0x290558.extracted
+		INCBIN	build\sprites\rec_2904f8_290504.bin
+		INCBIN	baserom.gba_0x290504_0x290510.extracted
+		INCBIN	build\sprites\rec_290510_29051c.bin
+		INCBIN	baserom.gba_0x29051c_0x290528.extracted
+		INCBIN	build\sprites\rec_290528_290534.bin
+		INCBIN	baserom.gba_0x290534_0x290540.extracted
+		INCBIN	build\sprites\rec_290540_29054c.bin
+		INCBIN	baserom.gba_0x29054c_0x290558.extracted
 		INCBIN	build\jcalg1\gen_290558_2908f8.bin
 		INCBIN	baserom.gba_0x2908f8_0x2909c0.extracted
 		INCBIN	build\jcalg1\gen_2909c0_290c28.bin
@@ -3086,7 +3706,14 @@
 		INCBIN	build\jcalg1\gen_290d04_290dbc.bin
 		INCBIN	baserom.gba_0x290dbc_0x290e8c.extracted
 		INCBIN	build\jcalg1\gen_290e8c_290f48.bin
-		INCBIN	baserom.gba_0x290f48_0x291008.extracted
+		INCBIN	build\sprites\rec_290f48_290f54.bin
+		INCBIN	baserom.gba_0x290f54_0x290f78.extracted
+		INCBIN	build\sprites\rec_290f78_290f84.bin
+		INCBIN	baserom.gba_0x290f84_0x290fa8.extracted
+		INCBIN	build\sprites\rec_290fa8_290fb4.bin
+		INCBIN	baserom.gba_0x290fb4_0x290fd8.extracted
+		INCBIN	build\sprites\rec_290fd8_290fe4.bin
+		INCBIN	baserom.gba_0x290fe4_0x291008.extracted
 		INCBIN	build\jcalg1\gen_291008_2911e8.bin
 		INCBIN	baserom.gba_0x2911e8_0x291390.extracted
 		INCBIN	build\jcalg1\gen_291390_291530.bin
@@ -3172,9 +3799,19 @@
 		INCBIN	build\jcalg1\gen_299900_2999d4.bin
 		INCBIN	baserom.gba_0x2999d4_0x299ab0.extracted
 		INCBIN	build\jcalg1\gen_299ab0_299b88.bin
-		INCBIN	baserom.gba_0x299b88_0x299de4.extracted
+		INCBIN	baserom.gba_0x299b88_0x299c48.extracted
+		INCBIN	build\sprites\rec_299c48_299cb4.bin
+		INCBIN	baserom.gba_0x299cb4_0x299de4.extracted
 		INCBIN	build\jcalg1\gen_299de4_29a0a4.bin
-		INCBIN	baserom.gba_0x29a0a4_0x29a294.extracted
+		INCBIN	baserom.gba_0x29a0a4_0x29a234.extracted
+		INCBIN	build\sprites\rec_29a234_29a240.bin
+		INCBIN	baserom.gba_0x29a240_0x29a24c.extracted
+		INCBIN	build\sprites\rec_29a24c_29a258.bin
+		INCBIN	baserom.gba_0x29a258_0x29a264.extracted
+		INCBIN	build\sprites\rec_29a264_29a270.bin
+		INCBIN	baserom.gba_0x29a270_0x29a27c.extracted
+		INCBIN	build\sprites\rec_29a27c_29a288.bin
+		INCBIN	baserom.gba_0x29a288_0x29a294.extracted
 		INCBIN	build\jcalg1\gen_29a294_29a640.bin
 		INCBIN	baserom.gba_0x29a640_0x29a704.extracted
 		INCBIN	build\jcalg1\gen_29a704_29a7d8.bin
@@ -3182,7 +3819,14 @@
 		INCBIN	build\jcalg1\gen_29a978_29ab24.bin
 		INCBIN	baserom.gba_0x29ab24_0x29abf4.extracted
 		INCBIN	build\jcalg1\gen_29abf4_29acb8.bin
-		INCBIN	baserom.gba_0x29acb8_0x29ad78.extracted
+		INCBIN	build\sprites\rec_29acb8_29acc4.bin
+		INCBIN	baserom.gba_0x29acc4_0x29ace8.extracted
+		INCBIN	build\sprites\rec_29ace8_29acf4.bin
+		INCBIN	baserom.gba_0x29acf4_0x29ad18.extracted
+		INCBIN	build\sprites\rec_29ad18_29ad24.bin
+		INCBIN	baserom.gba_0x29ad24_0x29ad48.extracted
+		INCBIN	build\sprites\rec_29ad48_29ad54.bin
+		INCBIN	baserom.gba_0x29ad54_0x29ad78.extracted
 		INCBIN	build\jcalg1\gen_29ad78_29b03c.bin
 		INCBIN	baserom.gba_0x29b03c_0x29b1d4.extracted
 		INCBIN	build\jcalg1\gen_29b1d4_29b4e4.bin
@@ -3244,11 +3888,21 @@
 		INCBIN	build\jcalg1\gen_2a1114_2a11fc.bin
 		INCBIN	baserom.gba_0x2a11fc_0x2a1238.extracted
 		INCBIN	build\jcalg1\gen_2a1238_2a1458.bin
-		INCBIN	baserom.gba_0x2a1458_0x2a15dc.extracted
+		INCBIN	baserom.gba_0x2a1458_0x2a1470.extracted
+		INCBIN	build\sprites\rec_2a1470_2a14dc.bin
+		INCBIN	baserom.gba_0x2a14dc_0x2a15dc.extracted
 		INCBIN	build\jcalg1\gen_2a15dc_2a1724.bin
 		INCBIN	baserom.gba_0x2a1724_0x2a19ac.extracted
 		INCBIN	build\jcalg1\gen_2a19ac_2a1ae8.bin
-		INCBIN	baserom.gba_0x2a1ae8_0x2a1c88.extracted
+		INCBIN	baserom.gba_0x2a1ae8_0x2a1c28.extracted
+		INCBIN	build\sprites\rec_2a1c28_2a1c34.bin
+		INCBIN	baserom.gba_0x2a1c34_0x2a1c40.extracted
+		INCBIN	build\sprites\rec_2a1c40_2a1c4c.bin
+		INCBIN	baserom.gba_0x2a1c4c_0x2a1c58.extracted
+		INCBIN	build\sprites\rec_2a1c58_2a1c64.bin
+		INCBIN	baserom.gba_0x2a1c64_0x2a1c70.extracted
+		INCBIN	build\sprites\rec_2a1c70_2a1c7c.bin
+		INCBIN	baserom.gba_0x2a1c7c_0x2a1c88.extracted
 		INCBIN	build\jcalg1\gen_2a1c88_2a1ed4.bin
 		INCBIN	baserom.gba_0x2a1ed4_0x2a211c.extracted
 		INCBIN	build\jcalg1\gen_2a211c_2a221c.bin
@@ -3256,7 +3910,14 @@
 		INCBIN	build\jcalg1\gen_2a2334_2a2434.bin
 		INCBIN	baserom.gba_0x2a2434_0x2a266c.extracted
 		INCBIN	build\jcalg1\gen_2a266c_2a2990.bin
-		INCBIN	baserom.gba_0x2a2990_0x2a2a50.extracted
+		INCBIN	build\sprites\rec_2a2990_2a299c.bin
+		INCBIN	baserom.gba_0x2a299c_0x2a29c0.extracted
+		INCBIN	build\sprites\rec_2a29c0_2a29cc.bin
+		INCBIN	baserom.gba_0x2a29cc_0x2a29f0.extracted
+		INCBIN	build\sprites\rec_2a29f0_2a29fc.bin
+		INCBIN	baserom.gba_0x2a29fc_0x2a2a20.extracted
+		INCBIN	build\sprites\rec_2a2a20_2a2a2c.bin
+		INCBIN	baserom.gba_0x2a2a2c_0x2a2a50.extracted
 		INCBIN	build\jcalg1\gen_2a2a50_2a2d94.bin
 		INCBIN	baserom.gba_0x2a2d94_0x2a31dc.extracted
 		INCBIN	build\jcalg1\gen_2a31dc_2a32dc.bin
@@ -3326,17 +3987,33 @@
 		INCBIN	build\jcalg1\gen_2aab18_2aae50.bin
 		INCBIN	baserom.gba_0x2aae50_0x2ab0d8.extracted
 		INCBIN	build\jcalg1\gen_2ab0d8_2ab3b8.bin
-		INCBIN	baserom.gba_0x2ab3b8_0x2ab684.extracted
+		INCBIN	baserom.gba_0x2ab3b8_0x2ab508.extracted
+		INCBIN	build\sprites\rec_2ab508_2ab574.bin
+		INCBIN	baserom.gba_0x2ab574_0x2ab684.extracted
 		INCBIN	build\jcalg1\gen_2ab684_2ab9b4.bin
 		INCBIN	baserom.gba_0x2ab9b4_0x2abaa8.extracted
 		INCBIN	build\jcalg1\gen_2abaa8_2abb98.bin
-		INCBIN	baserom.gba_0x2abb98_0x2abbf8.extracted
+		INCBIN	build\sprites\rec_2abb98_2abba4.bin
+		INCBIN	baserom.gba_0x2abba4_0x2abbb0.extracted
+		INCBIN	build\sprites\rec_2abbb0_2abbbc.bin
+		INCBIN	baserom.gba_0x2abbbc_0x2abbc8.extracted
+		INCBIN	build\sprites\rec_2abbc8_2abbd4.bin
+		INCBIN	baserom.gba_0x2abbd4_0x2abbe0.extracted
+		INCBIN	build\sprites\rec_2abbe0_2abbec.bin
+		INCBIN	baserom.gba_0x2abbec_0x2abbf8.extracted
 		INCBIN	build\jcalg1\gen_2abbf8_2abd00.bin
 		INCBIN	baserom.gba_0x2abd00_0x2abe1c.extracted
 		INCBIN	build\jcalg1\gen_2abe1c_2ac128.bin
 		INCBIN	baserom.gba_0x2ac128_0x2ac228.extracted
 		INCBIN	build\jcalg1\gen_2ac228_2ac7f8.bin
-		INCBIN	baserom.gba_0x2ac7f8_0x2ac8b8.extracted
+		INCBIN	build\sprites\rec_2ac7f8_2ac804.bin
+		INCBIN	baserom.gba_0x2ac804_0x2ac828.extracted
+		INCBIN	build\sprites\rec_2ac828_2ac834.bin
+		INCBIN	baserom.gba_0x2ac834_0x2ac858.extracted
+		INCBIN	build\sprites\rec_2ac858_2ac864.bin
+		INCBIN	baserom.gba_0x2ac864_0x2ac888.extracted
+		INCBIN	build\sprites\rec_2ac888_2ac894.bin
+		INCBIN	baserom.gba_0x2ac894_0x2ac8b8.extracted
 		INCBIN	build\jcalg1\gen_2ac8b8_2accdc.bin
 		INCBIN	baserom.gba_0x2accdc_0x2acfbc.extracted
 		INCBIN	build\jcalg1\gen_2acfbc_2ad1a0.bin
@@ -3408,11 +4085,20 @@
 		INCBIN	build\jcalg1\gen_2b6398_2b6498.bin
 		INCBIN	baserom.gba_0x2b6498_0x2b6558.extracted
 		INCBIN	build\jcalg1\gen_2b6558_2b6998.bin
-		INCBIN	baserom.gba_0x2b6998_0x2b6b74.extracted
+		INCBIN	baserom.gba_0x2b6998_0x2b69c8.extracted
+		INCBIN	build\sprites\rec_2b69c8_2b6a34.bin
+		INCBIN	baserom.gba_0x2b6a34_0x2b6b74.extracted
 		INCBIN	build\jcalg1\gen_2b6b74_2b6e68.bin
 		INCBIN	baserom.gba_0x2b6e68_0x2b6f4c.extracted
 		INCBIN	build\jcalg1\gen_2b6f4c_2b7028.bin
-		INCBIN	baserom.gba_0x2b7028_0x2b7088.extracted
+		INCBIN	build\sprites\rec_2b7028_2b7034.bin
+		INCBIN	baserom.gba_0x2b7034_0x2b7040.extracted
+		INCBIN	build\sprites\rec_2b7040_2b704c.bin
+		INCBIN	baserom.gba_0x2b704c_0x2b7058.extracted
+		INCBIN	build\sprites\rec_2b7058_2b7064.bin
+		INCBIN	baserom.gba_0x2b7064_0x2b7070.extracted
+		INCBIN	build\sprites\rec_2b7070_2b707c.bin
+		INCBIN	baserom.gba_0x2b707c_0x2b7088.extracted
 		INCBIN	build\jcalg1\gen_2b7088_2b7174.bin
 		INCBIN	baserom.gba_0x2b7174_0x2b737c.extracted
 		INCBIN	build\jcalg1\gen_2b737c_2b7620.bin
@@ -3420,7 +4106,14 @@
 		INCBIN	build\jcalg1\gen_2b78b0_2b798c.bin
 		INCBIN	baserom.gba_0x2b798c_0x2b7a70.extracted
 		INCBIN	build\jcalg1\gen_2b7a70_2b7b4c.bin
-		INCBIN	baserom.gba_0x2b7b4c_0x2b7c0c.extracted
+		INCBIN	build\sprites\rec_2b7b4c_2b7b58.bin
+		INCBIN	baserom.gba_0x2b7b58_0x2b7b7c.extracted
+		INCBIN	build\sprites\rec_2b7b7c_2b7b88.bin
+		INCBIN	baserom.gba_0x2b7b88_0x2b7bac.extracted
+		INCBIN	build\sprites\rec_2b7bac_2b7bb8.bin
+		INCBIN	baserom.gba_0x2b7bb8_0x2b7bdc.extracted
+		INCBIN	build\sprites\rec_2b7bdc_2b7be8.bin
+		INCBIN	baserom.gba_0x2b7be8_0x2b7c0c.extracted
 		INCBIN	build\jcalg1\gen_2b7c0c_2b7d08.bin
 		INCBIN	baserom.gba_0x2b7d08_0x2b7fbc.extracted
 		INCBIN	build\jcalg1\gen_2b7fbc_2b83a0.bin
@@ -3508,17 +4201,34 @@
 		INCBIN	build\jcalg1\gen_2c19b8_2c1a7c.bin
 		INCBIN	baserom.gba_0x2c1a7c_0x2c1b44.extracted
 		INCBIN	build\jcalg1\gen_2c1b44_2c1cd0.bin
-		INCBIN	baserom.gba_0x2c1cd0_0x2c1f2c.extracted
+		INCBIN	baserom.gba_0x2c1cd0_0x2c1d90.extracted
+		INCBIN	build\sprites\rec_2c1d90_2c1dfc.bin
+		INCBIN	baserom.gba_0x2c1dfc_0x2c1f2c.extracted
 		INCBIN	build\jcalg1\gen_2c1f2c_2c218c.bin
 		INCBIN	baserom.gba_0x2c218c_0x2c23c8.extracted
 		INCBIN	build\jcalg1\gen_2c23c8_2c24d0.bin
-		INCBIN	baserom.gba_0x2c24d0_0x2c2530.extracted
+		INCBIN	build\sprites\rec_2c24d0_2c24dc.bin
+		INCBIN	baserom.gba_0x2c24dc_0x2c24e8.extracted
+		INCBIN	build\sprites\rec_2c24e8_2c24f4.bin
+		INCBIN	baserom.gba_0x2c24f4_0x2c2500.extracted
+		INCBIN	build\sprites\rec_2c2500_2c250c.bin
+		INCBIN	baserom.gba_0x2c250c_0x2c2518.extracted
+		INCBIN	build\sprites\rec_2c2518_2c2524.bin
+		INCBIN	baserom.gba_0x2c2524_0x2c2530.extracted
 		INCBIN	build\jcalg1\gen_2c2530_2c2ad0.bin
 		INCBIN	baserom.gba_0x2c2ad0_0x2c2bfc.extracted
 		INCBIN	build\jcalg1\gen_2c2bfc_2c2d04.bin
 		INCBIN	baserom.gba_0x2c2d04_0x2c2e30.extracted
 		INCBIN	build\jcalg1\gen_2c2e30_2c3168.bin
-		INCBIN	baserom.gba_0x2c3168_0x2c3338.extracted
+		INCBIN	baserom.gba_0x2c3168_0x2c3278.extracted
+		INCBIN	build\sprites\rec_2c3278_2c3284.bin
+		INCBIN	baserom.gba_0x2c3284_0x2c32a8.extracted
+		INCBIN	build\sprites\rec_2c32a8_2c32b4.bin
+		INCBIN	baserom.gba_0x2c32b4_0x2c32d8.extracted
+		INCBIN	build\sprites\rec_2c32d8_2c32e4.bin
+		INCBIN	baserom.gba_0x2c32e4_0x2c3308.extracted
+		INCBIN	build\sprites\rec_2c3308_2c3314.bin
+		INCBIN	baserom.gba_0x2c3314_0x2c3338.extracted
 		INCBIN	build\jcalg1\gen_2c3338_2c3548.bin
 		INCBIN	baserom.gba_0x2c3548_0x2c3648.extracted
 		INCBIN	build\jcalg1\gen_2c3648_2c3974.bin
@@ -3604,17 +4314,33 @@
 		INCBIN	build\jcalg1\gen_2ce618_2ce818.bin
 		INCBIN	baserom.gba_0x2ce818_0x2ce8d8.extracted
 		INCBIN	build\jcalg1\gen_2ce8d8_2cec7c.bin
-		INCBIN	baserom.gba_0x2cec7c_0x2cef80.extracted
+		INCBIN	baserom.gba_0x2cec7c_0x2cedd4.extracted
+		INCBIN	build\sprites\rec_2cedd4_2cee40.bin
+		INCBIN	baserom.gba_0x2cee40_0x2cef80.extracted
 		INCBIN	build\jcalg1\gen_2cef80_2cf280.bin
 		INCBIN	baserom.gba_0x2cf280_0x2cf364.extracted
 		INCBIN	build\jcalg1\gen_2cf364_2cf444.bin
-		INCBIN	baserom.gba_0x2cf444_0x2cf4a4.extracted
+		INCBIN	build\sprites\rec_2cf444_2cf450.bin
+		INCBIN	baserom.gba_0x2cf450_0x2cf45c.extracted
+		INCBIN	build\sprites\rec_2cf45c_2cf468.bin
+		INCBIN	baserom.gba_0x2cf468_0x2cf474.extracted
+		INCBIN	build\sprites\rec_2cf474_2cf480.bin
+		INCBIN	baserom.gba_0x2cf480_0x2cf48c.extracted
+		INCBIN	build\sprites\rec_2cf48c_2cf498.bin
+		INCBIN	baserom.gba_0x2cf498_0x2cf4a4.extracted
 		INCBIN	build\jcalg1\gen_2cf4a4_2cf598.bin
 		INCBIN	baserom.gba_0x2cf598_0x2cf6a4.extracted
 		INCBIN	build\jcalg1\gen_2cf6a4_2cf978.bin
 		INCBIN	baserom.gba_0x2cf978_0x2cfb2c.extracted
 		INCBIN	build\jcalg1\gen_2cfb2c_2cffa8.bin
-		INCBIN	baserom.gba_0x2cffa8_0x2d0068.extracted
+		INCBIN	build\sprites\rec_2cffa8_2cffb4.bin
+		INCBIN	baserom.gba_0x2cffb4_0x2cffd8.extracted
+		INCBIN	build\sprites\rec_2cffd8_2cffe4.bin
+		INCBIN	baserom.gba_0x2cffe4_0x2d0008.extracted
+		INCBIN	build\sprites\rec_2d0008_2d0014.bin
+		INCBIN	baserom.gba_0x2d0014_0x2d0038.extracted
+		INCBIN	build\sprites\rec_2d0038_2d0044.bin
+		INCBIN	baserom.gba_0x2d0044_0x2d0068.extracted
 		INCBIN	build\jcalg1\gen_2d0068_2d0294.bin
 		INCBIN	baserom.gba_0x2d0294_0x2d03ac.extracted
 		INCBIN	build\jcalg1\gen_2d03ac_2d04bc.bin
@@ -3628,11 +4354,21 @@
 		INCBIN	build\jcalg1\gen_2d0ca8_2d0fec.bin
 		INCBIN	baserom.gba_0x2d0fec_0x2d108c.extracted
 		INCBIN	build\jcalg1\gen_2d108c_2d137c.bin
-		INCBIN	baserom.gba_0x2d137c_0x2d171c.extracted
+		INCBIN	baserom.gba_0x2d137c_0x2d1600.extracted
+		INCBIN	build\sprites\rec_2d1600_2d166c.bin
+		INCBIN	baserom.gba_0x2d166c_0x2d171c.extracted
 		INCBIN	build\jcalg1\gen_2d171c_2d1828.bin
 		INCBIN	baserom.gba_0x2d1828_0x2d1950.extracted
 		INCBIN	build\jcalg1\gen_2d1950_2d1b58.bin
-		INCBIN	baserom.gba_0x2d1b58_0x2d1c98.extracted
+		INCBIN	baserom.gba_0x2d1b58_0x2d1c38.extracted
+		INCBIN	build\sprites\rec_2d1c38_2d1c44.bin
+		INCBIN	baserom.gba_0x2d1c44_0x2d1c50.extracted
+		INCBIN	build\sprites\rec_2d1c50_2d1c5c.bin
+		INCBIN	baserom.gba_0x2d1c5c_0x2d1c68.extracted
+		INCBIN	build\sprites\rec_2d1c68_2d1c74.bin
+		INCBIN	baserom.gba_0x2d1c74_0x2d1c80.extracted
+		INCBIN	build\sprites\rec_2d1c80_2d1c8c.bin
+		INCBIN	baserom.gba_0x2d1c8c_0x2d1c98.extracted
 		INCBIN	build\jcalg1\gen_2d1c98_2d1da4.bin
 		INCBIN	baserom.gba_0x2d1da4_0x2d1ecc.extracted
 		INCBIN	build\jcalg1\gen_2d1ecc_2d20e8.bin
@@ -3642,7 +4378,14 @@
 		INCBIN	build\jcalg1\gen_2d2624_2d2700.bin
 		INCBIN	baserom.gba_0x2d2700_0x2d27cc.extracted
 		INCBIN	build\jcalg1\gen_2d27cc_2d28a4.bin
-		INCBIN	baserom.gba_0x2d28a4_0x2d2964.extracted
+		INCBIN	build\sprites\rec_2d28a4_2d28b0.bin
+		INCBIN	baserom.gba_0x2d28b0_0x2d28d4.extracted
+		INCBIN	build\sprites\rec_2d28d4_2d28e0.bin
+		INCBIN	baserom.gba_0x2d28e0_0x2d2904.extracted
+		INCBIN	build\sprites\rec_2d2904_2d2910.bin
+		INCBIN	baserom.gba_0x2d2910_0x2d2934.extracted
+		INCBIN	build\sprites\rec_2d2934_2d2940.bin
+		INCBIN	baserom.gba_0x2d2940_0x2d2964.extracted
 		INCBIN	build\jcalg1\gen_2d2964_2d2cc0.bin
 		INCBIN	baserom.gba_0x2d2cc0_0x2d2eb0.extracted
 		INCBIN	build\jcalg1\gen_2d2eb0_2d2fc0.bin
@@ -3656,11 +4399,20 @@
 		INCBIN	build\jcalg1\gen_2d3c38_2d3d90.bin
 		INCBIN	baserom.gba_0x2d3d90_0x2d3f04.extracted
 		INCBIN	build\jcalg1\gen_2d3f04_2d42d0.bin
-		INCBIN	baserom.gba_0x2d42d0_0x2d471c.extracted
+		INCBIN	baserom.gba_0x2d42d0_0x2d4460.extracted
+		INCBIN	build\sprites\rec_2d4460_2d44cc.bin
+		INCBIN	baserom.gba_0x2d44cc_0x2d471c.extracted
 		INCBIN	build\jcalg1\gen_2d471c_2d4918.bin
 		INCBIN	baserom.gba_0x2d4918_0x2d4a00.extracted
 		INCBIN	build\jcalg1\gen_2d4a00_2d4c80.bin
-		INCBIN	baserom.gba_0x2d4c80_0x2d4ce0.extracted
+		INCBIN	build\sprites\rec_2d4c80_2d4c8c.bin
+		INCBIN	baserom.gba_0x2d4c8c_0x2d4c98.extracted
+		INCBIN	build\sprites\rec_2d4c98_2d4ca4.bin
+		INCBIN	baserom.gba_0x2d4ca4_0x2d4cb0.extracted
+		INCBIN	build\sprites\rec_2d4cb0_2d4cbc.bin
+		INCBIN	baserom.gba_0x2d4cbc_0x2d4cc8.extracted
+		INCBIN	build\sprites\rec_2d4cc8_2d4cd4.bin
+		INCBIN	baserom.gba_0x2d4cd4_0x2d4ce0.extracted
 		INCBIN	build\jcalg1\gen_2d4ce0_2d4dd4.bin
 		INCBIN	baserom.gba_0x2d4dd4_0x2d4ed4.extracted
 		INCBIN	build\jcalg1\gen_2d4ed4_2d4fd8.bin
@@ -3668,7 +4420,14 @@
 		INCBIN	build\jcalg1\gen_2d50dc_2d552c.bin
 		INCBIN	baserom.gba_0x2d552c_0x2d5604.extracted
 		INCBIN	build\jcalg1\gen_2d5604_2d57b0.bin
-		INCBIN	baserom.gba_0x2d57b0_0x2d5870.extracted
+		INCBIN	build\sprites\rec_2d57b0_2d57bc.bin
+		INCBIN	baserom.gba_0x2d57bc_0x2d57e0.extracted
+		INCBIN	build\sprites\rec_2d57e0_2d57ec.bin
+		INCBIN	baserom.gba_0x2d57ec_0x2d5810.extracted
+		INCBIN	build\sprites\rec_2d5810_2d581c.bin
+		INCBIN	baserom.gba_0x2d581c_0x2d5840.extracted
+		INCBIN	build\sprites\rec_2d5840_2d584c.bin
+		INCBIN	baserom.gba_0x2d584c_0x2d5870.extracted
 		INCBIN	build\jcalg1\gen_2d5870_2d596c.bin
 		INCBIN	baserom.gba_0x2d596c_0x2d5a68.extracted
 		INCBIN	build\jcalg1\gen_2d5a68_2d5d2c.bin
@@ -3676,35 +4435,67 @@
 		INCBIN	build\jcalg1\gen_2d5dfc_2d6074.bin
 		INCBIN	baserom.gba_0x2d6074_0x2d6158.extracted
 		INCBIN	build\jcalg1\gen_2d6158_2d6308.bin
-		INCBIN	baserom.gba_0x2d6308_0x2d6444.extracted
+		INCBIN	baserom.gba_0x2d6308_0x2d63c8.extracted
+		INCBIN	build\sprites\rec_2d63c8_2d6434.bin
+		INCBIN	baserom.gba_0x2d6434_0x2d6444.extracted
 		INCBIN	build\jcalg1\gen_2d6444_2d653c.bin
 		INCBIN	baserom.gba_0x2d653c_0x2d6638.extracted
 		INCBIN	build\jcalg1\gen_2d6638_2d6718.bin
 		INCBIN	baserom.gba_0x2d6718_0x2d68dc.extracted
 		INCBIN	build\jcalg1\gen_2d68dc_2d69b8.bin
-		INCBIN	baserom.gba_0x2d69b8_0x2d6a18.extracted
+		INCBIN	build\sprites\rec_2d69b8_2d69c4.bin
+		INCBIN	baserom.gba_0x2d69c4_0x2d69d0.extracted
+		INCBIN	build\sprites\rec_2d69d0_2d69dc.bin
+		INCBIN	baserom.gba_0x2d69dc_0x2d69e8.extracted
+		INCBIN	build\sprites\rec_2d69e8_2d69f4.bin
+		INCBIN	baserom.gba_0x2d69f4_0x2d6a00.extracted
+		INCBIN	build\sprites\rec_2d6a00_2d6a0c.bin
+		INCBIN	baserom.gba_0x2d6a0c_0x2d6a18.extracted
 		INCBIN	build\jcalg1\gen_2d6a18_2d6b04.bin
 		INCBIN	baserom.gba_0x2d6b04_0x2d6cf0.extracted
 		INCBIN	build\jcalg1\gen_2d6cf0_2d6de0.bin
 		INCBIN	baserom.gba_0x2d6de0_0x2d6f9c.extracted
 		INCBIN	build\jcalg1\gen_2d6f9c_2d74d4.bin
-		INCBIN	baserom.gba_0x2d74d4_0x2d7594.extracted
+		INCBIN	build\sprites\rec_2d74d4_2d74e0.bin
+		INCBIN	baserom.gba_0x2d74e0_0x2d7504.extracted
+		INCBIN	build\sprites\rec_2d7504_2d7510.bin
+		INCBIN	baserom.gba_0x2d7510_0x2d7534.extracted
+		INCBIN	build\sprites\rec_2d7534_2d7540.bin
+		INCBIN	baserom.gba_0x2d7540_0x2d7564.extracted
+		INCBIN	build\sprites\rec_2d7564_2d7570.bin
+		INCBIN	baserom.gba_0x2d7570_0x2d7594.extracted
 		INCBIN	build\jcalg1\gen_2d7594_2d7680.bin
 		INCBIN	baserom.gba_0x2d7680_0x2d786c.extracted
 		INCBIN	build\jcalg1\gen_2d786c_2d795c.bin
 		INCBIN	baserom.gba_0x2d795c_0x2d7b18.extracted
 		INCBIN	build\jcalg1\gen_2d7b18_2d8050.bin
-		INCBIN	baserom.gba_0x2d8050_0x2d818c.extracted
+		INCBIN	baserom.gba_0x2d8050_0x2d8110.extracted
+		INCBIN	build\sprites\rec_2d8110_2d817c.bin
+		INCBIN	baserom.gba_0x2d817c_0x2d818c.extracted
 		INCBIN	build\jcalg1\gen_2d818c_2d8284.bin
 		INCBIN	baserom.gba_0x2d8284_0x2d8510.extracted
 		INCBIN	build\jcalg1\gen_2d8510_2d85ec.bin
-		INCBIN	baserom.gba_0x2d85ec_0x2d864c.extracted
+		INCBIN	build\sprites\rec_2d85ec_2d85f8.bin
+		INCBIN	baserom.gba_0x2d85f8_0x2d8604.extracted
+		INCBIN	build\sprites\rec_2d8604_2d8610.bin
+		INCBIN	baserom.gba_0x2d8610_0x2d861c.extracted
+		INCBIN	build\sprites\rec_2d861c_2d8628.bin
+		INCBIN	baserom.gba_0x2d8628_0x2d8634.extracted
+		INCBIN	build\sprites\rec_2d8634_2d8640.bin
+		INCBIN	baserom.gba_0x2d8640_0x2d864c.extracted
 		INCBIN	build\jcalg1\gen_2d864c_2d873c.bin
 		INCBIN	baserom.gba_0x2d873c_0x2d892c.extracted
 		INCBIN	build\jcalg1\gen_2d892c_2d8b8c.bin
 		INCBIN	baserom.gba_0x2d8b8c_0x2d8c40.extracted
 		INCBIN	build\jcalg1\gen_2d8c40_2d9074.bin
-		INCBIN	baserom.gba_0x2d9074_0x2d9134.extracted
+		INCBIN	build\sprites\rec_2d9074_2d9080.bin
+		INCBIN	baserom.gba_0x2d9080_0x2d90a4.extracted
+		INCBIN	build\sprites\rec_2d90a4_2d90b0.bin
+		INCBIN	baserom.gba_0x2d90b0_0x2d90d4.extracted
+		INCBIN	build\sprites\rec_2d90d4_2d90e0.bin
+		INCBIN	baserom.gba_0x2d90e0_0x2d9104.extracted
+		INCBIN	build\sprites\rec_2d9104_2d9110.bin
+		INCBIN	baserom.gba_0x2d9110_0x2d9134.extracted
 		INCBIN	build\jcalg1\gen_2d9134_2d921c.bin
 		INCBIN	baserom.gba_0x2d921c_0x2d92fc.extracted
 		INCBIN	build\jcalg1\gen_2d92fc_2d93c0.bin
@@ -3756,17 +4547,33 @@
 		INCBIN	build\jcalg1\gen_2dddd8_2ddfe8.bin
 		INCBIN	baserom.gba_0x2ddfe8_0x2de0f0.extracted
 		INCBIN	build\jcalg1\gen_2de0f0_2de468.bin
-		INCBIN	baserom.gba_0x2de468_0x2de7a0.extracted
+		INCBIN	baserom.gba_0x2de468_0x2de604.extracted
+		INCBIN	build\sprites\rec_2de604_2de670.bin
+		INCBIN	baserom.gba_0x2de670_0x2de7a0.extracted
 		INCBIN	build\jcalg1\gen_2de7a0_2de8b8.bin
 		INCBIN	baserom.gba_0x2de8b8_0x2de9d0.extracted
 		INCBIN	build\jcalg1\gen_2de9d0_2ded70.bin
-		INCBIN	baserom.gba_0x2ded70_0x2dee2c.extracted
+		INCBIN	build\sprites\rec_2ded70_2ded7c.bin
+		INCBIN	baserom.gba_0x2ded7c_0x2ded88.extracted
+		INCBIN	build\sprites\rec_2ded88_2ded94.bin
+		INCBIN	baserom.gba_0x2ded94_0x2deda0.extracted
+		INCBIN	build\sprites\rec_2deda0_2dedac.bin
+		INCBIN	baserom.gba_0x2dedac_0x2dedb8.extracted
+		INCBIN	build\sprites\rec_2dedb8_2dedc4.bin
+		INCBIN	baserom.gba_0x2dedc4_0x2dedd0.extracted
+		INCBIN	build\sprites\rec_2dedd0_2dee2c.bin
 		INCBIN	build\jcalg1\gen_2dee2c_2dfe70.bin
-		INCBIN	baserom.gba_0x2dfe70_0x2dfeb8.extracted
+		INCBIN	build\sprites\rec_2dfe70_2dfe7c.bin
+		INCBIN	baserom.gba_0x2dfe7c_0x2dfe88.extracted
+		INCBIN	build\sprites\rec_2dfe88_2dfe94.bin
+		INCBIN	baserom.gba_0x2dfe94_0x2dfea0.extracted
+		INCBIN	build\sprites\rec_2dfea0_2dfeac.bin
+		INCBIN	baserom.gba_0x2dfeac_0x2dfeb8.extracted
 		INCBIN	build\jcalg1\gen_2dfeb8_2e0334.bin
 		INCBIN	baserom.gba_0x2e0334_0x2e07e4.extracted
 		INCBIN	build\jcalg1\gen_2e07e4_2e10d0.bin
-		INCBIN	baserom.gba_0x2e10d0_0x2e1100.extracted
+		INCBIN	build\sprites\rec_2e10d0_2e10dc.bin
+		INCBIN	baserom.gba_0x2e10dc_0x2e1100.extracted
 		INCBIN	build\jcalg1\gen_2e1100_2e1a8c.bin
 		INCBIN	baserom.gba_0x2e1a8c_0x2e1e3c.extracted
 		INCBIN	build\jcalg1\gen_2e1e3c_2e2064.bin
@@ -3774,23 +4581,50 @@
 		INCBIN	build\jcalg1\gen_2e2094_2e2a44.bin
 		INCBIN	baserom.gba_0x2e2a44_0x2e2f1c.extracted
 		INCBIN	build\jcalg1\gen_2e2f1c_2e33e8.bin
-		INCBIN	baserom.gba_0x2e33e8_0x2e34b4.extracted
+		INCBIN	baserom.gba_0x2e33e8_0x2e3418.extracted
+		INCBIN	build\sprites\rec_2e3418_2e3484.bin
+		INCBIN	baserom.gba_0x2e3484_0x2e34b4.extracted
 		INCBIN	build\jcalg1\gen_2e34b4_2e3588.bin
-		INCBIN	baserom.gba_0x2e3588_0x2e38f4.extracted
+		INCBIN	baserom.gba_0x2e3588_0x2e3894.extracted
+		INCBIN	build\sprites\rec_2e3894_2e38a0.bin
+		INCBIN	baserom.gba_0x2e38a0_0x2e38ac.extracted
+		INCBIN	build\sprites\rec_2e38ac_2e38b8.bin
+		INCBIN	baserom.gba_0x2e38b8_0x2e38c4.extracted
+		INCBIN	build\sprites\rec_2e38c4_2e38d0.bin
+		INCBIN	baserom.gba_0x2e38d0_0x2e38dc.extracted
+		INCBIN	build\sprites\rec_2e38dc_2e38e8.bin
+		INCBIN	baserom.gba_0x2e38e8_0x2e38f4.extracted
 		INCBIN	build\jcalg1\gen_2e38f4_2e3ef4.bin
 		INCBIN	baserom.gba_0x2e3ef4_0x2e40a8.extracted
 		INCBIN	build\jcalg1\gen_2e40a8_2e4188.bin
 		INCBIN	baserom.gba_0x2e4188_0x2e4270.extracted
 		INCBIN	build\jcalg1\gen_2e4270_2e4434.bin
-		INCBIN	baserom.gba_0x2e4434_0x2e4590.extracted
+		INCBIN	baserom.gba_0x2e4434_0x2e44f4.extracted
+		INCBIN	build\sprites\rec_2e44f4_2e4560.bin
+		INCBIN	baserom.gba_0x2e4560_0x2e4590.extracted
 		INCBIN	build\jcalg1\gen_2e4590_2e4698.bin
 		INCBIN	baserom.gba_0x2e4698_0x2e47a4.extracted
 		INCBIN	build\jcalg1\gen_2e47a4_2e4a3c.bin
-		INCBIN	baserom.gba_0x2e4a3c_0x2e4a9c.extracted
+		INCBIN	build\sprites\rec_2e4a3c_2e4a48.bin
+		INCBIN	baserom.gba_0x2e4a48_0x2e4a54.extracted
+		INCBIN	build\sprites\rec_2e4a54_2e4a60.bin
+		INCBIN	baserom.gba_0x2e4a60_0x2e4a6c.extracted
+		INCBIN	build\sprites\rec_2e4a6c_2e4a78.bin
+		INCBIN	baserom.gba_0x2e4a78_0x2e4a84.extracted
+		INCBIN	build\sprites\rec_2e4a84_2e4a90.bin
+		INCBIN	baserom.gba_0x2e4a90_0x2e4a9c.extracted
 		INCBIN	build\jcalg1\gen_2e4a9c_2e5088.bin
 		INCBIN	baserom.gba_0x2e5088_0x2e5178.extracted
 		INCBIN	build\jcalg1\gen_2e5178_2e54dc.bin
-		INCBIN	baserom.gba_0x2e54dc_0x2e5670.extracted
+		INCBIN	baserom.gba_0x2e54dc_0x2e55b0.extracted
+		INCBIN	build\sprites\rec_2e55b0_2e55bc.bin
+		INCBIN	baserom.gba_0x2e55bc_0x2e55e0.extracted
+		INCBIN	build\sprites\rec_2e55e0_2e55ec.bin
+		INCBIN	baserom.gba_0x2e55ec_0x2e5610.extracted
+		INCBIN	build\sprites\rec_2e5610_2e561c.bin
+		INCBIN	baserom.gba_0x2e561c_0x2e5640.extracted
+		INCBIN	build\sprites\rec_2e5640_2e564c.bin
+		INCBIN	baserom.gba_0x2e564c_0x2e5670.extracted
 		INCBIN	build\jcalg1\gen_2e5670_2e5850.bin
 		INCBIN	baserom.gba_0x2e5850_0x2e5b44.extracted
 		INCBIN	build\jcalg1\gen_2e5b44_2e5e08.bin
@@ -3828,11 +4662,20 @@
 		INCBIN	build\jcalg1\gen_2e9078_2e9154.bin
 		INCBIN	baserom.gba_0x2e9154_0x2e9314.extracted
 		INCBIN	build\jcalg1\gen_2e9314_2e93f4.bin
-		INCBIN	baserom.gba_0x2e93f4_0x2e95d0.extracted
+		INCBIN	baserom.gba_0x2e93f4_0x2e94b4.extracted
+		INCBIN	build\sprites\rec_2e94b4_2e9520.bin
+		INCBIN	baserom.gba_0x2e9520_0x2e95d0.extracted
 		INCBIN	build\jcalg1\gen_2e95d0_2e9668.bin
 		INCBIN	baserom.gba_0x2e9668_0x2e97b4.extracted
 		INCBIN	build\jcalg1\gen_2e97b4_2e999c.bin
-		INCBIN	baserom.gba_0x2e999c_0x2e99fc.extracted
+		INCBIN	build\sprites\rec_2e999c_2e99a8.bin
+		INCBIN	baserom.gba_0x2e99a8_0x2e99b4.extracted
+		INCBIN	build\sprites\rec_2e99b4_2e99c0.bin
+		INCBIN	baserom.gba_0x2e99c0_0x2e99cc.extracted
+		INCBIN	build\sprites\rec_2e99cc_2e99d8.bin
+		INCBIN	baserom.gba_0x2e99d8_0x2e99e4.extracted
+		INCBIN	build\sprites\rec_2e99e4_2e99f0.bin
+		INCBIN	baserom.gba_0x2e99f0_0x2e99fc.extracted
 		INCBIN	build\jcalg1\gen_2e99fc_2e9a94.bin
 		INCBIN	baserom.gba_0x2e9a94_0x2e9bd8.extracted
 		INCBIN	build\jcalg1\gen_2e9bd8_2e9c74.bin
@@ -3840,7 +4683,14 @@
 		INCBIN	build\jcalg1\gen_2e9d20_2ea054.bin
 		INCBIN	baserom.gba_0x2ea054_0x2ea0fc.extracted
 		INCBIN	build\jcalg1\gen_2ea0fc_2ea19c.bin
-		INCBIN	baserom.gba_0x2ea19c_0x2ea25c.extracted
+		INCBIN	build\sprites\rec_2ea19c_2ea1a8.bin
+		INCBIN	baserom.gba_0x2ea1a8_0x2ea1cc.extracted
+		INCBIN	build\sprites\rec_2ea1cc_2ea1d8.bin
+		INCBIN	baserom.gba_0x2ea1d8_0x2ea1fc.extracted
+		INCBIN	build\sprites\rec_2ea1fc_2ea208.bin
+		INCBIN	baserom.gba_0x2ea208_0x2ea22c.extracted
+		INCBIN	build\sprites\rec_2ea22c_2ea238.bin
+		INCBIN	baserom.gba_0x2ea238_0x2ea25c.extracted
 		INCBIN	build\jcalg1\gen_2ea25c_2ea5d8.bin
 		INCBIN	baserom.gba_0x2ea5d8_0x2ea6e4.extracted
 		INCBIN	build\jcalg1\gen_2ea6e4_2ea91c.bin
@@ -3850,9 +4700,19 @@
 		INCBIN	build\jcalg1\gen_2eb22c_2eb3cc.bin
 		INCBIN	baserom.gba_0x2eb3cc_0x2eb440.extracted
 		INCBIN	build\jcalg1\gen_2eb440_2eb53c.bin
-		INCBIN	baserom.gba_0x2eb53c_0x2eb90c.extracted
+		INCBIN	baserom.gba_0x2eb53c_0x2eb590.extracted
+		INCBIN	build\sprites\rec_2eb590_2eb5fc.bin
+		INCBIN	baserom.gba_0x2eb5fc_0x2eb90c.extracted
 		INCBIN	build\jcalg1\gen_2eb90c_2ebce4.bin
-		INCBIN	baserom.gba_0x2ebce4_0x2ebe28.extracted
+		INCBIN	baserom.gba_0x2ebce4_0x2ebdc8.extracted
+		INCBIN	build\sprites\rec_2ebdc8_2ebdd4.bin
+		INCBIN	baserom.gba_0x2ebdd4_0x2ebde0.extracted
+		INCBIN	build\sprites\rec_2ebde0_2ebdec.bin
+		INCBIN	baserom.gba_0x2ebdec_0x2ebdf8.extracted
+		INCBIN	build\sprites\rec_2ebdf8_2ebe04.bin
+		INCBIN	baserom.gba_0x2ebe04_0x2ebe10.extracted
+		INCBIN	build\sprites\rec_2ebe10_2ebe1c.bin
+		INCBIN	baserom.gba_0x2ebe1c_0x2ebe28.extracted
 		INCBIN	build\jcalg1\gen_2ebe28_2ec044.bin
 		INCBIN	baserom.gba_0x2ec044_0x2ec158.extracted
 		INCBIN	build\jcalg1\gen_2ec158_2ec348.bin
@@ -3860,15 +4720,31 @@
 		INCBIN	build\jcalg1\gen_2ec528_2ec6fc.bin
 		INCBIN	baserom.gba_0x2ec6fc_0x2ec8dc.extracted
 		INCBIN	build\jcalg1\gen_2ec8dc_2ec9c4.bin
-		INCBIN	baserom.gba_0x2ec9c4_0x2eca84.extracted
+		INCBIN	build\sprites\rec_2ec9c4_2ec9d0.bin
+		INCBIN	baserom.gba_0x2ec9d0_0x2ec9f4.extracted
+		INCBIN	build\sprites\rec_2ec9f4_2eca00.bin
+		INCBIN	baserom.gba_0x2eca00_0x2eca24.extracted
+		INCBIN	build\sprites\rec_2eca24_2eca30.bin
+		INCBIN	baserom.gba_0x2eca30_0x2eca54.extracted
+		INCBIN	build\sprites\rec_2eca54_2eca60.bin
+		INCBIN	baserom.gba_0x2eca60_0x2eca84.extracted
 		INCBIN	build\jcalg1\gen_2eca84_2eceb8.bin
 		INCBIN	baserom.gba_0x2eceb8_0x2ecfac.extracted
 		INCBIN	build\jcalg1\gen_2ecfac_2ed350.bin
 		INCBIN	baserom.gba_0x2ed350_0x2ed43c.extracted
 		INCBIN	build\jcalg1\gen_2ed43c_2ed600.bin
-		INCBIN	baserom.gba_0x2ed600_0x2ed95c.extracted
+		INCBIN	baserom.gba_0x2ed600_0x2ed6c0.extracted
+		INCBIN	build\sprites\rec_2ed6c0_2ed72c.bin
+		INCBIN	baserom.gba_0x2ed72c_0x2ed95c.extracted
 		INCBIN	build\jcalg1\gen_2ed95c_2eddb0.bin
-		INCBIN	baserom.gba_0x2eddb0_0x2ede10.extracted
+		INCBIN	build\sprites\rec_2eddb0_2eddbc.bin
+		INCBIN	baserom.gba_0x2eddbc_0x2eddc8.extracted
+		INCBIN	build\sprites\rec_2eddc8_2eddd4.bin
+		INCBIN	baserom.gba_0x2eddd4_0x2edde0.extracted
+		INCBIN	build\sprites\rec_2edde0_2eddec.bin
+		INCBIN	baserom.gba_0x2eddec_0x2eddf8.extracted
+		INCBIN	build\sprites\rec_2eddf8_2ede04.bin
+		INCBIN	baserom.gba_0x2ede04_0x2ede10.extracted
 		INCBIN	build\jcalg1\gen_2ede10_2edefc.bin
 		INCBIN	baserom.gba_0x2edefc_0x2edff0.extracted
 		INCBIN	build\jcalg1\gen_2edff0_2ee1d0.bin
@@ -3876,17 +4752,34 @@
 		INCBIN	build\jcalg1\gen_2ee2a8_2ee454.bin
 		INCBIN	baserom.gba_0x2ee454_0x2ee534.extracted
 		INCBIN	build\jcalg1\gen_2ee534_2ee7a4.bin
-		INCBIN	baserom.gba_0x2ee7a4_0x2ee938.extracted
+		INCBIN	baserom.gba_0x2ee7a4_0x2ee878.extracted
+		INCBIN	build\sprites\rec_2ee878_2ee884.bin
+		INCBIN	baserom.gba_0x2ee884_0x2ee8a8.extracted
+		INCBIN	build\sprites\rec_2ee8a8_2ee8b4.bin
+		INCBIN	baserom.gba_0x2ee8b4_0x2ee8d8.extracted
+		INCBIN	build\sprites\rec_2ee8d8_2ee8e4.bin
+		INCBIN	baserom.gba_0x2ee8e4_0x2ee908.extracted
+		INCBIN	build\sprites\rec_2ee908_2ee914.bin
+		INCBIN	baserom.gba_0x2ee914_0x2ee938.extracted
 		INCBIN	build\jcalg1\gen_2ee938_2eec24.bin
 		INCBIN	baserom.gba_0x2eec24_0x2eeee8.extracted
 		INCBIN	build\jcalg1\gen_2eeee8_2eefc0.bin
 		INCBIN	baserom.gba_0x2eefc0_0x2ef258.extracted
 		INCBIN	build\jcalg1\gen_2ef258_2ef330.bin
-		INCBIN	baserom.gba_0x2ef330_0x2ef660.extracted
+		INCBIN	baserom.gba_0x2ef330_0x2ef4c4.extracted
+		INCBIN	build\sprites\rec_2ef4c4_2ef530.bin
+		INCBIN	baserom.gba_0x2ef530_0x2ef660.extracted
 		INCBIN	build\jcalg1\gen_2ef660_2ef768.bin
 		INCBIN	baserom.gba_0x2ef768_0x2ef870.extracted
 		INCBIN	build\jcalg1\gen_2ef870_2efb3c.bin
-		INCBIN	baserom.gba_0x2efb3c_0x2efb9c.extracted
+		INCBIN	build\sprites\rec_2efb3c_2efb48.bin
+		INCBIN	baserom.gba_0x2efb48_0x2efb54.extracted
+		INCBIN	build\sprites\rec_2efb54_2efb60.bin
+		INCBIN	baserom.gba_0x2efb60_0x2efb6c.extracted
+		INCBIN	build\sprites\rec_2efb6c_2efb78.bin
+		INCBIN	baserom.gba_0x2efb78_0x2efb84.extracted
+		INCBIN	build\sprites\rec_2efb84_2efb90.bin
+		INCBIN	baserom.gba_0x2efb90_0x2efb9c.extracted
 		INCBIN	build\jcalg1\gen_2efb9c_2efc98.bin
 		INCBIN	baserom.gba_0x2efc98_0x2effbc.extracted
 		INCBIN	build\jcalg1\gen_2effbc_2f00a8.bin
@@ -3894,11 +4787,27 @@
 		INCBIN	build\jcalg1\gen_2f01a4_2f0480.bin
 		INCBIN	baserom.gba_0x2f0480_0x2f066c.extracted
 		INCBIN	build\jcalg1\gen_2f066c_2f0750.bin
-		INCBIN	baserom.gba_0x2f0750_0x2f097c.extracted
+		INCBIN	build\sprites\rec_2f0750_2f075c.bin
+		INCBIN	baserom.gba_0x2f075c_0x2f0780.extracted
+		INCBIN	build\sprites\rec_2f0780_2f078c.bin
+		INCBIN	baserom.gba_0x2f078c_0x2f07b0.extracted
+		INCBIN	build\sprites\rec_2f07b0_2f07bc.bin
+		INCBIN	baserom.gba_0x2f07bc_0x2f07e0.extracted
+		INCBIN	build\sprites\rec_2f07e0_2f07ec.bin
+		INCBIN	baserom.gba_0x2f07ec_0x2f0810.extracted
+		INCBIN	build\sprites\rec_2f0810_2f087c.bin
+		INCBIN	baserom.gba_0x2f087c_0x2f097c.extracted
 		INCBIN	build\jcalg1\gen_2f097c_2f0b6c.bin
 		INCBIN	baserom.gba_0x2f0b6c_0x2f0c44.extracted
 		INCBIN	build\jcalg1\gen_2f0c44_2f0e10.bin
-		INCBIN	baserom.gba_0x2f0e10_0x2f0e70.extracted
+		INCBIN	build\sprites\rec_2f0e10_2f0e1c.bin
+		INCBIN	baserom.gba_0x2f0e1c_0x2f0e28.extracted
+		INCBIN	build\sprites\rec_2f0e28_2f0e34.bin
+		INCBIN	baserom.gba_0x2f0e34_0x2f0e40.extracted
+		INCBIN	build\sprites\rec_2f0e40_2f0e4c.bin
+		INCBIN	baserom.gba_0x2f0e4c_0x2f0e58.extracted
+		INCBIN	build\sprites\rec_2f0e58_2f0e64.bin
+		INCBIN	baserom.gba_0x2f0e64_0x2f0e70.extracted
 		INCBIN	build\jcalg1\gen_2f0e70_2f0f70.bin
 		INCBIN	baserom.gba_0x2f0f70_0x2f1278.extracted
 		INCBIN	build\jcalg1\gen_2f1278_2f134c.bin
@@ -3908,19 +4817,51 @@
 		INCBIN	build\jcalg1\gen_2f15dc_2f16d4.bin
 		INCBIN	baserom.gba_0x2f16d4_0x2f17c4.extracted
 		INCBIN	build\jcalg1\gen_2f17c4_2f18b4.bin
-		INCBIN	baserom.gba_0x2f18b4_0x2f1ad0.extracted
+		INCBIN	baserom.gba_0x2f18b4_0x2f19a4.extracted
+		INCBIN	build\sprites\rec_2f19a4_2f19b0.bin
+		INCBIN	baserom.gba_0x2f19b0_0x2f19d4.extracted
+		INCBIN	build\sprites\rec_2f19d4_2f19e0.bin
+		INCBIN	baserom.gba_0x2f19e0_0x2f1a04.extracted
+		INCBIN	build\sprites\rec_2f1a04_2f1a10.bin
+		INCBIN	baserom.gba_0x2f1a10_0x2f1a34.extracted
+		INCBIN	build\sprites\rec_2f1a34_2f1a40.bin
+		INCBIN	baserom.gba_0x2f1a40_0x2f1a64.extracted
+		INCBIN	build\sprites\rec_2f1a64_2f1ad0.bin
 		INCBIN	build\jcalg1\gen_2f1ad0_2f1bbc.bin
 		INCBIN	baserom.gba_0x2f1bbc_0x2f1d94.extracted
 		INCBIN	build\jcalg1\gen_2f1d94_2f1f5c.bin
-		INCBIN	baserom.gba_0x2f1f5c_0x2f1fbc.extracted
+		INCBIN	build\sprites\rec_2f1f5c_2f1f68.bin
+		INCBIN	baserom.gba_0x2f1f68_0x2f1f74.extracted
+		INCBIN	build\sprites\rec_2f1f74_2f1f80.bin
+		INCBIN	baserom.gba_0x2f1f80_0x2f1f8c.extracted
+		INCBIN	build\sprites\rec_2f1f8c_2f1f98.bin
+		INCBIN	baserom.gba_0x2f1f98_0x2f1fa4.extracted
+		INCBIN	build\sprites\rec_2f1fa4_2f1fb0.bin
+		INCBIN	baserom.gba_0x2f1fb0_0x2f1fbc.extracted
 		INCBIN	build\jcalg1\gen_2f1fbc_2f20a4.bin
 		INCBIN	baserom.gba_0x2f20a4_0x2f2190.extracted
 		INCBIN	build\jcalg1\gen_2f2190_2f2438.bin
 		INCBIN	baserom.gba_0x2f2438_0x2f26e0.extracted
 		INCBIN	build\jcalg1\gen_2f26e0_2f2a58.bin
-		INCBIN	baserom.gba_0x2f2a58_0x2f2b84.extracted
+		INCBIN	build\sprites\rec_2f2a58_2f2a64.bin
+		INCBIN	baserom.gba_0x2f2a64_0x2f2a88.extracted
+		INCBIN	build\sprites\rec_2f2a88_2f2a94.bin
+		INCBIN	baserom.gba_0x2f2a94_0x2f2ab8.extracted
+		INCBIN	build\sprites\rec_2f2ab8_2f2ac4.bin
+		INCBIN	baserom.gba_0x2f2ac4_0x2f2ae8.extracted
+		INCBIN	build\sprites\rec_2f2ae8_2f2af4.bin
+		INCBIN	baserom.gba_0x2f2af4_0x2f2b18.extracted
+		INCBIN	build\sprites\rec_2f2b18_2f2b84.bin
 		INCBIN	build\jcalg1\gen_2f2b84_2f2de0.bin
-		INCBIN	baserom.gba_0x2f2de0_0x2f2fac.extracted
+		INCBIN	baserom.gba_0x2f2de0_0x2f2f4c.extracted
+		INCBIN	build\sprites\rec_2f2f4c_2f2f58.bin
+		INCBIN	baserom.gba_0x2f2f58_0x2f2f64.extracted
+		INCBIN	build\sprites\rec_2f2f64_2f2f70.bin
+		INCBIN	baserom.gba_0x2f2f70_0x2f2f7c.extracted
+		INCBIN	build\sprites\rec_2f2f7c_2f2f88.bin
+		INCBIN	baserom.gba_0x2f2f88_0x2f2f94.extracted
+		INCBIN	build\sprites\rec_2f2f94_2f2fa0.bin
+		INCBIN	baserom.gba_0x2f2fa0_0x2f2fac.extracted
 		INCBIN	build\jcalg1\gen_2f2fac_2f3144.bin
 		INCBIN	baserom.gba_0x2f3144_0x2f321c.extracted
 		INCBIN	build\jcalg1\gen_2f321c_2f32e8.bin
@@ -3928,17 +4869,34 @@
 		INCBIN	build\jcalg1\gen_2f346c_2f3524.bin
 		INCBIN	baserom.gba_0x2f3524_0x2f369c.extracted
 		INCBIN	build\jcalg1\gen_2f369c_2f38b0.bin
-		INCBIN	baserom.gba_0x2f38b0_0x2f3970.extracted
+		INCBIN	build\sprites\rec_2f38b0_2f38bc.bin
+		INCBIN	baserom.gba_0x2f38bc_0x2f38e0.extracted
+		INCBIN	build\sprites\rec_2f38e0_2f38ec.bin
+		INCBIN	baserom.gba_0x2f38ec_0x2f3910.extracted
+		INCBIN	build\sprites\rec_2f3910_2f391c.bin
+		INCBIN	baserom.gba_0x2f391c_0x2f3940.extracted
+		INCBIN	build\sprites\rec_2f3940_2f394c.bin
+		INCBIN	baserom.gba_0x2f394c_0x2f3970.extracted
 		INCBIN	build\jcalg1\gen_2f3970_2f3a4c.bin
 		INCBIN	baserom.gba_0x2f3a4c_0x2f3cdc.extracted
 		INCBIN	build\jcalg1\gen_2f3cdc_2f3da4.bin
 		INCBIN	baserom.gba_0x2f3da4_0x2f4244.extracted
 		INCBIN	build\jcalg1\gen_2f4244_2f4304.bin
-		INCBIN	baserom.gba_0x2f4304_0x2f4460.extracted
+		INCBIN	baserom.gba_0x2f4304_0x2f43c4.extracted
+		INCBIN	build\sprites\rec_2f43c4_2f4430.bin
+		INCBIN	baserom.gba_0x2f4430_0x2f4460.extracted
 		INCBIN	build\jcalg1\gen_2f4460_2f45fc.bin
 		INCBIN	baserom.gba_0x2f45fc_0x2f4798.extracted
 		INCBIN	build\jcalg1\gen_2f4798_2f4910.bin
-		INCBIN	baserom.gba_0x2f4910_0x2f4c60.extracted
+		INCBIN	baserom.gba_0x2f4910_0x2f4c00.extracted
+		INCBIN	build\sprites\rec_2f4c00_2f4c0c.bin
+		INCBIN	baserom.gba_0x2f4c0c_0x2f4c18.extracted
+		INCBIN	build\sprites\rec_2f4c18_2f4c24.bin
+		INCBIN	baserom.gba_0x2f4c24_0x2f4c30.extracted
+		INCBIN	build\sprites\rec_2f4c30_2f4c3c.bin
+		INCBIN	baserom.gba_0x2f4c3c_0x2f4c48.extracted
+		INCBIN	build\sprites\rec_2f4c48_2f4c54.bin
+		INCBIN	baserom.gba_0x2f4c54_0x2f4c60.extracted
 		INCBIN	build\jcalg1\gen_2f4c60_2f4f70.bin
 		INCBIN	baserom.gba_0x2f4f70_0x2f50f4.extracted
 		INCBIN	build\jcalg1\gen_2f50f4_2f5280.bin
@@ -3946,7 +4904,14 @@
 		INCBIN	build\jcalg1\gen_2f56d0_2f5844.bin
 		INCBIN	baserom.gba_0x2f5844_0x2f59b4.extracted
 		INCBIN	build\jcalg1\gen_2f59b4_2f5e00.bin
-		INCBIN	baserom.gba_0x2f5e00_0x2f5ec0.extracted
+		INCBIN	build\sprites\rec_2f5e00_2f5e0c.bin
+		INCBIN	baserom.gba_0x2f5e0c_0x2f5e30.extracted
+		INCBIN	build\sprites\rec_2f5e30_2f5e3c.bin
+		INCBIN	baserom.gba_0x2f5e3c_0x2f5e60.extracted
+		INCBIN	build\sprites\rec_2f5e60_2f5e6c.bin
+		INCBIN	baserom.gba_0x2f5e6c_0x2f5e90.extracted
+		INCBIN	build\sprites\rec_2f5e90_2f5e9c.bin
+		INCBIN	baserom.gba_0x2f5e9c_0x2f5ec0.extracted
 		INCBIN	build\jcalg1\gen_2f5ec0_2f61c4.bin
 		INCBIN	baserom.gba_0x2f61c4_0x2f635c.extracted
 		INCBIN	build\jcalg1\gen_2f635c_2f64f8.bin
@@ -3970,19 +4935,43 @@
 		INCBIN	build\jcalg1\gen_2f8db0_2f9060.bin
 		INCBIN	baserom.gba_0x2f9060_0x2f91c4.extracted
 		INCBIN	build\jcalg1\gen_2f91c4_2f9324.bin
-		INCBIN	baserom.gba_0x2f9324_0x2f96b0.extracted
+		INCBIN	baserom.gba_0x2f9324_0x2f93e4.extracted
+		INCBIN	build\sprites\rec_2f93e4_2f9450.bin
+		INCBIN	baserom.gba_0x2f9450_0x2f96b0.extracted
 		INCBIN	build\jcalg1\gen_2f96b0_2f9b24.bin
-		INCBIN	baserom.gba_0x2f9b24_0x2f9b84.extracted
+		INCBIN	build\sprites\rec_2f9b24_2f9b30.bin
+		INCBIN	baserom.gba_0x2f9b30_0x2f9b3c.extracted
+		INCBIN	build\sprites\rec_2f9b3c_2f9b48.bin
+		INCBIN	baserom.gba_0x2f9b48_0x2f9b54.extracted
+		INCBIN	build\sprites\rec_2f9b54_2f9b60.bin
+		INCBIN	baserom.gba_0x2f9b60_0x2f9b6c.extracted
+		INCBIN	build\sprites\rec_2f9b6c_2f9b78.bin
+		INCBIN	baserom.gba_0x2f9b78_0x2f9b84.extracted
 		INCBIN	build\jcalg1\gen_2f9b84_2f9d64.bin
 		INCBIN	baserom.gba_0x2f9d64_0x2f9e58.extracted
 		INCBIN	build\jcalg1\gen_2f9e58_2f9f4c.bin
 		INCBIN	baserom.gba_0x2f9f4c_0x2fa02c.extracted
 		INCBIN	build\jcalg1\gen_2fa02c_2fa60c.bin
-		INCBIN	baserom.gba_0x2fa60c_0x2fa738.extracted
+		INCBIN	build\sprites\rec_2fa60c_2fa618.bin
+		INCBIN	baserom.gba_0x2fa618_0x2fa63c.extracted
+		INCBIN	build\sprites\rec_2fa63c_2fa648.bin
+		INCBIN	baserom.gba_0x2fa648_0x2fa66c.extracted
+		INCBIN	build\sprites\rec_2fa66c_2fa678.bin
+		INCBIN	baserom.gba_0x2fa678_0x2fa69c.extracted
+		INCBIN	build\sprites\rec_2fa69c_2fa6a8.bin
+		INCBIN	baserom.gba_0x2fa6a8_0x2fa6cc.extracted
+		INCBIN	build\sprites\rec_2fa6cc_2fa738.bin
 		INCBIN	build\jcalg1\gen_2fa738_2fa860.bin
 		INCBIN	baserom.gba_0x2fa860_0x2faab8.extracted
 		INCBIN	build\jcalg1\gen_2faab8_2facd0.bin
-		INCBIN	baserom.gba_0x2facd0_0x2fad30.extracted
+		INCBIN	build\sprites\rec_2facd0_2facdc.bin
+		INCBIN	baserom.gba_0x2facdc_0x2face8.extracted
+		INCBIN	build\sprites\rec_2face8_2facf4.bin
+		INCBIN	baserom.gba_0x2facf4_0x2fad00.extracted
+		INCBIN	build\sprites\rec_2fad00_2fad0c.bin
+		INCBIN	baserom.gba_0x2fad0c_0x2fad18.extracted
+		INCBIN	build\sprites\rec_2fad18_2fad24.bin
+		INCBIN	baserom.gba_0x2fad24_0x2fad30.extracted
 		INCBIN	build\jcalg1\gen_2fad30_2fae58.bin
 		INCBIN	baserom.gba_0x2fae58_0x2faf80.extracted
 		INCBIN	build\jcalg1\gen_2faf80_2fb1d4.bin
@@ -3990,11 +4979,26 @@
 		INCBIN	build\jcalg1\gen_2fb2f8_2fb778.bin
 		INCBIN	baserom.gba_0x2fb778_0x2fb880.extracted
 		INCBIN	build\jcalg1\gen_2fb880_2fba84.bin
-		INCBIN	baserom.gba_0x2fba84_0x2fbbb0.extracted
+		INCBIN	build\sprites\rec_2fba84_2fba90.bin
+		INCBIN	baserom.gba_0x2fba90_0x2fbab4.extracted
+		INCBIN	build\sprites\rec_2fbab4_2fbac0.bin
+		INCBIN	baserom.gba_0x2fbac0_0x2fbae4.extracted
+		INCBIN	build\sprites\rec_2fbae4_2fbaf0.bin
+		INCBIN	baserom.gba_0x2fbaf0_0x2fbb14.extracted
+		INCBIN	build\sprites\rec_2fbb14_2fbb20.bin
+		INCBIN	baserom.gba_0x2fbb20_0x2fbb44.extracted
+		INCBIN	build\sprites\rec_2fbb44_2fbbb0.bin
 		INCBIN	build\jcalg1\gen_2fbbb0_2fbeb8.bin
 		INCBIN	baserom.gba_0x2fbeb8_0x2fbfac.extracted
 		INCBIN	build\jcalg1\gen_2fbfac_2fc098.bin
-		INCBIN	baserom.gba_0x2fc098_0x2fc0f8.extracted
+		INCBIN	build\sprites\rec_2fc098_2fc0a4.bin
+		INCBIN	baserom.gba_0x2fc0a4_0x2fc0b0.extracted
+		INCBIN	build\sprites\rec_2fc0b0_2fc0bc.bin
+		INCBIN	baserom.gba_0x2fc0bc_0x2fc0c8.extracted
+		INCBIN	build\sprites\rec_2fc0c8_2fc0d4.bin
+		INCBIN	baserom.gba_0x2fc0d4_0x2fc0e0.extracted
+		INCBIN	build\sprites\rec_2fc0e0_2fc0ec.bin
+		INCBIN	baserom.gba_0x2fc0ec_0x2fc0f8.extracted
 		INCBIN	build\jcalg1\gen_2fc0f8_2fc52c.bin
 		INCBIN	baserom.gba_0x2fc52c_0x2fc620.extracted
 		INCBIN	build\jcalg1\gen_2fc620_2fc80c.bin
@@ -4002,17 +5006,40 @@
 		INCBIN	build\jcalg1\gen_2fc910_2fcae0.bin
 		INCBIN	baserom.gba_0x2fcae0_0x2fcbd4.extracted
 		INCBIN	build\jcalg1\gen_2fcbd4_2fccc4.bin
-		INCBIN	baserom.gba_0x2fccc4_0x2fcdf0.extracted
+		INCBIN	build\sprites\rec_2fccc4_2fccd0.bin
+		INCBIN	baserom.gba_0x2fccd0_0x2fccf4.extracted
+		INCBIN	build\sprites\rec_2fccf4_2fcd00.bin
+		INCBIN	baserom.gba_0x2fcd00_0x2fcd24.extracted
+		INCBIN	build\sprites\rec_2fcd24_2fcd30.bin
+		INCBIN	baserom.gba_0x2fcd30_0x2fcd54.extracted
+		INCBIN	build\sprites\rec_2fcd54_2fcd60.bin
+		INCBIN	baserom.gba_0x2fcd60_0x2fcd84.extracted
+		INCBIN	build\sprites\rec_2fcd84_2fcdf0.bin
 		INCBIN	build\jcalg1\gen_2fcdf0_2fcff8.bin
 		INCBIN	baserom.gba_0x2fcff8_0x2fd1e8.extracted
 		INCBIN	build\jcalg1\gen_2fd1e8_2fd2d8.bin
-		INCBIN	baserom.gba_0x2fd2d8_0x2fd338.extracted
+		INCBIN	build\sprites\rec_2fd2d8_2fd2e4.bin
+		INCBIN	baserom.gba_0x2fd2e4_0x2fd2f0.extracted
+		INCBIN	build\sprites\rec_2fd2f0_2fd2fc.bin
+		INCBIN	baserom.gba_0x2fd2fc_0x2fd308.extracted
+		INCBIN	build\sprites\rec_2fd308_2fd314.bin
+		INCBIN	baserom.gba_0x2fd314_0x2fd320.extracted
+		INCBIN	build\sprites\rec_2fd320_2fd32c.bin
+		INCBIN	baserom.gba_0x2fd32c_0x2fd338.extracted
 		INCBIN	build\jcalg1\gen_2fd338_2fd704.bin
 		INCBIN	baserom.gba_0x2fd704_0x2fd7f4.extracted
 		INCBIN	build\jcalg1\gen_2fd7f4_2fd8e0.bin
 		INCBIN	baserom.gba_0x2fd8e0_0x2fdab8.extracted
 		INCBIN	build\jcalg1\gen_2fdab8_2fdbac.bin
-		INCBIN	baserom.gba_0x2fdbac_0x2fdf44.extracted
+		INCBIN	baserom.gba_0x2fdbac_0x2fde84.extracted
+		INCBIN	build\sprites\rec_2fde84_2fde90.bin
+		INCBIN	baserom.gba_0x2fde90_0x2fdeb4.extracted
+		INCBIN	build\sprites\rec_2fdeb4_2fdec0.bin
+		INCBIN	baserom.gba_0x2fdec0_0x2fdee4.extracted
+		INCBIN	build\sprites\rec_2fdee4_2fdef0.bin
+		INCBIN	baserom.gba_0x2fdef0_0x2fdf14.extracted
+		INCBIN	build\sprites\rec_2fdf14_2fdf20.bin
+		INCBIN	baserom.gba_0x2fdf20_0x2fdf44.extracted
 		INCBIN	build\jcalg1\gen_2fdf44_2fe044.bin
 		INCBIN	baserom.gba_0x2fe044_0x2fe148.extracted
 		INCBIN	build\jcalg1\gen_2fe148_2fe33c.bin
@@ -4042,43 +5069,107 @@
 		INCBIN	build\jcalg1\gen_300dd8_300ed4.bin
 		INCBIN	baserom.gba_0x300ed4_0x3010e4.extracted
 		INCBIN	build\jcalg1\gen_3010e4_301408.bin
-		INCBIN	baserom.gba_0x301408_0x3017a4.extracted
+		INCBIN	baserom.gba_0x301408_0x3014c8.extracted
+		INCBIN	build\sprites\rec_3014c8_301534.bin
+		INCBIN	baserom.gba_0x301534_0x3017a4.extracted
 		INCBIN	build\jcalg1\gen_3017a4_30189c.bin
 		INCBIN	baserom.gba_0x30189c_0x301994.extracted
 		INCBIN	build\jcalg1\gen_301994_301c28.bin
-		INCBIN	baserom.gba_0x301c28_0x301c88.extracted
+		INCBIN	build\sprites\rec_301c28_301c34.bin
+		INCBIN	baserom.gba_0x301c34_0x301c40.extracted
+		INCBIN	build\sprites\rec_301c40_301c4c.bin
+		INCBIN	baserom.gba_0x301c4c_0x301c58.extracted
+		INCBIN	build\sprites\rec_301c58_301c64.bin
+		INCBIN	baserom.gba_0x301c64_0x301c70.extracted
+		INCBIN	build\sprites\rec_301c70_301c7c.bin
+		INCBIN	baserom.gba_0x301c7c_0x301c88.extracted
 		INCBIN	build\jcalg1\gen_301c88_301e84.bin
 		INCBIN	baserom.gba_0x301e84_0x301f78.extracted
 		INCBIN	build\jcalg1\gen_301f78_302070.bin
 		INCBIN	baserom.gba_0x302070_0x30215c.extracted
 		INCBIN	build\jcalg1\gen_30215c_3025d8.bin
-		INCBIN	baserom.gba_0x3025d8_0x3029cc.extracted
+		INCBIN	baserom.gba_0x3025d8_0x3027a0.extracted
+		INCBIN	build\sprites\rec_3027a0_3027ac.bin
+		INCBIN	baserom.gba_0x3027ac_0x3027d0.extracted
+		INCBIN	build\sprites\rec_3027d0_3027dc.bin
+		INCBIN	baserom.gba_0x3027dc_0x302800.extracted
+		INCBIN	build\sprites\rec_302800_30280c.bin
+		INCBIN	baserom.gba_0x30280c_0x302830.extracted
+		INCBIN	build\sprites\rec_302830_30283c.bin
+		INCBIN	baserom.gba_0x30283c_0x302860.extracted
+		INCBIN	build\sprites\rec_302860_3028cc.bin
+		INCBIN	baserom.gba_0x3028cc_0x3029cc.extracted
 		INCBIN	build\jcalg1\gen_3029cc_302eec.bin
-		INCBIN	baserom.gba_0x302eec_0x302f4c.extracted
+		INCBIN	build\sprites\rec_302eec_302ef8.bin
+		INCBIN	baserom.gba_0x302ef8_0x302f04.extracted
+		INCBIN	build\sprites\rec_302f04_302f10.bin
+		INCBIN	baserom.gba_0x302f10_0x302f1c.extracted
+		INCBIN	build\sprites\rec_302f1c_302f28.bin
+		INCBIN	baserom.gba_0x302f28_0x302f34.extracted
+		INCBIN	build\sprites\rec_302f34_302f40.bin
+		INCBIN	baserom.gba_0x302f40_0x302f4c.extracted
 		INCBIN	build\jcalg1\gen_302f4c_303180.bin
 		INCBIN	baserom.gba_0x303180_0x30329c.extracted
 		INCBIN	build\jcalg1\gen_30329c_3033b4.bin
 		INCBIN	baserom.gba_0x3033b4_0x3034ac.extracted
 		INCBIN	build\jcalg1\gen_3034ac_303b78.bin
-		INCBIN	baserom.gba_0x303b78_0x303ca4.extracted
+		INCBIN	build\sprites\rec_303b78_303b84.bin
+		INCBIN	baserom.gba_0x303b84_0x303ba8.extracted
+		INCBIN	build\sprites\rec_303ba8_303bb4.bin
+		INCBIN	baserom.gba_0x303bb4_0x303bd8.extracted
+		INCBIN	build\sprites\rec_303bd8_303be4.bin
+		INCBIN	baserom.gba_0x303be4_0x303c08.extracted
+		INCBIN	build\sprites\rec_303c08_303c14.bin
+		INCBIN	baserom.gba_0x303c14_0x303c38.extracted
+		INCBIN	build\sprites\rec_303c38_303ca4.bin
 		INCBIN	build\jcalg1\gen_303ca4_304058.bin
-		INCBIN	baserom.gba_0x304058_0x3040b8.extracted
+		INCBIN	build\sprites\rec_304058_304064.bin
+		INCBIN	baserom.gba_0x304064_0x304070.extracted
+		INCBIN	build\sprites\rec_304070_30407c.bin
+		INCBIN	baserom.gba_0x30407c_0x304088.extracted
+		INCBIN	build\sprites\rec_304088_304094.bin
+		INCBIN	baserom.gba_0x304094_0x3040a0.extracted
+		INCBIN	build\sprites\rec_3040a0_3040ac.bin
+		INCBIN	baserom.gba_0x3040ac_0x3040b8.extracted
 		INCBIN	build\jcalg1\gen_3040b8_304184.bin
 		INCBIN	baserom.gba_0x304184_0x304324.extracted
 		INCBIN	build\jcalg1\gen_304324_304620.bin
 		INCBIN	baserom.gba_0x304620_0x3046e0.extracted
 		INCBIN	build\jcalg1\gen_3046e0_304844.bin
-		INCBIN	baserom.gba_0x304844_0x304adc.extracted
+		INCBIN	baserom.gba_0x304844_0x3049b0.extracted
+		INCBIN	build\sprites\rec_3049b0_3049bc.bin
+		INCBIN	baserom.gba_0x3049bc_0x3049e0.extracted
+		INCBIN	build\sprites\rec_3049e0_3049ec.bin
+		INCBIN	baserom.gba_0x3049ec_0x304a10.extracted
+		INCBIN	build\sprites\rec_304a10_304a1c.bin
+		INCBIN	baserom.gba_0x304a1c_0x304a40.extracted
+		INCBIN	build\sprites\rec_304a40_304a4c.bin
+		INCBIN	baserom.gba_0x304a4c_0x304a70.extracted
+		INCBIN	build\sprites\rec_304a70_304adc.bin
 		INCBIN	build\jcalg1\gen_304adc_304c08.bin
 		INCBIN	baserom.gba_0x304c08_0x304d38.extracted
 		INCBIN	build\jcalg1\gen_304d38_305060.bin
-		INCBIN	baserom.gba_0x305060_0x3050c0.extracted
+		INCBIN	build\sprites\rec_305060_30506c.bin
+		INCBIN	baserom.gba_0x30506c_0x305078.extracted
+		INCBIN	build\sprites\rec_305078_305084.bin
+		INCBIN	baserom.gba_0x305084_0x305090.extracted
+		INCBIN	build\sprites\rec_305090_30509c.bin
+		INCBIN	baserom.gba_0x30509c_0x3050a8.extracted
+		INCBIN	build\sprites\rec_3050a8_3050b4.bin
+		INCBIN	baserom.gba_0x3050b4_0x3050c0.extracted
 		INCBIN	build\jcalg1\gen_3050c0_305890.bin
 		INCBIN	baserom.gba_0x305890_0x3059a4.extracted
 		INCBIN	build\jcalg1\gen_3059a4_305c58.bin
 		INCBIN	baserom.gba_0x305c58_0x305db0.extracted
 		INCBIN	build\jcalg1\gen_305db0_305efc.bin
-		INCBIN	baserom.gba_0x305efc_0x305fbc.extracted
+		INCBIN	build\sprites\rec_305efc_305f08.bin
+		INCBIN	baserom.gba_0x305f08_0x305f2c.extracted
+		INCBIN	build\sprites\rec_305f2c_305f38.bin
+		INCBIN	baserom.gba_0x305f38_0x305f5c.extracted
+		INCBIN	build\sprites\rec_305f5c_305f68.bin
+		INCBIN	baserom.gba_0x305f68_0x305f8c.extracted
+		INCBIN	build\sprites\rec_305f8c_305f98.bin
+		INCBIN	baserom.gba_0x305f98_0x305fbc.extracted
 		INCBIN	build\jcalg1\gen_305fbc_3060e4.bin
 		INCBIN	baserom.gba_0x3060e4_0x306338.extracted
 		INCBIN	build\jcalg1\gen_306338_306668.bin
@@ -4160,13 +5251,29 @@
 		INCBIN	build\jcalg1\gen_312208_31231c.bin
 		INCBIN	baserom.gba_0x31231c_0x3123dc.extracted
 		INCBIN	build\jcalg1\gen_3123dc_312504.bin
-		INCBIN	baserom.gba_0x312504_0x312804.extracted
+		INCBIN	baserom.gba_0x312504_0x312648.extracted
+		INCBIN	build\sprites\rec_312648_3126b4.bin
+		INCBIN	baserom.gba_0x3126b4_0x312804.extracted
 		INCBIN	build\jcalg1\gen_312804_312c80.bin
-		INCBIN	baserom.gba_0x312c80_0x312ce0.extracted
+		INCBIN	build\sprites\rec_312c80_312c8c.bin
+		INCBIN	baserom.gba_0x312c8c_0x312c98.extracted
+		INCBIN	build\sprites\rec_312c98_312ca4.bin
+		INCBIN	baserom.gba_0x312ca4_0x312cb0.extracted
+		INCBIN	build\sprites\rec_312cb0_312cbc.bin
+		INCBIN	baserom.gba_0x312cbc_0x312cc8.extracted
+		INCBIN	build\sprites\rec_312cc8_312cd4.bin
+		INCBIN	baserom.gba_0x312cd4_0x312ce0.extracted
 		INCBIN	build\jcalg1\gen_312ce0_313524.bin
 		INCBIN	baserom.gba_0x313524_0x3136f0.extracted
 		INCBIN	build\jcalg1\gen_3136f0_3137cc.bin
-		INCBIN	baserom.gba_0x3137cc_0x31388c.extracted
+		INCBIN	build\sprites\rec_3137cc_3137d8.bin
+		INCBIN	baserom.gba_0x3137d8_0x3137fc.extracted
+		INCBIN	build\sprites\rec_3137fc_313808.bin
+		INCBIN	baserom.gba_0x313808_0x31382c.extracted
+		INCBIN	build\sprites\rec_31382c_313838.bin
+		INCBIN	baserom.gba_0x313838_0x31385c.extracted
+		INCBIN	build\sprites\rec_31385c_313868.bin
+		INCBIN	baserom.gba_0x313868_0x31388c.extracted
 		INCBIN	build\jcalg1\gen_31388c_313fac.bin
 		INCBIN	baserom.gba_0x313fac_0x3142b0.extracted
 		INCBIN	build\jcalg1\gen_3142b0_3143bc.bin
@@ -4252,9 +5359,18 @@
 		INCBIN	build\jcalg1\gen_31ceac_31d0ac.bin
 		INCBIN	baserom.gba_0x31d0ac_0x31d394.extracted
 		INCBIN	build\jcalg1\gen_31d394_31d56c.bin
-		INCBIN	baserom.gba_0x31d56c_0x31da30.extracted
+		INCBIN	baserom.gba_0x31d56c_0x31d874.extracted
+		INCBIN	build\sprites\rec_31d874_31d8e0.bin
+		INCBIN	baserom.gba_0x31d8e0_0x31da30.extracted
 		INCBIN	build\jcalg1\gen_31da30_31eab8.bin
-		INCBIN	baserom.gba_0x31eab8_0x31eb18.extracted
+		INCBIN	build\sprites\rec_31eab8_31eac4.bin
+		INCBIN	baserom.gba_0x31eac4_0x31ead0.extracted
+		INCBIN	build\sprites\rec_31ead0_31eadc.bin
+		INCBIN	baserom.gba_0x31eadc_0x31eae8.extracted
+		INCBIN	build\sprites\rec_31eae8_31eaf4.bin
+		INCBIN	baserom.gba_0x31eaf4_0x31eb00.extracted
+		INCBIN	build\sprites\rec_31eb00_31eb0c.bin
+		INCBIN	baserom.gba_0x31eb0c_0x31eb18.extracted
 		INCBIN	build\jcalg1\gen_31eb18_31edf8.bin
 		INCBIN	baserom.gba_0x31edf8_0x31f3c0.extracted
 		INCBIN	build\jcalg1\gen_31f3c0_31f99c.bin
@@ -4264,7 +5380,14 @@
 		INCBIN	build\jcalg1\gen_3204dc_32076c.bin
 		INCBIN	baserom.gba_0x32076c_0x320a44.extracted
 		INCBIN	build\jcalg1\gen_320a44_320cd8.bin
-		INCBIN	baserom.gba_0x320cd8_0x320d98.extracted
+		INCBIN	build\sprites\rec_320cd8_320ce4.bin
+		INCBIN	baserom.gba_0x320ce4_0x320d08.extracted
+		INCBIN	build\sprites\rec_320d08_320d14.bin
+		INCBIN	baserom.gba_0x320d14_0x320d38.extracted
+		INCBIN	build\sprites\rec_320d38_320d44.bin
+		INCBIN	baserom.gba_0x320d44_0x320d68.extracted
+		INCBIN	build\sprites\rec_320d68_320d74.bin
+		INCBIN	baserom.gba_0x320d74_0x320d98.extracted
 		INCBIN	build\jcalg1\gen_320d98_321008.bin
 		INCBIN	baserom.gba_0x321008_0x321298.extracted
 		INCBIN	build\jcalg1\gen_321298_321510.bin
@@ -4272,7 +5395,15 @@
 		INCBIN	build\jcalg1\gen_321784_321a54.bin
 		INCBIN	baserom.gba_0x321a54_0x321cfc.extracted
 		INCBIN	build\jcalg1\gen_321cfc_322654.bin
-		INCBIN	baserom.gba_0x322654_0x322ae0.extracted
+		INCBIN	baserom.gba_0x322654_0x322a20.extracted
+		INCBIN	build\sprites\rec_322a20_322a2c.bin
+		INCBIN	baserom.gba_0x322a2c_0x322a50.extracted
+		INCBIN	build\sprites\rec_322a50_322a5c.bin
+		INCBIN	baserom.gba_0x322a5c_0x322a80.extracted
+		INCBIN	build\sprites\rec_322a80_322a8c.bin
+		INCBIN	baserom.gba_0x322a8c_0x322ab0.extracted
+		INCBIN	build\sprites\rec_322ab0_322abc.bin
+		INCBIN	baserom.gba_0x322abc_0x322ae0.extracted
 		INCBIN	build\jcalg1\gen_322ae0_322d48.bin
 		INCBIN	baserom.gba_0x322d48_0x323344.extracted
 		INCBIN	build\jcalg1\gen_323344_3238ac.bin
@@ -4280,11 +5411,20 @@
 		INCBIN	build\jcalg1\gen_323b68_3240e0.bin
 		INCBIN	baserom.gba_0x3240e0_0x32451c.extracted
 		INCBIN	build\jcalg1\gen_32451c_324988.bin
-		INCBIN	baserom.gba_0x324988_0x324c04.extracted
+		INCBIN	baserom.gba_0x324988_0x324a48.extracted
+		INCBIN	build\sprites\rec_324a48_324af4.bin
+		INCBIN	baserom.gba_0x324af4_0x324c04.extracted
 		INCBIN	build\jcalg1\gen_324c04_324d6c.bin
 		INCBIN	baserom.gba_0x324d6c_0x324ea8.extracted
 		INCBIN	build\jcalg1\gen_324ea8_324f4c.bin
-		INCBIN	baserom.gba_0x324f4c_0x324fac.extracted
+		INCBIN	build\sprites\rec_324f4c_324f58.bin
+		INCBIN	baserom.gba_0x324f58_0x324f64.extracted
+		INCBIN	build\sprites\rec_324f64_324f70.bin
+		INCBIN	baserom.gba_0x324f70_0x324f7c.extracted
+		INCBIN	build\sprites\rec_324f7c_324f88.bin
+		INCBIN	baserom.gba_0x324f88_0x324f94.extracted
+		INCBIN	build\sprites\rec_324f94_324fa0.bin
+		INCBIN	baserom.gba_0x324fa0_0x324fac.extracted
 		INCBIN	build\jcalg1\gen_324fac_3250e8.bin
 		INCBIN	baserom.gba_0x3250e8_0x3252b0.extracted
 		INCBIN	build\jcalg1\gen_3252b0_325338.bin
@@ -4292,9 +5432,25 @@
 		INCBIN	build\jcalg1\gen_3253c4_32544c.bin
 		INCBIN	baserom.gba_0x32544c_0x325610.extracted
 		INCBIN	build\jcalg1\gen_325610_3256a4.bin
-		INCBIN	baserom.gba_0x3256a4_0x3257d0.extracted
+		INCBIN	build\sprites\rec_3256a4_3256b0.bin
+		INCBIN	baserom.gba_0x3256b0_0x3256d4.extracted
+		INCBIN	build\sprites\rec_3256d4_3256e0.bin
+		INCBIN	baserom.gba_0x3256e0_0x325704.extracted
+		INCBIN	build\sprites\rec_325704_325710.bin
+		INCBIN	baserom.gba_0x325710_0x325734.extracted
+		INCBIN	build\sprites\rec_325734_325740.bin
+		INCBIN	baserom.gba_0x325740_0x325764.extracted
+		INCBIN	build\sprites\rec_325764_3257d0.bin
 		INCBIN	build\jcalg1\gen_3257d0_325c70.bin
-		INCBIN	baserom.gba_0x325c70_0x325e04.extracted
+		INCBIN	baserom.gba_0x325c70_0x325da4.extracted
+		INCBIN	build\sprites\rec_325da4_325db0.bin
+		INCBIN	baserom.gba_0x325db0_0x325dbc.extracted
+		INCBIN	build\sprites\rec_325dbc_325dc8.bin
+		INCBIN	baserom.gba_0x325dc8_0x325dd4.extracted
+		INCBIN	build\sprites\rec_325dd4_325de0.bin
+		INCBIN	baserom.gba_0x325de0_0x325dec.extracted
+		INCBIN	build\sprites\rec_325dec_325df8.bin
+		INCBIN	baserom.gba_0x325df8_0x325e04.extracted
 		INCBIN	build\jcalg1\gen_325e04_325fd4.bin
 		INCBIN	baserom.gba_0x325fd4_0x3260c4.extracted
 		INCBIN	build\jcalg1\gen_3260c4_3261bc.bin
@@ -4302,7 +5458,15 @@
 		INCBIN	build\jcalg1\gen_326290_3264f8.bin
 		INCBIN	baserom.gba_0x3264f8_0x32662c.extracted
 		INCBIN	build\jcalg1\gen_32662c_326884.bin
-		INCBIN	baserom.gba_0x326884_0x326a78.extracted
+		INCBIN	baserom.gba_0x326884_0x3269b8.extracted
+		INCBIN	build\sprites\rec_3269b8_3269c4.bin
+		INCBIN	baserom.gba_0x3269c4_0x3269e8.extracted
+		INCBIN	build\sprites\rec_3269e8_3269f4.bin
+		INCBIN	baserom.gba_0x3269f4_0x326a18.extracted
+		INCBIN	build\sprites\rec_326a18_326a24.bin
+		INCBIN	baserom.gba_0x326a24_0x326a48.extracted
+		INCBIN	build\sprites\rec_326a48_326a54.bin
+		INCBIN	baserom.gba_0x326a54_0x326a78.extracted
 		INCBIN	build\jcalg1\gen_326a78_326b64.bin
 		INCBIN	baserom.gba_0x326b64_0x326c5c.extracted
 		INCBIN	build\jcalg1\gen_326c5c_326d40.bin
@@ -4320,17 +5484,33 @@
 		INCBIN	build\jcalg1\gen_327c6c_327e04.bin
 		INCBIN	baserom.gba_0x327e04_0x328070.extracted
 		INCBIN	build\jcalg1\gen_328070_328194.bin
-		INCBIN	baserom.gba_0x328194_0x328638.extracted
+		INCBIN	baserom.gba_0x328194_0x32837c.extracted
+		INCBIN	build\sprites\rec_32837c_3283e8.bin
+		INCBIN	baserom.gba_0x3283e8_0x328638.extracted
 		INCBIN	build\jcalg1\gen_328638_32873c.bin
 		INCBIN	baserom.gba_0x32873c_0x328924.extracted
 		INCBIN	build\jcalg1\gen_328924_328ae4.bin
-		INCBIN	baserom.gba_0x328ae4_0x328b44.extracted
+		INCBIN	build\sprites\rec_328ae4_328af0.bin
+		INCBIN	baserom.gba_0x328af0_0x328afc.extracted
+		INCBIN	build\sprites\rec_328afc_328b08.bin
+		INCBIN	baserom.gba_0x328b08_0x328b14.extracted
+		INCBIN	build\sprites\rec_328b14_328b20.bin
+		INCBIN	baserom.gba_0x328b20_0x328b2c.extracted
+		INCBIN	build\sprites\rec_328b2c_328b38.bin
+		INCBIN	baserom.gba_0x328b38_0x328b44.extracted
 		INCBIN	build\jcalg1\gen_328b44_328e5c.bin
 		INCBIN	baserom.gba_0x328e5c_0x328f6c.extracted
 		INCBIN	build\jcalg1\gen_328f6c_3291f8.bin
 		INCBIN	baserom.gba_0x3291f8_0x3293bc.extracted
 		INCBIN	build\jcalg1\gen_3293bc_329684.bin
-		INCBIN	baserom.gba_0x329684_0x329744.extracted
+		INCBIN	build\sprites\rec_329684_329690.bin
+		INCBIN	baserom.gba_0x329690_0x3296b4.extracted
+		INCBIN	build\sprites\rec_3296b4_3296c0.bin
+		INCBIN	baserom.gba_0x3296c0_0x3296e4.extracted
+		INCBIN	build\sprites\rec_3296e4_3296f0.bin
+		INCBIN	baserom.gba_0x3296f0_0x329714.extracted
+		INCBIN	build\sprites\rec_329714_329720.bin
+		INCBIN	baserom.gba_0x329720_0x329744.extracted
 		INCBIN	build\jcalg1\gen_329744_329854.bin
 		INCBIN	baserom.gba_0x329854_0x32996c.extracted
 		INCBIN	build\jcalg1\gen_32996c_329c68.bin
@@ -4344,11 +5524,20 @@
 		INCBIN	build\jcalg1\gen_32a84c_32a958.bin
 		INCBIN	baserom.gba_0x32a958_0x32aa9c.extracted
 		INCBIN	build\jcalg1\gen_32aa9c_32aba8.bin
-		INCBIN	baserom.gba_0x32aba8_0x32ae90.extracted
+		INCBIN	baserom.gba_0x32aba8_0x32acd4.extracted
+		INCBIN	build\sprites\rec_32acd4_32ad40.bin
+		INCBIN	baserom.gba_0x32ad40_0x32ae90.extracted
 		INCBIN	build\jcalg1\gen_32ae90_32af94.bin
 		INCBIN	baserom.gba_0x32af94_0x32b094.extracted
 		INCBIN	build\jcalg1\gen_32b094_32b38c.bin
-		INCBIN	baserom.gba_0x32b38c_0x32b3ec.extracted
+		INCBIN	build\sprites\rec_32b38c_32b398.bin
+		INCBIN	baserom.gba_0x32b398_0x32b3a4.extracted
+		INCBIN	build\sprites\rec_32b3a4_32b3b0.bin
+		INCBIN	baserom.gba_0x32b3b0_0x32b3bc.extracted
+		INCBIN	build\sprites\rec_32b3bc_32b3c8.bin
+		INCBIN	baserom.gba_0x32b3c8_0x32b3d4.extracted
+		INCBIN	build\sprites\rec_32b3d4_32b3e0.bin
+		INCBIN	baserom.gba_0x32b3e0_0x32b3ec.extracted
 		INCBIN	build\jcalg1\gen_32b3ec_32b4e8.bin
 		INCBIN	baserom.gba_0x32b4e8_0x32b5dc.extracted
 		INCBIN	build\jcalg1\gen_32b5dc_32b7b8.bin
@@ -4356,7 +5545,14 @@
 		INCBIN	build\jcalg1\gen_32b894_32bc30.bin
 		INCBIN	baserom.gba_0x32bc30_0x32be54.extracted
 		INCBIN	build\jcalg1\gen_32be54_32bf64.bin
-		INCBIN	baserom.gba_0x32bf64_0x32c024.extracted
+		INCBIN	build\sprites\rec_32bf64_32bf70.bin
+		INCBIN	baserom.gba_0x32bf70_0x32bf94.extracted
+		INCBIN	build\sprites\rec_32bf94_32bfa0.bin
+		INCBIN	baserom.gba_0x32bfa0_0x32bfc4.extracted
+		INCBIN	build\sprites\rec_32bfc4_32bfd0.bin
+		INCBIN	baserom.gba_0x32bfd0_0x32bff4.extracted
+		INCBIN	build\sprites\rec_32bff4_32c000.bin
+		INCBIN	baserom.gba_0x32c000_0x32c024.extracted
 		INCBIN	build\jcalg1\gen_32c024_32c120.bin
 		INCBIN	baserom.gba_0x32c120_0x32c208.extracted
 		INCBIN	build\jcalg1\gen_32c208_32c2fc.bin
@@ -4374,11 +5570,21 @@
 		INCBIN	build\jcalg1\gen_32ce44_32cff4.bin
 		INCBIN	baserom.gba_0x32cff4_0x32d1c8.extracted
 		INCBIN	build\jcalg1\gen_32d1c8_32d6a0.bin
-		INCBIN	baserom.gba_0x32d6a0_0x32db2c.extracted
+		INCBIN	baserom.gba_0x32d6a0_0x32d870.extracted
+		INCBIN	build\sprites\rec_32d870_32d8dc.bin
+		INCBIN	baserom.gba_0x32d8dc_0x32db2c.extracted
 		INCBIN	build\jcalg1\gen_32db2c_32dbe4.bin
 		INCBIN	baserom.gba_0x32dbe4_0x32dd48.extracted
 		INCBIN	build\jcalg1\gen_32dd48_32de04.bin
-		INCBIN	baserom.gba_0x32de04_0x32df1c.extracted
+		INCBIN	baserom.gba_0x32de04_0x32debc.extracted
+		INCBIN	build\sprites\rec_32debc_32dec8.bin
+		INCBIN	baserom.gba_0x32dec8_0x32ded4.extracted
+		INCBIN	build\sprites\rec_32ded4_32dee0.bin
+		INCBIN	baserom.gba_0x32dee0_0x32deec.extracted
+		INCBIN	build\sprites\rec_32deec_32def8.bin
+		INCBIN	baserom.gba_0x32def8_0x32df04.extracted
+		INCBIN	build\sprites\rec_32df04_32df10.bin
+		INCBIN	baserom.gba_0x32df10_0x32df1c.extracted
 		INCBIN	build\jcalg1\gen_32df1c_32e050.bin
 		INCBIN	baserom.gba_0x32e050_0x32e0f8.extracted
 		INCBIN	build\jcalg1\gen_32e0f8_32e21c.bin
@@ -4388,7 +5594,14 @@
 		INCBIN	build\jcalg1\gen_32e480_32e54c.bin
 		INCBIN	baserom.gba_0x32e54c_0x32e644.extracted
 		INCBIN	build\jcalg1\gen_32e644_32e718.bin
-		INCBIN	baserom.gba_0x32e718_0x32e7d8.extracted
+		INCBIN	build\sprites\rec_32e718_32e724.bin
+		INCBIN	baserom.gba_0x32e724_0x32e748.extracted
+		INCBIN	build\sprites\rec_32e748_32e754.bin
+		INCBIN	baserom.gba_0x32e754_0x32e778.extracted
+		INCBIN	build\sprites\rec_32e778_32e784.bin
+		INCBIN	baserom.gba_0x32e784_0x32e7a8.extracted
+		INCBIN	build\sprites\rec_32e7a8_32e7b4.bin
+		INCBIN	baserom.gba_0x32e7b4_0x32e7d8.extracted
 		INCBIN	build\jcalg1\gen_32e7d8_32ee88.bin
 		INCBIN	baserom.gba_0x32ee88_0x32f1b0.extracted
 		INCBIN	build\jcalg1\gen_32f1b0_32f33c.bin
@@ -4396,11 +5609,20 @@
 		INCBIN	build\jcalg1\gen_32f484_32f70c.bin
 		INCBIN	baserom.gba_0x32f70c_0x32f7ec.extracted
 		INCBIN	build\jcalg1\gen_32f7ec_32f8e0.bin
-		INCBIN	baserom.gba_0x32f8e0_0x330010.extracted
+		INCBIN	baserom.gba_0x32f8e0_0x32fb54.extracted
+		INCBIN	build\sprites\rec_32fb54_32fbc0.bin
+		INCBIN	baserom.gba_0x32fbc0_0x330010.extracted
 		INCBIN	build\jcalg1\gen_330010_33005c.bin
 		INCBIN	baserom.gba_0x33005c_0x3300ac.extracted
 		INCBIN	build\jcalg1\gen_3300ac_330188.bin
-		INCBIN	baserom.gba_0x330188_0x3301e8.extracted
+		INCBIN	build\sprites\rec_330188_330194.bin
+		INCBIN	baserom.gba_0x330194_0x3301a0.extracted
+		INCBIN	build\sprites\rec_3301a0_3301ac.bin
+		INCBIN	baserom.gba_0x3301ac_0x3301b8.extracted
+		INCBIN	build\sprites\rec_3301b8_3301c4.bin
+		INCBIN	baserom.gba_0x3301c4_0x3301d0.extracted
+		INCBIN	build\sprites\rec_3301d0_3301dc.bin
+		INCBIN	baserom.gba_0x3301dc_0x3301e8.extracted
 		INCBIN	build\jcalg1\gen_3301e8_330224.bin
 		INCBIN	baserom.gba_0x330224_0x330298.extracted
 		INCBIN	build\jcalg1\gen_330298_330334.bin
@@ -4408,9 +5630,25 @@
 		INCBIN	build\jcalg1\gen_330370_33043c.bin
 		INCBIN	baserom.gba_0x33043c_0x330490.extracted
 		INCBIN	build\jcalg1\gen_330490_3304dc.bin
-		INCBIN	baserom.gba_0x3304dc_0x330608.extracted
+		INCBIN	build\sprites\rec_3304dc_3304e8.bin
+		INCBIN	baserom.gba_0x3304e8_0x33050c.extracted
+		INCBIN	build\sprites\rec_33050c_330518.bin
+		INCBIN	baserom.gba_0x330518_0x33053c.extracted
+		INCBIN	build\sprites\rec_33053c_330548.bin
+		INCBIN	baserom.gba_0x330548_0x33056c.extracted
+		INCBIN	build\sprites\rec_33056c_330578.bin
+		INCBIN	baserom.gba_0x330578_0x33059c.extracted
+		INCBIN	build\sprites\rec_33059c_330608.bin
 		INCBIN	build\jcalg1\gen_330608_330924.bin
-		INCBIN	baserom.gba_0x330924_0x330b48.extracted
+		INCBIN	baserom.gba_0x330924_0x330ae8.extracted
+		INCBIN	build\sprites\rec_330ae8_330af4.bin
+		INCBIN	baserom.gba_0x330af4_0x330b00.extracted
+		INCBIN	build\sprites\rec_330b00_330b0c.bin
+		INCBIN	baserom.gba_0x330b0c_0x330b18.extracted
+		INCBIN	build\sprites\rec_330b18_330b24.bin
+		INCBIN	baserom.gba_0x330b24_0x330b30.extracted
+		INCBIN	build\sprites\rec_330b30_330b3c.bin
+		INCBIN	baserom.gba_0x330b3c_0x330b48.extracted
 		INCBIN	build\jcalg1\gen_330b48_330c3c.bin
 		INCBIN	baserom.gba_0x330c3c_0x330d40.extracted
 		INCBIN	build\jcalg1\gen_330d40_330e34.bin
@@ -4420,7 +5658,14 @@
 		INCBIN	build\jcalg1\gen_3312fc_3313e8.bin
 		INCBIN	baserom.gba_0x3313e8_0x3314c8.extracted
 		INCBIN	build\jcalg1\gen_3314c8_331694.bin
-		INCBIN	baserom.gba_0x331694_0x331754.extracted
+		INCBIN	build\sprites\rec_331694_3316a0.bin
+		INCBIN	baserom.gba_0x3316a0_0x3316c4.extracted
+		INCBIN	build\sprites\rec_3316c4_3316d0.bin
+		INCBIN	baserom.gba_0x3316d0_0x3316f4.extracted
+		INCBIN	build\sprites\rec_3316f4_331700.bin
+		INCBIN	baserom.gba_0x331700_0x331724.extracted
+		INCBIN	build\sprites\rec_331724_331730.bin
+		INCBIN	baserom.gba_0x331730_0x331754.extracted
 		INCBIN	build\jcalg1\gen_331754_33191c.bin
 		INCBIN	baserom.gba_0x33191c_0x331a04.extracted
 		INCBIN	build\jcalg1\gen_331a04_331dcc.bin
@@ -4468,19 +5713,42 @@
 		INCBIN	build\jcalg1\gen_336144_33621c.bin
 		INCBIN	baserom.gba_0x33621c_0x3362f8.extracted
 		INCBIN	build\jcalg1\gen_3362f8_3363d4.bin
-		INCBIN	baserom.gba_0x3363d4_0x3365b0.extracted
+		INCBIN	baserom.gba_0x3363d4_0x336494.extracted
+		INCBIN	build\sprites\rec_336494_336500.bin
+		INCBIN	baserom.gba_0x336500_0x3365b0.extracted
 		INCBIN	build\jcalg1\gen_3365b0_336df0.bin
 		INCBIN	baserom.gba_0x336df0_0x33719c.extracted
 		INCBIN	build\jcalg1\gen_33719c_337900.bin
-		INCBIN	baserom.gba_0x337900_0x337960.extracted
+		INCBIN	build\sprites\rec_337900_33790c.bin
+		INCBIN	baserom.gba_0x33790c_0x337918.extracted
+		INCBIN	build\sprites\rec_337918_337924.bin
+		INCBIN	baserom.gba_0x337924_0x337930.extracted
+		INCBIN	build\sprites\rec_337930_33793c.bin
+		INCBIN	baserom.gba_0x33793c_0x337948.extracted
+		INCBIN	build\sprites\rec_337948_337954.bin
+		INCBIN	baserom.gba_0x337954_0x337960.extracted
 		INCBIN	build\jcalg1\gen_337960_338108.bin
 		INCBIN	baserom.gba_0x338108_0x3388cc.extracted
 		INCBIN	build\jcalg1\gen_3388cc_33a6b8.bin
-		INCBIN	baserom.gba_0x33a6b8_0x33a778.extracted
+		INCBIN	build\sprites\rec_33a6b8_33a6c4.bin
+		INCBIN	baserom.gba_0x33a6c4_0x33a6e8.extracted
+		INCBIN	build\sprites\rec_33a6e8_33a6f4.bin
+		INCBIN	baserom.gba_0x33a6f4_0x33a718.extracted
+		INCBIN	build\sprites\rec_33a718_33a724.bin
+		INCBIN	baserom.gba_0x33a724_0x33a748.extracted
+		INCBIN	build\sprites\rec_33a748_33a754.bin
+		INCBIN	baserom.gba_0x33a754_0x33a778.extracted
 		INCBIN	build\jcalg1\gen_33a778_33c674.bin
 		INCBIN	baserom.gba_0x33c674_0x33d1c0.extracted
 		INCBIN	build\jcalg1\gen_33d1c0_33d570.bin
-		INCBIN	baserom.gba_0x33d570_0x33d630.extracted
+		INCBIN	build\sprites\rec_33d570_33d57c.bin
+		INCBIN	baserom.gba_0x33d57c_0x33d5a0.extracted
+		INCBIN	build\sprites\rec_33d5a0_33d5ac.bin
+		INCBIN	baserom.gba_0x33d5ac_0x33d5d0.extracted
+		INCBIN	build\sprites\rec_33d5d0_33d5dc.bin
+		INCBIN	baserom.gba_0x33d5dc_0x33d600.extracted
+		INCBIN	build\sprites\rec_33d600_33d60c.bin
+		INCBIN	baserom.gba_0x33d60c_0x33d630.extracted
 		INCBIN	build\jcalg1\gen_33d630_33da48.bin
 		INCBIN	baserom.gba_0x33da48_0x33e218.extracted
 		INCBIN	build\jcalg1\gen_33e218_33e5c0.bin
@@ -4488,17 +5756,34 @@
 		INCBIN	build\jcalg1\gen_33e994_33ed88.bin
 		INCBIN	baserom.gba_0x33ed88_0x33f120.extracted
 		INCBIN	build\jcalg1\gen_33f120_33fc60.bin
-		INCBIN	baserom.gba_0x33fc60_0x340724.extracted
+		INCBIN	baserom.gba_0x33fc60_0x340468.extracted
+		INCBIN	build\sprites\rec_340468_3404f4.bin
+		INCBIN	baserom.gba_0x3404f4_0x340724.extracted
 		INCBIN	build\jcalg1\gen_340724_340b5c.bin
 		INCBIN	baserom.gba_0x340b5c_0x340cd0.extracted
 		INCBIN	build\jcalg1\gen_340cd0_340e3c.bin
-		INCBIN	baserom.gba_0x340e3c_0x340e9c.extracted
+		INCBIN	build\sprites\rec_340e3c_340e48.bin
+		INCBIN	baserom.gba_0x340e48_0x340e54.extracted
+		INCBIN	build\sprites\rec_340e54_340e60.bin
+		INCBIN	baserom.gba_0x340e60_0x340e6c.extracted
+		INCBIN	build\sprites\rec_340e6c_340e78.bin
+		INCBIN	baserom.gba_0x340e78_0x340e84.extracted
+		INCBIN	build\sprites\rec_340e84_340e90.bin
+		INCBIN	baserom.gba_0x340e90_0x340e9c.extracted
 		INCBIN	build\jcalg1\gen_340e9c_3414b8.bin
 		INCBIN	baserom.gba_0x3414b8_0x3416ec.extracted
 		INCBIN	build\jcalg1\gen_3416ec_341914.bin
 		INCBIN	baserom.gba_0x341914_0x341a64.extracted
 		INCBIN	build\jcalg1\gen_341a64_341d20.bin
-		INCBIN	baserom.gba_0x341d20_0x341f50.extracted
+		INCBIN	baserom.gba_0x341d20_0x341e90.extracted
+		INCBIN	build\sprites\rec_341e90_341e9c.bin
+		INCBIN	baserom.gba_0x341e9c_0x341ec0.extracted
+		INCBIN	build\sprites\rec_341ec0_341ecc.bin
+		INCBIN	baserom.gba_0x341ecc_0x341ef0.extracted
+		INCBIN	build\sprites\rec_341ef0_341efc.bin
+		INCBIN	baserom.gba_0x341efc_0x341f20.extracted
+		INCBIN	build\sprites\rec_341f20_341f2c.bin
+		INCBIN	baserom.gba_0x341f2c_0x341f50.extracted
 		INCBIN	build\jcalg1\gen_341f50_34224c.bin
 		INCBIN	baserom.gba_0x34224c_0x3423d0.extracted
 		INCBIN	build\jcalg1\gen_3423d0_342564.bin
@@ -4512,11 +5797,21 @@
 		INCBIN	build\jcalg1\gen_3436e0_343904.bin
 		INCBIN	baserom.gba_0x343904_0x343a18.extracted
 		INCBIN	build\jcalg1\gen_343a18_343b90.bin
-		INCBIN	baserom.gba_0x343b90_0x344158.extracted
+		INCBIN	baserom.gba_0x343b90_0x34409c.extracted
+		INCBIN	build\sprites\rec_34409c_344108.bin
+		INCBIN	baserom.gba_0x344108_0x344158.extracted
 		INCBIN	build\jcalg1\gen_344158_3445ac.bin
 		INCBIN	baserom.gba_0x3445ac_0x344a04.extracted
 		INCBIN	build\jcalg1\gen_344a04_344d54.bin
-		INCBIN	baserom.gba_0x344d54_0x3456bc.extracted
+		INCBIN	baserom.gba_0x344d54_0x34565c.extracted
+		INCBIN	build\sprites\rec_34565c_345668.bin
+		INCBIN	baserom.gba_0x345668_0x345674.extracted
+		INCBIN	build\sprites\rec_345674_345680.bin
+		INCBIN	baserom.gba_0x345680_0x34568c.extracted
+		INCBIN	build\sprites\rec_34568c_345698.bin
+		INCBIN	baserom.gba_0x345698_0x3456a4.extracted
+		INCBIN	build\sprites\rec_3456a4_3456b0.bin
+		INCBIN	baserom.gba_0x3456b0_0x3456bc.extracted
 		INCBIN	build\jcalg1\gen_3456bc_345af8.bin
 		INCBIN	baserom.gba_0x345af8_0x345f04.extracted
 		INCBIN	build\jcalg1\gen_345f04_346344.bin
@@ -4526,25 +5821,54 @@
 		INCBIN	build\jcalg1\gen_347478_347cb8.bin
 		INCBIN	baserom.gba_0x347cb8_0x348124.extracted
 		INCBIN	build\jcalg1\gen_348124_348578.bin
-		INCBIN	baserom.gba_0x348578_0x348638.extracted
+		INCBIN	build\sprites\rec_348578_348584.bin
+		INCBIN	baserom.gba_0x348584_0x3485a8.extracted
+		INCBIN	build\sprites\rec_3485a8_3485b4.bin
+		INCBIN	baserom.gba_0x3485b4_0x3485d8.extracted
+		INCBIN	build\sprites\rec_3485d8_3485e4.bin
+		INCBIN	baserom.gba_0x3485e4_0x348608.extracted
+		INCBIN	build\sprites\rec_348608_348614.bin
+		INCBIN	baserom.gba_0x348614_0x348638.extracted
 		INCBIN	build\jcalg1\gen_348638_3497a0.bin
 		INCBIN	baserom.gba_0x3497a0_0x349af8.extracted
 		INCBIN	build\jcalg1\gen_349af8_349e3c.bin
 		INCBIN	baserom.gba_0x349e3c_0x34adc8.extracted
 		INCBIN	build\jcalg1\gen_34adc8_34b6b8.bin
-		INCBIN	baserom.gba_0x34b6b8_0x34b778.extracted
+		INCBIN	build\sprites\rec_34b6b8_34b6c4.bin
+		INCBIN	baserom.gba_0x34b6c4_0x34b6e8.extracted
+		INCBIN	build\sprites\rec_34b6e8_34b6f4.bin
+		INCBIN	baserom.gba_0x34b6f4_0x34b718.extracted
+		INCBIN	build\sprites\rec_34b718_34b724.bin
+		INCBIN	baserom.gba_0x34b724_0x34b748.extracted
+		INCBIN	build\sprites\rec_34b748_34b754.bin
+		INCBIN	baserom.gba_0x34b754_0x34b778.extracted
 		INCBIN	build\jcalg1\gen_34b778_34bbfc.bin
 		INCBIN	baserom.gba_0x34bbfc_0x34c084.extracted
 		INCBIN	build\jcalg1\gen_34c084_34c500.bin
-		INCBIN	baserom.gba_0x34c500_0x34ca14.extracted
+		INCBIN	baserom.gba_0x34c500_0x34c984.extracted
+		INCBIN	build\sprites\rec_34c984_34c990.bin
+		INCBIN	baserom.gba_0x34c990_0x34c9b4.extracted
+		INCBIN	build\sprites\rec_34c9b4_34c9c0.bin
+		INCBIN	baserom.gba_0x34c9c0_0x34c9e4.extracted
+		INCBIN	build\sprites\rec_34c9e4_34c9f0.bin
+		INCBIN	baserom.gba_0x34c9f0_0x34ca14.extracted
 		INCBIN	build\jcalg1\gen_34ca14_34d5f4.bin
 		INCBIN	baserom.gba_0x34d5f4_0x34e3ec.extracted
 		INCBIN	build\jcalg1\gen_34e3ec_34e73c.bin
 		INCBIN	baserom.gba_0x34e73c_0x34eb4c.extracted
 		INCBIN	build\jcalg1\gen_34eb4c_34f874.bin
-		INCBIN	baserom.gba_0x34f874_0x34f9f0.extracted
+		INCBIN	baserom.gba_0x34f874_0x34f934.extracted
+		INCBIN	build\sprites\rec_34f934_34f9e0.bin
+		INCBIN	baserom.gba_0x34f9e0_0x34f9f0.extracted
 		INCBIN	build\jcalg1\gen_34f9f0_34ff3c.bin
-		INCBIN	baserom.gba_0x34ff3c_0x34ff9c.extracted
+		INCBIN	build\sprites\rec_34ff3c_34ff48.bin
+		INCBIN	baserom.gba_0x34ff48_0x34ff54.extracted
+		INCBIN	build\sprites\rec_34ff54_34ff60.bin
+		INCBIN	baserom.gba_0x34ff60_0x34ff6c.extracted
+		INCBIN	build\sprites\rec_34ff6c_34ff78.bin
+		INCBIN	baserom.gba_0x34ff78_0x34ff84.extracted
+		INCBIN	build\sprites\rec_34ff84_34ff90.bin
+		INCBIN	baserom.gba_0x34ff90_0x34ff9c.extracted
 		INCBIN	build\jcalg1\gen_34ff9c_3500a4.bin
 		INCBIN	baserom.gba_0x3500a4_0x3501c0.extracted
 		INCBIN	build\jcalg1\gen_3501c0_3502cc.bin
@@ -4554,7 +5878,14 @@
 		INCBIN	build\jcalg1\gen_350710_350a20.bin
 		INCBIN	baserom.gba_0x350a20_0x350b28.extracted
 		INCBIN	build\jcalg1\gen_350b28_350c20.bin
-		INCBIN	baserom.gba_0x350c20_0x350ce0.extracted
+		INCBIN	build\sprites\rec_350c20_350c2c.bin
+		INCBIN	baserom.gba_0x350c2c_0x350c50.extracted
+		INCBIN	build\sprites\rec_350c50_350c5c.bin
+		INCBIN	baserom.gba_0x350c5c_0x350c80.extracted
+		INCBIN	build\sprites\rec_350c80_350c8c.bin
+		INCBIN	baserom.gba_0x350c8c_0x350cb0.extracted
+		INCBIN	build\sprites\rec_350cb0_350cbc.bin
+		INCBIN	baserom.gba_0x350cbc_0x350ce0.extracted
 		INCBIN	build\jcalg1\gen_350ce0_351218.bin
 		INCBIN	baserom.gba_0x351218_0x351634.extracted
 		INCBIN	build\jcalg1\gen_351634_35192c.bin
@@ -4642,19 +5973,37 @@
 		INCBIN	build\jcalg1\gen_35b344_35b54c.bin
 		INCBIN	baserom.gba_0x35b54c_0x35b940.extracted
 		INCBIN	build\jcalg1\gen_35b940_35bb20.bin
-		INCBIN	baserom.gba_0x35bb20_0x35bd7c.extracted
+		INCBIN	baserom.gba_0x35bb20_0x35bbe0.extracted
+		INCBIN	build\sprites\rec_35bbe0_35bc4c.bin
+		INCBIN	baserom.gba_0x35bc4c_0x35bd7c.extracted
 		INCBIN	build\jcalg1\gen_35bd7c_35bf98.bin
 		INCBIN	baserom.gba_0x35bf98_0x35c090.extracted
 		INCBIN	build\jcalg1\gen_35c090_35c188.bin
-		INCBIN	baserom.gba_0x35c188_0x35c1d0.extracted
+		INCBIN	build\sprites\rec_35c188_35c194.bin
+		INCBIN	baserom.gba_0x35c194_0x35c1a0.extracted
+		INCBIN	build\sprites\rec_35c1a0_35c1ac.bin
+		INCBIN	baserom.gba_0x35c1ac_0x35c1b8.extracted
+		INCBIN	build\sprites\rec_35c1b8_35c1c4.bin
+		INCBIN	baserom.gba_0x35c1c4_0x35c1d0.extracted
 		INCBIN	build\jcalg1\gen_35c1d0_35c5e8.bin
-		INCBIN	baserom.gba_0x35c5e8_0x35c618.extracted
+		INCBIN	build\sprites\rec_35c5e8_35c5f4.bin
+		INCBIN	baserom.gba_0x35c5f4_0x35c618.extracted
 		INCBIN	build\jcalg1\gen_35c618_35ca1c.bin
-		INCBIN	baserom.gba_0x35ca1c_0x35cb48.extracted
+		INCBIN	baserom.gba_0x35ca1c_0x35caac.extracted
+		INCBIN	build\sprites\rec_35caac_35cb18.bin
+		INCBIN	baserom.gba_0x35cb18_0x35cb48.extracted
 		INCBIN	build\jcalg1\gen_35cb48_35cd3c.bin
 		INCBIN	baserom.gba_0x35cd3c_0x35ce30.extracted
 		INCBIN	build\jcalg1\gen_35ce30_35cf18.bin
-		INCBIN	baserom.gba_0x35cf18_0x35d068.extracted
+		INCBIN	baserom.gba_0x35cf18_0x35d008.extracted
+		INCBIN	build\sprites\rec_35d008_35d014.bin
+		INCBIN	baserom.gba_0x35d014_0x35d020.extracted
+		INCBIN	build\sprites\rec_35d020_35d02c.bin
+		INCBIN	baserom.gba_0x35d02c_0x35d038.extracted
+		INCBIN	build\sprites\rec_35d038_35d044.bin
+		INCBIN	baserom.gba_0x35d044_0x35d050.extracted
+		INCBIN	build\sprites\rec_35d050_35d05c.bin
+		INCBIN	baserom.gba_0x35d05c_0x35d068.extracted
 		INCBIN	build\jcalg1\gen_35d068_35d160.bin
 		INCBIN	baserom.gba_0x35d160_0x35d25c.extracted
 		INCBIN	build\jcalg1\gen_35d25c_35d360.bin
@@ -4662,7 +6011,14 @@
 		INCBIN	build\jcalg1\gen_35d54c_35d818.bin
 		INCBIN	baserom.gba_0x35d818_0x35dae4.extracted
 		INCBIN	build\jcalg1\gen_35dae4_35dbc8.bin
-		INCBIN	baserom.gba_0x35dbc8_0x35dc88.extracted
+		INCBIN	build\sprites\rec_35dbc8_35dbd4.bin
+		INCBIN	baserom.gba_0x35dbd4_0x35dbf8.extracted
+		INCBIN	build\sprites\rec_35dbf8_35dc04.bin
+		INCBIN	baserom.gba_0x35dc04_0x35dc28.extracted
+		INCBIN	build\sprites\rec_35dc28_35dc34.bin
+		INCBIN	baserom.gba_0x35dc34_0x35dc58.extracted
+		INCBIN	build\sprites\rec_35dc58_35dc64.bin
+		INCBIN	baserom.gba_0x35dc64_0x35dc88.extracted
 		INCBIN	build\jcalg1\gen_35dc88_35df50.bin
 		INCBIN	baserom.gba_0x35df50_0x35e044.extracted
 		INCBIN	build\jcalg1\gen_35e044_35e13c.bin
@@ -4746,17 +6102,34 @@
 		INCBIN	build\jcalg1\gen_367c0c_367eb8.bin
 		INCBIN	baserom.gba_0x367eb8_0x367f9c.extracted
 		INCBIN	build\jcalg1\gen_367f9c_36807c.bin
-		INCBIN	baserom.gba_0x36807c_0x3682d8.extracted
+		INCBIN	baserom.gba_0x36807c_0x36813c.extracted
+		INCBIN	build\sprites\rec_36813c_3681a8.bin
+		INCBIN	baserom.gba_0x3681a8_0x3682d8.extracted
 		INCBIN	build\jcalg1\gen_3682d8_368500.bin
 		INCBIN	baserom.gba_0x368500_0x368610.extracted
 		INCBIN	build\jcalg1\gen_368610_368704.bin
-		INCBIN	baserom.gba_0x368704_0x368860.extracted
+		INCBIN	baserom.gba_0x368704_0x368800.extracted
+		INCBIN	build\sprites\rec_368800_36880c.bin
+		INCBIN	baserom.gba_0x36880c_0x368818.extracted
+		INCBIN	build\sprites\rec_368818_368824.bin
+		INCBIN	baserom.gba_0x368824_0x368830.extracted
+		INCBIN	build\sprites\rec_368830_36883c.bin
+		INCBIN	baserom.gba_0x36883c_0x368848.extracted
+		INCBIN	build\sprites\rec_368848_368854.bin
+		INCBIN	baserom.gba_0x368854_0x368860.extracted
 		INCBIN	build\jcalg1\gen_368860_368a88.bin
 		INCBIN	baserom.gba_0x368a88_0x368ba8.extracted
 		INCBIN	build\jcalg1\gen_368ba8_368fd4.bin
 		INCBIN	baserom.gba_0x368fd4_0x3692d8.extracted
 		INCBIN	build\jcalg1\gen_3692d8_3694cc.bin
-		INCBIN	baserom.gba_0x3694cc_0x36958c.extracted
+		INCBIN	build\sprites\rec_3694cc_3694d8.bin
+		INCBIN	baserom.gba_0x3694d8_0x3694fc.extracted
+		INCBIN	build\sprites\rec_3694fc_369508.bin
+		INCBIN	baserom.gba_0x369508_0x36952c.extracted
+		INCBIN	build\sprites\rec_36952c_369538.bin
+		INCBIN	baserom.gba_0x369538_0x36955c.extracted
+		INCBIN	build\sprites\rec_36955c_369568.bin
+		INCBIN	baserom.gba_0x369568_0x36958c.extracted
 		INCBIN	build\jcalg1\gen_36958c_36989c.bin
 		INCBIN	baserom.gba_0x36989c_0x3699a8.extracted
 		INCBIN	build\jcalg1\gen_3699a8_36a07c.bin
@@ -4834,13 +6207,29 @@
 		INCBIN	build\jcalg1\gen_373478_373574.bin
 		INCBIN	baserom.gba_0x373574_0x373634.extracted
 		INCBIN	build\jcalg1\gen_373634_3739d8.bin
-		INCBIN	baserom.gba_0x3739d8_0x373cdc.extracted
+		INCBIN	baserom.gba_0x3739d8_0x373b30.extracted
+		INCBIN	build\sprites\rec_373b30_373b9c.bin
+		INCBIN	baserom.gba_0x373b9c_0x373cdc.extracted
 		INCBIN	build\jcalg1\gen_373cdc_37425c.bin
-		INCBIN	baserom.gba_0x37425c_0x3742bc.extracted
+		INCBIN	build\sprites\rec_37425c_374268.bin
+		INCBIN	baserom.gba_0x374268_0x374274.extracted
+		INCBIN	build\sprites\rec_374274_374280.bin
+		INCBIN	baserom.gba_0x374280_0x37428c.extracted
+		INCBIN	build\sprites\rec_37428c_374298.bin
+		INCBIN	baserom.gba_0x374298_0x3742a4.extracted
+		INCBIN	build\sprites\rec_3742a4_3742b0.bin
+		INCBIN	baserom.gba_0x3742b0_0x3742bc.extracted
 		INCBIN	build\jcalg1\gen_3742bc_374844.bin
 		INCBIN	baserom.gba_0x374844_0x37495c.extracted
 		INCBIN	build\jcalg1\gen_37495c_374f8c.bin
-		INCBIN	baserom.gba_0x374f8c_0x37504c.extracted
+		INCBIN	build\sprites\rec_374f8c_374f98.bin
+		INCBIN	baserom.gba_0x374f98_0x374fbc.extracted
+		INCBIN	build\sprites\rec_374fbc_374fc8.bin
+		INCBIN	baserom.gba_0x374fc8_0x374fec.extracted
+		INCBIN	build\sprites\rec_374fec_374ff8.bin
+		INCBIN	baserom.gba_0x374ff8_0x37501c.extracted
+		INCBIN	build\sprites\rec_37501c_375028.bin
+		INCBIN	baserom.gba_0x375028_0x37504c.extracted
 		INCBIN	build\jcalg1\gen_37504c_375284.bin
 		INCBIN	baserom.gba_0x375284_0x3757d4.extracted
 		INCBIN	build\jcalg1\gen_3757d4_3758dc.bin
@@ -4918,11 +6307,21 @@
 		INCBIN	build\jcalg1\gen_37f630_37f774.bin
 		INCBIN	baserom.gba_0x37f774_0x37f8b8.extracted
 		INCBIN	build\jcalg1\gen_37f8b8_37fb44.bin
-		INCBIN	baserom.gba_0x37fb44_0x37fd20.extracted
+		INCBIN	baserom.gba_0x37fb44_0x37fb74.extracted
+		INCBIN	build\sprites\rec_37fb74_37fbe0.bin
+		INCBIN	baserom.gba_0x37fbe0_0x37fd20.extracted
 		INCBIN	build\jcalg1\gen_37fd20_37ff48.bin
 		INCBIN	baserom.gba_0x37ff48_0x380040.extracted
 		INCBIN	build\jcalg1\gen_380040_380130.bin
-		INCBIN	baserom.gba_0x380130_0x380280.extracted
+		INCBIN	baserom.gba_0x380130_0x380220.extracted
+		INCBIN	build\sprites\rec_380220_38022c.bin
+		INCBIN	baserom.gba_0x38022c_0x380238.extracted
+		INCBIN	build\sprites\rec_380238_380244.bin
+		INCBIN	baserom.gba_0x380244_0x380250.extracted
+		INCBIN	build\sprites\rec_380250_38025c.bin
+		INCBIN	baserom.gba_0x38025c_0x380268.extracted
+		INCBIN	build\sprites\rec_380268_380274.bin
+		INCBIN	baserom.gba_0x380274_0x380280.extracted
 		INCBIN	build\jcalg1\gen_380280_380384.bin
 		INCBIN	baserom.gba_0x380384_0x380498.extracted
 		INCBIN	build\jcalg1\gen_380498_38059c.bin
@@ -4932,7 +6331,14 @@
 		INCBIN	build\jcalg1\gen_380b64_380c58.bin
 		INCBIN	baserom.gba_0x380c58_0x380d68.extracted
 		INCBIN	build\jcalg1\gen_380d68_380e5c.bin
-		INCBIN	baserom.gba_0x380e5c_0x380f1c.extracted
+		INCBIN	build\sprites\rec_380e5c_380e68.bin
+		INCBIN	baserom.gba_0x380e68_0x380e8c.extracted
+		INCBIN	build\sprites\rec_380e8c_380e98.bin
+		INCBIN	baserom.gba_0x380e98_0x380ebc.extracted
+		INCBIN	build\sprites\rec_380ebc_380ec8.bin
+		INCBIN	baserom.gba_0x380ec8_0x380eec.extracted
+		INCBIN	build\sprites\rec_380eec_380ef8.bin
+		INCBIN	baserom.gba_0x380ef8_0x380f1c.extracted
 		INCBIN	build\jcalg1\gen_380f1c_381214.bin
 		INCBIN	baserom.gba_0x381214_0x38131c.extracted
 		INCBIN	build\jcalg1\gen_38131c_3814fc.bin
@@ -4978,23 +6384,54 @@
 		INCBIN	build\jcalg1\gen_386518_3866dc.bin
 		INCBIN	baserom.gba_0x3866dc_0x3869cc.extracted
 		INCBIN	build\jcalg1\gen_3869cc_386ae4.bin
-		INCBIN	baserom.gba_0x386ae4_0x386efc.extracted
+		INCBIN	baserom.gba_0x386ae4_0x386dd0.extracted
+		INCBIN	build\sprites\rec_386dd0_386e3c.bin
+		INCBIN	baserom.gba_0x386e3c_0x386efc.extracted
 		INCBIN	build\jcalg1\gen_386efc_387250.bin
-		INCBIN	baserom.gba_0x387250_0x3872b0.extracted
+		INCBIN	build\sprites\rec_387250_38725c.bin
+		INCBIN	baserom.gba_0x38725c_0x387268.extracted
+		INCBIN	build\sprites\rec_387268_387274.bin
+		INCBIN	baserom.gba_0x387274_0x387280.extracted
+		INCBIN	build\sprites\rec_387280_38728c.bin
+		INCBIN	baserom.gba_0x38728c_0x387298.extracted
+		INCBIN	build\sprites\rec_387298_3872a4.bin
+		INCBIN	baserom.gba_0x3872a4_0x3872b0.extracted
 		INCBIN	build\jcalg1\gen_3872b0_3878fc.bin
 		INCBIN	baserom.gba_0x3878fc_0x3879bc.extracted
 		INCBIN	build\jcalg1\gen_3879bc_387a78.bin
-		INCBIN	baserom.gba_0x387a78_0x387ba4.extracted
+		INCBIN	build\sprites\rec_387a78_387a84.bin
+		INCBIN	baserom.gba_0x387a84_0x387aa8.extracted
+		INCBIN	build\sprites\rec_387aa8_387ab4.bin
+		INCBIN	baserom.gba_0x387ab4_0x387ad8.extracted
+		INCBIN	build\sprites\rec_387ad8_387ae4.bin
+		INCBIN	baserom.gba_0x387ae4_0x387b08.extracted
+		INCBIN	build\sprites\rec_387b08_387b14.bin
+		INCBIN	baserom.gba_0x387b14_0x387b38.extracted
+		INCBIN	build\sprites\rec_387b38_387ba4.bin
 		INCBIN	build\jcalg1\gen_387ba4_387c98.bin
 		INCBIN	baserom.gba_0x387c98_0x387e58.extracted
 		INCBIN	build\jcalg1\gen_387e58_388008.bin
-		INCBIN	baserom.gba_0x388008_0x388068.extracted
+		INCBIN	build\sprites\rec_388008_388014.bin
+		INCBIN	baserom.gba_0x388014_0x388020.extracted
+		INCBIN	build\sprites\rec_388020_38802c.bin
+		INCBIN	baserom.gba_0x38802c_0x388038.extracted
+		INCBIN	build\sprites\rec_388038_388044.bin
+		INCBIN	baserom.gba_0x388044_0x388050.extracted
+		INCBIN	build\sprites\rec_388050_38805c.bin
+		INCBIN	baserom.gba_0x38805c_0x388068.extracted
 		INCBIN	build\jcalg1\gen_388068_388338.bin
 		INCBIN	baserom.gba_0x388338_0x38842c.extracted
 		INCBIN	build\jcalg1\gen_38842c_388664.bin
 		INCBIN	baserom.gba_0x388664_0x388730.extracted
 		INCBIN	build\jcalg1\gen_388730_388ac0.bin
-		INCBIN	baserom.gba_0x388ac0_0x388b80.extracted
+		INCBIN	build\sprites\rec_388ac0_388acc.bin
+		INCBIN	baserom.gba_0x388acc_0x388af0.extracted
+		INCBIN	build\sprites\rec_388af0_388afc.bin
+		INCBIN	baserom.gba_0x388afc_0x388b20.extracted
+		INCBIN	build\sprites\rec_388b20_388b2c.bin
+		INCBIN	baserom.gba_0x388b2c_0x388b50.extracted
+		INCBIN	build\sprites\rec_388b50_388b5c.bin
+		INCBIN	baserom.gba_0x388b5c_0x388b80.extracted
 		INCBIN	build\jcalg1\gen_388b80_388e30.bin
 		INCBIN	baserom.gba_0x388e30_0x388f28.extracted
 		INCBIN	build\jcalg1\gen_388f28_388fe4.bin
@@ -5082,11 +6519,21 @@
 		INCBIN	build\jcalg1\gen_3915f8_391a98.bin
 		INCBIN	baserom.gba_0x391a98_0x391b58.extracted
 		INCBIN	build\jcalg1\gen_391b58_391c10.bin
-		INCBIN	baserom.gba_0x391c10_0x391e6c.extracted
+		INCBIN	baserom.gba_0x391c10_0x391cd0.extracted
+		INCBIN	build\sprites\rec_391cd0_391d3c.bin
+		INCBIN	baserom.gba_0x391d3c_0x391e6c.extracted
 		INCBIN	build\jcalg1\gen_391e6c_39209c.bin
 		INCBIN	baserom.gba_0x39209c_0x3921ac.extracted
 		INCBIN	build\jcalg1\gen_3921ac_3922a4.bin
-		INCBIN	baserom.gba_0x3922a4_0x392400.extracted
+		INCBIN	baserom.gba_0x3922a4_0x3923a0.extracted
+		INCBIN	build\sprites\rec_3923a0_3923ac.bin
+		INCBIN	baserom.gba_0x3923ac_0x3923b8.extracted
+		INCBIN	build\sprites\rec_3923b8_3923c4.bin
+		INCBIN	baserom.gba_0x3923c4_0x3923d0.extracted
+		INCBIN	build\sprites\rec_3923d0_3923dc.bin
+		INCBIN	baserom.gba_0x3923dc_0x3923e8.extracted
+		INCBIN	build\sprites\rec_3923e8_3923f4.bin
+		INCBIN	baserom.gba_0x3923f4_0x392400.extracted
 		INCBIN	build\jcalg1\gen_392400_392514.bin
 		INCBIN	baserom.gba_0x392514_0x392630.extracted
 		INCBIN	build\jcalg1\gen_392630_392854.bin
@@ -5094,7 +6541,14 @@
 		INCBIN	build\jcalg1\gen_39295c_392a68.bin
 		INCBIN	baserom.gba_0x392a68_0x392b64.extracted
 		INCBIN	build\jcalg1\gen_392b64_393088.bin
-		INCBIN	baserom.gba_0x393088_0x393148.extracted
+		INCBIN	build\sprites\rec_393088_393094.bin
+		INCBIN	baserom.gba_0x393094_0x3930b8.extracted
+		INCBIN	build\sprites\rec_3930b8_3930c4.bin
+		INCBIN	baserom.gba_0x3930c4_0x3930e8.extracted
+		INCBIN	build\sprites\rec_3930e8_3930f4.bin
+		INCBIN	baserom.gba_0x3930f4_0x393118.extracted
+		INCBIN	build\sprites\rec_393118_393124.bin
+		INCBIN	baserom.gba_0x393124_0x393148.extracted
 		INCBIN	build\jcalg1\gen_393148_39335c.bin
 		INCBIN	baserom.gba_0x39335c_0x393464.extracted
 		INCBIN	build\jcalg1\gen_393464_393878.bin
@@ -5178,9 +6632,18 @@
 		INCBIN	build\jcalg1\gen_39cad8_39cca8.bin
 		INCBIN	baserom.gba_0x39cca8_0x39ce54.extracted
 		INCBIN	build\jcalg1\gen_39ce54_39d1ac.bin
-		INCBIN	baserom.gba_0x39d1ac_0x39d4a0.extracted
+		INCBIN	baserom.gba_0x39d1ac_0x39d2f4.extracted
+		INCBIN	build\sprites\rec_39d2f4_39d360.bin
+		INCBIN	baserom.gba_0x39d360_0x39d4a0.extracted
 		INCBIN	build\jcalg1\gen_39d4a0_39d9e4.bin
-		INCBIN	baserom.gba_0x39d9e4_0x39da44.extracted
+		INCBIN	build\sprites\rec_39d9e4_39d9f0.bin
+		INCBIN	baserom.gba_0x39d9f0_0x39d9fc.extracted
+		INCBIN	build\sprites\rec_39d9fc_39da08.bin
+		INCBIN	baserom.gba_0x39da08_0x39da14.extracted
+		INCBIN	build\sprites\rec_39da14_39da20.bin
+		INCBIN	baserom.gba_0x39da20_0x39da2c.extracted
+		INCBIN	build\sprites\rec_39da2c_39da38.bin
+		INCBIN	baserom.gba_0x39da38_0x39da44.extracted
 		INCBIN	build\jcalg1\gen_39da44_39dc7c.bin
 		INCBIN	baserom.gba_0x39dc7c_0x39dd98.extracted
 		INCBIN	build\jcalg1\gen_39dd98_39dfa4.bin
@@ -5188,7 +6651,15 @@
 		INCBIN	build\jcalg1\gen_39e09c_39e18c.bin
 		INCBIN	baserom.gba_0x39e18c_0x39e498.extracted
 		INCBIN	build\jcalg1\gen_39e498_39e59c.bin
-		INCBIN	baserom.gba_0x39e59c_0x39e75c.extracted
+		INCBIN	baserom.gba_0x39e59c_0x39e69c.extracted
+		INCBIN	build\sprites\rec_39e69c_39e6a8.bin
+		INCBIN	baserom.gba_0x39e6a8_0x39e6cc.extracted
+		INCBIN	build\sprites\rec_39e6cc_39e6d8.bin
+		INCBIN	baserom.gba_0x39e6d8_0x39e6fc.extracted
+		INCBIN	build\sprites\rec_39e6fc_39e708.bin
+		INCBIN	baserom.gba_0x39e708_0x39e72c.extracted
+		INCBIN	build\sprites\rec_39e72c_39e738.bin
+		INCBIN	baserom.gba_0x39e738_0x39e75c.extracted
 		INCBIN	build\jcalg1\gen_39e75c_39edd4.bin
 		INCBIN	baserom.gba_0x39edd4_0x39efd0.extracted
 		INCBIN	build\jcalg1\gen_39efd0_39f0dc.bin
@@ -5196,9 +6667,18 @@
 		INCBIN	build\jcalg1\gen_39f4b0_39fb94.bin
 		INCBIN	baserom.gba_0x39fb94_0x39fc80.extracted
 		INCBIN	build\jcalg1\gen_39fc80_39fe8c.bin
-		INCBIN	baserom.gba_0x39fe8c_0x3a042c.extracted
+		INCBIN	baserom.gba_0x39fe8c_0x3a0170.extracted
+		INCBIN	build\sprites\rec_3a0170_3a01dc.bin
+		INCBIN	baserom.gba_0x3a01dc_0x3a042c.extracted
 		INCBIN	build\jcalg1\gen_3a042c_3a0958.bin
-		INCBIN	baserom.gba_0x3a0958_0x3a09b8.extracted
+		INCBIN	build\sprites\rec_3a0958_3a0964.bin
+		INCBIN	baserom.gba_0x3a0964_0x3a0970.extracted
+		INCBIN	build\sprites\rec_3a0970_3a097c.bin
+		INCBIN	baserom.gba_0x3a097c_0x3a0988.extracted
+		INCBIN	build\sprites\rec_3a0988_3a0994.bin
+		INCBIN	baserom.gba_0x3a0994_0x3a09a0.extracted
+		INCBIN	build\sprites\rec_3a09a0_3a09ac.bin
+		INCBIN	baserom.gba_0x3a09ac_0x3a09b8.extracted
 		INCBIN	build\jcalg1\gen_3a09b8_3a0ac0.bin
 		INCBIN	baserom.gba_0x3a0ac0_0x3a0cc4.extracted
 		INCBIN	build\jcalg1\gen_3a0cc4_3a104c.bin
@@ -5206,7 +6686,14 @@
 		INCBIN	build\jcalg1\gen_3a110c_3a1360.bin
 		INCBIN	baserom.gba_0x3a1360_0x3a14a0.extracted
 		INCBIN	build\jcalg1\gen_3a14a0_3a15cc.bin
-		INCBIN	baserom.gba_0x3a15cc_0x3a168c.extracted
+		INCBIN	build\sprites\rec_3a15cc_3a15d8.bin
+		INCBIN	baserom.gba_0x3a15d8_0x3a15fc.extracted
+		INCBIN	build\sprites\rec_3a15fc_3a1608.bin
+		INCBIN	baserom.gba_0x3a1608_0x3a162c.extracted
+		INCBIN	build\sprites\rec_3a162c_3a1638.bin
+		INCBIN	baserom.gba_0x3a1638_0x3a165c.extracted
+		INCBIN	build\sprites\rec_3a165c_3a1668.bin
+		INCBIN	baserom.gba_0x3a1668_0x3a168c.extracted
 		INCBIN	build\jcalg1\gen_3a168c_3a1980.bin
 		INCBIN	baserom.gba_0x3a1980_0x3a1b5c.extracted
 		INCBIN	build\jcalg1\gen_3a1b5c_3a1d30.bin
@@ -5222,15 +6709,32 @@
 		INCBIN	build\jcalg1\gen_3a2918_3a2ad0.bin
 		INCBIN	baserom.gba_0x3a2ad0_0x3a2c1c.extracted
 		INCBIN	build\jcalg1\gen_3a2c1c_3a2d40.bin
-		INCBIN	baserom.gba_0x3a2d40_0x3a322c.extracted
+		INCBIN	baserom.gba_0x3a2d40_0x3a3070.extracted
+		INCBIN	build\sprites\rec_3a3070_3a30dc.bin
+		INCBIN	baserom.gba_0x3a30dc_0x3a322c.extracted
 		INCBIN	build\jcalg1\gen_3a322c_3a35d0.bin
-		INCBIN	baserom.gba_0x3a35d0_0x3a376c.extracted
+		INCBIN	baserom.gba_0x3a35d0_0x3a370c.extracted
+		INCBIN	build\sprites\rec_3a370c_3a3718.bin
+		INCBIN	baserom.gba_0x3a3718_0x3a3724.extracted
+		INCBIN	build\sprites\rec_3a3724_3a3730.bin
+		INCBIN	baserom.gba_0x3a3730_0x3a373c.extracted
+		INCBIN	build\sprites\rec_3a373c_3a3748.bin
+		INCBIN	baserom.gba_0x3a3748_0x3a3754.extracted
+		INCBIN	build\sprites\rec_3a3754_3a3760.bin
+		INCBIN	baserom.gba_0x3a3760_0x3a376c.extracted
 		INCBIN	build\jcalg1\gen_3a376c_3a383c.bin
 		INCBIN	baserom.gba_0x3a383c_0x3a3ac0.extracted
 		INCBIN	build\jcalg1\gen_3a3ac0_3a3cfc.bin
 		INCBIN	baserom.gba_0x3a3cfc_0x3a3dbc.extracted
 		INCBIN	build\jcalg1\gen_3a3dbc_3a4288.bin
-		INCBIN	baserom.gba_0x3a4288_0x3a4348.extracted
+		INCBIN	build\sprites\rec_3a4288_3a4294.bin
+		INCBIN	baserom.gba_0x3a4294_0x3a42b8.extracted
+		INCBIN	build\sprites\rec_3a42b8_3a42c4.bin
+		INCBIN	baserom.gba_0x3a42c4_0x3a42e8.extracted
+		INCBIN	build\sprites\rec_3a42e8_3a42f4.bin
+		INCBIN	baserom.gba_0x3a42f4_0x3a4318.extracted
+		INCBIN	build\sprites\rec_3a4318_3a4324.bin
+		INCBIN	baserom.gba_0x3a4324_0x3a4348.extracted
 		INCBIN	build\jcalg1\gen_3a4348_3a44f0.bin
 		INCBIN	baserom.gba_0x3a44f0_0x3a45c0.extracted
 		INCBIN	build\jcalg1\gen_3a45c0_3a4ea8.bin
@@ -5238,11 +6742,20 @@
 		INCBIN	build\jcalg1\gen_3a4f68_3a5050.bin
 		INCBIN	baserom.gba_0x3a5050_0x3a51f8.extracted
 		INCBIN	build\jcalg1\gen_3a51f8_3a52c8.bin
-		INCBIN	baserom.gba_0x3a52c8_0x3a5f5c.extracted
+		INCBIN	baserom.gba_0x3a52c8_0x3a5ba0.extracted
+		INCBIN	build\sprites\rec_3a5ba0_3a5c0c.bin
+		INCBIN	baserom.gba_0x3a5c0c_0x3a5f5c.extracted
 		INCBIN	build\jcalg1\gen_3a5f5c_3a6050.bin
 		INCBIN	baserom.gba_0x3a6050_0x3a62fc.extracted
 		INCBIN	build\jcalg1\gen_3a62fc_3a63d8.bin
-		INCBIN	baserom.gba_0x3a63d8_0x3a6438.extracted
+		INCBIN	build\sprites\rec_3a63d8_3a63e4.bin
+		INCBIN	baserom.gba_0x3a63e4_0x3a63f0.extracted
+		INCBIN	build\sprites\rec_3a63f0_3a63fc.bin
+		INCBIN	baserom.gba_0x3a63fc_0x3a6408.extracted
+		INCBIN	build\sprites\rec_3a6408_3a6414.bin
+		INCBIN	baserom.gba_0x3a6414_0x3a6420.extracted
+		INCBIN	build\sprites\rec_3a6420_3a642c.bin
+		INCBIN	baserom.gba_0x3a642c_0x3a6438.extracted
 		INCBIN	build\jcalg1\gen_3a6438_3a6520.bin
 		INCBIN	baserom.gba_0x3a6520_0x3a6614.extracted
 		INCBIN	build\jcalg1\gen_3a6614_3a6a5c.bin
@@ -5250,17 +6763,34 @@
 		INCBIN	build\jcalg1\gen_3a6b34_3a6c08.bin
 		INCBIN	baserom.gba_0x3a6c08_0x3a6cec.extracted
 		INCBIN	build\jcalg1\gen_3a6cec_3a6dc4.bin
-		INCBIN	baserom.gba_0x3a6dc4_0x3a6f68.extracted
+		INCBIN	baserom.gba_0x3a6dc4_0x3a6ea8.extracted
+		INCBIN	build\sprites\rec_3a6ea8_3a6eb4.bin
+		INCBIN	baserom.gba_0x3a6eb4_0x3a6ed8.extracted
+		INCBIN	build\sprites\rec_3a6ed8_3a6ee4.bin
+		INCBIN	baserom.gba_0x3a6ee4_0x3a6f08.extracted
+		INCBIN	build\sprites\rec_3a6f08_3a6f14.bin
+		INCBIN	baserom.gba_0x3a6f14_0x3a6f38.extracted
+		INCBIN	build\sprites\rec_3a6f38_3a6f44.bin
+		INCBIN	baserom.gba_0x3a6f44_0x3a6f68.extracted
 		INCBIN	build\jcalg1\gen_3a6f68_3a7254.bin
 		INCBIN	baserom.gba_0x3a7254_0x3a75d8.extracted
 		INCBIN	build\jcalg1\gen_3a75d8_3a76a4.bin
 		INCBIN	baserom.gba_0x3a76a4_0x3a7790.extracted
 		INCBIN	build\jcalg1\gen_3a7790_3a7a44.bin
-		INCBIN	baserom.gba_0x3a7a44_0x3a7ca0.extracted
+		INCBIN	baserom.gba_0x3a7a44_0x3a7b04.extracted
+		INCBIN	build\sprites\rec_3a7b04_3a7b70.bin
+		INCBIN	baserom.gba_0x3a7b70_0x3a7ca0.extracted
 		INCBIN	build\jcalg1\gen_3a7ca0_3a7ea8.bin
 		INCBIN	baserom.gba_0x3a7ea8_0x3a7f94.extracted
 		INCBIN	build\jcalg1\gen_3a7f94_3a8144.bin
-		INCBIN	baserom.gba_0x3a8144_0x3a81a4.extracted
+		INCBIN	build\sprites\rec_3a8144_3a8150.bin
+		INCBIN	baserom.gba_0x3a8150_0x3a815c.extracted
+		INCBIN	build\sprites\rec_3a815c_3a8168.bin
+		INCBIN	baserom.gba_0x3a8168_0x3a8174.extracted
+		INCBIN	build\sprites\rec_3a8174_3a8180.bin
+		INCBIN	baserom.gba_0x3a8180_0x3a818c.extracted
+		INCBIN	build\sprites\rec_3a818c_3a8198.bin
+		INCBIN	baserom.gba_0x3a8198_0x3a81a4.extracted
 		INCBIN	build\jcalg1\gen_3a81a4_3a85d8.bin
 		INCBIN	baserom.gba_0x3a85d8_0x3a86c0.extracted
 		INCBIN	build\jcalg1\gen_3a86c0_3a87a0.bin
@@ -5268,17 +6798,33 @@
 		INCBIN	build\jcalg1\gen_3a8884_3a8964.bin
 		INCBIN	baserom.gba_0x3a8964_0x3a8c00.extracted
 		INCBIN	build\jcalg1\gen_3a8c00_3a8cdc.bin
-		INCBIN	baserom.gba_0x3a8cdc_0x3a8d9c.extracted
+		INCBIN	build\sprites\rec_3a8cdc_3a8ce8.bin
+		INCBIN	baserom.gba_0x3a8ce8_0x3a8d0c.extracted
+		INCBIN	build\sprites\rec_3a8d0c_3a8d18.bin
+		INCBIN	baserom.gba_0x3a8d18_0x3a8d3c.extracted
+		INCBIN	build\sprites\rec_3a8d3c_3a8d48.bin
+		INCBIN	baserom.gba_0x3a8d48_0x3a8d6c.extracted
+		INCBIN	build\sprites\rec_3a8d6c_3a8d78.bin
+		INCBIN	baserom.gba_0x3a8d78_0x3a8d9c.extracted
 		INCBIN	build\jcalg1\gen_3a8d9c_3a939c.bin
 		INCBIN	baserom.gba_0x3a939c_0x3a9550.extracted
 		INCBIN	build\jcalg1\gen_3a9550_3a9630.bin
 		INCBIN	baserom.gba_0x3a9630_0x3a9718.extracted
 		INCBIN	build\jcalg1\gen_3a9718_3a98dc.bin
-		INCBIN	baserom.gba_0x3a98dc_0x3a9b38.extracted
+		INCBIN	baserom.gba_0x3a98dc_0x3a999c.extracted
+		INCBIN	build\sprites\rec_3a999c_3a9a08.bin
+		INCBIN	baserom.gba_0x3a9a08_0x3a9b38.extracted
 		INCBIN	build\jcalg1\gen_3a9b38_3a9d34.bin
 		INCBIN	baserom.gba_0x3a9d34_0x3a9e04.extracted
 		INCBIN	build\jcalg1\gen_3a9e04_3a9fd4.bin
-		INCBIN	baserom.gba_0x3a9fd4_0x3aa034.extracted
+		INCBIN	build\sprites\rec_3a9fd4_3a9fe0.bin
+		INCBIN	baserom.gba_0x3a9fe0_0x3a9fec.extracted
+		INCBIN	build\sprites\rec_3a9fec_3a9ff8.bin
+		INCBIN	baserom.gba_0x3a9ff8_0x3aa004.extracted
+		INCBIN	build\sprites\rec_3aa004_3aa010.bin
+		INCBIN	baserom.gba_0x3aa010_0x3aa01c.extracted
+		INCBIN	build\sprites\rec_3aa01c_3aa028.bin
+		INCBIN	baserom.gba_0x3aa028_0x3aa034.extracted
 		INCBIN	build\jcalg1\gen_3aa034_3aa330.bin
 		INCBIN	baserom.gba_0x3aa330_0x3aa434.extracted
 		INCBIN	build\jcalg1\gen_3aa434_3aa4f0.bin
@@ -5286,19 +6832,51 @@
 		INCBIN	build\jcalg1\gen_3aa5c4_3aa68c.bin
 		INCBIN	baserom.gba_0x3aa68c_0x3aa758.extracted
 		INCBIN	build\jcalg1\gen_3aa758_3aaaf8.bin
-		INCBIN	baserom.gba_0x3aaaf8_0x3aac24.extracted
+		INCBIN	build\sprites\rec_3aaaf8_3aab04.bin
+		INCBIN	baserom.gba_0x3aab04_0x3aab28.extracted
+		INCBIN	build\sprites\rec_3aab28_3aab34.bin
+		INCBIN	baserom.gba_0x3aab34_0x3aab58.extracted
+		INCBIN	build\sprites\rec_3aab58_3aab64.bin
+		INCBIN	baserom.gba_0x3aab64_0x3aab88.extracted
+		INCBIN	build\sprites\rec_3aab88_3aab94.bin
+		INCBIN	baserom.gba_0x3aab94_0x3aabb8.extracted
+		INCBIN	build\sprites\rec_3aabb8_3aac24.bin
 		INCBIN	build\jcalg1\gen_3aac24_3aaf8c.bin
-		INCBIN	baserom.gba_0x3aaf8c_0x3ab0c0.extracted
+		INCBIN	baserom.gba_0x3aaf8c_0x3ab060.extracted
+		INCBIN	build\sprites\rec_3ab060_3ab06c.bin
+		INCBIN	baserom.gba_0x3ab06c_0x3ab078.extracted
+		INCBIN	build\sprites\rec_3ab078_3ab084.bin
+		INCBIN	baserom.gba_0x3ab084_0x3ab090.extracted
+		INCBIN	build\sprites\rec_3ab090_3ab09c.bin
+		INCBIN	baserom.gba_0x3ab09c_0x3ab0a8.extracted
+		INCBIN	build\sprites\rec_3ab0a8_3ab0b4.bin
+		INCBIN	baserom.gba_0x3ab0b4_0x3ab0c0.extracted
 		INCBIN	build\jcalg1\gen_3ab0c0_3ab37c.bin
 		INCBIN	baserom.gba_0x3ab37c_0x3ab46c.extracted
 		INCBIN	build\jcalg1\gen_3ab46c_3ab69c.bin
 		INCBIN	baserom.gba_0x3ab69c_0x3ab764.extracted
 		INCBIN	build\jcalg1\gen_3ab764_3aba8c.bin
-		INCBIN	baserom.gba_0x3aba8c_0x3abbb8.extracted
+		INCBIN	build\sprites\rec_3aba8c_3aba98.bin
+		INCBIN	baserom.gba_0x3aba98_0x3ababc.extracted
+		INCBIN	build\sprites\rec_3ababc_3abac8.bin
+		INCBIN	baserom.gba_0x3abac8_0x3abaec.extracted
+		INCBIN	build\sprites\rec_3abaec_3abaf8.bin
+		INCBIN	baserom.gba_0x3abaf8_0x3abb1c.extracted
+		INCBIN	build\sprites\rec_3abb1c_3abb28.bin
+		INCBIN	baserom.gba_0x3abb28_0x3abb4c.extracted
+		INCBIN	build\sprites\rec_3abb4c_3abbb8.bin
 		INCBIN	build\jcalg1\gen_3abbb8_3abdc8.bin
 		INCBIN	baserom.gba_0x3abdc8_0x3abeb8.extracted
 		INCBIN	build\jcalg1\gen_3abeb8_3abf98.bin
-		INCBIN	baserom.gba_0x3abf98_0x3ac0dc.extracted
+		INCBIN	baserom.gba_0x3abf98_0x3ac07c.extracted
+		INCBIN	build\sprites\rec_3ac07c_3ac088.bin
+		INCBIN	baserom.gba_0x3ac088_0x3ac094.extracted
+		INCBIN	build\sprites\rec_3ac094_3ac0a0.bin
+		INCBIN	baserom.gba_0x3ac0a0_0x3ac0ac.extracted
+		INCBIN	build\sprites\rec_3ac0ac_3ac0b8.bin
+		INCBIN	baserom.gba_0x3ac0b8_0x3ac0c4.extracted
+		INCBIN	build\sprites\rec_3ac0c4_3ac0d0.bin
+		INCBIN	baserom.gba_0x3ac0d0_0x3ac0dc.extracted
 		INCBIN	build\jcalg1\gen_3ac0dc_3ac1d8.bin
 		INCBIN	baserom.gba_0x3ac1d8_0x3ac4dc.extracted
 		INCBIN	build\jcalg1\gen_3ac4dc_3ac76c.bin
@@ -5306,7 +6884,14 @@
 		INCBIN	build\jcalg1\gen_3ac854_3ac948.bin
 		INCBIN	baserom.gba_0x3ac948_0x3aca28.extracted
 		INCBIN	build\jcalg1\gen_3aca28_3acbe8.bin
-		INCBIN	baserom.gba_0x3acbe8_0x3acca8.extracted
+		INCBIN	build\sprites\rec_3acbe8_3acbf4.bin
+		INCBIN	baserom.gba_0x3acbf4_0x3acc18.extracted
+		INCBIN	build\sprites\rec_3acc18_3acc24.bin
+		INCBIN	baserom.gba_0x3acc24_0x3acc48.extracted
+		INCBIN	build\sprites\rec_3acc48_3acc54.bin
+		INCBIN	baserom.gba_0x3acc54_0x3acc78.extracted
+		INCBIN	build\sprites\rec_3acc78_3acc84.bin
+		INCBIN	baserom.gba_0x3acc84_0x3acca8.extracted
 		INCBIN	build\jcalg1\gen_3acca8_3ace98.bin
 		INCBIN	baserom.gba_0x3ace98_0x3acf78.extracted
 		INCBIN	build\jcalg1\gen_3acf78_3ad2e0.bin
@@ -5356,7 +6941,107 @@
 		INCBIN	build\jcalg1\gen_3b1998_3b1a8c.bin
 		INCBIN	baserom.gba_0x3b1a8c_0x3b1b4c.extracted
 		INCBIN	build\jcalg1\gen_3b1b4c_3b23bc.bin
-		INCBIN	baserom.gba_0x3b23bc_0x3ec86c.extracted
+		INCBIN	baserom.gba_0x3b23bc_0x3b247c.extracted
+		INCBIN	build\sprites\rec_3b247c_3b24e8.bin
+		INCBIN	baserom.gba_0x3b24e8_0x3b2598.extracted
+		INCBIN	build\sprites\rec_3b2598_3b2604.bin
+		INCBIN	baserom.gba_0x3b2604_0x3b2674.extracted
+		INCBIN	build\sprites\rec_3b2674_3b26e0.bin
+		INCBIN	baserom.gba_0x3b26e0_0x3b2750.extracted
+		INCBIN	build\sprites\rec_3b2750_3b27bc.bin
+		INCBIN	baserom.gba_0x3b27bc_0x3b27ec.extracted
+		INCBIN	build\sprites\rec_3b27ec_3b2878.bin
+		INCBIN	baserom.gba_0x3b2878_0x3b28b8.extracted
+		INCBIN	build\sprites\rec_3b28b8_3b2944.bin
+		INCBIN	baserom.gba_0x3b2944_0x3b2984.extracted
+		INCBIN	build\sprites\rec_3b2984_3b29f0.bin
+		INCBIN	baserom.gba_0x3b29f0_0x3b2a50.extracted
+		INCBIN	build\sprites\rec_3b2a50_3b2abc.bin
+		INCBIN	baserom.gba_0x3b2abc_0x3b2b1c.extracted
+		INCBIN	build\sprites\rec_3b2b1c_3b2b88.bin
+		INCBIN	baserom.gba_0x3b2b88_0x3b2be8.extracted
+		INCBIN	build\sprites\rec_3b2be8_3b2c54.bin
+		INCBIN	baserom.gba_0x3b2c54_0x3b2d34.extracted
+		INCBIN	build\sprites\rec_3b2d34_3b2da0.bin
+		INCBIN	baserom.gba_0x3b2da0_0x3b2df0.extracted
+		INCBIN	build\sprites\rec_3b2df0_3b2e5c.bin
+		INCBIN	baserom.gba_0x3b2e5c_0x3b2eac.extracted
+		INCBIN	build\sprites\rec_3b2eac_3b2f18.bin
+		INCBIN	baserom.gba_0x3b2f18_0x3b2f28.extracted
+		INCBIN	build\sprites\rec_3b2f28_3b2f94.bin
+		INCBIN	baserom.gba_0x3b2f94_0x3b2fa4.extracted
+		INCBIN	build\sprites\rec_3b2fa4_3b3010.bin
+		INCBIN	baserom.gba_0x3b3010_0x3b3020.extracted
+		INCBIN	build\sprites\rec_3b3020_3b308c.bin
+		INCBIN	baserom.gba_0x3b308c_0x3b309c.extracted
+		INCBIN	build\sprites\rec_3b309c_3b3108.bin
+		INCBIN	baserom.gba_0x3b3108_0x3b3218.extracted
+		INCBIN	build\sprites\rec_3b3218_3b3284.bin
+		INCBIN	baserom.gba_0x3b3284_0x3b3394.extracted
+		INCBIN	build\sprites\rec_3b3394_3b3400.bin
+		INCBIN	baserom.gba_0x3b3400_0x3b3430.extracted
+		INCBIN	build\sprites\rec_3b3430_3b349c.bin
+		INCBIN	baserom.gba_0x3b349c_0x3b34cc.extracted
+		INCBIN	build\sprites\rec_3b34cc_3b3538.bin
+		INCBIN	baserom.gba_0x3b3538_0x3b3568.extracted
+		INCBIN	build\sprites\rec_3b3568_3b3640.bin
+		INCBIN	baserom.gba_0x3b3640_0x3b36a0.extracted
+		INCBIN	build\sprites\rec_3b36a0_3b370c.bin
+		INCBIN	baserom.gba_0x3b370c_0x3b376c.extracted
+		INCBIN	build\sprites\rec_3b376c_3b37d8.bin
+		INCBIN	baserom.gba_0x3b37d8_0x3b3848.extracted
+		INCBIN	build\sprites\rec_3b3848_3b38b4.bin
+		INCBIN	baserom.gba_0x3b38b4_0x3b3924.extracted
+		INCBIN	build\sprites\rec_3b3924_3b3a3c.bin
+		INCBIN	baserom.gba_0x3b3a3c_0x3b3a4c.extracted
+		INCBIN	build\sprites\rec_3b3a4c_3b3ab8.bin
+		INCBIN	baserom.gba_0x3b3ab8_0x3b3b08.extracted
+		INCBIN	build\sprites\rec_3b3b08_3b3b74.bin
+		INCBIN	baserom.gba_0x3b3b74_0x3b3bc4.extracted
+		INCBIN	build\sprites\rec_3b3bc4_3b3c30.bin
+		INCBIN	baserom.gba_0x3b3c30_0x3b3c80.extracted
+		INCBIN	build\sprites\rec_3b3c80_3b3cec.bin
+		INCBIN	baserom.gba_0x3b3cec_0x3b3d3c.extracted
+		INCBIN	build\sprites\rec_3b3d3c_3b3da8.bin
+		INCBIN	baserom.gba_0x3b3da8_0x3b3df8.extracted
+		INCBIN	build\sprites\rec_3b3df8_3b3e64.bin
+		INCBIN	baserom.gba_0x3b3e64_0x3b3eb4.extracted
+		INCBIN	build\sprites\rec_3b3eb4_3b3f20.bin
+		INCBIN	baserom.gba_0x3b3f20_0x3b3f70.extracted
+		INCBIN	build\sprites\rec_3b3f70_3b3fdc.bin
+		INCBIN	baserom.gba_0x3b3fdc_0x3b402c.extracted
+		INCBIN	build\sprites\rec_3b402c_3b40b8.bin
+		INCBIN	baserom.gba_0x3b40b8_0x3b40e8.extracted
+		INCBIN	build\sprites\rec_3b40e8_3b4174.bin
+		INCBIN	baserom.gba_0x3b4174_0x3b41a4.extracted
+		INCBIN	build\sprites\rec_3b41a4_3b4210.bin
+		INCBIN	baserom.gba_0x3b4210_0x3b4260.extracted
+		INCBIN	build\sprites\rec_3b4260_3b42cc.bin
+		INCBIN	baserom.gba_0x3b42cc_0x3b43fc.extracted
+		INCBIN	build\sprites\rec_3b43fc_3b4468.bin
+		INCBIN	baserom.gba_0x3b4468_0x3b45a8.extracted
+		INCBIN	build\sprites\rec_3b45a8_3b4614.bin
+		INCBIN	baserom.gba_0x3b4614_0x3b4744.extracted
+		INCBIN	build\sprites\rec_3b4744_3b47b0.bin
+		INCBIN	baserom.gba_0x3b47b0_0x3b48f0.extracted
+		INCBIN	build\sprites\rec_3b48f0_3b495c.bin
+		INCBIN	baserom.gba_0x3b495c_0x3b49ac.extracted
+		INCBIN	build\sprites\rec_3b49ac_3b4a18.bin
+		INCBIN	baserom.gba_0x3b4a18_0x3b4a68.extracted
+		INCBIN	build\sprites\rec_3b4a68_3b4ad4.bin
+		INCBIN	baserom.gba_0x3b4ad4_0x3b4b24.extracted
+		INCBIN	build\sprites\rec_3b4b24_3b4b90.bin
+		INCBIN	baserom.gba_0x3b4b90_0x3b4be0.extracted
+		INCBIN	build\sprites\rec_3b4be0_3b4c4c.bin
+		INCBIN	baserom.gba_0x3b4c4c_0x3b4c9c.extracted
+		INCBIN	build\sprites\rec_3b4c9c_3b4d08.bin
+		INCBIN	baserom.gba_0x3b4d08_0x3b4d58.extracted
+		INCBIN	build\sprites\rec_3b4d58_3b4dc4.bin
+		INCBIN	baserom.gba_0x3b4dc4_0x3b4df4.extracted
+		INCBIN	build\sprites\rec_3b4df4_3b4e60.bin
+		INCBIN	baserom.gba_0x3b4e60_0x3b4e74.extracted
+		INCBIN	build\sprites\rec_3b4e74_3b50e8.bin
+		INCBIN	baserom.gba_0x3b50e8_0x3ec86c.extracted
 		INCBIN	build\jcalg1\gen_3ec86c_3ec9a0.bin
 		INCBIN	baserom.gba_0x3ec9a0_0x3ed2b0.extracted
 		INCBIN	build\jcalg1\gen_3ed2b0_3ed3e0.bin

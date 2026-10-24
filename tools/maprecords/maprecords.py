@@ -131,9 +131,9 @@ def value_of(text, labels):
     return int(text, 16)
 
 
-def encode_row(family, row, labels):
+def encode_row(family, row, labels, specs=None):
     out = bytearray()
-    for name, offset, width, kind in SPECS[family]:
+    for name, offset, width, kind in (SPECS if specs is None else specs)[family]:
         if len(out) != offset:
             raise ValueError("%s.%s starts at 0x%X, not 0x%X" % (family, name, offset, len(out)))
         if kind == "bytes":
@@ -149,15 +149,17 @@ def encode_row(family, row, labels):
                 raise ValueError("%s.%s holds no reference" % (family, name))
             for word in words:
                 out += value_of(word, labels).to_bytes(4, "little")
+        elif kind in ("int8", "uint8"):
+            out += int(row[name]).to_bytes(width, "little", signed=kind == "int8")
         else:
             out += int(row[name], 16).to_bytes(width, "little")
     return bytes(out)
 
 
-def load_tables(directory=None):
+def load_tables(pinned=None, specs=None, directory=None):
     directory = directory or HERE
     tables = {}
-    for family, count in PINNED.items():
+    for family, count in (PINNED if pinned is None else pinned).items():
         path = os.path.join(directory, family + ".csv")
         rows = list(csv.DictReader(open(path, encoding="utf-8", newline="")))
         if len(rows) != count:
@@ -166,10 +168,11 @@ def load_tables(directory=None):
     return tables
 
 
-def write_tables(tables, directory=None):
+def write_tables(tables, specs=None, directory=None):
     directory = directory or HERE
+    specs = SPECS if specs is None else specs
     for family, rows in tables.items():
-        names = ["label", "address"] + [field[0] for field in SPECS[family]]
+        names = ["label", "address"] + [field[0] for field in specs[family]]
         path = os.path.join(directory, family + ".csv")
         with open(path, "w", encoding="utf-8", newline="") as handle:
             writer = csv.DictWriter(handle, fieldnames=names, extrasaction="ignore",
@@ -231,9 +234,8 @@ def tokens(image, rows=None):
             for begin, end in runs(build_records(rows or load_tables()))]
 
 
-def write(image, rows=None):
-    records = build_records(rows or load_tables())
-    os.makedirs(BUILD, exist_ok=True)
+def write_runs(records, directory, prefix):
+    os.makedirs(directory, exist_ok=True)
     written = 0
     for start, end in runs(records):
         blob = bytearray()
@@ -245,10 +247,14 @@ def write(image, rows=None):
                     blob += data[begin - offset:stop - offset]
         if len(blob) != end - start:
             raise ValueError("the run 0x%X..0x%X assembled %d B" % (start, end, len(blob)))
-        with open(os.path.join(BUILD, "rec_%x_%x.bin" % (start, end)), "wb") as handle:
+        with open(os.path.join(directory, "%s_%x_%x.bin" % (prefix, start, end)), "wb") as handle:
             handle.write(bytes(blob))
         written += 1
     return written, len(records)
+
+
+def write(image, rows=None):
+    return write_runs(build_records(rows or load_tables()), BUILD, "rec")
 
 
 def check(image, rows=None):
@@ -355,17 +361,18 @@ def null(image):
     return {family: len(counts[family]) for family in PINNED}
 
 
-def uncited_fields(text):
+def uncited_fields(text, specs=None):
+    specs = SPECS if specs is None else specs
     sections, current = {}, None
     for line in text.splitlines():
         if line.startswith("## "):
             current = line[3:].strip()
-        elif current in SPECS and line.startswith("| "):
+        elif current in specs and line.startswith("| "):
             cells = [cell.strip() for cell in line.strip("|").split("|")]
             if len(cells) >= 4 and cells[0] != "field":
                 sections.setdefault(current, {})[cells[0]] = cells[3]
     problems = []
-    for family, fields in SPECS.items():
+    for family, fields in specs.items():
         named = {name for name, _offset, _width, kind in fields if kind != "bytes"}
         cited = {name for name, site in sections.get(family, {}).items() if site != "-"}
         problems += ["%s.%s has no load site" % (family, name)
@@ -375,45 +382,53 @@ def uncited_fields(text):
     return problems
 
 
-def read_rom():
-    if not os.path.exists(ROM):
-        raise SystemExit("the map record generator needs the retail image at %s" % ROM)
-    image = open(ROM, "rb").read()
-    if hashlib.sha256(image).hexdigest() != ROM_SHA256:
-        raise SystemExit("%s is not the canonical image" % ROM)
+def read_rom(path=None, digest=None):
+    path = path or ROM
+    digest = digest or ROM_SHA256
+    if not os.path.exists(path):
+        raise SystemExit("the record generator needs the retail image at %s" % path)
+    image = open(path, "rb").read()
+    if hashlib.sha256(image).hexdigest() != digest:
+        raise SystemExit("%s is not the canonical image" % path)
     return image
 
 
-def main(argv=None):
+def generator_main(module, name, argv=None):
     argv = list(sys.argv[1:] if argv is None else argv)
     if argv not in ([], ["--write"], ["--check"], ["--extract"], ["--null"]):
-        print("usage: python tools\\maprecords\\maprecords.py [--write|--check|--extract|--null]")
+        print("usage: python tools\\%s\\%s.py [--write|--check|--extract|--null]" % (name, name))
         return 2
-    image = read_rom()
+    image = module.read_rom()
     if argv == ["--null"]:
-        counts = null(image)
-        print("permuted " + " ".join("%s=%d" % (family, counts[family]) for family in PINNED))
+        counts = module.null(image)
+        print("permuted " + " ".join("%s=%d" % (family, counts[family])
+                                     for family in module.PINNED))
         return 1 if any(counts.values()) else 0
     if argv == ["--extract"]:
-        write_tables(extract(image))
-        print("wrote " + ", ".join(family + ".csv" for family in PINNED))
+        module.write_tables(module.extract(image))
+        print("wrote " + ", ".join(family + ".csv" for family in module.PINNED))
         return 0
     if argv == ["--write"]:
-        written, records = write(image)
+        written, records = module.write(image)
         print("wrote %d run(s) holding %d record(s)" % (written, records))
         return 0
-    result = check(image)
+    result = module.check(image)
     print("records=%d mismatched=%d bytes=%d emitted=%d"
           % (result["records"], result["mismatched_records"], result["bytes"],
              result["emitted_bytes"]))
     if result["mismatched_records"]:
-        print("MAPRECORDS FAIL: the table does not hold the image's bytes")
+        print("%s FAIL: the table does not hold the image bytes" % name.upper())
         return 1
-    if result["emitted_bytes"] != CENSUS_BYTES:
-        print("MAPRECORDS FAIL: the emitted bytes are not the census class's %d" % CENSUS_BYTES)
+    if result["emitted_bytes"] != module.CENSUS_BYTES:
+        print("%s FAIL: the emitted bytes are not the census class %d"
+              % (name.upper(), module.CENSUS_BYTES))
         return 1
-    print("MAPRECORDS PASS")
+    print("%s PASS" % name.upper())
     return 0
+
+
+def main(argv=None):
+    return generator_main(sys.modules[__name__], "maprecords", argv)
 
 
 if __name__ == "__main__":

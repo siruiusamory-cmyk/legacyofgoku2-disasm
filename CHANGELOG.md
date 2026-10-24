@@ -22,6 +22,14 @@ All notable changes to this project are documented here. The format follows
   it derives and `--check` refuses a difference; the null reverses the region's halfword order and
   leaves no reader-backed byte.
 
+- `tools/sprites/` holds the sprite directory, definition and piece records as three tracked tables,
+  one record per row with named fields and each pointer written as a record label, and encodes those
+  rows back into `build/sprites/`. `LAYOUT.md` records the evidence that fixes every named field,
+  `--check` refuses a row whose bytes are not the image's and a field with no citation, and the null
+  permutes the record extents and finds no record. `generate_containers.py` splits the retail slices
+  at the runs the tables emit, so 26,508 B of the family are assembled from source and the gate's raw
+  class falls by the same bytes.
+
 ### Changed
 
 - The technique page at `0x08003684` is one function: a `tools/code/CENSUS_EVIDENCE.csv` entry row keeps
