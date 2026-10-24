@@ -174,6 +174,26 @@ def test_a_build_that_produces_no_compressor_names_build_cmd(monkeypatch, tmp_pa
         jcalg1.encode(b"abcd")
 
 
+def test_a_build_that_fails_after_writing_the_compressor_names_build_cmd(monkeypatch, tmp_path):
+    tool = str(tmp_path / "compress.exe")
+    monkeypatch.setattr(jcalg1, "COMPRESS", tool)
+
+    def fake_run(command, **kwargs):
+        if command[0] == "cmd.exe":
+            with open(tool, "wb") as handle:
+                handle.write(b"")
+            return subprocess.CompletedProcess(command, 1)
+        with open(command[1], "rb") as handle:
+            payload = handle.read()
+        with open(command[2], "wb") as handle:
+            handle.write(struct.pack("<II", jcalg1.PACKED_KIND, len(payload)) + payload)
+        return subprocess.CompletedProcess(command, 0)
+
+    monkeypatch.setattr(jcalg1.subprocess, "run", fake_run)
+    with pytest.raises(ValueError, match="build.cmd"):
+        jcalg1.encode(b"abcd")
+
+
 def test_an_output_explosion_is_refused_not_allocated():
     for count in (1 << 22, 1 << 24):
         writer = Writer()

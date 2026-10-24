@@ -189,10 +189,10 @@ def _executable(executable: str) -> str:
         return executable
     if executable == COMPRESS:
         try:
-            subprocess.run(["cmd.exe", "/c", BUILD], capture_output=True)
+            built = subprocess.run(["cmd.exe", "/c", BUILD], capture_output=True)
         except OSError:
-            pass
-        if os.path.exists(executable):
+            built = None
+        if built is not None and built.returncode == 0 and os.path.exists(executable):
             return executable
     raise ValueError("no compressor at %s; build it with %s" % (executable, BUILD))
 

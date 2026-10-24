@@ -33,7 +33,7 @@ All notable changes to this project are documented here. The format follows
 
 - `tools/compress/generate_containers.py --write` builds `tools/compress/compress.exe` through
   `tools/compress/build.cmd` when it is absent, and fails with one message naming `build.cmd` when
-  that build produces no binary, so a fresh clone regenerates without a manual step.
+  that build exits nonzero or produces no binary, so a fresh clone regenerates without a manual step.
 - `tools/research/device_access.py --ledger` passes every row: eleven evidence cells quoted a value
   the body does not reach, such as a caller's table or a value a stub supplied, and each now quotes
   the address, literal or stored value the body itself carries.
