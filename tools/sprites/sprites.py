@@ -98,26 +98,7 @@ def write_tables(tables, directory=None):
 
 
 def build_records(rows, found, holes=None):
-    holes = maprecords.container_extents() if holes is None else holes
-    labels = labels_of(rows)
-    records = []
-    for family in PINNED:
-        places = found[family]
-        if len(places) != len(rows[family]):
-            raise ValueError("%s holds %d row(s) for %d record(s)"
-                             % (family, len(rows[family]), len(places)))
-        for row, (offset, width) in zip(rows[family], places):
-            if int(row["address"], 16) - ROM_BASE != offset:
-                raise ValueError("%s.%s names 0x%X, not 0x%X"
-                                 % (family, row["label"], int(row["address"], 16) - ROM_BASE,
-                                    offset))
-            data = encode_row(family, row, labels)
-            if len(data) != width:
-                raise ValueError("%s.%s encodes %d B, not %d"
-                                 % (family, row["label"], len(data), width))
-            records.append((offset, data, maprecords.uncovered(offset, len(data), holes)))
-    records.sort()
-    return records
+    return maprecords.build_records(rows, holes, found, SPECS, PINNED)
 
 
 def runs(records):

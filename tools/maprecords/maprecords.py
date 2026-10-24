@@ -149,6 +149,8 @@ def encode_row(family, row, labels, specs=None):
                 raise ValueError("%s.%s holds no reference" % (family, name))
             for word in words:
                 out += value_of(word, labels).to_bytes(4, "little")
+        elif kind == "string":
+            out += row[name].encode("ascii") + b"\x00"
         elif kind in ("int8", "uint8"):
             out += int(row[name]).to_bytes(width, "little", signed=kind == "int8")
         else:
@@ -205,14 +207,25 @@ def uncovered(offset, width, holes, starts=None):
     return spans
 
 
-def build_records(rows, holes=None):
+def build_records(rows, holes=None, found=None, specs=None, pinned=None):
     holes = container_extents() if holes is None else holes
+    specs = SPECS if specs is None else specs
     labels = labels_of(rows)
     records = []
-    for family in PINNED:
-        for row in rows[family]:
+    for family in (PINNED if pinned is None else pinned):
+        places = None if found is None else found[family]
+        if places is not None and len(places) != len(rows[family]):
+            raise ValueError("%s holds %d row(s) for %d record(s)"
+                             % (family, len(rows[family]), len(places)))
+        for index, row in enumerate(rows[family]):
             offset = int(row["address"], 16) - ROM_BASE
-            data = encode_row(family, row, labels)
+            if places is not None and places[index][0] != offset:
+                raise ValueError("%s.%s names 0x%X, not 0x%X"
+                                 % (family, row["label"], offset, places[index][0]))
+            data = encode_row(family, row, labels, specs)
+            if places is not None and len(data) != places[index][1]:
+                raise ValueError("%s.%s encodes %d B, not %d"
+                                 % (family, row["label"], len(data), places[index][1]))
             records.append((offset, data, uncovered(offset, len(data), holes)))
     records.sort()
     return records

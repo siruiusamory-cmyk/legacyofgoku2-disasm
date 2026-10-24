@@ -10,6 +10,7 @@ ROOT = os.path.dirname(os.path.dirname(HERE))
 sys.path.insert(0, os.path.join(ROOT, "tools", "code"))
 sys.path.insert(0, os.path.join(ROOT, "tools", "maprecords"))
 sys.path.insert(0, os.path.join(ROOT, "tools", "sprites"))
+sys.path.insert(0, os.path.join(ROOT, "tools", "text"))
 sys.path.insert(0, HERE)
 
 import container
@@ -18,6 +19,7 @@ import emit_code
 import jcalg1
 import maprecords
 import sprites
+import text_rows
 
 ROM = os.path.join(ROOT, "baserom.gba")
 ASM = os.path.join(ROOT, "asm", "remainder.s")
@@ -32,6 +34,7 @@ INCLUDED_KIND = 2
 GEN = re.compile(r"build\\jcalg1\\gen_([0-9a-f]+)_([0-9a-f]+)\.bin$")
 MAP = re.compile(r"build\\maprecords\\rec_([0-9a-f]+)_([0-9a-f]+)\.bin$")
 SPRITE = re.compile(r"build\\sprites\\rec_([0-9a-f]+)_([0-9a-f]+)\.bin$")
+TEXT = re.compile(r"build\\text\\rec_([0-9a-f]+)_([0-9a-f]+)\.bin$")
 GAP = re.compile(r"baserom\.gba_0x([0-9a-f]+)_0x([0-9a-f]+)\.extracted$")
 INCLUDE = re.compile(r"\.\.\\build\\code\\[A-Za-z0-9_]+\.s$")
 INCBIN = re.compile(r"INCBIN\s+(\S+)")
@@ -71,7 +74,7 @@ def code_tokens(image):
 
 
 def record_tokens(image):
-    return maprecords.tokens(image) + sprites.tokens(image)
+    return maprecords.tokens(image) + sprites.tokens(image) + text_rows.tokens(image)
 
 
 def asm_text(tokens):
@@ -86,7 +89,8 @@ def parsed_asm(text):
     tokens = []
     for match in INCBIN.finditer(text):
         token = match.group(1)
-        found = GEN.search(token) or MAP.search(token) or SPRITE.search(token)
+        found = (GEN.search(token) or MAP.search(token) or SPRITE.search(token)
+                 or TEXT.search(token))
         if found:
             start, end = (int(found.group(index), 16) for index in (1, 2))
             if end <= start:
@@ -217,7 +221,7 @@ def build(image):
     runs = 0
     containers = 0
     for start, end, token in tokens:
-        if MAP.search(token) or SPRITE.search(token):
+        if MAP.search(token) or SPRITE.search(token) or TEXT.search(token):
             if not os.path.exists(os.path.join(ROOT, token)):
                 raise ValueError("%s is absent" % token)
             continue

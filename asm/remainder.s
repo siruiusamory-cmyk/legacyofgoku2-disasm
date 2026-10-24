@@ -1906,7 +1906,9 @@
 		INCLUDE	..\build\code\__16_fmul.s
 		INCBIN	baserom.gba_0x2829e_0x285d4.extracted
 		INCLUDE	..\build\code\code_080285d4.s
-		INCBIN	baserom.gba_0x285d6_0x29294.extracted
+		INCBIN	baserom.gba_0x285d6_0x28724.extracted
+		INCBIN	build\text\rec_28724_28920.bin
+		INCBIN	baserom.gba_0x28920_0x29294.extracted
 		INCBIN	build\jcalg1\gen_29294_2cc64.bin
 		INCBIN	baserom.gba_0x2cc64_0x1d5150.extracted
 		INCBIN	build\jcalg1\gen_1d5150_1d51a8.bin
@@ -11517,7 +11519,9 @@
 		INCBIN	build\jcalg1\gen_6d0c0c_6d0c74.bin
 		INCBIN	baserom.gba_0x6d0c74_0x6d0ce4.extracted
 		INCBIN	build\jcalg1\gen_6d0ce4_6d0d38.bin
-		INCBIN	baserom.gba_0x6d0d38_0x6d7654.extracted
+		INCBIN	baserom.gba_0x6d0d38_0x6d6b8c.extracted
+		INCBIN	build\text\rec_6d6b8c_6d72f5.bin
+		INCBIN	baserom.gba_0x6d72f5_0x6d7654.extracted
 		INCBIN	build\jcalg1\gen_6d7654_6d7690.bin
 		INCBIN	baserom.gba_0x6d7690_0x6d76ec.extracted
 		INCBIN	build\jcalg1\gen_6d76ec_6d7750.bin
@@ -11603,7 +11607,9 @@
 		INCBIN	build\jcalg1\gen_6f4074_6f4128.bin
 		INCBIN	baserom.gba_0x6f4128_0x6f41a8.extracted
 		INCBIN	build\jcalg1\gen_6f41a8_6f4210.bin
-		INCBIN	baserom.gba_0x6f4210_0x70c0ec.extracted
+		INCBIN	baserom.gba_0x6f4210_0x6f8e40.extracted
+		INCBIN	build\text\rec_6f8e40_6fd4d8.bin
+		INCBIN	baserom.gba_0x6fd4d8_0x70c0ec.extracted
 		INCBIN	build\jcalg1\gen_70c0ec_71110c.bin
 		INCBIN	baserom.gba_0x71110c_0x71651c.extracted
 		INCBIN	build\jcalg1\gen_71651c_719cdc.bin

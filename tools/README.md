@@ -90,6 +90,10 @@ first two and the link check's test. A table a check reads sits beside the reade
 | --- | --- | --- |
 | `mapcontainer/mapcontainer.py` | the map block's container, entry, root, root-table and layer records, with a `--check` that re-derives them | `format_reuse.py`, `test_mapcontainer.py` |
 | `text/text_storage.py` | the string-table storage, decoded and re-encoded | `format_reuse.py`, `test_text_storage.py` |
+| `text/text_rows.py` | reads the roster records, the strings they name, the objective texts and the font offset table into the tracked tables, encodes their rows back into the runs `generate_containers.py` puts in the image, and checks both against the image | `rebuild.cmd`, `generate_containers.py`, `test_text_rows.py` |
+| `text/roster.csv`, `text/roster_string.csv`, `text/objective.csv`, `text/font.csv` | the four tables, one record per row with named fields and the string pointers as record labels | `text_rows.py` |
+| `text/LAYOUT.md` | each field's offset, width and the evidence that fixes it | `text_rows.py --check` (through its test) |
+| `text/test_text_rows.py` | the tests for the reader and encoder, its null and the field citations | CI |
 | `tilebank/tilebank.py` | the tile bank's decode and encode | `format_reuse.py`, `test_tilebank.py` |
 | `mapcontainer/test_mapcontainer.py`, `text/test_text_storage.py`, `tilebank/test_tilebank.py` | the tests for the three format readers | CI |
 

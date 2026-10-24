@@ -30,6 +30,15 @@ All notable changes to this project are documented here. The format follows
   at the runs the tables emit, so 26,508 B of the family are assembled from source and the gate's raw
   class falls by the same bytes.
 
+- `tools/text/` holds the text storage as four tracked tables: the 128-record roster table, the 124
+  strings it names, the 43 objective texts and the 256-entry font offset table, one record per row
+  with named fields and each string pointer written as a record label, and encodes those rows back
+  into `build/text/`. `LAYOUT.md` records the evidence that fixes every named field, `--check`
+  refuses a row whose bytes are not the image's and a field with no citation, and the null permutes
+  the record and string extents and finds no record of any family. `generate_containers.py` splits
+  the retail slices at the runs the tables emit, so 20,477 B of the family are assembled from source
+  and the gate's raw class falls by the same bytes.
+
 ### Changed
 
 - The technique page at `0x08003684` is one function: a `tools/code/CENSUS_EVIDENCE.csv` entry row keeps
