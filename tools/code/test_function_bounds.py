@@ -416,13 +416,17 @@ def test_a_cited_branch_lies_inside_the_body_that_holds_it():
     found = function_bounds.census(data)
     owners = [(start, end) for start, (end, _reason) in found["ends"].items()]
     wrong = []
+    cited = set()
     for cells in csv.reader(open(code_split.EVIDENCE, encoding="ascii")):
-        for token in re.findall(r"branch at 0x([0-9a-fA-F]{8})", " ".join(cells[2:])):
+        for token in re.findall(r"(?:branch|B[A-Z]*)\s+at\s+0x([0-9a-fA-F]{8})",
+                                " ".join(cells[2:])):
             address = int(token, 16)
-            decoded = emit_code.decode(data, address, function_bounds.THUMB)
+            cited.add(address)
+            decoded = emit_code.decode(data, address, "thumb")
             inside = [start for start, end in owners if start <= address < end]
             if not inside or decoded is None or not decoded[0].startswith("B"):
                 wrong.append(address)
+    assert cited
     assert wrong == []
 
 
