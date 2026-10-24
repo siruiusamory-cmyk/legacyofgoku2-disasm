@@ -14,10 +14,10 @@ Liveness pc `0x03000824`: one breakpoint on the handler the startup block instal
 
 | kind | targets | hit | bytes |
 |---|---|---|---|
-| `candidate-code` | 825 | 9 | 194 |
+| `candidate-code` | 808 | 9 | 194 |
 | `bx-unresolved` | 39 | 14 | 28 |
 | `irq-slot` | 14 | 0 | 0 |
-| **total** | **878** | **23** | **222** |
+| **total** | **861** | **23** | **222** |
 
 ## Recorded label entries
 
@@ -25,13 +25,13 @@ Liveness pc `0x03000824`: one breakpoint on the handler the startup block instal
 
 ## Proposed runtime class
 
-76 extent(s) / 434 B: the executed target ranges and the recorded entries, merged. 28 B lie inside the 80762 B of code the export already names, so 406 B would be new.
+76 extent(s) / 434 B: the executed target ranges and the recorded entries, merged. 50 B lie inside the 81628 B of code the split already names, and 274 B inside the 82462 B of image code the export carries, so 160 B would be new.
 
 The class is a proposal: the split is not edited and no byte moves until a separate promotion.
 
 ## Chance channels scored
 
-* `candidate-code`: 9 of 825 target(s) executed, 194 B.
+* `candidate-code`: 9 of 808 target(s) executed, 194 B.
 * `bx-unresolved`: 14 of 39 target(s) executed, 28 B.
 * `irq-slot`: 0 of 14 target(s) executed, 0 B.
 

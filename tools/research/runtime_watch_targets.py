@@ -15,7 +15,7 @@ EXPORT = os.path.join(ROOT, "docs", "research", "RECOMP_INPUTS.toml")
 CSV_OUT = os.path.join(ROOT, "docs", "research", "RUNTIME_WATCH_TARGETS.csv")
 FIELDS = ("kind", "start", "end", "bytes", "mode", "runtime")
 KINDS = ("candidate-code", "bx-unresolved", "irq-slot")
-EXPECT = {"candidate-code": (825, 26658), "bx-unresolved": (39, 78), "irq-slot": (14, 56)}
+EXPECT = {"candidate-code": (808, 26122), "bx-unresolved": (39, 78), "irq-slot": (14, 56)}
 
 
 def export_blocks(path, name):
@@ -64,6 +64,8 @@ def candidate_rows(rom, held):
 def register_sites(rom, code):
     sites = []
     for start, size, mode in code:
+        if not code_split.in_image(rom, start):
+            continue
         for at in range(start, start + size, 2):
             if mode == "thumb":
                 half = code_split.hw(rom, at)

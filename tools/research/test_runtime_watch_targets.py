@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import os
+import struct
 import sys
 
 import pytest
@@ -26,6 +27,14 @@ def test_a_missing_image_is_refused(tmp_path):
         runtime_watch_targets.targets(rom_path=str(tmp_path / "absent.gba"))
 
 
+def test_a_code_extent_outside_the_image_is_not_decoded():
+    rom = bytearray(0x40)
+    struct.pack_into("<I", rom, 0, 0xE12FFF13)
+    sites = runtime_watch_targets.register_sites(bytes(rom), [(0x08000000, 4, "arm"),
+                                                              (0x03000000, 4, "arm")])
+    assert sites == [(0x08000000, "arm")]
+
+
 def test_the_interrupt_slots_follow_the_exported_handler_copy():
     rows = runtime_watch_targets.irq_rows()
     assert len(rows) == 14
@@ -47,8 +56,8 @@ def test_the_tracked_targets_pass_their_check_and_are_ordered():
         range(0x087FE4F8, 0x087FE530, 4))
     candidates = [{"start": row["start"], "end": row["end"]} for row in rows
                   if row["kind"] == "candidate-code"]
-    assert len(candidates) == 825
-    assert runtime_watch_targets.merged_bytes(candidates) == 26598
+    assert len(candidates) == 808
+    assert runtime_watch_targets.merged_bytes(candidates) == 26062
     for kind in ("bx-unresolved", "irq-slot"):
         mine = [row for row in rows if row["kind"] == kind]
         assert all(left["end"] <= right["start"] for left, right in zip(mine, mine[1:]))

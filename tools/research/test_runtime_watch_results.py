@@ -88,6 +88,14 @@ def test_the_proposed_class_merges_the_hit_targets(tmp_path):
         "candidate-code": (2, 2, 12), "bx-unresolved": (1, 0, 0), "irq-slot": (1, 1, 4)}
 
 
+def test_an_executed_hit_whose_target_row_moved_is_kept(tmp_path):
+    targets = runtime_watch_results.read_targets(str(fixture(tmp_path)))
+    hits = [{"kind": "candidate-code", "start": 0x08000400, "end": 0x08000402,
+             "bytes": 2, "elapsed": "1.5"}]
+    text = runtime_watch_results.csv_text(targets, hits)
+    assert "candidate-code,0x08000400,0x08000402,2,executed,1.5" in text
+
+
 def test_an_import_keeps_only_target_hits_and_one_run_row(tmp_path):
     targets = fixture(tmp_path)
     hits = tmp_path / "hits-out.csv"

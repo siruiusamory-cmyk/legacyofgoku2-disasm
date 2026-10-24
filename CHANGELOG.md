@@ -7,6 +7,14 @@ All notable changes to this project are documented here. The format follows
 
 ### Changed
 
+- `tools/research/runtime_watch_targets.py` decodes only the export's code rows that lie in the
+  image, so an IWRAM copy is not read as image bytes, and its prologue sweep is re-derived at
+  808 rows / 26,122 B now that the split's newer channels claim 536 B of it.
+
+- `tools/research/runtime_watch_results.py` states the named code from the split's own rows
+  (81,628 B) beside the image code the export carries (82,462 B), keeps an executed row whose
+  target row the split no longer offers, and regenerates its page and CSV.
+
 - The recompilation input `docs/research/RECOMP_INPUTS.toml` carries one `[[code]]` row per
   closed row of `docs/research/FUNCTION_ENDS.csv`, with its start, end, mode and origin. Its
   `--check` reports a census row with no code row and a code row with no mode, and the
