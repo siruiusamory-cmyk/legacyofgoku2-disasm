@@ -1,7 +1,7 @@
 [counts]
-functions = 1416
-code_bytes = 82602
-entries = 2460
+functions = 1412
+code_bytes = 82292
+entries = 2458
 jump_tables = 1
 code_copies = 1
 
@@ -782,12 +782,6 @@ size = 866
 origin = "census"
 
 [[code]]
-addr = 0x08003afe
-mode = "thumb"
-size = 56
-origin = "census"
-
-[[code]]
 addr = 0x08003b38
 mode = "thumb"
 size = 58
@@ -953,12 +947,6 @@ origin = "census"
 addr = 0x080042bc
 mode = "thumb"
 size = 46
-origin = "census"
-
-[[code]]
-addr = 0x080042ea
-mode = "thumb"
-size = 254
 origin = "census"
 
 [[code]]
@@ -2884,13 +2872,7 @@ origin = "census"
 [[code]]
 addr = 0x0800aff0
 mode = "thumb"
-size = 2
-origin = "census"
-
-[[code]]
-addr = 0x0800aff2
-mode = "thumb"
-size = 26
+size = 28
 origin = "census"
 
 [[code]]
@@ -3736,13 +3718,7 @@ origin = "census"
 [[code]]
 addr = 0x0800e4d2
 mode = "thumb"
-size = 4
-origin = "census"
-
-[[code]]
-addr = 0x0800e4d6
-mode = "thumb"
-size = 118
+size = 122
 origin = "census"
 
 [[code]]
@@ -9210,10 +9186,6 @@ addr = 0x08003a80
 mode = "thumb"
 
 [[entry]]
-addr = 0x08003afe
-mode = "thumb"
-
-[[entry]]
 addr = 0x08003c24
 mode = "thumb"
 
@@ -9523,10 +9495,6 @@ mode = "thumb"
 
 [[entry]]
 addr = 0x080042d4
-mode = "thumb"
-
-[[entry]]
-addr = 0x080042ea
 mode = "thumb"
 
 [[entry]]

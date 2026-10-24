@@ -566,7 +566,7 @@
 		INCLUDE	..\build\code\code_0800afc2.s
 		INCLUDE	..\build\code\code_0800afd4.s
 		INCLUDE	..\build\code\code_0800afe8.s
-		INCLUDE	..\build\code\code_0800aff0.s
+		INCLUDE	..\build\code\Character_AwardXpToActive.s
 		INCLUDE	..\build\code\code_0800b00c.s
 		INCLUDE	..\build\code\code_0800b042.s
 		INCLUDE	..\build\code\code_0800b058.s

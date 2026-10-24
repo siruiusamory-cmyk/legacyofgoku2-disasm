@@ -177,7 +177,6 @@ address,role,evidence
 0x08003a06,fragment,0x0800379c
 0x08003a4e,fragment,0x0800379c
 0x08003a80,fragment,0x0800379c
-0x08003afe,unreferenced,block
 0x08003b38,unreferenced,block
 0x08003c24,start,call+block
 0x08003c6e,start,call+prologue
@@ -257,7 +256,6 @@ address,role,evidence
 0x080042bc,start,call+prologue+block
 0x080042c2,fragment,0x080042bc
 0x080042d4,fragment,0x080042bc
-0x080042ea,unreferenced,block
 0x08004a10,unreferenced,block
 0x08004a14,unreferenced,block
 0x08004a1a,unreferenced,block

@@ -1517,6 +1517,16 @@ CASES_THIRTEEN = [
                    (0x08003AE6, 0x08020EAA, (0x3007E34, 0x0, 0x2C3, 0x0)),
                    (0x08003AEE, 0x08020EAA, (0x3007E6C, 0x0, 0x2C3, 0x0)),
                    (0x08003AF6, 0x08020EAA, (0x3007EA4, 0x0, 0x2C3, 0x0))]},
+    {"address": 0x0800AFF0,
+     "name": "Character_AwardXpToActive",
+     "registers": {0: 0x02000000},
+     "memory": [(0x02000000, 4, 2), (0x02000004, 4, 11), (0x02000008, 4, 22),
+                (0x030026DC, 4, 0x03000E90), (0x03000E90, 1, 3)],
+     "stubs": {0x08003D58: {0: 0}},
+     "return": 0,
+     "writes": [(0x02000000, 4, 1)],
+     "calls": [(0x0800B006, 0x08003D58)],
+     "arguments": [(0x0800B006, 0x08003D58, (0x03000E90, 3, 22, 0))]},
 ]
 
 def check_cases(cases):
@@ -1618,5 +1628,6 @@ def run_case(case):
                                    stubs=case.get("stubs"))
     result["memory"] = memory
     return result
+
 
 

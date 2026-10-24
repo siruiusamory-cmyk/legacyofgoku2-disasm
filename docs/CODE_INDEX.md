@@ -94,7 +94,6 @@ Every row below is one function start in `tools\code\FUNCTION_BOUNDS.csv`.
 | `sub_0800372c` | `0x0800372c` | `code_0800372c.s` |
 | `sub_08003754` | `0x08003754` | `code_08003754.s` |
 | `Character_DrawStatusPage` | `0x0800379c` | `Character_DrawStatusPage.s` |
-| `sub_08003afe` | `0x08003afe` | `code_08003afe.s` |
 | `sub_08003b38` | `0x08003b38` | `code_08003b38.s` |
 | `Scene_Clear` | `0x08003c24` | `Scene_Clear.s` |
 | `Counter_StepRandom` | `0x08003c6e` | `Counter_StepRandom.s` |
@@ -122,7 +121,6 @@ Every row below is one function start in `tools\code\FUNCTION_BOUNDS.csv`.
 | `Character_SetXpForLevel` | `0x08004276` | `Character_SetXpForLevel.s` |
 | `sub_08004284` | `0x08004284` | `code_08004284.s` |
 | `sub_080042bc` | `0x080042bc` | `code_080042bc.s` |
-| `sub_080042ea` | `0x080042ea` | `code_080042ea.s` |
 | `sub_08004a10` | `0x08004a10` | `code_08004a10.s` |
 | `sub_08004a14` | `0x08004a14` | `code_08004a14.s` |
 | `sub_08004a1a` | `0x08004a1a` | `code_08004a1a.s` |
@@ -430,7 +428,7 @@ Every row below is one function start in `tools\code\FUNCTION_BOUNDS.csv`.
 | `sub_0800afc2` | `0x0800afc2` | `code_0800afc2.s` |
 | `sub_0800afd4` | `0x0800afd4` | `code_0800afd4.s` |
 | `sub_0800afe8` | `0x0800afe8` | `code_0800afe8.s` |
-| `sub_0800aff0` | `0x0800aff0` | `code_0800aff0.s` |
+| `Character_AwardXpToActive` | `0x0800aff0` | `Character_AwardXpToActive.s` |
 | `sub_0800b00c` | `0x0800b00c` | `code_0800b00c.s` |
 | `sub_0800b042` | `0x0800b042` | `code_0800b042.s` |
 | `sub_0800b058` | `0x0800b058` | `code_0800b058.s` |
@@ -1269,4 +1267,4 @@ Every row below is one function start in `tools\code\FUNCTION_BOUNDS.csv`.
 | `sub_08547800` | `0x08547800` | `code_08547800.s` |
 | `sub_08598054` | `0x08598054` | `code_08598054.s` |
 
-1253 function starts: 202 carry a name and 1051 carry their address; the address-named ones are read through the rule above, and `docs\NAMING.md` says what promotes a name.
+1251 function starts: 203 carry a name and 1048 carry their address; the address-named ones are read through the rule above, and `docs\NAMING.md` says what promotes a name.

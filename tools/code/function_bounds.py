@@ -224,7 +224,10 @@ def clobbered(rom, items, after, mode, broken):
 
 def flag_rows(rom, found):
     rows = []
+    kept = found.get("kept", ())
     for address in sorted(found["starts"]):
+        if address in kept:
+            continue
         mode = found["modes"].get(address, THUMB)
         items, after, broken = leading(rom, address, mode)
         entry = closest(rom, address, mode)
@@ -311,9 +314,10 @@ def call_targets(rom, rows, modes):
 
 
 def classify(rom, entries, modes, rows, calls, table, vectors, spans=(), pools=(),
-             edges=(), covered=()):
+             edges=(), covered=(), kept=()):
     spans = set(spans)
     pools = sorted(set(pools))
+    kept = set(kept)
     entries = sorted(set(entries) | spans)
     limits = {}
     for begin, end in rows:
@@ -375,6 +379,8 @@ def classify(rom, entries, modes, rows, calls, table, vectors, spans=(), pools=(
     def corrections():
         found = {}
         for address in sorted(starts):
+            if address in kept:
+                continue
             entry = closest(rom, address, modes.get(address, THUMB))
             if entry is not None:
                 found[address] = entry
@@ -452,6 +458,7 @@ def classify(rom, entries, modes, rows, calls, table, vectors, spans=(), pools=(
             "corrected": corrected,
             "modes": modes,
             "runtime": [],
+            "kept": kept,
             "contained": contained}
 
 
@@ -509,13 +516,17 @@ def describe(measured, rom):
     if isinstance(handler, dict) and isinstance(handler.get("rom"), int):
         vectors.add(handler["rom"])
     runtime = folded(rom, measured)
+    evidence = code_split.evidence()
+    spans = [address for address in emit_code.spans(measured)
+             if address not in evidence["data"]]
     found = classify(rom, entries, modes, rows, calls, table, vectors,
-                     spans=emit_code.spans(measured),
+                     spans=spans,
                      pools=[base + start for start, _stop in measured["pool"]],
                      edges=[address for address, _mode, origin, _end, _reason
                             in runtime if origin == "runtime"],
                      covered=[(address, end, mode) for address, mode, origin, end, _reason
-                              in runtime if origin == "runtime"])
+                              in runtime if origin == "runtime"],
+                     kept=code_split.evidence()["entry"])
     found["rows"] = rows
     found["runtime"] = folded(rom, measured, found["starts"])
     found["entries"] = sorted(set(name_table.emitted([address for address, _mode in pairs],

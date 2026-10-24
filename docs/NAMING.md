@@ -124,6 +124,10 @@ an interior fragment.
 with `loc_`, so a function is one contiguous labelled block and the build fails on a boundary file
 that disagrees with the image. A fragment is not a place a name may attach.
 
+Four addresses whose entry or data status the image alone does not settle are carried in
+`tools/code/CENSUS_EVIDENCE.csv`, one row each with the evidence: a `data` row keeps the address out
+of the census entry set, and an `entry` row keeps a start from being corrected to a later prologue.
+
 ## The address-named count
 
 `tools/code/NAMING_BASELINE.txt` holds the number of functions that still carry the address form, not the

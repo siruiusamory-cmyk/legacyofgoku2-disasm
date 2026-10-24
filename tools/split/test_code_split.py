@@ -472,5 +472,29 @@ def test_the_tracked_split_check_passes():
     assert code_split.main(["--check"]) == 0
 
 
+def test_a_recorded_data_address_is_not_a_gap_fill_entry(monkeypatch, tmp_path):
+    evidence = tmp_path / "CENSUS_EVIDENCE.csv"
+    evidence.write_text("address,kind,evidence\n0x08000106,data,test\n", encoding="ascii")
+    monkeypatch.setattr(code_split, "EVIDENCE", str(evidence))
+    rom = bytearray(image())
+    struct.pack_into("<HHHHH", rom, 0x100, 0x2000, 0xD001, 0x4770, 0x2000, 0x4770)
+    struct.pack_into("<I", rom, 0x180, 0x08000101)
+    measured = code_split.measure(bytes(rom))
+    assert (0x08000106, code_split.MODE_THUMB) not in measured["extra"]
+    assert (0x08000106, code_split.MODE_THUMB) in measured["held"]["gap"]
+    assert measured["classes"][0x106:0x108] == bytes([code_split.GAPFILL]) * 2
+
+
+def test_a_recorded_data_address_is_not_a_held_gap_entry(monkeypatch, tmp_path):
+    evidence = tmp_path / "CENSUS_EVIDENCE.csv"
+    evidence.write_text("address,kind,evidence\n0x08000106,next\n", encoding="ascii")
+    monkeypatch.setattr(code_split, "EVIDENCE", str(evidence))
+    rom = bytearray(image())
+    struct.pack_into("<HHHHH", rom, 0x100, 0x2000, 0xD001, 0x4770, 0x2000, 0x4770)
+    struct.pack_into("<I", rom, 0x180, 0x08000101)
+    measured = code_split.measure(bytes(rom))
+    assert (0x08000106, code_split.MODE_THUMB) in measured["extra"]
+
+
 if __name__ == "__main__":
     print("PASS test_code_split")

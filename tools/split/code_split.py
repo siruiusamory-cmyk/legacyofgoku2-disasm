@@ -14,6 +14,7 @@ ROOT = os.path.dirname(os.path.dirname(HERE))
 ROM = os.path.join(ROOT, "baserom.gba")
 DOC = os.path.join(ROOT, "tools", "split", "CODE_SPLIT.md")
 CSV_OUT = os.path.join(ROOT, "tools", "split", "CODE_SPLIT.csv")
+EVIDENCE = os.path.join(ROOT, "tools", "code", "CENSUS_EVIDENCE.csv")
 VECTOR = 0x08000000
 CRT0 = 0x080000C0
 OVERLAY = 0x08000148
@@ -549,6 +550,20 @@ def register_branches(rom, classes, modes, ranges):
                                 "value": source, "target": source & ~1,
                                 "mode": MODE_THUMB if source & 1 else MODE_ARM})
     return {"sites": sites, "bounded": bounded, "entries": entries}
+
+
+def evidence():
+    found = {"data": set(), "entry": set()}
+    try:
+        text = open(EVIDENCE, encoding="ascii").read()
+    except OSError:
+        return found
+    for row in csv.DictReader(io.StringIO(text)):
+        kind = (row.get("kind") or "").strip()
+        address = (row.get("address") or "").strip()
+        if kind in found and address:
+            found[kind].add(int(address, 16))
+    return found
 
 
 def named_words(rom):
@@ -1152,6 +1167,7 @@ def arm_source(rom, site, register):
 def census(rom, want_overlay, null_closing=None):
     classes = bytearray(len(rom))
     modes = bytearray(len(rom))
+    refused = evidence()["data"]
     proven_spans, pools, proven_entries, calls = walk(
         rom, [(VECTOR, MODE_ARM), (CRT0, MODE_ARM)], classes, modes, PROVEN)
     taken, taken_words = thumb_entries(rom)
@@ -1389,6 +1405,8 @@ def census(rom, want_overlay, null_closing=None):
                "claimed": null_closing is not None
                and under_closing_bar(null_closing, len(close_found))}
     prologue_bytes = merged_length(swept_runs)
+    for address in refused:
+        extra.pop((address, MODE_THUMB), None)
     pool_words = sorted(address for address in pools if has_word(rom, address) and not address % 4)
     pool_runs = []
     for address in pool_words:

@@ -27,14 +27,15 @@ def put_word(data, address, value):
 
 
 def classify(data, entries, rows, modes=None, calls=(), table=(), vectors=(), spans=(),
-             pools=()):
+             pools=(), kept=()):
     return function_bounds.classify(bytes(data), entries, modes or {},
                                     [(BASE + start, BASE + stop) for start, stop in rows],
                                     set(BASE + value for value in calls),
                                     set(BASE + value for value in table),
                                     set(BASE + value for value in vectors),
                                     spans=set(BASE + value for value in spans),
-                                    pools=[BASE + value for value in pools])
+                                    pools=[BASE + value for value in pools],
+                                    kept=set(BASE + value for value in kept))
 
 
 def row_of(found, address):
@@ -273,6 +274,7 @@ def test_every_transcribed_code_span_start_is_classified():
     rom = os.path.join(root, "baserom.gba")
     if not os.path.exists(rom):
         pytest.skip("the retail image is absent, so the census cannot be re-derived")
+    import code_split
     import emit_code
     data = open(rom, "rb").read()
     found = function_bounds.census(data)
@@ -280,7 +282,8 @@ def test_every_transcribed_code_span_start_is_classified():
              if name.startswith("code_")]
     assert spans
     missing = [begin for begin in spans if begin not in found["starts"]]
-    assert missing == [0x08000100]
+    recorded = sorted(address for address in code_split.evidence()["data"] if address in spans)
+    assert missing == [0x08000100] + recorded
     owners = [(address, mode) for address, mode, _origin, end, _reason
               in function_bounds.ends_rows(found)
               if address <= 0x08000100 < end]
@@ -360,6 +363,47 @@ def test_a_row_start_bounds_the_row_before_a_corrected_entry():
         (BASE + 0x184, function_bounds.THUMB, "census", BASE + 0x188, "-")]
 
 
+def test_a_recorded_entry_keeps_the_body_it_walks_to():
+    data = image()
+    put_half(data, BASE + 0x100, 0x2001)
+    put_half(data, BASE + 0x102, 0xB510)
+    put_half(data, BASE + 0x104, 0xBD10)
+    found = classify(data, [BASE + 0x100], [(0x100, 0x106)], calls=[0x100],
+                     kept=[0x100])
+    assert found["corrected"] == {}
+    assert function_bounds.ends_rows(found) == [
+        (BASE + 0x100, function_bounds.THUMB, "census", BASE + 0x106, "-")]
+    assert function_bounds.flag_rows(bytes(data), found) == []
+
+
+def test_a_recorded_entry_is_not_flagged_as_a_data_prefix():
+    data = image()
+    put_half(data, BASE + 0x100, 0x2001)
+    put_half(data, BASE + 0x102, 0xB510)
+    put_half(data, BASE + 0x104, 0xBD10)
+    found = classify(data, [BASE + 0x100], [(0x100, 0x106)], calls=[0x100])
+    assert found["corrected"] == {BASE + 0x100: BASE + 0x102}
+    found = classify(data, [BASE + 0x100], [(0x100, 0x106)], calls=[0x100],
+                     kept=[0x100])
+    assert found["corrected"] == {}
+
+
+def test_the_recorded_evidence_is_what_the_image_gives():
+    root = os.path.dirname(os.path.dirname(HERE))
+    rom = os.path.join(root, "baserom.gba")
+    if not os.path.exists(rom):
+        pytest.skip("the retail image is absent, so the evidence cannot be re-derived")
+    data = open(rom, "rb").read()
+    found = function_bounds.census(data)
+    ends = dict((row[0], row) for row in function_bounds.ends_rows(found))
+    assert ends[0x0800AFF0][3] == 0x0800B00C
+    assert ends[0x0800E4D2][3] == 0x0800E54C
+    assert 0x08003AFE not in found["starts"]
+    assert 0x080042EA not in found["starts"]
+    assert 0x0800AFF0 in found["starts"]
+    assert 0x0800E4D2 in found["starts"]
+
+
 def test_a_runtime_row_is_bounded_by_the_nearest_later_start(tmp_path, monkeypatch):
     path = tmp_path / "runtime.csv"
     path.write_text("region,address,mode\nrom,0x08000170,thumb\n", encoding="ascii")
@@ -383,3 +427,4 @@ if __name__ == "__main__":
     test_a_proof_inside_another_body_is_reported_and_not_a_start()
     test_a_body_stops_at_the_end_of_its_run()
     print("PASS test_function_bounds")
+

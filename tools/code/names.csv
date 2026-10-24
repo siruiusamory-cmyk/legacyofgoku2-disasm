@@ -74,6 +74,7 @@ address,name
 0x080095ca,Bitmap_LoadCellInverted
 0x08009be4,Palette_LoadObject
 0x0800ac10,Character_SetLevel
+0x0800aff0,Character_AwardXpToActive
 0x0800b4ae,Object_Register
 0x0800b4fc,Object_Unregister
 0x0800b84e,Sprite_AdvanceSlots

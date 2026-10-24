@@ -125,7 +125,6 @@ address,mode,origin,end,reason
 0x0800372c,thumb,census,0x08003754,next-start
 0x08003754,thumb,census,0x0800376a,-
 0x0800379c,thumb,census,0x08003afe,-
-0x08003afe,thumb,census,0x08003b36,no-return
 0x08003b38,thumb,census,0x08003b72,-
 0x08003c24,thumb,census,0x08003c6e,-
 0x08003c6e,thumb,census,0x08003ca0,-
@@ -154,7 +153,6 @@ address,mode,origin,end,reason
 0x08004276,thumb,census,0x08004284,-
 0x08004284,thumb,census,0x080042bc,-
 0x080042bc,thumb,census,0x080042ea,-
-0x080042ea,thumb,census,0x080043e8,-
 0x08004a10,thumb,census,0x08004a14,-
 0x08004a14,thumb,census,0x08004a1a,no-return
 0x08004a1a,thumb,census,0x08004aea,no-return
@@ -475,8 +473,7 @@ address,mode,origin,end,reason
 0x0800afc2,thumb,census,0x0800afd4,-
 0x0800afd4,thumb,census,0x0800afe8,-
 0x0800afe8,thumb,census,0x0800aff0,-
-0x0800aff0,thumb,census,0x0800aff2,next-start
-0x0800aff2,thumb,census,0x0800b00c,-
+0x0800aff0,thumb,census,0x0800b00c,-
 0x0800b00c,thumb,census,0x0800b042,-
 0x0800b042,thumb,census,0x0800b058,no-return
 0x0800b058,thumb,census,0x0800b05e,-
@@ -617,8 +614,7 @@ address,mode,origin,end,reason
 0x0800e440,thumb,census,0x0800e45e,-
 0x0800e45e,thumb,census,0x0800e462,next-start
 0x0800e462,thumb,census,0x0800e484,-
-0x0800e4d2,thumb,census,0x0800e4d6,next-start
-0x0800e4d6,thumb,census,0x0800e54c,-
+0x0800e4d2,thumb,census,0x0800e54c,-
 0x0800e54c,thumb,census,0x0800e582,-
 0x0800e77e,thumb,census,0x0800e796,-
 0x0800e796,thumb,census,0x0800e7b4,-

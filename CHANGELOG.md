@@ -7,6 +7,11 @@ All notable changes to this project are documented here. The format follows
 
 ### Changed
 
+- The census stops counting two data runs as code (the status page's literal pool and the two words and
+  translation-unit name that follow the level-curve readers) and keeps two handlers whole whose body
+  starts a few bytes before its prologue, one of them named `Character_AwardXpToActive`. A new
+  `tools/code/CENSUS_EVIDENCE.csv` carries those four addresses with their evidence, and the split, the
+  census and the recompiler export read it.
 - `tools/` holds only what the build, the gate or a check runs, one directory per subsystem, and
   `tools/README.md` names what runs every file in it. The tables a check reads sit beside the reader
   that derives them, and the page each generator writes sits beside the generator.

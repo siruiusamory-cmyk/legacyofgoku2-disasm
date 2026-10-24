@@ -22,7 +22,6 @@ address,kind,limb,flags,entry,reason
 0x0800a998,unreferenced,entry,data,0x0800a99a,prefix
 0x0800ac00,unreferenced,entry,data,0x0800ac02,prefix
 0x0800af3a,unreferenced,block,data,0x0800af44,prefix
-0x0800aff0,unreferenced,entry,data,0x0800aff2,prefix
 0x0800c166,unreferenced,block,clobber,-,row-start
 0x0800c578,unreferenced,block,clobber,-,row-start
 0x0800d768,unreferenced,block,data+clobber,0x0800d770,prefix
@@ -34,7 +33,6 @@ address,kind,limb,flags,entry,reason
 0x0800e3ee,unreferenced,block,data,0x0800e3f4,prefix
 0x0800e438,start,call,data,0x0800e440,prefix
 0x0800e45e,start,call,data,0x0800e462,prefix
-0x0800e4d2,start,call+block,data,0x0800e4d6,prefix
 0x0800f3ee,unreferenced,block,data,0x0800f3f0,prefix
 0x0800f45a,unreferenced,entry,data,0x0800f45c,prefix
 0x0800f4c2,unreferenced,entry,data,0x0800f4c4,prefix
