@@ -14,14 +14,14 @@ sys.path.insert(0, os.path.join(ROOT, "tools", "split"))
 import code_split
 import runtime_watch_targets
 
-TARGETS = os.path.join(ROOT, "docs", "research", "RUNTIME_WATCH_TARGETS.csv")
-RUNS = os.path.join(ROOT, "docs", "research", "RUNTIME_WATCH_RUNS.csv")
-HITS = os.path.join(ROOT, "docs", "research", "RUNTIME_WATCH_HITS.csv")
-LABELS = os.path.join(ROOT, "docs", "research", "RUNTIME_LABELS.csv")
+TARGETS = os.path.join(ROOT, "tools", "research", "RUNTIME_WATCH_TARGETS.csv")
+RUNS = os.path.join(ROOT, "tools", "research", "RUNTIME_WATCH_RUNS.csv")
+HITS = os.path.join(ROOT, "tools", "research", "RUNTIME_WATCH_HITS.csv")
+LABELS = os.path.join(ROOT, "tools", "code", "RUNTIME_LABELS.csv")
 ROM = os.path.join(ROOT, "baserom.gba")
-CSV_OUT = os.path.join(ROOT, "docs", "research", "RUNTIME_WATCH_RESULTS.csv")
-DOC_OUT = os.path.join(ROOT, "docs", "research", "RUNTIME_WATCH_RESULTS.md")
-EXPORT = os.path.join(ROOT, "docs", "research", "RECOMP_INPUTS.toml")
+CSV_OUT = os.path.join(ROOT, "tools", "research", "RUNTIME_WATCH_RESULTS.csv")
+DOC_OUT = os.path.join(ROOT, "tools", "research", "RUNTIME_WATCH_RESULTS.md")
+EXPORT = os.path.join(ROOT, "tools", "recomp", "RECOMP_INPUTS.toml")
 FIELDS = ("kind", "start", "end", "elapsed")
 LABEL_FIELDS = ("region", "address", "mode")
 RUN_FIELDS = ("run", "seconds", "bound", "armed", "targets", "ranges", "liveness", "stops",

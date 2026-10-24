@@ -9,7 +9,7 @@ build time from your own copy of the image. This page says which one.
 - a block inside a function: its `loc_<address>` label sits in the file of the start above it;
 - a literal pool: `build\code\pool_<address>.s`, named by the first word it holds.
 
-Every row below is one function start in `docs\research\FUNCTION_BOUNDS.csv`.
+Every row below is one function start in `tools\code\FUNCTION_BOUNDS.csv`.
 `python tools\code\code_index.py --check` fails when this page and the tree disagree.
 
 | function | address | file |

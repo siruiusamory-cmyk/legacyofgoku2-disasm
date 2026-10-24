@@ -1,10 +1,10 @@
 # Build
 
-Prerequisites: ARM Developer Suite 1.2 (`armasm`, `armlink`, `fromelf`), Python 3.12 on `PATH`, and
-the retail ROM as `baserom.gba` in this directory. `rebuild.cmd` defaults `ADS` to an ADS 1.2 Build
-805 install beside this checkout's parent directory; set `ADS` to use another installation. The
-ROM's sha1 must equal `baserom.sha1` and its game code must read `ALFE`; `extract.cmd` refuses
-anything else.
+Prerequisites: ARM Developer Suite 1.2 (`armasm`, `armlink`, `fromelf`), Python 3.12 on `PATH`,
+Visual Studio 2022 or Build Tools with the C++ workload, and the retail ROM as `baserom.gba` in
+this directory. `rebuild.cmd` defaults `ADS` to an ADS 1.2 Build 805 install beside this checkout's
+parent directory; set `ADS` to use another installation. The ROM's sha1 must equal `baserom.sha1`
+and its game code must read `ALFE`; `extract.cmd` refuses anything else.
 
 ```
 extract.cmd
@@ -42,8 +42,13 @@ The source checks are in `tools\lint\lints.py` and the link check in `tools\chec
 commands. The tests are `python -m pytest tools`, one file per process, with the retail image
 present; the ROM-gated tests skip while it is absent, which is what CI runs.
 
-The build is byte sensitive: `asm/` carries the transcribed halfwords, so a change there moves the
-digest. The gate is the only proof that a change kept the image equal.
+`rebuild.cmd` builds `tools/compress/compress.exe` from the jcalg1 source under
+`tools/compress/jcalg1/` with `tools/compress/build.cmd` when the binary is absent; no compiled copy
+of the compressor is tracked.
+
+The build is byte sensitive: `asm/crt0.s` carries transcribed instructions and the rest of the code
+is emitted from the image, so a change there moves the digest. The gate is the only proof that a
+change kept the image equal.
 
 Which file carries a function, and how a change to one is proven, is the path in
 [README.md](README.md#reading-and-changing-a-function). [docs/READABILITY.md](docs/READABILITY.md)

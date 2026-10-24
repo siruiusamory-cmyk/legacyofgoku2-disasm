@@ -50,7 +50,7 @@ names the class it is:
   registers and memory it crafts, and asserts the registers it returns, the memory it writes and the
   calls it makes, so the name claims only what that test asserts. `tools/code/thumb_vm.py` is the
   harness: it stops at the function's return, refuses a step past its budget and a run outside the
-  function's body in `docs/research/FUNCTION_BOUNDS.csv` except through a recorded call, and stubs
+  function's body in `tools/code/FUNCTION_BOUNDS.csv` except through a recorded call, and stubs
   that call unless the test supplies its return values. The row's evidence cell cites the test as
   `tools/...py::test_name`; `NAMING-behaviour-test` in `tools/lint/lints.py` refuses a row whose
   citation is absent, repeats, names an untracked file, names a test its file does not define, or
@@ -63,7 +63,7 @@ number that the evidence cell does not also carry.
 ## Where a quoted effect has to lie
 
 Every quoted effect has to sit inside the named function's own body as
-`docs/research/FUNCTION_BOUNDS.csv` defines it: the start, plus every block reachable from it
+`tools/code/FUNCTION_BOUNDS.csv` defines it: the start, plus every block reachable from it
 inside its own code run, up to the next function start. A register write in a later block of that
 function is the function's effect. A write past another function's start belongs to that function
 and not to this one.
@@ -74,7 +74,7 @@ as a stored value. A failing row is demoted, never repaired by narrowing the quo
 
 ## ## The ledger
 
-`docs/NAMING_LEDGER.csv` has one row per promotion: `address,old,new,evidence_class,evidence`. The
+`tools/code/NAMING_LEDGER.csv` has one row per promotion: `address,old,new,evidence_class,evidence`. The
 evidence cell is short and checkable on its own: the register and the constant, the SWI number, the
 callee address, or the split figure. A promotion without a ledger row is a name without evidence.
 
@@ -100,7 +100,7 @@ literal pool word that holds a register address, so no emitted file carries the 
 The census carries every emitted entry and every transcribed code-span start, the beginning of a
 `code_*.s` slice the build assembles, so a span the split proves but no export names still takes its
 place in the population. `tools/code/function_bounds.py` classifies each of them from the bytes, and
-`docs/research/FUNCTION_BOUNDS.csv` carries one row per address: `address,role,evidence`. The split
+`tools/code/FUNCTION_BOUNDS.csv` carries one row per address: `address,role,evidence`. The split
 proves code at 2,447 addresses. A `start` carries at least one limb:
 
 - **call**: an instruction in the emitted code reaches it with `bl`;
@@ -126,7 +126,7 @@ that disagrees with the image. A fragment is not a place a name may attach.
 
 ## The address-named count
 
-`docs/NAMING_BASELINE.txt` holds the number of functions that still carry the address form, not the
+`tools/code/NAMING_BASELINE.txt` holds the number of functions that still carry the address form, not the
 number of emitted entries: the fragments carry `loc_` and are not counted. `README.md` carries the
 same figure as a sentence. The `NAMING-address-ratchet` check in `tools/lint/lints.py` refuses a tree
 whose live count is above the baseline, and refuses one whose count is below it while the baseline

@@ -18,6 +18,9 @@ echo function_bounds_exit=%ERRORLEVEL%
 echo === incbin slices ===
 call tools\incbin.bat baserom.gba 0x0 0xc0
 echo incbin_header_exit=%ERRORLEVEL%
+echo === compressor ===
+if not exist "%ROOT%\tools\compress\compress.exe" call "%ROOT%\tools\compress\build.cmd"
+if errorlevel 1 exit /b 1
 python tools\compress\generate_containers.py
 echo container_generate_exit=%ERRORLEVEL%
 echo === building asm files ===

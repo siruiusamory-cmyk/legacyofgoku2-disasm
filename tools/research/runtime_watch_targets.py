@@ -11,8 +11,8 @@ sys.path.insert(0, os.path.join(ROOT, "tools", "split"))
 import code_split
 
 ROM = os.path.join(ROOT, "baserom.gba")
-EXPORT = os.path.join(ROOT, "docs", "research", "RECOMP_INPUTS.toml")
-CSV_OUT = os.path.join(ROOT, "docs", "research", "RUNTIME_WATCH_TARGETS.csv")
+EXPORT = os.path.join(ROOT, "tools", "recomp", "RECOMP_INPUTS.toml")
+CSV_OUT = os.path.join(ROOT, "tools", "research", "RUNTIME_WATCH_TARGETS.csv")
 FIELDS = ("kind", "start", "end", "bytes", "mode", "runtime")
 KINDS = ("candidate-code", "bx-unresolved", "irq-slot")
 EXPECT = {"candidate-code": (808, 26122), "bx-unresolved": (39, 78), "irq-slot": (14, 56)}

@@ -137,7 +137,7 @@ def test_the_export_places_the_interrupt_handler_inside_the_code_copy():
 
 
 def test_a_census_row_with_no_end_is_skipped(tmp_path):
-    where = tmp_path / "docs" / "research"
+    where = tmp_path / "tools" / "code"
     where.mkdir(parents=True)
     (where / "FUNCTION_ENDS.csv").write_text(
         "address,mode,origin,end,reason\n"

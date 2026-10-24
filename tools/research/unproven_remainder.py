@@ -14,9 +14,9 @@ import code_split
 import function_bounds
 
 ROM = os.path.join(ROOT, "baserom.gba")
-CONTAINERS = os.path.join(ROOT, "docs", "research", "CONTAINER_CENSUS.csv")
-RUNTIME = os.path.join(ROOT, "docs", "research", "RUNTIME_LABELS.csv")
-OUT = os.path.join(ROOT, "docs", "research", "UNPROVEN_REMAINDER.csv")
+CONTAINERS = os.path.join(ROOT, "tools", "compress", "CONTAINER_CENSUS.csv")
+RUNTIME = os.path.join(ROOT, "tools", "code", "RUNTIME_LABELS.csv")
+OUT = os.path.join(ROOT, "tools", "research", "UNPROVEN_REMAINDER.csv")
 HEADER = "class,bytes,share"
 BASE = code_split.ROM_BASE
 PAD = 8

@@ -2,6 +2,7 @@ baserom.gba
 baserom.gba*
 image.gba
 build/
+tools/compress/compress.exe
 work/rebuild.log
 work/snapshot/
 logs/

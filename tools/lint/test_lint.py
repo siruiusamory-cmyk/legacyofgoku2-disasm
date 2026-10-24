@@ -716,8 +716,8 @@ def test_a_readability_ratchet_accepts_the_count_it_records():
 def readability_scratch(monkeypatch, live, built):
     root = tempfile.mkdtemp(prefix="lint-test-")
     open(os.path.join(root, "baserom.gba"), "wb").close()
-    os.makedirs(os.path.join(root, "docs"))
-    with open(os.path.join(root, "docs", "READABILITY_BASELINE.txt"), "w",
+    os.makedirs(os.path.join(root, "tools", "lint"))
+    with open(os.path.join(root, "tools", "lint", "READABILITY_BASELINE.txt"), "w",
               encoding="utf-8", newline="\n") as handle:
         handle.write("ram=55\nhardware=0\n")
     if built:

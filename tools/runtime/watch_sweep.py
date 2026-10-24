@@ -17,7 +17,7 @@ sys.path.insert(0, os.path.join(ROOT, "tools", "gate"))
 
 import gate
 
-TARGETS = os.path.join(ROOT, "docs", "research", "RUNTIME_WATCH_TARGETS.csv")
+TARGETS = os.path.join(ROOT, "tools", "research", "RUNTIME_WATCH_TARGETS.csv")
 LIVENESS = 0x03000824
 
 

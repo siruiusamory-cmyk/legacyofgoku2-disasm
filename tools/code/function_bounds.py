@@ -17,10 +17,10 @@ import export_inputs
 import name_table
 
 ROM = os.path.join(ROOT, "baserom.gba")
-BOUNDS = os.path.join(ROOT, "docs", "research", "FUNCTION_BOUNDS.csv")
-ENDS = os.path.join(ROOT, "docs", "research", "FUNCTION_ENDS.csv")
-ALLOW = os.path.join(ROOT, "docs", "research", "FUNCTION_ENTRY_ALLOW.csv")
-RUNTIME = os.path.join(ROOT, "docs", "research", "RUNTIME_LABELS.csv")
+BOUNDS = os.path.join(ROOT, "tools", "code", "FUNCTION_BOUNDS.csv")
+ENDS = os.path.join(ROOT, "tools", "code", "FUNCTION_ENDS.csv")
+ALLOW = os.path.join(ROOT, "tools", "code", "FUNCTION_ENTRY_ALLOW.csv")
+RUNTIME = os.path.join(ROOT, "tools", "code", "RUNTIME_LABELS.csv")
 HEADER = "address,role,evidence"
 ENDS_HEADER = "address,mode,origin,end,reason"
 FLAG_HEADER = "address,kind,limb,flags,entry,reason"

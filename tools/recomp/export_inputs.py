@@ -15,8 +15,8 @@ import code_split
 
 ROM = os.path.join(ROOT, "baserom.gba")
 SHA1 = os.path.join(ROOT, "baserom.sha1")
-OUT = os.path.join(ROOT, "docs", "research", "RECOMP_INPUTS.toml")
-BOUNDS = os.path.join("docs", "research", "FUNCTION_ENDS.csv")
+OUT = os.path.join(ROOT, "tools", "recomp", "RECOMP_INPUTS.toml")
+BOUNDS = os.path.join("tools", "code", "FUNCTION_ENDS.csv")
 MODES = ("arm", "thumb")
 CODE_ROW = re.compile(r'\[\[code\]\]\naddr = 0x([0-9a-fA-F]{8})\nmode = "([^"]*)"\n'
                       r'size = (\d+)\norigin = "([^"]*)"')

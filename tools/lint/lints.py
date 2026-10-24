@@ -39,10 +39,10 @@ CHECKS = ("P-148-repo-module-path", "P-159-bare-interpreter", "P-167-pool-guard"
           "README-numbers", "TEST-silent-return", "P-518-stale-incbin-call", "DUP-block",
           "READABILITY-ratchet", "READABILITY-index", "READABILITY-path",
           "BOUNDS-entry-allow", "RECOMP-census")
-ENTRY_ALLOW = "docs/research/FUNCTION_ENTRY_ALLOW.csv"
-FUNCTION_ENDS = "docs/research/FUNCTION_ENDS.csv"
-FUNCTION_BOUNDS = "docs/research/FUNCTION_BOUNDS.csv"
-RECOMP = "docs/research/RECOMP_INPUTS.toml"
+ENTRY_ALLOW = "tools/code/FUNCTION_ENTRY_ALLOW.csv"
+FUNCTION_ENDS = "tools/code/FUNCTION_ENDS.csv"
+FUNCTION_BOUNDS = "tools/code/FUNCTION_BOUNDS.csv"
+RECOMP = "tools/recomp/RECOMP_INPUTS.toml"
 CODE_MODES = ("arm", "thumb")
 ENTRY_FLAGS = ("data", "undecodable", "clobber")
 ENTRY_REASONS = ("prefix", "row-start")
@@ -310,7 +310,7 @@ def readme_findings():
     try:
         totals = code_split.read_totals()
     except (OSError, ValueError) as error:
-        return findings + [("README-numbers", "docs/research/CODE_SPLIT.md: %s" % error)]
+        return findings + [("README-numbers", "tools/split/CODE_SPLIT.md: %s" % error)]
     module = naming_module()
     starts = module.starts()
     if starts is None:
@@ -330,7 +330,7 @@ def readability_module():
 
 
 def readability_findings(baseline_text, live):
-    site = "docs/READABILITY_BASELINE.txt"
+    site = "tools/lint/READABILITY_BASELINE.txt"
     recorded = dict((key, int(value))
                     for key, value in re.findall(r"(ram|hardware)=(\d+)", baseline_text or ""))
     findings = []
@@ -377,7 +377,7 @@ def readability_tree_findings():
     if os.path.exists(code):
         module = readability_module()
         live = module.counts()
-        findings = readability_findings(read_source("docs/READABILITY_BASELINE.txt"),
+        findings = readability_findings(read_source("tools/lint/READABILITY_BASELINE.txt"),
                                         {"ram": live["ram_literals"],
                                          "hardware": live["hardware_literals"]})
     readme = read_source("README.md") or ""

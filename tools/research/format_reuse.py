@@ -18,7 +18,7 @@ import text_storage
 import tilebank
 
 ROM = os.path.join(ROOT, "baserom.gba")
-DOC = os.path.join(ROOT, "docs", "research", "FORMAT_REUSE.md")
+DOC = os.path.join(ROOT, "tools", "research", "FORMAT_REUSE.md")
 ROM_SHA256 = mapcontainer.ROM_SHA256
 CONTAINERS = 11538
 CONTAINER_BYTES = 4686792

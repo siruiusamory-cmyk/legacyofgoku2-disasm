@@ -53,14 +53,16 @@ prints the split, and [docs/DEFINITION_OF_DONE.md](docs/DEFINITION_OF_DONE.md) s
 source.
 
 The code and data split, measured by `python tools\split\code_split.py --check` and recorded in
-[docs/research/CODE_SPLIT.md](docs/research/CODE_SPLIT.md), is proven code 38,084 B, filtered
+[tools/split/CODE_SPLIT.md](tools/split/CODE_SPLIT.md), is proven code 38,084 B, filtered
 pointer-entry code 24,652 B, literal pool 3,744 B, overlay 3,708 B, unclassified 8,299,528 B, plus
 the two classes the reaching channels name: table-held 2,396 B and gap-fill 16,496 B.
 
 ## Building
 
-You need ARM Developer Suite 1.2, Python 3.12 and your own copy of the game saved as `baserom.gba`.
-[INSTALL.md](INSTALL.md) has the details.
+You need ARM Developer Suite 1.2, Python 3.12, Visual Studio 2022 or Build Tools with the C++
+workload, and your own copy of the game saved as `baserom.gba`. [INSTALL.md](INSTALL.md) has the
+details. The build compiles the jcalg1 compressor from the vendored source when it is absent, so no
+compiled copy of it is distributed here.
 
 ```
 extract.cmd
@@ -92,12 +94,12 @@ retail ROM.
 
 | Path | Contents |
 | --- | --- |
-| `asm/` | the assembly the image is built from |
-| `tools/` | extraction, the generators, the gate, the source checks and the research scripts |
-| `docs/` | how source is counted, the readability ledger, the format record and the research notes |
+| `asm/` | the assembly the image is built from: the startup block, the symbol tables and the token list |
+| `tools/` | every generator, the gate, the source checks and the tables they read; `tools/README.md` says what runs each one |
+| `docs/` | the reader guide: the function index, the naming and readability rules, and the RAM ledger; `docs/README.md` says where to start |
 | `assets/` | inputs the build writes from your ROM; never tracked |
 | `build/` | the objects, the generated source and the image; never tracked |
-| `work/` | build logs and research output; never tracked |
+| `work/` | build logs; never tracked |
 
 ## Credits and license
 

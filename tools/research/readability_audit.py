@@ -25,7 +25,7 @@ ADDRESS_IN_NAME = re.compile(r"[0-9a-f]{8}")
 HARDWARE = (0x04000000, 0x05000000)
 RAM = (0x02000000, 0x04000000)
 EQUATES = "registers.s"
-TABLES = os.path.join(ROOT, "docs", "TABLE_LEDGER.csv")
+TABLES = os.path.join(ROOT, "tools", "research", "TABLE_LEDGER.csv")
 TABLE_HEADER = ("family", "reader", "evidence_class", "page")
 
 
