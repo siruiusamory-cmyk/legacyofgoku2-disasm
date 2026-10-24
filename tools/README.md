@@ -113,7 +113,9 @@ first two and the link check's test. A table a check reads sits beside the reade
 | `research/RUNTIME_WATCH_RESULTS.csv`, `research/RUNTIME_WATCH_RESULTS.md` | the per-target verdict of the recorded runs | `runtime_watch_results.py --check` |
 | `research/unproven_remainder.py` | splits the bytes no proven function bounds into their reasons | `--check`, `test_unproven_remainder.py` |
 | `research/UNPROVEN_REMAINDER.csv` | that split, one row per reason | `unproven_remainder.py --check` |
-| `research/test_asset_directory.py`, `research/test_callers.py`, `research/test_device_access.py`, `research/test_format_reuse.py`, `research/test_library_match.py`, `research/test_opcode_stream.py`, `research/test_readability_audit.py`, `research/test_runtime_watch_results.py`, `research/test_runtime_watch_targets.py`, `research/test_unproven_remainder.py` | the tests for the readers above | CI |
+| `research/data_census.py` | classes the bytes outside every accepted container by the reader that names them | `--check`, `test_data_census.py` |
+| `research/DATA_CENSUS.md` | the class table, its null and the reader bases no class owns | `data_census.py --check` |
+| `research/test_asset_directory.py`, `research/test_callers.py`, `research/test_data_census.py`, `research/test_device_access.py`, `research/test_format_reuse.py`, `research/test_library_match.py`, `research/test_opcode_stream.py`, `research/test_readability_audit.py`, `research/test_runtime_watch_results.py`, `research/test_runtime_watch_targets.py`, `research/test_unproven_remainder.py` | the tests for the readers above | CI |
 
 ## runtime/
 

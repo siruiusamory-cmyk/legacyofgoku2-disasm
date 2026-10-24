@@ -5,6 +5,15 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### Added
+
+- `tools/research/data_census.py` classes the 3,630,726 B the gate's raw class holds outside every
+  accepted container: twelve reader classes that cite the load site in walked code which names the
+  family's base, and three `no reader found` classes for a fill run, a run of image addresses and the
+  residual, and the classes partition the region exactly. `tools/research/DATA_CENSUS.md` is the page
+  it derives and `--check` refuses a difference; the null reverses the region's halfword order and
+  leaves no reader-backed byte.
+
 ### Changed
 
 - The technique page at `0x08003684` is one function: a `tools/code/CENSUS_EVIDENCE.csv` entry row keeps
