@@ -1,13 +1,13 @@
-<!-- TODO banner: add docs/banner.png at 1280x320, then put it above the title as a centered 900 px image. -->
-<!-- TODO demo GIF: a short capture of extract.cmd, rebuild.cmd and the gate printing GATE PASS, saved as docs/demo.gif. -->
-<!-- TODO social preview: set a repository social image in Settings once the banner exists. -->
+<!-- TODO banner: when the art is accepted, save it as docs/banner.png and put it above the title as a centered image 900 pixels wide. -->
+<!-- TODO demo GIF: a short capture of extract.cmd, rebuild.cmd and the gate printing GATE PASS, saved as docs/demo.gif and placed under the tagline. -->
+<!-- TODO social preview: set the repository social image in Settings once the banner exists. -->
 # Dragon Ball Z: The Legacy of Goku II disassembly
 
 **A byte-exact disassembly of Dragon Ball Z: The Legacy of Goku II (GBA, USA) that rebuilds the original ROM from tracked source.**
 
 ![License](https://img.shields.io/badge/license-MPL--2.0-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-Game%20Boy%20Advance-lightgrey.svg)
-![Build](https://img.shields.io/badge/build-byte--exact-brightgreen.svg)
+![Functions](https://img.shields.io/badge/functions-1249-blueviolet.svg)
 
 ## Contents
 
@@ -15,6 +15,7 @@
 - [What this is not](#what-this-is-not)
 - [Progress](#progress)
 - [Building](#building)
+- [Reading and changing a function](#reading-and-changing-a-function)
 - [Repository layout](#repository-layout)
 - [Credits and license](#credits-and-license)
 
@@ -73,6 +74,9 @@ python tools\gate\gate.py
 The gate rebuilds from scratch and prints `DIGEST MATCH` and `GATE PASS` when the output equals the
 retail ROM.
 
+`check.cmd` runs the source checks, the link check and the link check's test, the same commands CI
+runs; its test step needs the runner CI installs, `python -m pip install pytest`.
+
 ## Reading and changing a function
 
 1. Find the function in [docs/CODE_INDEX.md](docs/CODE_INDEX.md). Every function start has a row
@@ -98,9 +102,7 @@ retail ROM.
 | `asm/` | the assembly the image is built from: the startup block, the symbol tables and the token list |
 | `tools/` | every generator, the gate, the source checks and the tables they read; `tools/README.md` says what runs each one |
 | `docs/` | the reader guide: the function index, the naming and readability rules, and the RAM ledger; `docs/README.md` says where to start |
-| `assets/` | inputs the build writes from your ROM; never tracked |
 | `build/` | the objects, the generated source and the image; never tracked |
-| `work/` | build logs; never tracked |
 
 ## Credits and license
 

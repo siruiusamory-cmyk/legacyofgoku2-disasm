@@ -34,6 +34,11 @@ All notable changes to this project are documented here. The format follows
 - Nine transcribed starts in the character-stats slice carry the names their bytes prove: the five
   readers of the level curve, the XP award and the level-up it applies, the level setter and the
   status page, each with a behaviour test and a ledger row.
+- `README.md` follows the house layout: the tagline, a license, platform and function-count badge
+  row that states nothing by colour, a Contents entry for every section, and a comment in place of the
+  banner, the demo GIF and the social preview until each exists. Its layout table lists only the
+  directories a clone or a build produces, and the build section names the test runner `check.cmd`
+  needs.
 
 ### Fixed
 
