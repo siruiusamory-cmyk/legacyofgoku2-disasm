@@ -52,10 +52,10 @@ first two and the link check's test. A table a check reads sits beside the reade
 | --- | --- | --- |
 | `compress/main.cpp` | the compressor driver: reads a payload, writes the kind-1 container the assembly expects | `compress.exe`, built by `build.cmd` |
 | `compress/CMakeLists.txt` | builds `compress.exe` from the driver and the jcalg1 MASM source | `build.cmd` |
-| `compress/build.cmd` | finds the Visual Studio cmake through vswhere, builds the compressor and copies it beside the driver | `rebuild.cmd` |
+| `compress/build.cmd` | finds the Visual Studio cmake through vswhere, builds the compressor and copies it beside the driver | `rebuild.cmd`; the encoder, when `compress.exe` is absent |
 | `compress/jcalg1/` | the jcalg1 r5.32 compressor as MASM source (`jcalg1_c.asm`, `jcalg1_gusocb.asm`, `string.asm`, `checksum32.asm`, `jcalg1_static.asm`) with its header, includes, notes and MIT licence (`jcalg1.h`, `jcalg1_proto.inc`, `jccomp.inc`, `revision.txt`, `README.md`, `LICENSE`) | `CMakeLists.txt` |
 | `compress/container.py` | the container header and the kind-0, kind-1 and kind-2 payload | `generate_containers.py`, `container_census.py`, the tests |
-| `compress/jcalg1.py` | the JCALG1 body decoder and the encoder driver the build re-encodes through | `generate_containers.py`, the tests |
+| `compress/jcalg1.py` | the JCALG1 body decoder and the encoder driver the build re-encodes through, which runs `build.cmd` when `compress.exe` is absent | `generate_containers.py`, the tests |
 | `compress/generate_containers.py` | re-encodes every packed container in the image and writes the token list `asm/remainder.s` | `rebuild.cmd` |
 | `compress/container_census.py` | scans the image for containers, with its permuted-image null, and writes the census page and ledger | `--check`, `generate_containers.py` |
 | `compress/CONTAINER_CENSUS.md`, `compress/CONTAINER_CENSUS.csv` | the container population, its method and its per-container ledger | `container_census.py --check`; the CSV is read by `unproven_remainder.py` |

@@ -9,7 +9,11 @@ HEADER_SIZE = 8
 
 PACKED_KIND = 1
 
-COMPRESS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "compress.exe")
+HERE = os.path.dirname(os.path.abspath(__file__))
+
+COMPRESS = os.path.join(HERE, "compress.exe")
+
+BUILD = os.path.join(HERE, "build.cmd")
 
 INITIAL_LITERAL_BITS = 1
 
@@ -180,8 +184,21 @@ def probe(image: bytes, offset: int, limit: int) -> dict:
     return {"ok": True, "reason": OK, "size": len(data), "consumed": consumed, "data": data}
 
 
+def _executable(executable: str) -> str:
+    if os.path.exists(executable):
+        return executable
+    if executable == COMPRESS:
+        try:
+            subprocess.run(["cmd.exe", "/c", BUILD], capture_output=True)
+        except OSError:
+            pass
+        if os.path.exists(executable):
+            return executable
+    raise ValueError("no compressor at %s; build it with %s" % (executable, BUILD))
+
+
 def encode(payload: bytes, executable: str | None = None) -> bytes:
-    executable = COMPRESS if executable is None else executable
+    executable = _executable(COMPRESS if executable is None else executable)
     with tempfile.TemporaryDirectory() as directory:
         source = os.path.join(directory, "payload.bin")
         target = os.path.join(directory, "container.bin")

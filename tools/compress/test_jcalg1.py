@@ -3,7 +3,10 @@ from __future__ import annotations
 import hashlib
 import os
 import struct
+import subprocess
 import sys
+
+import pytest
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
@@ -137,6 +140,38 @@ def test_the_initial_literal_width_is_the_callers_one_bit():
     writer.put(0, 12)
     image = container_at(writer.finish(), 1)
     assert jcalg1.decompress(image, 8, len(image)) == (b"\x01", len(image) - 8)
+
+
+def test_a_missing_compressor_is_built_through_build_cmd(monkeypatch, tmp_path):
+    tool = str(tmp_path / "compress.exe")
+    monkeypatch.setattr(jcalg1, "COMPRESS", tool)
+    calls = []
+
+    def fake_run(command, **kwargs):
+        calls.append(list(command))
+        if command[0] == "cmd.exe":
+            with open(tool, "wb") as handle:
+                handle.write(b"")
+        else:
+            with open(command[1], "rb") as handle:
+                payload = handle.read()
+            with open(command[2], "wb") as handle:
+                handle.write(struct.pack("<II", jcalg1.PACKED_KIND, len(payload)) + payload)
+        return subprocess.CompletedProcess(command, 0)
+
+    monkeypatch.setattr(jcalg1.subprocess, "run", fake_run)
+    blob = jcalg1.encode(b"abcd")
+    assert calls[0] == ["cmd.exe", "/c", jcalg1.BUILD]
+    assert calls[1][0] == tool
+    assert blob == struct.pack("<II", jcalg1.PACKED_KIND, 4) + b"abcd"
+
+
+def test_a_build_that_produces_no_compressor_names_build_cmd(monkeypatch, tmp_path):
+    monkeypatch.setattr(jcalg1, "COMPRESS", str(tmp_path / "compress.exe"))
+    monkeypatch.setattr(jcalg1.subprocess, "run",
+                        lambda command, **kwargs: subprocess.CompletedProcess(command, 1))
+    with pytest.raises(ValueError, match="build.cmd"):
+        jcalg1.encode(b"abcd")
 
 
 def test_an_output_explosion_is_refused_not_allocated():
