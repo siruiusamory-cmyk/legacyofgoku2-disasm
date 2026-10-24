@@ -15,7 +15,8 @@ import testkit
 
 SHORT_CONTAINER = 0x0B8B84
 SEAM_CONTAINER = 0x1D91EC
-SEAM_RUN = (0x1D918C, 0x1D9230)
+SEAM_RUN = (0x1D918C, 0x1D9234)
+SEAM_MARKER = 0x1D9230
 KIND_TWO_CONTAINERS = 38
 KIND_TWO_BYTES = 53872
 
@@ -32,21 +33,21 @@ def test_the_end_marker_word_a_container_shares_with_the_next_header_is_emitted_
     unpacked = container.unpack(image, SEAM_CONTAINER,
                                 maximum_output=generate_containers.MAX_OUTPUT)
     encoded = jcalg1.encode(unpacked.data)
-    assert unpacked.packed_end == SEAM_RUN[1]
+    assert unpacked.packed_end == SEAM_MARKER
     assert len(encoded) == unpacked.packed_size + 4
     assert encoded[unpacked.packed_size:] == b"\x00\x00\x00\x00"
-    assert image[SEAM_RUN[1]:SEAM_RUN[1] + 4] == encoded[unpacked.packed_size:]
-    assert container.read_header(image, SEAM_RUN[1]) == (container.STORED, 1)
+    assert image[SEAM_MARKER:SEAM_MARKER + 4] == encoded[unpacked.packed_size:]
+    assert container.read_header(image, SEAM_MARKER) == (container.STORED, 1)
     tokens = generate_containers.parsed_asm(
         open(generate_containers.ASM, encoding="utf-8").read())
-    position = next(index for index, token in enumerate(tokens)
-                    if token[0] == SEAM_RUN[0] and token[1] == SEAM_RUN[1])
+    position = next(index for index, token in enumerate(tokens) if token[0] == SEAM_RUN[0])
+    assert tokens[position][1] == SEAM_RUN[1]
     assert generate_containers.GEN.search(tokens[position][2]) is not None
     assert tokens[position + 1][0] == SEAM_RUN[1]
     assert generate_containers.GEN.search(tokens[position + 1][2]) is None
     blob, count = generate_containers.run_bytes(image, *SEAM_RUN)
     assert blob == image[SEAM_RUN[0]:SEAM_RUN[1]]
-    assert len(blob) == 164 and count == 3
+    assert len(blob) == 168 and count == 3
 
 
 def test_every_kind_two_stream_is_emitted_with_its_kind_word_and_the_retail_body():

@@ -42,6 +42,12 @@ All notable changes to this project are documented here. The format follows
 
 ### Changed
 
+- The container census admits no stored (kind 0) hit: kind 0's codec is the identity, so its extent
+  cannot be a source class, and the scan records those hits without accepting them. 3,994 stored hits
+  over 1,207,832 B of extents leave the population, which now holds 9,919 packed containers covering
+  3,567,976 B; the map and text emitters stop withholding 19,421 B and 4 B behind those extents, and
+  the gate's source class rises from 3,806,588 B to 3,832,141 B (45.3781 % to 45.6827 %). The data
+  census region grows from 3,406,114 B to 4,555,139 B.
 - The container census rejects a stored (kind 0) hit that overlaps a container named by the map layer
   chunk directory and accepts the chunk instead, since the chunk decodes and re-encodes to the image's
   own bytes. 1,256 stored hits give way to 3,631 chunks, and the share of the ROM that builds from

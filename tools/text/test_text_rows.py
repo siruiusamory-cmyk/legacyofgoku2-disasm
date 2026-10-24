@@ -26,7 +26,7 @@ def test_the_table_reproduces_the_retail_bytes():
 def test_the_table_accounts_for_the_census_class_exactly():
     result = text_rows.check(retail())
     assert result["emitted_bytes"] == text_rows.CENSUS_BYTES
-    assert result["bytes"] - result["emitted_bytes"] == 4
+    assert result["bytes"] - result["emitted_bytes"] == 0
 
 
 def test_the_emitted_runs_are_inside_the_image_and_do_not_overlap():

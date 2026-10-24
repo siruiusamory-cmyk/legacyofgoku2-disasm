@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import bisect
 import csv
 import hashlib
 import io
@@ -26,9 +25,8 @@ STEP = 4
 NULL_BLOCK = 0x10000
 ENCODER_BLOCK_HEADER = 10
 INCLUDED_KIND = 2
-PINNED = {"accepted": 13913, "packed": 9919, "stored": 3994, "union_bytes": 4775808,
-          "rejected": 1256, "recovered": 3631,
-          "null_accepted": 187, "null_packed": 0}
+PINNED = {"accepted": 9919, "packed": 9919, "stored": 0, "union_bytes": 3567976,
+          "null_accepted": 0, "null_packed": 0}
 
 
 def digest16(data):
@@ -61,21 +59,6 @@ def hits(image):
                       "packed": unpacked.packed_size, "payload": len(unpacked.data),
                       "digest": digest16(unpacked.data), "shape": shape_of(len(unpacked.data))})
     return found
-
-
-def merged_spans(hits):
-    spans = []
-    for start, end in sorted((hit["offset"], hit["offset"] + hit["packed"]) for hit in hits):
-        if spans and start <= spans[-1][1]:
-            spans[-1][1] = max(spans[-1][1], end)
-        else:
-            spans.append([start, end])
-    return spans
-
-
-def overlaps(spans, starts, begin, end):
-    index = bisect.bisect_left(starts, end) - 1
-    return index >= 0 and spans[index][1] > begin
 
 
 def reencodes(image, hit, encode):
@@ -111,16 +94,8 @@ def population(good, recovered):
     accepted = greedy(good)
     taken = {hit["offset"] for hit in accepted}
     recovered = [hit for hit in recovered if hit["offset"] not in taken]
-    spans = merged_spans(recovered)
-    starts = [span[0] for span in spans]
-    kept, rejected = [], []
-    for hit in accepted:
-        if hit["kind"] == container.STORED and overlaps(
-                spans, starts, hit["offset"], hit["offset"] + hit["packed"]):
-            rejected.append(hit)
-            continue
-        kept.append(hit)
-    return (sorted(kept + recovered, key=lambda item: item["offset"]), rejected, recovered)
+    kept = [hit for hit in accepted if hit["kind"] != container.STORED]
+    return sorted(kept + recovered, key=lambda item: item["offset"])
 
 
 def union_bytes(accepted, length):
@@ -147,8 +122,7 @@ def summarise(image, encode=None, chunks=None):
     found = hits(image)
     good = [hit for hit in found if hit["ok"]]
     refused = [hit for hit in found if not hit["ok"]]
-    accepted, rejected, recovered = population(
-        good, recoverable(image, good, chunks, encode))
+    accepted = population(good, recoverable(image, good, chunks, encode))
     kinds = {}
     sizes = {}
     shapes = {}
@@ -158,11 +132,12 @@ def summarise(image, encode=None, chunks=None):
         shapes[hit["shape"]] = shapes.get(hit["shape"], 0) + 1
     stored = [hit for hit in accepted if hit["kind"] == container.STORED]
     packed = [hit for hit in accepted if hit["kind"] != container.STORED]
+    shape_stored = [hit for hit in found if hit["kind"] == container.STORED]
     union = union_bytes(accepted, len(image))
     return {"bytes": len(image), "hits": len(found), "decoded": len(good),
             "refused": len(refused), "accepted": accepted, "kinds": sorted(kinds.items()),
-            "stored": stored, "packed": packed, "stored_over": len(rejected),
-            "raised": len(recovered), "stored_bytes": sum(hit["packed"] for hit in stored),
+            "stored": stored, "packed": packed, "shape_stored": len(shape_stored),
+            "stored_bytes": sum(hit["packed"] for hit in stored),
             "packed_bytes": sum(hit["packed"] for hit in packed),
             "payload_bytes": sum(hit["payload"] for hit in accepted),
             "union_bytes": union, "sizes": sorted(sizes.items(), key=lambda pair: -pair[1])[:8],
@@ -195,12 +170,12 @@ def doc_text(real, null):
         "its offset is at or past the end of the previous accepted hit, so no accepted extents "
         "overlap and the byte union is the sum of the packed extents.")
     add("")
-    add("One group is removed from that selection. A kind-0 hit whose extent overlaps a "
-        "container the map layer chunk directory names, which decodes and re-encodes to the "
-        "image's own bytes, is rejected: the stored kind is an identity copy of the bytes under "
-        "it, and that chunk is the source those bytes have. The chunk itself is accepted, and "
-        "nothing else in the selection moves. Measured here: %d stored hits are rejected and %d "
-        "chunks are recovered." % (real["stored_over"], real["raised"]))
+    add("A kind-0 hit is a shape and not a container this population can admit: kind 0's codec is "
+        "the identity, so its extent reproduces the bytes under it and is not a source class, and "
+        "no consumer is established for any member. The scan still records those hits and the null "
+        "still finds them; the selection refuses them. Measured here: %d kind-0 hits are refused "
+        "in the image and %d in the null."
+        % (real["shape_stored"], null["shape_stored"]))
     add("")
     add("The null permutes the image by reversing the halfword order inside every 64 KiB block, "
         "then runs the same scan and the same selection. A format found at this rate in the real "
@@ -222,6 +197,8 @@ def doc_text(real, null):
     add("| refused | %d | %d |" % (real["refused"], null["refused"]))
     add("| non-overlapping accepted | %d | %d |" % (len(real["accepted"]), len(null["accepted"])))
     add("| stored (kind 0) | %d | %d |" % (len(real["stored"]), len(null["stored"])))
+    add("| kind-0 hits refused (identity codec) | %d | %d |"
+        % (real["shape_stored"], null["shape_stored"]))
     add("| packed (kinds 1, 2) | %d | %d |" % (len(real["packed"]), len(null["packed"])))
     add("| packed extents | %d B | %d B |" % (real["packed_bytes"], null["packed_bytes"]))
     add("| stored extents | %d B | %d B |" % (real["stored_bytes"], null["stored_bytes"]))
@@ -242,7 +219,6 @@ def doc_text(real, null):
     add("")
     add("| group | first member |")
     add("|---|---|")
-    add("| stored | %s |" % first_row("stored", real["stored"]))
     add("| packed | %s |" % first_row("packed", real["packed"]))
     add("")
     add("## Declared sizes")
@@ -321,18 +297,18 @@ def main(argv=None):
                  null["union_bytes"]))
         return 0
     null = summarise(permute(image), chunks=chunks)
-    if argv == ["--write"]:
-        write_files(real, null)
-        print("wrote %s and %s" % (os.path.basename(DOC), os.path.basename(CSV)))
-    elif argv == ["--check"]:
-        return check_files(real, null)
     print("containers=%d stored=%d packed=%d packed_bytes=%d declared_payload=%d "
           "union=%d (%.1f %%)"
           % (len(real["accepted"]), len(real["stored"]), len(real["packed"]),
              real["packed_bytes"], real["payload_bytes"], real["union_bytes"],
              100.0 * real["union_bytes"] / real["bytes"]))
-    print("stored hits rejected=%d chunks recovered=%d"
-          % (real["stored_over"], real["raised"]))
+    print("kind-0 hits refused=%d (null %d)"
+          % (real["shape_stored"], null["shape_stored"]))
+    if argv == ["--write"]:
+        write_files(real, null)
+        print("wrote %s and %s" % (os.path.basename(DOC), os.path.basename(CSV)))
+    elif argv == ["--check"]:
+        return check_files(real, null)
     print("null containers=%d packed=%d packed_bytes=%d"
           % (len(null["accepted"]), len(null["packed"]), null["packed_bytes"]))
     return 0

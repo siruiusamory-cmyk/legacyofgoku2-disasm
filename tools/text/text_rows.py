@@ -15,7 +15,7 @@ ROM = os.path.join(ROOT, "baserom.gba")
 BUILD = os.path.join(ROOT, "build", "text")
 ROM_BASE = text_storage.ROM_BASE
 ROM_SHA256 = text_storage.ROM_SHA256
-CENSUS_BYTES = 20477
+CENSUS_BYTES = 20481
 CONTAINER = text_storage.TEXT_CONTAINER
 
 SPECS = {

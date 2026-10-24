@@ -49,22 +49,17 @@ def hit(offset, kind, packed, declared=1):
             "payload": declared, "shape": "other", "digest": "", "ok": True}
 
 
-def test_a_stored_hit_over_a_recovered_chunk_is_rejected_and_the_chunk_taken():
+def test_a_kind0_hit_is_a_shape_and_is_never_accepted():
     chunk = hit(0x108, 1, 0x20)
     stored = hit(0x100, 0, 0x20)
-    other = hit(0x200, 0, 8)
-    accepted, rejected, recovered = container_census.population(
-        [stored, chunk, other], [chunk])
-    assert [item["offset"] for item in accepted] == [0x108, 0x200]
-    assert rejected == [stored]
-    assert recovered == [chunk]
+    other = hit(0x210, 1, 8)
+    accepted = container_census.population([stored, chunk, other], [chunk])
+    assert [item["offset"] for item in accepted] == [0x108, 0x210]
+    assert all(item["kind"] != 0 for item in accepted)
 
 
-def test_a_stored_hit_with_no_recovered_chunk_over_it_stays_accepted():
-    stored = hit(0x100, 0, 0x20)
-    accepted, rejected, recovered = container_census.population([stored], [])
-    assert [item["offset"] for item in accepted] == [0x100]
-    assert rejected == [] and recovered == []
+def test_a_kind0_hit_with_no_chunk_under_it_leaves_no_container():
+    assert container_census.population([hit(0x100, 0, 8)], []) == []
 
 
 def test_the_accepted_extents_do_not_overlap():
@@ -84,8 +79,6 @@ def test_the_census_and_the_null_are_pinned():
     assert len(result["packed"]) == container_census.PINNED["packed"]
     assert len(result["stored"]) == container_census.PINNED["stored"]
     assert result["union_bytes"] == container_census.PINNED["union_bytes"]
-    assert result["stored_over"] == container_census.PINNED["rejected"]
-    assert result["raised"] == container_census.PINNED["recovered"]
     permuted = null()
     assert len(permuted["accepted"]) == container_census.PINNED["null_accepted"]
     assert len(permuted["packed"]) == container_census.PINNED["null_packed"]

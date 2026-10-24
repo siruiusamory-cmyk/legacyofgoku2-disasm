@@ -20,8 +20,8 @@ import tilebank
 ROM = os.path.join(ROOT, "baserom.gba")
 DOC = os.path.join(ROOT, "tools", "research", "FORMAT_REUSE.md")
 ROM_SHA256 = mapcontainer.ROM_SHA256
-CONTAINERS = 13913
-CONTAINER_BYTES = 4775808
+CONTAINERS = 9919
+CONTAINER_BYTES = 3567976
 PACKED = 9919
 IMAGE_BYTES = 8388608
 WIDE_RUNS = 84
