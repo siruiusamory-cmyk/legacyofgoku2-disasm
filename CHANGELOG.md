@@ -16,5 +16,8 @@ All notable changes to this project are documented here. The format follows
 - `tools/compress/compress.exe` is no longer tracked. `rebuild.cmd` builds it from the vendored
   jcalg1 source under `tools/compress/jcalg1/` with `tools/compress/build.cmd` when it is absent,
   and the build then re-encodes every container with the binary it built.
+- Nine transcribed starts in the character-stats slice carry the names their bytes prove: the five
+  readers of the level curve, the XP award and the level-up it applies, the level setter and the
+  status page, each with a behaviour test and a ledger row.
 
 The notes for the changes before this one stay in the repository history.

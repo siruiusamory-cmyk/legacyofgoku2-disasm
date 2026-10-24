@@ -92,13 +92,13 @@ Every row below is one function start in `tools\code\FUNCTION_BOUNDS.csv`.
 | `sub_08003724` | `0x08003724` | `code_08003724.s` |
 | `sub_0800372c` | `0x0800372c` | `code_0800372c.s` |
 | `sub_08003754` | `0x08003754` | `code_08003754.s` |
-| `sub_0800379c` | `0x0800379c` | `code_0800379c.s` |
+| `Character_DrawStatusPage` | `0x0800379c` | `Character_DrawStatusPage.s` |
 | `sub_08003afe` | `0x08003afe` | `code_08003afe.s` |
 | `sub_08003b38` | `0x08003b38` | `code_08003b38.s` |
 | `Scene_Clear` | `0x08003c24` | `Scene_Clear.s` |
 | `Counter_StepRandom` | `0x08003c6e` | `Counter_StepRandom.s` |
-| `sub_08003ca0` | `0x08003ca0` | `code_08003ca0.s` |
-| `sub_08003d58` | `0x08003d58` | `code_08003d58.s` |
+| `Character_ApplyLevelUp` | `0x08003ca0` | `Character_ApplyLevelUp.s` |
+| `Character_AwardXp` | `0x08003d58` | `Character_AwardXp.s` |
 | `Entry_CountFlags` | `0x08003e00` | `Entry_CountFlags.s` |
 | `sub_08003e1e` | `0x08003e1e` | `code_08003e1e.s` |
 | `Bitmap_TestCell` | `0x08003e42` | `Bitmap_TestCell.s` |
@@ -114,11 +114,11 @@ Every row below is one function start in `tools\code\FUNCTION_BOUNDS.csv`.
 | `sub_080040ee` | `0x080040ee` | `code_080040ee.s` |
 | `sub_0800415c` | `0x0800415c` | `code_0800415c.s` |
 | `sub_080041a6` | `0x080041a6` | `code_080041a6.s` |
-| `Table_IndexForValue` | `0x08004214` | `Table_IndexForValue.s` |
-| `sub_08004230` | `0x08004230` | `code_08004230.s` |
-| `sub_0800425a` | `0x0800425a` | `code_0800425a.s` |
-| `Table_PreviousWord` | `0x0800426a` | `Table_PreviousWord.s` |
-| `sub_08004276` | `0x08004276` | `code_08004276.s` |
+| `Character_GetLevel` | `0x08004214` | `Character_GetLevel.s` |
+| `Character_GetXpToNextLevel` | `0x08004230` | `Character_GetXpToNextLevel.s` |
+| `Character_GetXpIntoLevel` | `0x0800425a` | `Character_GetXpIntoLevel.s` |
+| `Character_GetLevelThreshold` | `0x0800426a` | `Character_GetLevelThreshold.s` |
+| `Character_SetXpForLevel` | `0x08004276` | `Character_SetXpForLevel.s` |
 | `sub_08004284` | `0x08004284` | `code_08004284.s` |
 | `sub_080042bc` | `0x080042bc` | `code_080042bc.s` |
 | `sub_080042ea` | `0x080042ea` | `code_080042ea.s` |
@@ -404,7 +404,7 @@ Every row below is one function start in `tools\code\FUNCTION_BOUNDS.csv`.
 | `sub_0800abd6` | `0x0800abd6` | `code_0800abd6.s` |
 | `sub_0800ac00` | `0x0800ac00` | `code_0800ac00.s` |
 | `sub_0800ac0a` | `0x0800ac0a` | `code_0800ac0a.s` |
-| `sub_0800ac10` | `0x0800ac10` | `code_0800ac10.s` |
+| `Character_SetLevel` | `0x0800ac10` | `Character_SetLevel.s` |
 | `sub_0800ac5c` | `0x0800ac5c` | `code_0800ac5c.s` |
 | `sub_0800ac9a` | `0x0800ac9a` | `code_0800ac9a.s` |
 | `sub_0800acac` | `0x0800acac` | `code_0800acac.s` |
@@ -1268,4 +1268,4 @@ Every row below is one function start in `tools\code\FUNCTION_BOUNDS.csv`.
 | `sub_08547800` | `0x08547800` | `code_08547800.s` |
 | `sub_08598054` | `0x08598054` | `code_08598054.s` |
 
-1253 function starts: 195 carry a name and 1058 carry their address; the address-named ones are read through the rule above, and `docs\NAMING.md` says what promotes a name.
+1253 function starts: 202 carry a name and 1051 carry their address; the address-named ones are read through the rule above, and `docs\NAMING.md` says what promotes a name.

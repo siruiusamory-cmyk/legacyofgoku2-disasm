@@ -144,15 +144,15 @@
 		INCLUDE	..\build\code\code_08003754.s
 		INCBIN	baserom.gba_0x376a_0x376c.extracted
 		INCLUDE	..\build\code\pool_0800376c.s
-		INCLUDE	..\build\code\code_0800379c.s
+		INCLUDE	..\build\code\Character_DrawStatusPage.s
 		INCLUDE	..\build\code\code_08003afe.s
 		INCLUDE	..\build\code\pool_08003b36.s
 		INCLUDE	..\build\code\code_08003b38.s
 		INCBIN	baserom.gba_0x3b72_0x3c24.extracted
 		INCLUDE	..\build\code\Scene_Clear.s
 		INCLUDE	..\build\code\Counter_StepRandom.s
-		INCLUDE	..\build\code\code_08003ca0.s
-		INCLUDE	..\build\code\code_08003d58.s
+		INCLUDE	..\build\code\Character_ApplyLevelUp.s
+		INCLUDE	..\build\code\Character_AwardXp.s
 		INCLUDE	..\build\code\Entry_CountFlags.s
 		INCLUDE	..\build\code\code_08003e1e.s
 		INCLUDE	..\build\code\Bitmap_TestCell.s
@@ -175,11 +175,11 @@
 		INCLUDE	..\build\code\code_080041a6.s
 		INCBIN	baserom.gba_0x420a_0x420c.extracted
 		INCLUDE	..\build\code\pool_0800420c.s
-		INCLUDE	..\build\code\Table_IndexForValue.s
-		INCLUDE	..\build\code\code_08004230.s
-		INCLUDE	..\build\code\code_0800425a.s
-		INCLUDE	..\build\code\Table_PreviousWord.s
-		INCLUDE	..\build\code\code_08004276.s
+		INCLUDE	..\build\code\Character_GetLevel.s
+		INCLUDE	..\build\code\Character_GetXpToNextLevel.s
+		INCLUDE	..\build\code\Character_GetXpIntoLevel.s
+		INCLUDE	..\build\code\Character_GetLevelThreshold.s
+		INCLUDE	..\build\code\Character_SetXpForLevel.s
 		INCLUDE	..\build\code\code_08004284.s
 		INCLUDE	..\build\code\code_080042bc.s
 		INCLUDE	..\build\code\code_080042ea.s
@@ -541,7 +541,7 @@
 		INCLUDE	..\build\code\code_0800abd6.s
 		INCLUDE	..\build\code\code_0800ac00.s
 		INCLUDE	..\build\code\code_0800ac0a.s
-		INCLUDE	..\build\code\code_0800ac10.s
+		INCLUDE	..\build\code\Character_SetLevel.s
 		INCLUDE	..\build\code\code_0800ac5c.s
 		INCLUDE	..\build\code\code_0800ac9a.s
 		INCLUDE	..\build\code\code_0800acac.s
