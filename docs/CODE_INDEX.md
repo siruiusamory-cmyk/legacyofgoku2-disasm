@@ -1262,7 +1262,7 @@ Every row below is one function start in `tools\code\FUNCTION_BOUNDS.csv`.
 | `sub_080285d4` | `0x080285d4` | `code_080285d4.s` |
 | `sub_0828bc62` | `0x0828bc62` | `none` |
 | `sub_0828c464` | `0x0828c464` | `none` |
-| `sub_08547800` | `0x08547800` | `code_08547800.s` |
-| `sub_08598054` | `0x08598054` | `code_08598054.s` |
+| `sub_08547800` | `0x08547800` | `none` |
+| `sub_08598054` | `0x08598054` | `none` |
 
 1249 function starts: 204 carry a name and 1045 carry their address; the address-named ones are read through the rule above, and `docs\NAMING.md` says what promotes a name.

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import bisect
 import hashlib
 import os
 import re
@@ -49,8 +50,15 @@ def run_name(start, end):
 
 
 def tokens_of(runs, code=(), record_runs=()):
+    starts = [start for start, _end in runs]
+
+    def inside_run(start, end):
+        index = bisect.bisect_left(starts, end) - 1
+        return index >= 0 and runs[index][0] <= start and end <= runs[index][1]
+
     pieces = [(start, end, run_name(start, end)) for start, end in runs]
-    pieces += [(start, end, token) for start, end, token in code]
+    pieces += [(start, end, token) for start, end, token in code
+               if not inside_run(start, end)]
     pieces += [(start, end, token) for start, end, token in record_runs]
     pieces.sort()
     tokens = []
@@ -129,7 +137,7 @@ def encoded(payload, store):
 
 
 def measure(image, store):
-    real = container_census.summarise(image)
+    real = container_census.summarise(image, lambda payload: encoded(payload, store)[0])
     accepted = sorted(real["accepted"], key=lambda item: item["offset"])
     following = {}
     for index, hit in enumerate(accepted):

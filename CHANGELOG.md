@@ -42,6 +42,19 @@ All notable changes to this project are documented here. The format follows
 
 ### Changed
 
+- The container census rejects a stored (kind 0) hit that overlaps a container named by the map layer
+  chunk directory and accepts the chunk instead, since the chunk decodes and re-encodes to the image's
+  own bytes. 1,256 stored hits give way to 3,631 chunks, and the share of the ROM that builds from
+  tracked source rises from 34.0739 % to 45.3781 %.
+- `tools/compress/container_census.py` rejects a kind-0 hit whose extent overlaps a container the
+  map layer chunk directory names that re-encodes byte-exact, and accepts that chunk in its place:
+  1,256 stored hits over 798,968 B of extents leave the population and 3,631 chunks over 887,984 B
+  join it, so the census holds 13,913 containers (3,994 stored, 9,919 packed) covering 4,775,808 B.
+  The same re-carve releases 53,022 B of map record bytes the map emitter was withholding, and
+  `tools/compress/generate_containers.py` stops emitting the two code fragments (8 B) that now fall
+  inside a carried container. `tools/research/data_census.py` classes the 3,406,114 B region that
+  remains outside the containers, and the gate's source class rises from 2,858,330 B to 3,806,588 B
+  (34.0739 % to 45.3781 %).
 - The technique page at `0x08003684` is one function: a `tools/code/CENSUS_EVIDENCE.csv` entry row keeps
   it from being corrected to the push that follows its two halfword adds, and two fragment rows retire
   the two starts the census had opened inside its body, so the emitter writes one file where it wrote
