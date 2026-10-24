@@ -42,6 +42,14 @@ All notable changes to this project are documented here. The format follows
 
 ### Changed
 
+- The container census advances its selection over packed hits only: a kind-0 hit is a shape
+  measurement and never sets the edge, and a packed hit whose stream the encoder does not reproduce
+  is refused by name. 3,255 containers over 1,877,092 B of extents join the population, which now
+  holds 13,174 packed containers covering 5,445,068 B; `0x4FE20C` (kind 1, 192 B packed) stays
+  INCBIN because its encoder does not reproduce it. The gate's source class rises from 3,832,141 B
+  to 5,714,309 B (45.6827 % to 68.1199 %), the data census region falls from 4,555,139 B to
+  2,672,971 B, and the container runs take 5,080 B of encoder end-marker words the old edges left
+  in gaps.
 - The container census admits no stored (kind 0) hit: kind 0's codec is the identity, so its extent
   cannot be a source class, and the scan records those hits without accepting them. 3,994 stored hits
   over 1,207,832 B of extents leave the population, which now holds 9,919 packed containers covering

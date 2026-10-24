@@ -9,6 +9,7 @@ sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(ROOT, "tools"))
 sys.path.insert(0, os.path.join(ROOT, "tools", "mapcontainer"))
 
+import container
 import container_census
 import mapcontainer
 import testkit
@@ -73,12 +74,20 @@ def test_the_tracked_census_page_and_ledger_check_pass():
     assert container_census.check_files(real(), null()) == 0
 
 
+def test_the_one_packed_hit_refused_by_name_does_not_re_encode():
+    unpacked = container.unpack(image(), 0x4FE20C, maximum_output=container_census.MAX_OUTPUT)
+    hit = {"offset": 0x4FE20C, "kind": unpacked.kind, "packed": unpacked.packed_size}
+    assert hit["offset"] in container_census.ENCODER_REFUSED
+    assert not container_census.reencodes(image(), hit, container_census.jcalg1.encode)
+
+
 def test_the_census_and_the_null_are_pinned():
     result = real()
     assert len(result["accepted"]) == container_census.PINNED["accepted"]
     assert len(result["packed"]) == container_census.PINNED["packed"]
     assert len(result["stored"]) == container_census.PINNED["stored"]
     assert result["union_bytes"] == container_census.PINNED["union_bytes"]
+    assert len(result["encoder_refused"]) == container_census.PINNED["encoder_refused"]
     permuted = null()
     assert len(permuted["accepted"]) == container_census.PINNED["null_accepted"]
     assert len(permuted["packed"]) == container_census.PINNED["null_packed"]

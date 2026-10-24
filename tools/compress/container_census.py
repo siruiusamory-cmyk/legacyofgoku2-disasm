@@ -25,8 +25,9 @@ STEP = 4
 NULL_BLOCK = 0x10000
 ENCODER_BLOCK_HEADER = 10
 INCLUDED_KIND = 2
-PINNED = {"accepted": 9919, "packed": 9919, "stored": 0, "union_bytes": 3567976,
-          "null_accepted": 0, "null_packed": 0}
+PINNED = {"accepted": 13174, "packed": 13174, "stored": 0, "union_bytes": 5445068,
+          "null_accepted": 0, "null_packed": 0, "encoder_refused": 1}
+ENCODER_REFUSED = {0x4FE20C: "the encoder does not reproduce its stream"}
 
 
 def digest16(data):
@@ -85,6 +86,8 @@ def greedy(found):
     for hit in sorted(found, key=lambda item: item["offset"]):
         if hit["offset"] < edge:
             continue
+        if hit["kind"] == container.STORED or hit["offset"] in ENCODER_REFUSED:
+            continue
         accepted.append(hit)
         edge = hit["offset"] + hit["packed"]
     return accepted
@@ -94,8 +97,7 @@ def population(good, recovered):
     accepted = greedy(good)
     taken = {hit["offset"] for hit in accepted}
     recovered = [hit for hit in recovered if hit["offset"] not in taken]
-    kept = [hit for hit in accepted if hit["kind"] != container.STORED]
-    return sorted(kept + recovered, key=lambda item: item["offset"])
+    return sorted(accepted + recovered, key=lambda item: item["offset"])
 
 
 def union_bytes(accepted, length):
@@ -133,10 +135,12 @@ def summarise(image, encode=None, chunks=None):
     stored = [hit for hit in accepted if hit["kind"] == container.STORED]
     packed = [hit for hit in accepted if hit["kind"] != container.STORED]
     shape_stored = [hit for hit in found if hit["kind"] == container.STORED]
+    encoder_refused = [hit for hit in found if hit["offset"] in ENCODER_REFUSED]
     union = union_bytes(accepted, len(image))
     return {"bytes": len(image), "hits": len(found), "decoded": len(good),
             "refused": len(refused), "accepted": accepted, "kinds": sorted(kinds.items()),
             "stored": stored, "packed": packed, "shape_stored": len(shape_stored),
+            "encoder_refused": encoder_refused,
             "stored_bytes": sum(hit["packed"] for hit in stored),
             "packed_bytes": sum(hit["packed"] for hit in packed),
             "payload_bytes": sum(hit["payload"] for hit in accepted),
@@ -166,9 +170,10 @@ def doc_text(real, null):
         "first word is a kind in 0, 1 or 2 and its second word is a declared size from 1 to "
         "65,536 B. A kind-0 container is its 8-byte header and that many stored bytes; kinds 1 "
         "and 2 decode the JCALG1 body against the declared size and end at the body's own end "
-        "code. The accepted population is the greedy left-to-right set: a hit is accepted when "
-        "its offset is at or past the end of the previous accepted hit, so no accepted extents "
-        "overlap and the byte union is the sum of the packed extents.")
+        "code. The accepted population is the greedy left-to-right set over packed hits only: a "
+        "hit is accepted when its offset is at or past the end of the previous accepted packed "
+        "hit, so no accepted extents overlap and the byte union is the sum of the packed extents. "
+        "A kind-0 hit never sets that edge and is never admitted; it is a shape measurement.")
     add("")
     add("A kind-0 hit is a shape and not a container this population can admit: kind 0's codec is "
         "the identity, so its extent reproduces the bytes under it and is not a source class, and "
@@ -176,6 +181,12 @@ def doc_text(real, null):
         "still finds them; the selection refuses them. Measured here: %d kind-0 hits are refused "
         "in the image and %d in the null."
         % (real["shape_stored"], null["shape_stored"]))
+    add("")
+    add("A packed hit whose stream the encoder does not reproduce is refused by name rather than "
+        "counted: %s."
+        % (", ".join("`0x%06X` (kind %d, declared %d B, packed %d B)"
+                     % (hit["offset"], hit["kind"], hit["declared"], hit["packed"])
+                     for hit in real["encoder_refused"]) or "none"))
     add("")
     add("The null permutes the image by reversing the halfword order inside every 64 KiB block, "
         "then runs the same scan and the same selection. A format found at this rate in the real "
@@ -200,6 +211,8 @@ def doc_text(real, null):
     add("| kind-0 hits refused (identity codec) | %d | %d |"
         % (real["shape_stored"], null["shape_stored"]))
     add("| packed (kinds 1, 2) | %d | %d |" % (len(real["packed"]), len(null["packed"])))
+    add("| packed hits refused by the encoder | %d | %d |"
+        % (len(real["encoder_refused"]), len(null["encoder_refused"])))
     add("| packed extents | %d B | %d B |" % (real["packed_bytes"], null["packed_bytes"]))
     add("| stored extents | %d B | %d B |" % (real["stored_bytes"], null["stored_bytes"]))
     add("| declared payload | %d B | %d B |" % (real["payload_bytes"], null["payload_bytes"]))
@@ -304,6 +317,9 @@ def main(argv=None):
              100.0 * real["union_bytes"] / real["bytes"]))
     print("kind-0 hits refused=%d (null %d)"
           % (real["shape_stored"], null["shape_stored"]))
+    print("packed hits refused by the encoder=%d (%s)"
+          % (len(real["encoder_refused"]),
+             ", ".join("0x%06X" % hit["offset"] for hit in real["encoder_refused"]) or "none"))
     if argv == ["--write"]:
         write_files(real, null)
         print("wrote %s and %s" % (os.path.basename(DOC), os.path.basename(CSV)))

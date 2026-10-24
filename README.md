@@ -48,7 +48,7 @@ does not measure how much of the code has been turned into C.
 
 ## Progress
 
-45.6827 % of the ROM (3,832,141 of 8,388,608 bytes) builds from tracked source: transcribed
+68.1199 % of the ROM (5,714,309 of 8,388,608 bytes) builds from tracked source: transcribed
 instructions, emitted code and literal pools, container bodies re-encoded from your own ROM, the
 map record family re-encoded from the five tracked tables in `tools/maprecords/`, the sprite
 record family re-encoded from the three tracked tables in `tools/sprites/`, and the text storage

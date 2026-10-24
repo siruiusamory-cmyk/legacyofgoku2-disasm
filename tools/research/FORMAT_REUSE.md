@@ -8,7 +8,7 @@ Each verdict compares one format with the other title's grammar. `SAME` means th
 
 | format | verdict | measured | evidence |
 |---|---|---|---|
-| packed container (JCALG1) | SAME | 3567976 B = 42.5 % of the image | 9919 non-overlapping containers, 9919 of them packed; a byte-permuted image holds 0 packed |
+| packed container (JCALG1) | SAME | 5445068 B = 64.9 % of the image | 13174 non-overlapping containers, 13174 of them packed; a byte-permuted image holds 0 packed |
 | stored container header (kind 0) | SAME | 23,304 B at file 0x000000B8 | kind 0, declared 23,296 B, the same file offset and header size as the other title |
 | tile banks named by a map root | SAME | 32 banks = 524288 B declared, 166796 B stored | every entry of the table at 0x084DF574 is kind 1 declaring 16384 B; the loader at 0x0800510C reserves that many bytes, reads the table at root+0x4C (0x08005148) and decodes the container it names (0x0800514E) |
 | character tile banks | DIFFERENT | 3 instances, 4096 B declared each, 128 4bpp tiles | the codec is the same and the granularity is not: the loader at 0x080072C4 takes its length from the container's declared size (0x080072EC) and its destination stride is one 32-byte tile, so a bank is as large as its own header says |
@@ -157,7 +157,7 @@ Against the other title: the record shape is the same (a record offset table, a 
 
 ## Formats measured before this page
 
-The container census is quoted from the earlier cross-title measurement, which ran the other title's decoders unchanged on this image: 9919 non-overlapping containers covering 3567976 B, 9919 of them packed, and a byte-permuted image with 0 packed. The tile banks and the text are now read by the two tools below.
+The container census is quoted from the earlier cross-title measurement, which ran the other title's decoders unchanged on this image: 13174 non-overlapping containers covering 5445068 B, 13174 of them packed, and a byte-permuted image with 0 packed. The tile banks and the text are now read by the two tools below.
 
 ## The table at 0x086A3580
 

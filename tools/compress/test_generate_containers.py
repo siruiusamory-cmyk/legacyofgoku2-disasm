@@ -15,10 +15,10 @@ import testkit
 
 SHORT_CONTAINER = 0x0B8B84
 SEAM_CONTAINER = 0x1D91EC
-SEAM_RUN = (0x1D918C, 0x1D9234)
+SEAM_RUN = (0x1D918C, 0x1D94D0)
 SEAM_MARKER = 0x1D9230
-KIND_TWO_CONTAINERS = 38
-KIND_TWO_BYTES = 53872
+KIND_TWO_CONTAINERS = 93
+KIND_TWO_BYTES = 97272
 
 
 def test_the_tracked_token_list_is_what_the_image_derives():
@@ -47,7 +47,7 @@ def test_the_end_marker_word_a_container_shares_with_the_next_header_is_emitted_
     assert generate_containers.GEN.search(tokens[position + 1][2]) is None
     blob, count = generate_containers.run_bytes(image, *SEAM_RUN)
     assert blob == image[SEAM_RUN[0]:SEAM_RUN[1]]
-    assert len(blob) == 168 and count == 3
+    assert len(blob) == 836 and count == 13
 
 
 def test_every_kind_two_stream_is_emitted_with_its_kind_word_and_the_retail_body():
