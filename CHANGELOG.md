@@ -7,6 +7,7 @@ All notable changes to this project are documented here. The format follows
 
 ### Added
 
+- `docs/banner.png`, shown centred at the top of the README.
 - `tools/maprecords/` holds the map record family as five tracked tables, one record per row with
   named fields and each pointer written as a record label, and encodes those rows back into
   `build/maprecords/`. `LAYOUT.md` cites a load site for every named field, `--check` refuses a row

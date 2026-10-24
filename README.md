@@ -1,6 +1,7 @@
-<!-- TODO banner: when the art is accepted, save it as docs/banner.png and put it above the title as a centered image 900 pixels wide. -->
 <!-- TODO demo GIF: a short capture of extract.cmd, rebuild.cmd and the gate printing GATE PASS, saved as docs/demo.gif and placed under the tagline. -->
 <!-- TODO social preview: set the repository social image in Settings once the banner exists. -->
+<p align="center"><img src="docs/banner.png" alt="Dragon Ball Z: The Legacy of Goku II" width="900"></p>
+
 # Dragon Ball Z: The Legacy of Goku II disassembly
 
 **A byte-exact disassembly of Dragon Ball Z: The Legacy of Goku II (GBA, USA) that rebuilds the original ROM from tracked source.**
