@@ -76,9 +76,10 @@ retail ROM.
 ## Reading and changing a function
 
 1. Find the function in [docs/CODE_INDEX.md](docs/CODE_INDEX.md). Every function start has a row
-   there and a file of its own: a named function is `build\code\<name>.s`, an address-named one is
-   `build\code\code_<address>.s`, and the blocks inside a function are `loc_<address>` labels in
-   that same file.
+   there, and each one the emitter writes has a file of its own: a named function is
+   `build\code\<name>.s`, an address-named one is `build\code\code_<address>.s`, and the blocks
+   inside a function are `loc_<address>` labels in that same file. A start the emitter does not
+   write, carried by the boot transcription or by a container, shows `none`.
 2. Read the file. It is generated at build time, so read it after `rebuild.cmd` has run.
 3. The instructions come from the retail image through `tools/code/emit_code.py`, so changing what a
    function does means changing the generator or the transcription it emits; `docs/NAMING.md` says

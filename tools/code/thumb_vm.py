@@ -425,6 +425,7 @@ def run_function(image, address, registers=None, memory=None, body=None, budget=
     flags = {"n": 0, "z": 0, "c": 0, "v": 0}
     stubs = dict(stubs or {})
     calls = []
+    arguments = []
     pc = address
     steps = 0
     while True:
@@ -437,6 +438,7 @@ def run_function(image, address, registers=None, memory=None, body=None, budget=
             call = sign(((rom_half(image, pc) & 0x7FF) << 12)
                         | ((rom_half(image, pc + 2) & 0x7FF) << 1), 23) + following
             calls.append((pc, call))
+            arguments.append((pc, call, (state[0], state[1], state[2], state[3])))
             state[14] = (pc + 2) | 1
             if call in stubs:
                 for number, value in stubs[call].items():
@@ -446,7 +448,7 @@ def run_function(image, address, registers=None, memory=None, body=None, budget=
         if halt:
             state[15] = target & 0xFFFFFFFF
             return {"registers": state, "written": memory.writes, "calls": calls,
-                    "steps": steps, "returned": target & ~1}
+                    "arguments": arguments, "steps": steps, "returned": target & ~1}
         if target not in body:
             raise Refused("the run left the body at 0x%08X from 0x%08X" % (target, pc))
         pc = target

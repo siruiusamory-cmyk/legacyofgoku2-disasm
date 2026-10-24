@@ -7,7 +7,8 @@ build time from your own copy of the image. This page says which one.
 - an address-named function: `build\code\code_<address>.s`, with the address in lowercase hex, no
   leading zeroes, eight digits, as in `code_0801f08c.s`, and the label `sub_<address>` in the file;
 - a block inside a function: its `loc_<address>` label sits in the file of the start above it;
-- a literal pool: `build\code\pool_<address>.s`, named by the first word it holds.
+- a literal pool: `build\code\pool_<address>.s`, named by the first word it holds;
+- a start the emitter does not write, carried by the boot transcription or by a container: `none`.
 
 Every row below is one function start in `tools\code\FUNCTION_BOUNDS.csv`.
 `python tools\code\code_index.py --check` fails when this page and the tree disagree.

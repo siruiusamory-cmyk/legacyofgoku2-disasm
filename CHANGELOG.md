@@ -20,4 +20,16 @@ All notable changes to this project are documented here. The format follows
   readers of the level curve, the XP award and the level-up it applies, the level setter and the
   status page, each with a behaviour test and a ledger row.
 
+### Fixed
+
+- `tools/research/device_access.py --ledger` passes every row: eleven evidence cells quoted a value
+  the body does not reach, such as a caller's table or a value a stub supplied, and each now quotes
+  the address, literal or stored value the body itself carries.
+- `docs/CODE_INDEX.md` says `none` for the four starts the emitter does not write, the two boot
+  starts and the two inside container runs; its test asserts that rather than a file for every
+  start, and `README.md` says the same.
+- The status-page and level-up behaviour tests assert the argument registers of every call they
+  record, so the record fields read, the stat pointers passed and the values written are pinned;
+  `tools/code/thumb_vm.py` reports those arguments beside the calls.
+
 The notes for the changes before this one stay in the repository history.
