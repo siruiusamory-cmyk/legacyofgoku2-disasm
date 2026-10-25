@@ -28,6 +28,9 @@ generated from the addresses the split proves: `tools/code/emit_code.py` decodes
 and literal pool into assembler source at build time, and `tools/compress/generate_containers.py`
 re-encodes every packed container out of your own copy of the game. What remains is still carried
 as slices of the retail image, and the gate's count names every byte of it.
+The function list also feeds a static recompiler: `tools/code/FUNCTION_BOUNDS.csv` carries every
+entry point the game reaches, including the ones only its runtime dispatch reaches, and
+`tools/recomp/iwram_seed.py` supplies the code the game copies into IWRAM.
 
 It builds one ROM:
 

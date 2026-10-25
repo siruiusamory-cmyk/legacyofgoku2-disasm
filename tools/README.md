@@ -83,6 +83,8 @@ first two and the link check's test. A table a check reads sits beside the reade
 | `recomp/export_inputs.py` | derives the recompiler's entry list from the census and the image's own targets | `lints.py` (`RECOMP-census`), `function_bounds.py`, `runtime_watch_targets.py`, `runtime_watch_results.py` |
 | `recomp/RECOMP_INPUTS.toml` | that entry list, with a mode, size and origin per code row | `export_inputs.py --check` |
 | `recomp/test_export_inputs.py` | the tests for the export | CI |
+| `recomp/iwram_seed.py` | writes the recompiler's local IWRAM content snapshot from the image's own `crt0` copy blob, refusing any image whose sha256 is not the one it was cut from | the translation build, before `recomp.exe build`; `test_iwram_seed.py` |
+| `recomp/test_iwram_seed.py` | the tests for the seed | CI |
 
 ## mapcontainer/, text/, tilebank/
 

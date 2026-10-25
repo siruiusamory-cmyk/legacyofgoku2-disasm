@@ -21,6 +21,7 @@ BOUNDS = os.path.join(ROOT, "tools", "code", "FUNCTION_BOUNDS.csv")
 ENDS = os.path.join(ROOT, "tools", "code", "FUNCTION_ENDS.csv")
 ALLOW = os.path.join(ROOT, "tools", "code", "FUNCTION_ENTRY_ALLOW.csv")
 RUNTIME = os.path.join(ROOT, "tools", "code", "RUNTIME_LABELS.csv")
+EXPORTED_RUNTIME = os.path.join(ROOT, "tools", "recomp", "RUNTIME_LABELS.csv")
 HEADER = "address,role,evidence"
 ENDS_HEADER = "address,mode,origin,end,reason"
 FLAG_HEADER = "address,kind,limb,flags,entry,reason"
@@ -475,6 +476,16 @@ def runtime_rows(measured):
     return found
 
 
+def dispatch_keys():
+    if not os.path.exists(EXPORTED_RUNTIME):
+        return []
+    found = []
+    for row in csv.DictReader(open(EXPORTED_RUNTIME, encoding="ascii")):
+        if row["region"] == "rom":
+            found.append(int(row["address"], 16))
+    return sorted(found)
+
+
 def folded(rom, measured, starts=()):
     source, dest, size, _declared = measured["overlay"]
     found = []
@@ -533,6 +544,8 @@ def describe(measured, rom):
     found["entries"] = sorted(set(name_table.emitted([address for address, _mode in pairs],
                                                      name_table.runs()))
                               | set(found["starts"]))
+    found["dispatch"] = [address for address in dispatch_keys()
+                         if address not in found["starts"] and address not in found["fragments"]]
     return found
 
 
@@ -581,10 +594,13 @@ def role_of(found, address):
 
 def rows_text(found):
     lines = [HEADER]
-    for address in found["entries"]:
+    dispatch = set(found.get("dispatch", ()))
+    for address in sorted(set(found["entries"]) | dispatch):
         if address in found["starts"]:
             lines.append("0x%08x,%s,%s" % (address, role_of(found, address),
                                            "+".join(found["starts"][address])))
+        elif address in dispatch:
+            lines.append("0x%08x,dispatch,runtime" % address)
         else:
             parent = found["fragments"][address]
             lines.append("0x%08x,fragment,%s"
@@ -622,8 +638,10 @@ def main(argv=None):
                      names.get(address, "-")))
     tally = counts(found)
     print("entries=%d starts=%d fragments=%d covered=%d orphans=%d contained=%d unreferenced=%d"
+          " dispatch=%d"
           % (tally["entries"], tally["starts"], tally["fragments"], tally["covered"],
-             tally["orphans"], tally["contained"], tally["unreferenced"]))
+             tally["orphans"], tally["contained"], tally["unreferenced"],
+             len(found["dispatch"])))
     print("by_limb " + " ".join("%s=%d" % (limb, tally["by_limb"].get(limb, 0)) for limb in LIMBS))
     ends = ends_rows(found)
     closed = len([row for row in ends if row[3]])

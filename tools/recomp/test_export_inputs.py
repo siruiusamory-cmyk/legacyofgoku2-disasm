@@ -11,6 +11,7 @@ sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(HERE)), "tools", "split"))
 
 import export_inputs
+import export_labels
 
 
 def blocks(text, name):
@@ -145,6 +146,37 @@ def test_a_census_row_with_no_end_is_skipped(tmp_path):
         "0x08000200,thumb,census,-,no-body\n", encoding="ascii")
     assert export_inputs.bounds_rows(str(tmp_path)) == [
         (0x08000100, 4, "thumb", "census")]
+
+
+def test_a_recorded_entry_reaches_the_runtime_set(tmp_path):
+    where = tmp_path / "tools" / "recomp"
+    where.mkdir(parents=True)
+    (where / "RUNTIME_LABELS.csv").write_text(
+        "region,address,mode\nrom,0x0800f00a,thumb\n", encoding="ascii")
+    assert export_inputs.runtime_entries(tmp_path) == [
+        (0x0800F00A, export_inputs.code_split.MODE_THUMB)]
+
+
+def test_a_recorded_entry_with_an_unknown_mode_is_refused(tmp_path):
+    where = tmp_path / "tools" / "recomp"
+    where.mkdir(parents=True)
+    (where / "RUNTIME_LABELS.csv").write_text(
+        "region,address,mode\nrom,0x0800f00a,armx\n", encoding="ascii")
+    with pytest.raises(SystemExit):
+        export_inputs.runtime_entries(tmp_path)
+
+
+def test_the_label_map_carries_an_end_only_for_a_code_row(tmp_path):
+    inputs = tmp_path / "RECOMP_INPUTS.toml"
+    inputs.write_text(
+        '[counts]\nfunctions = 1\n\n[[code]]\naddr = 0x0800010a\nmode = "thumb"\n'
+        'size = 4\norigin = "census"\n\n[[entry]]\naddr = 0x0800f00a\nmode = "thumb"\n',
+        encoding="ascii")
+    rom = tmp_path / "baserom.gba"
+    rom.write_bytes(b"\x00" * 16)
+    text = export_labels.labels_text(str(inputs), str(rom))
+    assert "end = 0x0800010e" in text
+    assert text.count("[[functions]]") == 2
 
 
 if __name__ == "__main__":

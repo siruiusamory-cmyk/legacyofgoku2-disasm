@@ -1,7 +1,7 @@
 [counts]
 functions = 1409
 code_bytes = 82292
-entries = 2458
+entries = 3388
 jump_tables = 1
 code_copies = 1
 
@@ -8676,6 +8676,10 @@ addr = 0x08000dd0
 mode = "thumb"
 
 [[entry]]
+addr = 0x08000e22
+mode = "thumb"
+
+[[entry]]
 addr = 0x08000e24
 mode = "thumb"
 
@@ -8736,6 +8740,70 @@ addr = 0x0800118c
 mode = "thumb"
 
 [[entry]]
+addr = 0x0800127c
+mode = "thumb"
+
+[[entry]]
+addr = 0x080012aa
+mode = "thumb"
+
+[[entry]]
+addr = 0x080012b2
+mode = "thumb"
+
+[[entry]]
+addr = 0x08001302
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800131e
+mode = "thumb"
+
+[[entry]]
+addr = 0x08001336
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800134c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08001366
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800137c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08001382
+mode = "thumb"
+
+[[entry]]
+addr = 0x08001388
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800138e
+mode = "thumb"
+
+[[entry]]
+addr = 0x080013aa
+mode = "thumb"
+
+[[entry]]
+addr = 0x080013be
+mode = "thumb"
+
+[[entry]]
+addr = 0x080013d2
+mode = "thumb"
+
+[[entry]]
+addr = 0x080013ea
+mode = "thumb"
+
+[[entry]]
 addr = 0x080013fc
 mode = "thumb"
 
@@ -8748,7 +8816,107 @@ addr = 0x08001462
 mode = "thumb"
 
 [[entry]]
+addr = 0x08001476
+mode = "thumb"
+
+[[entry]]
+addr = 0x080014ea
+mode = "thumb"
+
+[[entry]]
+addr = 0x080014f0
+mode = "thumb"
+
+[[entry]]
+addr = 0x080014f8
+mode = "thumb"
+
+[[entry]]
+addr = 0x080015f8
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800163a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800165a
+mode = "thumb"
+
+[[entry]]
+addr = 0x08001662
+mode = "thumb"
+
+[[entry]]
+addr = 0x080016d2
+mode = "thumb"
+
+[[entry]]
+addr = 0x08001706
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800170e
+mode = "thumb"
+
+[[entry]]
 addr = 0x08001722
+mode = "thumb"
+
+[[entry]]
+addr = 0x080017f6
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800180c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08001824
+mode = "thumb"
+
+[[entry]]
+addr = 0x08001840
+mode = "thumb"
+
+[[entry]]
+addr = 0x080018ce
+mode = "thumb"
+
+[[entry]]
+addr = 0x080018d6
+mode = "thumb"
+
+[[entry]]
+addr = 0x080018e0
+mode = "thumb"
+
+[[entry]]
+addr = 0x080018ea
+mode = "thumb"
+
+[[entry]]
+addr = 0x080018f2
+mode = "thumb"
+
+[[entry]]
+addr = 0x080018fe
+mode = "thumb"
+
+[[entry]]
+addr = 0x08001914
+mode = "thumb"
+
+[[entry]]
+addr = 0x08001920
+mode = "thumb"
+
+[[entry]]
+addr = 0x08001926
+mode = "thumb"
+
+[[entry]]
+addr = 0x08001938
 mode = "thumb"
 
 [[entry]]
@@ -8952,6 +9120,30 @@ addr = 0x080022fa
 mode = "thumb"
 
 [[entry]]
+addr = 0x0800233e
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002360
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002378
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800238e
+mode = "thumb"
+
+[[entry]]
+addr = 0x080023c6
+mode = "thumb"
+
+[[entry]]
+addr = 0x080023fc
+mode = "thumb"
+
+[[entry]]
 addr = 0x08002402
 mode = "thumb"
 
@@ -8960,11 +9152,411 @@ addr = 0x08002406
 mode = "thumb"
 
 [[entry]]
+addr = 0x08002544
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002552
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800256c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002578
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002580
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800258a
+mode = "thumb"
+
+[[entry]]
+addr = 0x080025a0
+mode = "thumb"
+
+[[entry]]
+addr = 0x080025aa
+mode = "thumb"
+
+[[entry]]
+addr = 0x080025b2
+mode = "thumb"
+
+[[entry]]
+addr = 0x080025bc
+mode = "thumb"
+
+[[entry]]
+addr = 0x080025d2
+mode = "thumb"
+
+[[entry]]
+addr = 0x080025dc
+mode = "thumb"
+
+[[entry]]
+addr = 0x080025e4
+mode = "thumb"
+
+[[entry]]
+addr = 0x080025e6
+mode = "thumb"
+
+[[entry]]
+addr = 0x080025ec
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800260c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002614
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800261c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002624
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800263e
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800264a
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002662
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800266e
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002692
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800269e
+mode = "thumb"
+
+[[entry]]
+addr = 0x080026aa
+mode = "thumb"
+
+[[entry]]
+addr = 0x080026b6
+mode = "thumb"
+
+[[entry]]
+addr = 0x080026ce
+mode = "thumb"
+
+[[entry]]
+addr = 0x080026da
+mode = "thumb"
+
+[[entry]]
+addr = 0x080026e0
+mode = "thumb"
+
+[[entry]]
+addr = 0x080026e6
+mode = "thumb"
+
+[[entry]]
+addr = 0x080026ec
+mode = "thumb"
+
+[[entry]]
+addr = 0x080026fa
+mode = "thumb"
+
+[[entry]]
+addr = 0x080026fe
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002712
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002722
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800273a
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002752
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002758
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800275c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002762
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002768
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002780
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002792
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800279a
+mode = "thumb"
+
+[[entry]]
+addr = 0x080027a8
+mode = "thumb"
+
+[[entry]]
+addr = 0x080027b0
+mode = "thumb"
+
+[[entry]]
+addr = 0x080027f0
+mode = "thumb"
+
+[[entry]]
+addr = 0x080027f8
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800284a
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002858
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800285e
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002874
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002882
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800288a
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002892
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800289a
+mode = "thumb"
+
+[[entry]]
+addr = 0x080028a2
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002900
+mode = "thumb"
+
+[[entry]]
 addr = 0x08002902
 mode = "thumb"
 
 [[entry]]
 addr = 0x08002928
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002962
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002984
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800299e
+mode = "thumb"
+
+[[entry]]
+addr = 0x080029ac
+mode = "thumb"
+
+[[entry]]
+addr = 0x080029bc
+mode = "thumb"
+
+[[entry]]
+addr = 0x080029cc
+mode = "thumb"
+
+[[entry]]
+addr = 0x080029d8
+mode = "thumb"
+
+[[entry]]
+addr = 0x080029da
+mode = "thumb"
+
+[[entry]]
+addr = 0x080029e0
+mode = "thumb"
+
+[[entry]]
+addr = 0x080029f0
+mode = "thumb"
+
+[[entry]]
+addr = 0x080029f6
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002a12
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002a2e
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002a42
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002a46
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002a58
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002a5a
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002a74
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002a7a
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002a7c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002a96
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002aaa
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002ab6
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002abc
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002aca
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002ace
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002ad6
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002aea
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002af6
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002afc
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002b0a
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002b0e
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002b14
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002b1c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002b24
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002b2c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002b30
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002b32
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002b3e
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002b40
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002b4a
 mode = "thumb"
 
 [[entry]]
@@ -9025,6 +9617,62 @@ mode = "thumb"
 
 [[entry]]
 addr = 0x08002dda
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002e28
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002e38
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002e52
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002e56
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002e68
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002e6c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002e70
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002e94
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002ea0
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002eb4
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002ebc
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002ec4
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002eca
+mode = "thumb"
+
+[[entry]]
+addr = 0x08002ed2
 mode = "thumb"
 
 [[entry]]
@@ -9165,6 +9813,70 @@ mode = "thumb"
 
 [[entry]]
 addr = 0x08003a80
+mode = "thumb"
+
+[[entry]]
+addr = 0x08003b72
+mode = "thumb"
+
+[[entry]]
+addr = 0x08003b76
+mode = "thumb"
+
+[[entry]]
+addr = 0x08003b7e
+mode = "thumb"
+
+[[entry]]
+addr = 0x08003b90
+mode = "thumb"
+
+[[entry]]
+addr = 0x08003b94
+mode = "thumb"
+
+[[entry]]
+addr = 0x08003b98
+mode = "thumb"
+
+[[entry]]
+addr = 0x08003bb0
+mode = "thumb"
+
+[[entry]]
+addr = 0x08003bc0
+mode = "thumb"
+
+[[entry]]
+addr = 0x08003bc4
+mode = "thumb"
+
+[[entry]]
+addr = 0x08003bc6
+mode = "thumb"
+
+[[entry]]
+addr = 0x08003bc8
+mode = "thumb"
+
+[[entry]]
+addr = 0x08003bcc
+mode = "thumb"
+
+[[entry]]
+addr = 0x08003bce
+mode = "thumb"
+
+[[entry]]
+addr = 0x08003bd6
+mode = "thumb"
+
+[[entry]]
+addr = 0x08003bec
+mode = "thumb"
+
+[[entry]]
+addr = 0x08003c0c
 mode = "thumb"
 
 [[entry]]
@@ -9500,7 +10212,151 @@ addr = 0x08004ca0
 mode = "thumb"
 
 [[entry]]
+addr = 0x08004cac
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004cb2
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004cb4
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004cb6
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004cb8
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004cba
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004cbe
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004cc0
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004cc2
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004cc4
+mode = "thumb"
+
+[[entry]]
 addr = 0x08004cc8
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004ea8
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004eaa
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004eac
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004eae
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004eb0
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004eb2
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004eb4
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004eba
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004ebc
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004ec0
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004ec2
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004ec6
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004ece
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004ed4
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004ed6
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004ed8
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004eda
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004edc
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004eea
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004ef2
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004ef8
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004efa
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004efc
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004efe
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004f00
+mode = "thumb"
+
+[[entry]]
+addr = 0x08004f0a
 mode = "thumb"
 
 [[entry]]
@@ -9661,6 +10517,142 @@ mode = "thumb"
 
 [[entry]]
 addr = 0x080054a4
+mode = "thumb"
+
+[[entry]]
+addr = 0x080055a4
+mode = "thumb"
+
+[[entry]]
+addr = 0x080055f6
+mode = "thumb"
+
+[[entry]]
+addr = 0x080055fe
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800561a
+mode = "thumb"
+
+[[entry]]
+addr = 0x08005620
+mode = "thumb"
+
+[[entry]]
+addr = 0x08005622
+mode = "thumb"
+
+[[entry]]
+addr = 0x08005628
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800562a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800562e
+mode = "thumb"
+
+[[entry]]
+addr = 0x08005630
+mode = "thumb"
+
+[[entry]]
+addr = 0x08005632
+mode = "thumb"
+
+[[entry]]
+addr = 0x08005634
+mode = "thumb"
+
+[[entry]]
+addr = 0x08005638
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800563c
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800563e
+mode = "thumb"
+
+[[entry]]
+addr = 0x08005646
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800564a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800564e
+mode = "thumb"
+
+[[entry]]
+addr = 0x08005650
+mode = "thumb"
+
+[[entry]]
+addr = 0x08005656
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800565a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800565e
+mode = "thumb"
+
+[[entry]]
+addr = 0x08005660
+mode = "thumb"
+
+[[entry]]
+addr = 0x08005662
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800566c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08005674
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800567c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08005684
+mode = "thumb"
+
+[[entry]]
+addr = 0x08005686
+mode = "thumb"
+
+[[entry]]
+addr = 0x08005688
+mode = "thumb"
+
+[[entry]]
+addr = 0x08005690
+mode = "thumb"
+
+[[entry]]
+addr = 0x08005696
+mode = "thumb"
+
+[[entry]]
+addr = 0x08005698
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800569e
 mode = "thumb"
 
 [[entry]]
@@ -10244,6 +11236,14 @@ addr = 0x08006a1c
 mode = "thumb"
 
 [[entry]]
+addr = 0x08006a38
+mode = "thumb"
+
+[[entry]]
+addr = 0x08006aa4
+mode = "thumb"
+
+[[entry]]
 addr = 0x08006aa6
 mode = "thumb"
 
@@ -10576,11 +11576,51 @@ addr = 0x08007162
 mode = "thumb"
 
 [[entry]]
+addr = 0x080071fa
+mode = "thumb"
+
+[[entry]]
+addr = 0x080071fc
+mode = "thumb"
+
+[[entry]]
+addr = 0x080071fe
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007204
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007206
+mode = "thumb"
+
+[[entry]]
 addr = 0x08007208
 mode = "thumb"
 
 [[entry]]
 addr = 0x08007232
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007298
+mode = "thumb"
+
+[[entry]]
+addr = 0x080072b0
+mode = "thumb"
+
+[[entry]]
+addr = 0x080072b2
+mode = "thumb"
+
+[[entry]]
+addr = 0x080072c0
+mode = "thumb"
+
+[[entry]]
+addr = 0x080072c2
 mode = "thumb"
 
 [[entry]]
@@ -10644,6 +11684,86 @@ addr = 0x080074b0
 mode = "thumb"
 
 [[entry]]
+addr = 0x080074d4
+mode = "thumb"
+
+[[entry]]
+addr = 0x080074de
+mode = "thumb"
+
+[[entry]]
+addr = 0x080074e0
+mode = "thumb"
+
+[[entry]]
+addr = 0x080074e2
+mode = "thumb"
+
+[[entry]]
+addr = 0x080074fc
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800750a
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007520
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007532
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007538
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007554
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800755e
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007570
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007572
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007574
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007576
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007578
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800757a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800757c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007582
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007584
+mode = "thumb"
+
+[[entry]]
 addr = 0x080075a8
 mode = "thumb"
 
@@ -10700,6 +11820,182 @@ addr = 0x0800772a
 mode = "thumb"
 
 [[entry]]
+addr = 0x08007772
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007774
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007776
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007778
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800777c
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800777e
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007782
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007784
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007788
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800778a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800778c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007796
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007798
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800779c
+mode = "thumb"
+
+[[entry]]
+addr = 0x080077a0
+mode = "thumb"
+
+[[entry]]
+addr = 0x080077a2
+mode = "thumb"
+
+[[entry]]
+addr = 0x080077a4
+mode = "thumb"
+
+[[entry]]
+addr = 0x080077a6
+mode = "thumb"
+
+[[entry]]
+addr = 0x080077a8
+mode = "thumb"
+
+[[entry]]
+addr = 0x080077aa
+mode = "thumb"
+
+[[entry]]
+addr = 0x080077ac
+mode = "thumb"
+
+[[entry]]
+addr = 0x080077ae
+mode = "thumb"
+
+[[entry]]
+addr = 0x080077b0
+mode = "thumb"
+
+[[entry]]
+addr = 0x080077b2
+mode = "thumb"
+
+[[entry]]
+addr = 0x080077b8
+mode = "thumb"
+
+[[entry]]
+addr = 0x080077bc
+mode = "thumb"
+
+[[entry]]
+addr = 0x080077c2
+mode = "thumb"
+
+[[entry]]
+addr = 0x080077c4
+mode = "thumb"
+
+[[entry]]
+addr = 0x080077c6
+mode = "thumb"
+
+[[entry]]
+addr = 0x080077c8
+mode = "thumb"
+
+[[entry]]
+addr = 0x080077ca
+mode = "thumb"
+
+[[entry]]
+addr = 0x080077ce
+mode = "thumb"
+
+[[entry]]
+addr = 0x080077d0
+mode = "thumb"
+
+[[entry]]
+addr = 0x080077d2
+mode = "thumb"
+
+[[entry]]
+addr = 0x080077d4
+mode = "thumb"
+
+[[entry]]
+addr = 0x080077d6
+mode = "thumb"
+
+[[entry]]
+addr = 0x080077de
+mode = "thumb"
+
+[[entry]]
+addr = 0x080077e0
+mode = "thumb"
+
+[[entry]]
+addr = 0x080077e4
+mode = "thumb"
+
+[[entry]]
+addr = 0x080077f6
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007802
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007818
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800784c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007868
+mode = "thumb"
+
+[[entry]]
 addr = 0x0800786a
 mode = "thumb"
 
@@ -10741,6 +12037,230 @@ mode = "thumb"
 
 [[entry]]
 addr = 0x08007a26
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007a84
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007a86
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007a88
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007a8e
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007a90
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007a92
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007a94
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007a98
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007a9c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007a9e
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007aa0
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007aa2
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007aa4
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007aa6
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007aac
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007aae
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007ab0
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007ab4
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007ab6
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007ab8
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007aba
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007abc
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007abe
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007ac0
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007ac4
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007ac6
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007ac8
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007aca
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007acc
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007ace
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007ad0
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007ad2
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007ad4
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007ad6
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007ad8
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007ada
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007adc
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007ade
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007ae0
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007ae2
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007ae4
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007ae6
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007ae8
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007aea
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007aec
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007aee
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007af0
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007af2
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007af4
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007af6
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007af8
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007afa
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007afc
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007afe
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007b02
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007b04
 mode = "thumb"
 
 [[entry]]
@@ -10808,6 +12328,318 @@ addr = 0x08007cb2
 mode = "thumb"
 
 [[entry]]
+addr = 0x08007d24
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007d26
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007d38
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007d44
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007d46
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007d48
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007d4a
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007d4c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007d5e
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007d62
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007d7a
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007d94
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007daa
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007dbe
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007dd8
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007de8
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007e1e
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007e30
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007e3a
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007e60
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007e6a
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007e7e
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007e88
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007e92
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007e9c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007eac
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007eda
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007f02
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007f10
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007f26
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007f2e
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007f34
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007f36
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007f46
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007f6a
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007f76
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007f86
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007f94
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007fa0
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007fac
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007fba
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007fc4
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007ff0
+mode = "thumb"
+
+[[entry]]
+addr = 0x08007ff4
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008004
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008006
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008012
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008030
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008034
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008042
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008046
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008070
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008074
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800807c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008086
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008094
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008096
+mode = "thumb"
+
+[[entry]]
+addr = 0x080080a4
+mode = "thumb"
+
+[[entry]]
+addr = 0x080080ac
+mode = "thumb"
+
+[[entry]]
+addr = 0x080080ba
+mode = "thumb"
+
+[[entry]]
+addr = 0x080080be
+mode = "thumb"
+
+[[entry]]
+addr = 0x080080ca
+mode = "thumb"
+
+[[entry]]
+addr = 0x080080dc
+mode = "thumb"
+
+[[entry]]
+addr = 0x080080de
+mode = "thumb"
+
+[[entry]]
+addr = 0x080080e4
+mode = "thumb"
+
+[[entry]]
+addr = 0x080080e6
+mode = "thumb"
+
+[[entry]]
+addr = 0x080080ea
+mode = "thumb"
+
+[[entry]]
+addr = 0x080080ee
+mode = "thumb"
+
+[[entry]]
+addr = 0x080080fc
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008100
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008102
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800810c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008110
+mode = "thumb"
+
+[[entry]]
+addr = 0x080085a0
+mode = "thumb"
+
+[[entry]]
+addr = 0x080085aa
+mode = "thumb"
+
+[[entry]]
+addr = 0x080085ac
+mode = "thumb"
+
+[[entry]]
+addr = 0x080085e2
+mode = "thumb"
+
+[[entry]]
+addr = 0x080085ea
+mode = "thumb"
+
+[[entry]]
 addr = 0x080086a2
 mode = "thumb"
 
@@ -10824,11 +12656,55 @@ addr = 0x08008742
 mode = "thumb"
 
 [[entry]]
+addr = 0x08008766
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800876c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008776
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800877c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008780
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008782
+mode = "thumb"
+
+[[entry]]
+addr = 0x080088ba
+mode = "thumb"
+
+[[entry]]
+addr = 0x080088c8
+mode = "thumb"
+
+[[entry]]
 addr = 0x080088e0
 mode = "thumb"
 
 [[entry]]
 addr = 0x0800891c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008944
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008946
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008948
 mode = "thumb"
 
 [[entry]]
@@ -10845,6 +12721,102 @@ mode = "thumb"
 
 [[entry]]
 addr = 0x08008b5c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008b88
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008b8a
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008bc8
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008bd4
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008be0
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008be2
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008bee
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008bf0
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008bf2
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008bf4
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008bf6
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008bfa
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008bfe
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008c00
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008c04
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008c08
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008c0a
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008c0c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008c16
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008c18
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008c1a
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008c1c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008c1e
+mode = "thumb"
+
+[[entry]]
+addr = 0x08008c20
 mode = "thumb"
 
 [[entry]]
@@ -11912,11 +13884,59 @@ addr = 0x0800b5e2
 mode = "thumb"
 
 [[entry]]
+addr = 0x0800b632
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800b652
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800b6fe
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800b702
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800b706
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800b70e
+mode = "thumb"
+
+[[entry]]
 addr = 0x0800b710
 mode = "thumb"
 
 [[entry]]
 addr = 0x0800b734
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800b75c
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800b76a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800b778
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800b798
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800b7a6
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800b7b0
 mode = "thumb"
 
 [[entry]]
@@ -12024,6 +14044,194 @@ addr = 0x0800bbda
 mode = "thumb"
 
 [[entry]]
+addr = 0x0800bbee
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bbf0
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bbf6
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bbfc
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bc00
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bc0a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bc0c
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bc0e
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bc22
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bc3e
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bc40
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bc4c
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bc60
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bc62
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bc6c
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bc70
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bc72
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bc74
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bc7a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bc80
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bc94
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bca0
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bca2
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bcaa
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bcae
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bcb4
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bcbc
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bcc6
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bcda
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bce0
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bcf6
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bd1a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bd22
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bd28
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bd32
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bd3a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bd3c
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bd40
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bd5c
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bd6c
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bd78
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bd7e
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bd88
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bdb4
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bdb8
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bdc0
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bdc6
+mode = "thumb"
+
+[[entry]]
 addr = 0x0800bdcc
 mode = "thumb"
 
@@ -12041,6 +14249,154 @@ mode = "thumb"
 
 [[entry]]
 addr = 0x0800be06
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800be14
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800be24
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800be2a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800be40
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800be42
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800be44
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800be46
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800be48
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800be4a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800be4c
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800be4e
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800be50
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800be52
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800be54
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800be56
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800be58
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800be5a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800be5c
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800be5e
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800be60
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800be62
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800be64
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800be66
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800be68
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800be6c
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800be7a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800be84
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800be8a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800be92
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800beaa
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800beb4
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800beb6
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bec2
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bed2
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bee0
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bef8
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800bf02
 mode = "thumb"
 
 [[entry]]
@@ -12097,6 +14453,18 @@ mode = "thumb"
 
 [[entry]]
 addr = 0x0800bfc0
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800c06e
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800c082
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800c08a
 mode = "thumb"
 
 [[entry]]
@@ -12364,11 +14732,99 @@ addr = 0x0800c990
 mode = "thumb"
 
 [[entry]]
+addr = 0x0800c9c4
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800c9de
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800c9f6
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800c9fa
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800c9fe
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800ca1a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800ca24
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800ca2a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800ca30
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800ca32
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800ca36
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800ca3c
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800ca44
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800ca82
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800ca8a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800ca8c
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800cac4
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800cad0
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800cad2
+mode = "thumb"
+
+[[entry]]
 addr = 0x0800cb0e
 mode = "thumb"
 
 [[entry]]
 addr = 0x0800cb3c
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800cb42
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800cb44
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800cb46
 mode = "thumb"
 
 [[entry]]
@@ -12516,6 +14972,30 @@ addr = 0x0800d686
 mode = "thumb"
 
 [[entry]]
+addr = 0x0800d6a6
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800d6b2
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800d6c8
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800d6ca
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800d6d6
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800d6dc
+mode = "thumb"
+
+[[entry]]
 addr = 0x0800d6de
 mode = "thumb"
 
@@ -12528,11 +15008,43 @@ addr = 0x0800d702
 mode = "thumb"
 
 [[entry]]
+addr = 0x0800d730
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800d74a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800d75c
+mode = "thumb"
+
+[[entry]]
 addr = 0x0800d764
 mode = "thumb"
 
 [[entry]]
 addr = 0x0800d768
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800d7a0
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800d7bc
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800d7c2
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800d7d0
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800d7da
 mode = "thumb"
 
 [[entry]]
@@ -12592,11 +15104,347 @@ addr = 0x0800d9c2
 mode = "thumb"
 
 [[entry]]
+addr = 0x0800d9f8
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800d9fa
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800da04
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800da06
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800da08
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800da0c
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800da0e
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800da14
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800da18
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800da1a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800da22
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800da2c
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800da30
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800da34
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800da38
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800da3a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800da3c
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800da3e
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800da40
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800da44
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800da46
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800da4a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800da4e
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800da52
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800da56
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800da5a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800da5e
+mode = "thumb"
+
+[[entry]]
 addr = 0x0800da68
 mode = "thumb"
 
 [[entry]]
 addr = 0x0800da96
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db18
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db2e
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db34
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db44
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db46
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db48
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db4a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db4c
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db4e
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db50
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db52
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db54
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db56
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db58
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db5a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db5c
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db5e
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db60
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db62
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db64
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db66
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db68
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db6a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db6c
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db6e
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db70
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db72
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db74
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db76
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db78
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db7a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db7c
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db7e
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db80
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db98
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800db9c
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800dba4
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800dbae
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800dbc6
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800dbce
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800dbd2
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800dbdc
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800dbde
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800dbe2
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800dbf4
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800dbf8
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800dc04
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800dc08
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800dc20
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800dc28
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800dc2c
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800dc32
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800dc34
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800dc38
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800dc4a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800dc54
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800dc60
 mode = "thumb"
 
 [[entry]]
@@ -12637,6 +15485,30 @@ mode = "thumb"
 
 [[entry]]
 addr = 0x0800de48
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800de6e
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800de7c
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800de82
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800de84
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800debc
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800dec8
 mode = "thumb"
 
 [[entry]]
@@ -12696,6 +15568,18 @@ addr = 0x0800dfe6
 mode = "thumb"
 
 [[entry]]
+addr = 0x0800dffc
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800e004
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800e010
+mode = "thumb"
+
+[[entry]]
 addr = 0x0800e032
 mode = "thumb"
 
@@ -12733,6 +15617,42 @@ mode = "thumb"
 
 [[entry]]
 addr = 0x0800e0b2
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800e160
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800e182
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800e19a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800e19c
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800e1a0
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800e1a2
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800e1b6
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800e1b8
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800e248
 mode = "thumb"
 
 [[entry]]
@@ -12844,11 +15764,103 @@ addr = 0x0800e796
 mode = "thumb"
 
 [[entry]]
+addr = 0x0800e7c4
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800e8b0
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800e8c2
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800e8ca
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800e8d6
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800e914
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800e920
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800e938
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800e946
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800e94e
+mode = "thumb"
+
+[[entry]]
 addr = 0x0800e96a
 mode = "thumb"
 
 [[entry]]
 addr = 0x0800e9e4
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800ea3a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800ea86
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800ea88
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800ea8e
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800ea92
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800ea96
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800eac6
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800ead2
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800ead6
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800ead8
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800eae8
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800eafa
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800eb02
 mode = "thumb"
 
 [[entry]]
@@ -13020,6 +16032,54 @@ addr = 0x0800f060
 mode = "thumb"
 
 [[entry]]
+addr = 0x0800f0ca
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800f0cc
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800f0ce
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800f0d0
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800f0d2
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800f0d4
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800f0d6
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800f0d8
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800f0da
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800f0de
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800f0e0
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800f0e8
+mode = "thumb"
+
+[[entry]]
 addr = 0x0800f1ae
 mode = "thumb"
 
@@ -13044,6 +16104,18 @@ addr = 0x0800f2b0
 mode = "thumb"
 
 [[entry]]
+addr = 0x0800f2b6
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800f2b8
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800f2ba
+mode = "thumb"
+
+[[entry]]
 addr = 0x0800f2f2
 mode = "thumb"
 
@@ -13053,6 +16125,22 @@ mode = "thumb"
 
 [[entry]]
 addr = 0x0800f2fa
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800f3b6
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800f3d0
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800f3d2
+mode = "thumb"
+
+[[entry]]
+addr = 0x0800f3da
 mode = "thumb"
 
 [[entry]]
@@ -13593,6 +16681,26 @@ mode = "thumb"
 
 [[entry]]
 addr = 0x080108ce
+mode = "thumb"
+
+[[entry]]
+addr = 0x0801090a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0801091e
+mode = "thumb"
+
+[[entry]]
+addr = 0x08010930
+mode = "thumb"
+
+[[entry]]
+addr = 0x0801093e
+mode = "thumb"
+
+[[entry]]
+addr = 0x08010940
 mode = "thumb"
 
 [[entry]]
@@ -14168,6 +17276,58 @@ addr = 0x08013c7e
 mode = "thumb"
 
 [[entry]]
+addr = 0x08013c8e
+mode = "thumb"
+
+[[entry]]
+addr = 0x08013c96
+mode = "thumb"
+
+[[entry]]
+addr = 0x08013cb0
+mode = "thumb"
+
+[[entry]]
+addr = 0x08013ccc
+mode = "thumb"
+
+[[entry]]
+addr = 0x08013cd8
+mode = "thumb"
+
+[[entry]]
+addr = 0x08013cde
+mode = "thumb"
+
+[[entry]]
+addr = 0x08013d12
+mode = "thumb"
+
+[[entry]]
+addr = 0x08013d38
+mode = "thumb"
+
+[[entry]]
+addr = 0x08013d3c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08013d40
+mode = "thumb"
+
+[[entry]]
+addr = 0x08013d68
+mode = "thumb"
+
+[[entry]]
+addr = 0x08013d84
+mode = "thumb"
+
+[[entry]]
+addr = 0x08013d9c
+mode = "thumb"
+
+[[entry]]
 addr = 0x08013e48
 mode = "thumb"
 
@@ -14336,6 +17496,54 @@ addr = 0x08014d40
 mode = "thumb"
 
 [[entry]]
+addr = 0x08014de0
+mode = "thumb"
+
+[[entry]]
+addr = 0x08014dea
+mode = "thumb"
+
+[[entry]]
+addr = 0x08014df4
+mode = "thumb"
+
+[[entry]]
+addr = 0x08014e3e
+mode = "thumb"
+
+[[entry]]
+addr = 0x08014e4c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08014e50
+mode = "thumb"
+
+[[entry]]
+addr = 0x08014e58
+mode = "thumb"
+
+[[entry]]
+addr = 0x08014e68
+mode = "thumb"
+
+[[entry]]
+addr = 0x08014e7c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08014e84
+mode = "thumb"
+
+[[entry]]
+addr = 0x08014e86
+mode = "thumb"
+
+[[entry]]
+addr = 0x08014e96
+mode = "thumb"
+
+[[entry]]
 addr = 0x08014f44
 mode = "thumb"
 
@@ -14437,6 +17645,70 @@ mode = "thumb"
 
 [[entry]]
 addr = 0x08016ebe
+mode = "thumb"
+
+[[entry]]
+addr = 0x08016fd8
+mode = "thumb"
+
+[[entry]]
+addr = 0x08017012
+mode = "thumb"
+
+[[entry]]
+addr = 0x0801701e
+mode = "thumb"
+
+[[entry]]
+addr = 0x08017028
+mode = "thumb"
+
+[[entry]]
+addr = 0x0801702a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0801702e
+mode = "thumb"
+
+[[entry]]
+addr = 0x08017032
+mode = "thumb"
+
+[[entry]]
+addr = 0x08017038
+mode = "thumb"
+
+[[entry]]
+addr = 0x08017074
+mode = "thumb"
+
+[[entry]]
+addr = 0x08017076
+mode = "thumb"
+
+[[entry]]
+addr = 0x08017078
+mode = "thumb"
+
+[[entry]]
+addr = 0x080170a6
+mode = "thumb"
+
+[[entry]]
+addr = 0x080170ac
+mode = "thumb"
+
+[[entry]]
+addr = 0x080170c6
+mode = "thumb"
+
+[[entry]]
+addr = 0x080170d4
+mode = "thumb"
+
+[[entry]]
+addr = 0x080170d6
 mode = "thumb"
 
 [[entry]]
@@ -14773,6 +18045,30 @@ mode = "thumb"
 
 [[entry]]
 addr = 0x08019f9a
+mode = "thumb"
+
+[[entry]]
+addr = 0x0801a2c8
+mode = "thumb"
+
+[[entry]]
+addr = 0x0801a2ce
+mode = "thumb"
+
+[[entry]]
+addr = 0x0801a2d4
+mode = "thumb"
+
+[[entry]]
+addr = 0x0801a2e4
+mode = "thumb"
+
+[[entry]]
+addr = 0x0801a2e6
+mode = "thumb"
+
+[[entry]]
+addr = 0x0801a2f2
 mode = "thumb"
 
 [[entry]]
@@ -17188,6 +20484,10 @@ addr = 0x08021d2e
 mode = "thumb"
 
 [[entry]]
+addr = 0x08021d32
+mode = "thumb"
+
+[[entry]]
 addr = 0x08021d36
 mode = "thumb"
 
@@ -17224,8 +20524,44 @@ addr = 0x08021df2
 mode = "thumb"
 
 [[entry]]
+addr = 0x08021e28
+mode = "arm"
+
+[[entry]]
 addr = 0x08021ea8
 mode = "thumb"
+
+[[entry]]
+addr = 0x08021eac
+mode = "arm"
+
+[[entry]]
+addr = 0x08021eb8
+mode = "arm"
+
+[[entry]]
+addr = 0x08021ebc
+mode = "arm"
+
+[[entry]]
+addr = 0x08021ec0
+mode = "arm"
+
+[[entry]]
+addr = 0x08021ec4
+mode = "arm"
+
+[[entry]]
+addr = 0x08021ecc
+mode = "arm"
+
+[[entry]]
+addr = 0x08021ed0
+mode = "arm"
+
+[[entry]]
+addr = 0x08021ee8
+mode = "arm"
 
 [[entry]]
 addr = 0x08021f18
@@ -17244,8 +20580,28 @@ addr = 0x08021f32
 mode = "thumb"
 
 [[entry]]
+addr = 0x08022008
+mode = "thumb"
+
+[[entry]]
+addr = 0x0802200c
+mode = "arm"
+
+[[entry]]
 addr = 0x0802201c
 mode = "thumb"
+
+[[entry]]
+addr = 0x0802205c
+mode = "arm"
+
+[[entry]]
+addr = 0x08022060
+mode = "arm"
+
+[[entry]]
+addr = 0x08022090
+mode = "arm"
 
 [[entry]]
 addr = 0x08022098
@@ -17940,6 +21296,10 @@ addr = 0x08022a52
 mode = "thumb"
 
 [[entry]]
+addr = 0x08022ab8
+mode = "arm"
+
+[[entry]]
 addr = 0x08022b08
 mode = "thumb"
 
@@ -17968,12 +21328,24 @@ addr = 0x08022bde
 mode = "thumb"
 
 [[entry]]
+addr = 0x08022c10
+mode = "arm"
+
+[[entry]]
+addr = 0x08022c24
+mode = "arm"
+
+[[entry]]
 addr = 0x08022c84
 mode = "thumb"
 
 [[entry]]
 addr = 0x08022c86
 mode = "thumb"
+
+[[entry]]
+addr = 0x08022c9c
+mode = "arm"
 
 [[entry]]
 addr = 0x08022cb4
@@ -18028,11 +21400,71 @@ addr = 0x080236b4
 mode = "thumb"
 
 [[entry]]
+addr = 0x080236c0
+mode = "thumb"
+
+[[entry]]
+addr = 0x080236c4
+mode = "arm"
+
+[[entry]]
 addr = 0x080236cc
 mode = "thumb"
 
 [[entry]]
 addr = 0x080236f0
+mode = "thumb"
+
+[[entry]]
+addr = 0x0802493c
+mode = "arm"
+
+[[entry]]
+addr = 0x080251a0
+mode = "arm"
+
+[[entry]]
+addr = 0x08026094
+mode = "thumb"
+
+[[entry]]
+addr = 0x0802609c
+mode = "thumb"
+
+[[entry]]
+addr = 0x080260a4
+mode = "thumb"
+
+[[entry]]
+addr = 0x0802611c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08026130
+mode = "thumb"
+
+[[entry]]
+addr = 0x08026142
+mode = "thumb"
+
+[[entry]]
+addr = 0x08026144
+mode = "thumb"
+
+[[entry]]
+addr = 0x080263a0
+mode = "thumb"
+
+[[entry]]
+addr = 0x080263b2
+mode = "thumb"
+
+[[entry]]
+addr = 0x080263b8
+mode = "thumb"
+
+[[entry]]
+addr = 0x080263dc
 mode = "thumb"
 
 [[entry]]
@@ -18056,6 +21488,50 @@ addr = 0x08026472
 mode = "thumb"
 
 [[entry]]
+addr = 0x08026484
+mode = "thumb"
+
+[[entry]]
+addr = 0x08026488
+mode = "thumb"
+
+[[entry]]
+addr = 0x08026498
+mode = "thumb"
+
+[[entry]]
+addr = 0x080264a8
+mode = "thumb"
+
+[[entry]]
+addr = 0x080264b8
+mode = "thumb"
+
+[[entry]]
+addr = 0x080264c0
+mode = "thumb"
+
+[[entry]]
+addr = 0x080264dc
+mode = "thumb"
+
+[[entry]]
+addr = 0x080264f4
+mode = "thumb"
+
+[[entry]]
+addr = 0x08026500
+mode = "thumb"
+
+[[entry]]
+addr = 0x08026504
+mode = "thumb"
+
+[[entry]]
+addr = 0x0802650c
+mode = "thumb"
+
+[[entry]]
 addr = 0x08026528
 mode = "thumb"
 
@@ -18065,6 +21541,22 @@ mode = "thumb"
 
 [[entry]]
 addr = 0x0802654e
+mode = "thumb"
+
+[[entry]]
+addr = 0x0802658c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08026598
+mode = "thumb"
+
+[[entry]]
+addr = 0x080265a4
+mode = "thumb"
+
+[[entry]]
+addr = 0x080265a8
 mode = "thumb"
 
 [[entry]]
@@ -18141,6 +21633,226 @@ mode = "thumb"
 
 [[entry]]
 addr = 0x080266b8
+mode = "thumb"
+
+[[entry]]
+addr = 0x0802675c
+mode = "thumb"
+
+[[entry]]
+addr = 0x0802676a
+mode = "thumb"
+
+[[entry]]
+addr = 0x08026830
+mode = "thumb"
+
+[[entry]]
+addr = 0x0802683e
+mode = "thumb"
+
+[[entry]]
+addr = 0x08026a10
+mode = "thumb"
+
+[[entry]]
+addr = 0x08026a2c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08026a36
+mode = "thumb"
+
+[[entry]]
+addr = 0x08026aa8
+mode = "thumb"
+
+[[entry]]
+addr = 0x08026abe
+mode = "thumb"
+
+[[entry]]
+addr = 0x08026ac8
+mode = "thumb"
+
+[[entry]]
+addr = 0x08026ad0
+mode = "thumb"
+
+[[entry]]
+addr = 0x08026ade
+mode = "thumb"
+
+[[entry]]
+addr = 0x08026b64
+mode = "thumb"
+
+[[entry]]
+addr = 0x08026b72
+mode = "thumb"
+
+[[entry]]
+addr = 0x08026b78
+mode = "thumb"
+
+[[entry]]
+addr = 0x08026b86
+mode = "thumb"
+
+[[entry]]
+addr = 0x08026ba4
+mode = "thumb"
+
+[[entry]]
+addr = 0x08026bb2
+mode = "thumb"
+
+[[entry]]
+addr = 0x08026bc6
+mode = "thumb"
+
+[[entry]]
+addr = 0x08026bd4
+mode = "thumb"
+
+[[entry]]
+addr = 0x08026e44
+mode = "thumb"
+
+[[entry]]
+addr = 0x08026e52
+mode = "thumb"
+
+[[entry]]
+addr = 0x08026f48
+mode = "thumb"
+
+[[entry]]
+addr = 0x08026f56
+mode = "thumb"
+
+[[entry]]
+addr = 0x08027034
+mode = "thumb"
+
+[[entry]]
+addr = 0x08027042
+mode = "thumb"
+
+[[entry]]
+addr = 0x0802704c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08027056
+mode = "thumb"
+
+[[entry]]
+addr = 0x08027064
+mode = "thumb"
+
+[[entry]]
+addr = 0x080270c8
+mode = "thumb"
+
+[[entry]]
+addr = 0x080270d4
+mode = "thumb"
+
+[[entry]]
+addr = 0x080270de
+mode = "thumb"
+
+[[entry]]
+addr = 0x08027268
+mode = "thumb"
+
+[[entry]]
+addr = 0x08027282
+mode = "thumb"
+
+[[entry]]
+addr = 0x08027290
+mode = "thumb"
+
+[[entry]]
+addr = 0x0802731c
+mode = "thumb"
+
+[[entry]]
+addr = 0x08027336
+mode = "thumb"
+
+[[entry]]
+addr = 0x08027344
+mode = "thumb"
+
+[[entry]]
+addr = 0x08027508
+mode = "thumb"
+
+[[entry]]
+addr = 0x08027516
+mode = "thumb"
+
+[[entry]]
+addr = 0x0802751c
+mode = "thumb"
+
+[[entry]]
+addr = 0x0802752a
+mode = "thumb"
+
+[[entry]]
+addr = 0x08027530
+mode = "thumb"
+
+[[entry]]
+addr = 0x0802753e
+mode = "thumb"
+
+[[entry]]
+addr = 0x080277d4
+mode = "thumb"
+
+[[entry]]
+addr = 0x080277e2
+mode = "thumb"
+
+[[entry]]
+addr = 0x080277e8
+mode = "thumb"
+
+[[entry]]
+addr = 0x080277f6
+mode = "thumb"
+
+[[entry]]
+addr = 0x080278ec
+mode = "thumb"
+
+[[entry]]
+addr = 0x080278fa
+mode = "thumb"
+
+[[entry]]
+addr = 0x080279dc
+mode = "thumb"
+
+[[entry]]
+addr = 0x080279ea
+mode = "thumb"
+
+[[entry]]
+addr = 0x08027d68
+mode = "thumb"
+
+[[entry]]
+addr = 0x08027d74
+mode = "thumb"
+
+[[entry]]
+addr = 0x08027d7e
 mode = "thumb"
 
 [[entry]]
@@ -18288,8 +22000,16 @@ addr = 0x08028230
 mode = "thumb"
 
 [[entry]]
+addr = 0x08028234
+mode = "arm"
+
+[[entry]]
 addr = 0x0802829c
 mode = "thumb"
+
+[[entry]]
+addr = 0x080282a0
+mode = "arm"
 
 [[entry]]
 addr = 0x080285d4

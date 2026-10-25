@@ -16,6 +16,7 @@ import code_split
 ROM = os.path.join(ROOT, "baserom.gba")
 SHA1 = os.path.join(ROOT, "baserom.sha1")
 OUT = os.path.join(ROOT, "tools", "recomp", "RECOMP_INPUTS.toml")
+RUNTIME = os.path.join("tools", "recomp", "RUNTIME_LABELS.csv")
 BOUNDS = os.path.join("tools", "code", "FUNCTION_ENDS.csv")
 MODES = ("arm", "thumb")
 CODE_ROW = re.compile(r'\[\[code\]\]\naddr = 0x([0-9a-fA-F]{8})\nmode = "([^"]*)"\n'
@@ -46,6 +47,21 @@ def entry_address(rom):
 def entries_of(measured):
     found = set(measured["proven_entries"]) | set(measured["accepted_modes"])
     return sorted(found | set(measured["extra"]))
+
+
+def runtime_entries(root=ROOT):
+    path = os.path.join(root, *RUNTIME.split("/"))
+    if not os.path.exists(path):
+        return []
+    out = set()
+    with open(path, newline="", encoding="ascii") as handle:
+        for row in csv.DictReader(handle):
+            if row["mode"] not in MODES:
+                raise SystemExit("%s: %s carries mode %s, not one of %s"
+                                 % (RUNTIME, row["address"], row["mode"], ", ".join(MODES)))
+            mode = code_split.MODE_THUMB if row["mode"] == "thumb" else code_split.MODE_ARM
+            out.add((int(row["address"], 16), mode))
+    return sorted(out)
 
 
 def bounds_rows(root=ROOT):
@@ -86,6 +102,9 @@ def render(root=ROOT, rom=ROM):
     measured = code_split.measure(data)
     functions = bounds_rows(root)
     entries = entries_of(measured)
+    recorded = {address for address, _mode in entries}
+    entries = sorted(entries + [row for row in runtime_entries(root)
+                                if row[0] not in recorded])
     source, dest, size, _declared = measured["overlay"]
     lines = [
         "[counts]",

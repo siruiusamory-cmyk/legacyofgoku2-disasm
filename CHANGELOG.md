@@ -7,6 +7,13 @@ All notable changes to this project are documented here. The format follows
 
 ### Added
 
+- `tools/recomp/iwram_seed.py` writes the recompiler's IWRAM snapshot from the image's own copy of
+  its IWRAM code, so a recompiler build needs no emulator capture for that region. It reads your copy
+  of the game, refuses an image whose sha256 differs, and never writes inside the repository.
+- The census gives the entry points the game reaches only through its runtime dispatch their own
+  class, `dispatch`, instead of counting them as function starts, and the recompiler export carries
+  them.
+
 - `tools/records/transform_slots.py` holds the transform slot descriptors as one tracked table: the
   34 records the runtime census saw a live slot name, 12 B each with the source pointer, the flags,
   the clip range and the step, 408 B, encoded back into `build/slots/`. `TRANSFORM_SLOTS.md` cites the

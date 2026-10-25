@@ -457,6 +457,13 @@ def test_a_runtime_row_is_bounded_by_the_nearest_later_start(tmp_path, monkeypat
         (BASE + 0x170, function_bounds.THUMB, "runtime", BASE + 0x180, "next-start")]
 
 
+def test_a_dispatch_key_is_carried_as_its_own_role():
+    found = {"entries": [BASE + 0x10], "starts": {BASE + 0x10: ["call"]}, "fragments": {},
+             "dispatch": [BASE + 0x20]}
+    assert function_bounds.rows_text(found).splitlines()[1:] == [
+        "0x%08x,start,call" % (BASE + 0x10), "0x%08x,dispatch,runtime" % (BASE + 0x20)]
+
+
 if __name__ == "__main__":
     test_a_push_that_saves_lr_is_the_prologue_limb()
     test_a_push_that_does_not_save_lr_is_no_prologue_limb()

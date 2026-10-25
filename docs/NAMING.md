@@ -129,6 +129,15 @@ The addresses whose entry, fragment or data status the image alone does not sett
 of the census entry set, an `entry` row keeps a start from being corrected to a later prologue, and a
 `fragment` row names the start whose body holds the address.
 
+A `dispatch` row is the third class. `tools/code/RUNTIME_LABELS.csv` records the ROM entry points a
+bounded runtime run entered, and the export names every one of them, but the split proves code at
+none of them: no call, vector, table or prologue limb reaches the address, so classifying it as a
+start would be a claim the bytes do not carry, and calling it a fragment would place it inside a
+body that does not contain it. It is carried as `dispatch` with the store as its evidence
+(`0x08000e22,dispatch,runtime`), counted apart from the code entries in the census line
+(`dispatch=`), and named by neither a function name nor the address form, so `NAMING-symbol` accepts
+the export entry for what it is and the address-named count does not move.
+
 ## The address-named count
 
 `tools/code/NAMING_BASELINE.txt` holds the number of functions that still carry the address form, not the
