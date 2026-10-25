@@ -983,7 +983,7 @@
 		INCLUDE	..\build\code\code_080125c0.s
 		INCBIN	baserom.gba_0x12676_0x12678.extracted
 		INCLUDE	..\build\code\pool_08012678.s
-		INCBIN	baserom.gba_0x12684_0x1268c.extracted
+		INCBIN	build\addr\rec_12684_1268c.bin
 		INCLUDE	..\build\code\pool_0801268c.s
 		INCBIN	baserom.gba_0x12694_0x12704.extracted
 		INCLUDE	..\build\code\code_08012704.s
@@ -4834,7 +4834,17 @@
 		INCBIN	build\sprites\rec_3b4df4_3b4e60.bin
 		INCBIN	baserom.gba_0x3b4e60_0x3b4e74.extracted
 		INCBIN	build\sprites\rec_3b4e74_3b50e8.bin
-		INCBIN	baserom.gba_0x3b50e8_0x3ec86c.extracted
+		INCBIN	baserom.gba_0x3b50e8_0x3b5c00.extracted
+		INCBIN	build\addr\rec_3b5c00_3b5c44.bin
+		INCBIN	baserom.gba_0x3b5c44_0x3b5c48.extracted
+		INCBIN	build\addr\rec_3b5c48_3b5c78.bin
+		INCBIN	baserom.gba_0x3b5c78_0x3b5d28.extracted
+		INCBIN	build\addr\rec_3b5d28_3b5f6c.bin
+		INCBIN	baserom.gba_0x3b5f6c_0x3b5f70.extracted
+		INCBIN	build\addr\rec_3b5f70_3b5fb4.bin
+		INCBIN	baserom.gba_0x3b5fb4_0x3ec84c.extracted
+		INCBIN	build\addr\rec_3ec84c_3ec864.bin
+		INCBIN	baserom.gba_0x3ec864_0x3ec86c.extracted
 		INCBIN	build\jcalg1\gen_3ec86c_3ec9a0.bin
 		INCBIN	baserom.gba_0x3ec9a0_0x3ed1ec.extracted
 		INCBIN	build\jcalg1\gen_3ed1ec_3ed210.bin
@@ -4848,25 +4858,53 @@
 		INCBIN	build\maprecords\rec_3ed7f8_3ed7fc.bin
 		INCBIN	baserom.gba_0x3ed7fc_0x3ed808.extracted
 		INCBIN	build\maprecords\rec_3ed808_3ed80c.bin
-		INCBIN	baserom.gba_0x3ed80c_0x3ed830.extracted
+		INCBIN	build\addr\rec_3ed80c_3ed814.bin
+		INCBIN	baserom.gba_0x3ed814_0x3ed830.extracted
 		INCBIN	build\maprecords\rec_3ed830_3ed834.bin
-		INCBIN	baserom.gba_0x3ed834_0x3ed8fc.extracted
+		INCBIN	build\addr\rec_3ed834_3ed83c.bin
+		INCBIN	baserom.gba_0x3ed83c_0x3ed870.extracted
+		INCBIN	build\addr\rec_3ed870_3ed878.bin
+		INCBIN	baserom.gba_0x3ed878_0x3ed8fc.extracted
 		INCBIN	build\maprecords\rec_3ed8fc_3ed904.bin
 		INCBIN	baserom.gba_0x3ed904_0x3ed958.extracted
 		INCBIN	build\maprecords\rec_3ed958_3ed960.bin
-		INCBIN	baserom.gba_0x3ed960_0x3edea8.extracted
+		INCBIN	baserom.gba_0x3ed960_0x3edc5c.extracted
+		INCBIN	build\addr\rec_3edc5c_3edc64.bin
+		INCBIN	baserom.gba_0x3edc64_0x3edc94.extracted
+		INCBIN	build\addr\rec_3edc94_3edc9c.bin
+		INCBIN	baserom.gba_0x3edc9c_0x3edcc4.extracted
+		INCBIN	build\addr\rec_3edcc4_3edccc.bin
+		INCBIN	baserom.gba_0x3edccc_0x3edcf0.extracted
+		INCBIN	build\addr\rec_3edcf0_3edcf8.bin
+		INCBIN	baserom.gba_0x3edcf8_0x3edd34.extracted
+		INCBIN	build\addr\rec_3edd34_3edd3c.bin
+		INCBIN	baserom.gba_0x3edd3c_0x3edd54.extracted
+		INCBIN	build\addr\rec_3edd54_3edd5c.bin
+		INCBIN	baserom.gba_0x3edd5c_0x3edd78.extracted
+		INCBIN	build\addr\rec_3edd78_3edd80.bin
+		INCBIN	baserom.gba_0x3edd80_0x3edea8.extracted
 		INCBIN	build\maprecords\rec_3edea8_3edeb0.bin
-		INCBIN	baserom.gba_0x3edeb0_0x3ee01c.extracted
+		INCBIN	baserom.gba_0x3edeb0_0x3edf1c.extracted
+		INCBIN	build\addr\rec_3edf1c_3edf24.bin
+		INCBIN	baserom.gba_0x3edf24_0x3edf34.extracted
+		INCBIN	build\addr\rec_3edf34_3edf3c.bin
+		INCBIN	baserom.gba_0x3edf3c_0x3ee01c.extracted
 		INCBIN	build\maprecords\rec_3ee01c_3ee024.bin
 		INCBIN	baserom.gba_0x3ee024_0x3ee064.extracted
 		INCBIN	build\maprecords\rec_3ee064_3ee068.bin
-		INCBIN	baserom.gba_0x3ee068_0x3ee0a0.extracted
+		INCBIN	build\addr\rec_3ee068_3ee070.bin
+		INCBIN	baserom.gba_0x3ee070_0x3ee0a0.extracted
 		INCBIN	build\maprecords\rec_3ee0a0_3ee0a8.bin
-		INCBIN	baserom.gba_0x3ee0a8_0x3ee100.extracted
+		INCBIN	build\addr\rec_3ee0a8_3ee0b0.bin
+		INCBIN	baserom.gba_0x3ee0b0_0x3ee100.extracted
 		INCBIN	build\maprecords\rec_3ee100_3ee108.bin
-		INCBIN	baserom.gba_0x3ee108_0x3ee428.extracted
+		INCBIN	baserom.gba_0x3ee108_0x3ee380.extracted
+		INCBIN	build\addr\rec_3ee380_3ee388.bin
+		INCBIN	baserom.gba_0x3ee388_0x3ee428.extracted
 		INCBIN	build\maprecords\rec_3ee428_3ee430.bin
-		INCBIN	baserom.gba_0x3ee430_0x3ee744.extracted
+		INCBIN	baserom.gba_0x3ee430_0x3ee640.extracted
+		INCBIN	build\addr\rec_3ee640_3ee648.bin
+		INCBIN	baserom.gba_0x3ee648_0x3ee744.extracted
 		INCBIN	build\maprecords\rec_3ee744_3ee748.bin
 		INCBIN	baserom.gba_0x3ee748_0x3ee7f0.extracted
 		INCBIN	build\maprecords\rec_3ee7f0_3ee7f8.bin
@@ -4874,15 +4912,26 @@
 		INCBIN	build\maprecords\rec_3ee81c_3ee820.bin
 		INCBIN	baserom.gba_0x3ee820_0x3ee874.extracted
 		INCBIN	build\maprecords\rec_3ee874_3ee878.bin
-		INCBIN	baserom.gba_0x3ee878_0x3eeaac.extracted
+		INCBIN	baserom.gba_0x3ee878_0x3eea1c.extracted
+		INCBIN	build\addr\rec_3eea1c_3eea24.bin
+		INCBIN	baserom.gba_0x3eea24_0x3eea60.extracted
+		INCBIN	build\addr\rec_3eea60_3eea68.bin
+		INCBIN	baserom.gba_0x3eea68_0x3eeaac.extracted
 		INCBIN	build\maprecords\rec_3eeaac_3eeab0.bin
-		INCBIN	baserom.gba_0x3eeab0_0x3eec6c.extracted
+		INCBIN	baserom.gba_0x3eeab0_0x3eec24.extracted
+		INCBIN	build\addr\rec_3eec24_3eec2c.bin
+		INCBIN	baserom.gba_0x3eec2c_0x3eec6c.extracted
 		INCBIN	build\maprecords\rec_3eec6c_3eec74.bin
-		INCBIN	baserom.gba_0x3eec74_0x3eecec.extracted
+		INCBIN	baserom.gba_0x3eec74_0x3eeca4.extracted
+		INCBIN	build\addr\rec_3eeca4_3eecac.bin
+		INCBIN	baserom.gba_0x3eecac_0x3eecec.extracted
 		INCBIN	build\maprecords\rec_3eecec_3eecf0.bin
 		INCBIN	baserom.gba_0x3eecf0_0x3eed84.extracted
 		INCBIN	build\maprecords\rec_3eed84_3eed88.bin
-		INCBIN	baserom.gba_0x3eed88_0x3eedd8.extracted
+		INCBIN	build\addr\rec_3eed88_3eed90.bin
+		INCBIN	baserom.gba_0x3eed90_0x3eedb4.extracted
+		INCBIN	build\addr\rec_3eedb4_3eedbc.bin
+		INCBIN	baserom.gba_0x3eedbc_0x3eedd8.extracted
 		INCBIN	build\maprecords\rec_3eedd8_3eeddc.bin
 		INCBIN	baserom.gba_0x3eeddc_0x3ef09c.extracted
 		INCBIN	build\maprecords\rec_3ef09c_3ef0a0.bin
@@ -4896,7 +4945,17 @@
 		INCBIN	build\maprecords\rec_3ef574_3ef578.bin
 		INCBIN	baserom.gba_0x3ef578_0x3ef60c.extracted
 		INCBIN	build\maprecords\rec_3ef60c_3ef610.bin
-		INCBIN	baserom.gba_0x3ef610_0x3ef93c.extracted
+		INCBIN	baserom.gba_0x3ef610_0x3ef7d0.extracted
+		INCBIN	build\addr\rec_3ef7d0_3ef7d8.bin
+		INCBIN	baserom.gba_0x3ef7d8_0x3ef7f8.extracted
+		INCBIN	build\addr\rec_3ef7f8_3ef800.bin
+		INCBIN	baserom.gba_0x3ef800_0x3ef820.extracted
+		INCBIN	build\addr\rec_3ef820_3ef828.bin
+		INCBIN	baserom.gba_0x3ef828_0x3ef840.extracted
+		INCBIN	build\addr\rec_3ef840_3ef848.bin
+		INCBIN	baserom.gba_0x3ef848_0x3ef864.extracted
+		INCBIN	build\addr\rec_3ef864_3ef86c.bin
+		INCBIN	baserom.gba_0x3ef86c_0x3ef93c.extracted
 		INCBIN	build\maprecords\rec_3ef93c_3ef940.bin
 		INCBIN	baserom.gba_0x3ef940_0x3efa04.extracted
 		INCBIN	build\maprecords\rec_3efa04_3efa08.bin
@@ -4910,17 +4969,41 @@
 		INCBIN	build\maprecords\rec_3efd1c_3efd20.bin
 		INCBIN	baserom.gba_0x3efd20_0x3efdf0.extracted
 		INCBIN	build\maprecords\rec_3efdf0_3efdf4.bin
-		INCBIN	baserom.gba_0x3efdf4_0x3eff64.extracted
+		INCBIN	baserom.gba_0x3efdf4_0x3efefc.extracted
+		INCBIN	build\addr\rec_3efefc_3eff04.bin
+		INCBIN	baserom.gba_0x3eff04_0x3eff14.extracted
+		INCBIN	build\addr\rec_3eff14_3eff1c.bin
+		INCBIN	baserom.gba_0x3eff1c_0x3eff2c.extracted
+		INCBIN	build\addr\rec_3eff2c_3eff34.bin
+		INCBIN	baserom.gba_0x3eff34_0x3eff64.extracted
 		INCBIN	build\maprecords\rec_3eff64_3eff68.bin
-		INCBIN	baserom.gba_0x3eff68_0x3f00c8.extracted
+		INCBIN	baserom.gba_0x3eff68_0x3f0060.extracted
+		INCBIN	build\addr\rec_3f0060_3f0068.bin
+		INCBIN	baserom.gba_0x3f0068_0x3f0078.extracted
+		INCBIN	build\addr\rec_3f0078_3f0080.bin
+		INCBIN	baserom.gba_0x3f0080_0x3f0090.extracted
+		INCBIN	build\addr\rec_3f0090_3f0098.bin
+		INCBIN	baserom.gba_0x3f0098_0x3f00c8.extracted
 		INCBIN	build\maprecords\rec_3f00c8_3f00cc.bin
-		INCBIN	baserom.gba_0x3f00cc_0x3f0288.extracted
+		INCBIN	baserom.gba_0x3f00cc_0x3f01d4.extracted
+		INCBIN	build\addr\rec_3f01d4_3f01dc.bin
+		INCBIN	baserom.gba_0x3f01dc_0x3f01ec.extracted
+		INCBIN	build\addr\rec_3f01ec_3f01f4.bin
+		INCBIN	baserom.gba_0x3f01f4_0x3f0204.extracted
+		INCBIN	build\addr\rec_3f0204_3f020c.bin
+		INCBIN	baserom.gba_0x3f020c_0x3f0288.extracted
 		INCBIN	build\maprecords\rec_3f0288_3f028c.bin
-		INCBIN	baserom.gba_0x3f028c_0x3f06c8.extracted
+		INCBIN	baserom.gba_0x3f028c_0x3f0660.extracted
+		INCBIN	build\addr\rec_3f0660_3f0668.bin
+		INCBIN	baserom.gba_0x3f0668_0x3f06c8.extracted
 		INCBIN	build\maprecords\rec_3f06c8_3f06cc.bin
-		INCBIN	baserom.gba_0x3f06cc_0x3f0b34.extracted
+		INCBIN	baserom.gba_0x3f06cc_0x3f0acc.extracted
+		INCBIN	build\addr\rec_3f0acc_3f0ad4.bin
+		INCBIN	baserom.gba_0x3f0ad4_0x3f0b34.extracted
 		INCBIN	build\maprecords\rec_3f0b34_3f0b38.bin
-		INCBIN	baserom.gba_0x3f0b38_0x3f0fdc.extracted
+		INCBIN	baserom.gba_0x3f0b38_0x3f0fc0.extracted
+		INCBIN	build\addr\rec_3f0fc0_3f0fc8.bin
+		INCBIN	baserom.gba_0x3f0fc8_0x3f0fdc.extracted
 		INCBIN	build\maprecords\rec_3f0fdc_3f0fe0.bin
 		INCBIN	baserom.gba_0x3f0fe0_0x3f107c.extracted
 		INCBIN	build\maprecords\rec_3f107c_3f1080.bin
@@ -4934,51 +5017,131 @@
 		INCBIN	build\maprecords\rec_3f121c_3f1220.bin
 		INCBIN	baserom.gba_0x3f1220_0x3f12dc.extracted
 		INCBIN	build\maprecords\rec_3f12dc_3f12e0.bin
-		INCBIN	baserom.gba_0x3f12e0_0x3f13bc.extracted
+		INCBIN	baserom.gba_0x3f12e0_0x3f137c.extracted
+		INCBIN	build\addr\rec_3f137c_3f1384.bin
+		INCBIN	baserom.gba_0x3f1384_0x3f13bc.extracted
 		INCBIN	build\maprecords\rec_3f13bc_3f13c0.bin
-		INCBIN	baserom.gba_0x3f13c0_0x3f14a8.extracted
+		INCBIN	baserom.gba_0x3f13c0_0x3f145c.extracted
+		INCBIN	build\addr\rec_3f145c_3f1464.bin
+		INCBIN	baserom.gba_0x3f1464_0x3f14a8.extracted
 		INCBIN	build\maprecords\rec_3f14a8_3f14ac.bin
-		INCBIN	baserom.gba_0x3f14ac_0x3f181c.extracted
+		INCBIN	baserom.gba_0x3f14ac_0x3f17a8.extracted
+		INCBIN	build\addr\rec_3f17a8_3f17b0.bin
+		INCBIN	baserom.gba_0x3f17b0_0x3f181c.extracted
 		INCBIN	build\maprecords\rec_3f181c_3f1820.bin
 		INCBIN	baserom.gba_0x3f1820_0x3f19ac.extracted
 		INCBIN	build\maprecords\rec_3f19ac_3f19b0.bin
-		INCBIN	baserom.gba_0x3f19b0_0x3f1bac.extracted
+		INCBIN	baserom.gba_0x3f19b0_0x3f1b34.extracted
+		INCBIN	build\addr\rec_3f1b34_3f1b3c.bin
+		INCBIN	baserom.gba_0x3f1b3c_0x3f1bac.extracted
 		INCBIN	build\maprecords\rec_3f1bac_3f1bb0.bin
-		INCBIN	baserom.gba_0x3f1bb0_0x3f1d54.extracted
+		INCBIN	baserom.gba_0x3f1bb0_0x3f1d30.extracted
+		INCBIN	build\addr\rec_3f1d30_3f1d38.bin
+		INCBIN	baserom.gba_0x3f1d38_0x3f1d54.extracted
 		INCBIN	build\maprecords\rec_3f1d54_3f1d58.bin
 		INCBIN	baserom.gba_0x3f1d58_0x3f1d90.extracted
 		INCBIN	build\maprecords\rec_3f1d90_3f1d94.bin
 		INCBIN	baserom.gba_0x3f1d94_0x3f1f7c.extracted
 		INCBIN	build\maprecords\rec_3f1f7c_3f1f80.bin
-		INCBIN	baserom.gba_0x3f1f80_0x3f2184.extracted
+		INCBIN	baserom.gba_0x3f1f80_0x3f211c.extracted
+		INCBIN	build\addr\rec_3f211c_3f2124.bin
+		INCBIN	baserom.gba_0x3f2124_0x3f2184.extracted
 		INCBIN	build\maprecords\rec_3f2184_3f2188.bin
-		INCBIN	baserom.gba_0x3f2188_0x3f21e8.extracted
+		INCBIN	baserom.gba_0x3f2188_0x3f21cc.extracted
+		INCBIN	build\addr\rec_3f21cc_3f21d4.bin
+		INCBIN	baserom.gba_0x3f21d4_0x3f21e8.extracted
 		INCBIN	build\maprecords\rec_3f21e8_3f21ec.bin
-		INCBIN	baserom.gba_0x3f21ec_0x3f260c.extracted
+		INCBIN	baserom.gba_0x3f21ec_0x3f25b0.extracted
+		INCBIN	build\addr\rec_3f25b0_3f25b8.bin
+		INCBIN	baserom.gba_0x3f25b8_0x3f260c.extracted
 		INCBIN	build\maprecords\rec_3f260c_3f2610.bin
 		INCBIN	baserom.gba_0x3f2610_0x3f2674.extracted
 		INCBIN	build\maprecords\rec_3f2674_3f2678.bin
 		INCBIN	baserom.gba_0x3f2678_0x3f28b0.extracted
 		INCBIN	build\maprecords\rec_3f28b0_3f28b4.bin
-		INCBIN	baserom.gba_0x3f28b4_0x3f2998.extracted
+		INCBIN	baserom.gba_0x3f28b4_0x3f297c.extracted
+		INCBIN	build\addr\rec_3f297c_3f2984.bin
+		INCBIN	baserom.gba_0x3f2984_0x3f2998.extracted
 		INCBIN	build\maprecords\rec_3f2998_3f299c.bin
 		INCBIN	baserom.gba_0x3f299c_0x3f29c4.extracted
 		INCBIN	build\maprecords\rec_3f29c4_3f29c8.bin
-		INCBIN	baserom.gba_0x3f29c8_0x3f2aec.extracted
+		INCBIN	baserom.gba_0x3f29c8_0x3f2ab8.extracted
+		INCBIN	build\addr\rec_3f2ab8_3f2ac0.bin
+		INCBIN	baserom.gba_0x3f2ac0_0x3f2aec.extracted
 		INCBIN	build\maprecords\rec_3f2aec_3f2af0.bin
-		INCBIN	baserom.gba_0x3f2af0_0x3f3014.extracted
+		INCBIN	baserom.gba_0x3f2af0_0x3f2f34.extracted
+		INCBIN	build\addr\rec_3f2f34_3f2f3c.bin
+		INCBIN	baserom.gba_0x3f2f3c_0x3f2f68.extracted
+		INCBIN	build\addr\rec_3f2f68_3f2f70.bin
+		INCBIN	baserom.gba_0x3f2f70_0x3f2fb0.extracted
+		INCBIN	build\addr\rec_3f2fb0_3f2fb8.bin
+		INCBIN	baserom.gba_0x3f2fb8_0x3f2fd0.extracted
+		INCBIN	build\addr\rec_3f2fd0_3f2fd8.bin
+		INCBIN	baserom.gba_0x3f2fd8_0x3f3014.extracted
 		INCBIN	build\maprecords\rec_3f3014_3f3018.bin
-		INCBIN	baserom.gba_0x3f3018_0x3f341c.extracted
+		INCBIN	baserom.gba_0x3f3018_0x3f32a0.extracted
+		INCBIN	build\addr\rec_3f32a0_3f32a8.bin
+		INCBIN	baserom.gba_0x3f32a8_0x3f32e8.extracted
+		INCBIN	build\addr\rec_3f32e8_3f32f0.bin
+		INCBIN	baserom.gba_0x3f32f0_0x3f3308.extracted
+		INCBIN	build\addr\rec_3f3308_3f3310.bin
+		INCBIN	baserom.gba_0x3f3310_0x3f3334.extracted
+		INCBIN	build\addr\rec_3f3334_3f333c.bin
+		INCBIN	baserom.gba_0x3f333c_0x3f3360.extracted
+		INCBIN	build\addr\rec_3f3360_3f3368.bin
+		INCBIN	baserom.gba_0x3f3368_0x3f338c.extracted
+		INCBIN	build\addr\rec_3f338c_3f3394.bin
+		INCBIN	baserom.gba_0x3f3394_0x3f341c.extracted
 		INCBIN	build\maprecords\rec_3f341c_3f3420.bin
-		INCBIN	baserom.gba_0x3f3420_0x3f3884.extracted
+		INCBIN	baserom.gba_0x3f3420_0x3f36e4.extracted
+		INCBIN	build\addr\rec_3f36e4_3f36ec.bin
+		INCBIN	baserom.gba_0x3f36ec_0x3f3718.extracted
+		INCBIN	build\addr\rec_3f3718_3f3720.bin
+		INCBIN	baserom.gba_0x3f3720_0x3f3738.extracted
+		INCBIN	build\addr\rec_3f3738_3f3740.bin
+		INCBIN	baserom.gba_0x3f3740_0x3f3760.extracted
+		INCBIN	build\addr\rec_3f3760_3f3768.bin
+		INCBIN	baserom.gba_0x3f3768_0x3f37d0.extracted
+		INCBIN	build\addr\rec_3f37d0_3f37d8.bin
+		INCBIN	baserom.gba_0x3f37d8_0x3f37f4.extracted
+		INCBIN	build\addr\rec_3f37f4_3f37fc.bin
+		INCBIN	baserom.gba_0x3f37fc_0x3f3884.extracted
 		INCBIN	build\maprecords\rec_3f3884_3f3888.bin
-		INCBIN	baserom.gba_0x3f3888_0x3f3b50.extracted
+		INCBIN	baserom.gba_0x3f3888_0x3f3a28.extracted
+		INCBIN	build\addr\rec_3f3a28_3f3a30.bin
+		INCBIN	baserom.gba_0x3f3a30_0x3f3ac4.extracted
+		INCBIN	build\addr\rec_3f3ac4_3f3acc.bin
+		INCBIN	baserom.gba_0x3f3acc_0x3f3b50.extracted
 		INCBIN	build\maprecords\rec_3f3b50_3f3b54.bin
-		INCBIN	baserom.gba_0x3f3b54_0x3f3f28.extracted
+		INCBIN	baserom.gba_0x3f3b54_0x3f3d70.extracted
+		INCBIN	build\addr\rec_3f3d70_3f3d78.bin
+		INCBIN	baserom.gba_0x3f3d78_0x3f3da4.extracted
+		INCBIN	build\addr\rec_3f3da4_3f3dac.bin
+		INCBIN	baserom.gba_0x3f3dac_0x3f3e00.extracted
+		INCBIN	build\addr\rec_3f3e00_3f3e08.bin
+		INCBIN	baserom.gba_0x3f3e08_0x3f3e2c.extracted
+		INCBIN	build\addr\rec_3f3e2c_3f3e34.bin
+		INCBIN	baserom.gba_0x3f3e34_0x3f3e68.extracted
+		INCBIN	build\addr\rec_3f3e68_3f3e70.bin
+		INCBIN	baserom.gba_0x3f3e70_0x3f3eb4.extracted
+		INCBIN	build\addr\rec_3f3eb4_3f3ebc.bin
+		INCBIN	baserom.gba_0x3f3ebc_0x3f3f28.extracted
 		INCBIN	build\maprecords\rec_3f3f28_3f3f2c.bin
-		INCBIN	baserom.gba_0x3f3f2c_0x3f422c.extracted
+		INCBIN	baserom.gba_0x3f3f2c_0x3f40dc.extracted
+		INCBIN	build\addr\rec_3f40dc_3f40e4.bin
+		INCBIN	baserom.gba_0x3f40e4_0x3f4130.extracted
+		INCBIN	build\addr\rec_3f4130_3f4138.bin
+		INCBIN	baserom.gba_0x3f4138_0x3f415c.extracted
+		INCBIN	build\addr\rec_3f415c_3f4164.bin
+		INCBIN	baserom.gba_0x3f4164_0x3f4188.extracted
+		INCBIN	build\addr\rec_3f4188_3f4190.bin
+		INCBIN	baserom.gba_0x3f4190_0x3f41c0.extracted
+		INCBIN	build\addr\rec_3f41c0_3f41c8.bin
+		INCBIN	baserom.gba_0x3f41c8_0x3f422c.extracted
 		INCBIN	build\maprecords\rec_3f422c_3f4254.bin
-		INCBIN	baserom.gba_0x3f4254_0x3f42f0.extracted
+		INCBIN	baserom.gba_0x3f4254_0x3f429c.extracted
+		INCBIN	build\addr\rec_3f429c_3f42a4.bin
+		INCBIN	baserom.gba_0x3f42a4_0x3f42f0.extracted
 		INCBIN	build\maprecords\rec_3f42f0_3f42f4.bin
 		INCBIN	baserom.gba_0x3f42f4_0x3f4358.extracted
 		INCBIN	build\maprecords\rec_3f4358_3f435c.bin
@@ -4994,7 +5157,9 @@
 		INCBIN	build\maprecords\rec_3f4520_3f4524.bin
 		INCBIN	baserom.gba_0x3f4524_0x3f4568.extracted
 		INCBIN	build\maprecords\rec_3f4568_3f456c.bin
-		INCBIN	baserom.gba_0x3f456c_0x3f45f0.extracted
+		INCBIN	baserom.gba_0x3f456c_0x3f459c.extracted
+		INCBIN	build\addr\rec_3f459c_3f45a4.bin
+		INCBIN	baserom.gba_0x3f45a4_0x3f45f0.extracted
 		INCBIN	build\maprecords\rec_3f45f0_3f45f8.bin
 		INCBIN	baserom.gba_0x3f45f8_0x3f4620.extracted
 		INCBIN	build\maprecords\rec_3f4620_3f4624.bin
@@ -5012,21 +5177,43 @@
 		INCBIN	build\maprecords\rec_3f4bbc_3f4bc0.bin
 		INCBIN	baserom.gba_0x3f4bc0_0x3f4cc0.extracted
 		INCBIN	build\maprecords\rec_3f4cc0_3f4cc4.bin
-		INCBIN	baserom.gba_0x3f4cc4_0x3f4da8.extracted
+		INCBIN	baserom.gba_0x3f4cc4_0x3f4d24.extracted
+		INCBIN	build\addr\rec_3f4d24_3f4d2c.bin
+		INCBIN	baserom.gba_0x3f4d2c_0x3f4da8.extracted
 		INCBIN	build\maprecords\rec_3f4da8_3f4dac.bin
-		INCBIN	baserom.gba_0x3f4dac_0x3f4eb4.extracted
+		INCBIN	baserom.gba_0x3f4dac_0x3f4dd0.extracted
+		INCBIN	build\addr\rec_3f4dd0_3f4dd8.bin
+		INCBIN	baserom.gba_0x3f4dd8_0x3f4df0.extracted
+		INCBIN	build\addr\rec_3f4df0_3f4df8.bin
+		INCBIN	baserom.gba_0x3f4df8_0x3f4e10.extracted
+		INCBIN	build\addr\rec_3f4e10_3f4e18.bin
+		INCBIN	baserom.gba_0x3f4e18_0x3f4eb4.extracted
 		INCBIN	build\maprecords\rec_3f4eb4_3f4eb8.bin
-		INCBIN	baserom.gba_0x3f4eb8_0x3f5184.extracted
+		INCBIN	baserom.gba_0x3f4eb8_0x3f5100.extracted
+		INCBIN	build\addr\rec_3f5100_3f5108.bin
+		INCBIN	baserom.gba_0x3f5108_0x3f5184.extracted
 		INCBIN	build\maprecords\rec_3f5184_3f5188.bin
 		INCBIN	baserom.gba_0x3f5188_0x3f536c.extracted
 		INCBIN	build\maprecords\rec_3f536c_3f5370.bin
-		INCBIN	baserom.gba_0x3f5370_0x3f5574.extracted
+		INCBIN	baserom.gba_0x3f5370_0x3f54ec.extracted
+		INCBIN	build\addr\rec_3f54ec_3f54f4.bin
+		INCBIN	baserom.gba_0x3f54f4_0x3f5510.extracted
+		INCBIN	build\addr\rec_3f5510_3f5518.bin
+		INCBIN	baserom.gba_0x3f5518_0x3f5574.extracted
 		INCBIN	build\maprecords\rec_3f5574_3f5578.bin
 		INCBIN	baserom.gba_0x3f5578_0x3f56d4.extracted
 		INCBIN	build\maprecords\rec_3f56d4_3f56d8.bin
-		INCBIN	baserom.gba_0x3f56d8_0x3f5884.extracted
+		INCBIN	baserom.gba_0x3f56d8_0x3f574c.extracted
+		INCBIN	build\addr\rec_3f574c_3f5754.bin
+		INCBIN	baserom.gba_0x3f5754_0x3f5768.extracted
+		INCBIN	build\addr\rec_3f5768_3f5770.bin
+		INCBIN	baserom.gba_0x3f5770_0x3f5784.extracted
+		INCBIN	build\addr\rec_3f5784_3f578c.bin
+		INCBIN	baserom.gba_0x3f578c_0x3f5884.extracted
 		INCBIN	build\maprecords\rec_3f5884_3f588c.bin
-		INCBIN	baserom.gba_0x3f588c_0x3f5f8c.extracted
+		INCBIN	baserom.gba_0x3f588c_0x3f5ee0.extracted
+		INCBIN	build\addr\rec_3f5ee0_3f5ee8.bin
+		INCBIN	baserom.gba_0x3f5ee8_0x3f5f8c.extracted
 		INCBIN	build\maprecords\rec_3f5f8c_3f5f90.bin
 		INCBIN	baserom.gba_0x3f5f90_0x3f63bc.extracted
 		INCBIN	build\maprecords\rec_3f63bc_3f63c0.bin
@@ -5040,11 +5227,15 @@
 		INCBIN	build\maprecords\rec_3f6a8c_3f6a90.bin
 		INCBIN	baserom.gba_0x3f6a90_0x3f6b48.extracted
 		INCBIN	build\maprecords\rec_3f6b48_3f6b4c.bin
-		INCBIN	baserom.gba_0x3f6b4c_0x3f6bf4.extracted
+		INCBIN	baserom.gba_0x3f6b4c_0x3f6bc0.extracted
+		INCBIN	build\addr\rec_3f6bc0_3f6bc8.bin
+		INCBIN	baserom.gba_0x3f6bc8_0x3f6bf4.extracted
 		INCBIN	build\maprecords\rec_3f6bf4_3f6bf8.bin
 		INCBIN	baserom.gba_0x3f6bf8_0x3f7120.extracted
 		INCBIN	build\maprecords\rec_3f7120_3f7124.bin
-		INCBIN	baserom.gba_0x3f7124_0x3f7660.extracted
+		INCBIN	baserom.gba_0x3f7124_0x3f7614.extracted
+		INCBIN	build\addr\rec_3f7614_3f761c.bin
+		INCBIN	baserom.gba_0x3f761c_0x3f7660.extracted
 		INCBIN	build\maprecords\rec_3f7660_3f7664.bin
 		INCBIN	baserom.gba_0x3f7664_0x3f7858.extracted
 		INCBIN	build\maprecords\rec_3f7858_3f785c.bin
@@ -5052,39 +5243,64 @@
 		INCBIN	build\maprecords\rec_3f798c_3f7990.bin
 		INCBIN	baserom.gba_0x3f7990_0x3f7b6c.extracted
 		INCBIN	build\maprecords\rec_3f7b6c_3f7b70.bin
-		INCBIN	baserom.gba_0x3f7b70_0x3f803c.extracted
+		INCBIN	baserom.gba_0x3f7b70_0x3f7f80.extracted
+		INCBIN	build\addr\rec_3f7f80_3f7f88.bin
+		INCBIN	baserom.gba_0x3f7f88_0x3f7fa4.extracted
+		INCBIN	build\addr\rec_3f7fa4_3f7fac.bin
+		INCBIN	baserom.gba_0x3f7fac_0x3f803c.extracted
 		INCBIN	build\maprecords\rec_3f803c_3f8040.bin
-		INCBIN	baserom.gba_0x3f8040_0x3f8118.extracted
+		INCBIN	baserom.gba_0x3f8040_0x3f80c0.extracted
+		INCBIN	build\addr\rec_3f80c0_3f80c8.bin
+		INCBIN	baserom.gba_0x3f80c8_0x3f8118.extracted
 		INCBIN	build\maprecords\rec_3f8118_3f811c.bin
 		INCBIN	baserom.gba_0x3f811c_0x3f82c4.extracted
 		INCBIN	build\maprecords\rec_3f82c4_3f82c8.bin
 		INCBIN	baserom.gba_0x3f82c8_0x3f8328.extracted
 		INCBIN	build\maprecords\rec_3f8328_3f832c.bin
-		INCBIN	baserom.gba_0x3f832c_0x3f8348.extracted
+		INCBIN	build\addr\rec_3f832c_3f8334.bin
+		INCBIN	baserom.gba_0x3f8334_0x3f8348.extracted
 		INCBIN	build\maprecords\rec_3f8348_3f834c.bin
-		INCBIN	baserom.gba_0x3f834c_0x3f8364.extracted
+		INCBIN	build\addr\rec_3f834c_3f8354.bin
+		INCBIN	baserom.gba_0x3f8354_0x3f8364.extracted
 		INCBIN	build\maprecords\rec_3f8364_3f8368.bin
 		INCBIN	baserom.gba_0x3f8368_0x3f8418.extracted
 		INCBIN	build\maprecords\rec_3f8418_3f841c.bin
 		INCBIN	baserom.gba_0x3f841c_0x3f84ac.extracted
 		INCBIN	build\maprecords\rec_3f84ac_3f84b4.bin
-		INCBIN	baserom.gba_0x3f84b4_0x3f8534.extracted
+		INCBIN	baserom.gba_0x3f84b4_0x3f84ec.extracted
+		INCBIN	build\addr\rec_3f84ec_3f84f4.bin
+		INCBIN	baserom.gba_0x3f84f4_0x3f8510.extracted
+		INCBIN	build\addr\rec_3f8510_3f8518.bin
+		INCBIN	baserom.gba_0x3f8518_0x3f8534.extracted
 		INCBIN	build\maprecords\rec_3f8534_3f8538.bin
 		INCBIN	baserom.gba_0x3f8538_0x3f8610.extracted
 		INCBIN	build\maprecords\rec_3f8610_3f8614.bin
 		INCBIN	baserom.gba_0x3f8614_0x3f865c.extracted
 		INCBIN	build\maprecords\rec_3f865c_3f8660.bin
-		INCBIN	baserom.gba_0x3f8660_0x3f88ec.extracted
+		INCBIN	baserom.gba_0x3f8660_0x3f88b0.extracted
+		INCBIN	build\addr\rec_3f88b0_3f88b8.bin
+		INCBIN	baserom.gba_0x3f88b8_0x3f88ec.extracted
 		INCBIN	build\maprecords\rec_3f88ec_3f88f0.bin
-		INCBIN	baserom.gba_0x3f88f0_0x3f894c.extracted
+		INCBIN	build\addr\rec_3f88f0_3f88f8.bin
+		INCBIN	baserom.gba_0x3f88f8_0x3f8908.extracted
+		INCBIN	build\addr\rec_3f8908_3f8910.bin
+		INCBIN	baserom.gba_0x3f8910_0x3f894c.extracted
 		INCBIN	build\maprecords\rec_3f894c_3f8950.bin
-		INCBIN	baserom.gba_0x3f8950_0x3f89c0.extracted
+		INCBIN	baserom.gba_0x3f8950_0x3f899c.extracted
+		INCBIN	build\addr\rec_3f899c_3f89a4.bin
+		INCBIN	baserom.gba_0x3f89a4_0x3f89c0.extracted
 		INCBIN	build\maprecords\rec_3f89c0_3f89c4.bin
-		INCBIN	baserom.gba_0x3f89c4_0x3f8ab0.extracted
+		INCBIN	baserom.gba_0x3f89c4_0x3f8a6c.extracted
+		INCBIN	build\addr\rec_3f8a6c_3f8a74.bin
+		INCBIN	baserom.gba_0x3f8a74_0x3f8a84.extracted
+		INCBIN	build\addr\rec_3f8a84_3f8a8c.bin
+		INCBIN	baserom.gba_0x3f8a8c_0x3f8ab0.extracted
 		INCBIN	build\maprecords\rec_3f8ab0_3f8ab4.bin
 		INCBIN	baserom.gba_0x3f8ab4_0x3f8b98.extracted
 		INCBIN	build\maprecords\rec_3f8b98_3f8b9c.bin
-		INCBIN	baserom.gba_0x3f8b9c_0x3f8d6c.extracted
+		INCBIN	baserom.gba_0x3f8b9c_0x3f8d30.extracted
+		INCBIN	build\addr\rec_3f8d30_3f8d38.bin
+		INCBIN	baserom.gba_0x3f8d38_0x3f8d6c.extracted
 		INCBIN	build\maprecords\rec_3f8d6c_3f8d70.bin
 		INCBIN	baserom.gba_0x3f8d70_0x3f8e50.extracted
 		INCBIN	build\maprecords\rec_3f8e50_3f8e54.bin
@@ -5092,13 +5308,21 @@
 		INCBIN	build\maprecords\rec_3f8ef8_3f8efc.bin
 		INCBIN	baserom.gba_0x3f8efc_0x3f90c4.extracted
 		INCBIN	build\maprecords\rec_3f90c4_3f90c8.bin
-		INCBIN	baserom.gba_0x3f90c8_0x3f92d8.extracted
+		INCBIN	baserom.gba_0x3f90c8_0x3f92a8.extracted
+		INCBIN	build\addr\rec_3f92a8_3f92b0.bin
+		INCBIN	baserom.gba_0x3f92b0_0x3f92d8.extracted
 		INCBIN	build\maprecords\rec_3f92d8_3f92dc.bin
 		INCBIN	baserom.gba_0x3f92dc_0x3f9344.extracted
 		INCBIN	build\maprecords\rec_3f9344_3f9348.bin
 		INCBIN	baserom.gba_0x3f9348_0x3f9390.extracted
 		INCBIN	build\maprecords\rec_3f9390_3f9394.bin
-		INCBIN	baserom.gba_0x3f9394_0x3f96c4.extracted
+		INCBIN	baserom.gba_0x3f9394_0x3f9614.extracted
+		INCBIN	build\addr\rec_3f9614_3f961c.bin
+		INCBIN	baserom.gba_0x3f961c_0x3f9658.extracted
+		INCBIN	build\addr\rec_3f9658_3f9660.bin
+		INCBIN	baserom.gba_0x3f9660_0x3f9690.extracted
+		INCBIN	build\addr\rec_3f9690_3f9698.bin
+		INCBIN	baserom.gba_0x3f9698_0x3f96c4.extracted
 		INCBIN	build\maprecords\rec_3f96c4_3f96c8.bin
 		INCBIN	baserom.gba_0x3f96c8_0x3f98f0.extracted
 		INCBIN	build\maprecords\rec_3f98f0_3f98f4.bin
@@ -5106,67 +5330,149 @@
 		INCBIN	build\maprecords\rec_3f9a14_3f9a18.bin
 		INCBIN	baserom.gba_0x3f9a18_0x3f9b2c.extracted
 		INCBIN	build\maprecords\rec_3f9b2c_3f9b30.bin
-		INCBIN	baserom.gba_0x3f9b30_0x3f9d3c.extracted
+		INCBIN	baserom.gba_0x3f9b30_0x3f9c80.extracted
+		INCBIN	build\addr\rec_3f9c80_3f9c88.bin
+		INCBIN	baserom.gba_0x3f9c88_0x3f9cac.extracted
+		INCBIN	build\addr\rec_3f9cac_3f9cb4.bin
+		INCBIN	baserom.gba_0x3f9cb4_0x3f9cd0.extracted
+		INCBIN	build\addr\rec_3f9cd0_3f9cd8.bin
+		INCBIN	baserom.gba_0x3f9cd8_0x3f9d3c.extracted
 		INCBIN	build\maprecords\rec_3f9d3c_3f9d40.bin
-		INCBIN	baserom.gba_0x3f9d40_0x3f9e98.extracted
+		INCBIN	baserom.gba_0x3f9d40_0x3f9dc0.extracted
+		INCBIN	build\addr\rec_3f9dc0_3f9dc8.bin
+		INCBIN	baserom.gba_0x3f9dc8_0x3f9ddc.extracted
+		INCBIN	build\addr\rec_3f9ddc_3f9de4.bin
+		INCBIN	baserom.gba_0x3f9de4_0x3f9dfc.extracted
+		INCBIN	build\addr\rec_3f9dfc_3f9e04.bin
+		INCBIN	baserom.gba_0x3f9e04_0x3f9e1c.extracted
+		INCBIN	build\addr\rec_3f9e1c_3f9e24.bin
+		INCBIN	baserom.gba_0x3f9e24_0x3f9e98.extracted
 		INCBIN	build\maprecords\rec_3f9e98_3f9e9c.bin
 		INCBIN	baserom.gba_0x3f9e9c_0x3f9fe8.extracted
 		INCBIN	build\maprecords\rec_3f9fe8_3f9fec.bin
-		INCBIN	baserom.gba_0x3f9fec_0x3fa06c.extracted
+		INCBIN	baserom.gba_0x3f9fec_0x3fa034.extracted
+		INCBIN	build\addr\rec_3fa034_3fa03c.bin
+		INCBIN	baserom.gba_0x3fa03c_0x3fa06c.extracted
 		INCBIN	build\maprecords\rec_3fa06c_3fa070.bin
-		INCBIN	baserom.gba_0x3fa070_0x3fa348.extracted
+		INCBIN	baserom.gba_0x3fa070_0x3fa304.extracted
+		INCBIN	build\addr\rec_3fa304_3fa30c.bin
+		INCBIN	baserom.gba_0x3fa30c_0x3fa324.extracted
+		INCBIN	build\addr\rec_3fa324_3fa32c.bin
+		INCBIN	baserom.gba_0x3fa32c_0x3fa348.extracted
 		INCBIN	build\maprecords\rec_3fa348_3fa34c.bin
-		INCBIN	baserom.gba_0x3fa34c_0x3fa380.extracted
+		INCBIN	build\addr\rec_3fa34c_3fa354.bin
+		INCBIN	baserom.gba_0x3fa354_0x3fa380.extracted
 		INCBIN	build\maprecords\rec_3fa380_3fa384.bin
 		INCBIN	baserom.gba_0x3fa384_0x3fa414.extracted
 		INCBIN	build\maprecords\rec_3fa414_3fa418.bin
 		INCBIN	baserom.gba_0x3fa418_0x3fa46c.extracted
 		INCBIN	build\maprecords\rec_3fa46c_3fa470.bin
-		INCBIN	baserom.gba_0x3fa470_0x3fa534.extracted
+		INCBIN	build\addr\rec_3fa470_3fa478.bin
+		INCBIN	baserom.gba_0x3fa478_0x3fa488.extracted
+		INCBIN	build\addr\rec_3fa488_3fa490.bin
+		INCBIN	baserom.gba_0x3fa490_0x3fa4a8.extracted
+		INCBIN	build\addr\rec_3fa4a8_3fa4b0.bin
+		INCBIN	baserom.gba_0x3fa4b0_0x3fa4c8.extracted
+		INCBIN	build\addr\rec_3fa4c8_3fa4d0.bin
+		INCBIN	baserom.gba_0x3fa4d0_0x3fa4e8.extracted
+		INCBIN	build\addr\rec_3fa4e8_3fa4f0.bin
+		INCBIN	baserom.gba_0x3fa4f0_0x3fa534.extracted
 		INCBIN	build\maprecords\rec_3fa534_3fa538.bin
-		INCBIN	baserom.gba_0x3fa538_0x3fa69c.extracted
+		INCBIN	baserom.gba_0x3fa538_0x3fa604.extracted
+		INCBIN	build\addr\rec_3fa604_3fa60c.bin
+		INCBIN	baserom.gba_0x3fa60c_0x3fa630.extracted
+		INCBIN	build\addr\rec_3fa630_3fa638.bin
+		INCBIN	baserom.gba_0x3fa638_0x3fa69c.extracted
 		INCBIN	build\maprecords\rec_3fa69c_3fa6a0.bin
 		INCBIN	baserom.gba_0x3fa6a0_0x3fa794.extracted
 		INCBIN	build\maprecords\rec_3fa794_3fa798.bin
-		INCBIN	baserom.gba_0x3fa798_0x3fa9b0.extracted
+		INCBIN	baserom.gba_0x3fa798_0x3fa960.extracted
+		INCBIN	build\addr\rec_3fa960_3fa968.bin
+		INCBIN	baserom.gba_0x3fa968_0x3fa9b0.extracted
 		INCBIN	build\maprecords\rec_3fa9b0_3fa9b4.bin
 		INCBIN	baserom.gba_0x3fa9b4_0x3faaf0.extracted
 		INCBIN	build\maprecords\rec_3faaf0_3faaf4.bin
 		INCBIN	baserom.gba_0x3faaf4_0x3fab60.extracted
 		INCBIN	build\maprecords\rec_3fab60_3fab68.bin
-		INCBIN	baserom.gba_0x3fab68_0x3facc8.extracted
+		INCBIN	baserom.gba_0x3fab68_0x3faca4.extracted
+		INCBIN	build\addr\rec_3faca4_3facac.bin
+		INCBIN	baserom.gba_0x3facac_0x3facc8.extracted
 		INCBIN	build\maprecords\rec_3facc8_3faccc.bin
 		INCBIN	baserom.gba_0x3faccc_0x3fad00.extracted
 		INCBIN	build\maprecords\rec_3fad00_3fad04.bin
-		INCBIN	baserom.gba_0x3fad04_0x3fad58.extracted
+		INCBIN	build\addr\rec_3fad04_3fad0c.bin
+		INCBIN	baserom.gba_0x3fad0c_0x3fad58.extracted
 		INCBIN	build\maprecords\rec_3fad58_3fad5c.bin
 		INCBIN	baserom.gba_0x3fad5c_0x3fadbc.extracted
 		INCBIN	build\maprecords\rec_3fadbc_3fadc4.bin
-		INCBIN	baserom.gba_0x3fadc4_0x3fae84.extracted
+		INCBIN	baserom.gba_0x3fadc4_0x3fae54.extracted
+		INCBIN	build\addr\rec_3fae54_3fae5c.bin
+		INCBIN	baserom.gba_0x3fae5c_0x3fae84.extracted
 		INCBIN	build\maprecords\rec_3fae84_3fae88.bin
 		INCBIN	baserom.gba_0x3fae88_0x3faed8.extracted
 		INCBIN	build\maprecords\rec_3faed8_3faedc.bin
 		INCBIN	baserom.gba_0x3faedc_0x3faf00.extracted
 		INCBIN	build\maprecords\rec_3faf00_3faf04.bin
-		INCBIN	baserom.gba_0x3faf04_0x3faf6c.extracted
+		INCBIN	build\addr\rec_3faf04_3faf0c.bin
+		INCBIN	baserom.gba_0x3faf0c_0x3faf48.extracted
+		INCBIN	build\addr\rec_3faf48_3faf50.bin
+		INCBIN	baserom.gba_0x3faf50_0x3faf6c.extracted
 		INCBIN	build\maprecords\rec_3faf6c_3faf70.bin
-		INCBIN	baserom.gba_0x3faf70_0x3fb138.extracted
+		INCBIN	baserom.gba_0x3faf70_0x3fb11c.extracted
+		INCBIN	build\addr\rec_3fb11c_3fb124.bin
+		INCBIN	baserom.gba_0x3fb124_0x3fb138.extracted
 		INCBIN	build\maprecords\rec_3fb138_3fb13c.bin
-		INCBIN	baserom.gba_0x3fb13c_0x3fb180.extracted
+		INCBIN	baserom.gba_0x3fb13c_0x3fb164.extracted
+		INCBIN	build\addr\rec_3fb164_3fb16c.bin
+		INCBIN	baserom.gba_0x3fb16c_0x3fb180.extracted
 		INCBIN	build\maprecords\rec_3fb180_3fb184.bin
 		INCBIN	baserom.gba_0x3fb184_0x3fb39c.extracted
 		INCBIN	build\maprecords\rec_3fb39c_3fb3a0.bin
 		INCBIN	baserom.gba_0x3fb3a0_0x3fb5f8.extracted
 		INCBIN	build\maprecords\rec_3fb5f8_3fb5fc.bin
-		INCBIN	baserom.gba_0x3fb5fc_0x3fb670.extracted
+		INCBIN	baserom.gba_0x3fb5fc_0x3fb608.extracted
+		INCBIN	build\addr\rec_3fb608_3fb610.bin
+		INCBIN	baserom.gba_0x3fb610_0x3fb670.extracted
 		INCBIN	build\maprecords\rec_3fb670_3fb674.bin
 		INCBIN	baserom.gba_0x3fb674_0x3fb690.extracted
 		INCBIN	build\maprecords\rec_3fb690_3fb694.bin
 		INCBIN	baserom.gba_0x3fb694_0x3fbb28.extracted
 		INCBIN	build\maprecords\rec_3fbb28_3fbb2c.bin
-		INCBIN	baserom.gba_0x3fbb2c_0x3fbedc.extracted
+		INCBIN	baserom.gba_0x3fbb2c_0x3fbb38.extracted
+		INCBIN	build\addr\rec_3fbb38_3fbb40.bin
+		INCBIN	baserom.gba_0x3fbb40_0x3fbb6c.extracted
+		INCBIN	build\addr\rec_3fbb6c_3fbb74.bin
+		INCBIN	baserom.gba_0x3fbb74_0x3fbba0.extracted
+		INCBIN	build\addr\rec_3fbba0_3fbba8.bin
+		INCBIN	baserom.gba_0x3fbba8_0x3fbbd4.extracted
+		INCBIN	build\addr\rec_3fbbd4_3fbbdc.bin
+		INCBIN	baserom.gba_0x3fbbdc_0x3fbc08.extracted
+		INCBIN	build\addr\rec_3fbc08_3fbc10.bin
+		INCBIN	baserom.gba_0x3fbc10_0x3fbc28.extracted
+		INCBIN	build\addr\rec_3fbc28_3fbc30.bin
+		INCBIN	baserom.gba_0x3fbc30_0x3fbc3c.extracted
+		INCBIN	build\addr\rec_3fbc3c_3fbc44.bin
+		INCBIN	baserom.gba_0x3fbc44_0x3fbc5c.extracted
+		INCBIN	build\addr\rec_3fbc5c_3fbc64.bin
+		INCBIN	baserom.gba_0x3fbc64_0x3fbc90.extracted
+		INCBIN	build\addr\rec_3fbc90_3fbc98.bin
+		INCBIN	baserom.gba_0x3fbc98_0x3fbcc4.extracted
+		INCBIN	build\addr\rec_3fbcc4_3fbccc.bin
+		INCBIN	baserom.gba_0x3fbccc_0x3fbcf8.extracted
+		INCBIN	build\addr\rec_3fbcf8_3fbd00.bin
+		INCBIN	baserom.gba_0x3fbd00_0x3fbd2c.extracted
+		INCBIN	build\addr\rec_3fbd2c_3fbd34.bin
+		INCBIN	baserom.gba_0x3fbd34_0x3fbd68.extracted
+		INCBIN	build\addr\rec_3fbd68_3fbd70.bin
+		INCBIN	baserom.gba_0x3fbd70_0x3fbd9c.extracted
+		INCBIN	build\addr\rec_3fbd9c_3fbda4.bin
+		INCBIN	baserom.gba_0x3fbda4_0x3fbdd0.extracted
+		INCBIN	build\addr\rec_3fbdd0_3fbdd8.bin
+		INCBIN	baserom.gba_0x3fbdd8_0x3fbedc.extracted
 		INCBIN	build\maprecords\rec_3fbedc_3fbee0.bin
-		INCBIN	baserom.gba_0x3fbee0_0x3fc094.extracted
+		INCBIN	baserom.gba_0x3fbee0_0x3fc05c.extracted
+		INCBIN	build\addr\rec_3fc05c_3fc064.bin
+		INCBIN	baserom.gba_0x3fc064_0x3fc094.extracted
 		INCBIN	build\maprecords\rec_3fc094_3fc098.bin
 		INCBIN	baserom.gba_0x3fc098_0x3fc114.extracted
 		INCBIN	build\maprecords\rec_3fc114_3fc118.bin
@@ -5180,15 +5486,20 @@
 		INCBIN	build\maprecords\rec_3fc5ac_3fc5b0.bin
 		INCBIN	baserom.gba_0x3fc5b0_0x3fc6b4.extracted
 		INCBIN	build\maprecords\rec_3fc6b4_3fc6b8.bin
-		INCBIN	baserom.gba_0x3fc6b8_0x3fc7f4.extracted
+		INCBIN	baserom.gba_0x3fc6b8_0x3fc78c.extracted
+		INCBIN	build\addr\rec_3fc78c_3fc794.bin
+		INCBIN	baserom.gba_0x3fc794_0x3fc7f4.extracted
 		INCBIN	build\maprecords\rec_3fc7f4_3fc7f8.bin
-		INCBIN	baserom.gba_0x3fc7f8_0x3fc878.extracted
+		INCBIN	build\addr\rec_3fc7f8_3fc800.bin
+		INCBIN	baserom.gba_0x3fc800_0x3fc878.extracted
 		INCBIN	build\maprecords\rec_3fc878_3fc87c.bin
 		INCBIN	baserom.gba_0x3fc87c_0x3fcefc.extracted
 		INCBIN	build\maprecords\rec_3fcefc_3fcf00.bin
 		INCBIN	baserom.gba_0x3fcf00_0x3fd0e0.extracted
 		INCBIN	build\maprecords\rec_3fd0e0_3fd0e4.bin
-		INCBIN	baserom.gba_0x3fd0e4_0x3fd1b4.extracted
+		INCBIN	baserom.gba_0x3fd0e4_0x3fd18c.extracted
+		INCBIN	build\addr\rec_3fd18c_3fd194.bin
+		INCBIN	baserom.gba_0x3fd194_0x3fd1b4.extracted
 		INCBIN	build\maprecords\rec_3fd1b4_3fd1b8.bin
 		INCBIN	baserom.gba_0x3fd1b8_0x3fd274.extracted
 		INCBIN	build\maprecords\rec_3fd274_3fd278.bin
@@ -5198,11 +5509,18 @@
 		INCBIN	build\maprecords\rec_3fd590_3fd594.bin
 		INCBIN	baserom.gba_0x3fd594_0x3fd6cc.extracted
 		INCBIN	build\maprecords\rec_3fd6cc_3fd6d0.bin
-		INCBIN	baserom.gba_0x3fd6d0_0x3fd730.extracted
+		INCBIN	build\addr\rec_3fd6d0_3fd6d8.bin
+		INCBIN	baserom.gba_0x3fd6d8_0x3fd730.extracted
 		INCBIN	build\maprecords\rec_3fd730_3fd734.bin
-		INCBIN	baserom.gba_0x3fd734_0x3fd774.extracted
+		INCBIN	baserom.gba_0x3fd734_0x3fd758.extracted
+		INCBIN	build\addr\rec_3fd758_3fd760.bin
+		INCBIN	baserom.gba_0x3fd760_0x3fd774.extracted
 		INCBIN	build\maprecords\rec_3fd774_3fd778.bin
-		INCBIN	baserom.gba_0x3fd778_0x3fd880.extracted
+		INCBIN	baserom.gba_0x3fd778_0x3fd7e8.extracted
+		INCBIN	build\addr\rec_3fd7e8_3fd7f0.bin
+		INCBIN	baserom.gba_0x3fd7f0_0x3fd80c.extracted
+		INCBIN	build\addr\rec_3fd80c_3fd814.bin
+		INCBIN	baserom.gba_0x3fd814_0x3fd880.extracted
 		INCBIN	build\maprecords\rec_3fd880_3fd884.bin
 		INCBIN	baserom.gba_0x3fd884_0x3fda34.extracted
 		INCBIN	build\maprecords\rec_3fda34_3fda38.bin
@@ -5218,11 +5536,15 @@
 		INCBIN	build\maprecords\rec_3fe07c_3fe080.bin
 		INCBIN	baserom.gba_0x3fe080_0x3fe4b8.extracted
 		INCBIN	build\maprecords\rec_3fe4b8_3fe4bc.bin
-		INCBIN	baserom.gba_0x3fe4bc_0x3fe52c.extracted
+		INCBIN	baserom.gba_0x3fe4bc_0x3fe4d0.extracted
+		INCBIN	build\addr\rec_3fe4d0_3fe4d8.bin
+		INCBIN	baserom.gba_0x3fe4d8_0x3fe52c.extracted
 		INCBIN	build\maprecords\rec_3fe52c_3fe530.bin
 		INCBIN	baserom.gba_0x3fe530_0x3fe734.extracted
 		INCBIN	build\maprecords\rec_3fe734_3fe738.bin
-		INCBIN	baserom.gba_0x3fe738_0x3fe918.extracted
+		INCBIN	baserom.gba_0x3fe738_0x3fe894.extracted
+		INCBIN	build\addr\rec_3fe894_3fe89c.bin
+		INCBIN	baserom.gba_0x3fe89c_0x3fe918.extracted
 		INCBIN	build\maprecords\rec_3fe918_3fe91c.bin
 		INCBIN	baserom.gba_0x3fe91c_0x3fe9f4.extracted
 		INCBIN	build\maprecords\rec_3fe9f4_3fe9f8.bin
@@ -5234,7 +5556,9 @@
 		INCBIN	build\maprecords\rec_3ff100_3ff104.bin
 		INCBIN	baserom.gba_0x3ff104_0x3ff320.extracted
 		INCBIN	build\maprecords\rec_3ff320_3ff324.bin
-		INCBIN	baserom.gba_0x3ff324_0x3ff5a4.extracted
+		INCBIN	baserom.gba_0x3ff324_0x3ff4c8.extracted
+		INCBIN	build\addr\rec_3ff4c8_3ff4d0.bin
+		INCBIN	baserom.gba_0x3ff4d0_0x3ff5a4.extracted
 		INCBIN	build\maprecords\rec_3ff5a4_3ff5a8.bin
 		INCBIN	baserom.gba_0x3ff5a8_0x3ff5f0.extracted
 		INCBIN	build\maprecords\rec_3ff5f0_3ff5f4.bin
@@ -5246,9 +5570,15 @@
 		INCBIN	build\maprecords\rec_3ffd1c_3ffd20.bin
 		INCBIN	baserom.gba_0x3ffd20_0x3ffe14.extracted
 		INCBIN	build\maprecords\rec_3ffe14_3ffe18.bin
-		INCBIN	baserom.gba_0x3ffe18_0x4000f0.extracted
+		INCBIN	baserom.gba_0x3ffe18_0x400028.extracted
+		INCBIN	build\addr\rec_400028_400030.bin
+		INCBIN	baserom.gba_0x400030_0x4000f0.extracted
 		INCBIN	build\maprecords\rec_4000f0_4000f4.bin
-		INCBIN	baserom.gba_0x4000f4_0x400384.extracted
+		INCBIN	baserom.gba_0x4000f4_0x400314.extracted
+		INCBIN	build\addr\rec_400314_40031c.bin
+		INCBIN	baserom.gba_0x40031c_0x40032c.extracted
+		INCBIN	build\addr\rec_40032c_400334.bin
+		INCBIN	baserom.gba_0x400334_0x400384.extracted
 		INCBIN	build\maprecords\rec_400384_400388.bin
 		INCBIN	baserom.gba_0x400388_0x40052c.extracted
 		INCBIN	build\maprecords\rec_40052c_400530.bin
@@ -5256,7 +5586,8 @@
 		INCBIN	build\maprecords\rec_400610_400614.bin
 		INCBIN	baserom.gba_0x400614_0x400774.extracted
 		INCBIN	build\maprecords\rec_400774_400778.bin
-		INCBIN	baserom.gba_0x400778_0x4007b8.extracted
+		INCBIN	build\addr\rec_400778_400780.bin
+		INCBIN	baserom.gba_0x400780_0x4007b8.extracted
 		INCBIN	build\maprecords\rec_4007b8_4007bc.bin
 		INCBIN	baserom.gba_0x4007bc_0x400804.extracted
 		INCBIN	build\maprecords\rec_400804_400808.bin
@@ -5272,7 +5603,9 @@
 		INCBIN	build\maprecords\rec_400c48_400c4c.bin
 		INCBIN	baserom.gba_0x400c4c_0x400e44.extracted
 		INCBIN	build\maprecords\rec_400e44_400e48.bin
-		INCBIN	baserom.gba_0x400e48_0x401024.extracted
+		INCBIN	baserom.gba_0x400e48_0x400fbc.extracted
+		INCBIN	build\addr\rec_400fbc_400fc4.bin
+		INCBIN	baserom.gba_0x400fc4_0x401024.extracted
 		INCBIN	build\maprecords\rec_401024_401028.bin
 		INCBIN	baserom.gba_0x401028_0x40124c.extracted
 		INCBIN	build\maprecords\rec_40124c_401250.bin
@@ -5282,7 +5615,8 @@
 		INCBIN	build\maprecords\rec_4014b8_4014bc.bin
 		INCBIN	baserom.gba_0x4014bc_0x401720.extracted
 		INCBIN	build\maprecords\rec_401720_401724.bin
-		INCBIN	baserom.gba_0x401724_0x4017ac.extracted
+		INCBIN	build\addr\rec_401724_40172c.bin
+		INCBIN	baserom.gba_0x40172c_0x4017ac.extracted
 		INCBIN	build\maprecords\rec_4017ac_4017b0.bin
 		INCBIN	baserom.gba_0x4017b0_0x401a74.extracted
 		INCBIN	build\maprecords\rec_401a74_401a78.bin
@@ -5290,7 +5624,19 @@
 		INCBIN	build\maprecords\rec_401c1c_401c20.bin
 		INCBIN	baserom.gba_0x401c20_0x401c60.extracted
 		INCBIN	build\maprecords\rec_401c60_401c64.bin
-		INCBIN	baserom.gba_0x401c64_0x402084.extracted
+		INCBIN	baserom.gba_0x401c64_0x401cf0.extracted
+		INCBIN	build\addr\rec_401cf0_401cf8.bin
+		INCBIN	baserom.gba_0x401cf8_0x401d90.extracted
+		INCBIN	build\addr\rec_401d90_401d98.bin
+		INCBIN	baserom.gba_0x401d98_0x401e30.extracted
+		INCBIN	build\addr\rec_401e30_401e38.bin
+		INCBIN	baserom.gba_0x401e38_0x401ed0.extracted
+		INCBIN	build\addr\rec_401ed0_401ed8.bin
+		INCBIN	baserom.gba_0x401ed8_0x401f70.extracted
+		INCBIN	build\addr\rec_401f70_401f78.bin
+		INCBIN	baserom.gba_0x401f78_0x402010.extracted
+		INCBIN	build\addr\rec_402010_402018.bin
+		INCBIN	baserom.gba_0x402018_0x402084.extracted
 		INCBIN	build\maprecords\rec_402084_402088.bin
 		INCBIN	baserom.gba_0x402088_0x402100.extracted
 		INCBIN	build\maprecords\rec_402100_402104.bin
@@ -5298,65 +5644,121 @@
 		INCBIN	build\maprecords\rec_402304_402308.bin
 		INCBIN	baserom.gba_0x402308_0x4024d0.extracted
 		INCBIN	build\maprecords\rec_4024d0_4024d4.bin
-		INCBIN	baserom.gba_0x4024d4_0x4026f0.extracted
+		INCBIN	baserom.gba_0x4024d4_0x40268c.extracted
+		INCBIN	build\addr\rec_40268c_402694.bin
+		INCBIN	baserom.gba_0x402694_0x4026f0.extracted
 		INCBIN	build\maprecords\rec_4026f0_4026f4.bin
 		INCBIN	baserom.gba_0x4026f4_0x4028b8.extracted
 		INCBIN	build\maprecords\rec_4028b8_4028bc.bin
 		INCBIN	baserom.gba_0x4028bc_0x402aa0.extracted
 		INCBIN	build\maprecords\rec_402aa0_402aa4.bin
-		INCBIN	baserom.gba_0x402aa4_0x402d38.extracted
+		INCBIN	baserom.gba_0x402aa4_0x402cac.extracted
+		INCBIN	build\addr\rec_402cac_402cb4.bin
+		INCBIN	baserom.gba_0x402cb4_0x402cc4.extracted
+		INCBIN	build\addr\rec_402cc4_402ccc.bin
+		INCBIN	baserom.gba_0x402ccc_0x402cdc.extracted
+		INCBIN	build\addr\rec_402cdc_402ce4.bin
+		INCBIN	baserom.gba_0x402ce4_0x402d38.extracted
 		INCBIN	build\maprecords\rec_402d38_402d3c.bin
-		INCBIN	baserom.gba_0x402d3c_0x402de8.extracted
+		INCBIN	build\addr\rec_402d3c_402d44.bin
+		INCBIN	baserom.gba_0x402d44_0x402d64.extracted
+		INCBIN	build\addr\rec_402d64_402d6c.bin
+		INCBIN	baserom.gba_0x402d6c_0x402de8.extracted
 		INCBIN	build\maprecords\rec_402de8_402dec.bin
-		INCBIN	baserom.gba_0x402dec_0x402e40.extracted
+		INCBIN	build\addr\rec_402dec_402df4.bin
+		INCBIN	baserom.gba_0x402df4_0x402e40.extracted
 		INCBIN	build\maprecords\rec_402e40_402e44.bin
 		INCBIN	baserom.gba_0x402e44_0x403074.extracted
 		INCBIN	build\maprecords\rec_403074_403078.bin
-		INCBIN	baserom.gba_0x403078_0x403390.extracted
+		INCBIN	baserom.gba_0x403078_0x403218.extracted
+		INCBIN	build\addr\rec_403218_403220.bin
+		INCBIN	baserom.gba_0x403220_0x403264.extracted
+		INCBIN	build\addr\rec_403264_40326c.bin
+		INCBIN	baserom.gba_0x40326c_0x403280.extracted
+		INCBIN	build\addr\rec_403280_403288.bin
+		INCBIN	baserom.gba_0x403288_0x403390.extracted
 		INCBIN	build\maprecords\rec_403390_403394.bin
 		INCBIN	baserom.gba_0x403394_0x4034a8.extracted
 		INCBIN	build\maprecords\rec_4034a8_4034ac.bin
-		INCBIN	baserom.gba_0x4034ac_0x403824.extracted
+		INCBIN	baserom.gba_0x4034ac_0x4034bc.extracted
+		INCBIN	build\addr\rec_4034bc_4034c4.bin
+		INCBIN	baserom.gba_0x4034c4_0x403500.extracted
+		INCBIN	build\addr\rec_403500_403508.bin
+		INCBIN	baserom.gba_0x403508_0x403548.extracted
+		INCBIN	build\addr\rec_403548_403550.bin
+		INCBIN	baserom.gba_0x403550_0x403590.extracted
+		INCBIN	build\addr\rec_403590_403598.bin
+		INCBIN	baserom.gba_0x403598_0x4035b4.extracted
+		INCBIN	build\addr\rec_4035b4_4035bc.bin
+		INCBIN	baserom.gba_0x4035bc_0x403824.extracted
 		INCBIN	build\maprecords\rec_403824_403828.bin
 		INCBIN	baserom.gba_0x403828_0x403a28.extracted
 		INCBIN	build\maprecords\rec_403a28_403a2c.bin
 		INCBIN	baserom.gba_0x403a2c_0x403b98.extracted
 		INCBIN	build\maprecords\rec_403b98_403b9c.bin
-		INCBIN	baserom.gba_0x403b9c_0x403c80.extracted
+		INCBIN	baserom.gba_0x403b9c_0x403c18.extracted
+		INCBIN	build\addr\rec_403c18_403c20.bin
+		INCBIN	baserom.gba_0x403c20_0x403c30.extracted
+		INCBIN	build\addr\rec_403c30_403c38.bin
+		INCBIN	baserom.gba_0x403c38_0x403c80.extracted
 		INCBIN	build\maprecords\rec_403c80_403c84.bin
-		INCBIN	baserom.gba_0x403c84_0x403cfc.extracted
+		INCBIN	build\addr\rec_403c84_403c8c.bin
+		INCBIN	baserom.gba_0x403c8c_0x403cc4.extracted
+		INCBIN	build\addr\rec_403cc4_403ccc.bin
+		INCBIN	baserom.gba_0x403ccc_0x403cfc.extracted
 		INCBIN	build\maprecords\rec_403cfc_403d00.bin
 		INCBIN	baserom.gba_0x403d00_0x403d44.extracted
 		INCBIN	build\maprecords\rec_403d44_403d48.bin
-		INCBIN	baserom.gba_0x403d48_0x403dcc.extracted
+		INCBIN	baserom.gba_0x403d48_0x403d9c.extracted
+		INCBIN	build\addr\rec_403d9c_403da4.bin
+		INCBIN	baserom.gba_0x403da4_0x403dcc.extracted
 		INCBIN	build\maprecords\rec_403dcc_403dd0.bin
 		INCBIN	baserom.gba_0x403dd0_0x403df4.extracted
 		INCBIN	build\maprecords\rec_403df4_403df8.bin
 		INCBIN	baserom.gba_0x403df8_0x403e58.extracted
 		INCBIN	build\maprecords\rec_403e58_403e5c.bin
-		INCBIN	baserom.gba_0x403e5c_0x404070.extracted
+		INCBIN	baserom.gba_0x403e5c_0x403fa4.extracted
+		INCBIN	build\addr\rec_403fa4_403fac.bin
+		INCBIN	baserom.gba_0x403fac_0x403fe8.extracted
+		INCBIN	build\addr\rec_403fe8_403ff0.bin
+		INCBIN	baserom.gba_0x403ff0_0x40402c.extracted
+		INCBIN	build\addr\rec_40402c_404034.bin
+		INCBIN	baserom.gba_0x404034_0x404070.extracted
 		INCBIN	build\maprecords\rec_404070_404074.bin
-		INCBIN	baserom.gba_0x404074_0x404090.extracted
+		INCBIN	build\addr\rec_404074_40407c.bin
+		INCBIN	baserom.gba_0x40407c_0x404090.extracted
 		INCBIN	build\maprecords\rec_404090_404094.bin
 		INCBIN	baserom.gba_0x404094_0x404298.extracted
 		INCBIN	build\maprecords\rec_404298_40429c.bin
 		INCBIN	baserom.gba_0x40429c_0x40437c.extracted
 		INCBIN	build\maprecords\rec_40437c_404380.bin
-		INCBIN	baserom.gba_0x404380_0x404440.extracted
+		INCBIN	baserom.gba_0x404380_0x4043d8.extracted
+		INCBIN	build\addr\rec_4043d8_4043e0.bin
+		INCBIN	baserom.gba_0x4043e0_0x40441c.extracted
+		INCBIN	build\addr\rec_40441c_404424.bin
+		INCBIN	baserom.gba_0x404424_0x404440.extracted
 		INCBIN	build\maprecords\rec_404440_404444.bin
 		INCBIN	baserom.gba_0x404444_0x4044a0.extracted
 		INCBIN	build\maprecords\rec_4044a0_4044a4.bin
 		INCBIN	baserom.gba_0x4044a4_0x40460c.extracted
 		INCBIN	build\maprecords\rec_40460c_404610.bin
-		INCBIN	baserom.gba_0x404610_0x404840.extracted
+		INCBIN	baserom.gba_0x404610_0x404738.extracted
+		INCBIN	build\addr\rec_404738_404740.bin
+		INCBIN	baserom.gba_0x404740_0x404758.extracted
+		INCBIN	build\addr\rec_404758_404760.bin
+		INCBIN	baserom.gba_0x404760_0x404840.extracted
 		INCBIN	build\maprecords\rec_404840_404844.bin
 		INCBIN	baserom.gba_0x404844_0x404884.extracted
 		INCBIN	build\maprecords\rec_404884_404888.bin
 		INCBIN	baserom.gba_0x404888_0x404ac8.extracted
 		INCBIN	build\maprecords\rec_404ac8_404acc.bin
-		INCBIN	baserom.gba_0x404acc_0x404c1c.extracted
+		INCBIN	baserom.gba_0x404acc_0x404bb8.extracted
+		INCBIN	build\addr\rec_404bb8_404bc0.bin
+		INCBIN	baserom.gba_0x404bc0_0x404c1c.extracted
 		INCBIN	build\maprecords\rec_404c1c_404c20.bin
-		INCBIN	baserom.gba_0x404c20_0x404d5c.extracted
+		INCBIN	baserom.gba_0x404c20_0x404cf4.extracted
+		INCBIN	build\addr\rec_404cf4_404cfc.bin
+		INCBIN	baserom.gba_0x404cfc_0x404d5c.extracted
 		INCBIN	build\maprecords\rec_404d5c_404d60.bin
 		INCBIN	baserom.gba_0x404d60_0x404f00.extracted
 		INCBIN	build\maprecords\rec_404f00_404f04.bin
@@ -5382,7 +5784,10 @@
 		INCBIN	build\maprecords\rec_4057dc_4057e0.bin
 		INCBIN	baserom.gba_0x4057e0_0x40582c.extracted
 		INCBIN	build\maprecords\rec_40582c_405830.bin
-		INCBIN	baserom.gba_0x405830_0x405870.extracted
+		INCBIN	build\addr\rec_405830_405838.bin
+		INCBIN	baserom.gba_0x405838_0x405848.extracted
+		INCBIN	build\addr\rec_405848_405850.bin
+		INCBIN	baserom.gba_0x405850_0x405870.extracted
 		INCBIN	build\maprecords\rec_405870_405874.bin
 		INCBIN	baserom.gba_0x405874_0x405890.extracted
 		INCBIN	build\maprecords\rec_405890_405894.bin
@@ -5398,7 +5803,15 @@
 		INCBIN	build\maprecords\rec_405bac_405bb0.bin
 		INCBIN	baserom.gba_0x405bb0_0x405ca8.extracted
 		INCBIN	build\maprecords\rec_405ca8_405cac.bin
-		INCBIN	baserom.gba_0x405cac_0x4060a8.extracted
+		INCBIN	baserom.gba_0x405cac_0x405f34.extracted
+		INCBIN	build\addr\rec_405f34_405f3c.bin
+		INCBIN	baserom.gba_0x405f3c_0x405f68.extracted
+		INCBIN	build\addr\rec_405f68_405f70.bin
+		INCBIN	baserom.gba_0x405f70_0x405f88.extracted
+		INCBIN	build\addr\rec_405f88_405f90.bin
+		INCBIN	baserom.gba_0x405f90_0x406024.extracted
+		INCBIN	build\addr\rec_406024_40602c.bin
+		INCBIN	baserom.gba_0x40602c_0x4060a8.extracted
 		INCBIN	build\maprecords\rec_4060a8_4060ac.bin
 		INCBIN	baserom.gba_0x4060ac_0x406318.extracted
 		INCBIN	build\maprecords\rec_406318_40631c.bin
@@ -5406,23 +5819,41 @@
 		INCBIN	build\maprecords\rec_406460_406464.bin
 		INCBIN	baserom.gba_0x406464_0x406570.extracted
 		INCBIN	build\maprecords\rec_406570_406574.bin
-		INCBIN	baserom.gba_0x406574_0x406640.extracted
+		INCBIN	baserom.gba_0x406574_0x406624.extracted
+		INCBIN	build\addr\rec_406624_40662c.bin
+		INCBIN	baserom.gba_0x40662c_0x406640.extracted
 		INCBIN	build\maprecords\rec_406640_406644.bin
 		INCBIN	baserom.gba_0x406644_0x4067a0.extracted
 		INCBIN	build\maprecords\rec_4067a0_4067a4.bin
-		INCBIN	baserom.gba_0x4067a4_0x406848.extracted
+		INCBIN	baserom.gba_0x4067a4_0x4067c8.extracted
+		INCBIN	build\addr\rec_4067c8_4067d0.bin
+		INCBIN	baserom.gba_0x4067d0_0x406804.extracted
+		INCBIN	build\addr\rec_406804_40680c.bin
+		INCBIN	baserom.gba_0x40680c_0x406848.extracted
 		INCBIN	build\maprecords\rec_406848_40684c.bin
-		INCBIN	baserom.gba_0x40684c_0x406b9c.extracted
+		INCBIN	baserom.gba_0x40684c_0x406ae0.extracted
+		INCBIN	build\addr\rec_406ae0_406ae8.bin
+		INCBIN	baserom.gba_0x406ae8_0x406b18.extracted
+		INCBIN	build\addr\rec_406b18_406b20.bin
+		INCBIN	baserom.gba_0x406b20_0x406b9c.extracted
 		INCBIN	build\maprecords\rec_406b9c_406ba0.bin
-		INCBIN	baserom.gba_0x406ba0_0x406ddc.extracted
+		INCBIN	baserom.gba_0x406ba0_0x406d64.extracted
+		INCBIN	build\addr\rec_406d64_406d6c.bin
+		INCBIN	baserom.gba_0x406d6c_0x406d9c.extracted
+		INCBIN	build\addr\rec_406d9c_406da4.bin
+		INCBIN	baserom.gba_0x406da4_0x406ddc.extracted
 		INCBIN	build\maprecords\rec_406ddc_406de0.bin
 		INCBIN	baserom.gba_0x406de0_0x406ecc.extracted
 		INCBIN	build\maprecords\rec_406ecc_406ed0.bin
 		INCBIN	baserom.gba_0x406ed0_0x406f44.extracted
 		INCBIN	build\maprecords\rec_406f44_406f48.bin
-		INCBIN	baserom.gba_0x406f48_0x4070bc.extracted
+		INCBIN	baserom.gba_0x406f48_0x40703c.extracted
+		INCBIN	build\addr\rec_40703c_407044.bin
+		INCBIN	baserom.gba_0x407044_0x4070bc.extracted
 		INCBIN	build\maprecords\rec_4070bc_4070c0.bin
-		INCBIN	baserom.gba_0x4070c0_0x4073a8.extracted
+		INCBIN	baserom.gba_0x4070c0_0x407370.extracted
+		INCBIN	build\addr\rec_407370_407378.bin
+		INCBIN	baserom.gba_0x407378_0x4073a8.extracted
 		INCBIN	build\maprecords\rec_4073a8_4073ac.bin
 		INCBIN	baserom.gba_0x4073ac_0x407590.extracted
 		INCBIN	build\maprecords\rec_407590_407594.bin
@@ -5430,27 +5861,44 @@
 		INCBIN	build\maprecords\rec_4078b8_4078bc.bin
 		INCBIN	baserom.gba_0x4078bc_0x4079c8.extracted
 		INCBIN	build\maprecords\rec_4079c8_4079cc.bin
-		INCBIN	baserom.gba_0x4079cc_0x407cb4.extracted
+		INCBIN	baserom.gba_0x4079cc_0x407c5c.extracted
+		INCBIN	build\addr\rec_407c5c_407c64.bin
+		INCBIN	baserom.gba_0x407c64_0x407cb4.extracted
 		INCBIN	build\maprecords\rec_407cb4_407cb8.bin
-		INCBIN	baserom.gba_0x407cb8_0x407f40.extracted
+		INCBIN	baserom.gba_0x407cb8_0x407e80.extracted
+		INCBIN	build\addr\rec_407e80_407e88.bin
+		INCBIN	baserom.gba_0x407e88_0x407ea0.extracted
+		INCBIN	build\addr\rec_407ea0_407ea8.bin
+		INCBIN	baserom.gba_0x407ea8_0x407f40.extracted
 		INCBIN	build\maprecords\rec_407f40_407f44.bin
 		INCBIN	baserom.gba_0x407f44_0x408074.extracted
 		INCBIN	build\maprecords\rec_408074_408078.bin
-		INCBIN	baserom.gba_0x408078_0x4080f8.extracted
+		INCBIN	baserom.gba_0x408078_0x40809c.extracted
+		INCBIN	build\addr\rec_40809c_4080a4.bin
+		INCBIN	baserom.gba_0x4080a4_0x4080f8.extracted
 		INCBIN	build\maprecords\rec_4080f8_4080fc.bin
-		INCBIN	baserom.gba_0x4080fc_0x4081ac.extracted
+		INCBIN	baserom.gba_0x4080fc_0x40817c.extracted
+		INCBIN	build\addr\rec_40817c_408184.bin
+		INCBIN	baserom.gba_0x408184_0x4081ac.extracted
 		INCBIN	build\maprecords\rec_4081ac_4081b0.bin
 		INCBIN	baserom.gba_0x4081b0_0x408294.extracted
 		INCBIN	build\maprecords\rec_408294_408298.bin
-		INCBIN	baserom.gba_0x408298_0x4084d8.extracted
+		INCBIN	baserom.gba_0x408298_0x40847c.extracted
+		INCBIN	build\addr\rec_40847c_408484.bin
+		INCBIN	baserom.gba_0x408484_0x4084a0.extracted
+		INCBIN	build\addr\rec_4084a0_4084a8.bin
+		INCBIN	baserom.gba_0x4084a8_0x4084d8.extracted
 		INCBIN	build\maprecords\rec_4084d8_4084dc.bin
 		INCBIN	baserom.gba_0x4084dc_0x408628.extracted
 		INCBIN	build\maprecords\rec_408628_40862c.bin
-		INCBIN	baserom.gba_0x40862c_0x408788.extracted
+		INCBIN	baserom.gba_0x40862c_0x408708.extracted
+		INCBIN	build\addr\rec_408708_408710.bin
+		INCBIN	baserom.gba_0x408710_0x408788.extracted
 		INCBIN	build\maprecords\rec_408788_40878c.bin
 		INCBIN	baserom.gba_0x40878c_0x408828.extracted
 		INCBIN	build\maprecords\rec_408828_40882c.bin
-		INCBIN	baserom.gba_0x40882c_0x408894.extracted
+		INCBIN	build\addr\rec_40882c_408834.bin
+		INCBIN	baserom.gba_0x408834_0x408894.extracted
 		INCBIN	build\maprecords\rec_408894_408898.bin
 		INCBIN	baserom.gba_0x408898_0x4089c4.extracted
 		INCBIN	build\maprecords\rec_4089c4_4089c8.bin
@@ -5458,7 +5906,9 @@
 		INCBIN	build\maprecords\rec_408b04_408b08.bin
 		INCBIN	baserom.gba_0x408b08_0x408bb8.extracted
 		INCBIN	build\maprecords\rec_408bb8_408bbc.bin
-		INCBIN	baserom.gba_0x408bbc_0x408e18.extracted
+		INCBIN	baserom.gba_0x408bbc_0x408d9c.extracted
+		INCBIN	build\addr\rec_408d9c_408da4.bin
+		INCBIN	baserom.gba_0x408da4_0x408e18.extracted
 		INCBIN	build\maprecords\rec_408e18_408e1c.bin
 		INCBIN	baserom.gba_0x408e1c_0x408f04.extracted
 		INCBIN	build\maprecords\rec_408f04_408f08.bin
@@ -5535,7 +5985,9 @@
 		INCBIN	build\jcalg1\gen_4ea03c_4ea194.bin
 		INCBIN	build\maprecords\rec_4ea194_4ea224.bin
 		INCBIN	build\jcalg1\gen_4ea224_4eaa18.bin
-		INCBIN	baserom.gba_0x4eaa18_0x4eaa68.extracted
+		INCBIN	baserom.gba_0x4eaa18_0x4eaa48.extracted
+		INCBIN	build\addr\rec_4eaa48_4eaa50.bin
+		INCBIN	baserom.gba_0x4eaa50_0x4eaa68.extracted
 		INCBIN	build\maprecords\rec_4eaa68_4eaab8.bin
 		INCBIN	baserom.gba_0x4eaab8_0x4eaad8.extracted
 		INCBIN	build\jcalg1\gen_4eaad8_4eadfc.bin
@@ -5567,7 +6019,13 @@
 		INCBIN	build\jcalg1\gen_4ec57c_4ec918.bin
 		INCBIN	build\maprecords\rec_4ec918_4ec938.bin
 		INCBIN	build\jcalg1\gen_4ec938_4ecac4.bin
-		INCBIN	baserom.gba_0x4ecac4_0x4ecb4c.extracted
+		INCBIN	baserom.gba_0x4ecac4_0x4ecaf4.extracted
+		INCBIN	build\addr\rec_4ecaf4_4ecafc.bin
+		INCBIN	baserom.gba_0x4ecafc_0x4ecb0c.extracted
+		INCBIN	build\addr\rec_4ecb0c_4ecb14.bin
+		INCBIN	baserom.gba_0x4ecb14_0x4ecb24.extracted
+		INCBIN	build\addr\rec_4ecb24_4ecb2c.bin
+		INCBIN	baserom.gba_0x4ecb2c_0x4ecb4c.extracted
 		INCBIN	build\maprecords\rec_4ecb4c_4ecb9c.bin
 		INCBIN	baserom.gba_0x4ecb9c_0x4ecbbc.extracted
 		INCBIN	build\jcalg1\gen_4ecbbc_4ece8c.bin
@@ -5579,7 +6037,9 @@
 		INCBIN	build\jcalg1\gen_4ed7bc_4ed964.bin
 		INCBIN	build\maprecords\rec_4ed964_4ed9ac.bin
 		INCBIN	build\jcalg1\gen_4ed9ac_4edda8.bin
-		INCBIN	baserom.gba_0x4edda8_0x4eddf8.extracted
+		INCBIN	baserom.gba_0x4edda8_0x4eddd8.extracted
+		INCBIN	build\addr\rec_4eddd8_4edde0.bin
+		INCBIN	baserom.gba_0x4edde0_0x4eddf8.extracted
 		INCBIN	build\maprecords\rec_4eddf8_4ede48.bin
 		INCBIN	baserom.gba_0x4ede48_0x4ede68.extracted
 		INCBIN	build\jcalg1\gen_4ede68_4ee1cc.bin
@@ -5590,7 +6050,11 @@
 		INCBIN	build\maprecords\rec_4ee908_4ee930.bin
 		INCBIN	build\jcalg1\gen_4ee930_4eeab8.bin
 		INCBIN	build\maprecords\rec_4eeab8_4eeb60.bin
-		INCBIN	baserom.gba_0x4eeb60_0x4eef0c.extracted
+		INCBIN	baserom.gba_0x4eeb60_0x4eeed0.extracted
+		INCBIN	build\addr\rec_4eeed0_4eeed8.bin
+		INCBIN	baserom.gba_0x4eeed8_0x4eeee8.extracted
+		INCBIN	build\addr\rec_4eeee8_4eeef0.bin
+		INCBIN	baserom.gba_0x4eeef0_0x4eef0c.extracted
 		INCBIN	build\maprecords\rec_4eef0c_4eef5c.bin
 		INCBIN	baserom.gba_0x4eef5c_0x4eef7c.extracted
 		INCBIN	build\jcalg1\gen_4eef7c_4ef39c.bin
@@ -5602,7 +6066,15 @@
 		INCBIN	build\jcalg1\gen_4f02cc_4f0540.bin
 		INCBIN	build\maprecords\rec_4f0540_4f0588.bin
 		INCBIN	build\jcalg1\gen_4f0588_4f0868.bin
-		INCBIN	baserom.gba_0x4f0868_0x4f090c.extracted
+		INCBIN	baserom.gba_0x4f0868_0x4f0898.extracted
+		INCBIN	build\addr\rec_4f0898_4f08a0.bin
+		INCBIN	baserom.gba_0x4f08a0_0x4f08b0.extracted
+		INCBIN	build\addr\rec_4f08b0_4f08b8.bin
+		INCBIN	baserom.gba_0x4f08b8_0x4f08c8.extracted
+		INCBIN	build\addr\rec_4f08c8_4f08d0.bin
+		INCBIN	baserom.gba_0x4f08d0_0x4f08e0.extracted
+		INCBIN	build\addr\rec_4f08e0_4f08e8.bin
+		INCBIN	baserom.gba_0x4f08e8_0x4f090c.extracted
 		INCBIN	build\maprecords\rec_4f090c_4f095c.bin
 		INCBIN	baserom.gba_0x4f095c_0x4f097c.extracted
 		INCBIN	build\jcalg1\gen_4f097c_4f0c68.bin
@@ -5614,7 +6086,9 @@
 		INCBIN	build\jcalg1\gen_4f10bc_4f11c8.bin
 		INCBIN	build\maprecords\rec_4f11c8_4f11e0.bin
 		INCBIN	build\jcalg1\gen_4f11e0_4f1390.bin
-		INCBIN	baserom.gba_0x4f1390_0x4f13e0.extracted
+		INCBIN	baserom.gba_0x4f1390_0x4f13c0.extracted
+		INCBIN	build\addr\rec_4f13c0_4f13c8.bin
+		INCBIN	baserom.gba_0x4f13c8_0x4f13e0.extracted
 		INCBIN	build\maprecords\rec_4f13e0_4f1430.bin
 		INCBIN	baserom.gba_0x4f1430_0x4f1450.extracted
 		INCBIN	build\jcalg1\gen_4f1450_4f1734.bin
@@ -5626,7 +6100,9 @@
 		INCBIN	build\jcalg1\gen_4f1ce0_4f1d9c.bin
 		INCBIN	build\maprecords\rec_4f1d9c_4f1dcc.bin
 		INCBIN	build\jcalg1\gen_4f1dcc_4f20f8.bin
-		INCBIN	baserom.gba_0x4f20f8_0x4f2148.extracted
+		INCBIN	baserom.gba_0x4f20f8_0x4f2128.extracted
+		INCBIN	build\addr\rec_4f2128_4f2130.bin
+		INCBIN	baserom.gba_0x4f2130_0x4f2148.extracted
 		INCBIN	build\maprecords\rec_4f2148_4f2198.bin
 		INCBIN	build\jcalg1\gen_4f2198_4f21f0.bin
 		INCBIN	build\maprecords\rec_4f21f0_4f220c.bin
@@ -5663,7 +6139,9 @@
 		INCBIN	build\jcalg1\gen_4f7144_4f74ac.bin
 		INCBIN	build\maprecords\rec_4f74ac_4f74dc.bin
 		INCBIN	build\jcalg1\gen_4f74dc_4f7d14.bin
-		INCBIN	baserom.gba_0x4f7d14_0x4f8308.extracted
+		INCBIN	baserom.gba_0x4f7d14_0x4f82e8.extracted
+		INCBIN	build\addr\rec_4f82e8_4f82f0.bin
+		INCBIN	baserom.gba_0x4f82f0_0x4f8308.extracted
 		INCBIN	build\maprecords\rec_4f8308_4f8358.bin
 		INCBIN	build\jcalg1\gen_4f8358_4f88a0.bin
 		INCBIN	build\maprecords\rec_4f88a0_4f88d0.bin
@@ -5676,7 +6154,9 @@
 		INCBIN	build\jcalg1\gen_4fa6b4_4fa8b0.bin
 		INCBIN	build\maprecords\rec_4fa8b0_4fa8c8.bin
 		INCBIN	build\jcalg1\gen_4fa8c8_4faafc.bin
-		INCBIN	baserom.gba_0x4faafc_0x4fabec.extracted
+		INCBIN	baserom.gba_0x4faafc_0x4fabcc.extracted
+		INCBIN	build\addr\rec_4fabcc_4fabd4.bin
+		INCBIN	baserom.gba_0x4fabd4_0x4fabec.extracted
 		INCBIN	build\maprecords\rec_4fabec_4fac3c.bin
 		INCBIN	build\jcalg1\gen_4fac3c_4faeb4.bin
 		INCBIN	build\maprecords\rec_4faeb4_4faedc.bin
@@ -5687,7 +6167,9 @@
 		INCBIN	build\jcalg1\gen_4fb58c_4fc210.bin
 		INCBIN	build\maprecords\rec_4fc210_4fc248.bin
 		INCBIN	build\jcalg1\gen_4fc248_4fc3c4.bin
-		INCBIN	baserom.gba_0x4fc3c4_0x4fc4b4.extracted
+		INCBIN	baserom.gba_0x4fc3c4_0x4fc494.extracted
+		INCBIN	build\addr\rec_4fc494_4fc49c.bin
+		INCBIN	baserom.gba_0x4fc49c_0x4fc4b4.extracted
 		INCBIN	build\maprecords\rec_4fc4b4_4fc504.bin
 		INCBIN	build\jcalg1\gen_4fc504_4fc7a8.bin
 		INCBIN	build\maprecords\rec_4fc7a8_4fc7d0.bin
@@ -5698,7 +6180,13 @@
 		INCBIN	build\jcalg1\gen_4fcecc_4fdab0.bin
 		INCBIN	build\maprecords\rec_4fdab0_4fdae8.bin
 		INCBIN	build\jcalg1\gen_4fdae8_4fdc60.bin
-		INCBIN	baserom.gba_0x4fdc60_0x4fdd88.extracted
+		INCBIN	baserom.gba_0x4fdc60_0x4fdd30.extracted
+		INCBIN	build\addr\rec_4fdd30_4fdd38.bin
+		INCBIN	baserom.gba_0x4fdd38_0x4fdd48.extracted
+		INCBIN	build\addr\rec_4fdd48_4fdd50.bin
+		INCBIN	baserom.gba_0x4fdd50_0x4fdd60.extracted
+		INCBIN	build\addr\rec_4fdd60_4fdd68.bin
+		INCBIN	baserom.gba_0x4fdd68_0x4fdd88.extracted
 		INCBIN	build\maprecords\rec_4fdd88_4fddd8.bin
 		INCBIN	build\jcalg1\gen_4fddd8_4fdf58.bin
 		INCBIN	build\maprecords\rec_4fdf58_4fdf78.bin
@@ -5711,7 +6199,9 @@
 		INCBIN	build\jcalg1\gen_4fe3e8_4feba4.bin
 		INCBIN	build\maprecords\rec_4feba4_4febcc.bin
 		INCBIN	build\jcalg1\gen_4febcc_4fecec.bin
-		INCBIN	baserom.gba_0x4fecec_0x4fee90.extracted
+		INCBIN	baserom.gba_0x4fecec_0x4fee70.extracted
+		INCBIN	build\addr\rec_4fee70_4fee78.bin
+		INCBIN	baserom.gba_0x4fee78_0x4fee90.extracted
 		INCBIN	build\maprecords\rec_4fee90_4feee0.bin
 		INCBIN	build\jcalg1\gen_4feee0_4ff060.bin
 		INCBIN	build\maprecords\rec_4ff060_4ff088.bin
@@ -5723,7 +6213,11 @@
 		INCBIN	build\maprecords\rec_4ffd14_4ffd3c.bin
 		INCBIN	build\jcalg1\gen_4ffd3c_4ffe40.bin
 		INCBIN	build\maprecords\rec_4ffe40_4ffe58.bin
-		INCBIN	baserom.gba_0x4ffe58_0x50005c.extracted
+		INCBIN	baserom.gba_0x4ffe58_0x500020.extracted
+		INCBIN	build\addr\rec_500020_500028.bin
+		INCBIN	baserom.gba_0x500028_0x500038.extracted
+		INCBIN	build\addr\rec_500038_500040.bin
+		INCBIN	baserom.gba_0x500040_0x50005c.extracted
 		INCBIN	build\maprecords\rec_50005c_5000ac.bin
 		INCBIN	build\jcalg1\gen_5000ac_50055c.bin
 		INCBIN	build\maprecords\rec_50055c_500584.bin
@@ -5845,7 +6339,8 @@
 		INCBIN	build\jcalg1\gen_5111e4_511288.bin
 		INCBIN	build\maprecords\rec_511288_5112a0.bin
 		INCBIN	build\jcalg1\gen_5112a0_5113ac.bin
-		INCBIN	baserom.gba_0x5113ac_0x5113c8.extracted
+		INCBIN	build\addr\rec_5113ac_5113b4.bin
+		INCBIN	baserom.gba_0x5113b4_0x5113c8.extracted
 		INCBIN	build\maprecords\rec_5113c8_511418.bin
 		INCBIN	build\jcalg1\gen_511418_5116dc.bin
 		INCBIN	build\maprecords\rec_5116dc_511704.bin
@@ -5856,7 +6351,9 @@
 		INCBIN	build\jcalg1\gen_511b20_511c14.bin
 		INCBIN	build\maprecords\rec_511c14_511c2c.bin
 		INCBIN	build\jcalg1\gen_511c2c_511df4.bin
-		INCBIN	baserom.gba_0x511df4_0x511fa8.extracted
+		INCBIN	baserom.gba_0x511df4_0x511f88.extracted
+		INCBIN	build\addr\rec_511f88_511f90.bin
+		INCBIN	baserom.gba_0x511f90_0x511fa8.extracted
 		INCBIN	build\maprecords\rec_511fa8_511ff8.bin
 		INCBIN	build\jcalg1\gen_511ff8_51233c.bin
 		INCBIN	build\maprecords\rec_51233c_512374.bin
@@ -5893,7 +6390,9 @@
 		INCBIN	build\jcalg1\gen_517e18_5183e0.bin
 		INCBIN	build\maprecords\rec_5183e0_518410.bin
 		INCBIN	build\jcalg1\gen_518410_5185dc.bin
-		INCBIN	baserom.gba_0x5185dc_0x518654.extracted
+		INCBIN	baserom.gba_0x5185dc_0x518634.extracted
+		INCBIN	build\addr\rec_518634_51863c.bin
+		INCBIN	baserom.gba_0x51863c_0x518654.extracted
 		INCBIN	build\maprecords\rec_518654_5186a4.bin
 		INCBIN	build\jcalg1\gen_5186a4_5189f4.bin
 		INCBIN	build\maprecords\rec_5189f4_518a1c.bin
@@ -5904,7 +6403,9 @@
 		INCBIN	build\jcalg1\gen_518ba8_518de0.bin
 		INCBIN	build\maprecords\rec_518de0_518e08.bin
 		INCBIN	build\jcalg1\gen_518e08_518f48.bin
-		INCBIN	baserom.gba_0x518f48_0x5191e8.extracted
+		INCBIN	baserom.gba_0x518f48_0x5191c8.extracted
+		INCBIN	build\addr\rec_5191c8_5191d0.bin
+		INCBIN	baserom.gba_0x5191d0_0x5191e8.extracted
 		INCBIN	build\maprecords\rec_5191e8_519254.bin
 		INCBIN	build\jcalg1\gen_519254_5196d8.bin
 		INCBIN	build\maprecords\rec_5196d8_519710.bin
@@ -5913,7 +6414,10 @@
 		INCBIN	build\jcalg1\gen_519c40_51a530.bin
 		INCBIN	build\maprecords\rec_51a530_51a568.bin
 		INCBIN	build\jcalg1\gen_51a568_51a7a4.bin
-		INCBIN	baserom.gba_0x51a7a4_0x51a7dc.extracted
+		INCBIN	build\addr\rec_51a7a4_51a7ac.bin
+		INCBIN	baserom.gba_0x51a7ac_0x51a7bc.extracted
+		INCBIN	build\addr\rec_51a7bc_51a7c4.bin
+		INCBIN	baserom.gba_0x51a7c4_0x51a7dc.extracted
 		INCBIN	build\maprecords\rec_51a7dc_51a848.bin
 		INCBIN	build\jcalg1\gen_51a848_51aa40.bin
 		INCBIN	build\maprecords\rec_51aa40_51aa68.bin
@@ -5924,7 +6428,9 @@
 		INCBIN	build\jcalg1\gen_51b770_51b994.bin
 		INCBIN	build\maprecords\rec_51b994_51b9ac.bin
 		INCBIN	build\jcalg1\gen_51b9ac_51bbac.bin
-		INCBIN	baserom.gba_0x51bbac_0x51bbf4.extracted
+		INCBIN	baserom.gba_0x51bbac_0x51bbd4.extracted
+		INCBIN	build\addr\rec_51bbd4_51bbdc.bin
+		INCBIN	baserom.gba_0x51bbdc_0x51bbf4.extracted
 		INCBIN	build\maprecords\rec_51bbf4_51bc60.bin
 		INCBIN	build\jcalg1\gen_51bc60_51be28.bin
 		INCBIN	build\maprecords\rec_51be28_51be50.bin
@@ -5943,7 +6449,9 @@
 		INCBIN	build\jcalg1\gen_51d750_51dd48.bin
 		INCBIN	build\maprecords\rec_51dd48_51dd70.bin
 		INCBIN	build\jcalg1\gen_51dd70_51dff4.bin
-		INCBIN	baserom.gba_0x51dff4_0x51e03c.extracted
+		INCBIN	baserom.gba_0x51dff4_0x51e01c.extracted
+		INCBIN	build\addr\rec_51e01c_51e024.bin
+		INCBIN	baserom.gba_0x51e024_0x51e03c.extracted
 		INCBIN	build\maprecords\rec_51e03c_51e0a8.bin
 		INCBIN	build\jcalg1\gen_51e0a8_51e4c8.bin
 		INCBIN	build\maprecords\rec_51e4c8_51e4f8.bin
@@ -5952,7 +6460,11 @@
 		INCBIN	build\jcalg1\gen_51e84c_51ee80.bin
 		INCBIN	build\maprecords\rec_51ee80_51eeb0.bin
 		INCBIN	build\jcalg1\gen_51eeb0_51f040.bin
-		INCBIN	baserom.gba_0x51f040_0x51f0a4.extracted
+		INCBIN	baserom.gba_0x51f040_0x51f068.extracted
+		INCBIN	build\addr\rec_51f068_51f070.bin
+		INCBIN	baserom.gba_0x51f070_0x51f080.extracted
+		INCBIN	build\addr\rec_51f080_51f088.bin
+		INCBIN	baserom.gba_0x51f088_0x51f0a4.extracted
 		INCBIN	build\maprecords\rec_51f0a4_51f110.bin
 		INCBIN	build\jcalg1\gen_51f110_51f3d8.bin
 		INCBIN	build\maprecords\rec_51f3d8_51f400.bin
@@ -5982,7 +6494,11 @@
 		INCBIN	build\maprecords\rec_52090c_520928.bin
 		INCBIN	build\jcalg1\gen_520928_520a74.bin
 		INCBIN	build\maprecords\rec_520a74_520abc.bin
-		INCBIN	baserom.gba_0x520abc_0x520b20.extracted
+		INCBIN	baserom.gba_0x520abc_0x520ae4.extracted
+		INCBIN	build\addr\rec_520ae4_520aec.bin
+		INCBIN	baserom.gba_0x520aec_0x520afc.extracted
+		INCBIN	build\addr\rec_520afc_520b04.bin
+		INCBIN	baserom.gba_0x520b04_0x520b20.extracted
 		INCBIN	build\maprecords\rec_520b20_520b70.bin
 		INCBIN	build\jcalg1\gen_520b70_520b90.bin
 		INCBIN	build\maprecords\rec_520b90_520bac.bin
@@ -5993,7 +6509,11 @@
 		INCBIN	build\jcalg1\gen_520db8_521000.bin
 		INCBIN	build\maprecords\rec_521000_521020.bin
 		INCBIN	build\jcalg1\gen_521020_521120.bin
-		INCBIN	baserom.gba_0x521120_0x521184.extracted
+		INCBIN	baserom.gba_0x521120_0x521148.extracted
+		INCBIN	build\addr\rec_521148_521150.bin
+		INCBIN	baserom.gba_0x521150_0x521160.extracted
+		INCBIN	build\addr\rec_521160_521168.bin
+		INCBIN	baserom.gba_0x521168_0x521184.extracted
 		INCBIN	build\maprecords\rec_521184_5211d4.bin
 		INCBIN	build\jcalg1\gen_5211d4_521210.bin
 		INCBIN	build\maprecords\rec_521210_52122c.bin
@@ -6004,7 +6524,9 @@
 		INCBIN	build\jcalg1\gen_521408_52160c.bin
 		INCBIN	build\maprecords\rec_52160c_521628.bin
 		INCBIN	build\jcalg1\gen_521628_521738.bin
-		INCBIN	baserom.gba_0x521738_0x521780.extracted
+		INCBIN	baserom.gba_0x521738_0x521760.extracted
+		INCBIN	build\addr\rec_521760_521768.bin
+		INCBIN	baserom.gba_0x521768_0x521780.extracted
 		INCBIN	build\maprecords\rec_521780_5217d0.bin
 		INCBIN	build\jcalg1\gen_5217d0_521b00.bin
 		INCBIN	build\maprecords\rec_521b00_521b28.bin
@@ -6026,7 +6548,9 @@
 		INCBIN	build\jcalg1\gen_522b94_523004.bin
 		INCBIN	build\maprecords\rec_523004_523028.bin
 		INCBIN	build\jcalg1\gen_523028_5231b4.bin
-		INCBIN	baserom.gba_0x5231b4_0x5231fc.extracted
+		INCBIN	baserom.gba_0x5231b4_0x5231dc.extracted
+		INCBIN	build\addr\rec_5231dc_5231e4.bin
+		INCBIN	baserom.gba_0x5231e4_0x5231fc.extracted
 		INCBIN	build\maprecords\rec_5231fc_52324c.bin
 		INCBIN	build\jcalg1\gen_52324c_5232e4.bin
 		INCBIN	build\maprecords\rec_5232e4_52330c.bin
@@ -6037,7 +6561,11 @@
 		INCBIN	build\jcalg1\gen_5237c4_523b8c.bin
 		INCBIN	build\maprecords\rec_523b8c_523bb4.bin
 		INCBIN	build\jcalg1\gen_523bb4_523d38.bin
-		INCBIN	baserom.gba_0x523d38_0x523d9c.extracted
+		INCBIN	baserom.gba_0x523d38_0x523d60.extracted
+		INCBIN	build\addr\rec_523d60_523d68.bin
+		INCBIN	baserom.gba_0x523d68_0x523d78.extracted
+		INCBIN	build\addr\rec_523d78_523d80.bin
+		INCBIN	baserom.gba_0x523d80_0x523d9c.extracted
 		INCBIN	build\maprecords\rec_523d9c_523e08.bin
 		INCBIN	build\jcalg1\gen_523e08_523f6c.bin
 		INCBIN	build\maprecords\rec_523f6c_523f88.bin
@@ -6046,7 +6574,11 @@
 		INCBIN	build\jcalg1\gen_523ff0_524180.bin
 		INCBIN	build\maprecords\rec_524180_52419c.bin
 		INCBIN	build\jcalg1\gen_52419c_52426c.bin
-		INCBIN	baserom.gba_0x52426c_0x5242d0.extracted
+		INCBIN	baserom.gba_0x52426c_0x524294.extracted
+		INCBIN	build\addr\rec_524294_52429c.bin
+		INCBIN	baserom.gba_0x52429c_0x5242ac.extracted
+		INCBIN	build\addr\rec_5242ac_5242b4.bin
+		INCBIN	baserom.gba_0x5242b4_0x5242d0.extracted
 		INCBIN	build\maprecords\rec_5242d0_524320.bin
 		INCBIN	build\jcalg1\gen_524320_524390.bin
 		INCBIN	build\maprecords\rec_524390_5243b0.bin
@@ -6059,7 +6591,9 @@
 		INCBIN	build\jcalg1\gen_525ee4_52616c.bin
 		INCBIN	build\maprecords\rec_52616c_526244.bin
 		INCBIN	build\jcalg1\gen_526244_526b84.bin
-		INCBIN	baserom.gba_0x526b84_0x526bcc.extracted
+		INCBIN	baserom.gba_0x526b84_0x526bac.extracted
+		INCBIN	build\addr\rec_526bac_526bb4.bin
+		INCBIN	baserom.gba_0x526bb4_0x526bcc.extracted
 		INCBIN	build\maprecords\rec_526bcc_526c38.bin
 		INCBIN	build\jcalg1\gen_526c38_526eb8.bin
 		INCBIN	build\maprecords\rec_526eb8_526ee8.bin
@@ -6068,7 +6602,9 @@
 		INCBIN	build\jcalg1\gen_5270a4_527924.bin
 		INCBIN	build\maprecords\rec_527924_52795c.bin
 		INCBIN	build\jcalg1\gen_52795c_527af0.bin
-		INCBIN	baserom.gba_0x527af0_0x527b38.extracted
+		INCBIN	baserom.gba_0x527af0_0x527b18.extracted
+		INCBIN	build\addr\rec_527b18_527b20.bin
+		INCBIN	baserom.gba_0x527b20_0x527b38.extracted
 		INCBIN	build\maprecords\rec_527b38_527ba4.bin
 		INCBIN	build\jcalg1\gen_527ba4_527fe4.bin
 		INCBIN	build\maprecords\rec_527fe4_528014.bin
@@ -6078,7 +6614,9 @@
 		INCBIN	build\maprecords\rec_528ecc_528f04.bin
 		INCBIN	build\jcalg1\gen_528f04_5290c8.bin
 		INCBIN	build\maprecords\rec_5290c8_5290f8.bin
-		INCBIN	baserom.gba_0x5290f8_0x529140.extracted
+		INCBIN	baserom.gba_0x5290f8_0x529120.extracted
+		INCBIN	build\addr\rec_529120_529128.bin
+		INCBIN	baserom.gba_0x529128_0x529140.extracted
 		INCBIN	build\maprecords\rec_529140_5291ac.bin
 		INCBIN	build\jcalg1\gen_5291ac_5293a0.bin
 		INCBIN	build\maprecords\rec_5293a0_5293c8.bin
@@ -6088,7 +6626,9 @@
 		INCBIN	build\maprecords\rec_529fd8_52a008.bin
 		INCBIN	build\jcalg1\gen_52a008_52a180.bin
 		INCBIN	build\maprecords\rec_52a180_52a198.bin
-		INCBIN	baserom.gba_0x52a198_0x52a1e0.extracted
+		INCBIN	baserom.gba_0x52a198_0x52a1c0.extracted
+		INCBIN	build\addr\rec_52a1c0_52a1c8.bin
+		INCBIN	baserom.gba_0x52a1c8_0x52a1e0.extracted
 		INCBIN	build\maprecords\rec_52a1e0_52a24c.bin
 		INCBIN	build\jcalg1\gen_52a24c_52a308.bin
 		INCBIN	build\maprecords\rec_52a308_52a328.bin
@@ -6108,7 +6648,11 @@
 		INCBIN	build\jcalg1\gen_52c2fc_52c5dc.bin
 		INCBIN	build\maprecords\rec_52c5dc_52c60c.bin
 		INCBIN	build\jcalg1\gen_52c60c_52c870.bin
-		INCBIN	baserom.gba_0x52c870_0x52c8d4.extracted
+		INCBIN	baserom.gba_0x52c870_0x52c898.extracted
+		INCBIN	build\addr\rec_52c898_52c8a0.bin
+		INCBIN	baserom.gba_0x52c8a0_0x52c8b0.extracted
+		INCBIN	build\addr\rec_52c8b0_52c8b8.bin
+		INCBIN	baserom.gba_0x52c8b8_0x52c8d4.extracted
 		INCBIN	build\maprecords\rec_52c8d4_52c940.bin
 		INCBIN	build\jcalg1\gen_52c940_52cc84.bin
 		INCBIN	build\maprecords\rec_52cc84_52ccac.bin
@@ -6119,7 +6663,9 @@
 		INCBIN	build\jcalg1\gen_52d1ec_52d30c.bin
 		INCBIN	build\maprecords\rec_52d30c_52d324.bin
 		INCBIN	build\jcalg1\gen_52d324_52d7e8.bin
-		INCBIN	baserom.gba_0x52d7e8_0x52d830.extracted
+		INCBIN	baserom.gba_0x52d7e8_0x52d810.extracted
+		INCBIN	build\addr\rec_52d810_52d818.bin
+		INCBIN	baserom.gba_0x52d818_0x52d830.extracted
 		INCBIN	build\maprecords\rec_52d830_52d89c.bin
 		INCBIN	build\jcalg1\gen_52d89c_52e128.bin
 		INCBIN	build\maprecords\rec_52e128_52e170.bin
@@ -6130,7 +6676,11 @@
 		INCBIN	build\jcalg1\gen_52f540_52f7fc.bin
 		INCBIN	build\maprecords\rec_52f7fc_52f874.bin
 		INCBIN	build\jcalg1\gen_52f874_52fc18.bin
-		INCBIN	baserom.gba_0x52fc18_0x52fc7c.extracted
+		INCBIN	baserom.gba_0x52fc18_0x52fc40.extracted
+		INCBIN	build\addr\rec_52fc40_52fc48.bin
+		INCBIN	baserom.gba_0x52fc48_0x52fc58.extracted
+		INCBIN	build\addr\rec_52fc58_52fc60.bin
+		INCBIN	baserom.gba_0x52fc60_0x52fc7c.extracted
 		INCBIN	build\maprecords\rec_52fc7c_52fccc.bin
 		INCBIN	build\jcalg1\gen_52fccc_52fd34.bin
 		INCBIN	build\maprecords\rec_52fd34_52fd50.bin
@@ -6153,7 +6703,8 @@
 		INCBIN	build\jcalg1\gen_5309f4_530b68.bin
 		INCBIN	build\maprecords\rec_530b68_530b84.bin
 		INCBIN	build\jcalg1\gen_530b84_530be4.bin
-		INCBIN	baserom.gba_0x530be4_0x530c00.extracted
+		INCBIN	build\addr\rec_530be4_530bec.bin
+		INCBIN	baserom.gba_0x530bec_0x530c00.extracted
 		INCBIN	build\maprecords\rec_530c00_530c50.bin
 		INCBIN	build\jcalg1\gen_530c50_5310a0.bin
 		INCBIN	build\maprecords\rec_5310a0_5310c8.bin
@@ -6176,7 +6727,8 @@
 		INCBIN	build\jcalg1\gen_532ce0_532d84.bin
 		INCBIN	build\maprecords\rec_532d84_532e44.bin
 		INCBIN	build\jcalg1\gen_532e44_532f4c.bin
-		INCBIN	baserom.gba_0x532f4c_0x532f68.extracted
+		INCBIN	build\addr\rec_532f4c_532f54.bin
+		INCBIN	baserom.gba_0x532f54_0x532f68.extracted
 		INCBIN	build\maprecords\rec_532f68_532fb8.bin
 		INCBIN	build\jcalg1\gen_532fb8_5334d0.bin
 		INCBIN	build\maprecords\rec_5334d0_5334f8.bin
@@ -6189,7 +6741,8 @@
 		INCBIN	build\jcalg1\gen_533c88_533d9c.bin
 		INCBIN	build\maprecords\rec_533d9c_533db4.bin
 		INCBIN	build\jcalg1\gen_533db4_533ea0.bin
-		INCBIN	baserom.gba_0x533ea0_0x533ebc.extracted
+		INCBIN	build\addr\rec_533ea0_533ea8.bin
+		INCBIN	baserom.gba_0x533ea8_0x533ebc.extracted
 		INCBIN	build\maprecords\rec_533ebc_533f0c.bin
 		INCBIN	build\jcalg1\gen_533f0c_53443c.bin
 		INCBIN	build\maprecords\rec_53443c_534464.bin
@@ -6201,7 +6754,14 @@
 		INCBIN	build\maprecords\rec_534bf0_534c10.bin
 		INCBIN	build\jcalg1\gen_534c10_534d1c.bin
 		INCBIN	build\maprecords\rec_534d1c_534d34.bin
-		INCBIN	baserom.gba_0x534d34_0x534da4.extracted
+		INCBIN	build\addr\rec_534d34_534d3c.bin
+		INCBIN	baserom.gba_0x534d3c_0x534d4c.extracted
+		INCBIN	build\addr\rec_534d4c_534d54.bin
+		INCBIN	baserom.gba_0x534d54_0x534d64.extracted
+		INCBIN	build\addr\rec_534d64_534d6c.bin
+		INCBIN	baserom.gba_0x534d6c_0x534d7c.extracted
+		INCBIN	build\addr\rec_534d7c_534d84.bin
+		INCBIN	baserom.gba_0x534d84_0x534da4.extracted
 		INCBIN	build\maprecords\rec_534da4_534df4.bin
 		INCBIN	build\jcalg1\gen_534df4_535344.bin
 		INCBIN	build\maprecords\rec_535344_535398.bin
@@ -6214,7 +6774,8 @@
 		INCBIN	build\jcalg1\gen_539928_539ac4.bin
 		INCBIN	build\maprecords\rec_539ac4_539bfc.bin
 		INCBIN	build\jcalg1\gen_539bfc_53a438.bin
-		INCBIN	baserom.gba_0x53a438_0x53a454.extracted
+		INCBIN	build\addr\rec_53a438_53a440.bin
+		INCBIN	baserom.gba_0x53a440_0x53a454.extracted
 		INCBIN	build\maprecords\rec_53a454_53a4c0.bin
 		INCBIN	build\jcalg1\gen_53a4c0_53a6b0.bin
 		INCBIN	build\maprecords\rec_53a6b0_53a6e0.bin
@@ -6247,7 +6808,8 @@
 		INCBIN	build\jcalg1\gen_53d020_53d1ac.bin
 		INCBIN	build\maprecords\rec_53d1ac_53d1c4.bin
 		INCBIN	build\jcalg1\gen_53d1c4_53d28c.bin
-		INCBIN	baserom.gba_0x53d28c_0x53d2a8.extracted
+		INCBIN	build\addr\rec_53d28c_53d294.bin
+		INCBIN	baserom.gba_0x53d294_0x53d2a8.extracted
 		INCBIN	build\maprecords\rec_53d2a8_53d2f8.bin
 		INCBIN	build\jcalg1\gen_53d2f8_53d608.bin
 		INCBIN	build\maprecords\rec_53d608_53d630.bin
@@ -6282,7 +6844,8 @@
 		INCBIN	build\maprecords\rec_540c88_540cb0.bin
 		INCBIN	build\jcalg1\gen_540cb0_540e2c.bin
 		INCBIN	build\maprecords\rec_540e2c_540e44.bin
-		INCBIN	baserom.gba_0x540e44_0x540e60.extracted
+		INCBIN	build\addr\rec_540e44_540e4c.bin
+		INCBIN	baserom.gba_0x540e4c_0x540e60.extracted
 		INCBIN	build\maprecords\rec_540e60_540eb0.bin
 		INCBIN	build\jcalg1\gen_540eb0_54145c.bin
 		INCBIN	build\maprecords\rec_54145c_541484.bin
@@ -6307,7 +6870,9 @@
 		INCBIN	build\jcalg1\gen_543c80_543f18.bin
 		INCBIN	build\maprecords\rec_543f18_543f90.bin
 		INCBIN	build\jcalg1\gen_543f90_544354.bin
-		INCBIN	baserom.gba_0x544354_0x544af8.extracted
+		INCBIN	baserom.gba_0x544354_0x544ad8.extracted
+		INCBIN	build\addr\rec_544ad8_544ae0.bin
+		INCBIN	baserom.gba_0x544ae0_0x544af8.extracted
 		INCBIN	build\maprecords\rec_544af8_544b64.bin
 		INCBIN	build\jcalg1\gen_544b64_544c74.bin
 		INCBIN	build\maprecords\rec_544c74_544c94.bin
@@ -6344,7 +6909,11 @@
 		INCBIN	build\jcalg1\gen_54a904_54ac60.bin
 		INCBIN	build\maprecords\rec_54ac60_54ad80.bin
 		INCBIN	build\jcalg1\gen_54ad80_54bbec.bin
-		INCBIN	baserom.gba_0x54bbec_0x54bc50.extracted
+		INCBIN	baserom.gba_0x54bbec_0x54bc14.extracted
+		INCBIN	build\addr\rec_54bc14_54bc1c.bin
+		INCBIN	baserom.gba_0x54bc1c_0x54bc2c.extracted
+		INCBIN	build\addr\rec_54bc2c_54bc34.bin
+		INCBIN	baserom.gba_0x54bc34_0x54bc50.extracted
 		INCBIN	build\maprecords\rec_54bc50_54bcbc.bin
 		INCBIN	build\jcalg1\gen_54bcbc_54c2c4.bin
 		INCBIN	build\maprecords\rec_54c2c4_54c304.bin
@@ -6355,7 +6924,9 @@
 		INCBIN	build\jcalg1\gen_54dab8_54dea8.bin
 		INCBIN	build\maprecords\rec_54dea8_54def0.bin
 		INCBIN	build\jcalg1\gen_54def0_54e130.bin
-		INCBIN	baserom.gba_0x54e130_0x54e178.extracted
+		INCBIN	baserom.gba_0x54e130_0x54e158.extracted
+		INCBIN	build\addr\rec_54e158_54e160.bin
+		INCBIN	baserom.gba_0x54e160_0x54e178.extracted
 		INCBIN	build\maprecords\rec_54e178_54e1e4.bin
 		INCBIN	build\jcalg1\gen_54e1e4_54e51c.bin
 		INCBIN	build\maprecords\rec_54e51c_54e55c.bin
@@ -6397,7 +6968,9 @@
 		INCBIN	build\jcalg1\gen_553994_553b30.bin
 		INCBIN	build\maprecords\rec_553b30_553b60.bin
 		INCBIN	build\jcalg1\gen_553b60_553d74.bin
-		INCBIN	baserom.gba_0x553d74_0x553dd0.extracted
+		INCBIN	baserom.gba_0x553d74_0x553db0.extracted
+		INCBIN	build\addr\rec_553db0_553db8.bin
+		INCBIN	baserom.gba_0x553db8_0x553dd0.extracted
 		INCBIN	build\maprecords\rec_553dd0_553e3c.bin
 		INCBIN	build\jcalg1\gen_553e3c_553f78.bin
 		INCBIN	build\maprecords\rec_553f78_553fa0.bin
@@ -6407,7 +6980,9 @@
 		INCBIN	build\maprecords\rec_554bf0_554c28.bin
 		INCBIN	build\jcalg1\gen_554c28_554e00.bin
 		INCBIN	build\maprecords\rec_554e00_554e48.bin
-		INCBIN	baserom.gba_0x554e48_0x554e90.extracted
+		INCBIN	baserom.gba_0x554e48_0x554e70.extracted
+		INCBIN	build\addr\rec_554e70_554e78.bin
+		INCBIN	baserom.gba_0x554e78_0x554e90.extracted
 		INCBIN	build\maprecords\rec_554e90_554efc.bin
 		INCBIN	build\jcalg1\gen_554efc_555adc.bin
 		INCBIN	build\maprecords\rec_555adc_555b34.bin
@@ -6417,7 +6992,11 @@
 		INCBIN	build\maprecords\rec_557478_5574d0.bin
 		INCBIN	build\jcalg1\gen_5574d0_55786c.bin
 		INCBIN	build\maprecords\rec_55786c_5578b4.bin
-		INCBIN	baserom.gba_0x5578b4_0x557918.extracted
+		INCBIN	baserom.gba_0x5578b4_0x5578dc.extracted
+		INCBIN	build\addr\rec_5578dc_5578e4.bin
+		INCBIN	baserom.gba_0x5578e4_0x5578f4.extracted
+		INCBIN	build\addr\rec_5578f4_5578fc.bin
+		INCBIN	baserom.gba_0x5578fc_0x557918.extracted
 		INCBIN	build\maprecords\rec_557918_557968.bin
 		INCBIN	build\jcalg1\gen_557968_557e10.bin
 		INCBIN	build\maprecords\rec_557e10_557e38.bin
@@ -6428,7 +7007,9 @@
 		INCBIN	build\jcalg1\gen_558238_558b94.bin
 		INCBIN	build\maprecords\rec_558b94_558bbc.bin
 		INCBIN	build\jcalg1\gen_558bbc_558d78.bin
-		INCBIN	baserom.gba_0x558d78_0x559c1c.extracted
+		INCBIN	baserom.gba_0x558d78_0x559bfc.extracted
+		INCBIN	build\addr\rec_559bfc_559c04.bin
+		INCBIN	baserom.gba_0x559c04_0x559c1c.extracted
 		INCBIN	build\maprecords\rec_559c1c_559c6c.bin
 		INCBIN	build\jcalg1\gen_559c6c_559f30.bin
 		INCBIN	build\maprecords\rec_559f30_559f58.bin
@@ -6454,7 +7035,9 @@
 		INCBIN	build\jcalg1\gen_55b618_55b720.bin
 		INCBIN	build\maprecords\rec_55b720_55b738.bin
 		INCBIN	build\jcalg1\gen_55b738_55b820.bin
-		INCBIN	baserom.gba_0x55b820_0x55d5bc.extracted
+		INCBIN	baserom.gba_0x55b820_0x55d59c.extracted
+		INCBIN	build\addr\rec_55d59c_55d5a4.bin
+		INCBIN	baserom.gba_0x55d5a4_0x55d5bc.extracted
 		INCBIN	build\maprecords\rec_55d5bc_55d60c.bin
 		INCBIN	build\jcalg1\gen_55d60c_55d9a8.bin
 		INCBIN	build\maprecords\rec_55d9a8_55d9d0.bin
@@ -6467,7 +7050,10 @@
 		INCBIN	build\jcalg1\gen_55e4d0_55e620.bin
 		INCBIN	build\maprecords\rec_55e620_55e6b0.bin
 		INCBIN	build\jcalg1\gen_55e6b0_55e8cc.bin
-		INCBIN	baserom.gba_0x55e8cc_0x55e904.extracted
+		INCBIN	build\addr\rec_55e8cc_55e8d4.bin
+		INCBIN	baserom.gba_0x55e8d4_0x55e8e4.extracted
+		INCBIN	build\addr\rec_55e8e4_55e8ec.bin
+		INCBIN	baserom.gba_0x55e8ec_0x55e904.extracted
 		INCBIN	build\maprecords\rec_55e904_55e954.bin
 		INCBIN	build\jcalg1\gen_55e954_55ebf8.bin
 		INCBIN	build\maprecords\rec_55ebf8_55ec14.bin
@@ -6478,7 +7064,10 @@
 		INCBIN	build\jcalg1\gen_55f124_55f464.bin
 		INCBIN	build\maprecords\rec_55f464_55f484.bin
 		INCBIN	build\jcalg1\gen_55f484_55f57c.bin
-		INCBIN	baserom.gba_0x55f57c_0x55f5b4.extracted
+		INCBIN	build\addr\rec_55f57c_55f584.bin
+		INCBIN	baserom.gba_0x55f584_0x55f594.extracted
+		INCBIN	build\addr\rec_55f594_55f59c.bin
+		INCBIN	baserom.gba_0x55f59c_0x55f5b4.extracted
 		INCBIN	build\maprecords\rec_55f5b4_55f604.bin
 		INCBIN	build\jcalg1\gen_55f604_55f7b8.bin
 		INCBIN	build\maprecords\rec_55f7b8_55f7e0.bin
@@ -6501,7 +7090,9 @@
 		INCBIN	build\maprecords\rec_562ab8_562af0.bin
 		INCBIN	build\jcalg1\gen_562af0_562db4.bin
 		INCBIN	build\maprecords\rec_562db4_562e14.bin
-		INCBIN	baserom.gba_0x562e14_0x562e5c.extracted
+		INCBIN	baserom.gba_0x562e14_0x562e3c.extracted
+		INCBIN	build\addr\rec_562e3c_562e44.bin
+		INCBIN	baserom.gba_0x562e44_0x562e5c.extracted
 		INCBIN	build\maprecords\rec_562e5c_562ec8.bin
 		INCBIN	build\jcalg1\gen_562ec8_5631b4.bin
 		INCBIN	build\maprecords\rec_5631b4_5631e4.bin
@@ -6512,7 +7103,13 @@
 		INCBIN	build\jcalg1\gen_564624_564974.bin
 		INCBIN	build\maprecords\rec_564974_564a04.bin
 		INCBIN	build\jcalg1\gen_564a04_564c5c.bin
-		INCBIN	baserom.gba_0x564c5c_0x565064.extracted
+		INCBIN	baserom.gba_0x564c5c_0x56500c.extracted
+		INCBIN	build\addr\rec_56500c_565014.bin
+		INCBIN	baserom.gba_0x565014_0x565024.extracted
+		INCBIN	build\addr\rec_565024_56502c.bin
+		INCBIN	baserom.gba_0x56502c_0x56503c.extracted
+		INCBIN	build\addr\rec_56503c_565044.bin
+		INCBIN	baserom.gba_0x565044_0x565064.extracted
 		INCBIN	build\maprecords\rec_565064_5650b4.bin
 		INCBIN	build\jcalg1\gen_5650b4_56512c.bin
 		INCBIN	build\maprecords\rec_56512c_56514c.bin
@@ -6525,7 +7122,9 @@
 		INCBIN	build\jcalg1\gen_5673d4_56766c.bin
 		INCBIN	build\maprecords\rec_56766c_5676cc.bin
 		INCBIN	build\jcalg1\gen_5676cc_567ee4.bin
-		INCBIN	baserom.gba_0x567ee4_0x568124.extracted
+		INCBIN	baserom.gba_0x567ee4_0x568104.extracted
+		INCBIN	build\addr\rec_568104_56810c.bin
+		INCBIN	baserom.gba_0x56810c_0x568124.extracted
 		INCBIN	build\maprecords\rec_568124_568190.bin
 		INCBIN	build\jcalg1\gen_568190_56839c.bin
 		INCBIN	build\maprecords\rec_56839c_5683c4.bin
@@ -6534,7 +7133,15 @@
 		INCBIN	build\jcalg1\gen_568500_568a98.bin
 		INCBIN	build\maprecords\rec_568a98_568ac0.bin
 		INCBIN	build\jcalg1\gen_568ac0_568c98.bin
-		INCBIN	baserom.gba_0x568c98_0x568d34.extracted
+		INCBIN	baserom.gba_0x568c98_0x568cc0.extracted
+		INCBIN	build\addr\rec_568cc0_568cc8.bin
+		INCBIN	baserom.gba_0x568cc8_0x568cd8.extracted
+		INCBIN	build\addr\rec_568cd8_568ce0.bin
+		INCBIN	baserom.gba_0x568ce0_0x568cf0.extracted
+		INCBIN	build\addr\rec_568cf0_568cf8.bin
+		INCBIN	baserom.gba_0x568cf8_0x568d08.extracted
+		INCBIN	build\addr\rec_568d08_568d10.bin
+		INCBIN	baserom.gba_0x568d10_0x568d34.extracted
 		INCBIN	build\maprecords\rec_568d34_568da0.bin
 		INCBIN	build\jcalg1\gen_568da0_569124.bin
 		INCBIN	build\maprecords\rec_569124_569154.bin
@@ -6543,7 +7150,8 @@
 		INCBIN	build\jcalg1\gen_56950c_569f94.bin
 		INCBIN	build\maprecords\rec_569f94_569fc4.bin
 		INCBIN	build\jcalg1\gen_569fc4_56a258.bin
-		INCBIN	baserom.gba_0x56a258_0x56a274.extracted
+		INCBIN	build\addr\rec_56a258_56a260.bin
+		INCBIN	baserom.gba_0x56a260_0x56a274.extracted
 		INCBIN	build\maprecords\rec_56a274_56a2e0.bin
 		INCBIN	build\jcalg1\gen_56a2e0_56a8e8.bin
 		INCBIN	build\maprecords\rec_56a8e8_56a918.bin
@@ -6565,7 +7173,13 @@
 		INCBIN	build\jcalg1\gen_56cd18_56ce80.bin
 		INCBIN	build\maprecords\rec_56ce80_56ce98.bin
 		INCBIN	build\jcalg1\gen_56ce98_56cfc0.bin
-		INCBIN	baserom.gba_0x56cfc0_0x56d040.extracted
+		INCBIN	baserom.gba_0x56cfc0_0x56cfe8.extracted
+		INCBIN	build\addr\rec_56cfe8_56cff0.bin
+		INCBIN	baserom.gba_0x56cff0_0x56d000.extracted
+		INCBIN	build\addr\rec_56d000_56d008.bin
+		INCBIN	baserom.gba_0x56d008_0x56d018.extracted
+		INCBIN	build\addr\rec_56d018_56d020.bin
+		INCBIN	baserom.gba_0x56d020_0x56d040.extracted
 		INCBIN	build\maprecords\rec_56d040_56d090.bin
 		INCBIN	build\jcalg1\gen_56d090_56d85c.bin
 		INCBIN	build\maprecords\rec_56d85c_56d898.bin
@@ -6578,7 +7192,9 @@
 		INCBIN	build\jcalg1\gen_56ebb8_56edd0.bin
 		INCBIN	build\maprecords\rec_56edd0_56ee30.bin
 		INCBIN	build\jcalg1\gen_56ee30_56f044.bin
-		INCBIN	baserom.gba_0x56f044_0x56f514.extracted
+		INCBIN	baserom.gba_0x56f044_0x56f4f4.extracted
+		INCBIN	build\addr\rec_56f4f4_56f4fc.bin
+		INCBIN	baserom.gba_0x56f4fc_0x56f514.extracted
 		INCBIN	build\maprecords\rec_56f514_56f564.bin
 		INCBIN	build\jcalg1\gen_56f564_56f648.bin
 		INCBIN	baserom.gba_0x56f648_0x56f668.extracted
@@ -6602,7 +7218,9 @@
 		INCBIN	build\maprecords\rec_572310_572364.bin
 		INCBIN	build\jcalg1\gen_572364_57254c.bin
 		INCBIN	build\maprecords\rec_57254c_572594.bin
-		INCBIN	baserom.gba_0x572594_0x57273c.extracted
+		INCBIN	baserom.gba_0x572594_0x57271c.extracted
+		INCBIN	build\addr\rec_57271c_572724.bin
+		INCBIN	baserom.gba_0x572724_0x57273c.extracted
 		INCBIN	build\maprecords\rec_57273c_57278c.bin
 		INCBIN	baserom.gba_0x57278c_0x5727ac.extracted
 		INCBIN	build\jcalg1\gen_5727ac_572ef4.bin
@@ -6624,7 +7242,11 @@
 		INCBIN	build\jcalg1\gen_574368_574a58.bin
 		INCBIN	build\maprecords\rec_574a58_574a80.bin
 		INCBIN	build\jcalg1\gen_574a80_574bb4.bin
-		INCBIN	baserom.gba_0x574bb4_0x574c68.extracted
+		INCBIN	baserom.gba_0x574bb4_0x574c2c.extracted
+		INCBIN	build\addr\rec_574c2c_574c34.bin
+		INCBIN	baserom.gba_0x574c34_0x574c44.extracted
+		INCBIN	build\addr\rec_574c44_574c4c.bin
+		INCBIN	baserom.gba_0x574c4c_0x574c68.extracted
 		INCBIN	build\maprecords\rec_574c68_574cb8.bin
 		INCBIN	build\jcalg1\gen_574cb8_574d9c.bin
 		INCBIN	baserom.gba_0x574d9c_0x574dbc.extracted
@@ -6644,7 +7266,11 @@
 		INCBIN	build\jcalg1\gen_575e9c_5761ac.bin
 		INCBIN	build\maprecords\rec_5761ac_5761cc.bin
 		INCBIN	build\jcalg1\gen_5761cc_57628c.bin
-		INCBIN	baserom.gba_0x57628c_0x576340.extracted
+		INCBIN	baserom.gba_0x57628c_0x576304.extracted
+		INCBIN	build\addr\rec_576304_57630c.bin
+		INCBIN	baserom.gba_0x57630c_0x57631c.extracted
+		INCBIN	build\addr\rec_57631c_576324.bin
+		INCBIN	baserom.gba_0x576324_0x576340.extracted
 		INCBIN	build\maprecords\rec_576340_576390.bin
 		INCBIN	build\jcalg1\gen_576390_576474.bin
 		INCBIN	baserom.gba_0x576474_0x576494.extracted
@@ -6664,7 +7290,11 @@
 		INCBIN	build\jcalg1\gen_578044_578a24.bin
 		INCBIN	build\maprecords\rec_578a24_578a6c.bin
 		INCBIN	build\jcalg1\gen_578a6c_578be0.bin
-		INCBIN	baserom.gba_0x578be0_0x578c94.extracted
+		INCBIN	baserom.gba_0x578be0_0x578c58.extracted
+		INCBIN	build\addr\rec_578c58_578c60.bin
+		INCBIN	baserom.gba_0x578c60_0x578c70.extracted
+		INCBIN	build\addr\rec_578c70_578c78.bin
+		INCBIN	baserom.gba_0x578c78_0x578c94.extracted
 		INCBIN	build\maprecords\rec_578c94_578d00.bin
 		INCBIN	build\jcalg1\gen_578d00_579068.bin
 		INCBIN	build\maprecords\rec_579068_579098.bin
@@ -6673,7 +7303,9 @@
 		INCBIN	build\jcalg1\gen_5790fc_579b90.bin
 		INCBIN	build\maprecords\rec_579b90_579bc8.bin
 		INCBIN	build\jcalg1\gen_579bc8_579dc8.bin
-		INCBIN	baserom.gba_0x579dc8_0x579e10.extracted
+		INCBIN	baserom.gba_0x579dc8_0x579df0.extracted
+		INCBIN	build\addr\rec_579df0_579df8.bin
+		INCBIN	baserom.gba_0x579df8_0x579e10.extracted
 		INCBIN	build\maprecords\rec_579e10_579e7c.bin
 		INCBIN	build\jcalg1\gen_579e7c_57a25c.bin
 		INCBIN	build\maprecords\rec_57a25c_57a284.bin
@@ -6683,7 +7315,9 @@
 		INCBIN	build\maprecords\rec_57ac6c_57ac94.bin
 		INCBIN	build\jcalg1\gen_57ac94_57ae6c.bin
 		INCBIN	build\maprecords\rec_57ae6c_57aeb4.bin
-		INCBIN	baserom.gba_0x57aeb4_0x57af74.extracted
+		INCBIN	baserom.gba_0x57aeb4_0x57af54.extracted
+		INCBIN	build\addr\rec_57af54_57af5c.bin
+		INCBIN	baserom.gba_0x57af5c_0x57af74.extracted
 		INCBIN	build\maprecords\rec_57af74_57afe0.bin
 		INCBIN	build\jcalg1\gen_57afe0_57b494.bin
 		INCBIN	build\maprecords\rec_57b494_57b4c4.bin
@@ -6694,7 +7328,11 @@
 		INCBIN	build\jcalg1\gen_57c3e8_57c5fc.bin
 		INCBIN	build\maprecords\rec_57c5fc_57c6d4.bin
 		INCBIN	build\jcalg1\gen_57c6d4_57c728.bin
-		INCBIN	baserom.gba_0x57c728_0x57c78c.extracted
+		INCBIN	baserom.gba_0x57c728_0x57c750.extracted
+		INCBIN	build\addr\rec_57c750_57c758.bin
+		INCBIN	baserom.gba_0x57c758_0x57c768.extracted
+		INCBIN	build\addr\rec_57c768_57c770.bin
+		INCBIN	baserom.gba_0x57c770_0x57c78c.extracted
 		INCBIN	build\maprecords\rec_57c78c_57c7dc.bin
 		INCBIN	build\jcalg1\gen_57c7dc_57c824.bin
 		INCBIN	baserom.gba_0x57c824_0x57c844.extracted
@@ -6706,7 +7344,9 @@
 		INCBIN	build\maprecords\rec_57dfb4_57dff0.bin
 		INCBIN	build\jcalg1\gen_57dff0_57e160.bin
 		INCBIN	build\maprecords\rec_57e160_57e178.bin
-		INCBIN	baserom.gba_0x57e178_0x57e210.extracted
+		INCBIN	baserom.gba_0x57e178_0x57e1f0.extracted
+		INCBIN	build\addr\rec_57e1f0_57e1f8.bin
+		INCBIN	baserom.gba_0x57e1f8_0x57e210.extracted
 		INCBIN	build\maprecords\rec_57e210_57e27c.bin
 		INCBIN	build\jcalg1\gen_57e27c_57e78c.bin
 		INCBIN	build\maprecords\rec_57e78c_57e7b4.bin
@@ -6717,7 +7357,11 @@
 		INCBIN	build\jcalg1\gen_57f1ac_57f368.bin
 		INCBIN	build\maprecords\rec_57f368_57f3c8.bin
 		INCBIN	build\jcalg1\gen_57f3c8_57fa78.bin
-		INCBIN	baserom.gba_0x57fa78_0x57fadc.extracted
+		INCBIN	baserom.gba_0x57fa78_0x57faa0.extracted
+		INCBIN	build\addr\rec_57faa0_57faa8.bin
+		INCBIN	baserom.gba_0x57faa8_0x57fab8.extracted
+		INCBIN	build\addr\rec_57fab8_57fac0.bin
+		INCBIN	baserom.gba_0x57fac0_0x57fadc.extracted
 		INCBIN	build\maprecords\rec_57fadc_57fb48.bin
 		INCBIN	build\jcalg1\gen_57fb48_580384.bin
 		INCBIN	build\maprecords\rec_580384_5803b4.bin
@@ -6726,7 +7370,9 @@
 		INCBIN	build\jcalg1\gen_580420_580d80.bin
 		INCBIN	build\maprecords\rec_580d80_580db8.bin
 		INCBIN	build\jcalg1\gen_580db8_580ef4.bin
-		INCBIN	baserom.gba_0x580ef4_0x580f3c.extracted
+		INCBIN	baserom.gba_0x580ef4_0x580f1c.extracted
+		INCBIN	build\addr\rec_580f1c_580f24.bin
+		INCBIN	baserom.gba_0x580f24_0x580f3c.extracted
 		INCBIN	build\maprecords\rec_580f3c_580f8c.bin
 		INCBIN	build\jcalg1\gen_580f8c_5817b4.bin
 		INCBIN	build\maprecords\rec_5817b4_5817e4.bin
@@ -6737,7 +7383,9 @@
 		INCBIN	build\jcalg1\gen_581a48_5824d4.bin
 		INCBIN	build\maprecords\rec_5824d4_582504.bin
 		INCBIN	build\jcalg1\gen_582504_5826e0.bin
-		INCBIN	baserom.gba_0x5826e0_0x582a88.extracted
+		INCBIN	baserom.gba_0x5826e0_0x582a68.extracted
+		INCBIN	build\addr\rec_582a68_582a70.bin
+		INCBIN	baserom.gba_0x582a70_0x582a88.extracted
 		INCBIN	build\maprecords\rec_582a88_582af4.bin
 		INCBIN	build\jcalg1\gen_582af4_58326c.bin
 		INCBIN	build\maprecords\rec_58326c_583294.bin
@@ -6756,7 +7404,9 @@
 		INCBIN	build\jcalg1\gen_584180_5843f4.bin
 		INCBIN	build\maprecords\rec_5843f4_584414.bin
 		INCBIN	build\jcalg1\gen_584414_5844ec.bin
-		INCBIN	baserom.gba_0x5844ec_0x584534.extracted
+		INCBIN	baserom.gba_0x5844ec_0x584514.extracted
+		INCBIN	build\addr\rec_584514_58451c.bin
+		INCBIN	baserom.gba_0x58451c_0x584534.extracted
 		INCBIN	build\maprecords\rec_584534_5845a0.bin
 		INCBIN	build\jcalg1\gen_5845a0_584bb0.bin
 		INCBIN	build\maprecords\rec_584bb0_584bd8.bin
@@ -6767,7 +7417,11 @@
 		INCBIN	build\jcalg1\gen_585328_585470.bin
 		INCBIN	build\maprecords\rec_585470_585518.bin
 		INCBIN	build\jcalg1\gen_585518_58599c.bin
-		INCBIN	baserom.gba_0x58599c_0x585a00.extracted
+		INCBIN	baserom.gba_0x58599c_0x5859c4.extracted
+		INCBIN	build\addr\rec_5859c4_5859cc.bin
+		INCBIN	baserom.gba_0x5859cc_0x5859dc.extracted
+		INCBIN	build\addr\rec_5859dc_5859e4.bin
+		INCBIN	baserom.gba_0x5859e4_0x585a00.extracted
 		INCBIN	build\maprecords\rec_585a00_585a6c.bin
 		INCBIN	build\jcalg1\gen_585a6c_585dd8.bin
 		INCBIN	build\maprecords\rec_585dd8_585e00.bin
@@ -6776,7 +7430,9 @@
 		INCBIN	build\jcalg1\gen_585e98_5861c0.bin
 		INCBIN	build\maprecords\rec_5861c0_5861e8.bin
 		INCBIN	build\jcalg1\gen_5861e8_5862bc.bin
-		INCBIN	baserom.gba_0x5862bc_0x586304.extracted
+		INCBIN	baserom.gba_0x5862bc_0x5862e4.extracted
+		INCBIN	build\addr\rec_5862e4_5862ec.bin
+		INCBIN	baserom.gba_0x5862ec_0x586304.extracted
 		INCBIN	build\maprecords\rec_586304_586370.bin
 		INCBIN	build\jcalg1\gen_586370_586abc.bin
 		INCBIN	build\maprecords\rec_586abc_586ae4.bin
@@ -6785,7 +7441,9 @@
 		INCBIN	build\jcalg1\gen_586c3c_58732c.bin
 		INCBIN	build\maprecords\rec_58732c_587354.bin
 		INCBIN	build\jcalg1\gen_587354_5874c4.bin
-		INCBIN	baserom.gba_0x5874c4_0x58750c.extracted
+		INCBIN	baserom.gba_0x5874c4_0x5874ec.extracted
+		INCBIN	build\addr\rec_5874ec_5874f4.bin
+		INCBIN	baserom.gba_0x5874f4_0x58750c.extracted
 		INCBIN	build\maprecords\rec_58750c_58755c.bin
 		INCBIN	build\jcalg1\gen_58755c_587bbc.bin
 		INCBIN	build\maprecords\rec_587bbc_587be4.bin
@@ -6809,7 +7467,10 @@
 		INCBIN	build\jcalg1\gen_588ee8_58949c.bin
 		INCBIN	build\maprecords\rec_58949c_5894c4.bin
 		INCBIN	build\jcalg1\gen_5894c4_5895b8.bin
-		INCBIN	baserom.gba_0x5895b8_0x5895f0.extracted
+		INCBIN	build\addr\rec_5895b8_5895c0.bin
+		INCBIN	baserom.gba_0x5895c0_0x5895d0.extracted
+		INCBIN	build\addr\rec_5895d0_5895d8.bin
+		INCBIN	baserom.gba_0x5895d8_0x5895f0.extracted
 		INCBIN	build\maprecords\rec_5895f0_589640.bin
 		INCBIN	build\jcalg1\gen_589640_589a18.bin
 		INCBIN	build\maprecords\rec_589a18_589a40.bin
@@ -6819,7 +7480,9 @@
 		INCBIN	build\jcalg1\gen_589b54_589ed4.bin
 		INCBIN	build\maprecords\rec_589ed4_589efc.bin
 		INCBIN	build\jcalg1\gen_589efc_58a000.bin
-		INCBIN	baserom.gba_0x58a000_0x58a048.extracted
+		INCBIN	baserom.gba_0x58a000_0x58a028.extracted
+		INCBIN	build\addr\rec_58a028_58a030.bin
+		INCBIN	baserom.gba_0x58a030_0x58a048.extracted
 		INCBIN	build\maprecords\rec_58a048_58a0b4.bin
 		INCBIN	build\jcalg1\gen_58a0b4_58a72c.bin
 		INCBIN	build\maprecords\rec_58a72c_58a754.bin
@@ -6829,7 +7492,9 @@
 		INCBIN	build\maprecords\rec_58aeb0_58aed8.bin
 		INCBIN	build\jcalg1\gen_58aed8_58b018.bin
 		INCBIN	build\maprecords\rec_58b018_58b030.bin
-		INCBIN	baserom.gba_0x58b030_0x58b078.extracted
+		INCBIN	baserom.gba_0x58b030_0x58b058.extracted
+		INCBIN	build\addr\rec_58b058_58b060.bin
+		INCBIN	baserom.gba_0x58b060_0x58b078.extracted
 		INCBIN	build\maprecords\rec_58b078_58b0e4.bin
 		INCBIN	build\jcalg1\gen_58b0e4_58b438.bin
 		INCBIN	build\maprecords\rec_58b438_58b458.bin
@@ -6849,7 +7514,11 @@
 		INCBIN	build\jcalg1\gen_58c094_58c18c.bin
 		INCBIN	build\maprecords\rec_58c18c_58c1ec.bin
 		INCBIN	build\jcalg1\gen_58c1ec_58cacc.bin
-		INCBIN	baserom.gba_0x58cacc_0x58cb30.extracted
+		INCBIN	baserom.gba_0x58cacc_0x58caf4.extracted
+		INCBIN	build\addr\rec_58caf4_58cafc.bin
+		INCBIN	baserom.gba_0x58cafc_0x58cb0c.extracted
+		INCBIN	build\addr\rec_58cb0c_58cb14.bin
+		INCBIN	baserom.gba_0x58cb14_0x58cb30.extracted
 		INCBIN	build\maprecords\rec_58cb30_58cb80.bin
 		INCBIN	build\jcalg1\gen_58cb80_58ce34.bin
 		INCBIN	baserom.gba_0x58ce34_0x58ce54.extracted
@@ -6861,7 +7530,10 @@
 		INCBIN	build\maprecords\rec_58e400_58e428.bin
 		INCBIN	build\jcalg1\gen_58e428_58e704.bin
 		INCBIN	build\maprecords\rec_58e704_58e764.bin
-		INCBIN	baserom.gba_0x58e764_0x58e79c.extracted
+		INCBIN	build\addr\rec_58e764_58e76c.bin
+		INCBIN	baserom.gba_0x58e76c_0x58e77c.extracted
+		INCBIN	build\addr\rec_58e77c_58e784.bin
+		INCBIN	baserom.gba_0x58e784_0x58e79c.extracted
 		INCBIN	build\maprecords\rec_58e79c_58e7ec.bin
 		INCBIN	build\jcalg1\gen_58e7ec_58ea8c.bin
 		INCBIN	baserom.gba_0x58ea8c_0x58eaac.extracted
@@ -6873,7 +7545,10 @@
 		INCBIN	build\maprecords\rec_58f648_58f670.bin
 		INCBIN	build\jcalg1\gen_58f670_58f82c.bin
 		INCBIN	build\maprecords\rec_58f82c_58f85c.bin
-		INCBIN	baserom.gba_0x58f85c_0x58f894.extracted
+		INCBIN	build\addr\rec_58f85c_58f864.bin
+		INCBIN	baserom.gba_0x58f864_0x58f874.extracted
+		INCBIN	build\addr\rec_58f874_58f87c.bin
+		INCBIN	baserom.gba_0x58f87c_0x58f894.extracted
 		INCBIN	build\maprecords\rec_58f894_58f8e4.bin
 		INCBIN	build\jcalg1\gen_58f8e4_58fb8c.bin
 		INCBIN	baserom.gba_0x58fb8c_0x58fbac.extracted
@@ -6884,7 +7559,13 @@
 		INCBIN	build\jcalg1\gen_58fff0_59046c.bin
 		INCBIN	build\maprecords\rec_59046c_590494.bin
 		INCBIN	build\jcalg1\gen_590494_590630.bin
-		INCBIN	baserom.gba_0x590630_0x5906b0.extracted
+		INCBIN	baserom.gba_0x590630_0x590658.extracted
+		INCBIN	build\addr\rec_590658_590660.bin
+		INCBIN	baserom.gba_0x590660_0x590670.extracted
+		INCBIN	build\addr\rec_590670_590678.bin
+		INCBIN	baserom.gba_0x590678_0x590688.extracted
+		INCBIN	build\addr\rec_590688_590690.bin
+		INCBIN	baserom.gba_0x590690_0x5906b0.extracted
 		INCBIN	build\maprecords\rec_5906b0_590700.bin
 		INCBIN	build\jcalg1\gen_590700_5909b4.bin
 		INCBIN	baserom.gba_0x5909b4_0x5909d4.extracted
@@ -6895,7 +7576,10 @@
 		INCBIN	build\jcalg1\gen_590e1c_591180.bin
 		INCBIN	build\maprecords\rec_591180_5911a0.bin
 		INCBIN	build\jcalg1\gen_5911a0_591320.bin
-		INCBIN	baserom.gba_0x591320_0x591358.extracted
+		INCBIN	build\addr\rec_591320_591328.bin
+		INCBIN	baserom.gba_0x591328_0x591338.extracted
+		INCBIN	build\addr\rec_591338_591340.bin
+		INCBIN	baserom.gba_0x591340_0x591358.extracted
 		INCBIN	build\maprecords\rec_591358_5913a8.bin
 		INCBIN	build\jcalg1\gen_5913a8_591650.bin
 		INCBIN	baserom.gba_0x591650_0x591670.extracted
@@ -6908,7 +7592,12 @@
 		INCBIN	build\jcalg1\gen_592020_5921d8.bin
 		INCBIN	build\maprecords\rec_5921d8_592208.bin
 		INCBIN	build\jcalg1\gen_592208_5922f4.bin
-		INCBIN	baserom.gba_0x5922f4_0x592348.extracted
+		INCBIN	build\addr\rec_5922f4_5922fc.bin
+		INCBIN	baserom.gba_0x5922fc_0x59230c.extracted
+		INCBIN	build\addr\rec_59230c_592314.bin
+		INCBIN	baserom.gba_0x592314_0x592324.extracted
+		INCBIN	build\addr\rec_592324_59232c.bin
+		INCBIN	baserom.gba_0x59232c_0x592348.extracted
 		INCBIN	build\maprecords\rec_592348_592398.bin
 		INCBIN	build\jcalg1\gen_592398_592638.bin
 		INCBIN	baserom.gba_0x592638_0x592658.extracted
@@ -6919,7 +7608,9 @@
 		INCBIN	build\jcalg1\gen_592a60_592e70.bin
 		INCBIN	build\maprecords\rec_592e70_592e90.bin
 		INCBIN	build\jcalg1\gen_592e90_592ff8.bin
-		INCBIN	baserom.gba_0x592ff8_0x5930d4.extracted
+		INCBIN	baserom.gba_0x592ff8_0x5930b4.extracted
+		INCBIN	build\addr\rec_5930b4_5930bc.bin
+		INCBIN	baserom.gba_0x5930bc_0x5930d4.extracted
 		INCBIN	build\maprecords\rec_5930d4_593124.bin
 		INCBIN	build\jcalg1\gen_593124_5936f0.bin
 		INCBIN	build\maprecords\rec_5936f0_593720.bin
@@ -6932,7 +7623,10 @@
 		INCBIN	build\jcalg1\gen_5947bc_594978.bin
 		INCBIN	build\maprecords\rec_594978_594990.bin
 		INCBIN	build\jcalg1\gen_594990_594ad8.bin
-		INCBIN	baserom.gba_0x594ad8_0x594b10.extracted
+		INCBIN	build\addr\rec_594ad8_594ae0.bin
+		INCBIN	baserom.gba_0x594ae0_0x594af0.extracted
+		INCBIN	build\addr\rec_594af0_594af8.bin
+		INCBIN	baserom.gba_0x594af8_0x594b10.extracted
 		INCBIN	build\maprecords\rec_594b10_594b60.bin
 		INCBIN	build\jcalg1\gen_594b60_594da8.bin
 		INCBIN	build\maprecords\rec_594da8_594dd0.bin
@@ -6956,7 +7650,8 @@
 		INCBIN	build\maprecords\rec_598474_5984b4.bin
 		INCBIN	build\jcalg1\gen_5984b4_598708.bin
 		INCBIN	build\maprecords\rec_598708_598720.bin
-		INCBIN	baserom.gba_0x598720_0x59873c.extracted
+		INCBIN	build\addr\rec_598720_598728.bin
+		INCBIN	baserom.gba_0x598728_0x59873c.extracted
 		INCBIN	build\maprecords\rec_59873c_5987a8.bin
 		INCBIN	build\jcalg1\gen_5987a8_598bfc.bin
 		INCBIN	build\maprecords\rec_598bfc_598c24.bin
@@ -6966,7 +7661,10 @@
 		INCBIN	build\maprecords\rec_5992ac_5992d4.bin
 		INCBIN	build\jcalg1\gen_5992d4_599458.bin
 		INCBIN	build\maprecords\rec_599458_5994a0.bin
-		INCBIN	baserom.gba_0x5994a0_0x5994d8.extracted
+		INCBIN	build\addr\rec_5994a0_5994a8.bin
+		INCBIN	baserom.gba_0x5994a8_0x5994b8.extracted
+		INCBIN	build\addr\rec_5994b8_5994c0.bin
+		INCBIN	baserom.gba_0x5994c0_0x5994d8.extracted
 		INCBIN	build\maprecords\rec_5994d8_599544.bin
 		INCBIN	build\jcalg1\gen_599544_59ab04.bin
 		INCBIN	build\maprecords\rec_59ab04_59ab5c.bin
@@ -6977,7 +7675,9 @@
 		INCBIN	build\jcalg1\gen_59cf0c_59d304.bin
 		INCBIN	build\maprecords\rec_59d304_59d3ac.bin
 		INCBIN	build\jcalg1\gen_59d3ac_59d6a8.bin
-		INCBIN	baserom.gba_0x59d6a8_0x59d6f0.extracted
+		INCBIN	baserom.gba_0x59d6a8_0x59d6d0.extracted
+		INCBIN	build\addr\rec_59d6d0_59d6d8.bin
+		INCBIN	baserom.gba_0x59d6d8_0x59d6f0.extracted
 		INCBIN	build\maprecords\rec_59d6f0_59d75c.bin
 		INCBIN	build\jcalg1\gen_59d75c_59ec48.bin
 		INCBIN	build\maprecords\rec_59ec48_59eca0.bin
@@ -7000,7 +7700,8 @@
 		INCBIN	build\jcalg1\gen_5a2594_5a2774.bin
 		INCBIN	build\maprecords\rec_5a2774_5a278c.bin
 		INCBIN	build\jcalg1\gen_5a278c_5a291c.bin
-		INCBIN	baserom.gba_0x5a291c_0x5a2938.extracted
+		INCBIN	build\addr\rec_5a291c_5a2924.bin
+		INCBIN	baserom.gba_0x5a2924_0x5a2938.extracted
 		INCBIN	build\maprecords\rec_5a2938_5a2988.bin
 		INCBIN	build\jcalg1\gen_5a2988_5a2a14.bin
 		INCBIN	build\maprecords\rec_5a2a14_5a2a3c.bin
@@ -7013,7 +7714,10 @@
 		INCBIN	build\jcalg1\gen_5a31d0_5a32f8.bin
 		INCBIN	build\maprecords\rec_5a32f8_5a3310.bin
 		INCBIN	build\jcalg1\gen_5a3310_5a3458.bin
-		INCBIN	baserom.gba_0x5a3458_0x5a3490.extracted
+		INCBIN	build\addr\rec_5a3458_5a3460.bin
+		INCBIN	baserom.gba_0x5a3460_0x5a3470.extracted
+		INCBIN	build\addr\rec_5a3470_5a3478.bin
+		INCBIN	baserom.gba_0x5a3478_0x5a3490.extracted
 		INCBIN	build\maprecords\rec_5a3490_5a34e0.bin
 		INCBIN	build\jcalg1\gen_5a34e0_5a35ac.bin
 		INCBIN	build\maprecords\rec_5a35ac_5a35d4.bin
@@ -7024,7 +7728,12 @@
 		INCBIN	build\jcalg1\gen_5a3b78_5a40e4.bin
 		INCBIN	build\maprecords\rec_5a40e4_5a410c.bin
 		INCBIN	build\jcalg1\gen_5a410c_5a42a0.bin
-		INCBIN	baserom.gba_0x5a42a0_0x5a42f4.extracted
+		INCBIN	build\addr\rec_5a42a0_5a42a8.bin
+		INCBIN	baserom.gba_0x5a42a8_0x5a42b8.extracted
+		INCBIN	build\addr\rec_5a42b8_5a42c0.bin
+		INCBIN	baserom.gba_0x5a42c0_0x5a42d0.extracted
+		INCBIN	build\addr\rec_5a42d0_5a42d8.bin
+		INCBIN	baserom.gba_0x5a42d8_0x5a42f4.extracted
 		INCBIN	build\maprecords\rec_5a42f4_5a4360.bin
 		INCBIN	build\jcalg1\gen_5a4360_5a48e4.bin
 		INCBIN	build\maprecords\rec_5a48e4_5a490c.bin
@@ -7034,7 +7743,12 @@
 		INCBIN	build\maprecords\rec_5a52f4_5a531c.bin
 		INCBIN	build\jcalg1\gen_5a531c_5a5530.bin
 		INCBIN	build\maprecords\rec_5a5530_5a5560.bin
-		INCBIN	baserom.gba_0x5a5560_0x5a55b4.extracted
+		INCBIN	build\addr\rec_5a5560_5a5568.bin
+		INCBIN	baserom.gba_0x5a5568_0x5a5578.extracted
+		INCBIN	build\addr\rec_5a5578_5a5580.bin
+		INCBIN	baserom.gba_0x5a5580_0x5a5590.extracted
+		INCBIN	build\addr\rec_5a5590_5a5598.bin
+		INCBIN	baserom.gba_0x5a5598_0x5a55b4.extracted
 		INCBIN	build\maprecords\rec_5a55b4_5a5604.bin
 		INCBIN	build\jcalg1\gen_5a5604_5a5a98.bin
 		INCBIN	build\maprecords\rec_5a5a98_5a5ac0.bin
@@ -7047,7 +7761,11 @@
 		INCBIN	build\jcalg1\gen_5a6568_5a6774.bin
 		INCBIN	build\maprecords\rec_5a6774_5a67a4.bin
 		INCBIN	build\jcalg1\gen_5a67a4_5a6a04.bin
-		INCBIN	baserom.gba_0x5a6a04_0x5a6cc4.extracted
+		INCBIN	baserom.gba_0x5a6a04_0x5a6c88.extracted
+		INCBIN	build\addr\rec_5a6c88_5a6c90.bin
+		INCBIN	baserom.gba_0x5a6c90_0x5a6ca0.extracted
+		INCBIN	build\addr\rec_5a6ca0_5a6ca8.bin
+		INCBIN	baserom.gba_0x5a6ca8_0x5a6cc4.extracted
 		INCBIN	build\maprecords\rec_5a6cc4_5a6d14.bin
 		INCBIN	build\jcalg1\gen_5a6d14_5a6d78.bin
 		INCBIN	build\maprecords\rec_5a6d78_5a6d98.bin
@@ -7060,7 +7778,8 @@
 		INCBIN	build\jcalg1\gen_5a76b8_5a77f4.bin
 		INCBIN	build\maprecords\rec_5a77f4_5a7824.bin
 		INCBIN	build\jcalg1\gen_5a7824_5a7914.bin
-		INCBIN	baserom.gba_0x5a7914_0x5a7930.extracted
+		INCBIN	build\addr\rec_5a7914_5a791c.bin
+		INCBIN	baserom.gba_0x5a791c_0x5a7930.extracted
 		INCBIN	build\maprecords\rec_5a7930_5a799c.bin
 		INCBIN	build\jcalg1\gen_5a799c_5a7c70.bin
 		INCBIN	build\maprecords\rec_5a7c70_5a7c90.bin
@@ -7070,7 +7789,10 @@
 		INCBIN	build\maprecords\rec_5a811c_5a813c.bin
 		INCBIN	build\jcalg1\gen_5a813c_5a82a4.bin
 		INCBIN	build\maprecords\rec_5a82a4_5a82bc.bin
-		INCBIN	baserom.gba_0x5a82bc_0x5a82f4.extracted
+		INCBIN	build\addr\rec_5a82bc_5a82c4.bin
+		INCBIN	baserom.gba_0x5a82c4_0x5a82d4.extracted
+		INCBIN	build\addr\rec_5a82d4_5a82dc.bin
+		INCBIN	baserom.gba_0x5a82dc_0x5a82f4.extracted
 		INCBIN	build\maprecords\rec_5a82f4_5a8360.bin
 		INCBIN	build\jcalg1\gen_5a8360_5a856c.bin
 		INCBIN	build\maprecords\rec_5a856c_5a8594.bin
@@ -7080,7 +7802,13 @@
 		INCBIN	build\maprecords\rec_5a8ae0_5a8b08.bin
 		INCBIN	build\jcalg1\gen_5a8b08_5a8c5c.bin
 		INCBIN	build\maprecords\rec_5a8c5c_5a8c8c.bin
-		INCBIN	baserom.gba_0x5a8c8c_0x5a8d0c.extracted
+		INCBIN	baserom.gba_0x5a8c8c_0x5a8cb4.extracted
+		INCBIN	build\addr\rec_5a8cb4_5a8cbc.bin
+		INCBIN	baserom.gba_0x5a8cbc_0x5a8ccc.extracted
+		INCBIN	build\addr\rec_5a8ccc_5a8cd4.bin
+		INCBIN	baserom.gba_0x5a8cd4_0x5a8ce4.extracted
+		INCBIN	build\addr\rec_5a8ce4_5a8cec.bin
+		INCBIN	baserom.gba_0x5a8cec_0x5a8d0c.extracted
 		INCBIN	build\maprecords\rec_5a8d0c_5a8d5c.bin
 		INCBIN	build\jcalg1\gen_5a8d5c_5a8de8.bin
 		INCBIN	build\maprecords\rec_5a8de8_5a8e10.bin
@@ -7091,7 +7819,12 @@
 		INCBIN	build\jcalg1\gen_5a90e8_5a95d4.bin
 		INCBIN	build\maprecords\rec_5a95d4_5a95fc.bin
 		INCBIN	build\jcalg1\gen_5a95fc_5a9740.bin
-		INCBIN	baserom.gba_0x5a9740_0x5a9794.extracted
+		INCBIN	build\addr\rec_5a9740_5a9748.bin
+		INCBIN	baserom.gba_0x5a9748_0x5a9758.extracted
+		INCBIN	build\addr\rec_5a9758_5a9760.bin
+		INCBIN	baserom.gba_0x5a9760_0x5a9770.extracted
+		INCBIN	build\addr\rec_5a9770_5a9778.bin
+		INCBIN	baserom.gba_0x5a9778_0x5a9794.extracted
 		INCBIN	build\maprecords\rec_5a9794_5a97e4.bin
 		INCBIN	build\jcalg1\gen_5a97e4_5a98e8.bin
 		INCBIN	build\maprecords\rec_5a98e8_5a9908.bin
@@ -7102,7 +7835,11 @@
 		INCBIN	build\jcalg1\gen_5a9cdc_5aa1d4.bin
 		INCBIN	build\maprecords\rec_5aa1d4_5aa1f4.bin
 		INCBIN	build\jcalg1\gen_5aa1f4_5aa370.bin
-		INCBIN	baserom.gba_0x5aa370_0x5aa3d4.extracted
+		INCBIN	baserom.gba_0x5aa370_0x5aa398.extracted
+		INCBIN	build\addr\rec_5aa398_5aa3a0.bin
+		INCBIN	baserom.gba_0x5aa3a0_0x5aa3b0.extracted
+		INCBIN	build\addr\rec_5aa3b0_5aa3b8.bin
+		INCBIN	baserom.gba_0x5aa3b8_0x5aa3d4.extracted
 		INCBIN	build\maprecords\rec_5aa3d4_5aa424.bin
 		INCBIN	build\jcalg1\gen_5aa424_5aa488.bin
 		INCBIN	build\maprecords\rec_5aa488_5aa4a8.bin
@@ -7113,7 +7850,9 @@
 		INCBIN	build\jcalg1\gen_5aa8bc_5aadac.bin
 		INCBIN	build\maprecords\rec_5aadac_5aadcc.bin
 		INCBIN	build\jcalg1\gen_5aadcc_5aaf14.bin
-		INCBIN	baserom.gba_0x5aaf14_0x5aaf5c.extracted
+		INCBIN	baserom.gba_0x5aaf14_0x5aaf3c.extracted
+		INCBIN	build\addr\rec_5aaf3c_5aaf44.bin
+		INCBIN	baserom.gba_0x5aaf44_0x5aaf5c.extracted
 		INCBIN	build\maprecords\rec_5aaf5c_5aafc8.bin
 		INCBIN	build\jcalg1\gen_5aafc8_5ab2a0.bin
 		INCBIN	build\maprecords\rec_5ab2a0_5ab2c0.bin
@@ -7123,7 +7862,10 @@
 		INCBIN	build\maprecords\rec_5ab838_5ab858.bin
 		INCBIN	build\jcalg1\gen_5ab858_5ab9c4.bin
 		INCBIN	build\maprecords\rec_5ab9c4_5ab9f4.bin
-		INCBIN	baserom.gba_0x5ab9f4_0x5aba2c.extracted
+		INCBIN	build\addr\rec_5ab9f4_5ab9fc.bin
+		INCBIN	baserom.gba_0x5ab9fc_0x5aba0c.extracted
+		INCBIN	build\addr\rec_5aba0c_5aba14.bin
+		INCBIN	baserom.gba_0x5aba14_0x5aba2c.extracted
 		INCBIN	build\maprecords\rec_5aba2c_5aba98.bin
 		INCBIN	build\jcalg1\gen_5aba98_5abea8.bin
 		INCBIN	build\maprecords\rec_5abea8_5abec8.bin
@@ -7132,7 +7874,8 @@
 		INCBIN	build\jcalg1\gen_5ac0cc_5ac438.bin
 		INCBIN	build\maprecords\rec_5ac438_5ac458.bin
 		INCBIN	build\jcalg1\gen_5ac458_5ac5c0.bin
-		INCBIN	baserom.gba_0x5ac5c0_0x5ac5dc.extracted
+		INCBIN	build\addr\rec_5ac5c0_5ac5c8.bin
+		INCBIN	baserom.gba_0x5ac5c8_0x5ac5dc.extracted
 		INCBIN	build\maprecords\rec_5ac5dc_5ac62c.bin
 		INCBIN	build\jcalg1\gen_5ac62c_5ac760.bin
 		INCBIN	build\maprecords\rec_5ac760_5ac788.bin
@@ -7145,7 +7888,11 @@
 		INCBIN	build\jcalg1\gen_5ad974_5adb68.bin
 		INCBIN	build\maprecords\rec_5adb68_5adb80.bin
 		INCBIN	build\jcalg1\gen_5adb80_5adda8.bin
-		INCBIN	baserom.gba_0x5adda8_0x5ade0c.extracted
+		INCBIN	baserom.gba_0x5adda8_0x5addd0.extracted
+		INCBIN	build\addr\rec_5addd0_5addd8.bin
+		INCBIN	baserom.gba_0x5addd8_0x5adde8.extracted
+		INCBIN	build\addr\rec_5adde8_5addf0.bin
+		INCBIN	baserom.gba_0x5addf0_0x5ade0c.extracted
 		INCBIN	build\maprecords\rec_5ade0c_5ade5c.bin
 		INCBIN	build\jcalg1\gen_5ade5c_5ae004.bin
 		INCBIN	build\maprecords\rec_5ae004_5ae020.bin
@@ -7167,7 +7914,8 @@
 		INCBIN	build\jcalg1\gen_5c1314_5c142c.bin
 		INCBIN	build\maprecords\rec_5c142c_5c1474.bin
 		INCBIN	build\jcalg1\gen_5c1474_5c15ac.bin
-		INCBIN	baserom.gba_0x5c15ac_0x5c15c8.extracted
+		INCBIN	build\addr\rec_5c15ac_5c15b4.bin
+		INCBIN	baserom.gba_0x5c15b4_0x5c15c8.extracted
 		INCBIN	build\maprecords\rec_5c15c8_5c1618.bin
 		INCBIN	build\jcalg1\gen_5c1618_5c1cb0.bin
 		INCBIN	build\maprecords\rec_5c1cb0_5c1cd8.bin
@@ -7178,7 +7926,8 @@
 		INCBIN	build\jcalg1\gen_5c2208_5c2390.bin
 		INCBIN	build\maprecords\rec_5c2390_5c23b8.bin
 		INCBIN	build\jcalg1\gen_5c23b8_5c24c8.bin
-		INCBIN	baserom.gba_0x5c24c8_0x5c24e4.extracted
+		INCBIN	build\addr\rec_5c24c8_5c24d0.bin
+		INCBIN	baserom.gba_0x5c24d0_0x5c24e4.extracted
 		INCBIN	build\maprecords\rec_5c24e4_5c2534.bin
 		INCBIN	build\jcalg1\gen_5c2534_5c2810.bin
 		INCBIN	build\maprecords\rec_5c2810_5c282c.bin
@@ -7191,7 +7940,10 @@
 		INCBIN	build\jcalg1\gen_5c2c5c_5c2d54.bin
 		INCBIN	build\maprecords\rec_5c2d54_5c2d6c.bin
 		INCBIN	build\jcalg1\gen_5c2d6c_5c2f24.bin
-		INCBIN	baserom.gba_0x5c2f24_0x5c2f5c.extracted
+		INCBIN	build\addr\rec_5c2f24_5c2f2c.bin
+		INCBIN	baserom.gba_0x5c2f2c_0x5c2f3c.extracted
+		INCBIN	build\addr\rec_5c2f3c_5c2f44.bin
+		INCBIN	baserom.gba_0x5c2f44_0x5c2f5c.extracted
 		INCBIN	build\maprecords\rec_5c2f5c_5c2fac.bin
 		INCBIN	build\jcalg1\gen_5c2fac_5c31cc.bin
 		INCBIN	build\maprecords\rec_5c31cc_5c31f4.bin
@@ -7203,7 +7955,10 @@
 		INCBIN	build\maprecords\rec_5c4468_5c4490.bin
 		INCBIN	build\jcalg1\gen_5c4490_5c45e8.bin
 		INCBIN	build\maprecords\rec_5c45e8_5c4600.bin
-		INCBIN	baserom.gba_0x5c4600_0x5c4638.extracted
+		INCBIN	build\addr\rec_5c4600_5c4608.bin
+		INCBIN	baserom.gba_0x5c4608_0x5c4618.extracted
+		INCBIN	build\addr\rec_5c4618_5c4620.bin
+		INCBIN	baserom.gba_0x5c4620_0x5c4638.extracted
 		INCBIN	build\maprecords\rec_5c4638_5c4688.bin
 		INCBIN	build\jcalg1\gen_5c4688_5c4c14.bin
 		INCBIN	build\maprecords\rec_5c4c14_5c4c50.bin
@@ -7218,7 +7973,9 @@
 		INCBIN	build\jcalg1\gen_5c821c_5c84d8.bin
 		INCBIN	build\maprecords\rec_5c84d8_5c85f8.bin
 		INCBIN	build\jcalg1\gen_5c85f8_5c8a3c.bin
-		INCBIN	baserom.gba_0x5c8a3c_0x5c90e0.extracted
+		INCBIN	baserom.gba_0x5c8a3c_0x5c90c0.extracted
+		INCBIN	build\addr\rec_5c90c0_5c90c8.bin
+		INCBIN	baserom.gba_0x5c90c8_0x5c90e0.extracted
 		INCBIN	build\maprecords\rec_5c90e0_5c9130.bin
 		INCBIN	build\jcalg1\gen_5c9130_5c920c.bin
 		INCBIN	build\maprecords\rec_5c920c_5c922c.bin
@@ -7264,7 +8021,9 @@
 		INCBIN	build\jcalg1\gen_5ccec8_5cdb70.bin
 		INCBIN	build\maprecords\rec_5cdb70_5cdbc8.bin
 		INCBIN	build\jcalg1\gen_5cdbc8_5cdcd0.bin
-		INCBIN	baserom.gba_0x5cdcd0_0x5cdd18.extracted
+		INCBIN	baserom.gba_0x5cdcd0_0x5cdcf8.extracted
+		INCBIN	build\addr\rec_5cdcf8_5cdd00.bin
+		INCBIN	baserom.gba_0x5cdd00_0x5cdd18.extracted
 		INCBIN	build\maprecords\rec_5cdd18_5cdd84.bin
 		INCBIN	build\jcalg1\gen_5cdd84_5cdf94.bin
 		INCBIN	build\maprecords\rec_5cdf94_5cdfd0.bin
@@ -7274,14 +8033,19 @@
 		INCBIN	build\maprecords\rec_5ceb88_5cebe0.bin
 		INCBIN	build\jcalg1\gen_5cebe0_5cec94.bin
 		INCBIN	build\maprecords\rec_5cec94_5cecac.bin
-		INCBIN	baserom.gba_0x5cecac_0x5cece4.extracted
+		INCBIN	build\addr\rec_5cecac_5cecb4.bin
+		INCBIN	baserom.gba_0x5cecb4_0x5cecc4.extracted
+		INCBIN	build\addr\rec_5cecc4_5ceccc.bin
+		INCBIN	baserom.gba_0x5ceccc_0x5cece4.extracted
 		INCBIN	build\maprecords\rec_5cece4_5ced8c.bin
 		INCBIN	build\jcalg1\gen_5ced8c_5cee0c.bin
 		INCBIN	build\maprecords\rec_5cee0c_5cee34.bin
 		INCBIN	build\jcalg1\gen_5cee34_5cf948.bin
 		INCBIN	build\maprecords\rec_5cf948_5cf9a0.bin
 		INCBIN	build\jcalg1\gen_5cf9a0_5cfa54.bin
-		INCBIN	baserom.gba_0x5cfa54_0x5cfa9c.extracted
+		INCBIN	baserom.gba_0x5cfa54_0x5cfa7c.extracted
+		INCBIN	build\addr\rec_5cfa7c_5cfa84.bin
+		INCBIN	baserom.gba_0x5cfa84_0x5cfa9c.extracted
 		INCBIN	build\maprecords\rec_5cfa9c_5cfb08.bin
 		INCBIN	build\jcalg1\gen_5cfb08_5cfc10.bin
 		INCBIN	build\maprecords\rec_5cfc10_5cfc4c.bin
@@ -7290,7 +8054,8 @@
 		INCBIN	build\jcalg1\gen_5cfd4c_5d0720.bin
 		INCBIN	build\maprecords\rec_5d0720_5d0778.bin
 		INCBIN	build\jcalg1\gen_5d0778_5d080c.bin
-		INCBIN	baserom.gba_0x5d080c_0x5d0828.extracted
+		INCBIN	build\addr\rec_5d080c_5d0814.bin
+		INCBIN	baserom.gba_0x5d0814_0x5d0828.extracted
 		INCBIN	build\maprecords\rec_5d0828_5d0878.bin
 		INCBIN	build\jcalg1\gen_5d0878_5d08fc.bin
 		INCBIN	build\maprecords\rec_5d08fc_5d091c.bin
@@ -7301,7 +8066,8 @@
 		INCBIN	build\jcalg1\gen_5d0dac_5d1154.bin
 		INCBIN	build\maprecords\rec_5d1154_5d1170.bin
 		INCBIN	build\jcalg1\gen_5d1170_5d1234.bin
-		INCBIN	baserom.gba_0x5d1234_0x5d1250.extracted
+		INCBIN	build\addr\rec_5d1234_5d123c.bin
+		INCBIN	baserom.gba_0x5d123c_0x5d1250.extracted
 		INCBIN	build\maprecords\rec_5d1250_5d12a0.bin
 		INCBIN	build\jcalg1\gen_5d12a0_5d1510.bin
 		INCBIN	build\maprecords\rec_5d1510_5d152c.bin
@@ -7310,7 +8076,8 @@
 		INCBIN	build\jcalg1\gen_5d15e0_5d16b4.bin
 		INCBIN	build\maprecords\rec_5d16b4_5d16d0.bin
 		INCBIN	build\jcalg1\gen_5d16d0_5d1774.bin
-		INCBIN	baserom.gba_0x5d1774_0x5d1790.extracted
+		INCBIN	build\addr\rec_5d1774_5d177c.bin
+		INCBIN	baserom.gba_0x5d177c_0x5d1790.extracted
 		INCBIN	build\maprecords\rec_5d1790_5d17e0.bin
 		INCBIN	build\jcalg1\gen_5d17e0_5d1908.bin
 		INCBIN	build\maprecords\rec_5d1908_5d1924.bin
@@ -7319,7 +8086,8 @@
 		INCBIN	build\jcalg1\gen_5d19ac_5d1b14.bin
 		INCBIN	build\maprecords\rec_5d1b14_5d1b30.bin
 		INCBIN	build\jcalg1\gen_5d1b30_5d1bd8.bin
-		INCBIN	baserom.gba_0x5d1bd8_0x5d1bf4.extracted
+		INCBIN	build\addr\rec_5d1bd8_5d1be0.bin
+		INCBIN	baserom.gba_0x5d1be0_0x5d1bf4.extracted
 		INCBIN	build\maprecords\rec_5d1bf4_5d1c44.bin
 		INCBIN	build\jcalg1\gen_5d1c44_5d1fbc.bin
 		INCBIN	build\maprecords\rec_5d1fbc_5d1fdc.bin
@@ -7332,7 +8100,9 @@
 		INCBIN	build\jcalg1\gen_5d24d8_5d25f0.bin
 		INCBIN	build\maprecords\rec_5d25f0_5d2620.bin
 		INCBIN	build\jcalg1\gen_5d2620_5d285c.bin
-		INCBIN	baserom.gba_0x5d285c_0x5e102c.extracted
+		INCBIN	baserom.gba_0x5d285c_0x5e100c.extracted
+		INCBIN	build\addr\rec_5e100c_5e1014.bin
+		INCBIN	baserom.gba_0x5e1014_0x5e102c.extracted
 		INCBIN	build\maprecords\rec_5e102c_5e107c.bin
 		INCBIN	build\jcalg1\gen_5e107c_5e1218.bin
 		INCBIN	build\maprecords\rec_5e1218_5e1234.bin
@@ -7341,7 +8111,12 @@
 		INCBIN	build\jcalg1\gen_5e12ec_5e13d4.bin
 		INCBIN	build\maprecords\rec_5e13d4_5e13f0.bin
 		INCBIN	build\jcalg1\gen_5e13f0_5e1488.bin
-		INCBIN	baserom.gba_0x5e1488_0x5e14dc.extracted
+		INCBIN	build\addr\rec_5e1488_5e1490.bin
+		INCBIN	baserom.gba_0x5e1490_0x5e14a0.extracted
+		INCBIN	build\addr\rec_5e14a0_5e14a8.bin
+		INCBIN	baserom.gba_0x5e14a8_0x5e14b8.extracted
+		INCBIN	build\addr\rec_5e14b8_5e14c0.bin
+		INCBIN	baserom.gba_0x5e14c0_0x5e14dc.extracted
 		INCBIN	build\maprecords\rec_5e14dc_5e152c.bin
 		INCBIN	build\jcalg1\gen_5e152c_5e17f0.bin
 		INCBIN	build\maprecords\rec_5e17f0_5e1810.bin
@@ -7352,7 +8127,10 @@
 		INCBIN	build\jcalg1\gen_5e1d20_5e1e14.bin
 		INCBIN	build\maprecords\rec_5e1e14_5e1e2c.bin
 		INCBIN	build\jcalg1\gen_5e1e2c_5e1f50.bin
-		INCBIN	baserom.gba_0x5e1f50_0x5e1f88.extracted
+		INCBIN	build\addr\rec_5e1f50_5e1f58.bin
+		INCBIN	baserom.gba_0x5e1f58_0x5e1f68.extracted
+		INCBIN	build\addr\rec_5e1f68_5e1f70.bin
+		INCBIN	baserom.gba_0x5e1f70_0x5e1f88.extracted
 		INCBIN	build\maprecords\rec_5e1f88_5e1fd8.bin
 		INCBIN	build\jcalg1\gen_5e1fd8_5e215c.bin
 		INCBIN	build\maprecords\rec_5e215c_5e2178.bin
@@ -7361,7 +8139,10 @@
 		INCBIN	build\jcalg1\gen_5e2204_5e2298.bin
 		INCBIN	build\maprecords\rec_5e2298_5e22b4.bin
 		INCBIN	build\jcalg1\gen_5e22b4_5e2344.bin
-		INCBIN	baserom.gba_0x5e2344_0x5e237c.extracted
+		INCBIN	build\addr\rec_5e2344_5e234c.bin
+		INCBIN	baserom.gba_0x5e234c_0x5e235c.extracted
+		INCBIN	build\addr\rec_5e235c_5e2364.bin
+		INCBIN	baserom.gba_0x5e2364_0x5e237c.extracted
 		INCBIN	build\maprecords\rec_5e237c_5e23cc.bin
 		INCBIN	build\jcalg1\gen_5e23cc_5e2c30.bin
 		INCBIN	build\maprecords\rec_5e2c30_5e2c58.bin
@@ -7374,7 +8155,8 @@
 		INCBIN	build\jcalg1\gen_5e3640_5e374c.bin
 		INCBIN	build\maprecords\rec_5e374c_5e377c.bin
 		INCBIN	build\jcalg1\gen_5e377c_5e3c54.bin
-		INCBIN	baserom.gba_0x5e3c54_0x5e3c70.extracted
+		INCBIN	build\addr\rec_5e3c54_5e3c5c.bin
+		INCBIN	baserom.gba_0x5e3c5c_0x5e3c70.extracted
 		INCBIN	build\maprecords\rec_5e3c70_5e3cc0.bin
 		INCBIN	build\jcalg1\gen_5e3cc0_5e4554.bin
 		INCBIN	build\maprecords\rec_5e4554_5e457c.bin
@@ -7409,7 +8191,12 @@
 		INCBIN	build\jcalg1\gen_5e6e2c_5e6f1c.bin
 		INCBIN	build\maprecords\rec_5e6f1c_5e6f94.bin
 		INCBIN	build\jcalg1\gen_5e6f94_5e70c8.bin
-		INCBIN	baserom.gba_0x5e70c8_0x5e711c.extracted
+		INCBIN	build\addr\rec_5e70c8_5e70d0.bin
+		INCBIN	baserom.gba_0x5e70d0_0x5e70e0.extracted
+		INCBIN	build\addr\rec_5e70e0_5e70e8.bin
+		INCBIN	baserom.gba_0x5e70e8_0x5e70f8.extracted
+		INCBIN	build\addr\rec_5e70f8_5e7100.bin
+		INCBIN	baserom.gba_0x5e7100_0x5e711c.extracted
 		INCBIN	build\maprecords\rec_5e711c_5e716c.bin
 		INCBIN	build\jcalg1\gen_5e716c_5e7290.bin
 		INCBIN	build\maprecords\rec_5e7290_5e72ac.bin
@@ -7418,7 +8205,10 @@
 		INCBIN	build\jcalg1\gen_5e7344_5e73ec.bin
 		INCBIN	build\maprecords\rec_5e73ec_5e7408.bin
 		INCBIN	build\jcalg1\gen_5e7408_5e7490.bin
-		INCBIN	baserom.gba_0x5e7490_0x5e74c8.extracted
+		INCBIN	build\addr\rec_5e7490_5e7498.bin
+		INCBIN	baserom.gba_0x5e7498_0x5e74a8.extracted
+		INCBIN	build\addr\rec_5e74a8_5e74b0.bin
+		INCBIN	baserom.gba_0x5e74b0_0x5e74c8.extracted
 		INCBIN	build\maprecords\rec_5e74c8_5e7518.bin
 		INCBIN	build\jcalg1\gen_5e7518_5e7668.bin
 		INCBIN	build\maprecords\rec_5e7668_5e7684.bin
@@ -7455,7 +8245,9 @@
 		INCBIN	build\jcalg1\gen_5ea82c_5ea934.bin
 		INCBIN	build\maprecords\rec_5ea934_5ea9f4.bin
 		INCBIN	build\jcalg1\gen_5ea9f4_5eac9c.bin
-		INCBIN	baserom.gba_0x5eac9c_0x5eb684.extracted
+		INCBIN	baserom.gba_0x5eac9c_0x5eb664.extracted
+		INCBIN	build\addr\rec_5eb664_5eb66c.bin
+		INCBIN	baserom.gba_0x5eb66c_0x5eb684.extracted
 		INCBIN	build\maprecords\rec_5eb684_5eb6d4.bin
 		INCBIN	build\jcalg1\gen_5eb6d4_5eb868.bin
 		INCBIN	build\maprecords\rec_5eb868_5eb888.bin
@@ -7466,7 +8258,12 @@
 		INCBIN	build\jcalg1\gen_5eba90_5ebb20.bin
 		INCBIN	build\maprecords\rec_5ebb20_5ebb50.bin
 		INCBIN	build\jcalg1\gen_5ebb50_5ebc88.bin
-		INCBIN	baserom.gba_0x5ebc88_0x5ebcdc.extracted
+		INCBIN	build\addr\rec_5ebc88_5ebc90.bin
+		INCBIN	baserom.gba_0x5ebc90_0x5ebca0.extracted
+		INCBIN	build\addr\rec_5ebca0_5ebca8.bin
+		INCBIN	baserom.gba_0x5ebca8_0x5ebcb8.extracted
+		INCBIN	build\addr\rec_5ebcb8_5ebcc0.bin
+		INCBIN	baserom.gba_0x5ebcc0_0x5ebcdc.extracted
 		INCBIN	build\maprecords\rec_5ebcdc_5ebd2c.bin
 		INCBIN	build\jcalg1\gen_5ebd2c_5ebdb4.bin
 		INCBIN	build\maprecords\rec_5ebdb4_5ebde4.bin
@@ -7479,7 +8276,9 @@
 		INCBIN	build\jcalg1\gen_5ee6d4_5ee95c.bin
 		INCBIN	build\maprecords\rec_5ee95c_5ee9ec.bin
 		INCBIN	build\jcalg1\gen_5ee9ec_5eef50.bin
-		INCBIN	baserom.gba_0x5eef50_0x5ef4f8.extracted
+		INCBIN	baserom.gba_0x5eef50_0x5ef4d8.extracted
+		INCBIN	build\addr\rec_5ef4d8_5ef4e0.bin
+		INCBIN	baserom.gba_0x5ef4e0_0x5ef4f8.extracted
 		INCBIN	build\maprecords\rec_5ef4f8_5ef548.bin
 		INCBIN	build\jcalg1\gen_5ef548_5ef8c8.bin
 		INCBIN	build\maprecords\rec_5ef8c8_5ef8f0.bin
@@ -7492,7 +8291,16 @@
 		INCBIN	build\jcalg1\gen_5efbf8_5efca8.bin
 		INCBIN	build\maprecords\rec_5efca8_5efcc0.bin
 		INCBIN	build\jcalg1\gen_5efcc0_5f010c.bin
-		INCBIN	baserom.gba_0x5f010c_0x5f0198.extracted
+		INCBIN	build\addr\rec_5f010c_5f0114.bin
+		INCBIN	baserom.gba_0x5f0114_0x5f0124.extracted
+		INCBIN	build\addr\rec_5f0124_5f012c.bin
+		INCBIN	baserom.gba_0x5f012c_0x5f013c.extracted
+		INCBIN	build\addr\rec_5f013c_5f0144.bin
+		INCBIN	baserom.gba_0x5f0144_0x5f0154.extracted
+		INCBIN	build\addr\rec_5f0154_5f015c.bin
+		INCBIN	baserom.gba_0x5f015c_0x5f016c.extracted
+		INCBIN	build\addr\rec_5f016c_5f0174.bin
+		INCBIN	baserom.gba_0x5f0174_0x5f0198.extracted
 		INCBIN	build\maprecords\rec_5f0198_5f01e8.bin
 		INCBIN	build\jcalg1\gen_5f01e8_5f02cc.bin
 		INCBIN	baserom.gba_0x5f02cc_0x5f02ec.extracted
@@ -7505,7 +8313,11 @@
 		INCBIN	build\jcalg1\gen_5f15d4_5f16dc.bin
 		INCBIN	build\maprecords\rec_5f16dc_5f1754.bin
 		INCBIN	build\jcalg1\gen_5f1754_5f2038.bin
-		INCBIN	baserom.gba_0x5f2038_0x5f209c.extracted
+		INCBIN	baserom.gba_0x5f2038_0x5f2060.extracted
+		INCBIN	build\addr\rec_5f2060_5f2068.bin
+		INCBIN	baserom.gba_0x5f2068_0x5f2078.extracted
+		INCBIN	build\addr\rec_5f2078_5f2080.bin
+		INCBIN	baserom.gba_0x5f2080_0x5f209c.extracted
 		INCBIN	build\maprecords\rec_5f209c_5f20ec.bin
 		INCBIN	build\jcalg1\gen_5f20ec_5f2168.bin
 		INCBIN	build\maprecords\rec_5f2168_5f2184.bin
@@ -7529,7 +8341,8 @@
 		INCBIN	build\jcalg1\gen_5f432c_5f43b8.bin
 		INCBIN	build\maprecords\rec_5f43b8_5f43d0.bin
 		INCBIN	build\jcalg1\gen_5f43d0_5f449c.bin
-		INCBIN	baserom.gba_0x5f449c_0x5f44b8.extracted
+		INCBIN	build\addr\rec_5f449c_5f44a4.bin
+		INCBIN	baserom.gba_0x5f44a4_0x5f44b8.extracted
 		INCBIN	build\maprecords\rec_5f44b8_5f4524.bin
 		INCBIN	build\jcalg1\gen_5f4524_5f4ac8.bin
 		INCBIN	build\maprecords\rec_5f4ac8_5f4b00.bin
@@ -7538,7 +8351,8 @@
 		INCBIN	build\jcalg1\gen_5f51f8_5f5b54.bin
 		INCBIN	build\maprecords\rec_5f5b54_5f5b8c.bin
 		INCBIN	build\jcalg1\gen_5f5b8c_5f5ce0.bin
-		INCBIN	baserom.gba_0x5f5ce0_0x5f5cfc.extracted
+		INCBIN	build\addr\rec_5f5ce0_5f5ce8.bin
+		INCBIN	baserom.gba_0x5f5ce8_0x5f5cfc.extracted
 		INCBIN	build\maprecords\rec_5f5cfc_5f5d4c.bin
 		INCBIN	build\jcalg1\gen_5f5d4c_5f5d98.bin
 		INCBIN	build\maprecords\rec_5f5d98_5f5db8.bin
@@ -7569,7 +8383,9 @@
 		INCBIN	build\jcalg1\gen_5f7f10_5f8074.bin
 		INCBIN	build\maprecords\rec_5f8074_5f809c.bin
 		INCBIN	build\jcalg1\gen_5f809c_5f81c0.bin
-		INCBIN	baserom.gba_0x5f81c0_0x5f82c0.extracted
+		INCBIN	baserom.gba_0x5f81c0_0x5f82a0.extracted
+		INCBIN	build\addr\rec_5f82a0_5f82a8.bin
+		INCBIN	baserom.gba_0x5f82a8_0x5f82c0.extracted
 		INCBIN	build\maprecords\rec_5f82c0_5f832c.bin
 		INCBIN	build\jcalg1\gen_5f832c_5f8568.bin
 		INCBIN	build\maprecords\rec_5f8568_5f8590.bin
@@ -7589,7 +8405,11 @@
 		INCBIN	build\maprecords\rec_5f9890_5f98b8.bin
 		INCBIN	build\jcalg1\gen_5f98b8_5f9a10.bin
 		INCBIN	build\maprecords\rec_5f9a10_5f9a40.bin
-		INCBIN	baserom.gba_0x5f9a40_0x5f9aa4.extracted
+		INCBIN	baserom.gba_0x5f9a40_0x5f9a68.extracted
+		INCBIN	build\addr\rec_5f9a68_5f9a70.bin
+		INCBIN	baserom.gba_0x5f9a70_0x5f9a80.extracted
+		INCBIN	build\addr\rec_5f9a80_5f9a88.bin
+		INCBIN	baserom.gba_0x5f9a88_0x5f9aa4.extracted
 		INCBIN	build\maprecords\rec_5f9aa4_5f9b10.bin
 		INCBIN	build\jcalg1\gen_5f9b10_5f9df8.bin
 		INCBIN	build\maprecords\rec_5f9df8_5f9e20.bin
@@ -7599,7 +8419,9 @@
 		INCBIN	build\maprecords\rec_5fa5a8_5fa5d0.bin
 		INCBIN	build\jcalg1\gen_5fa5d0_5fa720.bin
 		INCBIN	build\maprecords\rec_5fa720_5fa738.bin
-		INCBIN	baserom.gba_0x5fa738_0x5fa780.extracted
+		INCBIN	baserom.gba_0x5fa738_0x5fa760.extracted
+		INCBIN	build\addr\rec_5fa760_5fa768.bin
+		INCBIN	baserom.gba_0x5fa768_0x5fa780.extracted
 		INCBIN	build\maprecords\rec_5fa780_5fa7ec.bin
 		INCBIN	build\jcalg1\gen_5fa7ec_5faa3c.bin
 		INCBIN	build\maprecords\rec_5faa3c_5faa5c.bin
@@ -7608,7 +8430,9 @@
 		INCBIN	build\jcalg1\gen_5faed8_5fb76c.bin
 		INCBIN	build\maprecords\rec_5fb76c_5fb794.bin
 		INCBIN	build\jcalg1\gen_5fb794_5fb8f4.bin
-		INCBIN	baserom.gba_0x5fb8f4_0x5fb93c.extracted
+		INCBIN	baserom.gba_0x5fb8f4_0x5fb91c.extracted
+		INCBIN	build\addr\rec_5fb91c_5fb924.bin
+		INCBIN	baserom.gba_0x5fb924_0x5fb93c.extracted
 		INCBIN	build\maprecords\rec_5fb93c_5fb9a8.bin
 		INCBIN	build\jcalg1\gen_5fb9a8_5fbd54.bin
 		INCBIN	build\maprecords\rec_5fbd54_5fbd74.bin
@@ -7618,7 +8442,9 @@
 		INCBIN	build\maprecords\rec_5fc534_5fc55c.bin
 		INCBIN	build\jcalg1\gen_5fc55c_5fc6d8.bin
 		INCBIN	build\maprecords\rec_5fc6d8_5fc6f0.bin
-		INCBIN	baserom.gba_0x5fc6f0_0x5fc738.extracted
+		INCBIN	baserom.gba_0x5fc6f0_0x5fc718.extracted
+		INCBIN	build\addr\rec_5fc718_5fc720.bin
+		INCBIN	baserom.gba_0x5fc720_0x5fc738.extracted
 		INCBIN	build\maprecords\rec_5fc738_5fc7a4.bin
 		INCBIN	build\jcalg1\gen_5fc7a4_5fcb4c.bin
 		INCBIN	build\maprecords\rec_5fcb4c_5fcb70.bin
@@ -7628,7 +8454,11 @@
 		INCBIN	build\maprecords\rec_5fd1e0_5fd208.bin
 		INCBIN	build\jcalg1\gen_5fd208_5fd33c.bin
 		INCBIN	build\maprecords\rec_5fd33c_5fd354.bin
-		INCBIN	baserom.gba_0x5fd354_0x5fd3b8.extracted
+		INCBIN	baserom.gba_0x5fd354_0x5fd37c.extracted
+		INCBIN	build\addr\rec_5fd37c_5fd384.bin
+		INCBIN	baserom.gba_0x5fd384_0x5fd394.extracted
+		INCBIN	build\addr\rec_5fd394_5fd39c.bin
+		INCBIN	baserom.gba_0x5fd39c_0x5fd3b8.extracted
 		INCBIN	build\maprecords\rec_5fd3b8_5fd424.bin
 		INCBIN	build\jcalg1\gen_5fd424_5fd688.bin
 		INCBIN	build\maprecords\rec_5fd688_5fd6b0.bin
@@ -7637,7 +8467,9 @@
 		INCBIN	build\jcalg1\gen_5fd718_5fda70.bin
 		INCBIN	build\maprecords\rec_5fda70_5fda98.bin
 		INCBIN	build\jcalg1\gen_5fda98_5fdb50.bin
-		INCBIN	baserom.gba_0x5fdb50_0x5fdb98.extracted
+		INCBIN	baserom.gba_0x5fdb50_0x5fdb78.extracted
+		INCBIN	build\addr\rec_5fdb78_5fdb80.bin
+		INCBIN	baserom.gba_0x5fdb80_0x5fdb98.extracted
 		INCBIN	build\maprecords\rec_5fdb98_5fdc04.bin
 		INCBIN	build\jcalg1\gen_5fdc04_5fdeb4.bin
 		INCBIN	build\maprecords\rec_5fdeb4_5fdedc.bin
@@ -7647,7 +8479,11 @@
 		INCBIN	build\maprecords\rec_5fe738_5fe760.bin
 		INCBIN	build\jcalg1\gen_5fe760_5fe87c.bin
 		INCBIN	build\maprecords\rec_5fe87c_5fe894.bin
-		INCBIN	baserom.gba_0x5fe894_0x5fe8f8.extracted
+		INCBIN	baserom.gba_0x5fe894_0x5fe8bc.extracted
+		INCBIN	build\addr\rec_5fe8bc_5fe8c4.bin
+		INCBIN	baserom.gba_0x5fe8c4_0x5fe8d4.extracted
+		INCBIN	build\addr\rec_5fe8d4_5fe8dc.bin
+		INCBIN	baserom.gba_0x5fe8dc_0x5fe8f8.extracted
 		INCBIN	build\maprecords\rec_5fe8f8_5fe964.bin
 		INCBIN	build\jcalg1\gen_5fe964_5feae8.bin
 		INCBIN	build\maprecords\rec_5feae8_5feb08.bin
@@ -7666,7 +8502,10 @@
 		INCBIN	build\maprecords\rec_5ffc2c_5ffc54.bin
 		INCBIN	build\jcalg1\gen_5ffc54_5ffe54.bin
 		INCBIN	build\maprecords\rec_5ffe54_5ffe6c.bin
-		INCBIN	baserom.gba_0x5ffe6c_0x5ffea4.extracted
+		INCBIN	build\addr\rec_5ffe6c_5ffe74.bin
+		INCBIN	baserom.gba_0x5ffe74_0x5ffe84.extracted
+		INCBIN	build\addr\rec_5ffe84_5ffe8c.bin
+		INCBIN	baserom.gba_0x5ffe8c_0x5ffea4.extracted
 		INCBIN	build\maprecords\rec_5ffea4_5ffef4.bin
 		INCBIN	build\jcalg1\gen_5ffef4_600244.bin
 		INCBIN	build\maprecords\rec_600244_600264.bin
@@ -7677,7 +8516,8 @@
 		INCBIN	build\jcalg1\gen_600780_600ac0.bin
 		INCBIN	build\maprecords\rec_600ac0_600ae0.bin
 		INCBIN	build\jcalg1\gen_600ae0_600bd4.bin
-		INCBIN	baserom.gba_0x600bd4_0x600bf0.extracted
+		INCBIN	build\addr\rec_600bd4_600bdc.bin
+		INCBIN	baserom.gba_0x600bdc_0x600bf0.extracted
 		INCBIN	build\maprecords\rec_600bf0_600c5c.bin
 		INCBIN	build\jcalg1\gen_600c5c_600d54.bin
 		INCBIN	build\maprecords\rec_600d54_600d78.bin
@@ -7686,7 +8526,10 @@
 		INCBIN	build\jcalg1\gen_60129c_601a5c.bin
 		INCBIN	build\maprecords\rec_601a5c_601a80.bin
 		INCBIN	build\jcalg1\gen_601a80_601b40.bin
-		INCBIN	baserom.gba_0x601b40_0x601b78.extracted
+		INCBIN	build\addr\rec_601b40_601b48.bin
+		INCBIN	baserom.gba_0x601b48_0x601b58.extracted
+		INCBIN	build\addr\rec_601b58_601b60.bin
+		INCBIN	baserom.gba_0x601b60_0x601b78.extracted
 		INCBIN	build\maprecords\rec_601b78_601be4.bin
 		INCBIN	build\jcalg1\gen_601be4_601cb4.bin
 		INCBIN	build\maprecords\rec_601cb4_601cd4.bin
@@ -7702,7 +8545,10 @@
 		INCBIN	build\jcalg1\gen_602918_602c14.bin
 		INCBIN	build\maprecords\rec_602c14_602c34.bin
 		INCBIN	build\jcalg1\gen_602c34_602ca8.bin
-		INCBIN	baserom.gba_0x602ca8_0x602ce0.extracted
+		INCBIN	build\addr\rec_602ca8_602cb0.bin
+		INCBIN	baserom.gba_0x602cb0_0x602cc0.extracted
+		INCBIN	build\addr\rec_602cc0_602cc8.bin
+		INCBIN	baserom.gba_0x602cc8_0x602ce0.extracted
 		INCBIN	build\maprecords\rec_602ce0_602d4c.bin
 		INCBIN	build\jcalg1\gen_602d4c_603030.bin
 		INCBIN	build\maprecords\rec_603030_603058.bin
@@ -7711,7 +8557,11 @@
 		INCBIN	build\jcalg1\gen_603430_603714.bin
 		INCBIN	build\maprecords\rec_603714_60373c.bin
 		INCBIN	build\jcalg1\gen_60373c_603858.bin
-		INCBIN	baserom.gba_0x603858_0x6038bc.extracted
+		INCBIN	baserom.gba_0x603858_0x603880.extracted
+		INCBIN	build\addr\rec_603880_603888.bin
+		INCBIN	baserom.gba_0x603888_0x603898.extracted
+		INCBIN	build\addr\rec_603898_6038a0.bin
+		INCBIN	baserom.gba_0x6038a0_0x6038bc.extracted
 		INCBIN	build\maprecords\rec_6038bc_603928.bin
 		INCBIN	build\jcalg1\gen_603928_603b78.bin
 		INCBIN	build\maprecords\rec_603b78_603b98.bin
@@ -7720,7 +8570,11 @@
 		INCBIN	build\jcalg1\gen_603e58_6046f8.bin
 		INCBIN	build\maprecords\rec_6046f8_604720.bin
 		INCBIN	build\jcalg1\gen_604720_60482c.bin
-		INCBIN	baserom.gba_0x60482c_0x604890.extracted
+		INCBIN	baserom.gba_0x60482c_0x604854.extracted
+		INCBIN	build\addr\rec_604854_60485c.bin
+		INCBIN	baserom.gba_0x60485c_0x60486c.extracted
+		INCBIN	build\addr\rec_60486c_604874.bin
+		INCBIN	baserom.gba_0x604874_0x604890.extracted
 		INCBIN	build\maprecords\rec_604890_6048fc.bin
 		INCBIN	build\jcalg1\gen_6048fc_604b90.bin
 		INCBIN	build\maprecords\rec_604b90_604bb8.bin
@@ -7728,7 +8582,13 @@
 		INCBIN	build\maprecords\rec_604fd0_605020.bin
 		INCBIN	build\jcalg1\gen_605020_605130.bin
 		INCBIN	build\maprecords\rec_605130_605148.bin
-		INCBIN	baserom.gba_0x605148_0x6051c8.extracted
+		INCBIN	baserom.gba_0x605148_0x605170.extracted
+		INCBIN	build\addr\rec_605170_605178.bin
+		INCBIN	baserom.gba_0x605178_0x605188.extracted
+		INCBIN	build\addr\rec_605188_605190.bin
+		INCBIN	baserom.gba_0x605190_0x6051a0.extracted
+		INCBIN	build\addr\rec_6051a0_6051a8.bin
+		INCBIN	baserom.gba_0x6051a8_0x6051c8.extracted
 		INCBIN	build\maprecords\rec_6051c8_605218.bin
 		INCBIN	build\jcalg1\gen_605218_605664.bin
 		INCBIN	build\maprecords\rec_605664_60568c.bin
@@ -7775,7 +8635,13 @@
 		INCBIN	build\jcalg1\gen_60b024_60b268.bin
 		INCBIN	build\maprecords\rec_60b268_60b2b0.bin
 		INCBIN	build\jcalg1\gen_60b2b0_60b934.bin
-		INCBIN	baserom.gba_0x60b934_0x60be14.extracted
+		INCBIN	baserom.gba_0x60b934_0x60bdbc.extracted
+		INCBIN	build\addr\rec_60bdbc_60bdc4.bin
+		INCBIN	baserom.gba_0x60bdc4_0x60bdd4.extracted
+		INCBIN	build\addr\rec_60bdd4_60bddc.bin
+		INCBIN	baserom.gba_0x60bddc_0x60bdec.extracted
+		INCBIN	build\addr\rec_60bdec_60bdf4.bin
+		INCBIN	baserom.gba_0x60bdf4_0x60be14.extracted
 		INCBIN	build\maprecords\rec_60be14_60be64.bin
 		INCBIN	build\jcalg1\gen_60be64_60c8d0.bin
 		INCBIN	build\maprecords\rec_60c8d0_60c918.bin
@@ -7788,7 +8654,11 @@
 		INCBIN	build\jcalg1\gen_60eb2c_60ed60.bin
 		INCBIN	build\maprecords\rec_60ed60_60edd8.bin
 		INCBIN	build\jcalg1\gen_60edd8_60f508.bin
-		INCBIN	baserom.gba_0x60f508_0x60f60c.extracted
+		INCBIN	baserom.gba_0x60f508_0x60f5d0.extracted
+		INCBIN	build\addr\rec_60f5d0_60f5d8.bin
+		INCBIN	baserom.gba_0x60f5d8_0x60f5e8.extracted
+		INCBIN	build\addr\rec_60f5e8_60f5f0.bin
+		INCBIN	baserom.gba_0x60f5f0_0x60f60c.extracted
 		INCBIN	build\maprecords\rec_60f60c_60f678.bin
 		INCBIN	build\jcalg1\gen_60f678_60fb80.bin
 		INCBIN	build\maprecords\rec_60fb80_60fba8.bin
@@ -7798,7 +8668,11 @@
 		INCBIN	build\maprecords\rec_610380_6103a8.bin
 		INCBIN	build\jcalg1\gen_6103a8_61053c.bin
 		INCBIN	build\maprecords\rec_61053c_610554.bin
-		INCBIN	baserom.gba_0x610554_0x6105b8.extracted
+		INCBIN	baserom.gba_0x610554_0x61057c.extracted
+		INCBIN	build\addr\rec_61057c_610584.bin
+		INCBIN	baserom.gba_0x610584_0x610594.extracted
+		INCBIN	build\addr\rec_610594_61059c.bin
+		INCBIN	baserom.gba_0x61059c_0x6105b8.extracted
 		INCBIN	build\maprecords\rec_6105b8_610624.bin
 		INCBIN	build\jcalg1\gen_610624_610b94.bin
 		INCBIN	build\maprecords\rec_610b94_610bc4.bin
@@ -7807,7 +8681,9 @@
 		INCBIN	build\jcalg1\gen_610cc0_6111e0.bin
 		INCBIN	build\maprecords\rec_6111e0_611210.bin
 		INCBIN	build\jcalg1\gen_611210_611330.bin
-		INCBIN	baserom.gba_0x611330_0x611378.extracted
+		INCBIN	baserom.gba_0x611330_0x611358.extracted
+		INCBIN	build\addr\rec_611358_611360.bin
+		INCBIN	baserom.gba_0x611360_0x611378.extracted
 		INCBIN	build\maprecords\rec_611378_6113e4.bin
 		INCBIN	build\jcalg1\gen_6113e4_611680.bin
 		INCBIN	build\maprecords\rec_611680_6116a0.bin
@@ -7817,7 +8693,13 @@
 		INCBIN	build\maprecords\rec_611b50_611b70.bin
 		INCBIN	build\jcalg1\gen_611b70_611c80.bin
 		INCBIN	build\maprecords\rec_611c80_611c98.bin
-		INCBIN	baserom.gba_0x611c98_0x611d18.extracted
+		INCBIN	baserom.gba_0x611c98_0x611cc0.extracted
+		INCBIN	build\addr\rec_611cc0_611cc8.bin
+		INCBIN	baserom.gba_0x611cc8_0x611cd8.extracted
+		INCBIN	build\addr\rec_611cd8_611ce0.bin
+		INCBIN	baserom.gba_0x611ce0_0x611cf0.extracted
+		INCBIN	build\addr\rec_611cf0_611cf8.bin
+		INCBIN	baserom.gba_0x611cf8_0x611d18.extracted
 		INCBIN	build\maprecords\rec_611d18_611d68.bin
 		INCBIN	build\jcalg1\gen_611d68_611da4.bin
 		INCBIN	build\maprecords\rec_611da4_611dc0.bin
@@ -7828,7 +8710,13 @@
 		INCBIN	build\jcalg1\gen_612e4c_61409c.bin
 		INCBIN	build\maprecords\rec_61409c_6140f4.bin
 		INCBIN	build\jcalg1\gen_6140f4_614378.bin
-		INCBIN	baserom.gba_0x614378_0x614888.extracted
+		INCBIN	baserom.gba_0x614378_0x614830.extracted
+		INCBIN	build\addr\rec_614830_614838.bin
+		INCBIN	baserom.gba_0x614838_0x614848.extracted
+		INCBIN	build\addr\rec_614848_614850.bin
+		INCBIN	baserom.gba_0x614850_0x614860.extracted
+		INCBIN	build\addr\rec_614860_614868.bin
+		INCBIN	baserom.gba_0x614868_0x614888.extracted
 		INCBIN	build\maprecords\rec_614888_6148f4.bin
 		INCBIN	build\jcalg1\gen_6148f4_615ca0.bin
 		INCBIN	build\maprecords\rec_615ca0_615d08.bin
@@ -7838,7 +8726,9 @@
 		INCBIN	build\maprecords\rec_617844_6178ac.bin
 		INCBIN	build\jcalg1\gen_6178ac_617b8c.bin
 		INCBIN	build\maprecords\rec_617b8c_617bd4.bin
-		INCBIN	baserom.gba_0x617bd4_0x617c1c.extracted
+		INCBIN	baserom.gba_0x617bd4_0x617bfc.extracted
+		INCBIN	build\addr\rec_617bfc_617c04.bin
+		INCBIN	baserom.gba_0x617c04_0x617c1c.extracted
 		INCBIN	build\maprecords\rec_617c1c_617c88.bin
 		INCBIN	build\jcalg1\gen_617c88_618298.bin
 		INCBIN	build\maprecords\rec_618298_6182c0.bin
@@ -7849,7 +8739,9 @@
 		INCBIN	build\jcalg1\gen_618ab4_618c10.bin
 		INCBIN	build\maprecords\rec_618c10_618c40.bin
 		INCBIN	build\jcalg1\gen_618c40_6191a0.bin
-		INCBIN	baserom.gba_0x6191a0_0x6191e8.extracted
+		INCBIN	baserom.gba_0x6191a0_0x6191c8.extracted
+		INCBIN	build\addr\rec_6191c8_6191d0.bin
+		INCBIN	baserom.gba_0x6191d0_0x6191e8.extracted
 		INCBIN	build\maprecords\rec_6191e8_619238.bin
 		INCBIN	build\jcalg1\gen_619238_619494.bin
 		INCBIN	build\maprecords\rec_619494_6194b4.bin
@@ -7871,7 +8763,8 @@
 		INCBIN	build\jcalg1\gen_61a5e4_61aca4.bin
 		INCBIN	build\maprecords\rec_61aca4_61accc.bin
 		INCBIN	build\jcalg1\gen_61accc_61ae28.bin
-		INCBIN	baserom.gba_0x61ae28_0x61ae44.extracted
+		INCBIN	build\addr\rec_61ae28_61ae30.bin
+		INCBIN	baserom.gba_0x61ae30_0x61ae44.extracted
 		INCBIN	build\maprecords\rec_61ae44_61ae94.bin
 		INCBIN	build\jcalg1\gen_61ae94_61b1f4.bin
 		INCBIN	build\maprecords\rec_61b1f4_61b224.bin
@@ -7884,7 +8777,11 @@
 		INCBIN	build\jcalg1\gen_61c420_61c65c.bin
 		INCBIN	build\maprecords\rec_61c65c_61c674.bin
 		INCBIN	build\jcalg1\gen_61c674_61c79c.bin
-		INCBIN	baserom.gba_0x61c79c_0x61d004.extracted
+		INCBIN	baserom.gba_0x61c79c_0x61cfc8.extracted
+		INCBIN	build\addr\rec_61cfc8_61cfd0.bin
+		INCBIN	baserom.gba_0x61cfd0_0x61cfe0.extracted
+		INCBIN	build\addr\rec_61cfe0_61cfe8.bin
+		INCBIN	baserom.gba_0x61cfe8_0x61d004.extracted
 		INCBIN	build\maprecords\rec_61d004_61d054.bin
 		INCBIN	build\jcalg1\gen_61d054_61d470.bin
 		INCBIN	build\maprecords\rec_61d470_61d490.bin
@@ -7895,7 +8792,10 @@
 		INCBIN	build\jcalg1\gen_61d960_61dca0.bin
 		INCBIN	build\maprecords\rec_61dca0_61dcc0.bin
 		INCBIN	build\jcalg1\gen_61dcc0_61dddc.bin
-		INCBIN	baserom.gba_0x61dddc_0x61de14.extracted
+		INCBIN	build\addr\rec_61dddc_61dde4.bin
+		INCBIN	baserom.gba_0x61dde4_0x61ddf4.extracted
+		INCBIN	build\addr\rec_61ddf4_61ddfc.bin
+		INCBIN	baserom.gba_0x61ddfc_0x61de14.extracted
 		INCBIN	build\maprecords\rec_61de14_61de80.bin
 		INCBIN	build\jcalg1\gen_61de80_61e388.bin
 		INCBIN	build\maprecords\rec_61e388_61e3b8.bin
@@ -7904,7 +8804,10 @@
 		INCBIN	build\jcalg1\gen_61e51c_61ef6c.bin
 		INCBIN	build\maprecords\rec_61ef6c_61efa4.bin
 		INCBIN	build\jcalg1\gen_61efa4_61f0b0.bin
-		INCBIN	baserom.gba_0x61f0b0_0x61f0e8.extracted
+		INCBIN	build\addr\rec_61f0b0_61f0b8.bin
+		INCBIN	baserom.gba_0x61f0b8_0x61f0c8.extracted
+		INCBIN	build\addr\rec_61f0c8_61f0d0.bin
+		INCBIN	baserom.gba_0x61f0d0_0x61f0e8.extracted
 		INCBIN	build\maprecords\rec_61f0e8_61f154.bin
 		INCBIN	build\jcalg1\gen_61f154_61f260.bin
 		INCBIN	build\maprecords\rec_61f260_61f280.bin
@@ -7921,7 +8824,10 @@
 		INCBIN	build\jcalg1\gen_61fca4_6202a8.bin
 		INCBIN	build\maprecords\rec_6202a8_6202d0.bin
 		INCBIN	build\jcalg1\gen_6202d0_6203b4.bin
-		INCBIN	baserom.gba_0x6203b4_0x6203ec.extracted
+		INCBIN	build\addr\rec_6203b4_6203bc.bin
+		INCBIN	baserom.gba_0x6203bc_0x6203cc.extracted
+		INCBIN	build\addr\rec_6203cc_6203d4.bin
+		INCBIN	baserom.gba_0x6203d4_0x6203ec.extracted
 		INCBIN	build\maprecords\rec_6203ec_62043c.bin
 		INCBIN	build\jcalg1\gen_62043c_6204b0.bin
 		INCBIN	build\maprecords\rec_6204b0_6204ec.bin
@@ -7934,7 +8840,9 @@
 		INCBIN	build\jcalg1\gen_6233cc_623638.bin
 		INCBIN	build\maprecords\rec_623638_623680.bin
 		INCBIN	build\jcalg1\gen_623680_623a8c.bin
-		INCBIN	baserom.gba_0x623a8c_0x623b68.extracted
+		INCBIN	baserom.gba_0x623a8c_0x623b48.extracted
+		INCBIN	build\addr\rec_623b48_623b50.bin
+		INCBIN	baserom.gba_0x623b50_0x623b68.extracted
 		INCBIN	build\maprecords\rec_623b68_623bb8.bin
 		INCBIN	build\jcalg1\gen_623bb8_623c2c.bin
 		INCBIN	build\maprecords\rec_623c2c_623c68.bin
@@ -7946,7 +8854,9 @@
 		INCBIN	build\maprecords\rec_626ee8_626f64.bin
 		INCBIN	build\jcalg1\gen_626f64_627208.bin
 		INCBIN	build\maprecords\rec_627208_627250.bin
-		INCBIN	baserom.gba_0x627250_0x6272b4.extracted
+		INCBIN	baserom.gba_0x627250_0x627294.extracted
+		INCBIN	build\addr\rec_627294_62729c.bin
+		INCBIN	baserom.gba_0x62729c_0x6272b4.extracted
 		INCBIN	build\maprecords\rec_6272b4_627304.bin
 		INCBIN	build\jcalg1\gen_627304_628118.bin
 		INCBIN	build\maprecords\rec_628118_628178.bin
@@ -7958,7 +8868,13 @@
 		INCBIN	build\maprecords\rec_62aaac_62ab18.bin
 		INCBIN	build\jcalg1\gen_62ab18_62aef0.bin
 		INCBIN	build\maprecords\rec_62aef0_62af38.bin
-		INCBIN	baserom.gba_0x62af38_0x62aff0.extracted
+		INCBIN	baserom.gba_0x62af38_0x62af98.extracted
+		INCBIN	build\addr\rec_62af98_62afa0.bin
+		INCBIN	baserom.gba_0x62afa0_0x62afb0.extracted
+		INCBIN	build\addr\rec_62afb0_62afb8.bin
+		INCBIN	baserom.gba_0x62afb8_0x62afc8.extracted
+		INCBIN	build\addr\rec_62afc8_62afd0.bin
+		INCBIN	baserom.gba_0x62afd0_0x62aff0.extracted
 		INCBIN	build\maprecords\rec_62aff0_62b040.bin
 		INCBIN	build\jcalg1\gen_62b040_62b308.bin
 		INCBIN	build\maprecords\rec_62b308_62b338.bin
@@ -7969,7 +8885,15 @@
 		INCBIN	build\jcalg1\gen_62ba80_62c4f8.bin
 		INCBIN	build\maprecords\rec_62c4f8_62c528.bin
 		INCBIN	build\jcalg1\gen_62c528_62c6d0.bin
-		INCBIN	baserom.gba_0x62c6d0_0x62d7a0.extracted
+		INCBIN	baserom.gba_0x62c6d0_0x62d72c.extracted
+		INCBIN	build\addr\rec_62d72c_62d734.bin
+		INCBIN	baserom.gba_0x62d734_0x62d744.extracted
+		INCBIN	build\addr\rec_62d744_62d74c.bin
+		INCBIN	baserom.gba_0x62d74c_0x62d75c.extracted
+		INCBIN	build\addr\rec_62d75c_62d764.bin
+		INCBIN	baserom.gba_0x62d764_0x62d774.extracted
+		INCBIN	build\addr\rec_62d774_62d77c.bin
+		INCBIN	baserom.gba_0x62d77c_0x62d7a0.extracted
 		INCBIN	build\maprecords\rec_62d7a0_62d7f0.bin
 		INCBIN	build\jcalg1\gen_62d7f0_62e278.bin
 		INCBIN	build\maprecords\rec_62e278_62e2cc.bin
@@ -7980,7 +8904,15 @@
 		INCBIN	build\jcalg1\gen_62f110_63107c.bin
 		INCBIN	build\maprecords\rec_63107c_6310f4.bin
 		INCBIN	build\jcalg1\gen_6310f4_6314d0.bin
-		INCBIN	baserom.gba_0x6314d0_0x6324dc.extracted
+		INCBIN	baserom.gba_0x6314d0_0x632468.extracted
+		INCBIN	build\addr\rec_632468_632470.bin
+		INCBIN	baserom.gba_0x632470_0x632480.extracted
+		INCBIN	build\addr\rec_632480_632488.bin
+		INCBIN	baserom.gba_0x632488_0x632498.extracted
+		INCBIN	build\addr\rec_632498_6324a0.bin
+		INCBIN	baserom.gba_0x6324a0_0x6324b0.extracted
+		INCBIN	build\addr\rec_6324b0_6324b8.bin
+		INCBIN	baserom.gba_0x6324b8_0x6324dc.extracted
 		INCBIN	build\maprecords\rec_6324dc_63252c.bin
 		INCBIN	build\jcalg1\gen_63252c_632cd8.bin
 		INCBIN	build\maprecords\rec_632cd8_632d14.bin
@@ -8003,7 +8935,15 @@
 		INCBIN	build\jcalg1\gen_635a28_635cd0.bin
 		INCBIN	build\maprecords\rec_635cd0_635ce8.bin
 		INCBIN	build\jcalg1\gen_635ce8_635e94.bin
-		INCBIN	baserom.gba_0x635e94_0x635f78.extracted
+		INCBIN	baserom.gba_0x635e94_0x635f04.extracted
+		INCBIN	build\addr\rec_635f04_635f0c.bin
+		INCBIN	baserom.gba_0x635f0c_0x635f1c.extracted
+		INCBIN	build\addr\rec_635f1c_635f24.bin
+		INCBIN	baserom.gba_0x635f24_0x635f34.extracted
+		INCBIN	build\addr\rec_635f34_635f3c.bin
+		INCBIN	baserom.gba_0x635f3c_0x635f4c.extracted
+		INCBIN	build\addr\rec_635f4c_635f54.bin
+		INCBIN	baserom.gba_0x635f54_0x635f78.extracted
 		INCBIN	build\maprecords\rec_635f78_635fc8.bin
 		INCBIN	build\jcalg1\gen_635fc8_636afc.bin
 		INCBIN	build\maprecords\rec_636afc_636b38.bin
@@ -8014,7 +8954,9 @@
 		INCBIN	build\jcalg1\gen_638068_638268.bin
 		INCBIN	build\maprecords\rec_638268_638298.bin
 		INCBIN	build\jcalg1\gen_638298_6385e8.bin
-		INCBIN	baserom.gba_0x6385e8_0x638648.extracted
+		INCBIN	baserom.gba_0x6385e8_0x638628.extracted
+		INCBIN	build\addr\rec_638628_638630.bin
+		INCBIN	baserom.gba_0x638630_0x638648.extracted
 		INCBIN	build\maprecords\rec_638648_638698.bin
 		INCBIN	build\jcalg1\gen_638698_638de4.bin
 		INCBIN	build\maprecords\rec_638de4_638e14.bin
@@ -8026,7 +8968,10 @@
 		INCBIN	build\maprecords\rec_63a0b4_63a0ec.bin
 		INCBIN	build\jcalg1\gen_63a0ec_63a314.bin
 		INCBIN	build\maprecords\rec_63a314_63a344.bin
-		INCBIN	baserom.gba_0x63a344_0x63a37c.extracted
+		INCBIN	build\addr\rec_63a344_63a34c.bin
+		INCBIN	baserom.gba_0x63a34c_0x63a35c.extracted
+		INCBIN	build\addr\rec_63a35c_63a364.bin
+		INCBIN	baserom.gba_0x63a364_0x63a37c.extracted
 		INCBIN	build\maprecords\rec_63a37c_63a3cc.bin
 		INCBIN	build\jcalg1\gen_63a3cc_63a908.bin
 		INCBIN	build\maprecords\rec_63a908_63a930.bin
@@ -8059,7 +9004,8 @@
 		INCBIN	build\jcalg1\gen_63ce10_63d2fc.bin
 		INCBIN	build\maprecords\rec_63d2fc_63d32c.bin
 		INCBIN	build\jcalg1\gen_63d32c_63d420.bin
-		INCBIN	baserom.gba_0x63d420_0x63d43c.extracted
+		INCBIN	build\addr\rec_63d420_63d428.bin
+		INCBIN	baserom.gba_0x63d428_0x63d43c.extracted
 		INCBIN	build\maprecords\rec_63d43c_63d48c.bin
 		INCBIN	build\jcalg1\gen_63d48c_63dd18.bin
 		INCBIN	build\maprecords\rec_63dd18_63dd38.bin
@@ -8105,7 +9051,8 @@
 		INCBIN	build\jcalg1\gen_64519c_6454b8.bin
 		INCBIN	build\maprecords\rec_6454b8_6454d8.bin
 		INCBIN	build\jcalg1\gen_6454d8_645658.bin
-		INCBIN	baserom.gba_0x645658_0x645674.extracted
+		INCBIN	build\addr\rec_645658_645660.bin
+		INCBIN	baserom.gba_0x645660_0x645674.extracted
 		INCBIN	build\maprecords\rec_645674_6456c4.bin
 		INCBIN	build\jcalg1\gen_6456c4_645a68.bin
 		INCBIN	build\maprecords\rec_645a68_645a88.bin
@@ -8118,7 +9065,10 @@
 		INCBIN	build\jcalg1\gen_646158_6462d0.bin
 		INCBIN	build\maprecords\rec_6462d0_6462e8.bin
 		INCBIN	build\jcalg1\gen_6462e8_646378.bin
-		INCBIN	baserom.gba_0x646378_0x6463b0.extracted
+		INCBIN	build\addr\rec_646378_646380.bin
+		INCBIN	baserom.gba_0x646380_0x646390.extracted
+		INCBIN	build\addr\rec_646390_646398.bin
+		INCBIN	baserom.gba_0x646398_0x6463b0.extracted
 		INCBIN	build\maprecords\rec_6463b0_646400.bin
 		INCBIN	build\jcalg1\gen_646400_646798.bin
 		INCBIN	build\maprecords\rec_646798_6467b8.bin
@@ -8129,7 +9079,10 @@
 		INCBIN	build\jcalg1\gen_646ac0_646dec.bin
 		INCBIN	build\maprecords\rec_646dec_646e0c.bin
 		INCBIN	build\jcalg1\gen_646e0c_646f88.bin
-		INCBIN	baserom.gba_0x646f88_0x646fc0.extracted
+		INCBIN	build\addr\rec_646f88_646f90.bin
+		INCBIN	baserom.gba_0x646f90_0x646fa0.extracted
+		INCBIN	build\addr\rec_646fa0_646fa8.bin
+		INCBIN	baserom.gba_0x646fa8_0x646fc0.extracted
 		INCBIN	build\maprecords\rec_646fc0_647010.bin
 		INCBIN	build\jcalg1\gen_647010_6473e0.bin
 		INCBIN	build\maprecords\rec_6473e0_647400.bin
@@ -8140,7 +9093,9 @@
 		INCBIN	build\jcalg1\gen_6476b4_647a50.bin
 		INCBIN	build\maprecords\rec_647a50_647a70.bin
 		INCBIN	build\jcalg1\gen_647a70_647ba8.bin
-		INCBIN	baserom.gba_0x647ba8_0x647de0.extracted
+		INCBIN	baserom.gba_0x647ba8_0x647dc0.extracted
+		INCBIN	build\addr\rec_647dc0_647dc8.bin
+		INCBIN	baserom.gba_0x647dc8_0x647de0.extracted
 		INCBIN	build\maprecords\rec_647de0_647e30.bin
 		INCBIN	build\jcalg1\gen_647e30_6481e8.bin
 		INCBIN	build\maprecords\rec_6481e8_648204.bin
@@ -8151,7 +9106,8 @@
 		INCBIN	build\jcalg1\gen_6484f8_6487a0.bin
 		INCBIN	build\maprecords\rec_6487a0_6487bc.bin
 		INCBIN	build\jcalg1\gen_6487bc_6488f4.bin
-		INCBIN	baserom.gba_0x6488f4_0x648910.extracted
+		INCBIN	build\addr\rec_6488f4_6488fc.bin
+		INCBIN	baserom.gba_0x6488fc_0x648910.extracted
 		INCBIN	build\maprecords\rec_648910_648960.bin
 		INCBIN	build\jcalg1\gen_648960_648d34.bin
 		INCBIN	build\maprecords\rec_648d34_648d50.bin
@@ -8162,7 +9118,8 @@
 		INCBIN	build\jcalg1\gen_649040_64933c.bin
 		INCBIN	build\maprecords\rec_64933c_649358.bin
 		INCBIN	build\jcalg1\gen_649358_649488.bin
-		INCBIN	baserom.gba_0x649488_0x6494a4.extracted
+		INCBIN	build\addr\rec_649488_649490.bin
+		INCBIN	baserom.gba_0x649490_0x6494a4.extracted
 		INCBIN	build\maprecords\rec_6494a4_6494f4.bin
 		INCBIN	build\jcalg1\gen_6494f4_6498b4.bin
 		INCBIN	build\maprecords\rec_6498b4_6498d0.bin
@@ -8186,7 +9143,8 @@
 		INCBIN	build\jcalg1\gen_64a800_64aae4.bin
 		INCBIN	build\maprecords\rec_64aae4_64ab00.bin
 		INCBIN	build\jcalg1\gen_64ab00_64ac30.bin
-		INCBIN	baserom.gba_0x64ac30_0x64ac4c.extracted
+		INCBIN	build\addr\rec_64ac30_64ac38.bin
+		INCBIN	baserom.gba_0x64ac38_0x64ac4c.extracted
 		INCBIN	build\maprecords\rec_64ac4c_64ac9c.bin
 		INCBIN	build\jcalg1\gen_64ac9c_64b04c.bin
 		INCBIN	build\maprecords\rec_64b04c_64b068.bin
@@ -8199,7 +9157,8 @@
 		INCBIN	build\jcalg1\gen_64b6a8_64b7d8.bin
 		INCBIN	build\maprecords\rec_64b7d8_64b808.bin
 		INCBIN	build\jcalg1\gen_64b808_64b908.bin
-		INCBIN	baserom.gba_0x64b908_0x64b924.extracted
+		INCBIN	build\addr\rec_64b908_64b910.bin
+		INCBIN	baserom.gba_0x64b910_0x64b924.extracted
 		INCBIN	build\maprecords\rec_64b924_64b974.bin
 		INCBIN	build\jcalg1\gen_64b974_64bd38.bin
 		INCBIN	build\maprecords\rec_64bd38_64bd54.bin
@@ -8212,7 +9171,8 @@
 		INCBIN	build\jcalg1\gen_64c3a4_64c4e0.bin
 		INCBIN	build\maprecords\rec_64c4e0_64c510.bin
 		INCBIN	build\jcalg1\gen_64c510_64c618.bin
-		INCBIN	baserom.gba_0x64c618_0x64c634.extracted
+		INCBIN	build\addr\rec_64c618_64c620.bin
+		INCBIN	baserom.gba_0x64c620_0x64c634.extracted
 		INCBIN	build\maprecords\rec_64c634_64c684.bin
 		INCBIN	build\jcalg1\gen_64c684_64c6b8.bin
 		INCBIN	build\maprecords\rec_64c6b8_64c6d4.bin
@@ -8234,7 +9194,9 @@
 		INCBIN	build\jcalg1\gen_64da2c_64de08.bin
 		INCBIN	build\maprecords\rec_64de08_64de28.bin
 		INCBIN	build\jcalg1\gen_64de28_64df18.bin
-		INCBIN	baserom.gba_0x64df18_0x64df78.extracted
+		INCBIN	baserom.gba_0x64df18_0x64df58.extracted
+		INCBIN	build\addr\rec_64df58_64df60.bin
+		INCBIN	baserom.gba_0x64df60_0x64df78.extracted
 		INCBIN	build\maprecords\rec_64df78_64dfe4.bin
 		INCBIN	build\jcalg1\gen_64dfe4_64e010.bin
 		INCBIN	build\maprecords\rec_64e010_64e02c.bin
@@ -8291,7 +9253,11 @@
 		INCBIN	build\jcalg1\gen_652a8c_652c88.bin
 		INCBIN	build\maprecords\rec_652c88_652d48.bin
 		INCBIN	build\jcalg1\gen_652d48_652f90.bin
-		INCBIN	baserom.gba_0x652f90_0x652ff4.extracted
+		INCBIN	baserom.gba_0x652f90_0x652fb8.extracted
+		INCBIN	build\addr\rec_652fb8_652fc0.bin
+		INCBIN	baserom.gba_0x652fc0_0x652fd0.extracted
+		INCBIN	build\addr\rec_652fd0_652fd8.bin
+		INCBIN	baserom.gba_0x652fd8_0x652ff4.extracted
 		INCBIN	build\maprecords\rec_652ff4_653060.bin
 		INCBIN	build\jcalg1\gen_653060_653bd0.bin
 		INCBIN	build\maprecords\rec_653bd0_653c24.bin
@@ -8302,7 +9268,9 @@
 		INCBIN	build\jcalg1\gen_656244_656414.bin
 		INCBIN	build\maprecords\rec_656414_6564bc.bin
 		INCBIN	build\jcalg1\gen_6564bc_6567b4.bin
-		INCBIN	baserom.gba_0x6567b4_0x656e60.extracted
+		INCBIN	baserom.gba_0x6567b4_0x656e40.extracted
+		INCBIN	build\addr\rec_656e40_656e48.bin
+		INCBIN	baserom.gba_0x656e48_0x656e60.extracted
 		INCBIN	build\maprecords\rec_656e60_656eb0.bin
 		INCBIN	build\jcalg1\gen_656eb0_656f90.bin
 		INCBIN	build\maprecords\rec_656f90_656fd8.bin
@@ -8315,7 +9283,19 @@
 		INCBIN	build\jcalg1\gen_659810_6599c4.bin
 		INCBIN	build\maprecords\rec_6599c4_659a84.bin
 		INCBIN	build\jcalg1\gen_659a84_659e8c.bin
-		INCBIN	baserom.gba_0x659e8c_0x659f60.extracted
+		INCBIN	baserom.gba_0x659e8c_0x659eb4.extracted
+		INCBIN	build\addr\rec_659eb4_659ebc.bin
+		INCBIN	baserom.gba_0x659ebc_0x659ecc.extracted
+		INCBIN	build\addr\rec_659ecc_659ed4.bin
+		INCBIN	baserom.gba_0x659ed4_0x659ee4.extracted
+		INCBIN	build\addr\rec_659ee4_659eec.bin
+		INCBIN	baserom.gba_0x659eec_0x659efc.extracted
+		INCBIN	build\addr\rec_659efc_659f04.bin
+		INCBIN	baserom.gba_0x659f04_0x659f14.extracted
+		INCBIN	build\addr\rec_659f14_659f1c.bin
+		INCBIN	baserom.gba_0x659f1c_0x659f2c.extracted
+		INCBIN	build\addr\rec_659f2c_659f34.bin
+		INCBIN	baserom.gba_0x659f34_0x659f60.extracted
 		INCBIN	build\maprecords\rec_659f60_659fcc.bin
 		INCBIN	build\jcalg1\gen_659fcc_65a894.bin
 		INCBIN	build\maprecords\rec_65a894_65a8e8.bin
@@ -8326,7 +9306,13 @@
 		INCBIN	build\jcalg1\gen_65ca08_65cbc0.bin
 		INCBIN	build\maprecords\rec_65cbc0_65cc98.bin
 		INCBIN	build\jcalg1\gen_65cc98_65d638.bin
-		INCBIN	baserom.gba_0x65d638_0x65d6b8.extracted
+		INCBIN	baserom.gba_0x65d638_0x65d660.extracted
+		INCBIN	build\addr\rec_65d660_65d668.bin
+		INCBIN	baserom.gba_0x65d668_0x65d678.extracted
+		INCBIN	build\addr\rec_65d678_65d680.bin
+		INCBIN	baserom.gba_0x65d680_0x65d690.extracted
+		INCBIN	build\addr\rec_65d690_65d698.bin
+		INCBIN	baserom.gba_0x65d698_0x65d6b8.extracted
 		INCBIN	build\maprecords\rec_65d6b8_65d724.bin
 		INCBIN	build\jcalg1\gen_65d724_65e048.bin
 		INCBIN	build\maprecords\rec_65e048_65e09c.bin
@@ -8337,7 +9323,13 @@
 		INCBIN	build\jcalg1\gen_660398_660524.bin
 		INCBIN	build\maprecords\rec_660524_6605b4.bin
 		INCBIN	build\jcalg1\gen_6605b4_6607c0.bin
-		INCBIN	baserom.gba_0x6607c0_0x661478.extracted
+		INCBIN	baserom.gba_0x6607c0_0x661420.extracted
+		INCBIN	build\addr\rec_661420_661428.bin
+		INCBIN	baserom.gba_0x661428_0x661438.extracted
+		INCBIN	build\addr\rec_661438_661440.bin
+		INCBIN	baserom.gba_0x661440_0x661450.extracted
+		INCBIN	build\addr\rec_661450_661458.bin
+		INCBIN	baserom.gba_0x661458_0x661478.extracted
 		INCBIN	build\maprecords\rec_661478_6614e4.bin
 		INCBIN	build\jcalg1\gen_6614e4_661f78.bin
 		INCBIN	build\maprecords\rec_661f78_661fcc.bin
@@ -8348,7 +9340,17 @@
 		INCBIN	build\jcalg1\gen_6648fc_664aa0.bin
 		INCBIN	build\maprecords\rec_664aa0_664b30.bin
 		INCBIN	build\jcalg1\gen_664b30_664dd8.bin
-		INCBIN	baserom.gba_0x664dd8_0x664ea8.extracted
+		INCBIN	baserom.gba_0x664dd8_0x664e18.extracted
+		INCBIN	build\addr\rec_664e18_664e20.bin
+		INCBIN	baserom.gba_0x664e20_0x664e30.extracted
+		INCBIN	build\addr\rec_664e30_664e38.bin
+		INCBIN	baserom.gba_0x664e38_0x664e48.extracted
+		INCBIN	build\addr\rec_664e48_664e50.bin
+		INCBIN	baserom.gba_0x664e50_0x664e60.extracted
+		INCBIN	build\addr\rec_664e60_664e68.bin
+		INCBIN	baserom.gba_0x664e68_0x664e78.extracted
+		INCBIN	build\addr\rec_664e78_664e80.bin
+		INCBIN	baserom.gba_0x664e80_0x664ea8.extracted
 		INCBIN	build\maprecords\rec_664ea8_664ef8.bin
 		INCBIN	build\jcalg1\gen_664ef8_6652d0.bin
 		INCBIN	build\maprecords\rec_6652d0_6652f8.bin
@@ -8361,7 +9363,8 @@
 		INCBIN	build\jcalg1\gen_665b00_665ca0.bin
 		INCBIN	build\maprecords\rec_665ca0_665cb8.bin
 		INCBIN	build\jcalg1\gen_665cb8_665d44.bin
-		INCBIN	baserom.gba_0x665d44_0x665d60.extracted
+		INCBIN	build\addr\rec_665d44_665d4c.bin
+		INCBIN	baserom.gba_0x665d4c_0x665d60.extracted
 		INCBIN	build\maprecords\rec_665d60_665db0.bin
 		INCBIN	build\jcalg1\gen_665db0_666014.bin
 		INCBIN	build\maprecords\rec_666014_66603c.bin
@@ -8372,7 +9375,8 @@
 		INCBIN	build\jcalg1\gen_666268_666540.bin
 		INCBIN	build\maprecords\rec_666540_666568.bin
 		INCBIN	build\jcalg1\gen_666568_6666bc.bin
-		INCBIN	baserom.gba_0x6666bc_0x6666d8.extracted
+		INCBIN	build\addr\rec_6666bc_6666c4.bin
+		INCBIN	baserom.gba_0x6666c4_0x6666d8.extracted
 		INCBIN	build\maprecords\rec_6666d8_666728.bin
 		INCBIN	build\jcalg1\gen_666728_666a84.bin
 		INCBIN	build\maprecords\rec_666a84_666aac.bin
@@ -8384,7 +9388,8 @@
 		INCBIN	build\maprecords\rec_6671b8_6671e0.bin
 		INCBIN	build\jcalg1\gen_6671e0_667364.bin
 		INCBIN	build\maprecords\rec_667364_66737c.bin
-		INCBIN	baserom.gba_0x66737c_0x667398.extracted
+		INCBIN	build\addr\rec_66737c_667384.bin
+		INCBIN	baserom.gba_0x667384_0x667398.extracted
 		INCBIN	build\maprecords\rec_667398_6673e8.bin
 		INCBIN	build\jcalg1\gen_6673e8_6679fc.bin
 		INCBIN	build\maprecords\rec_6679fc_667a38.bin
@@ -8397,7 +9402,13 @@
 		INCBIN	build\jcalg1\gen_669378_669640.bin
 		INCBIN	build\maprecords\rec_669640_669748.bin
 		INCBIN	build\jcalg1\gen_669748_669b78.bin
-		INCBIN	baserom.gba_0x669b78_0x669c28.extracted
+		INCBIN	baserom.gba_0x669b78_0x669bd0.extracted
+		INCBIN	build\addr\rec_669bd0_669bd8.bin
+		INCBIN	baserom.gba_0x669bd8_0x669be8.extracted
+		INCBIN	build\addr\rec_669be8_669bf0.bin
+		INCBIN	baserom.gba_0x669bf0_0x669c00.extracted
+		INCBIN	build\addr\rec_669c00_669c08.bin
+		INCBIN	baserom.gba_0x669c08_0x669c28.extracted
 		INCBIN	build\maprecords\rec_669c28_669c78.bin
 		INCBIN	build\jcalg1\gen_669c78_66a140.bin
 		INCBIN	build\maprecords\rec_66a140_66a160.bin
@@ -8408,7 +9419,10 @@
 		INCBIN	build\jcalg1\gen_66a6c0_66aa04.bin
 		INCBIN	build\maprecords\rec_66aa04_66aa24.bin
 		INCBIN	build\jcalg1\gen_66aa24_66aaf0.bin
-		INCBIN	baserom.gba_0x66aaf0_0x66ab28.extracted
+		INCBIN	build\addr\rec_66aaf0_66aaf8.bin
+		INCBIN	baserom.gba_0x66aaf8_0x66ab08.extracted
+		INCBIN	build\addr\rec_66ab08_66ab10.bin
+		INCBIN	baserom.gba_0x66ab10_0x66ab28.extracted
 		INCBIN	build\maprecords\rec_66ab28_66ab94.bin
 		INCBIN	build\jcalg1\gen_66ab94_66abb0.bin
 		INCBIN	build\maprecords\rec_66abb0_66abd0.bin
@@ -8417,7 +9431,8 @@
 		INCBIN	build\jcalg1\gen_66af5c_66b624.bin
 		INCBIN	build\maprecords\rec_66b624_66b64c.bin
 		INCBIN	build\jcalg1\gen_66b64c_66b80c.bin
-		INCBIN	baserom.gba_0x66b80c_0x66b828.extracted
+		INCBIN	build\addr\rec_66b80c_66b814.bin
+		INCBIN	baserom.gba_0x66b814_0x66b828.extracted
 		INCBIN	build\maprecords\rec_66b828_66b878.bin
 		INCBIN	build\jcalg1\gen_66b878_66bbc0.bin
 		INCBIN	build\maprecords\rec_66bbc0_66bbe0.bin
@@ -8429,7 +9444,8 @@
 		INCBIN	build\maprecords\rec_66c3e4_66c404.bin
 		INCBIN	build\jcalg1\gen_66c404_66c4e4.bin
 		INCBIN	build\maprecords\rec_66c4e4_66c4fc.bin
-		INCBIN	baserom.gba_0x66c4fc_0x66c518.extracted
+		INCBIN	build\addr\rec_66c4fc_66c504.bin
+		INCBIN	baserom.gba_0x66c504_0x66c518.extracted
 		INCBIN	build\maprecords\rec_66c518_66c568.bin
 		INCBIN	build\jcalg1\gen_66c568_66cae4.bin
 		INCBIN	build\maprecords\rec_66cae4_66cb0c.bin
@@ -8442,7 +9458,16 @@
 		INCBIN	build\jcalg1\gen_66dab8_66dcd0.bin
 		INCBIN	build\maprecords\rec_66dcd0_66dce8.bin
 		INCBIN	build\jcalg1\gen_66dce8_66ddf8.bin
-		INCBIN	baserom.gba_0x66ddf8_0x66de84.extracted
+		INCBIN	build\addr\rec_66ddf8_66de00.bin
+		INCBIN	baserom.gba_0x66de00_0x66de10.extracted
+		INCBIN	build\addr\rec_66de10_66de18.bin
+		INCBIN	baserom.gba_0x66de18_0x66de28.extracted
+		INCBIN	build\addr\rec_66de28_66de30.bin
+		INCBIN	baserom.gba_0x66de30_0x66de40.extracted
+		INCBIN	build\addr\rec_66de40_66de48.bin
+		INCBIN	baserom.gba_0x66de48_0x66de58.extracted
+		INCBIN	build\addr\rec_66de58_66de60.bin
+		INCBIN	baserom.gba_0x66de60_0x66de84.extracted
 		INCBIN	build\maprecords\rec_66de84_66def0.bin
 		INCBIN	build\jcalg1\gen_66def0_66e1bc.bin
 		INCBIN	build\maprecords\rec_66e1bc_66e1f8.bin
@@ -8468,7 +9493,8 @@
 		INCBIN	build\maprecords\rec_670ad8_670af8.bin
 		INCBIN	build\jcalg1\gen_670af8_670bdc.bin
 		INCBIN	build\maprecords\rec_670bdc_670bf4.bin
-		INCBIN	baserom.gba_0x670bf4_0x670c10.extracted
+		INCBIN	build\addr\rec_670bf4_670bfc.bin
+		INCBIN	baserom.gba_0x670bfc_0x670c10.extracted
 		INCBIN	build\maprecords\rec_670c10_670c7c.bin
 		INCBIN	build\jcalg1\gen_670c7c_671180.bin
 		INCBIN	build\maprecords\rec_671180_6711a4.bin
@@ -8478,7 +9504,10 @@
 		INCBIN	build\maprecords\rec_671cf4_671d1c.bin
 		INCBIN	build\jcalg1\gen_671d1c_671f3c.bin
 		INCBIN	build\maprecords\rec_671f3c_671f6c.bin
-		INCBIN	baserom.gba_0x671f6c_0x671fa4.extracted
+		INCBIN	build\addr\rec_671f6c_671f74.bin
+		INCBIN	baserom.gba_0x671f74_0x671f84.extracted
+		INCBIN	build\addr\rec_671f84_671f8c.bin
+		INCBIN	baserom.gba_0x671f8c_0x671fa4.extracted
 		INCBIN	build\maprecords\rec_671fa4_672010.bin
 		INCBIN	build\jcalg1\gen_672010_67259c.bin
 		INCBIN	build\maprecords\rec_67259c_6725c4.bin
@@ -8488,7 +9517,16 @@
 		INCBIN	build\maprecords\rec_673490_6734b8.bin
 		INCBIN	build\jcalg1\gen_6734b8_673760.bin
 		INCBIN	build\maprecords\rec_673760_673778.bin
-		INCBIN	baserom.gba_0x673778_0x673804.extracted
+		INCBIN	build\addr\rec_673778_673780.bin
+		INCBIN	baserom.gba_0x673780_0x673790.extracted
+		INCBIN	build\addr\rec_673790_673798.bin
+		INCBIN	baserom.gba_0x673798_0x6737a8.extracted
+		INCBIN	build\addr\rec_6737a8_6737b0.bin
+		INCBIN	baserom.gba_0x6737b0_0x6737c0.extracted
+		INCBIN	build\addr\rec_6737c0_6737c8.bin
+		INCBIN	baserom.gba_0x6737c8_0x6737d8.extracted
+		INCBIN	build\addr\rec_6737d8_6737e0.bin
+		INCBIN	baserom.gba_0x6737e0_0x673804.extracted
 		INCBIN	build\maprecords\rec_673804_673854.bin
 		INCBIN	build\jcalg1\gen_673854_673df0.bin
 		INCBIN	build\maprecords\rec_673df0_673e18.bin
@@ -8547,7 +9585,11 @@
 		INCBIN	build\jcalg1\gen_6775cc_677714.bin
 		INCBIN	build\maprecords\rec_677714_677734.bin
 		INCBIN	build\jcalg1\gen_677734_677828.bin
-		INCBIN	baserom.gba_0x677828_0x6778a4.extracted
+		INCBIN	baserom.gba_0x677828_0x677868.extracted
+		INCBIN	build\addr\rec_677868_677870.bin
+		INCBIN	baserom.gba_0x677870_0x677880.extracted
+		INCBIN	build\addr\rec_677880_677888.bin
+		INCBIN	baserom.gba_0x677888_0x6778a4.extracted
 		INCBIN	build\maprecords\rec_6778a4_6778f4.bin
 		INCBIN	build\jcalg1\gen_6778f4_67794c.bin
 		INCBIN	build\maprecords\rec_67794c_677968.bin
@@ -8558,7 +9600,9 @@
 		INCBIN	build\jcalg1\gen_677b0c_677c1c.bin
 		INCBIN	build\maprecords\rec_677c1c_677c3c.bin
 		INCBIN	build\jcalg1\gen_677c3c_677cec.bin
-		INCBIN	baserom.gba_0x677cec_0x677e3c.extracted
+		INCBIN	baserom.gba_0x677cec_0x677e1c.extracted
+		INCBIN	build\addr\rec_677e1c_677e24.bin
+		INCBIN	baserom.gba_0x677e24_0x677e3c.extracted
 		INCBIN	build\maprecords\rec_677e3c_677e8c.bin
 		INCBIN	build\jcalg1\gen_677e8c_677ee4.bin
 		INCBIN	build\maprecords\rec_677ee4_677f00.bin
@@ -8569,7 +9613,9 @@
 		INCBIN	build\jcalg1\gen_6780a0_6781b8.bin
 		INCBIN	build\maprecords\rec_6781b8_6781d8.bin
 		INCBIN	build\jcalg1\gen_6781d8_678284.bin
-		INCBIN	baserom.gba_0x678284_0x6782fc.extracted
+		INCBIN	baserom.gba_0x678284_0x6782dc.extracted
+		INCBIN	build\addr\rec_6782dc_6782e4.bin
+		INCBIN	baserom.gba_0x6782e4_0x6782fc.extracted
 		INCBIN	build\maprecords\rec_6782fc_67834c.bin
 		INCBIN	build\jcalg1\gen_67834c_678560.bin
 		INCBIN	build\maprecords\rec_678560_67857c.bin
@@ -8580,7 +9626,11 @@
 		INCBIN	build\jcalg1\gen_6786c0_678820.bin
 		INCBIN	build\maprecords\rec_678820_678840.bin
 		INCBIN	build\jcalg1\gen_678840_678938.bin
-		INCBIN	baserom.gba_0x678938_0x6789b4.extracted
+		INCBIN	baserom.gba_0x678938_0x678978.extracted
+		INCBIN	build\addr\rec_678978_678980.bin
+		INCBIN	baserom.gba_0x678980_0x678990.extracted
+		INCBIN	build\addr\rec_678990_678998.bin
+		INCBIN	baserom.gba_0x678998_0x6789b4.extracted
 		INCBIN	build\maprecords\rec_6789b4_678a04.bin
 		INCBIN	build\jcalg1\gen_678a04_678a5c.bin
 		INCBIN	build\maprecords\rec_678a5c_678a78.bin
@@ -8591,7 +9641,9 @@
 		INCBIN	build\jcalg1\gen_678c00_678cf0.bin
 		INCBIN	build\maprecords\rec_678cf0_678d10.bin
 		INCBIN	build\jcalg1\gen_678d10_678dd0.bin
-		INCBIN	baserom.gba_0x678dd0_0x678e30.extracted
+		INCBIN	baserom.gba_0x678dd0_0x678e10.extracted
+		INCBIN	build\addr\rec_678e10_678e18.bin
+		INCBIN	baserom.gba_0x678e18_0x678e30.extracted
 		INCBIN	build\maprecords\rec_678e30_678e80.bin
 		INCBIN	build\jcalg1\gen_678e80_6791ac.bin
 		INCBIN	build\maprecords\rec_6791ac_6791d4.bin
@@ -8643,7 +9695,11 @@
 		INCBIN	build\jcalg1\gen_67af20_67b124.bin
 		INCBIN	build\maprecords\rec_67b124_67b14c.bin
 		INCBIN	build\jcalg1\gen_67b14c_67b240.bin
-		INCBIN	baserom.gba_0x67b240_0x67b2cc.extracted
+		INCBIN	baserom.gba_0x67b240_0x67b290.extracted
+		INCBIN	build\addr\rec_67b290_67b298.bin
+		INCBIN	baserom.gba_0x67b298_0x67b2a8.extracted
+		INCBIN	build\addr\rec_67b2a8_67b2b0.bin
+		INCBIN	baserom.gba_0x67b2b0_0x67b2cc.extracted
 		INCBIN	build\maprecords\rec_67b2cc_67b31c.bin
 		INCBIN	build\jcalg1\gen_67b31c_67b488.bin
 		INCBIN	build\maprecords\rec_67b488_67b4b0.bin
@@ -8663,7 +9719,15 @@
 		INCBIN	build\jcalg1\gen_67c850_67c988.bin
 		INCBIN	build\maprecords\rec_67c988_67ca48.bin
 		INCBIN	build\jcalg1\gen_67ca48_67caf4.bin
-		INCBIN	baserom.gba_0x67caf4_0x67cb90.extracted
+		INCBIN	baserom.gba_0x67caf4_0x67cb1c.extracted
+		INCBIN	build\addr\rec_67cb1c_67cb24.bin
+		INCBIN	baserom.gba_0x67cb24_0x67cb34.extracted
+		INCBIN	build\addr\rec_67cb34_67cb3c.bin
+		INCBIN	baserom.gba_0x67cb3c_0x67cb4c.extracted
+		INCBIN	build\addr\rec_67cb4c_67cb54.bin
+		INCBIN	baserom.gba_0x67cb54_0x67cb64.extracted
+		INCBIN	build\addr\rec_67cb64_67cb6c.bin
+		INCBIN	baserom.gba_0x67cb6c_0x67cb90.extracted
 		INCBIN	build\maprecords\rec_67cb90_67cbe0.bin
 		INCBIN	build\jcalg1\gen_67cbe0_67d034.bin
 		INCBIN	build\maprecords\rec_67d034_67d05c.bin
@@ -8674,21 +9738,41 @@
 		INCBIN	build\jcalg1\gen_67d6a8_67db98.bin
 		INCBIN	build\maprecords\rec_67db98_67dbc0.bin
 		INCBIN	build\jcalg1\gen_67dbc0_67dcd4.bin
-		INCBIN	baserom.gba_0x67dcd4_0x67e328.extracted
+		INCBIN	baserom.gba_0x67dcd4_0x67e2d0.extracted
+		INCBIN	build\addr\rec_67e2d0_67e2d8.bin
+		INCBIN	baserom.gba_0x67e2d8_0x67e2e8.extracted
+		INCBIN	build\addr\rec_67e2e8_67e2f0.bin
+		INCBIN	baserom.gba_0x67e2f0_0x67e300.extracted
+		INCBIN	build\addr\rec_67e300_67e308.bin
+		INCBIN	baserom.gba_0x67e308_0x67e328.extracted
 		INCBIN	build\maprecords\rec_67e328_67e3c8.bin
 		INCBIN	build\jcalg1\gen_67e3c8_67e6a4.bin
 		INCBIN	build\maprecords\rec_67e6a4_67e6cc.bin
 		INCBIN	build\jcalg1\gen_67e6cc_67ebbc.bin
 		INCBIN	build\maprecords\rec_67ebbc_67ebe4.bin
 		INCBIN	build\jcalg1\gen_67ebe4_67ecf0.bin
-		INCBIN	baserom.gba_0x67ecf0_0x67ee0c.extracted
+		INCBIN	baserom.gba_0x67ecf0_0x67ed98.extracted
+		INCBIN	build\addr\rec_67ed98_67eda0.bin
+		INCBIN	baserom.gba_0x67eda0_0x67edb0.extracted
+		INCBIN	build\addr\rec_67edb0_67edb8.bin
+		INCBIN	baserom.gba_0x67edb8_0x67edc8.extracted
+		INCBIN	build\addr\rec_67edc8_67edd0.bin
+		INCBIN	baserom.gba_0x67edd0_0x67ede0.extracted
+		INCBIN	build\addr\rec_67ede0_67ede8.bin
+		INCBIN	baserom.gba_0x67ede8_0x67ee0c.extracted
 		INCBIN	build\maprecords\rec_67ee0c_67eeac.bin
 		INCBIN	build\jcalg1\gen_67eeac_67f1b4.bin
 		INCBIN	build\maprecords\rec_67f1b4_67f1dc.bin
 		INCBIN	build\jcalg1\gen_67f1dc_67f6cc.bin
 		INCBIN	build\maprecords\rec_67f6cc_67f6f4.bin
 		INCBIN	build\jcalg1\gen_67f6f4_67f7a4.bin
-		INCBIN	baserom.gba_0x67f7a4_0x67f8a4.extracted
+		INCBIN	baserom.gba_0x67f7a4_0x67f84c.extracted
+		INCBIN	build\addr\rec_67f84c_67f854.bin
+		INCBIN	baserom.gba_0x67f854_0x67f864.extracted
+		INCBIN	build\addr\rec_67f864_67f86c.bin
+		INCBIN	baserom.gba_0x67f86c_0x67f87c.extracted
+		INCBIN	build\addr\rec_67f87c_67f884.bin
+		INCBIN	baserom.gba_0x67f884_0x67f8a4.extracted
 		INCBIN	build\maprecords\rec_67f8a4_67f8f4.bin
 		INCBIN	build\jcalg1\gen_67f8f4_67fcbc.bin
 		INCBIN	build\maprecords\rec_67fcbc_67fce4.bin
@@ -8710,7 +9794,9 @@
 		INCBIN	build\jcalg1\gen_68148c_68163c.bin
 		INCBIN	build\maprecords\rec_68163c_68166c.bin
 		INCBIN	build\jcalg1\gen_68166c_68188c.bin
-		INCBIN	baserom.gba_0x68188c_0x681904.extracted
+		INCBIN	baserom.gba_0x68188c_0x6818e4.extracted
+		INCBIN	build\addr\rec_6818e4_6818ec.bin
+		INCBIN	baserom.gba_0x6818ec_0x681904.extracted
 		INCBIN	build\maprecords\rec_681904_681954.bin
 		INCBIN	build\jcalg1\gen_681954_681e98.bin
 		INCBIN	build\maprecords\rec_681e98_681ec8.bin
@@ -8723,7 +9809,15 @@
 		INCBIN	build\jcalg1\gen_682dcc_682f64.bin
 		INCBIN	build\maprecords\rec_682f64_682fdc.bin
 		INCBIN	build\jcalg1\gen_682fdc_683350.bin
-		INCBIN	baserom.gba_0x683350_0x68341c.extracted
+		INCBIN	baserom.gba_0x683350_0x6833a8.extracted
+		INCBIN	build\addr\rec_6833a8_6833b0.bin
+		INCBIN	baserom.gba_0x6833b0_0x6833c0.extracted
+		INCBIN	build\addr\rec_6833c0_6833c8.bin
+		INCBIN	baserom.gba_0x6833c8_0x6833d8.extracted
+		INCBIN	build\addr\rec_6833d8_6833e0.bin
+		INCBIN	baserom.gba_0x6833e0_0x6833f0.extracted
+		INCBIN	build\addr\rec_6833f0_6833f8.bin
+		INCBIN	baserom.gba_0x6833f8_0x68341c.extracted
 		INCBIN	build\maprecords\rec_68341c_68346c.bin
 		INCBIN	build\jcalg1\gen_68346c_6837c0.bin
 		INCBIN	build\maprecords\rec_6837c0_6837e8.bin
@@ -8736,7 +9830,9 @@
 		INCBIN	build\jcalg1\gen_683d0c_683e54.bin
 		INCBIN	build\maprecords\rec_683e54_683e9c.bin
 		INCBIN	build\jcalg1\gen_683e9c_684250.bin
-		INCBIN	baserom.gba_0x684250_0x684434.extracted
+		INCBIN	baserom.gba_0x684250_0x684414.extracted
+		INCBIN	build\addr\rec_684414_68441c.bin
+		INCBIN	baserom.gba_0x68441c_0x684434.extracted
 		INCBIN	build\maprecords\rec_684434_684484.bin
 		INCBIN	build\jcalg1\gen_684484_684814.bin
 		INCBIN	build\maprecords\rec_684814_68483c.bin
@@ -8749,7 +9845,15 @@
 		INCBIN	build\jcalg1\gen_685260_685400.bin
 		INCBIN	build\maprecords\rec_685400_685430.bin
 		INCBIN	build\jcalg1\gen_685430_685578.bin
-		INCBIN	baserom.gba_0x685578_0x685644.extracted
+		INCBIN	baserom.gba_0x685578_0x6855d0.extracted
+		INCBIN	build\addr\rec_6855d0_6855d8.bin
+		INCBIN	baserom.gba_0x6855d8_0x6855e8.extracted
+		INCBIN	build\addr\rec_6855e8_6855f0.bin
+		INCBIN	baserom.gba_0x6855f0_0x685600.extracted
+		INCBIN	build\addr\rec_685600_685608.bin
+		INCBIN	baserom.gba_0x685608_0x685618.extracted
+		INCBIN	build\addr\rec_685618_685620.bin
+		INCBIN	baserom.gba_0x685620_0x685644.extracted
 		INCBIN	build\maprecords\rec_685644_685694.bin
 		INCBIN	build\jcalg1\gen_685694_685cd8.bin
 		INCBIN	build\maprecords\rec_685cd8_685d08.bin
@@ -8770,7 +9874,11 @@
 		INCBIN	build\maprecords\rec_687598_6875c0.bin
 		INCBIN	build\jcalg1\gen_6875c0_6876d4.bin
 		INCBIN	build\maprecords\rec_6876d4_68777c.bin
-		INCBIN	baserom.gba_0x68777c_0x6877e0.extracted
+		INCBIN	baserom.gba_0x68777c_0x6877a4.extracted
+		INCBIN	build\addr\rec_6877a4_6877ac.bin
+		INCBIN	baserom.gba_0x6877ac_0x6877bc.extracted
+		INCBIN	build\addr\rec_6877bc_6877c4.bin
+		INCBIN	baserom.gba_0x6877c4_0x6877e0.extracted
 		INCBIN	build\maprecords\rec_6877e0_687830.bin
 		INCBIN	build\jcalg1\gen_687830_687de8.bin
 		INCBIN	build\maprecords\rec_687de8_687e24.bin
@@ -8782,7 +9890,9 @@
 		INCBIN	build\maprecords\rec_688fe4_68902c.bin
 		INCBIN	build\jcalg1\gen_68902c_689200.bin
 		INCBIN	build\maprecords\rec_689200_689290.bin
-		INCBIN	baserom.gba_0x689290_0x689308.extracted
+		INCBIN	baserom.gba_0x689290_0x6892e8.extracted
+		INCBIN	build\addr\rec_6892e8_6892f0.bin
+		INCBIN	baserom.gba_0x6892f0_0x689308.extracted
 		INCBIN	build\maprecords\rec_689308_689358.bin
 		INCBIN	build\jcalg1\gen_689358_689890.bin
 		INCBIN	build\maprecords\rec_689890_6898c0.bin
@@ -8794,7 +9904,11 @@
 		INCBIN	build\maprecords\rec_68a164_68a19c.bin
 		INCBIN	build\jcalg1\gen_68a19c_68a2e4.bin
 		INCBIN	build\maprecords\rec_68a2e4_68a344.bin
-		INCBIN	baserom.gba_0x68a344_0x68a428.extracted
+		INCBIN	baserom.gba_0x68a344_0x68a3ec.extracted
+		INCBIN	build\addr\rec_68a3ec_68a3f4.bin
+		INCBIN	baserom.gba_0x68a3f4_0x68a404.extracted
+		INCBIN	build\addr\rec_68a404_68a40c.bin
+		INCBIN	baserom.gba_0x68a40c_0x68a428.extracted
 		INCBIN	build\maprecords\rec_68a428_68a478.bin
 		INCBIN	build\jcalg1\gen_68a478_68a6dc.bin
 		INCBIN	build\maprecords\rec_68a6dc_68a6f8.bin
@@ -8832,7 +9946,9 @@
 		INCBIN	build\maprecords\rec_68bfd0_68bfec.bin
 		INCBIN	build\jcalg1\gen_68bfec_68c094.bin
 		INCBIN	build\maprecords\rec_68c094_68c0ac.bin
-		INCBIN	baserom.gba_0x68c0ac_0x68c16c.extracted
+		INCBIN	baserom.gba_0x68c0ac_0x68c14c.extracted
+		INCBIN	build\addr\rec_68c14c_68c154.bin
+		INCBIN	baserom.gba_0x68c154_0x68c16c.extracted
 		INCBIN	build\maprecords\rec_68c16c_68c1bc.bin
 		INCBIN	build\jcalg1\gen_68c1bc_68c408.bin
 		INCBIN	build\maprecords\rec_68c408_68c424.bin
@@ -8842,7 +9958,9 @@
 		INCBIN	build\maprecords\rec_68c6cc_68c704.bin
 		INCBIN	build\jcalg1\gen_68c704_68c774.bin
 		INCBIN	build\maprecords\rec_68c774_68c78c.bin
-		INCBIN	baserom.gba_0x68c78c_0x68c7d4.extracted
+		INCBIN	baserom.gba_0x68c78c_0x68c7b4.extracted
+		INCBIN	build\addr\rec_68c7b4_68c7bc.bin
+		INCBIN	baserom.gba_0x68c7bc_0x68c7d4.extracted
 		INCBIN	build\maprecords\rec_68c7d4_68c824.bin
 		INCBIN	build\jcalg1\gen_68c824_68cb78.bin
 		INCBIN	build\maprecords\rec_68cb78_68cb94.bin
@@ -8853,7 +9971,8 @@
 		INCBIN	build\jcalg1\gen_68d044_68d124.bin
 		INCBIN	build\maprecords\rec_68d124_68d13c.bin
 		INCBIN	build\jcalg1\gen_68d13c_68d1cc.bin
-		INCBIN	baserom.gba_0x68d1cc_0x68d1e8.extracted
+		INCBIN	build\addr\rec_68d1cc_68d1d4.bin
+		INCBIN	baserom.gba_0x68d1d4_0x68d1e8.extracted
 		INCBIN	build\maprecords\rec_68d1e8_68d238.bin
 		INCBIN	build\jcalg1\gen_68d238_68d6c8.bin
 		INCBIN	build\maprecords\rec_68d6c8_68d6e8.bin
@@ -8865,7 +9984,9 @@
 		INCBIN	build\maprecords\rec_68db04_68db24.bin
 		INCBIN	build\jcalg1\gen_68db24_68dbb8.bin
 		INCBIN	build\maprecords\rec_68dbb8_68dc00.bin
-		INCBIN	baserom.gba_0x68dc00_0x68ddb0.extracted
+		INCBIN	baserom.gba_0x68dc00_0x68dd90.extracted
+		INCBIN	build\addr\rec_68dd90_68dd98.bin
+		INCBIN	baserom.gba_0x68dd98_0x68ddb0.extracted
 		INCBIN	build\maprecords\rec_68ddb0_68de00.bin
 		INCBIN	build\jcalg1\gen_68de00_68df4c.bin
 		INCBIN	build\maprecords\rec_68df4c_68df68.bin
@@ -8876,7 +9997,8 @@
 		INCBIN	build\jcalg1\gen_68e0a4_68e1a0.bin
 		INCBIN	build\maprecords\rec_68e1a0_68e1bc.bin
 		INCBIN	build\jcalg1\gen_68e1bc_68e22c.bin
-		INCBIN	baserom.gba_0x68e22c_0x68e248.extracted
+		INCBIN	build\addr\rec_68e22c_68e234.bin
+		INCBIN	baserom.gba_0x68e234_0x68e248.extracted
 		INCBIN	build\maprecords\rec_68e248_68e2b4.bin
 		INCBIN	build\jcalg1\gen_68e2b4_68e3f0.bin
 		INCBIN	build\maprecords\rec_68e3f0_68e40c.bin
@@ -8915,7 +10037,11 @@
 		INCBIN	build\jcalg1\gen_690d78_690fa4.bin
 		INCBIN	build\maprecords\rec_690fa4_690fec.bin
 		INCBIN	build\jcalg1\gen_690fec_691438.bin
-		INCBIN	baserom.gba_0x691438_0x69149c.extracted
+		INCBIN	baserom.gba_0x691438_0x691460.extracted
+		INCBIN	build\addr\rec_691460_691468.bin
+		INCBIN	baserom.gba_0x691468_0x691478.extracted
+		INCBIN	build\addr\rec_691478_691480.bin
+		INCBIN	baserom.gba_0x691480_0x69149c.extracted
 		INCBIN	build\maprecords\rec_69149c_691508.bin
 		INCBIN	build\jcalg1\gen_691508_691e80.bin
 		INCBIN	build\maprecords\rec_691e80_691ebc.bin
@@ -8925,7 +10051,11 @@
 		INCBIN	build\maprecords\rec_692f04_692f4c.bin
 		INCBIN	build\jcalg1\gen_692f4c_692fec.bin
 		INCBIN	build\maprecords\rec_692fec_693034.bin
-		INCBIN	baserom.gba_0x693034_0x693098.extracted
+		INCBIN	baserom.gba_0x693034_0x69305c.extracted
+		INCBIN	build\addr\rec_69305c_693064.bin
+		INCBIN	baserom.gba_0x693064_0x693074.extracted
+		INCBIN	build\addr\rec_693074_69307c.bin
+		INCBIN	baserom.gba_0x69307c_0x693098.extracted
 		INCBIN	build\maprecords\rec_693098_693104.bin
 		INCBIN	build\jcalg1\gen_693104_6939cc.bin
 		INCBIN	build\maprecords\rec_6939cc_693a08.bin
@@ -8936,7 +10066,11 @@
 		INCBIN	build\jcalg1\gen_694784_694924.bin
 		INCBIN	build\maprecords\rec_694924_694984.bin
 		INCBIN	build\jcalg1\gen_694984_694db0.bin
-		INCBIN	baserom.gba_0x694db0_0x694e14.extracted
+		INCBIN	baserom.gba_0x694db0_0x694dd8.extracted
+		INCBIN	build\addr\rec_694dd8_694de0.bin
+		INCBIN	baserom.gba_0x694de0_0x694df0.extracted
+		INCBIN	build\addr\rec_694df0_694df8.bin
+		INCBIN	baserom.gba_0x694df8_0x694e14.extracted
 		INCBIN	build\maprecords\rec_694e14_694e80.bin
 		INCBIN	build\jcalg1\gen_694e80_695748.bin
 		INCBIN	build\maprecords\rec_695748_695784.bin
@@ -8946,7 +10080,11 @@
 		INCBIN	build\maprecords\rec_696548_696590.bin
 		INCBIN	build\jcalg1\gen_696590_69661c.bin
 		INCBIN	build\maprecords\rec_69661c_69667c.bin
-		INCBIN	baserom.gba_0x69667c_0x6966e0.extracted
+		INCBIN	baserom.gba_0x69667c_0x6966a4.extracted
+		INCBIN	build\addr\rec_6966a4_6966ac.bin
+		INCBIN	baserom.gba_0x6966ac_0x6966bc.extracted
+		INCBIN	build\addr\rec_6966bc_6966c4.bin
+		INCBIN	baserom.gba_0x6966c4_0x6966e0.extracted
 		INCBIN	build\maprecords\rec_6966e0_69674c.bin
 		INCBIN	build\jcalg1\gen_69674c_696970.bin
 		INCBIN	build\maprecords\rec_696970_696990.bin
@@ -8977,7 +10115,10 @@
 		INCBIN	build\maprecords\rec_69897c_69899c.bin
 		INCBIN	build\jcalg1\gen_69899c_698a48.bin
 		INCBIN	build\maprecords\rec_698a48_698a78.bin
-		INCBIN	baserom.gba_0x698a78_0x698ab0.extracted
+		INCBIN	build\addr\rec_698a78_698a80.bin
+		INCBIN	baserom.gba_0x698a80_0x698a90.extracted
+		INCBIN	build\addr\rec_698a90_698a98.bin
+		INCBIN	baserom.gba_0x698a98_0x698ab0.extracted
 		INCBIN	build\maprecords\rec_698ab0_698b1c.bin
 		INCBIN	build\jcalg1\gen_698b1c_698cb4.bin
 		INCBIN	build\maprecords\rec_698cb4_698cec.bin
@@ -9002,7 +10143,11 @@
 		INCBIN	build\jcalg1\gen_69ab74_69ad44.bin
 		INCBIN	build\maprecords\rec_69ad44_69ad74.bin
 		INCBIN	build\jcalg1\gen_69ad74_69af74.bin
-		INCBIN	baserom.gba_0x69af74_0x69afd8.extracted
+		INCBIN	baserom.gba_0x69af74_0x69af9c.extracted
+		INCBIN	build\addr\rec_69af9c_69afa4.bin
+		INCBIN	baserom.gba_0x69afa4_0x69afb4.extracted
+		INCBIN	build\addr\rec_69afb4_69afbc.bin
+		INCBIN	baserom.gba_0x69afbc_0x69afd8.extracted
 		INCBIN	build\maprecords\rec_69afd8_69b044.bin
 		INCBIN	build\jcalg1\gen_69b044_69ba3c.bin
 		INCBIN	build\maprecords\rec_69ba3c_69ba74.bin
@@ -9012,7 +10157,11 @@
 		INCBIN	build\maprecords\rec_69c698_69c6d0.bin
 		INCBIN	build\jcalg1\gen_69c6d0_69c774.bin
 		INCBIN	build\maprecords\rec_69c774_69c7a4.bin
-		INCBIN	baserom.gba_0x69c7a4_0x69c808.extracted
+		INCBIN	baserom.gba_0x69c7a4_0x69c7cc.extracted
+		INCBIN	build\addr\rec_69c7cc_69c7d4.bin
+		INCBIN	baserom.gba_0x69c7d4_0x69c7e4.extracted
+		INCBIN	build\addr\rec_69c7e4_69c7ec.bin
+		INCBIN	baserom.gba_0x69c7ec_0x69c808.extracted
 		INCBIN	build\maprecords\rec_69c808_69c858.bin
 		INCBIN	build\jcalg1\gen_69c858_69c890.bin
 		INCBIN	baserom.gba_0x69c890_0x69c8b0.extracted
@@ -9025,7 +10174,13 @@
 		INCBIN	build\jcalg1\gen_6a0758_6a0b00.bin
 		INCBIN	build\maprecords\rec_6a0b00_6a0c08.bin
 		INCBIN	build\jcalg1\gen_6a0c08_6a1448.bin
-		INCBIN	baserom.gba_0x6a1448_0x6a1998.extracted
+		INCBIN	baserom.gba_0x6a1448_0x6a1940.extracted
+		INCBIN	build\addr\rec_6a1940_6a1948.bin
+		INCBIN	baserom.gba_0x6a1948_0x6a1958.extracted
+		INCBIN	build\addr\rec_6a1958_6a1960.bin
+		INCBIN	baserom.gba_0x6a1960_0x6a1970.extracted
+		INCBIN	build\addr\rec_6a1970_6a1978.bin
+		INCBIN	baserom.gba_0x6a1978_0x6a1998.extracted
 		INCBIN	build\maprecords\rec_6a1998_6a19e8.bin
 		INCBIN	build\jcalg1\gen_6a19e8_6a1a24.bin
 		INCBIN	build\maprecords\rec_6a1a24_6a1a54.bin
@@ -9038,7 +10193,9 @@
 		INCBIN	build\jcalg1\gen_6a5a54_6a5ad0.bin
 		INCBIN	build\maprecords\rec_6a5ad0_6a5bc0.bin
 		INCBIN	build\jcalg1\gen_6a5bc0_6a6280.bin
-		INCBIN	baserom.gba_0x6a6280_0x6a62dc.extracted
+		INCBIN	baserom.gba_0x6a6280_0x6a62bc.extracted
+		INCBIN	build\addr\rec_6a62bc_6a62c4.bin
+		INCBIN	baserom.gba_0x6a62c4_0x6a62dc.extracted
 		INCBIN	build\maprecords\rec_6a62dc_6a632c.bin
 		INCBIN	build\jcalg1\gen_6a632c_6a65cc.bin
 		INCBIN	baserom.gba_0x6a65cc_0x6a65ec.extracted
@@ -9099,151 +10256,1052 @@
 		INCBIN	build\maprecords\rec_6add28_6add70.bin
 		INCBIN	baserom.gba_0x6add70_0x6add80.extracted
 		INCBIN	build\maprecords\rec_6add80_6addd0.bin
-		INCBIN	baserom.gba_0x6addd0_0x6af6a4.extracted
+		INCBIN	baserom.gba_0x6addd0_0x6ae0bc.extracted
+		INCBIN	build\addr\rec_6ae0bc_6ae0c4.bin
+		INCBIN	baserom.gba_0x6ae0c4_0x6ae0f4.extracted
+		INCBIN	build\addr\rec_6ae0f4_6ae0fc.bin
+		INCBIN	baserom.gba_0x6ae0fc_0x6ae12c.extracted
+		INCBIN	build\addr\rec_6ae12c_6ae134.bin
+		INCBIN	baserom.gba_0x6ae134_0x6ae164.extracted
+		INCBIN	build\addr\rec_6ae164_6ae16c.bin
+		INCBIN	baserom.gba_0x6ae16c_0x6ae19c.extracted
+		INCBIN	build\addr\rec_6ae19c_6ae1a4.bin
+		INCBIN	baserom.gba_0x6ae1a4_0x6ae1d4.extracted
+		INCBIN	build\addr\rec_6ae1d4_6ae1dc.bin
+		INCBIN	baserom.gba_0x6ae1dc_0x6af6a4.extracted
 		INCBIN	build\jcalg1\gen_6af6a4_6d0dc0.bin
-		INCBIN	baserom.gba_0x6d0dc0_0x6d6b8c.extracted
+		INCBIN	baserom.gba_0x6d0dc0_0x6d1bf8.extracted
+		INCBIN	build\addr\rec_6d1bf8_6d1c04.bin
+		INCBIN	baserom.gba_0x6d1c04_0x6d1c20.extracted
+		INCBIN	build\addr\rec_6d1c20_6d1c2c.bin
+		INCBIN	baserom.gba_0x6d1c2c_0x6d1c48.extracted
+		INCBIN	build\addr\rec_6d1c48_6d1c50.bin
+		INCBIN	baserom.gba_0x6d1c50_0x6d1c58.extracted
+		INCBIN	build\addr\rec_6d1c58_6d1c64.bin
+		INCBIN	baserom.gba_0x6d1c64_0x6d1c98.extracted
+		INCBIN	build\addr\rec_6d1c98_6d1ca4.bin
+		INCBIN	baserom.gba_0x6d1ca4_0x6d1cd4.extracted
+		INCBIN	build\addr\rec_6d1cd4_6d1ce0.bin
+		INCBIN	baserom.gba_0x6d1ce0_0x6d1d28.extracted
+		INCBIN	build\addr\rec_6d1d28_6d1d30.bin
+		INCBIN	baserom.gba_0x6d1d30_0x6d1d38.extracted
+		INCBIN	build\addr\rec_6d1d38_6d1d40.bin
+		INCBIN	baserom.gba_0x6d1d40_0x6d1d88.extracted
+		INCBIN	build\addr\rec_6d1d88_6d1d94.bin
+		INCBIN	baserom.gba_0x6d1d94_0x6d1dc0.extracted
+		INCBIN	build\addr\rec_6d1dc0_6d1dcc.bin
+		INCBIN	baserom.gba_0x6d1dcc_0x6d1e3c.extracted
+		INCBIN	build\addr\rec_6d1e3c_6d1e48.bin
+		INCBIN	baserom.gba_0x6d1e48_0x6d1e74.extracted
+		INCBIN	build\addr\rec_6d1e74_6d1e7c.bin
+		INCBIN	baserom.gba_0x6d1e7c_0x6d1e84.extracted
+		INCBIN	build\addr\rec_6d1e84_6d1e90.bin
+		INCBIN	baserom.gba_0x6d1e90_0x6d1ec4.extracted
+		INCBIN	build\addr\rec_6d1ec4_6d1ed0.bin
+		INCBIN	baserom.gba_0x6d1ed0_0x6d1f40.extracted
+		INCBIN	build\addr\rec_6d1f40_6d1f4c.bin
+		INCBIN	baserom.gba_0x6d1f4c_0x6d1f68.extracted
+		INCBIN	build\addr\rec_6d1f68_6d1f70.bin
+		INCBIN	baserom.gba_0x6d1f70_0x6d1f9c.extracted
+		INCBIN	build\addr\rec_6d1f9c_6d1fa8.bin
+		INCBIN	baserom.gba_0x6d1fa8_0x6d1fd4.extracted
+		INCBIN	build\addr\rec_6d1fd4_6d1fe0.bin
+		INCBIN	baserom.gba_0x6d1fe0_0x6d2050.extracted
+		INCBIN	build\addr\rec_6d2050_6d205c.bin
+		INCBIN	baserom.gba_0x6d205c_0x6d2060.extracted
+		INCBIN	build\addr\rec_6d2060_6d2068.bin
+		INCBIN	baserom.gba_0x6d2068_0x6d20b8.extracted
+		INCBIN	build\addr\rec_6d20b8_6d20c4.bin
+		INCBIN	baserom.gba_0x6d20c4_0x6d20f8.extracted
+		INCBIN	build\addr\rec_6d20f8_6d2104.bin
+		INCBIN	baserom.gba_0x6d2104_0x6d213c.extracted
+		INCBIN	build\addr\rec_6d213c_6d2148.bin
+		INCBIN	baserom.gba_0x6d2148_0x6d2164.extracted
+		INCBIN	build\addr\rec_6d2164_6d2170.bin
+		INCBIN	baserom.gba_0x6d2170_0x6d218c.extracted
+		INCBIN	build\addr\rec_6d218c_6d2198.bin
+		INCBIN	baserom.gba_0x6d2198_0x6d21c8.extracted
+		INCBIN	build\addr\rec_6d21c8_6d21d4.bin
+		INCBIN	baserom.gba_0x6d21d4_0x6d2204.extracted
+		INCBIN	build\addr\rec_6d2204_6d2210.bin
+		INCBIN	baserom.gba_0x6d2210_0x6d2258.extracted
+		INCBIN	build\addr\rec_6d2258_6d2264.bin
+		INCBIN	baserom.gba_0x6d2264_0x6d2294.extracted
+		INCBIN	build\addr\rec_6d2294_6d22a0.bin
+		INCBIN	baserom.gba_0x6d22a0_0x6d22d0.extracted
+		INCBIN	build\addr\rec_6d22d0_6d22d8.bin
+		INCBIN	baserom.gba_0x6d22d8_0x6d2324.extracted
+		INCBIN	build\addr\rec_6d2324_6d2330.bin
+		INCBIN	baserom.gba_0x6d2330_0x6d2368.extracted
+		INCBIN	build\addr\rec_6d2368_6d2374.bin
+		INCBIN	baserom.gba_0x6d2374_0x6d2378.extracted
+		INCBIN	build\addr\rec_6d2378_6d2380.bin
+		INCBIN	baserom.gba_0x6d2380_0x6d23a0.extracted
+		INCBIN	build\addr\rec_6d23a0_6d23a8.bin
+		INCBIN	baserom.gba_0x6d23a8_0x6d23b0.extracted
+		INCBIN	build\addr\rec_6d23b0_6d23bc.bin
+		INCBIN	baserom.gba_0x6d23bc_0x6d23d8.extracted
+		INCBIN	build\addr\rec_6d23d8_6d23e0.bin
+		INCBIN	baserom.gba_0x6d23e0_0x6d2414.extracted
+		INCBIN	build\addr\rec_6d2414_6d241c.bin
+		INCBIN	baserom.gba_0x6d241c_0x6d24a8.extracted
+		INCBIN	build\addr\rec_6d24a8_6d24b0.bin
+		INCBIN	baserom.gba_0x6d24b0_0x6d24fc.extracted
+		INCBIN	build\addr\rec_6d24fc_6d2504.bin
+		INCBIN	baserom.gba_0x6d2504_0x6d256c.extracted
+		INCBIN	build\addr\rec_6d256c_6d2578.bin
+		INCBIN	baserom.gba_0x6d2578_0x6d25cc.extracted
+		INCBIN	build\addr\rec_6d25cc_6d25d4.bin
+		INCBIN	baserom.gba_0x6d25d4_0x6d25f0.extracted
+		INCBIN	build\addr\rec_6d25f0_6d25f8.bin
+		INCBIN	baserom.gba_0x6d25f8_0x6d2614.extracted
+		INCBIN	build\addr\rec_6d2614_6d2620.bin
+		INCBIN	baserom.gba_0x6d2620_0x6d2668.extracted
+		INCBIN	build\addr\rec_6d2668_6d2670.bin
+		INCBIN	baserom.gba_0x6d2670_0x6d26f0.extracted
+		INCBIN	build\addr\rec_6d26f0_6d26fc.bin
+		INCBIN	baserom.gba_0x6d26fc_0x6d2748.extracted
+		INCBIN	build\addr\rec_6d2748_6d2754.bin
+		INCBIN	baserom.gba_0x6d2754_0x6d27a4.extracted
+		INCBIN	build\addr\rec_6d27a4_6d27b0.bin
+		INCBIN	baserom.gba_0x6d27b0_0x6d27cc.extracted
+		INCBIN	build\addr\rec_6d27cc_6d27d8.bin
+		INCBIN	baserom.gba_0x6d27d8_0x6d27f4.extracted
+		INCBIN	build\addr\rec_6d27f4_6d2800.bin
+		INCBIN	baserom.gba_0x6d2800_0x6d287c.extracted
+		INCBIN	build\addr\rec_6d287c_6d2888.bin
+		INCBIN	baserom.gba_0x6d2888_0x6d288c.extracted
+		INCBIN	build\addr\rec_6d288c_6d2894.bin
+		INCBIN	baserom.gba_0x6d2894_0x6d28e4.extracted
+		INCBIN	build\addr\rec_6d28e4_6d28ec.bin
+		INCBIN	baserom.gba_0x6d28ec_0x6d2910.extracted
+		INCBIN	build\addr\rec_6d2910_6d291c.bin
+		INCBIN	baserom.gba_0x6d291c_0x6d2948.extracted
+		INCBIN	build\addr\rec_6d2948_6d2950.bin
+		INCBIN	baserom.gba_0x6d2950_0x6d2970.extracted
+		INCBIN	build\addr\rec_6d2970_6d2978.bin
+		INCBIN	baserom.gba_0x6d2978_0x6d2a24.extracted
+		INCBIN	build\addr\rec_6d2a24_6d2a30.bin
+		INCBIN	baserom.gba_0x6d2a30_0x6d2a34.extracted
+		INCBIN	build\addr\rec_6d2a34_6d2a3c.bin
+		INCBIN	baserom.gba_0x6d2a3c_0x6d2a8c.extracted
+		INCBIN	build\addr\rec_6d2a8c_6d2a94.bin
+		INCBIN	baserom.gba_0x6d2a94_0x6d2ab8.extracted
+		INCBIN	build\addr\rec_6d2ab8_6d2ac4.bin
+		INCBIN	baserom.gba_0x6d2ac4_0x6d2b08.extracted
+		INCBIN	build\addr\rec_6d2b08_6d2b10.bin
+		INCBIN	baserom.gba_0x6d2b10_0x6d2b5c.extracted
+		INCBIN	build\addr\rec_6d2b5c_6d2b68.bin
+		INCBIN	baserom.gba_0x6d2b68_0x6d2b7c.extracted
+		INCBIN	build\addr\rec_6d2b7c_6d2b88.bin
+		INCBIN	baserom.gba_0x6d2b88_0x6d2bf0.extracted
+		INCBIN	build\addr\rec_6d2bf0_6d2bf8.bin
+		INCBIN	baserom.gba_0x6d2bf8_0x6d2c14.extracted
+		INCBIN	build\addr\rec_6d2c14_6d2c20.bin
+		INCBIN	baserom.gba_0x6d2c20_0x6d2c6c.extracted
+		INCBIN	build\addr\rec_6d2c6c_6d2c74.bin
+		INCBIN	baserom.gba_0x6d2c74_0x6d2d08.extracted
+		INCBIN	build\addr\rec_6d2d08_6d2d10.bin
+		INCBIN	baserom.gba_0x6d2d10_0x6d2d48.extracted
+		INCBIN	build\addr\rec_6d2d48_6d2d50.bin
+		INCBIN	baserom.gba_0x6d2d50_0x6d2db8.extracted
+		INCBIN	build\addr\rec_6d2db8_6d2dc4.bin
+		INCBIN	baserom.gba_0x6d2dc4_0x6d2e18.extracted
+		INCBIN	build\addr\rec_6d2e18_6d2e24.bin
+		INCBIN	baserom.gba_0x6d2e24_0x6d2e44.extracted
+		INCBIN	build\addr\rec_6d2e44_6d2e4c.bin
+		INCBIN	baserom.gba_0x6d2e4c_0x6d2e84.extracted
+		INCBIN	build\addr\rec_6d2e84_6d2e8c.bin
+		INCBIN	baserom.gba_0x6d2e8c_0x6d2ea8.extracted
+		INCBIN	build\addr\rec_6d2ea8_6d2eb4.bin
+		INCBIN	baserom.gba_0x6d2eb4_0x6d2f00.extracted
+		INCBIN	build\addr\rec_6d2f00_6d2f0c.bin
+		INCBIN	baserom.gba_0x6d2f0c_0x6d2f10.extracted
+		INCBIN	build\addr\rec_6d2f10_6d2f18.bin
+		INCBIN	baserom.gba_0x6d2f18_0x6d2f94.extracted
+		INCBIN	build\addr\rec_6d2f94_6d2f9c.bin
+		INCBIN	baserom.gba_0x6d2f9c_0x6d2fd4.extracted
+		INCBIN	build\addr\rec_6d2fd4_6d2fdc.bin
+		INCBIN	baserom.gba_0x6d2fdc_0x6d30b0.extracted
+		INCBIN	build\addr\rec_6d30b0_6d30b8.bin
+		INCBIN	baserom.gba_0x6d30b8_0x6d30d8.extracted
+		INCBIN	build\addr\rec_6d30d8_6d30e4.bin
+		INCBIN	baserom.gba_0x6d30e4_0x6d3100.extracted
+		INCBIN	build\addr\rec_6d3100_6d310c.bin
+		INCBIN	baserom.gba_0x6d310c_0x6d3110.extracted
+		INCBIN	build\addr\rec_6d3110_6d3118.bin
+		INCBIN	baserom.gba_0x6d3118_0x6d3190.extracted
+		INCBIN	build\addr\rec_6d3190_6d3198.bin
+		INCBIN	baserom.gba_0x6d3198_0x6d3250.extracted
+		INCBIN	build\addr\rec_6d3250_6d325c.bin
+		INCBIN	baserom.gba_0x6d325c_0x6d3260.extracted
+		INCBIN	build\addr\rec_6d3260_6d326c.bin
+		INCBIN	baserom.gba_0x6d326c_0x6d3294.extracted
+		INCBIN	build\addr\rec_6d3294_6d32a0.bin
+		INCBIN	baserom.gba_0x6d32a0_0x6d32a4.extracted
+		INCBIN	build\addr\rec_6d32a4_6d32b0.bin
+		INCBIN	baserom.gba_0x6d32b0_0x6d3364.extracted
+		INCBIN	build\addr\rec_6d3364_6d336c.bin
+		INCBIN	baserom.gba_0x6d336c_0x6d338c.extracted
+		INCBIN	build\addr\rec_6d338c_6d3398.bin
+		INCBIN	baserom.gba_0x6d3398_0x6d339c.extracted
+		INCBIN	build\addr\rec_6d339c_6d33a4.bin
+		INCBIN	baserom.gba_0x6d33a4_0x6d341c.extracted
+		INCBIN	build\addr\rec_6d341c_6d3424.bin
+		INCBIN	baserom.gba_0x6d3424_0x6d34dc.extracted
+		INCBIN	build\addr\rec_6d34dc_6d34e8.bin
+		INCBIN	baserom.gba_0x6d34e8_0x6d34ec.extracted
+		INCBIN	build\addr\rec_6d34ec_6d34f8.bin
+		INCBIN	baserom.gba_0x6d34f8_0x6d3520.extracted
+		INCBIN	build\addr\rec_6d3520_6d352c.bin
+		INCBIN	baserom.gba_0x6d352c_0x6d3530.extracted
+		INCBIN	build\addr\rec_6d3530_6d353c.bin
+		INCBIN	baserom.gba_0x6d353c_0x6d35d8.extracted
+		INCBIN	build\addr\rec_6d35d8_6d35e0.bin
+		INCBIN	baserom.gba_0x6d35e0_0x6d3600.extracted
+		INCBIN	build\addr\rec_6d3600_6d3608.bin
+		INCBIN	baserom.gba_0x6d3608_0x6d3624.extracted
+		INCBIN	build\addr\rec_6d3624_6d3630.bin
+		INCBIN	baserom.gba_0x6d3630_0x6d36e4.extracted
+		INCBIN	build\addr\rec_6d36e4_6d36ec.bin
+		INCBIN	baserom.gba_0x6d36ec_0x6d37a8.extracted
+		INCBIN	build\addr\rec_6d37a8_6d37b4.bin
+		INCBIN	baserom.gba_0x6d37b4_0x6d37b8.extracted
+		INCBIN	build\addr\rec_6d37b8_6d37c0.bin
+		INCBIN	baserom.gba_0x6d37c0_0x6d37e0.extracted
+		INCBIN	build\addr\rec_6d37e0_6d37ec.bin
+		INCBIN	baserom.gba_0x6d37ec_0x6d3808.extracted
+		INCBIN	build\addr\rec_6d3808_6d3810.bin
+		INCBIN	baserom.gba_0x6d3810_0x6d38b8.extracted
+		INCBIN	build\addr\rec_6d38b8_6d38c0.bin
+		INCBIN	baserom.gba_0x6d38c0_0x6d38f8.extracted
+		INCBIN	build\addr\rec_6d38f8_6d3900.bin
+		INCBIN	baserom.gba_0x6d3900_0x6d39b8.extracted
+		INCBIN	build\addr\rec_6d39b8_6d39c4.bin
+		INCBIN	baserom.gba_0x6d39c4_0x6d39c8.extracted
+		INCBIN	build\addr\rec_6d39c8_6d39d0.bin
+		INCBIN	baserom.gba_0x6d39d0_0x6d3a64.extracted
+		INCBIN	build\addr\rec_6d3a64_6d3a6c.bin
+		INCBIN	baserom.gba_0x6d3a6c_0x6d3b14.extracted
+		INCBIN	build\addr\rec_6d3b14_6d3b20.bin
+		INCBIN	baserom.gba_0x6d3b20_0x6d3b6c.extracted
+		INCBIN	build\addr\rec_6d3b6c_6d3b78.bin
+		INCBIN	baserom.gba_0x6d3b78_0x6d3b94.extracted
+		INCBIN	build\addr\rec_6d3b94_6d3b9c.bin
+		INCBIN	baserom.gba_0x6d3b9c_0x6d3bbc.extracted
+		INCBIN	build\addr\rec_6d3bbc_6d3bc8.bin
+		INCBIN	baserom.gba_0x6d3bc8_0x6d3be4.extracted
+		INCBIN	build\addr\rec_6d3be4_6d3bec.bin
+		INCBIN	baserom.gba_0x6d3bec_0x6d3c08.extracted
+		INCBIN	build\addr\rec_6d3c08_6d3c14.bin
+		INCBIN	baserom.gba_0x6d3c14_0x6d3cdc.extracted
+		INCBIN	build\addr\rec_6d3cdc_6d3ce4.bin
+		INCBIN	baserom.gba_0x6d3ce4_0x6d3d1c.extracted
+		INCBIN	build\addr\rec_6d3d1c_6d3d24.bin
+		INCBIN	baserom.gba_0x6d3d24_0x6d3df8.extracted
+		INCBIN	build\addr\rec_6d3df8_6d3e04.bin
+		INCBIN	baserom.gba_0x6d3e04_0x6d3e08.extracted
+		INCBIN	build\addr\rec_6d3e08_6d3e10.bin
+		INCBIN	baserom.gba_0x6d3e10_0x6d3e30.extracted
+		INCBIN	build\addr\rec_6d3e30_6d3e3c.bin
+		INCBIN	baserom.gba_0x6d3e3c_0x6d3e58.extracted
+		INCBIN	build\addr\rec_6d3e58_6d3e60.bin
+		INCBIN	baserom.gba_0x6d3e60_0x6d3f08.extracted
+		INCBIN	build\addr\rec_6d3f08_6d3f10.bin
+		INCBIN	baserom.gba_0x6d3f10_0x6d3f48.extracted
+		INCBIN	build\addr\rec_6d3f48_6d3f50.bin
+		INCBIN	baserom.gba_0x6d3f50_0x6d401c.extracted
+		INCBIN	build\addr\rec_6d401c_6d4024.bin
+		INCBIN	baserom.gba_0x6d4024_0x6d4040.extracted
+		INCBIN	build\addr\rec_6d4040_6d404c.bin
+		INCBIN	baserom.gba_0x6d404c_0x6d4194.extracted
+		INCBIN	build\addr\rec_6d4194_6d41a0.bin
+		INCBIN	baserom.gba_0x6d41a0_0x6d41a4.extracted
+		INCBIN	build\addr\rec_6d41a4_6d41b0.bin
+		INCBIN	baserom.gba_0x6d41b0_0x6d4260.extracted
+		INCBIN	build\addr\rec_6d4260_6d426c.bin
+		INCBIN	baserom.gba_0x6d426c_0x6d4270.extracted
+		INCBIN	build\addr\rec_6d4270_6d4278.bin
+		INCBIN	baserom.gba_0x6d4278_0x6d4344.extracted
+		INCBIN	build\addr\rec_6d4344_6d4350.bin
+		INCBIN	baserom.gba_0x6d4350_0x6d436c.extracted
+		INCBIN	build\addr\rec_6d436c_6d4378.bin
+		INCBIN	baserom.gba_0x6d4378_0x6d43a8.extracted
+		INCBIN	build\addr\rec_6d43a8_6d43b4.bin
+		INCBIN	baserom.gba_0x6d43b4_0x6d43e4.extracted
+		INCBIN	build\addr\rec_6d43e4_6d43f0.bin
+		INCBIN	baserom.gba_0x6d43f0_0x6d4438.extracted
+		INCBIN	build\addr\rec_6d4438_6d4444.bin
+		INCBIN	baserom.gba_0x6d4444_0x6d4474.extracted
+		INCBIN	build\addr\rec_6d4474_6d4480.bin
+		INCBIN	baserom.gba_0x6d4480_0x6d44b0.extracted
+		INCBIN	build\addr\rec_6d44b0_6d44b8.bin
+		INCBIN	baserom.gba_0x6d44b8_0x6d4504.extracted
+		INCBIN	build\addr\rec_6d4504_6d4510.bin
+		INCBIN	baserom.gba_0x6d4510_0x6d4514.extracted
+		INCBIN	build\addr\rec_6d4514_6d4520.bin
+		INCBIN	baserom.gba_0x6d4520_0x6d4524.extracted
+		INCBIN	build\addr\rec_6d4524_6d452c.bin
+		INCBIN	baserom.gba_0x6d452c_0x6d454c.extracted
+		INCBIN	build\addr\rec_6d454c_6d4554.bin
+		INCBIN	baserom.gba_0x6d4554_0x6d455c.extracted
+		INCBIN	build\addr\rec_6d455c_6d4568.bin
+		INCBIN	baserom.gba_0x6d4568_0x6d4584.extracted
+		INCBIN	build\addr\rec_6d4584_6d458c.bin
+		INCBIN	baserom.gba_0x6d458c_0x6d45f0.extracted
+		INCBIN	build\addr\rec_6d45f0_6d45f8.bin
+		INCBIN	baserom.gba_0x6d45f8_0x6d4614.extracted
+		INCBIN	build\addr\rec_6d4614_6d4620.bin
+		INCBIN	baserom.gba_0x6d4620_0x6d4698.extracted
+		INCBIN	build\addr\rec_6d4698_6d46a0.bin
+		INCBIN	baserom.gba_0x6d46a0_0x6d46d8.extracted
+		INCBIN	build\addr\rec_6d46d8_6d46e0.bin
+		INCBIN	baserom.gba_0x6d46e0_0x6d4798.extracted
+		INCBIN	build\addr\rec_6d4798_6d47a4.bin
+		INCBIN	baserom.gba_0x6d47a4_0x6d47a8.extracted
+		INCBIN	build\addr\rec_6d47a8_6d47b0.bin
+		INCBIN	baserom.gba_0x6d47b0_0x6d47fc.extracted
+		INCBIN	build\addr\rec_6d47fc_6d4804.bin
+		INCBIN	baserom.gba_0x6d4804_0x6d4854.extracted
+		INCBIN	build\addr\rec_6d4854_6d485c.bin
+		INCBIN	baserom.gba_0x6d485c_0x6d48a8.extracted
+		INCBIN	build\addr\rec_6d48a8_6d48b4.bin
+		INCBIN	baserom.gba_0x6d48b4_0x6d4914.extracted
+		INCBIN	build\addr\rec_6d4914_6d4920.bin
+		INCBIN	baserom.gba_0x6d4920_0x6d496c.extracted
+		INCBIN	build\addr\rec_6d496c_6d4978.bin
+		INCBIN	baserom.gba_0x6d4978_0x6d4994.extracted
+		INCBIN	build\addr\rec_6d4994_6d49a0.bin
+		INCBIN	baserom.gba_0x6d49a0_0x6d49a4.extracted
+		INCBIN	build\addr\rec_6d49a4_6d49ac.bin
+		INCBIN	baserom.gba_0x6d49ac_0x6d49cc.extracted
+		INCBIN	build\addr\rec_6d49cc_6d49d8.bin
+		INCBIN	baserom.gba_0x6d49d8_0x6d49f4.extracted
+		INCBIN	build\addr\rec_6d49f4_6d49fc.bin
+		INCBIN	baserom.gba_0x6d49fc_0x6d4a18.extracted
+		INCBIN	build\addr\rec_6d4a18_6d4a24.bin
+		INCBIN	baserom.gba_0x6d4a24_0x6d4af8.extracted
+		INCBIN	build\addr\rec_6d4af8_6d4b00.bin
+		INCBIN	baserom.gba_0x6d4b00_0x6d4b38.extracted
+		INCBIN	build\addr\rec_6d4b38_6d4b40.bin
+		INCBIN	baserom.gba_0x6d4b40_0x6d4c0c.extracted
+		INCBIN	build\addr\rec_6d4c0c_6d4c14.bin
+		INCBIN	baserom.gba_0x6d4c14_0x6d4c30.extracted
+		INCBIN	build\addr\rec_6d4c30_6d4c3c.bin
+		INCBIN	baserom.gba_0x6d4c3c_0x6d4d34.extracted
+		INCBIN	build\addr\rec_6d4d34_6d4d40.bin
+		INCBIN	baserom.gba_0x6d4d40_0x6d4d44.extracted
+		INCBIN	build\addr\rec_6d4d44_6d4d4c.bin
+		INCBIN	baserom.gba_0x6d4d4c_0x6d4d6c.extracted
+		INCBIN	build\addr\rec_6d4d6c_6d4d78.bin
+		INCBIN	baserom.gba_0x6d4d78_0x6d4d94.extracted
+		INCBIN	build\addr\rec_6d4d94_6d4d9c.bin
+		INCBIN	baserom.gba_0x6d4d9c_0x6d4e00.extracted
+		INCBIN	build\addr\rec_6d4e00_6d4e08.bin
+		INCBIN	baserom.gba_0x6d4e08_0x6d4e24.extracted
+		INCBIN	build\addr\rec_6d4e24_6d4e30.bin
+		INCBIN	baserom.gba_0x6d4e30_0x6d4ea8.extracted
+		INCBIN	build\addr\rec_6d4ea8_6d4eb0.bin
+		INCBIN	baserom.gba_0x6d4eb0_0x6d4ee8.extracted
+		INCBIN	build\addr\rec_6d4ee8_6d4ef0.bin
+		INCBIN	baserom.gba_0x6d4ef0_0x6d4ff0.extracted
+		INCBIN	build\addr\rec_6d4ff0_6d4ff8.bin
+		INCBIN	baserom.gba_0x6d4ff8_0x6d50a0.extracted
+		INCBIN	build\addr\rec_6d50a0_6d50ac.bin
+		INCBIN	baserom.gba_0x6d50ac_0x6d513c.extracted
+		INCBIN	build\addr\rec_6d513c_6d5144.bin
+		INCBIN	baserom.gba_0x6d5144_0x6d5674.extracted
+		INCBIN	build\addr\rec_6d5674_6d5680.bin
+		INCBIN	baserom.gba_0x6d5680_0x6d5684.extracted
+		INCBIN	build\addr\rec_6d5684_6d5690.bin
+		INCBIN	baserom.gba_0x6d5690_0x6d5694.extracted
+		INCBIN	build\addr\rec_6d5694_6d56a0.bin
+		INCBIN	baserom.gba_0x6d56a0_0x6d66c0.extracted
+		INCBIN	build\opcode\rec_6d66c0_6d68db.bin
+		INCBIN	baserom.gba_0x6d68db_0x6d68dc.extracted
+		INCBIN	build\opcode\rec_6d68dc_6d6b8c.bin
 		INCBIN	build\text\rec_6d6b8c_6d72f5.bin
 		INCBIN	baserom.gba_0x6d72f5_0x6d7654.extracted
 		INCBIN	build\jcalg1\gen_6d7654_6d7690.bin
 		INCBIN	baserom.gba_0x6d7690_0x6d76ec.extracted
 		INCBIN	build\jcalg1\gen_6d76ec_6d7750.bin
-		INCBIN	baserom.gba_0x6d7750_0x6e6ad0.extracted
+		INCBIN	baserom.gba_0x6d7750_0x6e5dfc.extracted
+		INCBIN	build\records\rec_6e5dfc_6e5e00.bin
+		INCBIN	baserom.gba_0x6e5e00_0x6e5f9c.extracted
+		INCBIN	build\records\rec_6e5f9c_6e5fa0.bin
+		INCBIN	baserom.gba_0x6e5fa0_0x6e6060.extracted
+		INCBIN	build\records\rec_6e6060_6e6064.bin
+		INCBIN	baserom.gba_0x6e6064_0x6e60a8.extracted
+		INCBIN	build\records\rec_6e60a8_6e60ac.bin
+		INCBIN	baserom.gba_0x6e60ac_0x6e6108.extracted
+		INCBIN	build\records\rec_6e6108_6e610c.bin
+		INCBIN	baserom.gba_0x6e610c_0x6e61a4.extracted
+		INCBIN	build\records\rec_6e61a4_6e61a8.bin
+		INCBIN	baserom.gba_0x6e61a8_0x6e6240.extracted
+		INCBIN	build\records\rec_6e6240_6e6244.bin
+		INCBIN	baserom.gba_0x6e6244_0x6e6274.extracted
+		INCBIN	build\records\rec_6e6274_6e6278.bin
+		INCBIN	baserom.gba_0x6e6278_0x6e62f4.extracted
+		INCBIN	build\records\rec_6e62f4_6e62f8.bin
+		INCBIN	baserom.gba_0x6e62f8_0x6e639c.extracted
+		INCBIN	build\records\rec_6e639c_6e63a0.bin
+		INCBIN	baserom.gba_0x6e63a0_0x6e6408.extracted
+		INCBIN	build\records\rec_6e6408_6e640c.bin
+		INCBIN	baserom.gba_0x6e640c_0x6e6488.extracted
+		INCBIN	build\records\rec_6e6488_6e648c.bin
+		INCBIN	baserom.gba_0x6e648c_0x6e64fc.extracted
+		INCBIN	build\records\rec_6e64fc_6e6500.bin
+		INCBIN	baserom.gba_0x6e6500_0x6e6550.extracted
+		INCBIN	build\records\rec_6e6550_6e6554.bin
+		INCBIN	baserom.gba_0x6e6554_0x6e65a8.extracted
+		INCBIN	build\records\rec_6e65a8_6e65ac.bin
+		INCBIN	baserom.gba_0x6e65ac_0x6e6634.extracted
+		INCBIN	build\records\rec_6e6634_6e6638.bin
+		INCBIN	baserom.gba_0x6e6638_0x6e66c0.extracted
+		INCBIN	build\records\rec_6e66c0_6e66c4.bin
+		INCBIN	baserom.gba_0x6e66c4_0x6e6748.extracted
+		INCBIN	build\records\rec_6e6748_6e674c.bin
+		INCBIN	baserom.gba_0x6e674c_0x6e67d0.extracted
+		INCBIN	build\records\rec_6e67d0_6e67d4.bin
+		INCBIN	baserom.gba_0x6e67d4_0x6e6858.extracted
+		INCBIN	build\records\rec_6e6858_6e685c.bin
+		INCBIN	baserom.gba_0x6e685c_0x6e68e0.extracted
+		INCBIN	build\records\rec_6e68e0_6e68e4.bin
+		INCBIN	baserom.gba_0x6e68e4_0x6e6928.extracted
+		INCBIN	build\records\rec_6e6928_6e692c.bin
+		INCBIN	baserom.gba_0x6e692c_0x6e6970.extracted
+		INCBIN	build\records\rec_6e6970_6e6974.bin
+		INCBIN	baserom.gba_0x6e6974_0x6e69b8.extracted
+		INCBIN	build\records\rec_6e69b8_6e69bc.bin
+		INCBIN	baserom.gba_0x6e69bc_0x6e69f4.extracted
+		INCBIN	build\records\rec_6e69f4_6e69f8.bin
+		INCBIN	baserom.gba_0x6e69f8_0x6e6ad0.extracted
 		INCBIN	build\jcalg1\gen_6e6ad0_6e73f4.bin
-		INCBIN	baserom.gba_0x6e73f4_0x6e7514.extracted
+		INCBIN	baserom.gba_0x6e73f4_0x6e7448.extracted
+		INCBIN	build\records\rec_6e7448_6e74c8.bin
+		INCBIN	baserom.gba_0x6e74c8_0x6e7514.extracted
 		INCBIN	build\jcalg1\gen_6e7514_6e756c.bin
-		INCBIN	baserom.gba_0x6e756c_0x6e75d8.extracted
+		INCBIN	build\records\rec_6e756c_6e758c.bin
+		INCBIN	baserom.gba_0x6e758c_0x6e75d8.extracted
 		INCBIN	build\jcalg1\gen_6e75d8_6e7630.bin
-		INCBIN	baserom.gba_0x6e7630_0x6e769c.extracted
+		INCBIN	build\records\rec_6e7630_6e7650.bin
+		INCBIN	baserom.gba_0x6e7650_0x6e769c.extracted
 		INCBIN	build\jcalg1\gen_6e769c_6e76f4.bin
-		INCBIN	baserom.gba_0x6e76f4_0x6e78a8.extracted
+		INCBIN	build\records\rec_6e76f4_6e7714.bin
+		INCBIN	baserom.gba_0x6e7714_0x6e774c.extracted
+		INCBIN	build\records\rec_6e774c_6e7750.bin
+		INCBIN	baserom.gba_0x6e7750_0x6e7788.extracted
+		INCBIN	build\records\rec_6e7788_6e778c.bin
+		INCBIN	baserom.gba_0x6e778c_0x6e77c4.extracted
+		INCBIN	build\records\rec_6e77c4_6e77c8.bin
+		INCBIN	baserom.gba_0x6e77c8_0x6e7800.extracted
+		INCBIN	build\records\rec_6e7800_6e7804.bin
+		INCBIN	baserom.gba_0x6e7804_0x6e783c.extracted
+		INCBIN	build\records\rec_6e783c_6e7840.bin
+		INCBIN	baserom.gba_0x6e7840_0x6e78a8.extracted
 		INCBIN	build\jcalg1\gen_6e78a8_6e7970.bin
-		INCBIN	baserom.gba_0x6e7970_0x6e79f4.extracted
+		INCBIN	baserom.gba_0x6e7970_0x6e7980.extracted
+		INCBIN	build\records\rec_6e7980_6e79b4.bin
+		INCBIN	baserom.gba_0x6e79b4_0x6e79f4.extracted
 		INCBIN	build\jcalg1\gen_6e79f4_6e7a5c.bin
-		INCBIN	baserom.gba_0x6e7a5c_0x6e7b34.extracted
+		INCBIN	build\records\rec_6e7a5c_6e7a7c.bin
+		INCBIN	baserom.gba_0x6e7a7c_0x6e7aac.extracted
+		INCBIN	build\records\rec_6e7aac_6e7ab0.bin
+		INCBIN	baserom.gba_0x6e7ab0_0x6e7aec.extracted
+		INCBIN	build\records\rec_6e7aec_6e7af0.bin
+		INCBIN	baserom.gba_0x6e7af0_0x6e7b34.extracted
 		INCBIN	build\jcalg1\gen_6e7b34_6e7bf8.bin
-		INCBIN	baserom.gba_0x6e7bf8_0x6e7c64.extracted
+		INCBIN	build\records\rec_6e7bf8_6e7c20.bin
+		INCBIN	baserom.gba_0x6e7c20_0x6e7c64.extracted
 		INCBIN	build\jcalg1\gen_6e7c64_6e7cc8.bin
-		INCBIN	baserom.gba_0x6e7cc8_0x6e8194.extracted
+		INCBIN	build\records\rec_6e7cc8_6e7ce8.bin
+		INCBIN	baserom.gba_0x6e7ce8_0x6e7d6c.extracted
+		INCBIN	build\records\rec_6e7d6c_6e7d70.bin
+		INCBIN	baserom.gba_0x6e7d70_0x6e7e2c.extracted
+		INCBIN	build\records\rec_6e7e2c_6e7e30.bin
+		INCBIN	baserom.gba_0x6e7e30_0x6e7e7c.extracted
+		INCBIN	build\records\rec_6e7e7c_6e7e80.bin
+		INCBIN	baserom.gba_0x6e7e80_0x6e7ec0.extracted
+		INCBIN	build\records\rec_6e7ec0_6e7ec4.bin
+		INCBIN	baserom.gba_0x6e7ec4_0x6e7f14.extracted
+		INCBIN	build\records\rec_6e7f14_6e7f18.bin
+		INCBIN	baserom.gba_0x6e7f18_0x6e7f9c.extracted
+		INCBIN	build\records\rec_6e7f9c_6e7fa0.bin
+		INCBIN	baserom.gba_0x6e7fa0_0x6e7ff8.extracted
+		INCBIN	build\records\rec_6e7ff8_6e7ffc.bin
+		INCBIN	baserom.gba_0x6e7ffc_0x6e8070.extracted
+		INCBIN	build\records\rec_6e8070_6e8074.bin
+		INCBIN	baserom.gba_0x6e8074_0x6e80bc.extracted
+		INCBIN	build\records\rec_6e80bc_6e80c0.bin
+		INCBIN	baserom.gba_0x6e80c0_0x6e8194.extracted
 		INCBIN	build\jcalg1\gen_6e8194_6e86c8.bin
-		INCBIN	baserom.gba_0x6e86c8_0x6e8770.extracted
+		INCBIN	baserom.gba_0x6e86c8_0x6e86ec.extracted
+		INCBIN	build\records\rec_6e86ec_6e8730.bin
+		INCBIN	baserom.gba_0x6e8730_0x6e8770.extracted
 		INCBIN	build\jcalg1\gen_6e8770_6e87d0.bin
-		INCBIN	baserom.gba_0x6e87d0_0x6e8830.extracted
+		INCBIN	build\records\rec_6e87d0_6e87f0.bin
+		INCBIN	baserom.gba_0x6e87f0_0x6e8830.extracted
 		INCBIN	build\jcalg1\gen_6e8830_6e8890.bin
-		INCBIN	baserom.gba_0x6e8890_0x6e8938.extracted
+		INCBIN	build\records\rec_6e8890_6e88b0.bin
+		INCBIN	baserom.gba_0x6e88b0_0x6e8938.extracted
 		INCBIN	build\jcalg1\gen_6e8938_6e8a1c.bin
-		INCBIN	baserom.gba_0x6e8a1c_0x6e8a88.extracted
+		INCBIN	build\records\rec_6e8a1c_6e8a3c.bin
+		INCBIN	baserom.gba_0x6e8a3c_0x6e8a88.extracted
 		INCBIN	build\jcalg1\gen_6e8a88_6e8aec.bin
-		INCBIN	baserom.gba_0x6e8aec_0x6e8b50.extracted
+		INCBIN	build\records\rec_6e8aec_6e8b0c.bin
+		INCBIN	baserom.gba_0x6e8b0c_0x6e8b50.extracted
 		INCBIN	build\jcalg1\gen_6e8b50_6e8bc4.bin
-		INCBIN	baserom.gba_0x6e8bc4_0x6e8d20.extracted
+		INCBIN	build\records\rec_6e8bc4_6e8be4.bin
+		INCBIN	baserom.gba_0x6e8be4_0x6e8c24.extracted
+		INCBIN	build\records\rec_6e8c24_6e8c28.bin
+		INCBIN	baserom.gba_0x6e8c28_0x6e8c90.extracted
+		INCBIN	build\records\rec_6e8c90_6e8c94.bin
+		INCBIN	baserom.gba_0x6e8c94_0x6e8cdc.extracted
+		INCBIN	build\records\rec_6e8cdc_6e8ce0.bin
+		INCBIN	baserom.gba_0x6e8ce0_0x6e8d20.extracted
 		INCBIN	build\jcalg1\gen_6e8d20_6e8e94.bin
-		INCBIN	baserom.gba_0x6e8e94_0x6e8ef4.extracted
+		INCBIN	build\records\rec_6e8e94_6e8ec0.bin
+		INCBIN	baserom.gba_0x6e8ec0_0x6e8ef4.extracted
 		INCBIN	build\jcalg1\gen_6e8ef4_6e8f34.bin
-		INCBIN	baserom.gba_0x6e8f34_0x6e8fbc.extracted
+		INCBIN	build\records\rec_6e8f34_6e8f54.bin
+		INCBIN	baserom.gba_0x6e8f54_0x6e8fbc.extracted
 		INCBIN	build\jcalg1\gen_6e8fbc_6e9034.bin
-		INCBIN	baserom.gba_0x6e9034_0x6e9098.extracted
+		INCBIN	build\records\rec_6e9034_6e9054.bin
+		INCBIN	baserom.gba_0x6e9054_0x6e9098.extracted
 		INCBIN	build\jcalg1\gen_6e9098_6e9114.bin
-		INCBIN	baserom.gba_0x6e9114_0x6e9174.extracted
+		INCBIN	build\records\rec_6e9114_6e9134.bin
+		INCBIN	baserom.gba_0x6e9134_0x6e9174.extracted
 		INCBIN	build\jcalg1\gen_6e9174_6e91d8.bin
-		INCBIN	baserom.gba_0x6e91d8_0x6e923c.extracted
+		INCBIN	build\records\rec_6e91d8_6e91f8.bin
+		INCBIN	baserom.gba_0x6e91f8_0x6e923c.extracted
 		INCBIN	build\jcalg1\gen_6e923c_6e92b8.bin
-		INCBIN	baserom.gba_0x6e92b8_0x6e931c.extracted
+		INCBIN	build\records\rec_6e92b8_6e92d8.bin
+		INCBIN	baserom.gba_0x6e92d8_0x6e931c.extracted
 		INCBIN	build\jcalg1\gen_6e931c_6e9388.bin
-		INCBIN	baserom.gba_0x6e9388_0x6e93ec.extracted
+		INCBIN	build\records\rec_6e9388_6e93a8.bin
+		INCBIN	baserom.gba_0x6e93a8_0x6e93ec.extracted
 		INCBIN	build\jcalg1\gen_6e93ec_6e9458.bin
-		INCBIN	baserom.gba_0x6e9458_0x6e94b8.extracted
+		INCBIN	build\records\rec_6e9458_6e9478.bin
+		INCBIN	baserom.gba_0x6e9478_0x6e94b8.extracted
 		INCBIN	build\jcalg1\gen_6e94b8_6e951c.bin
-		INCBIN	baserom.gba_0x6e951c_0x6e95a4.extracted
+		INCBIN	build\records\rec_6e951c_6e953c.bin
+		INCBIN	baserom.gba_0x6e953c_0x6e95a4.extracted
 		INCBIN	build\jcalg1\gen_6e95a4_6e9608.bin
-		INCBIN	baserom.gba_0x6e9608_0x6e965c.extracted
+		INCBIN	build\records\rec_6e9608_6e9628.bin
+		INCBIN	baserom.gba_0x6e9628_0x6e965c.extracted
 		INCBIN	build\jcalg1\gen_6e965c_6e969c.bin
-		INCBIN	baserom.gba_0x6e969c_0x6e96f0.extracted
+		INCBIN	build\records\rec_6e969c_6e96bc.bin
+		INCBIN	baserom.gba_0x6e96bc_0x6e96f0.extracted
 		INCBIN	build\jcalg1\gen_6e96f0_6e9730.bin
-		INCBIN	baserom.gba_0x6e9730_0x6e979c.extracted
+		INCBIN	build\records\rec_6e9730_6e9750.bin
+		INCBIN	baserom.gba_0x6e9750_0x6e979c.extracted
 		INCBIN	build\jcalg1\gen_6e979c_6e97fc.bin
-		INCBIN	baserom.gba_0x6e97fc_0x6e98ac.extracted
+		INCBIN	build\records\rec_6e97fc_6e981c.bin
+		INCBIN	baserom.gba_0x6e981c_0x6e98ac.extracted
 		INCBIN	build\jcalg1\gen_6e98ac_6e9928.bin
-		INCBIN	baserom.gba_0x6e9928_0x6e997c.extracted
+		INCBIN	build\records\rec_6e9928_6e9948.bin
+		INCBIN	baserom.gba_0x6e9948_0x6e997c.extracted
 		INCBIN	build\jcalg1\gen_6e997c_6e99bc.bin
-		INCBIN	baserom.gba_0x6e99bc_0x6e9a28.extracted
+		INCBIN	build\records\rec_6e99bc_6e99dc.bin
+		INCBIN	baserom.gba_0x6e99dc_0x6e9a28.extracted
 		INCBIN	build\jcalg1\gen_6e9a28_6e9a84.bin
-		INCBIN	baserom.gba_0x6e9a84_0x6e9ad8.extracted
+		INCBIN	build\records\rec_6e9a84_6e9aa4.bin
+		INCBIN	baserom.gba_0x6e9aa4_0x6e9ad8.extracted
 		INCBIN	build\jcalg1\gen_6e9ad8_6e9b18.bin
-		INCBIN	baserom.gba_0x6e9b18_0x6e9b6c.extracted
+		INCBIN	build\records\rec_6e9b18_6e9b38.bin
+		INCBIN	baserom.gba_0x6e9b38_0x6e9b6c.extracted
 		INCBIN	build\jcalg1\gen_6e9b6c_6e9bac.bin
-		INCBIN	baserom.gba_0x6e9bac_0x6e9c00.extracted
+		INCBIN	build\records\rec_6e9bac_6e9bcc.bin
+		INCBIN	baserom.gba_0x6e9bcc_0x6e9c00.extracted
 		INCBIN	build\jcalg1\gen_6e9c00_6e9c40.bin
-		INCBIN	baserom.gba_0x6e9c40_0x6e9cb8.extracted
+		INCBIN	build\records\rec_6e9c40_6e9c60.bin
+		INCBIN	baserom.gba_0x6e9c60_0x6e9cb8.extracted
 		INCBIN	build\jcalg1\gen_6e9cb8_6e9d38.bin
-		INCBIN	baserom.gba_0x6e9d38_0x6e9dd0.extracted
+		INCBIN	build\records\rec_6e9d38_6e9d58.bin
+		INCBIN	baserom.gba_0x6e9d58_0x6e9dd0.extracted
 		INCBIN	build\jcalg1\gen_6e9dd0_6e9e08.bin
-		INCBIN	baserom.gba_0x6e9e08_0x6e9eb8.extracted
+		INCBIN	build\records\rec_6e9e08_6e9e28.bin
+		INCBIN	baserom.gba_0x6e9e28_0x6e9eb8.extracted
 		INCBIN	build\jcalg1\gen_6e9eb8_6e9f58.bin
-		INCBIN	baserom.gba_0x6e9f58_0x6ec618.extracted
+		INCBIN	build\records\rec_6e9f58_6e9f78.bin
+		INCBIN	baserom.gba_0x6e9f78_0x6ea088.extracted
+		INCBIN	build\records\rec_6ea088_6ea08c.bin
+		INCBIN	baserom.gba_0x6ea08c_0x6ea184.extracted
+		INCBIN	build\records\rec_6ea184_6ea188.bin
+		INCBIN	baserom.gba_0x6ea188_0x6ea284.extracted
+		INCBIN	build\records\rec_6ea284_6ea288.bin
+		INCBIN	baserom.gba_0x6ea288_0x6ea35c.extracted
+		INCBIN	build\records\rec_6ea35c_6ea360.bin
+		INCBIN	baserom.gba_0x6ea360_0x6ea470.extracted
+		INCBIN	build\records\rec_6ea470_6ea474.bin
+		INCBIN	baserom.gba_0x6ea474_0x6ea580.extracted
+		INCBIN	build\records\rec_6ea580_6ea584.bin
+		INCBIN	baserom.gba_0x6ea584_0x6ea644.extracted
+		INCBIN	build\records\rec_6ea644_6ea648.bin
+		INCBIN	baserom.gba_0x6ea648_0x6ea6e8.extracted
+		INCBIN	build\records\rec_6ea6e8_6ea6ec.bin
+		INCBIN	baserom.gba_0x6ea6ec_0x6ea768.extracted
+		INCBIN	build\records\rec_6ea768_6ea76c.bin
+		INCBIN	baserom.gba_0x6ea76c_0x6ea888.extracted
+		INCBIN	build\records\rec_6ea888_6ea88c.bin
+		INCBIN	baserom.gba_0x6ea88c_0x6ea8e0.extracted
+		INCBIN	build\records\rec_6ea8e0_6ea8e4.bin
+		INCBIN	baserom.gba_0x6ea8e4_0x6eaa08.extracted
+		INCBIN	build\records\rec_6eaa08_6eaa0c.bin
+		INCBIN	baserom.gba_0x6eaa0c_0x6eabbc.extracted
+		INCBIN	build\records\rec_6eabbc_6eabc0.bin
+		INCBIN	baserom.gba_0x6eabc0_0x6eac30.extracted
+		INCBIN	build\records\rec_6eac30_6eac34.bin
+		INCBIN	baserom.gba_0x6eac34_0x6eaca4.extracted
+		INCBIN	build\records\rec_6eaca4_6eaca8.bin
+		INCBIN	baserom.gba_0x6eaca8_0x6ead40.extracted
+		INCBIN	build\records\rec_6ead40_6ead44.bin
+		INCBIN	baserom.gba_0x6ead44_0x6eadc8.extracted
+		INCBIN	build\records\rec_6eadc8_6eadcc.bin
+		INCBIN	baserom.gba_0x6eadcc_0x6eaf2c.extracted
+		INCBIN	build\records\rec_6eaf2c_6eaf30.bin
+		INCBIN	baserom.gba_0x6eaf30_0x6eaf78.extracted
+		INCBIN	build\records\rec_6eaf78_6eaf7c.bin
+		INCBIN	baserom.gba_0x6eaf7c_0x6eafd8.extracted
+		INCBIN	build\records\rec_6eafd8_6eafdc.bin
+		INCBIN	baserom.gba_0x6eafdc_0x6eb0fc.extracted
+		INCBIN	build\records\rec_6eb0fc_6eb100.bin
+		INCBIN	baserom.gba_0x6eb100_0x6eb184.extracted
+		INCBIN	build\records\rec_6eb184_6eb188.bin
+		INCBIN	baserom.gba_0x6eb188_0x6eb298.extracted
+		INCBIN	build\records\rec_6eb298_6eb29c.bin
+		INCBIN	baserom.gba_0x6eb29c_0x6eb37c.extracted
+		INCBIN	build\records\rec_6eb37c_6eb380.bin
+		INCBIN	baserom.gba_0x6eb380_0x6eb404.extracted
+		INCBIN	build\records\rec_6eb404_6eb408.bin
+		INCBIN	baserom.gba_0x6eb408_0x6eb448.extracted
+		INCBIN	build\records\rec_6eb448_6eb44c.bin
+		INCBIN	baserom.gba_0x6eb44c_0x6eb48c.extracted
+		INCBIN	build\records\rec_6eb48c_6eb490.bin
+		INCBIN	baserom.gba_0x6eb490_0x6eb4e8.extracted
+		INCBIN	build\records\rec_6eb4e8_6eb4ec.bin
+		INCBIN	baserom.gba_0x6eb4ec_0x6eb520.extracted
+		INCBIN	build\records\rec_6eb520_6eb524.bin
+		INCBIN	baserom.gba_0x6eb524_0x6eb574.extracted
+		INCBIN	build\records\rec_6eb574_6eb578.bin
+		INCBIN	baserom.gba_0x6eb578_0x6eb5c8.extracted
+		INCBIN	build\records\rec_6eb5c8_6eb5cc.bin
+		INCBIN	baserom.gba_0x6eb5cc_0x6eb610.extracted
+		INCBIN	build\records\rec_6eb610_6eb614.bin
+		INCBIN	baserom.gba_0x6eb614_0x6eb664.extracted
+		INCBIN	build\records\rec_6eb664_6eb668.bin
+		INCBIN	baserom.gba_0x6eb668_0x6eb6b4.extracted
+		INCBIN	build\records\rec_6eb6b4_6eb6b8.bin
+		INCBIN	baserom.gba_0x6eb6b8_0x6eb718.extracted
+		INCBIN	build\records\rec_6eb718_6eb71c.bin
+		INCBIN	baserom.gba_0x6eb71c_0x6eb77c.extracted
+		INCBIN	build\records\rec_6eb77c_6eb780.bin
+		INCBIN	baserom.gba_0x6eb780_0x6eb7d0.extracted
+		INCBIN	build\records\rec_6eb7d0_6eb7d4.bin
+		INCBIN	baserom.gba_0x6eb7d4_0x6eb824.extracted
+		INCBIN	build\records\rec_6eb824_6eb828.bin
+		INCBIN	baserom.gba_0x6eb828_0x6eb878.extracted
+		INCBIN	build\records\rec_6eb878_6eb87c.bin
+		INCBIN	baserom.gba_0x6eb87c_0x6eb8c0.extracted
+		INCBIN	build\records\rec_6eb8c0_6eb8c4.bin
+		INCBIN	baserom.gba_0x6eb8c4_0x6eb908.extracted
+		INCBIN	build\records\rec_6eb908_6eb90c.bin
+		INCBIN	baserom.gba_0x6eb90c_0x6eb95c.extracted
+		INCBIN	build\records\rec_6eb95c_6eb960.bin
+		INCBIN	baserom.gba_0x6eb960_0x6eb9c0.extracted
+		INCBIN	build\records\rec_6eb9c0_6eb9c4.bin
+		INCBIN	baserom.gba_0x6eb9c4_0x6eba40.extracted
+		INCBIN	build\records\rec_6eba40_6eba44.bin
+		INCBIN	baserom.gba_0x6eba44_0x6ebaa4.extracted
+		INCBIN	build\records\rec_6ebaa4_6ebaa8.bin
+		INCBIN	baserom.gba_0x6ebaa8_0x6ebb08.extracted
+		INCBIN	build\records\rec_6ebb08_6ebb0c.bin
+		INCBIN	baserom.gba_0x6ebb0c_0x6ebb5c.extracted
+		INCBIN	build\records\rec_6ebb5c_6ebb60.bin
+		INCBIN	baserom.gba_0x6ebb60_0x6ebbb8.extracted
+		INCBIN	build\records\rec_6ebbb8_6ebbbc.bin
+		INCBIN	baserom.gba_0x6ebbbc_0x6ebc24.extracted
+		INCBIN	build\records\rec_6ebc24_6ebc28.bin
+		INCBIN	baserom.gba_0x6ebc28_0x6ebc80.extracted
+		INCBIN	build\records\rec_6ebc80_6ebc84.bin
+		INCBIN	baserom.gba_0x6ebc84_0x6ebd1c.extracted
+		INCBIN	build\records\rec_6ebd1c_6ebd20.bin
+		INCBIN	baserom.gba_0x6ebd20_0x6ebd50.extracted
+		INCBIN	build\records\rec_6ebd50_6ebd54.bin
+		INCBIN	baserom.gba_0x6ebd54_0x6ebdb0.extracted
+		INCBIN	build\records\rec_6ebdb0_6ebdb4.bin
+		INCBIN	baserom.gba_0x6ebdb4_0x6ebdfc.extracted
+		INCBIN	build\records\rec_6ebdfc_6ebe00.bin
+		INCBIN	baserom.gba_0x6ebe00_0x6ebe38.extracted
+		INCBIN	build\records\rec_6ebe38_6ebe3c.bin
+		INCBIN	baserom.gba_0x6ebe3c_0x6ebe74.extracted
+		INCBIN	build\records\rec_6ebe74_6ebe78.bin
+		INCBIN	baserom.gba_0x6ebe78_0x6ebebc.extracted
+		INCBIN	build\records\rec_6ebebc_6ebec0.bin
+		INCBIN	baserom.gba_0x6ebec0_0x6ebf04.extracted
+		INCBIN	build\records\rec_6ebf04_6ebf08.bin
+		INCBIN	baserom.gba_0x6ebf08_0x6ebf4c.extracted
+		INCBIN	build\records\rec_6ebf4c_6ebf50.bin
+		INCBIN	baserom.gba_0x6ebf50_0x6ebfc0.extracted
+		INCBIN	build\records\rec_6ebfc0_6ebfc4.bin
+		INCBIN	baserom.gba_0x6ebfc4_0x6ec034.extracted
+		INCBIN	build\records\rec_6ec034_6ec038.bin
+		INCBIN	baserom.gba_0x6ec038_0x6ec09c.extracted
+		INCBIN	build\records\rec_6ec09c_6ec0a0.bin
+		INCBIN	baserom.gba_0x6ec0a0_0x6ec174.extracted
+		INCBIN	build\records\rec_6ec174_6ec178.bin
+		INCBIN	baserom.gba_0x6ec178_0x6ec1c0.extracted
+		INCBIN	build\records\rec_6ec1c0_6ec1c4.bin
+		INCBIN	baserom.gba_0x6ec1c4_0x6ec234.extracted
+		INCBIN	build\records\rec_6ec234_6ec238.bin
+		INCBIN	baserom.gba_0x6ec238_0x6ec290.extracted
+		INCBIN	build\records\rec_6ec290_6ec294.bin
+		INCBIN	baserom.gba_0x6ec294_0x6ec2e0.extracted
+		INCBIN	build\records\rec_6ec2e0_6ec2e4.bin
+		INCBIN	baserom.gba_0x6ec2e4_0x6ec354.extracted
+		INCBIN	build\records\rec_6ec354_6ec358.bin
+		INCBIN	baserom.gba_0x6ec358_0x6ec3a8.extracted
+		INCBIN	build\records\rec_6ec3a8_6ec3ac.bin
+		INCBIN	baserom.gba_0x6ec3ac_0x6ec618.extracted
 		INCBIN	build\jcalg1\gen_6ec618_6edf00.bin
-		INCBIN	baserom.gba_0x6edf00_0x6ee2e0.extracted
+		INCBIN	baserom.gba_0x6edf00_0x6ee060.extracted
+		INCBIN	build\records\rec_6ee060_6ee194.bin
+		INCBIN	baserom.gba_0x6ee194_0x6ee1ec.extracted
+		INCBIN	build\records\rec_6ee1ec_6ee1f0.bin
+		INCBIN	baserom.gba_0x6ee1f0_0x6ee2e0.extracted
 		INCBIN	build\jcalg1\gen_6ee2e0_6ee448.bin
-		INCBIN	baserom.gba_0x6ee448_0x6ee4a8.extracted
+		INCBIN	baserom.gba_0x6ee448_0x6ee454.extracted
+		INCBIN	build\records\rec_6ee454_6ee478.bin
+		INCBIN	baserom.gba_0x6ee478_0x6ee4a8.extracted
 		INCBIN	build\jcalg1\gen_6ee4a8_6ee4dc.bin
-		INCBIN	baserom.gba_0x6ee4dc_0x6ee55c.extracted
+		INCBIN	build\records\rec_6ee4dc_6ee4fc.bin
+		INCBIN	baserom.gba_0x6ee4fc_0x6ee55c.extracted
 		INCBIN	build\jcalg1\gen_6ee55c_6ee5c8.bin
-		INCBIN	baserom.gba_0x6ee5c8_0x6ee8d4.extracted
+		INCBIN	build\records\rec_6ee5c8_6ee5e8.bin
+		INCBIN	baserom.gba_0x6ee5e8_0x6ee634.extracted
+		INCBIN	build\records\rec_6ee634_6ee638.bin
+		INCBIN	baserom.gba_0x6ee638_0x6ee784.extracted
+		INCBIN	build\records\rec_6ee784_6ee788.bin
+		INCBIN	baserom.gba_0x6ee788_0x6ee7c0.extracted
+		INCBIN	build\records\rec_6ee7c0_6ee7c4.bin
+		INCBIN	baserom.gba_0x6ee7c4_0x6ee868.extracted
+		INCBIN	build\records\rec_6ee868_6ee86c.bin
+		INCBIN	baserom.gba_0x6ee86c_0x6ee89c.extracted
+		INCBIN	build\records\rec_6ee89c_6ee8a0.bin
+		INCBIN	baserom.gba_0x6ee8a0_0x6ee8d4.extracted
 		INCBIN	build\jcalg1\gen_6ee8d4_6eea90.bin
-		INCBIN	baserom.gba_0x6eea90_0x6eec18.extracted
+		INCBIN	build\records\rec_6eea90_6eeac4.bin
+		INCBIN	baserom.gba_0x6eeac4_0x6eeb04.extracted
+		INCBIN	build\records\rec_6eeb04_6eeb08.bin
+		INCBIN	baserom.gba_0x6eeb08_0x6eeb38.extracted
+		INCBIN	build\records\rec_6eeb38_6eeb3c.bin
+		INCBIN	baserom.gba_0x6eeb3c_0x6eeb74.extracted
+		INCBIN	build\records\rec_6eeb74_6eeb78.bin
+		INCBIN	baserom.gba_0x6eeb78_0x6eeba8.extracted
+		INCBIN	build\records\rec_6eeba8_6eebac.bin
+		INCBIN	baserom.gba_0x6eebac_0x6eebe4.extracted
+		INCBIN	build\records\rec_6eebe4_6eebe8.bin
+		INCBIN	baserom.gba_0x6eebe8_0x6eec18.extracted
 		INCBIN	build\jcalg1\gen_6eec18_6eed20.bin
-		INCBIN	baserom.gba_0x6eed20_0x6eedb0.extracted
+		INCBIN	build\records\rec_6eed20_6eed54.bin
+		INCBIN	baserom.gba_0x6eed54_0x6eedb0.extracted
 		INCBIN	build\jcalg1\gen_6eedb0_6eee14.bin
-		INCBIN	baserom.gba_0x6eee14_0x6eee68.extracted
+		INCBIN	build\records\rec_6eee14_6eee34.bin
+		INCBIN	baserom.gba_0x6eee34_0x6eee68.extracted
 		INCBIN	build\jcalg1\gen_6eee68_6eeea4.bin
-		INCBIN	baserom.gba_0x6eeea4_0x6eef10.extracted
+		INCBIN	build\records\rec_6eeea4_6eeec4.bin
+		INCBIN	baserom.gba_0x6eeec4_0x6eef10.extracted
 		INCBIN	build\jcalg1\gen_6eef10_6eef68.bin
-		INCBIN	baserom.gba_0x6eef68_0x6eefd8.extracted
+		INCBIN	build\records\rec_6eef68_6eef88.bin
+		INCBIN	baserom.gba_0x6eef88_0x6eefd8.extracted
 		INCBIN	build\jcalg1\gen_6eefd8_6ef058.bin
-		INCBIN	baserom.gba_0x6ef058_0x6ef0c0.extracted
+		INCBIN	build\records\rec_6ef058_6ef078.bin
+		INCBIN	baserom.gba_0x6ef078_0x6ef0c0.extracted
 		INCBIN	build\jcalg1\gen_6ef0c0_6ef10c.bin
-		INCBIN	baserom.gba_0x6ef10c_0x6ef170.extracted
+		INCBIN	build\records\rec_6ef10c_6ef12c.bin
+		INCBIN	baserom.gba_0x6ef12c_0x6ef170.extracted
 		INCBIN	build\jcalg1\gen_6ef170_6ef1cc.bin
-		INCBIN	baserom.gba_0x6ef1cc_0x6ef29c.extracted
+		INCBIN	build\records\rec_6ef1cc_6ef1ec.bin
+		INCBIN	baserom.gba_0x6ef1ec_0x6ef29c.extracted
 		INCBIN	build\jcalg1\gen_6ef29c_6ef360.bin
-		INCBIN	baserom.gba_0x6ef360_0x6ef498.extracted
+		INCBIN	build\records\rec_6ef360_6ef380.bin
+		INCBIN	baserom.gba_0x6ef380_0x6ef3f0.extracted
+		INCBIN	build\records\rec_6ef3f0_6ef3f4.bin
+		INCBIN	baserom.gba_0x6ef3f4_0x6ef42c.extracted
+		INCBIN	build\records\rec_6ef42c_6ef430.bin
+		INCBIN	baserom.gba_0x6ef430_0x6ef498.extracted
 		INCBIN	build\jcalg1\gen_6ef498_6ef5a8.bin
-		INCBIN	baserom.gba_0x6ef5a8_0x6ef760.extracted
+		INCBIN	build\records\rec_6ef5a8_6ef5d0.bin
+		INCBIN	baserom.gba_0x6ef5d0_0x6ef760.extracted
 		INCBIN	build\jcalg1\gen_6ef760_6ef93c.bin
-		INCBIN	baserom.gba_0x6ef93c_0x6ef9d0.extracted
+		INCBIN	build\records\rec_6ef93c_6ef95c.bin
+		INCBIN	baserom.gba_0x6ef95c_0x6ef9d0.extracted
 		INCBIN	build\jcalg1\gen_6ef9d0_6efac8.bin
-		INCBIN	baserom.gba_0x6efac8_0x6f0530.extracted
+		INCBIN	build\records\rec_6efac8_6efae8.bin
+		INCBIN	baserom.gba_0x6efae8_0x6efb48.extracted
+		INCBIN	build\records\rec_6efb48_6efb4c.bin
+		INCBIN	baserom.gba_0x6efb4c_0x6efb84.extracted
+		INCBIN	build\records\rec_6efb84_6efb88.bin
+		INCBIN	baserom.gba_0x6efb88_0x6efbc0.extracted
+		INCBIN	build\records\rec_6efbc0_6efbc4.bin
+		INCBIN	baserom.gba_0x6efbc4_0x6efbfc.extracted
+		INCBIN	build\records\rec_6efbfc_6efc00.bin
+		INCBIN	baserom.gba_0x6efc00_0x6efc34.extracted
+		INCBIN	build\records\rec_6efc34_6efc38.bin
+		INCBIN	baserom.gba_0x6efc38_0x6efc68.extracted
+		INCBIN	build\records\rec_6efc68_6efc6c.bin
+		INCBIN	baserom.gba_0x6efc6c_0x6efca4.extracted
+		INCBIN	build\records\rec_6efca4_6efca8.bin
+		INCBIN	baserom.gba_0x6efca8_0x6efcd8.extracted
+		INCBIN	build\records\rec_6efcd8_6efcdc.bin
+		INCBIN	baserom.gba_0x6efcdc_0x6efd1c.extracted
+		INCBIN	build\records\rec_6efd1c_6efd20.bin
+		INCBIN	baserom.gba_0x6efd20_0x6efd70.extracted
+		INCBIN	build\records\rec_6efd70_6efd74.bin
+		INCBIN	baserom.gba_0x6efd74_0x6efde4.extracted
+		INCBIN	build\records\rec_6efde4_6efde8.bin
+		INCBIN	baserom.gba_0x6efde8_0x6efe44.extracted
+		INCBIN	build\records\rec_6efe44_6efe48.bin
+		INCBIN	baserom.gba_0x6efe48_0x6efe8c.extracted
+		INCBIN	build\records\rec_6efe8c_6efe90.bin
+		INCBIN	baserom.gba_0x6efe90_0x6eff10.extracted
+		INCBIN	build\records\rec_6eff10_6eff14.bin
+		INCBIN	baserom.gba_0x6eff14_0x6f0044.extracted
+		INCBIN	build\records\rec_6f0044_6f0048.bin
+		INCBIN	baserom.gba_0x6f0048_0x6f0188.extracted
+		INCBIN	build\records\rec_6f0188_6f018c.bin
+		INCBIN	baserom.gba_0x6f018c_0x6f01d0.extracted
+		INCBIN	build\records\rec_6f01d0_6f01d4.bin
+		INCBIN	baserom.gba_0x6f01d4_0x6f0254.extracted
+		INCBIN	build\records\rec_6f0254_6f0258.bin
+		INCBIN	baserom.gba_0x6f0258_0x6f02d4.extracted
+		INCBIN	build\records\rec_6f02d4_6f02d8.bin
+		INCBIN	baserom.gba_0x6f02d8_0x6f0310.extracted
+		INCBIN	build\records\rec_6f0310_6f0314.bin
+		INCBIN	baserom.gba_0x6f0314_0x6f034c.extracted
+		INCBIN	build\records\rec_6f034c_6f0350.bin
+		INCBIN	baserom.gba_0x6f0350_0x6f0388.extracted
+		INCBIN	build\records\rec_6f0388_6f038c.bin
+		INCBIN	baserom.gba_0x6f038c_0x6f03d0.extracted
+		INCBIN	build\records\rec_6f03d0_6f03d4.bin
+		INCBIN	baserom.gba_0x6f03d4_0x6f0418.extracted
+		INCBIN	build\records\rec_6f0418_6f041c.bin
+		INCBIN	baserom.gba_0x6f041c_0x6f0530.extracted
 		INCBIN	build\jcalg1\gen_6f0530_6f0d00.bin
-		INCBIN	baserom.gba_0x6f0d00_0x6f0f70.extracted
+		INCBIN	baserom.gba_0x6f0d00_0x6f0d50.extracted
+		INCBIN	build\records\rec_6f0d50_6f0dd0.bin
+		INCBIN	baserom.gba_0x6f0dd0_0x6f0e20.extracted
+		INCBIN	build\records\rec_6f0e20_6f0e24.bin
+		INCBIN	baserom.gba_0x6f0e24_0x6f0e6c.extracted
+		INCBIN	build\records\rec_6f0e6c_6f0e70.bin
+		INCBIN	baserom.gba_0x6f0e70_0x6f0eb8.extracted
+		INCBIN	build\records\rec_6f0eb8_6f0ebc.bin
+		INCBIN	baserom.gba_0x6f0ebc_0x6f0f14.extracted
+		INCBIN	build\records\rec_6f0f14_6f0f18.bin
+		INCBIN	baserom.gba_0x6f0f18_0x6f0f70.extracted
 		INCBIN	build\jcalg1\gen_6f0f70_6f109c.bin
-		INCBIN	baserom.gba_0x6f109c_0x6f110c.extracted
+		INCBIN	build\records\rec_6f109c_6f10cc.bin
+		INCBIN	baserom.gba_0x6f10cc_0x6f110c.extracted
 		INCBIN	build\jcalg1\gen_6f110c_6f1174.bin
-		INCBIN	baserom.gba_0x6f1174_0x6f11e4.extracted
+		INCBIN	build\records\rec_6f1174_6f1194.bin
+		INCBIN	baserom.gba_0x6f1194_0x6f11e4.extracted
 		INCBIN	build\jcalg1\gen_6f11e4_6f1278.bin
-		INCBIN	baserom.gba_0x6f1278_0x6f12e4.extracted
+		INCBIN	build\records\rec_6f1278_6f1298.bin
+		INCBIN	baserom.gba_0x6f1298_0x6f12e4.extracted
 		INCBIN	build\jcalg1\gen_6f12e4_6f1340.bin
-		INCBIN	baserom.gba_0x6f1340_0x6f13b8.extracted
+		INCBIN	build\records\rec_6f1340_6f1360.bin
+		INCBIN	baserom.gba_0x6f1360_0x6f13b8.extracted
 		INCBIN	build\jcalg1\gen_6f13b8_6f1428.bin
-		INCBIN	baserom.gba_0x6f1428_0x6f2d08.extracted
+		INCBIN	build\records\rec_6f1428_6f1448.bin
+		INCBIN	baserom.gba_0x6f1448_0x6f1488.extracted
+		INCBIN	build\records\rec_6f1488_6f148c.bin
+		INCBIN	baserom.gba_0x6f148c_0x6f14cc.extracted
+		INCBIN	build\records\rec_6f14cc_6f14d0.bin
+		INCBIN	baserom.gba_0x6f14d0_0x6f1538.extracted
+		INCBIN	build\records\rec_6f1538_6f153c.bin
+		INCBIN	baserom.gba_0x6f153c_0x6f158c.extracted
+		INCBIN	build\records\rec_6f158c_6f1590.bin
+		INCBIN	baserom.gba_0x6f1590_0x6f15e0.extracted
+		INCBIN	build\records\rec_6f15e0_6f15e4.bin
+		INCBIN	baserom.gba_0x6f15e4_0x6f1654.extracted
+		INCBIN	build\records\rec_6f1654_6f1658.bin
+		INCBIN	baserom.gba_0x6f1658_0x6f16b8.extracted
+		INCBIN	build\records\rec_6f16b8_6f16bc.bin
+		INCBIN	baserom.gba_0x6f16bc_0x6f1700.extracted
+		INCBIN	build\records\rec_6f1700_6f1704.bin
+		INCBIN	baserom.gba_0x6f1704_0x6f1764.extracted
+		INCBIN	build\records\rec_6f1764_6f1768.bin
+		INCBIN	baserom.gba_0x6f1768_0x6f17a0.extracted
+		INCBIN	build\records\rec_6f17a0_6f17a4.bin
+		INCBIN	baserom.gba_0x6f17a4_0x6f1814.extracted
+		INCBIN	build\records\rec_6f1814_6f1818.bin
+		INCBIN	baserom.gba_0x6f1818_0x6f18b0.extracted
+		INCBIN	build\records\rec_6f18b0_6f18b4.bin
+		INCBIN	baserom.gba_0x6f18b4_0x6f1924.extracted
+		INCBIN	build\records\rec_6f1924_6f1928.bin
+		INCBIN	baserom.gba_0x6f1928_0x6f1988.extracted
+		INCBIN	build\records\rec_6f1988_6f198c.bin
+		INCBIN	baserom.gba_0x6f198c_0x6f1a10.extracted
+		INCBIN	build\records\rec_6f1a10_6f1a14.bin
+		INCBIN	baserom.gba_0x6f1a14_0x6f1a84.extracted
+		INCBIN	build\records\rec_6f1a84_6f1a88.bin
+		INCBIN	baserom.gba_0x6f1a88_0x6f1ad4.extracted
+		INCBIN	build\records\rec_6f1ad4_6f1ad8.bin
+		INCBIN	baserom.gba_0x6f1ad8_0x6f1b48.extracted
+		INCBIN	build\records\rec_6f1b48_6f1b4c.bin
+		INCBIN	baserom.gba_0x6f1b4c_0x6f1bdc.extracted
+		INCBIN	build\records\rec_6f1bdc_6f1be0.bin
+		INCBIN	baserom.gba_0x6f1be0_0x6f1c38.extracted
+		INCBIN	build\records\rec_6f1c38_6f1c3c.bin
+		INCBIN	baserom.gba_0x6f1c3c_0x6f1c7c.extracted
+		INCBIN	build\records\rec_6f1c7c_6f1c80.bin
+		INCBIN	baserom.gba_0x6f1c80_0x6f1cc0.extracted
+		INCBIN	build\records\rec_6f1cc0_6f1cc4.bin
+		INCBIN	baserom.gba_0x6f1cc4_0x6f1d20.extracted
+		INCBIN	build\records\rec_6f1d20_6f1d24.bin
+		INCBIN	baserom.gba_0x6f1d24_0x6f1d98.extracted
+		INCBIN	build\records\rec_6f1d98_6f1d9c.bin
+		INCBIN	baserom.gba_0x6f1d9c_0x6f1e54.extracted
+		INCBIN	build\records\rec_6f1e54_6f1e58.bin
+		INCBIN	baserom.gba_0x6f1e58_0x6f1e9c.extracted
+		INCBIN	build\records\rec_6f1e9c_6f1ea0.bin
+		INCBIN	baserom.gba_0x6f1ea0_0x6f1f30.extracted
+		INCBIN	build\records\rec_6f1f30_6f1f34.bin
+		INCBIN	baserom.gba_0x6f1f34_0x6f1f78.extracted
+		INCBIN	build\records\rec_6f1f78_6f1f7c.bin
+		INCBIN	baserom.gba_0x6f1f7c_0x6f203c.extracted
+		INCBIN	build\records\rec_6f203c_6f2040.bin
+		INCBIN	baserom.gba_0x6f2040_0x6f20d8.extracted
+		INCBIN	build\records\rec_6f20d8_6f20dc.bin
+		INCBIN	baserom.gba_0x6f20dc_0x6f2120.extracted
+		INCBIN	build\records\rec_6f2120_6f2124.bin
+		INCBIN	baserom.gba_0x6f2124_0x6f2204.extracted
+		INCBIN	build\records\rec_6f2204_6f2208.bin
+		INCBIN	baserom.gba_0x6f2208_0x6f2298.extracted
+		INCBIN	build\records\rec_6f2298_6f229c.bin
+		INCBIN	baserom.gba_0x6f229c_0x6f233c.extracted
+		INCBIN	build\records\rec_6f233c_6f2340.bin
+		INCBIN	baserom.gba_0x6f2340_0x6f23c4.extracted
+		INCBIN	build\records\rec_6f23c4_6f23c8.bin
+		INCBIN	baserom.gba_0x6f23c8_0x6f2428.extracted
+		INCBIN	build\records\rec_6f2428_6f242c.bin
+		INCBIN	baserom.gba_0x6f242c_0x6f251c.extracted
+		INCBIN	build\records\rec_6f251c_6f2520.bin
+		INCBIN	baserom.gba_0x6f2520_0x6f2598.extracted
+		INCBIN	build\records\rec_6f2598_6f259c.bin
+		INCBIN	baserom.gba_0x6f259c_0x6f262c.extracted
+		INCBIN	build\records\rec_6f262c_6f2630.bin
+		INCBIN	baserom.gba_0x6f2630_0x6f26c0.extracted
+		INCBIN	build\records\rec_6f26c0_6f26c4.bin
+		INCBIN	baserom.gba_0x6f26c4_0x6f2744.extracted
+		INCBIN	build\records\rec_6f2744_6f2748.bin
+		INCBIN	baserom.gba_0x6f2748_0x6f27b8.extracted
+		INCBIN	build\records\rec_6f27b8_6f27bc.bin
+		INCBIN	baserom.gba_0x6f27bc_0x6f282c.extracted
+		INCBIN	build\records\rec_6f282c_6f2830.bin
+		INCBIN	baserom.gba_0x6f2830_0x6f28d8.extracted
+		INCBIN	build\records\rec_6f28d8_6f28dc.bin
+		INCBIN	baserom.gba_0x6f28dc_0x6f29a4.extracted
+		INCBIN	build\records\rec_6f29a4_6f29a8.bin
+		INCBIN	baserom.gba_0x6f29a8_0x6f2a80.extracted
+		INCBIN	build\records\rec_6f2a80_6f2a84.bin
+		INCBIN	baserom.gba_0x6f2a84_0x6f2b24.extracted
+		INCBIN	build\records\rec_6f2b24_6f2b28.bin
+		INCBIN	baserom.gba_0x6f2b28_0x6f2d08.extracted
 		INCBIN	build\jcalg1\gen_6f2d08_6f3e14.bin
-		INCBIN	baserom.gba_0x6f3e14_0x6f4074.extracted
+		INCBIN	baserom.gba_0x6f3e14_0x6f3ee8.extracted
+		INCBIN	build\records\rec_6f3ee8_6f3fc4.bin
+		INCBIN	baserom.gba_0x6f3fc4_0x6f402c.extracted
+		INCBIN	build\records\rec_6f402c_6f4030.bin
+		INCBIN	baserom.gba_0x6f4030_0x6f4074.extracted
 		INCBIN	build\jcalg1\gen_6f4074_6f4128.bin
-		INCBIN	baserom.gba_0x6f4128_0x6f41a8.extracted
+		INCBIN	build\records\rec_6f4128_6f414c.bin
+		INCBIN	baserom.gba_0x6f414c_0x6f41a8.extracted
 		INCBIN	build\jcalg1\gen_6f41a8_6f4210.bin
-		INCBIN	baserom.gba_0x6f4210_0x6f45a8.extracted
+		INCBIN	build\records\rec_6f4210_6f4230.bin
+		INCBIN	baserom.gba_0x6f4230_0x6f4450.extracted
+		INCBIN	build\records\rec_6f4450_6f4454.bin
+		INCBIN	baserom.gba_0x6f4454_0x6f44d4.extracted
+		INCBIN	build\records\rec_6f44d4_6f44d8.bin
+		INCBIN	baserom.gba_0x6f44d8_0x6f45a8.extracted
 		INCBIN	build\jcalg1\gen_6f45a8_6f474c.bin
-		INCBIN	baserom.gba_0x6f474c_0x6f47d4.extracted
+		INCBIN	baserom.gba_0x6f474c_0x6f4760.extracted
+		INCBIN	build\records\rec_6f4760_6f4788.bin
+		INCBIN	baserom.gba_0x6f4788_0x6f47d4.extracted
 		INCBIN	build\jcalg1\gen_6f47d4_6f4844.bin
-		INCBIN	baserom.gba_0x6f4844_0x6f4894.extracted
+		INCBIN	build\records\rec_6f4844_6f4864.bin
+		INCBIN	baserom.gba_0x6f4864_0x6f4894.extracted
 		INCBIN	build\jcalg1\gen_6f4894_6f48c8.bin
-		INCBIN	baserom.gba_0x6f48c8_0x6f4c80.extracted
+		INCBIN	build\records\rec_6f48c8_6f48e8.bin
+		INCBIN	baserom.gba_0x6f48e8_0x6f4a2c.extracted
+		INCBIN	build\records\rec_6f4a2c_6f4a30.bin
+		INCBIN	baserom.gba_0x6f4a30_0x6f4adc.extracted
+		INCBIN	build\records\rec_6f4adc_6f4ae0.bin
+		INCBIN	baserom.gba_0x6f4ae0_0x6f4b8c.extracted
+		INCBIN	build\records\rec_6f4b8c_6f4b90.bin
+		INCBIN	baserom.gba_0x6f4b90_0x6f4c80.extracted
 		INCBIN	build\jcalg1\gen_6f4c80_6f4f90.bin
-		INCBIN	baserom.gba_0x6f4f90_0x6f5804.extracted
+		INCBIN	baserom.gba_0x6f4f90_0x6f4fb0.extracted
+		INCBIN	build\records\rec_6f4fb0_6f4fdc.bin
+		INCBIN	baserom.gba_0x6f4fdc_0x6f5050.extracted
+		INCBIN	build\records\rec_6f5050_6f5054.bin
+		INCBIN	baserom.gba_0x6f5054_0x6f5120.extracted
+		INCBIN	build\records\rec_6f5120_6f5124.bin
+		INCBIN	baserom.gba_0x6f5124_0x6f5198.extracted
+		INCBIN	build\records\rec_6f5198_6f519c.bin
+		INCBIN	baserom.gba_0x6f519c_0x6f51f0.extracted
+		INCBIN	build\records\rec_6f51f0_6f51f4.bin
+		INCBIN	baserom.gba_0x6f51f4_0x6f5248.extracted
+		INCBIN	build\records\rec_6f5248_6f524c.bin
+		INCBIN	baserom.gba_0x6f524c_0x6f52c0.extracted
+		INCBIN	build\records\rec_6f52c0_6f52c4.bin
+		INCBIN	baserom.gba_0x6f52c4_0x6f5344.extracted
+		INCBIN	build\records\rec_6f5344_6f5348.bin
+		INCBIN	baserom.gba_0x6f5348_0x6f5410.extracted
+		INCBIN	build\records\rec_6f5410_6f5414.bin
+		INCBIN	baserom.gba_0x6f5414_0x6f54dc.extracted
+		INCBIN	build\records\rec_6f54dc_6f54e0.bin
+		INCBIN	baserom.gba_0x6f54e0_0x6f5524.extracted
+		INCBIN	build\records\rec_6f5524_6f5528.bin
+		INCBIN	baserom.gba_0x6f5528_0x6f5580.extracted
+		INCBIN	build\records\rec_6f5580_6f5584.bin
+		INCBIN	baserom.gba_0x6f5584_0x6f561c.extracted
+		INCBIN	build\records\rec_6f561c_6f5620.bin
+		INCBIN	baserom.gba_0x6f5620_0x6f5804.extracted
 		INCBIN	build\jcalg1\gen_6f5804_6f5e20.bin
-		INCBIN	baserom.gba_0x6f5e20_0x6f62cc.extracted
+		INCBIN	baserom.gba_0x6f5e20_0x6f5ea8.extracted
+		INCBIN	build\records\rec_6f5ea8_6f5ef8.bin
+		INCBIN	baserom.gba_0x6f5ef8_0x6f5f3c.extracted
+		INCBIN	build\records\rec_6f5f3c_6f5f40.bin
+		INCBIN	baserom.gba_0x6f5f40_0x6f5f90.extracted
+		INCBIN	build\records\rec_6f5f90_6f5f94.bin
+		INCBIN	baserom.gba_0x6f5f94_0x6f6018.extracted
+		INCBIN	build\records\rec_6f6018_6f601c.bin
+		INCBIN	baserom.gba_0x6f601c_0x6f6078.extracted
+		INCBIN	build\records\rec_6f6078_6f607c.bin
+		INCBIN	baserom.gba_0x6f607c_0x6f60d8.extracted
+		INCBIN	build\records\rec_6f60d8_6f60dc.bin
+		INCBIN	baserom.gba_0x6f60dc_0x6f6118.extracted
+		INCBIN	build\records\rec_6f6118_6f611c.bin
+		INCBIN	baserom.gba_0x6f611c_0x6f615c.extracted
+		INCBIN	build\records\rec_6f615c_6f6160.bin
+		INCBIN	baserom.gba_0x6f6160_0x6f61b0.extracted
+		INCBIN	build\records\rec_6f61b0_6f61b4.bin
+		INCBIN	baserom.gba_0x6f61b4_0x6f61f8.extracted
+		INCBIN	build\records\rec_6f61f8_6f61fc.bin
+		INCBIN	baserom.gba_0x6f61fc_0x6f62cc.extracted
 		INCBIN	build\jcalg1\gen_6f62cc_6f668c.bin
-		INCBIN	baserom.gba_0x6f668c_0x6f6a3c.extracted
+		INCBIN	baserom.gba_0x6f668c_0x6f66cc.extracted
+		INCBIN	build\records\rec_6f66cc_6f6710.bin
+		INCBIN	baserom.gba_0x6f6710_0x6f6794.extracted
+		INCBIN	build\records\rec_6f6794_6f6798.bin
+		INCBIN	baserom.gba_0x6f6798_0x6f68c8.extracted
+		INCBIN	build\records\rec_6f68c8_6f68cc.bin
+		INCBIN	baserom.gba_0x6f68cc_0x6f6a3c.extracted
 		INCBIN	build\jcalg1\gen_6f6a3c_6f6c4c.bin
-		INCBIN	baserom.gba_0x6f6c4c_0x6f7e64.extracted
+		INCBIN	baserom.gba_0x6f6c4c_0x6f6c58.extracted
+		INCBIN	build\records\rec_6f6c58_6f6d94.bin
+		INCBIN	baserom.gba_0x6f6d94_0x6f7e64.extracted
 		INCBIN	build\jcalg1\gen_6f7e64_6f7f9c.bin
 		INCBIN	baserom.gba_0x6f7f9c_0x6f7fe8.extracted
 		INCBIN	build\jcalg1\gen_6f7fe8_6f806c.bin
@@ -9261,9 +11319,28 @@
 		INCBIN	build\jcalg1\gen_6fd874_6fdd2c.bin
 		INCBIN	baserom.gba_0x6fdd2c_0x6fdf2c.extracted
 		INCBIN	build\jcalg1\gen_6fdf2c_6fdf8c.bin
-		INCBIN	baserom.gba_0x6fdf8c_0x6ff4d4.extracted
+		INCBIN	baserom.gba_0x6fdf8c_0x6ff3c4.extracted
+		INCBIN	build\addr\rec_6ff3c4_6ff3d0.bin
+		INCBIN	baserom.gba_0x6ff3d0_0x6ff3ec.extracted
+		INCBIN	build\addr\rec_6ff3ec_6ff3f8.bin
+		INCBIN	baserom.gba_0x6ff3f8_0x6ff46c.extracted
+		INCBIN	build\addr\rec_6ff46c_6ff474.bin
+		INCBIN	baserom.gba_0x6ff474_0x6ff484.extracted
+		INCBIN	build\addr\rec_6ff484_6ff48c.bin
+		INCBIN	baserom.gba_0x6ff48c_0x6ff490.extracted
+		INCBIN	build\addr\rec_6ff490_6ff498.bin
+		INCBIN	baserom.gba_0x6ff498_0x6ff49c.extracted
+		INCBIN	build\addr\rec_6ff49c_6ff4a4.bin
+		INCBIN	baserom.gba_0x6ff4a4_0x6ff4ac.extracted
+		INCBIN	build\addr\rec_6ff4ac_6ff4b4.bin
+		INCBIN	baserom.gba_0x6ff4b4_0x6ff4b8.extracted
+		INCBIN	build\addr\rec_6ff4b8_6ff4c0.bin
+		INCBIN	baserom.gba_0x6ff4c0_0x6ff4c4.extracted
+		INCBIN	build\addr\rec_6ff4c4_6ff4cc.bin
+		INCBIN	baserom.gba_0x6ff4cc_0x6ff4d4.extracted
 		INCBIN	build\jcalg1\gen_6ff4d4_6ff58c.bin
-		INCBIN	baserom.gba_0x6ff58c_0x6ff5b8.extracted
+		INCBIN	build\addr\rec_6ff58c_6ff594.bin
+		INCBIN	baserom.gba_0x6ff594_0x6ff5b8.extracted
 		INCBIN	build\jcalg1\gen_6ff5b8_6ff88c.bin
 		INCBIN	baserom.gba_0x6ff88c_0x6ffc34.extracted
 		INCBIN	build\jcalg1\gen_6ffc34_701dec.bin
@@ -9275,4 +11352,10 @@
 		INCBIN	build\jcalg1\gen_705234_7052bc.bin
 		INCBIN	baserom.gba_0x7052bc_0x705ea8.extracted
 		INCBIN	build\jcalg1\gen_705ea8_7fb8d0.bin
-		INCBIN	baserom.gba_0x7fb8d0_0x800000.extracted
+		INCBIN	baserom.gba_0x7fb8d0_0x7fcb1c.extracted
+		INCBIN	build\addr\rec_7fcb1c_7fcb9c.bin
+		INCBIN	baserom.gba_0x7fcb9c_0x7fd0dc.extracted
+		INCBIN	build\addr\rec_7fd0dc_7fd0f4.bin
+		INCBIN	baserom.gba_0x7fd0f4_0x7fe4f8.extracted
+		INCBIN	build\addr\rec_7fe4f8_7fe530.bin
+		INCBIN	baserom.gba_0x7fe530_0x800000.extracted

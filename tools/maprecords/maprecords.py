@@ -270,14 +270,17 @@ def write(image, rows=None):
     return write_runs(build_records(rows or load_tables()), BUILD, "rec")
 
 
-def check(image, rows=None):
-    records = build_records(rows or load_tables())
+def check_records(records, image):
     mismatched = sum(1 for offset, data, _spans in records
                      if image[offset:offset + len(data)] != data)
     return {"records": len(records), "mismatched_records": mismatched,
             "bytes": sum(len(data) for _offset, data, _spans in records),
             "emitted_bytes": sum(stop - begin for _offset, _data, spans in records
                                  for begin, stop in spans)}
+
+
+def check(image, rows=None):
+    return check_records(build_records(rows or load_tables()), image)
 
 
 def reference(image, names, address):

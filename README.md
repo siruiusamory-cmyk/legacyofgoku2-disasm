@@ -48,11 +48,13 @@ does not measure how much of the code has been turned into C.
 
 ## Progress
 
-68.1199 % of the ROM (5,714,309 of 8,388,608 bytes) builds from tracked source: transcribed
+68.2797 % of the ROM (5,727,716 of 8,388,608 bytes) builds from tracked source: transcribed
 instructions, emitted code and literal pools, container bodies re-encoded from your own ROM, the
 map record family re-encoded from the five tracked tables in `tools/maprecords/`, the sprite
-record family re-encoded from the three tracked tables in `tools/sprites/`, and the text storage
-records re-encoded from the four tracked tables in `tools/text/`. The rest is still
+record family re-encoded from the three tracked tables in `tools/sprites/`, the text storage
+records re-encoded from the four tracked tables in `tools/text/`, the state table and the quest
+records re-encoded from the six tracked tables in `tools/records/`, and the address runs whose every
+word names a code label, re-encoded from the one tracked table in `tools/addr/`. The rest is still
 copied into the build as slices of the original image. `python tools\gate\gate.py` prints the split,
 and [docs/DEFINITION_OF_DONE.md](docs/DEFINITION_OF_DONE.md) says what counts as source.
 
@@ -117,4 +119,5 @@ No ROM, BIOS or extracted game data is included. You need your own legally obtai
 game. Not affiliated with the rights holders of the game.
 
 MPL-2.0, see [LICENSE](LICENSE).
+
 

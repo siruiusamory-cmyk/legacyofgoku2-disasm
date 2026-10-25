@@ -27,6 +27,15 @@ echo sprite_records_exit=%ERRORLEVEL%
 echo === text records ===
 python tools\text\text_rows.py --write
 echo text_records_exit=%ERRORLEVEL%
+echo === table records ===
+python tools\records\table_086f6d8c.py --write
+echo table_records_exit=%ERRORLEVEL%
+echo === opcode rows ===
+python tools\records\opcode_rows.py --write
+echo opcode_rows_exit=%ERRORLEVEL%
+echo === address runs ===
+python tools\addr\addr_runs.py --write
+echo address_runs_exit=%ERRORLEVEL%
 echo === compressor ===
 if not exist "%ROOT%\tools\compress\compress.exe" call "%ROOT%\tools\compress\build.cmd"
 if errorlevel 1 exit /b 1
@@ -43,3 +52,4 @@ fromelf build/log2.axf -bin -o build\ROM_START
 echo fromelf_exit=%ERRORLEVEL%
 dir /b build\ROM_START
 echo DONE
+

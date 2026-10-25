@@ -26,8 +26,8 @@ CODE_SPLIT = os.path.join(ROOT, "tools", "split", "CODE_SPLIT.csv")
 ROM_BASE = 0x08000000
 IMAGE_BYTES = 8388608
 ROM_SHA256 = "6e6c370c339ec9171cb1956adf837a0d342a197f78964882ef46c3086656ff75"
-REGION_BYTES = 2672971
-REGION_EXTENTS = 2566
+REGION_BYTES = 2659564
+REGION_EXTENTS = 3527
 FILL = 8
 ADDRESS_RUN = 2
 UNREAD = "no reader found"
@@ -469,3 +469,4 @@ def main(argv=None):
 
 if __name__ == "__main__":
     sys.exit(main())
+

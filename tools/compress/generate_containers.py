@@ -12,14 +12,19 @@ sys.path.insert(0, os.path.join(ROOT, "tools", "code"))
 sys.path.insert(0, os.path.join(ROOT, "tools", "maprecords"))
 sys.path.insert(0, os.path.join(ROOT, "tools", "sprites"))
 sys.path.insert(0, os.path.join(ROOT, "tools", "text"))
+sys.path.insert(0, os.path.join(ROOT, "tools", "records"))
+sys.path.insert(0, os.path.join(ROOT, "tools", "addr"))
 sys.path.insert(0, HERE)
 
+import addr_runs
 import container
 import container_census
 import emit_code
 import jcalg1
 import maprecords
 import sprites
+import opcode_rows
+import table_086f6d8c
 import text_rows
 
 ROM = os.path.join(ROOT, "baserom.gba")
@@ -36,6 +41,9 @@ GEN = re.compile(r"build\\jcalg1\\gen_([0-9a-f]+)_([0-9a-f]+)\.bin$")
 MAP = re.compile(r"build\\maprecords\\rec_([0-9a-f]+)_([0-9a-f]+)\.bin$")
 SPRITE = re.compile(r"build\\sprites\\rec_([0-9a-f]+)_([0-9a-f]+)\.bin$")
 TEXT = re.compile(r"build\\text\\rec_([0-9a-f]+)_([0-9a-f]+)\.bin$")
+RECORDS = re.compile(r"build\\records\\rec_([0-9a-f]+)_([0-9a-f]+)\.bin$")
+OPCODE = re.compile(r"build\\opcode\\rec_([0-9a-f]+)_([0-9a-f]+)\.bin$")
+ADDR = re.compile(r"build\\addr\\rec_([0-9a-f]+)_([0-9a-f]+)\.bin$")
 GAP = re.compile(r"baserom\.gba_0x([0-9a-f]+)_0x([0-9a-f]+)\.extracted$")
 INCLUDE = re.compile(r"\.\.\\build\\code\\[A-Za-z0-9_]+\.s$")
 INCBIN = re.compile(r"INCBIN\s+(\S+)")
@@ -82,7 +90,9 @@ def code_tokens(image):
 
 
 def record_tokens(image):
-    return maprecords.tokens(image) + sprites.tokens(image) + text_rows.tokens(image)
+    return (maprecords.tokens(image) + sprites.tokens(image) + text_rows.tokens(image)
+            + table_086f6d8c.tokens(image) + opcode_rows.tokens(image)
+            + addr_runs.tokens(image))
 
 
 def asm_text(tokens):
@@ -98,7 +108,8 @@ def parsed_asm(text):
     for match in INCBIN.finditer(text):
         token = match.group(1)
         found = (GEN.search(token) or MAP.search(token) or SPRITE.search(token)
-                 or TEXT.search(token))
+                 or TEXT.search(token) or RECORDS.search(token) or OPCODE.search(token)
+                 or ADDR.search(token))
         if found:
             start, end = (int(found.group(index), 16) for index in (1, 2))
             if end <= start:
@@ -307,3 +318,4 @@ def main(argv=None):
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

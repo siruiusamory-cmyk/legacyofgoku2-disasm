@@ -8,6 +8,34 @@ All notable changes to this project are documented here. The format follows
 ### Added
 
 - `docs/banner.png`, shown centred at the top of the README.
+- `tools/records/` holds two byte populations the runtime census found in the gate's raw class as six
+  tracked tables, one record per row with named fields and each pointer written as a record label, and
+  encodes those rows back into `build/records/` and `build/opcode/`. The state table the code names
+  with the literal at `0x080040F0` is four of them: its 8-byte header, the 68-pointer record array, the
+  68 records with their inline entry arrays, and the 297 four-byte entries, 4,288 B. The quest records
+  the opcode interpreter dispatches to are the other two: 43 records and the 323 instructions of their
+  86 streams, 1,227 B. `LAYOUT.md` cites a load site for every named field, `--check` refuses a row
+  whose bytes are not the image's and a field with no citation, and the null permutes the family's
+  extents and finds no record.
+- `tools/addr/` holds the address-run class's label-written runs as one tracked table: 822 maximal
+  runs of two or more consecutive words whose every word names a code label the build already emits,
+  7,892 B, and encodes those rows back into `build/addr/`. Five of the runs are named by a literal
+  load in the walked code, so the family has a consumer and not only a structure. `--check` refuses a
+  row whose bytes are not the image's, the permuted region resolves no word and changes every row, and
+  a row whose Thumb bit is flipped no longer matches the image.
+
+### Changed
+
+- The gate's source class rises 5,714,309 -> 5,727,716 B (68.1199 % -> 68.2797 %), and its raw class
+  falls by the same 13,407 B. `generate_containers.py` splits the retail slices at the runs the three
+  families emit, `tools/research/DATA_CENSUS.md` is re-derived at the new region (2,659,564 B in 3,527
+  extents), and no reader-backed byte remains in the raw class.
+- The IWRAM copy family the runtime census found reading 197,124 B of the raw class is measured, not
+  promoted: its source pointer and count come from a RAM colour-transform slot whose descriptor
+  pointer names one of 34 ROM records, 31 of which no word in the image names, so no code-derived
+  bound covers the population and it stays raw. The caller census and its sites are recorded in
+  `tools/research/IWRAM_COPY_CALLERS.md`.
+
 - `tools/maprecords/` holds the map record family as five tracked tables, one record per row with
   named fields and each pointer written as a record label, and encodes those rows back into
   `build/maprecords/`. `LAYOUT.md` cites a load site for every named field, `--check` refuses a row
