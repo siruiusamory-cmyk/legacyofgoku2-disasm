@@ -26,6 +26,7 @@ import sprites
 import opcode_rows
 import table_086f6d8c
 import text_rows
+import transform_slots
 
 ROM = os.path.join(ROOT, "baserom.gba")
 ASM = os.path.join(ROOT, "asm", "remainder.s")
@@ -44,6 +45,7 @@ TEXT = re.compile(r"build\\text\\rec_([0-9a-f]+)_([0-9a-f]+)\.bin$")
 RECORDS = re.compile(r"build\\records\\rec_([0-9a-f]+)_([0-9a-f]+)\.bin$")
 OPCODE = re.compile(r"build\\opcode\\rec_([0-9a-f]+)_([0-9a-f]+)\.bin$")
 ADDR = re.compile(r"build\\addr\\rec_([0-9a-f]+)_([0-9a-f]+)\.bin$")
+SLOT = re.compile(r"build\\slots\\rec_([0-9a-f]+)_([0-9a-f]+)\.bin$")
 GAP = re.compile(r"baserom\.gba_0x([0-9a-f]+)_0x([0-9a-f]+)\.extracted$")
 INCLUDE = re.compile(r"\.\.\\build\\code\\[A-Za-z0-9_]+\.s$")
 INCBIN = re.compile(r"INCBIN\s+(\S+)")
@@ -92,7 +94,7 @@ def code_tokens(image):
 def record_tokens(image):
     return (maprecords.tokens(image) + sprites.tokens(image) + text_rows.tokens(image)
             + table_086f6d8c.tokens(image) + opcode_rows.tokens(image)
-            + addr_runs.tokens(image))
+            + addr_runs.tokens(image) + transform_slots.tokens(image))
 
 
 def asm_text(tokens):
@@ -109,7 +111,7 @@ def parsed_asm(text):
         token = match.group(1)
         found = (GEN.search(token) or MAP.search(token) or SPRITE.search(token)
                  or TEXT.search(token) or RECORDS.search(token) or OPCODE.search(token)
-                 or ADDR.search(token))
+                 or ADDR.search(token) or SLOT.search(token))
         if found:
             start, end = (int(found.group(index), 16) for index in (1, 2))
             if end <= start:

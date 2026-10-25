@@ -65,6 +65,29 @@ all        1173247   16     34           34       144237357
 The byte total is the census's own family access total, 144,237,357, which is the cross-check that the
 hook measured the same reads.
 
+## The descriptor layout
+
+Each descriptor is a 12-byte record and the initialiser reads every field it carries:
+
+```
++0x00  source pointer           ldr r3,[r2]      0x0801FA1C
++0x04  flags                    ldrb r2,[r2,#4]  0x0801FA30
++0x06  clip start                ldrh r3,[r2,#6]  0x0801FA20
++0x08  clip end                  ldrh r3,[r2,#8]  0x0801FA26
++0x0a  step                      ldrh r3,[r2,#0xa] 0x0801FA2C
+```
+
+The record width is 12 B: the smallest gap between two of the 34 addresses is 12 B, no record overlaps
+a decoded container, and the two records that sit 12 B apart both carry a source pointer of their own.
+Those 34 records are tracked source in `tools/records/transform_slots.py`, 408 B.
+
+The clip range is scaled by `0x4000` and the driver compares the running position against it before it
+calls the copy; the copy routine (`0x087FDBDC`, ARM) reads one `ldrsb` per output word and advances the
+source by `step >> 14` plus the carry of a `0x4000` fixed-point accumulator. The step runs from
+`0x0F4B` to `0x4DB0` across the 34 records, so a record advances up to 1.21 source bytes per word: the
+clip end bounds the pixels, not the bytes, and a record's source can be read past its own end value.
+That is why the source population stays raw and only the record table is source.
+
 ## Why the population is not authorable
 
 Walking back from the loop: the slot's source pointer is `descriptor[0]`, written at `0x0801FA1E`

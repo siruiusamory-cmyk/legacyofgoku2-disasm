@@ -7,6 +7,13 @@ All notable changes to this project are documented here. The format follows
 
 ### Added
 
+- `tools/records/transform_slots.py` holds the transform slot descriptors as one tracked table: the
+  34 records the runtime census saw a live slot name, 12 B each with the source pointer, the flags,
+  the clip range and the step, 408 B, encoded back into `build/slots/`. `TRANSFORM_SLOTS.md` cites the
+  initialiser at `0x0801FA1A` for every field it reads, `--check` refuses a row whose bytes are not the
+  image's and a field with no citation, and the null permutes the records and leaves no slot. The
+  records are contiguous: the smallest gap between two of the 34 addresses is the record width, 12 B.
+
 - `docs/banner.png`, shown centred at the top of the README.
 - `tools/records/` holds two byte populations the runtime census found in the gate's raw class as six
   tracked tables, one record per row with named fields and each pointer written as a record label, and
@@ -26,6 +33,12 @@ All notable changes to this project are documented here. The format follows
 
 ### Changed
 
+- The gate's source class rises 5,727,716 -> 5,728,124 B (68.2797 % -> 68.2846 %), and its raw class
+  falls by the same 408 B.
+- `tools/research/IWRAM_COPY_CALLERS.md` records the descriptor layout the walk-back recovers: each
+  record states its source, its clip range and its step, and the copy routine advances one source byte
+  per output word per `0x4000` of step, so the clip end bounds pixels and not bytes. The record table is
+  source; the 197,124 B its pointers name stay raw.
 - The gate's source class rises 5,714,309 -> 5,727,716 B (68.1199 % -> 68.2797 %), and its raw class
   falls by the same 13,407 B. `generate_containers.py` splits the retail slices at the runs the three
   families emit, `tools/research/DATA_CENSUS.md` is re-derived at the new region (2,659,564 B in 3,527

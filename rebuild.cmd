@@ -36,6 +36,9 @@ echo opcode_rows_exit=%ERRORLEVEL%
 echo === address runs ===
 python tools\addr\addr_runs.py --write
 echo address_runs_exit=%ERRORLEVEL%
+echo === transform slots ===
+python tools\records\transform_slots.py --write
+echo transform_slots_exit=%ERRORLEVEL%
 echo === compressor ===
 if not exist "%ROOT%\tools\compress\compress.exe" call "%ROOT%\tools\compress\build.cmd"
 if errorlevel 1 exit /b 1

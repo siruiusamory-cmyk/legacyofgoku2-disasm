@@ -1910,9 +1910,53 @@
 		INCBIN	build\text\rec_28724_28924.bin
 		INCBIN	baserom.gba_0x28924_0x29294.extracted
 		INCBIN	build\jcalg1\gen_29294_2cc64.bin
-		INCBIN	baserom.gba_0x2cc64_0xe18b0.extracted
+		INCBIN	baserom.gba_0x2cc64_0xe15f8.extracted
+		INCBIN	build\slots\rec_e15f8_e1604.bin
+		INCBIN	baserom.gba_0xe1604_0xe161c.extracted
+		INCBIN	build\slots\rec_e161c_e1628.bin
+		INCBIN	baserom.gba_0xe1628_0xe164c.extracted
+		INCBIN	build\slots\rec_e164c_e1664.bin
+		INCBIN	baserom.gba_0xe1664_0xe176c.extracted
+		INCBIN	build\slots\rec_e176c_e1784.bin
+		INCBIN	baserom.gba_0xe1784_0xe17f0.extracted
+		INCBIN	build\slots\rec_e17f0_e1808.bin
+		INCBIN	baserom.gba_0xe1808_0xe18b0.extracted
 		INCBIN	build\jcalg1\gen_e18b0_e2840.bin
-		INCBIN	baserom.gba_0xe2840_0x1d5150.extracted
+		INCBIN	baserom.gba_0xe2840_0x14a8bc.extracted
+		INCBIN	build\slots\rec_14a8bc_14a8d4.bin
+		INCBIN	baserom.gba_0x14a8d4_0x14a8f8.extracted
+		INCBIN	build\slots\rec_14a8f8_14a904.bin
+		INCBIN	baserom.gba_0x14a904_0x14a910.extracted
+		INCBIN	build\slots\rec_14a910_14a91c.bin
+		INCBIN	baserom.gba_0x14a91c_0x14a964.extracted
+		INCBIN	build\slots\rec_14a964_14a970.bin
+		INCBIN	baserom.gba_0x14a970_0x14a97c.extracted
+		INCBIN	build\slots\rec_14a97c_14a988.bin
+		INCBIN	baserom.gba_0x14a988_0x14a9a0.extracted
+		INCBIN	build\slots\rec_14a9a0_14a9ac.bin
+		INCBIN	baserom.gba_0x14a9ac_0x14aa18.extracted
+		INCBIN	build\slots\rec_14aa18_14aa48.bin
+		INCBIN	baserom.gba_0x14aa48_0x14aa54.extracted
+		INCBIN	build\slots\rec_14aa54_14aa6c.bin
+		INCBIN	baserom.gba_0x14aa6c_0x14aac0.extracted
+		INCBIN	build\slots\rec_14aac0_14aacc.bin
+		INCBIN	baserom.gba_0x14aacc_0x14ab68.extracted
+		INCBIN	build\slots\rec_14ab68_14ab74.bin
+		INCBIN	baserom.gba_0x14ab74_0x14abb0.extracted
+		INCBIN	build\slots\rec_14abb0_14abd4.bin
+		INCBIN	baserom.gba_0x14abd4_0x14ac04.extracted
+		INCBIN	build\slots\rec_14ac04_14ac10.bin
+		INCBIN	baserom.gba_0x14ac10_0x14ac40.extracted
+		INCBIN	build\slots\rec_14ac40_14ac64.bin
+		INCBIN	baserom.gba_0x14ac64_0x14ac88.extracted
+		INCBIN	build\slots\rec_14ac88_14ac94.bin
+		INCBIN	baserom.gba_0x14ac94_0x14aca0.extracted
+		INCBIN	build\slots\rec_14aca0_14acac.bin
+		INCBIN	baserom.gba_0x14acac_0x14ad00.extracted
+		INCBIN	build\slots\rec_14ad00_14ad0c.bin
+		INCBIN	baserom.gba_0x14ad0c_0x14ad24.extracted
+		INCBIN	build\slots\rec_14ad24_14ad30.bin
+		INCBIN	baserom.gba_0x14ad30_0x1d5150.extracted
 		INCBIN	build\jcalg1\gen_1d5150_1d51a8.bin
 		INCBIN	baserom.gba_0x1d51a8_0x1d8e54.extracted
 		INCBIN	build\jcalg1\gen_1d8e54_1d8f98.bin
