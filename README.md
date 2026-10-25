@@ -30,7 +30,10 @@ re-encodes every packed container out of your own copy of the game. What remains
 as slices of the retail image, and the gate's count names every byte of it.
 The function list also feeds a static recompiler: `tools/code/FUNCTION_BOUNDS.csv` carries every
 entry point the game reaches, including the ones only its runtime dispatch reaches, and
-`tools/recomp/iwram_seed.py` supplies the code the game copies into IWRAM.
+`tools/recomp/iwram_seed.py` supplies the code the game copies into IWRAM. An IWRAM entry is kept
+only where that copy carries its bytes, and an entry that falls inside a census row must sit on an
+instruction boundary of that row, so a dispatch key the game computes at run time still translates
+instead of reaching the recompiler's interpreter.
 
 It builds one ROM:
 

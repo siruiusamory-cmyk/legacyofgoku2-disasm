@@ -94,6 +94,18 @@ def audit(text, rows):
     return uncovered, modeless
 
 
+def admit_entry(rows, address, rom):
+    for start, size, row_mode, _origin in rows:
+        if start < address < start + size:
+            position = start
+            while position < address:
+                position += code_split.thumb_length(rom, position) if row_mode == "thumb" else 4
+            if position != address:
+                raise SystemExit("0x%08X is inside the %s row 0x%08X..0x%08X and not on an "
+                                 "instruction boundary" % (address, row_mode, start, start + size))
+            return
+
+
 def render(root=ROOT, rom=ROM):
     if not os.path.exists(rom):
         raise SystemExit("no image at %s, so the export cannot be derived" % rom)
@@ -103,8 +115,10 @@ def render(root=ROOT, rom=ROM):
     functions = bounds_rows(root)
     entries = entries_of(measured)
     recorded = {address for address, _mode in entries}
-    entries = sorted(entries + [row for row in runtime_entries(root)
-                                if row[0] not in recorded])
+    added = [row for row in runtime_entries(root) if row[0] not in recorded]
+    for address, _mode in added:
+        admit_entry(functions, address, data)
+    entries = sorted(entries + added)
     source, dest, size, _declared = measured["overlay"]
     lines = [
         "[counts]",

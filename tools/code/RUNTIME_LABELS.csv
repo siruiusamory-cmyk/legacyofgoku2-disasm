@@ -74,6 +74,16 @@ rom,0x08026e2e,thumb
 rom,0x08026e3c,thumb
 rom,0x08026f34,thumb
 rom,0x08026f42,thumb
+iwram,0x030002f0,arm
+iwram,0x030002fc,arm
+iwram,0x03000304,arm
+iwram,0x03000314,arm
+iwram,0x03000320,arm
+iwram,0x03000324,arm
+iwram,0x03000328,arm
+iwram,0x0300032c,arm
+iwram,0x03000334,arm
+iwram,0x03000340,arm
 iwram,0x03000348,arm
 iwram,0x03000358,arm
 iwram,0x03000360,arm

@@ -13,6 +13,11 @@ All notable changes to this project are documented here. The format follows
 - The census gives the entry points the game reaches only through its runtime dispatch their own
   class, `dispatch`, instead of counting them as function starts, and the recompiler export carries
   them.
+- The recompiler's runtime store carries the IWRAM dispatch keys the boot and the fuzz route reach
+  and the ARM entry points that lie inside a Thumb census row, so every recorded route translates
+  without reaching the interpreter. A recorded IWRAM row whose bytes the image's copied span does not
+  carry is refused, and a recorded entry inside a census row is refused unless it lands on an
+  instruction boundary of that row.
 
 - `tools/records/transform_slots.py` holds the transform slot descriptors as one tracked table: the
   34 records the runtime census saw a live slot name, 12 B each with the source pointer, the flags,

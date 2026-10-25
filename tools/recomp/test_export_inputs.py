@@ -179,5 +179,26 @@ def test_the_label_map_carries_an_end_only_for_a_code_row(tmp_path):
     assert text.count("[[functions]]") == 2
 
 
+def test_a_recorded_entry_inside_a_census_row_must_be_an_instruction_boundary():
+    rom = bytes(0x200)
+    rows = [(0x08000100, 6, "thumb", "census")]
+    assert export_inputs.admit_entry(rows, 0x08000102, rom) is None
+    with pytest.raises(SystemExit):
+        export_inputs.admit_entry(rows, 0x08000103, rom)
+    assert export_inputs.admit_entry(rows, 0x08000108, rom) is None
+
+
+def test_the_recorded_arm_keys_reach_the_export_as_entries():
+    text = open(export_inputs.OUT, encoding="ascii", newline="").read()
+    entries = {(row["addr"], row["mode"]) for row in blocks(text, "entry")}
+    hosts = {(start, size, mode) for start, size, mode, _origin in export_inputs.bounds_rows()}
+    for key, host in ((0x08021DF4, (0x08021DF2, 6, "thumb")),
+                      (0x08021F1C, (0x08021F1A, 6, "thumb")),
+                      (0x08022C88, (0x08022C86, 6, "thumb"))):
+        assert ("0x%08x" % key, "arm") in entries
+        assert host in hosts
+        assert key == host[0] + 2
+
+
 if __name__ == "__main__":
     print("PASS test_export_inputs")

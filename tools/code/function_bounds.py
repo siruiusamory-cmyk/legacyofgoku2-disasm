@@ -465,11 +465,14 @@ def classify(rom, entries, modes, rows, calls, table, vectors, spans=(), pools=(
 
 
 def runtime_rows(measured):
-    source, dest, _size, _declared = measured["overlay"]
+    source, dest, size, _declared = measured["overlay"]
     found = []
     for row in csv.DictReader(open(RUNTIME, encoding="ascii")):
         address = int(row["address"], 16)
         iwram = row["region"] == "iwram"
+        if iwram and not dest <= address < dest + size:
+            raise SystemExit("%s: 0x%08X lies outside the copied span 0x%08X..0x%08X, so no "
+                             "seeded byte carries it" % (RUNTIME, address, dest, dest + size))
         found.append((address, THUMB if row["mode"] == "thumb" else ARM,
                       "runtime-iwram" if iwram else "runtime",
                       source + address - dest if iwram else address))

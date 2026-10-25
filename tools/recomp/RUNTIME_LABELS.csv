@@ -824,6 +824,7 @@ rom,0x0801a2e4,thumb
 rom,0x0801a2e6,thumb
 rom,0x0801a2f2,thumb
 rom,0x08021d32,thumb
+rom,0x08021df4,arm
 rom,0x08021e28,arm
 rom,0x08021eac,arm
 rom,0x08021eb8,arm
@@ -833,6 +834,7 @@ rom,0x08021ec4,arm
 rom,0x08021ecc,arm
 rom,0x08021ed0,arm
 rom,0x08021ee8,arm
+rom,0x08021f1c,arm
 rom,0x08022008,thumb
 rom,0x0802200c,arm
 rom,0x0802205c,arm
@@ -841,6 +843,7 @@ rom,0x08022090,arm
 rom,0x08022ab8,arm
 rom,0x08022c10,arm
 rom,0x08022c24,arm
+rom,0x08022c88,arm
 rom,0x08022c9c,arm
 rom,0x080236c0,thumb
 rom,0x080236c4,arm

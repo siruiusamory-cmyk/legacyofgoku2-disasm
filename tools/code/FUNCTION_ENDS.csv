@@ -1,4 +1,14 @@
 address,mode,origin,end,reason
+0x030002f0,arm,runtime-iwram,0x030002fc,next-start
+0x030002fc,arm,runtime-iwram,0x03000304,next-start
+0x03000304,arm,runtime-iwram,0x03000314,next-start
+0x03000314,arm,runtime-iwram,0x03000320,next-start
+0x03000320,arm,runtime-iwram,0x03000324,next-start
+0x03000324,arm,runtime-iwram,0x03000328,next-start
+0x03000328,arm,runtime-iwram,0x0300032c,next-start
+0x0300032c,arm,runtime-iwram,0x03000334,next-start
+0x03000334,arm,runtime-iwram,0x03000340,no-return
+0x03000340,arm,runtime-iwram,0x03000348,-
 0x03000348,arm,runtime-iwram,0x03000358,next-start
 0x03000358,arm,runtime-iwram,0x03000360,next-start
 0x03000360,arm,runtime-iwram,0x03000364,next-start

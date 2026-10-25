@@ -1,7 +1,7 @@
 [counts]
-functions = 1409
-code_bytes = 82292
-entries = 3388
+functions = 1419
+code_bytes = 82380
+entries = 3391
 jump_tables = 1
 code_copies = 1
 
@@ -24,6 +24,66 @@ handler = 0x03000824
 handler_bytes = 292
 table = 0x03000e3c
 table_entries = 14
+
+[[code]]
+addr = 0x030002f0
+mode = "arm"
+size = 12
+origin = "runtime-iwram"
+
+[[code]]
+addr = 0x030002fc
+mode = "arm"
+size = 8
+origin = "runtime-iwram"
+
+[[code]]
+addr = 0x03000304
+mode = "arm"
+size = 16
+origin = "runtime-iwram"
+
+[[code]]
+addr = 0x03000314
+mode = "arm"
+size = 12
+origin = "runtime-iwram"
+
+[[code]]
+addr = 0x03000320
+mode = "arm"
+size = 4
+origin = "runtime-iwram"
+
+[[code]]
+addr = 0x03000324
+mode = "arm"
+size = 4
+origin = "runtime-iwram"
+
+[[code]]
+addr = 0x03000328
+mode = "arm"
+size = 4
+origin = "runtime-iwram"
+
+[[code]]
+addr = 0x0300032c
+mode = "arm"
+size = 8
+origin = "runtime-iwram"
+
+[[code]]
+addr = 0x03000334
+mode = "arm"
+size = 12
+origin = "runtime-iwram"
+
+[[code]]
+addr = 0x03000340
+mode = "arm"
+size = 8
+origin = "runtime-iwram"
 
 [[code]]
 addr = 0x03000348
@@ -20524,6 +20584,10 @@ addr = 0x08021df2
 mode = "thumb"
 
 [[entry]]
+addr = 0x08021df4
+mode = "arm"
+
+[[entry]]
 addr = 0x08021e28
 mode = "arm"
 
@@ -20570,6 +20634,10 @@ mode = "thumb"
 [[entry]]
 addr = 0x08021f1a
 mode = "thumb"
+
+[[entry]]
+addr = 0x08021f1c
+mode = "arm"
 
 [[entry]]
 addr = 0x08021f30
@@ -21342,6 +21410,10 @@ mode = "thumb"
 [[entry]]
 addr = 0x08022c86
 mode = "thumb"
+
+[[entry]]
+addr = 0x08022c88
+mode = "arm"
 
 [[entry]]
 addr = 0x08022c9c

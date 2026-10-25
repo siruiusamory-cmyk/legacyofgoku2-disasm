@@ -5,6 +5,7 @@ import os
 import re
 import struct
 import sys
+import tomllib
 
 import pytest
 
@@ -462,6 +463,37 @@ def test_a_dispatch_key_is_carried_as_its_own_role():
              "dispatch": [BASE + 0x20]}
     assert function_bounds.rows_text(found).splitlines()[1:] == [
         "0x%08x,start,call" % (BASE + 0x10), "0x%08x,dispatch,runtime" % (BASE + 0x20)]
+
+
+def test_an_iwram_row_outside_the_copied_span_is_refused(tmp_path, monkeypatch):
+    path = tmp_path / "runtime.csv"
+    path.write_text("region,address,mode\niwram,0x03000200,arm\n", encoding="ascii")
+    monkeypatch.setattr(function_bounds, "RUNTIME", str(path))
+    with pytest.raises(SystemExit):
+        function_bounds.runtime_rows({"overlay": (0x08000000, 0x03000000, 0x100, 0)})
+    assert function_bounds.runtime_rows({"overlay": (0x08000000, 0x03000000, 0x400, 0)}) == [
+        (0x03000200, function_bounds.ARM, "runtime-iwram", 0x08000200)]
+
+
+def test_the_recorded_iwram_keys_are_bounded_rows_inside_the_copy():
+    root = os.path.dirname(os.path.dirname(HERE))
+    keys = (0x030002F0, 0x030002FC, 0x03000304, 0x03000314, 0x03000320,
+            0x03000324, 0x03000328, 0x0300032C, 0x03000334, 0x03000340)
+    rows = dict((int(row["address"], 16), row)
+                for row in csv.DictReader(open(function_bounds.ENDS, encoding="utf-8"))
+                if row["origin"] == "runtime-iwram")
+    for key in keys:
+        assert rows[key]["mode"] == "arm"
+        assert rows[key]["end"] != "-"
+    assert int(rows[0x030002F0]["end"], 16) == 0x030002FC
+    assert int(rows[0x03000340]["end"], 16) == 0x03000348
+    with open(os.path.join(root, "tools", "recomp", "RECOMP_INPUTS.toml"), "rb") as handle:
+        copy = tomllib.load(handle)["code_copy"][0]
+    low = copy["source_start"]
+    high = low + copy["size"]
+    store = csv.DictReader(open(function_bounds.EXPORTED_RUNTIME, encoding="ascii"))
+    assert [row["address"] for row in store if row["region"] == "rom"
+            and low <= int(row["address"], 16) < high] == []
 
 
 if __name__ == "__main__":
